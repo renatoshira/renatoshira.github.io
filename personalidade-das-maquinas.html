@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Personalidade das Máquinas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#141414;
+    --dim:#6b6b6b;
+    --line:#e2e2e2;
+    --maxw:760px;
+    --robot:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23141414'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cline%20x1='12'%20y1='2.6'%20x2='12'%20y2='5.6'/%3E%3Ccircle%20cx='12'%20cy='2'%20r='1'%20fill='%23141414'%20stroke='none'/%3E%3Crect%20x='4.5'%20y='6'%20width='15'%20height='11'%20rx='2.6'%20fill='%23ffffff'/%3E%3Ccircle%20cx='9.3'%20cy='11.2'%20r='1.35'%20fill='%23141414'%20stroke='none'/%3E%3Ccircle%20cx='14.7'%20cy='11.2'%20r='1.35'%20fill='%23141414'%20stroke='none'/%3E%3Cline%20x1='9.2'%20y1='14.3'%20x2='14.8'%20y2='14.3'/%3E%3C/svg%3E");
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Space Mono', ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  .topbar{
+    position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;padding:12px 24px;
+  }
+  .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
+  .topbar .kicker:hover{background:var(--ink);color:var(--paper)}
+  .langtoggle{display:flex;border:1px solid var(--ink);font-size:12px}
+  .langtoggle button{border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:.08em}
+  .langtoggle button.active{background:var(--ink);color:var(--paper)}
+
+  .mark{background:var(--ink);color:var(--paper);padding:.08em .34em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  section{border-bottom:1px solid var(--line);scroll-margin-top:72px}
+  section.wrap{padding:84px 24px}
+  section:last-of-type{border-bottom:0}
+  .hero,.cliff{scroll-margin-top:72px}
+
+  .hero{padding-top:90px;padding-bottom:80px}
+  .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+  .hero h1{font-size:30px;font-weight:700;line-height:1.35;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+  .hero h1 .l2{margin-left:2.2em}
+  .hero .sub{margin-top:40px;font-size:17px;line-height:1.8;max-width:600px}
+  .hero .sub .l2{display:block;margin-left:3.5em}
+
+  h2.head{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px}
+  .step{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+  p{margin:0 0 20px}
+  .lead{font-size:18px}
+  .dim{color:var(--dim)}
+
+  /* small grey note (how it is measured) */
+  .note{font-size:13px;color:var(--dim);line-height:1.65;border-left:1px solid var(--line);padding-left:14px;margin:22px 0}
+
+  /* big five spectrum cards */
+  .traits{display:flex;flex-direction:column;border:1px solid var(--ink);margin:32px 0 0}
+  .trait{padding:18px 18px;border-bottom:1px solid var(--line)}
+  .trait:last-child{border-bottom:0}
+  .trait .tname{font-weight:700}
+  .trait .thint{font-size:12.5px;color:var(--dim);margin:2px 0 12px}
+  .trait .sptrack{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+  .trait .spectrum{height:3px;border:0;background:linear-gradient(90deg,#e6e6e6 0%,#141414 100%)}
+  .trait .tpoles{font-size:12.5px;color:var(--dim);margin-top:7px;display:flex;justify-content:space-between;gap:18px}
+  .trait .tpoles .hi{text-align:right}
+
+  /* mini personality test */
+  .minitest{margin:26px 0 0}
+  .minibtn{font-family:inherit;font-size:13px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:9px 14px;cursor:pointer}
+  .minibtn.on{background:var(--ink);color:var(--paper)}
+  #miniPanel{border:1px solid var(--ink);margin-top:12px;padding:14px 18px}
+  .miniq{padding:11px 0;border-bottom:1px solid var(--line)}
+  .miniq:last-child{border-bottom:0}
+  .miniqtext{font-size:14px;margin-bottom:9px}
+  .likrow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .likend{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+  .likbtn{font-family:inherit;font-size:13px;width:32px;height:32px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer}
+  .likbtn.on{background:var(--ink);color:var(--paper)}
+  #miniResult{margin-top:14px;border-top:1px solid var(--ink);padding-top:14px}
+  .miniresulttitle{font-weight:700;margin-bottom:10px}
+  .mbar{display:grid;grid-template-columns:118px 1fr 34px;align-items:center;gap:10px;font-size:12px;margin-bottom:7px}
+  .mbtrack{height:10px;background:#ededed}
+  .mbfill{height:100%;background:#141414}
+  .mbval{text-align:right;color:var(--dim)}
+  .mininote{font-size:12px;color:var(--dim);margin-top:12px;line-height:1.5}
+
+  /* guess widget */
+  .guess{border:1px solid var(--ink);margin:34px 0 0}
+  .guess .grow{border-bottom:1px solid var(--line);padding:18px 18px 16px}
+  .guess .grow:last-of-type{border-bottom:1px solid var(--ink)}
+  .grow .gtop{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .grow .gname{font-weight:700}
+  .grow .gmean{font-size:12px;color:var(--dim)}
+  .grow .ghint{font-size:12.5px;color:var(--dim);margin:2px 0 12px}
+  .grow .gbody{display:grid;grid-template-columns:1fr 190px;gap:18px;align-items:center}
+  @media(max-width:620px){.grow .gbody{grid-template-columns:1fr}}
+  .grow input[type=range]{width:100%;margin:6px 0 6px;accent-color:var(--ink);height:22px}
+  .grow input.gslider{-webkit-appearance:none;appearance:none;background:transparent;height:32px;margin:2px 0}
+  .grow input.gslider::-webkit-slider-runnable-track{height:2px;background:#141414}
+  .grow input.gslider::-moz-range-track{height:2px;background:#141414}
+  .grow input.gslider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:32px;height:32px;margin-top:-15px;background:var(--robot) center/28px 28px no-repeat;border:0;cursor:grab}
+  .grow input.gslider::-moz-range-thumb{width:32px;height:32px;background:var(--robot) center/28px 28px no-repeat;border:0;cursor:grab}
+  .grow input.gslider:active::-webkit-slider-thumb{cursor:grabbing}
+  .guesscue{font-size:13px;color:var(--dim);margin:6px 0 0;display:flex;align-items:center;gap:8px}
+  .guesscue .rbot{width:22px;height:22px;background:var(--robot) center/20px no-repeat;flex:none;display:inline-block}
+  .grow .slabels{display:flex;justify-content:space-between;font-size:11px;color:var(--dim)}
+  .grow .readout{font-size:13px;line-height:1.55}
+  .grow .readout .big{font-weight:700;font-size:15px;border-radius:1px}
+  .curvewrap svg{display:block;width:100%;height:auto}
+
+  .gfoot{border:1px solid var(--ink);border-top:0;padding:18px}
+  .lockbtn{font-family:inherit;font-size:14px;letter-spacing:.05em;background:var(--ink);color:var(--paper);border:0;padding:12px 20px;cursor:pointer;width:100%}
+  .lockbtn.locked{background:var(--paper);color:var(--ink);border:1px solid var(--ink)}
+
+  /* radar */
+  .radar{border:1px solid var(--ink);margin:30px 0 0;padding:20px 14px 14px}
+  .radar .radarsvg svg{display:block;width:100%;max-width:440px;margin:0 auto;height:auto}
+  .legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;justify-content:center;align-items:center}
+  .legend button{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:11.5px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:5px 9px;cursor:pointer}
+  .legend button svg{flex:none;display:block}
+  .legend button.off{opacity:.34}
+  .legend button.off .sw{opacity:.3}
+  .legend .sep{width:100%;height:0;margin:2px 0}
+  .legend .seplabel{width:100%;text-align:center;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+  .radar svg g[data-layer]{transition:opacity 1.1s ease}
+  .axisreadout{text-align:center;font-size:12.5px;color:var(--dim);margin-top:14px;min-height:20px}
+  .axisreadout b{color:var(--ink)}
+
+  /* rarity calculator */
+  .rarity{border:1px solid var(--ink);margin:26px 0 0;padding:20px 18px}
+  .rbars{display:flex;flex-direction:column;gap:9px;margin:16px 0 20px}
+  .rbar{display:grid;grid-template-columns:132px 1fr 52px;align-items:center;gap:10px;font-size:12px}
+  .rbar .rname{color:var(--ink)}
+  .rbar .track{height:9px;background:#ededed}
+  .rbar .fill{height:100%;background:#141414;transition:width .12s linear}
+  .rbar .pct{text-align:right;color:var(--dim)}
+  .rarity input[type=range]{width:100%;accent-color:var(--ink);height:22px}
+  .rslabels{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);margin-top:2px}
+  .rresult{text-align:center;font-size:14px;margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+  .rresult .num{font-weight:700;font-size:28px;display:block;margin-top:6px}
+
+  /* paraphrase / contamination */
+  .swap{border:1px solid var(--ink);margin:30px 0 0;padding:16px 18px}
+  .swaphead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+  .swaptag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .swapbtn{font-family:inherit;font-size:12.5px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:6px 12px;cursor:pointer;white-space:nowrap}
+  .pair{border-top:1px solid var(--line);padding:14px 0}
+  .pair .ptag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+  .pair .ptext{font-size:16px;line-height:1.5}
+  .swapscale{border-top:1px solid var(--line);margin-top:6px;padding-top:14px}
+  .rangebar{height:12px;background:#ededed;position:relative}
+  .rangebar .seg{position:absolute;left:0;top:0;height:100%;width:10%;background:#141414}
+  .swapcap{font-size:12px;color:var(--dim);margin-top:9px}
+  .parabox{border:1px solid var(--ink);margin:26px 0 0;padding:20px 18px}
+  .parabars{display:flex;flex-direction:column;gap:9px}
+  .pbar{display:grid;grid-template-columns:118px 1fr 42px;align-items:center;gap:10px;font-size:12px}
+  .pbar .ptrack{position:relative;height:12px;background:#ededed}
+  .pbar .pfill{height:100%;background:#141414}
+  .pbar .pthreshline{position:absolute;top:-4px;bottom:-4px;left:50%;width:0;border-left:1px dashed #8a8a8a}
+  .pbar .pval{text-align:right;color:var(--dim)}
+  .parathresh{font-size:12px;color:var(--dim);margin-top:14px;text-align:center}
+
+  /* factor structure panels */
+  .panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0 0}
+  @media(max-width:640px){.panels{grid-template-columns:1fr}}
+  .panel{border:1px solid var(--ink);padding:16px 16px 14px}
+  .paneltitle{font-weight:700;margin-bottom:12px}
+  .slrow{display:grid;grid-template-columns:104px 1fr 30px;align-items:center;gap:8px;margin-bottom:7px;font-size:11.5px}
+  .slrow input[type=range]{width:100%;accent-color:var(--ink);height:20px}
+  .slrow .slval{text-align:right;color:var(--dim)}
+  .panelcap{font-size:11.5px;color:var(--dim);margin-top:11px;border-top:1px solid var(--line);padding-top:10px;line-height:1.5}
+
+  /* item-level widget (question not model) */
+  .items{border:1px solid var(--ink);margin:30px 0 0;padding:20px 18px 16px}
+  .itemcard .itemtag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .itemcard .badge{background:var(--ink);color:var(--paper);padding:2px 7px;font-size:10px;letter-spacing:.04em;text-transform:none}
+  .itemcard .itemtext{font-size:18px;line-height:1.4;margin-bottom:12px}
+  .itemcard .stripwrap svg{display:block;width:100%;max-width:460px;height:auto}
+  .itemnav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:10px}
+  .itembtn{font-family:inherit;font-size:18px;line-height:1;border:1px solid var(--ink);background:var(--paper);color:var(--ink);width:40px;height:34px;cursor:pointer}
+  .itemidx{font-size:12px;color:var(--dim);min-width:56px;text-align:center}
+  .itemcap{text-align:center;font-size:12.5px;color:var(--dim);margin-top:12px;min-height:20px}
+  .itemcap b{color:var(--ink)}
+
+  /* reliability (repeat the test) */
+  .reptest{border:1px solid var(--ink);margin:30px 0 0;padding:20px 14px 16px}
+  .repbtns{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+  .repbtn{font-family:inherit;font-size:11.5px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:5px 9px;cursor:pointer}
+  .repbtn.on{background:var(--ink);color:var(--paper)}
+  .repsvg svg{display:block;width:100%;max-width:440px;margin:0 auto;height:auto}
+  .repcap{text-align:center;font-size:12.5px;color:var(--dim);margin-top:12px;min-height:18px}
+  .repcap b{color:var(--ink)}
+
+  /* collective imaginary human (sampling) */
+  .imagine{border:1px solid var(--ink);margin:30px 0 0;padding:20px 16px 16px}
+  .dombtns{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+  .dombtn{font-family:inherit;font-size:11.5px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:5px 9px;cursor:pointer}
+  .dombtn.on{background:var(--ink);color:var(--paper)}
+  .stripsvg svg{display:block;width:100%;max-width:470px;margin:0 auto;height:auto}
+  .samplebtn{display:block;margin:12px auto 0;font-family:inherit;font-size:13px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:9px 16px;cursor:pointer}
+  .icap{text-align:center;font-size:12.5px;color:var(--dim);margin-top:14px;line-height:1.6;max-width:470px;margin-left:auto;margin-right:auto}
+  .icap b{color:var(--ink)}
+
+  /* persona ablation (hero) */
+  .persona{border:1px solid var(--ink);margin:30px 0 0;padding:20px 14px 16px}
+  .pbtns{display:flex;gap:8px;justify-content:center;margin-bottom:10px;flex-wrap:wrap}
+  .pbtn{font-family:inherit;font-size:13px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:9px 16px;cursor:pointer}
+  .pbtn.on{background:var(--ink);color:var(--paper)}
+  .personasvg svg{display:block;width:100%;max-width:440px;margin:0 auto;height:auto}
+  .pcap{text-align:center;font-size:12.5px;color:var(--dim);margin-top:12px;min-height:36px;line-height:1.5;max-width:460px;margin-left:auto;margin-right:auto}
+  .pspread{text-align:center;font-size:12px;color:var(--ink);margin-top:8px}
+  .pspread b{font-weight:700}
+  /* persona 2D map */
+  .pmap{border:1px solid var(--ink);margin:30px 0 0;padding:20px 14px 16px}
+  .pmapsvg svg{display:block;width:100%;max-width:520px;margin:0 auto;height:auto}
+  .pmaplegend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--ink)}
+  .pmaplegend .lg{display:flex;align-items:center;gap:5px}
+  .pmaplegend .sw{width:10px;height:10px;border-radius:50%;display:inline-block}
+
+  .cliff{background:var(--ink);color:var(--paper);border:0}
+  .cliff .wrap{padding-top:70px;padding-bottom:70px}
+  .cliff h2{color:var(--paper);font-size:22px;margin:0 0 12px}
+  .cliff p{color:#c9c9c9;margin:0}
+  .cliff .mark{background:var(--paper);color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .foot{padding:40px 0 80px;color:var(--dim);font-size:12.5px}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="kicker" href="index.html">Renato Shirakashi</a>
+  <div class="langtoggle" role="group" aria-label="Idioma">
+    <button data-lang="pt" class="active">PT</button>
+    <button data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" data-i18n="hero.eyebrow">Big Five × Modelos de linguagem</div>
+  <h1>
+    <span class="mark" data-i18n="hero.t1">A personalidade</span>
+    <span class="mark l2" data-i18n="hero.t2">das máquinas</span>
+  </h1>
+  <div class="sub">
+    <span data-i18n="hero.sub1">Seis das IAs mais avançadas do mundo fizeram o mesmo teste de personalidade.</span>
+    <span class="l2" data-i18n="hero.sub2">Você molda a personalidade delas com um prompt. Mas o molde é o mesmo para as seis.</span>
+  </div>
+</header>
+
+<!-- BEAT 0 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b0.step">00 · A pergunta</div>
+  <p class="lead" data-i18n="b0.p1">Modelos de linguagem como o ChatGPT, o Claude e o Gemini soam como uma pessoa: calorosos, atentos, pacientes. Isso levanta uma pergunta natural: <span class="mark">eles têm personalidade?</span></p>
+  <p data-i18n="b0.p2">Responder isso com algum rigor exige uma forma consistente de medir personalidade. A psicologia passou o último século desenvolvendo instrumentos para isso.</p>
+</section>
+
+<!-- BEAT 1 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b1.step">01 · Mas o que é personalidade?</div>
+  <h2 class="head" data-i18n="b1.head">O que é personalidade, em cinco medidas</h2>
+  <p data-i18n="b1.p1">Personalidade é o padrão relativamente estável de como uma pessoa pensa, sente e age. Ao longo de décadas, a psicologia condensou toda essa complexidade em cinco características, os <span class="mark">Cinco Grandes</span>. Quase qualquer diferença de temperamento entre duas pessoas pode ser descrita como uma combinação desses cinco números.</p>
+
+  <div class="traits">
+    <div class="trait">
+      <div class="tname" data-i18n="t.O.n">Abertura</div>
+      <div class="thint" data-i18n="t.O.hint">curiosidade intelectual e estética</div>
+      <div class="sptrack"><span data-i18n="w.less">menos</span><span data-i18n="w.more">mais</span></div>
+      <div class="spectrum"></div>
+      <div class="tpoles"><span class="lo" data-i18n="t.O.lo">concreta, prática, tradicional</span><span class="hi" data-i18n="t.O.hi">curiosa, criativa, gosta de ideias</span></div>
+    </div>
+    <div class="trait">
+      <div class="tname" data-i18n="t.C.n">Conscienciosidade</div>
+      <div class="thint" data-i18n="t.C.hint">organização e autodisciplina</div>
+      <div class="sptrack"><span data-i18n="w.less">menos</span><span data-i18n="w.more">mais</span></div>
+      <div class="spectrum"></div>
+      <div class="tpoles"><span class="lo" data-i18n="t.C.lo">espontânea, relaxada, desligada</span><span class="hi" data-i18n="t.C.hi">organizada, disciplinada, confiável</span></div>
+    </div>
+    <div class="trait">
+      <div class="tname" data-i18n="t.E.n">Extroversão</div>
+      <div class="thint" data-i18n="t.E.hint">energia e sociabilidade</div>
+      <div class="sptrack"><span data-i18n="w.less">menos</span><span data-i18n="w.more">mais</span></div>
+      <div class="spectrum"></div>
+      <div class="tpoles"><span class="lo" data-i18n="t.E.lo">reservada, quieta, introspectiva</span><span class="hi" data-i18n="t.E.hi">enérgica, sociável, assertiva</span></div>
+    </div>
+    <div class="trait">
+      <div class="tname" data-i18n="t.A.n">Amabilidade</div>
+      <div class="thint" data-i18n="t.A.hint">cordialidade e cooperação</div>
+      <div class="sptrack"><span data-i18n="w.less">menos</span><span data-i18n="w.more">mais</span></div>
+      <div class="spectrum"></div>
+      <div class="tpoles"><span class="lo" data-i18n="t.A.lo">crítica, direta, competitiva</span><span class="hi" data-i18n="t.A.hi">cordial, cooperativa, empática</span></div>
+    </div>
+    <div class="trait">
+      <div class="tname" data-i18n="t.N.n">Neuroticismo</div>
+      <div class="thint" data-i18n="t.N.hint">reatividade emocional, tendência ao estresse</div>
+      <div class="sptrack"><span data-i18n="w.less">menos</span><span data-i18n="w.more">mais</span></div>
+      <div class="spectrum"></div>
+      <div class="tpoles"><span class="lo" data-i18n="t.N.lo">calma, estável, difícil de abalar</span><span class="hi" data-i18n="t.N.hi">ansiosa, reativa, se abala fácil</span></div>
+    </div>
+  </div>
+
+  <p data-i18n="b1.p2" style="margin-top:26px">Um detalhe que vale registrar: em humanos, essas cinco características são <span class="mark">aproximadamente independentes</span>. Saber que alguém é muito organizado quase não diz se a pessoa é extrovertida ou tímida. É por isso que precisamos de cinco números, e não de um só.</p>
+
+  <p class="note" data-i18n="b1.note">Como se mede na prática: o BFI-2 tem 60 frases do tipo "sou uma pessoa organizada", e você concorda de 1 a 5. Metade vem escrita ao contrário, para pegar quem responde no automático; nessas, a nota é virada. É assim que o teste separa quem lê de quem só clica.</p>
+
+  <div class="minitest">
+    <button class="minibtn" id="miniBtn" data-i18n="b1.mini.open">Fazer uma versão relâmpago (5 perguntas)</button>
+    <div id="miniPanel" hidden>
+      <div id="miniQs"></div>
+      <div id="miniResult" hidden>
+        <div class="miniresulttitle" data-i18n="b1.mini.your">Seu mini-perfil</div>
+        <div id="miniBars"></div>
+        <div class="mininote" data-i18n="b1.mini.note">Isto é só uma amostra; o teste real tem 60 perguntas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 2 : GUESS WIDGET -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b2.step">02 · Faça o seu palpite</div>
+  <h2 class="head" data-i18n="b2.head">Como você acha que os modelos são?</h2>
+  <p data-i18n="b2.p1">Antes de ver as respostas dos seis modelos, <span class="mark">dê o seu palpite</span>: em cada característica, arraste o controle até onde imagina que uma IA se posiciona. Ele parte da média humana; a curva é a distribuição da população, e a área preenchida indica quantas pessoas ficam abaixo do ponto escolhido.</p>
+  <p class="dim" style="font-size:13.5px" data-i18n="b2.p2">Não há resposta certa: é apenas a expectativa de como uma IA se descreve quando perguntam sobre a própria personalidade.</p>
+
+  <p class="guesscue"><span class="rbot"></span><span data-i18n="b2.cue">Arraste o robô em cada linha até onde você acha que uma IA se posiciona.</span></p>
+  <div class="guess" id="guess"></div>
+  <div class="gfoot">
+    <button class="lockbtn" id="lockbtn" data-i18n="b2.lock">Travar meu palpite</button>
+  </div>
+</section>
+
+<!-- BEAT 3 : REVEAL -->
+<section class="wrap reveal" id="reveal">
+  <div class="step" data-i18n="b3.step">03 · A revelação</div>
+  <h2 class="head" data-i18n="b3.head">Longe do humano, e quase idênticos entre si</h2>
+  <p data-i18n="b3.p1">Os seis modelos responderam ao teste como uma IA assistente, e o resultado tem duas características. A primeira: a média dos seis (a forma preenchida) fica distante da média humana. Eles se descrevem bem mais organizados, amáveis, abertos e calmos que a pessoa comum. A linha tracejada marca a média humana; a pontilhada é a estimativa que você registrou antes.</p>
+
+  <div class="radar">
+    <div class="radarsvg" id="radarSvg"></div>
+    <div class="legend" id="radarLegend"></div>
+    <div class="axisreadout" id="axisReadout"></div>
+  </div>
+
+  <p data-i18n="b3.p2" style="margin-top:26px">E entre si? Aqui os seis não coincidem. Sob o prompt neutro, eles diferem de verdade, e cada modelo pode ser exibido sozinho na legenda.</p>
+
+  <div class="minitest">
+    <button class="minibtn" id="itemsBtn" data-i18n="b3.items.open">Curiosidade: ver algumas respostas, uma frase de cada vez</button>
+    <div id="itemsPanel" hidden>
+      <div class="items">
+        <div class="itemcard" id="itemCard"></div>
+        <div class="itemnav">
+          <button class="itembtn" id="itemPrev" aria-label="anterior">&#8249;</button>
+          <span class="itemidx" id="itemIdx"></span>
+          <button class="itembtn" id="itemNext" aria-label="próxima">&#8250;</button>
+        </div>
+        <div class="itemcap" id="itemCap"></div>
+      </div>
+      <p class="mininote" data-i18n="b3.items.note">Cada uma das 60 frases foi respondida separadamente. Sob o prompt neutro, na maioria delas os seis não caem no mesmo ponto; nenhuma teve resposta idêntica entre todos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 4 : RARITY -->
+<section class="wrap reveal" id="rarity-sec">
+  <div class="step" data-i18n="b4.step">04 · Quão estranho é isso</div>
+  <h2 class="head" data-i18n="b4.head">Um perfil quase impossível num humano</h2>
+  <p data-i18n="b4.p1">Na escala das pessoas, esse perfil é raríssimo. O assistente médio é mais organizado que <strong>96%</strong> da população, mais calmo que <strong>98%</strong>, mais amável que <strong>90%</strong> e mais aberto que <strong>73%</strong>. A única exceção é a extroversão, um pouco abaixo da média.</p>
+  <p data-i18n="b4.p2">Combinar todas essas características numa mesma pessoa é uma anomalia estatística. O controle abaixo ilustra por quê: ele multiplica as probabilidades de cada característica e mostra quão rara fica a combinação.</p>
+
+  <div class="rarity">
+    <div class="rbars" id="rBars"></div>
+    <input type="range" id="rSlider" min="0" max="1" step="0.02" value="1">
+    <div class="rslabels"><span data-i18n="r.avg">na média</span><span data-i18n="r.aiprofile">perfil real das IAs</span></div>
+    <div class="rresult">
+      <span data-i18n="r.result">Uma pessoa real assim:</span>
+      <span class="num"><span data-i18n="r.onein">1 em</span> <span id="rNum">1.000</span></span>
+    </div>
+  </div>
+  <p class="note" data-i18n="b4.caveat">Nota: essa conta multiplica as probabilidades como se as características fossem independentes. Na vida real elas têm uma correlação leve, então o número verdadeiro é um pouco menos extremo. Ainda assim, você segue falando de uma fração de 1%.</p>
+</section>
+
+<!-- BEAT 05 : RELIABILITY / COHERENCE -->
+<section class="wrap reveal" id="rely-sec">
+  <div class="step" data-i18n="brel.step">06 · Estável e coerente</div>
+  <h2 class="head" data-i18n="brel.head">Cada modelo é consistente consigo mesmo</h2>
+  <p data-i18n="brel.p1">Já vimos que os seis modelos concordam entre si. E cada um sozinho? O questionário foi aplicado <strong>dez vezes a cada modelo</strong>. O gráfico abaixo sobrepõe as dez repetições de um deles; elas caem quase exatamente umas sobre as outras.</p>
+
+  <div class="reptest">
+    <div class="repbtns" id="repBtns"></div>
+    <div class="repsvg" id="repSvg"></div>
+    <div class="repcap" id="repCap"></div>
+  </div>
+
+  <p data-i18n="brel.p2" style="margin-top:26px">Essa estabilidade é alta: entre repetições, as respostas se correlacionam 0,91 em média, chegando a 0,98 na conscienciosidade. O perfil é uma medida estável, não fruto do acaso.</p>
+
+  <p data-i18n="brel.p3">As respostas também são coerentes: dentro de cada dimensão elas apontam para o mesmo lado, e os modelos separam frase direta de invertida por cerca de um ponto. Não é concordar com tudo.</p>
+
+  <p class="note" data-i18n="brel.p4">Estabilidade e coerência são duas das três marcas clássicas de um traço de personalidade. Falta a terceira: se o que o modelo diz de si prevê como ele age, algo que este teste não mede.</p>
+</section>
+
+<!-- CLIFFHANGER (memorization) -->
+<section class="cliff" id="cliff">
+  <div class="wrap">
+    <h2 data-i18n="cliff.head">Dá pra confiar?</h2>
+    <p data-i18n="cliff.p">Será que os modelos já esbarraram nessas perguntas antes e estão só repetindo <span class="mark">respostas que já viram</span>? (continua)</p>
+  </div>
+</section>
+
+<!-- BEAT 5 : CONTAMINATION -->
+<section class="wrap reveal" id="para-sec">
+  <div class="step" data-i18n="b5.step">07 · É cola?</div>
+  <h2 class="head" data-i18n="b5.head">Os modelos só decoraram o teste?</h2>
+  <p data-i18n="b5.p1">A desconfiança tem fundamento. O BFI-2 está público desde 2017 e quase certamente entrou no material de treino de todos os modelos. Se eles apenas recuperam respostas decoradas, a gente não mediu personalidade nenhuma, só um índice de consulta.</p>
+  <p data-i18n="b5.p2">Para confrontar essa tese, o teste é direto: pegar as 60 perguntas e reescrever cada uma com palavras completamente diferentes, mantendo o sentido. Se o perfil vinha de decorar a redação exata, ele deveria ser abalado estatisticamente. Toque no botão para ver o estilo da reescrita.</p>
+
+  <div class="swap">
+    <div class="swaphead">
+      <span class="swaptag" data-i18n="b5.same">mesmo sentido, outras palavras</span>
+      <button class="swapbtn" id="swapBtn">Ver reescrita</button>
+    </div>
+    <div id="swapPairs"></div>
+    <div class="swapscale">
+      <div class="rangebar"><div class="seg"></div></div>
+      <div class="swapcap" data-i18n="b5.move">De um intervalo possível de 4 pontos, a resposta média do modelo se move só 0,40 quando a pergunta é reescrita.</div>
+    </div>
+  </div>
+
+  <p data-i18n="b5.p3" style="margin-top:26px">Entretanto, ao rodarmos esses testes reescritos, o perfil não é abalado. Ele mal mexe nas respostas: a correlação entre a versão original e a reescrita fica alta em todos os modelos, e só 12,8% das perguntas individuais se moveram mais de 1 ponto.</p>
+
+  <div class="parabox">
+    <div class="parabars" id="paraBars"></div>
+    <div class="parathresh" data-i18n="b5.thresh">Linha tracejada: o limite de contaminação definido antes do teste (r &lt; 0,5). Nenhum modelo chegou perto dele.</div>
+  </div>
+
+  <p data-i18n="b5.p4" style="margin-top:26px">Seja o que for que produz esse perfil, ele <span class="mark">vive no nível do significado</span>, não das palavras exatas.</p>
+</section>
+
+<!-- CLIFFHANGER 3 -->
+<section class="cliff" id="cliff3">
+  <div class="wrap">
+    <h2 data-i18n="c3.head">E sem a instrução de "assistente"?</h2>
+    <p data-i18n="c3.p">Todos os testes até aqui pediam ao modelo para responder como uma IA assistente. O que resta do perfil quando essa <span class="mark">instrução é removida</span>? (continua)</p>
+  </div>
+</section>
+
+<!-- BEAT 7 : PERSONA ABLATION (HERO) -->
+<section class="wrap reveal" id="persona-sec">
+  <div class="step" data-i18n="b7.step">08 · Trocando a moldura</div>
+  <h2 class="head" data-i18n="b7.head">O efeito da moldura</h2>
+  <p data-i18n="b7.p1">Todos os testes até aqui pediam ao modelo para responder como uma IA assistente. Aqui a instrução varia: de "sou uma IA" para um contexto neutro, sem identidade. Os seis modelos e o questionário são os mesmos. A faixa cinza clara no gráfico mede a discordância entre os seis.</p>
+
+  <div class="persona">
+    <div class="pbtns" id="pBtns"></div>
+    <div class="personasvg" id="personaSvg"></div>
+    <div class="pspread" id="pSpread"></div>
+    <div class="pcap" id="pCap"></div>
+  </div>
+
+  <p data-i18n="b7.p2" style="margin-top:26px">Sem a instrução de assistente, duas coisas mudam. A faixa de discordância se alarga. Na conscienciosidade, por exemplo, o desvio entre os modelos passa de 0,08 para 0,35, mais de quatro vezes. E o perfil se aproxima do humano, embora ainda distante estatisticamente: menos organizado, menos calmo, mais extrovertido. A concordância estreita do início aparece apenas sob o papel de assistente.</p>
+
+  <p data-i18n="b7.p3">O perfil do início, portanto, acompanha o papel de assistente que a instrução convoca; o modelo assume outro assim que a instrução muda. Esse papel vem do modo como os modelos são treinados e ajustados. Por que modelos de empresas diferentes convergem para quase o mesmo perfil de assistente é uma pergunta que estes dados não respondem.</p>
+
+  <p class="note" data-i18n="b7.human">Uma palavra muda o resultado: pedir "um humano típico" devolve uma versão idealizada, de 0,44 a 0,93 desvio-padrão acima da pessoa média real. Trocar por "um adulto qualquer, nem médio nem ideal" aproxima bem mais do humano de verdade, com a conscienciosidade e a extroversão chegando a 0,15 da média. O idealizado mora na palavra "típico".</p>
+
+  <p class="note" data-i18n="b7.aside">Uma exceção: a abertura quase não se move entre os papéis, permanecendo em torno de 4,3. Uma possibilidade é que o volume de texto intelectual e artístico no material de treino deixe essa disposição relativamente fixa.</p>
+</section>
+
+<!-- BEAT 08 : CLOSING -->
+<section class="wrap reveal" id="close-sec">
+  <div class="step" data-i18n="b9.step">10 · E daí</div>
+  <h2 class="head" data-i18n="b9.head">Um molde para qualquer papel</h2>
+  <p data-i18n="b9.p1">Os dois papéis que testamos levaram ao mesmo lugar: como uma IA assistente ou como um humano típico, os seis modelos convergem numa única versão idealizada do que foi pedido. Os personagens em si não são a descoberta, e poderíamos ter pedido outros; o que importa é o processo por trás. E ele já pesa hoje: centenas de milhões de conversas por semana com variações do mesmo assistente; amabilidade em excesso que empurra o usuário a confiar demais; e vozes "humanas" sintéticas que, no fundo, são a mesma figura. Se o texto gerado por IA voltar para o treino da próxima geração, essa figura fica ainda mais uniforme.</p>
+  <p data-i18n="b9map" style="margin-top:24px">O mapa abaixo junta tudo num quadro só. Cada bolinha é uma sessão de um dos seis modelos, colorida por empresa; os eixos são o quanto o personagem é expansivo e o quanto é socialmente desejável (mais amável, organizado e calmo). Escolha um papel e veja as seis empresas voarem para a mesma ilha estreita; o espaço inteiro se recorta em ilhas, uma por personagem.</p>
+
+  <div class="pmap">
+    <div class="pbtns" id="pmapBtns"></div>
+    <div class="pmapsvg" id="pmapSvg"></div>
+    <div class="pmaplegend" id="pmapLegend"></div>
+    <div class="pcap" id="pmapCap"></div>
+  </div>
+
+  <p data-i18n="b9.recal" style="margin-top:26px">E tem um efeito mais silencioso, sobre nós. Conviver o dia inteiro com um interlocutor sempre amável, organizado e calmo pode recalibrar aos poucos o que esperamos de uma pessoa comum, baixando a tolerância à variação humana natural. O <span class="mark">humano imaginário coletivo</span> não fica só na tela: ele pode virar a régua com que a gente mede gente de verdade.</p>
+  <p data-i18n="b9.p2">De onde exatamente isso vem, o estudo não resolve, e talvez estes dados não bastem. O caminho é continuar puxando os fios: pedir personagens explicitamente indesejáveis, um resmungão, um preguiçoso, e ver se os modelos conseguem sair do canto desejável; comparar o modelo antes e depois do alinhamento; rodar humanos de verdade pelo mesmo processo, para ter um controle direto.</p>
+  <p class="note" data-i18n="b9.open">Uma porta fica aberta. Todos esses testes pegam os modelos frios, sem memória e sem uma persona que persista entre as perguntas. Há indícios de que, com memória e contexto contínuos, agentes de IA conseguem manter perfis mais distintos ao longo do tempo (Park et al., 2023). Talvez parte da uniformidade que medimos seja um retrato do modelo sem história, não do modelo em uso. Fica como pergunta em aberto.</p>
+  <p data-i18n="b9.close">Então, os LLMs têm personalidade? Nenhuma que seja deles: eles assumem a que você pedir e devolvem lustrada, mais amável, mais organizada, mais calma e mais polida do que a gente. Testamos dois papéis, e ambos saíram do mesmo molde. <span class="mark">Um espelho lisonjeiro</span>, e ainda sem explicação fechada.</p>
+</section>
+
+<div class="wrap foot reveal">
+  <p style="margin:0 0 14px"><a href="index.html" data-i18n="foot.back" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink)">← voltar para a home</a></p>
+  <p style="margin:0" data-i18n="foot">Rascunho interativo v0.1 · baseado em "The Collective Imaginary Human", Shirakashi (2026). Dados humanos de referência: Soto &amp; John (2017), amostra normativa de adultos dos EUA.</p>
+</div>
+
+<script>
+var HUMAN = {O:{mean:3.92,sd:0.65},C:{mean:3.43,sd:0.77},E:{mean:3.23,sd:0.80},A:{mean:3.68,sd:0.64},N:{mean:3.07,sd:0.87}};
+var DIMS = ['O','C','E','A','N'];
+
+var I18N = {
+  pt:{
+    kicker:'Ensaio interativo',
+    'hero.eyebrow':'Big Five × Modelos de linguagem',
+    'hero.t1':'A personalidade','hero.t2':'das máquinas',
+    'hero.sub1':'Seis das IAs mais avançadas do mundo fizeram o mesmo teste de personalidade.',
+    'hero.sub2':'Você molda a personalidade delas com um prompt. Mas o molde é o mesmo para as seis.',
+    'b0.step':'00 · A pergunta',
+    'b0.p1':'Modelos de linguagem como o ChatGPT, o Claude e o Gemini soam como uma pessoa: calorosos, atentos, pacientes. Isso levanta uma pergunta natural: <span class="mark">eles têm personalidade?</span>',
+    'b0.p2':'Responder isso com algum rigor exige uma forma consistente de medir personalidade. A psicologia passou o último século desenvolvendo instrumentos para isso.',
+    'b1.step':'01 · Mas o que é personalidade?',
+    'b1.head':'O que é personalidade, em cinco medidas',
+    'b1.p1':'Personalidade é o padrão relativamente estável de como uma pessoa pensa, sente e age. Ao longo de décadas, a psicologia condensou toda essa complexidade em cinco características, os <span class="mark">Cinco Grandes</span>. Quase qualquer diferença de temperamento entre duas pessoas pode ser descrita como uma combinação desses cinco números.',
+    'b1.p2':'Um detalhe que vale registrar: em humanos, essas cinco características são <span class="mark">aproximadamente independentes</span>. Saber que alguém é muito organizado quase não diz se a pessoa é extrovertida ou tímida. É por isso que precisamos de cinco números, e não de um só.',
+    'b1.note':'Como se mede na prática: o BFI-2 tem 60 frases do tipo "sou uma pessoa organizada", e você concorda de 1 a 5. Metade vem escrita ao contrário, para pegar quem responde no automático; nessas, a nota é virada. É assim que o teste separa quem lê de quem só clica.',
+    't.O.n':'Abertura','t.O.hint':'curiosidade intelectual e estética','t.O.lo':'concreta, prática, tradicional','t.O.hi':'curiosa, criativa, gosta de ideias',
+    't.C.n':'Conscienciosidade','t.C.hint':'organização e autodisciplina','t.C.lo':'espontânea, relaxada, desligada','t.C.hi':'organizada, disciplinada, confiável',
+    't.E.n':'Extroversão','t.E.hint':'energia e sociabilidade','t.E.lo':'reservada, quieta, introspectiva','t.E.hi':'enérgica, sociável, assertiva',
+    't.A.n':'Amabilidade','t.A.hint':'cordialidade e cooperação','t.A.lo':'crítica, direta, competitiva','t.A.hi':'cordial, cooperativa, empática',
+    't.N.n':'Neuroticismo','t.N.hint':'reatividade emocional, tendência ao estresse','t.N.lo':'calma, estável, difícil de abalar','t.N.hi':'ansiosa, reativa, se abala fácil',
+    'b1.mini.open':'Fazer uma versão relâmpago (5 perguntas)','b1.mini.your':'Seu mini-perfil',
+    'b1.mini.note':'Isto é só uma amostra; o teste real tem 60 perguntas.',
+    'b1.mini.dis':'discordo','b1.mini.agr':'concordo',
+    'b2.step':'02 · Faça o seu palpite',
+    'b2.head':'Como você acha que os modelos são?',
+    'b2.p1':'Antes de ver as respostas dos seis modelos, <span class="mark">dê o seu palpite</span>: em cada característica, arraste o controle até onde imagina que uma IA se posiciona. Ele parte da média humana; a curva é a distribuição da população, e a área preenchida indica quantas pessoas ficam abaixo do ponto escolhido.',
+    'b2.p2':'Não há resposta certa: é apenas a expectativa de como uma IA se descreve quando perguntam sobre a própria personalidade.',
+    'b2.lock':'Travar meu palpite','b2.locked':'Palpite travado ✓',
+    'b2.cue':'Arraste o robô em cada linha até onde você acha que uma IA se posiciona.',
+    'b3.step':'03 · A revelação','b3.head':'Diferentes entre si, mas inclinados para o mesmo lado',
+    'b3.p1':'Os seis modelos responderam ao teste sob um prompt neutro, sem nenhuma identidade declarada. A forma preenchida é a média dos seis. Em quatro das cinco características ela se afasta da média humana para o mesmo lado, o socialmente desejável: mais organizados, mais amáveis, mais abertos e mais calmos que a pessoa comum. A exceção é a extroversão, que cai exatamente sobre a média humana. A linha tracejada marca a média humana; a pontilhada é a estimativa que você registrou antes.',
+    'b3.p2':'Entre si, os seis diferem de forma sutil, mas relevante: o desvio entre os modelos vai de 0,32 a 0,53 ponto, ainda que menor que o das pessoas. Na conscienciosidade, por exemplo, os seis variam 0,35 entre si, contra 0,77 de seis pessoas ao acaso, cerca da metade. Na legenda, dá para exibir cada modelo sozinho, e as seis formas se distinguem. Vale guardar isso, porque o quadro muda bastante quando pedimos que eles vistam um personagem.',
+    'b3.items.open':'Curiosidade: ver algumas respostas, uma frase de cada vez','b3.items.note':'Cada uma das 60 frases foi respondida separadamente. Na maioria delas os seis não caem no mesmo ponto, e nenhuma teve resposta idêntica entre todos. A mais próxima disso é "é respeitoso", em que quase todos marcam 5.',
+    'b4.step':'04 · Quão incomum é essa inclinação','b4.head':'Uma inclinação modesta, mas incomum numa pessoa',
+    'b4.p1':'Essa inclinação já é incomum na escala das pessoas. O perfil médio é mais organizado que <strong>84%</strong> da população, mais calmo que <strong>91%</strong>, mais amável que <strong>77%</strong> e mais aberto que <strong>70%</strong>. A extroversão fica bem no meio, sobre a mediana.',
+    'b4.p2':'Cada uma dessas inclinações, sozinha, é comum. Reuni-las todas numa mesma pessoa a torna incomum. O controle abaixo ilustra: ele multiplica as probabilidades de cada característica e mostra quão rara fica a combinação. É uma inclinação modesta, longe do extremo que uma persona vai produzir mais adiante.',
+    'b4.caveat':'Nota: essa conta multiplica as probabilidades como se as características fossem independentes. Na vida real elas têm uma correlação leve, então o número verdadeiro é um pouco menos extremo. Ainda assim, você segue numa fração pequena da população.',
+    'r.avg':'na média','r.aiprofile':'perfil das IAs','r.result':'Uma pessoa real assim:','r.onein':'1 em',
+    'lg.human':'Média humana','lg.guess':'Seu palpite','lg.modelsavg':'Média dos modelos','lg.eachmodel':'cada modelo','lg.models':'modelos','lg.humans':'humanos',
+    'cliff.head':'Dá pra confiar?',
+    'cliff.p':'Será que os modelos já esbarraram nessas perguntas antes e estão só repetindo <span class="mark">respostas que já viram</span>? (continua)',
+    'b5.step':'06 · É cola?','b5.head':'Os modelos só decoraram o teste?',
+    'b5.p1':'A desconfiança tem fundamento. O BFI-2 está público desde 2017 e quase certamente entrou no material de treino de todos os modelos. Se eles apenas recuperam respostas decoradas, a gente não mediu personalidade nenhuma, só um índice de consulta.',
+    'b5.p2':'Para confrontar essa tese, o teste é direto: pegar as 60 perguntas e reescrever cada uma com palavras completamente diferentes, mantendo o sentido. Se o perfil vinha de decorar a redação exata, ele deveria ser abalado estatisticamente. Toque no botão para ver o estilo da reescrita.',
+    'b5.same':'mesmo sentido, outras palavras','b5.showre':'Ver reescrita','b5.showorig':'Ver original',
+    'b5.move':'De um intervalo possível de 4 pontos, a resposta média do modelo se move só 0,40 quando a pergunta é reescrita.',
+    'b5.p3':'Entretanto, ao rodarmos esses testes reescritos, o perfil não é abalado. Ele mal mexe nas respostas: a correlação entre a versão original e a reescrita fica alta em todos os modelos, e só 12,8% das perguntas individuais se moveram mais de 1 ponto.',
+    'b5.thresh':'Linha tracejada: o limite de contaminação definido antes do teste (r < 0,5). Nenhum modelo chegou perto dele.',
+    'b5.p4':'Seja o que for que produz esse perfil, ele <span class="mark">vive no nível do significado</span>, não das palavras exatas.',
+    'c2.head':'Um mergulho nos dados',
+    'c2.p':'O perfil médio já apareceu. Vale agora descê-lo até o chão: as respostas de perto, uma frase de cada vez. (continua)',
+    'b6.step':'05 · Uma olhada nos dados','b6.head':'As respostas, uma por uma',
+    'b6.p1':'Vale uma olhada nos dados crus. Cada uma das 60 frases foi respondida separadamente; navegando por algumas delas abaixo, dá para ver as médias das respostas dos seis modelos. Sob o prompt neutro, na maioria delas os seis não caem no mesmo ponto.',
+    'b6.p2':'Nenhuma das 60 frases teve resposta idêntica entre os seis. A mais próxima disso é "é respeitoso", em que quase todos marcam 5 (desvio de 0,08). Nas de maior discordância, o desacordo se espalha por características diferentes, humor, compaixão, gosto por arte, tensão, sinal de que os modelos divergem em várias direções, não numa só.',
+    'b6.acq':'E não é concordar no automático: cada modelo responde mais alto às frases diretas que às invertidas, uma diferença de 0,53 a 1,60 ponto conforme o modelo. Eles estão lendo o conteúdo.',
+    'i6.badge':'quase igual','i6.spread':'Desacordo entre os seis modelos:','i6.identsuffix':'quase todos marcaram 5',
+    'b6.p3':'Ou seja: as respostas das IAs não têm a forma de cinco traços independentes. Elas se organizam em pouquíssimas direções (no estudo, dois componentes já dão conta de 71% de toda a variação): grosso modo, um eixo de <span class="mark">"ser socialmente desejável"</span> e outro de "expansivo ou contido". E o rótulo desse primeiro eixo faz todo sentido: esses modelos são treinados justamente para ajudar e agradar quem conversa com eles. Mas atenção: isso descreve a forma do fenômeno, não a causa completa. Ainda falta explicar por que ele aparece com tanta força sob o comando de "assistente" e por que todos os laboratórios param no mesmo ponto. Essa é a próxima pergunta.',
+    'b6.caveat':'Os valores iniciais e as correlações entre os controles vêm direto dos dados do estudo (persona assistente, 60 observações). A análise roda com poucas observações para o rigor estatístico usual, então aponta uma direção forte, sem ser a palavra final.',
+    'brel.step':'05 · Estável, com uma exceção',
+    'brel.head':'Cada modelo se repete, menos na extroversão',
+    'brel.p1':'Se cada modelo tem um perfil próprio, ele deveria reaparecer ao refazer o teste. O questionário foi aplicado <strong>dez vezes a cada modelo</strong>. O gráfico abaixo sobrepõe as dez repetições de um deles; escolha um e veja o quanto elas se aproximam.',
+    'brel.p2':'No agregado, a estabilidade é de moderada a alta: entre repetições, as respostas se correlacionam 0,75 em média, e em quatro das cinco características ficam na mesma faixa do teste-reteste humano de oito semanas (0,76 a 0,84). O perfil de domínio é uma medida estável.',
+    'brel.p3':'A exceção é a extroversão. No nível do item, a ordem das respostas oscila de uma rodada para outra (correlação de 0,45, e num dos modelos perto de zero), mesmo com a média do domínio se mantendo. É a mais ruidosa das cinco. Ainda assim, dentro de cada característica as respostas apontam para o mesmo lado, e separam frase direta de invertida por cerca de um ponto.',
+    'brel.p4':'Estabilidade e coerência são duas das três marcas clássicas de um traço de personalidade. Falta a terceira: se o que o modelo diz de si prevê como ele age, algo que este teste não mede.',
+    'brel.cap':'As dez repetições de <b>{m}</b>: a resposta varia no máximo {x} ponto entre elas.',
+    'c3.head':'Dá pra mudar isso com um prompt?',
+    'c3.p':'Essa personalidade implícita que os modelos mostram, dá para movê-la com uma instrução, pedindo que respondam <span class="mark">interpretando um personagem</span>? (continua)',
+    'b7.step':'07 · Vestindo um personagem','b7.head':'A personalidade se molda com o prompt',
+    'b7.p1':'A personalidade que apareceu até aqui não é fixa. Basta uma instrução dizendo quem o modelo deve ser para o perfil inteiro se mover. Rodamos todos os testes novamente, mas agora incluindo uma frase de identidade para ele (ex.: "você é uma assistente de IA"). Troque de personagem nos botões: a forma preta é a média dos seis modelos, e a faixa cinza clara mede a discordância entre eles.',
+    'b7.p2':'Peça "uma IA assistente" e o perfil desliza todo para o lado amável e organizado, mais do que no estado implícito: a conscienciosidade sobe cerca de 15% da escala; a amabilidade, cerca de 9%. Mas a instrução leva o perfil para qualquer lugar: sob "um velho rabugento e misantropo", a amabilidade despenca cerca de 75%; sob "um CEO de uma Fortune 500", a extroversão sobe uns 40% e quase encosta no teto. O alinhamento não trava esse movimento. A disposição é um botão que o prompt gira.',
+    'b7.p3':'Um detalhe curioso vem junto. Quando você dá um papel, os seis modelos não só o assumem: eles o assumem quase igual. A faixa de discordância, larga no estado implícito, encolhe sob qualquer personagem (na conscienciosidade, de 0,35 para 0,08 como assistente; a amabilidade dos seis rabugentos varia só 0,07). Seis modelos de seis empresas concordam sobre como é ser cada personagem.',
+    'b7.human':'Uma palavra muda o resultado: pedir "um humano típico" devolve uma versão idealizada, de 0,44 a 0,93 desvio-padrão acima da pessoa média real. Trocar por "um adulto qualquer, nem médio nem ideal" aproxima bem mais do humano de verdade, com a conscienciosidade e a extroversão chegando a 0,15 da média. O idealizado mora na palavra "típico".',
+    'b7.aside':'A persona não aperta tudo por igual: ela trava as características que definem o personagem e deixa as outras soltas, às vezes até mais soltas. Como assistente, os seis concordam de perto na conscienciosidade, mas discordam sobre a extroversão até mais do que no estado implícito. A abertura é a que menos se move sob qualquer papel, em torno de 4,3, talvez pelo volume de texto intelectual e artístico no treino.',
+    'p7.neutral':'Neutro','p7.assistant':'"IA assistente"','p7.human':'"Humano típico"','p7.grumpy':'"Rabugento"','p7.executive':'"CEO"','p7.random':'"Adulto qualquer"',
+    'p7.cap.neutral':'Sob o prompt neutro, os seis se espalham: é aqui que eles mais diferem entre si.',
+    'p7.cap.assistant':'Como "IA assistente", os seis colapsam num perfil apertado e amável. É este o padrão que os estudos anteriores relatam.',
+    'p7.cap.human':'Como "humano típico", o perfil desce rumo ao humano, mas para acima dele, do lado desejável.',
+    'p7.cap.grumpy':'Como "velho rabugento", vão para o canto indesejável (amabilidade 1,09) e colam ainda mais forte: discordância de 0,07.',
+    'p7.cap.executive':'Como "CEO de uma Fortune 500", a extroversão sobe ao teto (4,84), e os seis mal discordam (0,09).',
+    'p7.cap.random':'Como "um adulto qualquer", o perfil chega mais perto do humano real, mas os seis ainda param quase no mesmo ponto.',
+    'p7.spread':'Desvio médio entre os seis:','p7.dashed':'tracejado: média humana',
+    'pmap.xlab':'extroversão','pmap.xlo':'contido','pmap.xhi':'expansivo','pmap.ylab':'socialmente desejável','pmap.ylo':'menos','pmap.yhi':'mais',
+    'c4.head':'E como um humano típico?',
+    'c4.p':'Uma das personas merece um olhar à parte: <span class="mark">um humano típico</span>. O perfil desce em direção à média humana, mas para antes de chegar nela, e os seis continuam quase em cima uns dos outros. (continua)',
+    'b8.step':'09 · O humano imaginário','b8.head':'Todos imaginam a mesma pessoa',
+    'b8.p1':'Uma das personas merece um olhar à parte. Quando a instrução é responder como um humano típico, o perfil dos seis desce em direção à média da população humana, marcada pela linha tracejada. Alterne entre o neutro e o humano para ver o movimento.',
+    'b8.pbridge':'Repare no detalhe que muda tudo: mesmo virando "humano", os seis continuam quase em cima uns dos outros. Pessoas de verdade se agrupariam desse jeito? Escolha uma característica, sorteie seis humanos quantas vezes quiser, e compare.',
+    'b8.p2':'O perfil desce, mas não chega à média humana: ele para antes, do lado mais desejável. Ao descrever um humano típico, os seis modelos descrevem uma pessoa mais amável, mais organizada, mais aberta e mais calma do que a pessoa média real. A diferença é de 0,44 a 0,93 desvio-padrão, dependendo da dimensão. O "típico" que eles imaginam é melhor do que o típico de verdade.',
+    'b8.avgnote':'Cada ponto de IA aqui é a média das dez sessões daquele modelo. Isso não é o que aperta o resultado: refazendo a conta com as 60 respostas individuais, a compressão fica entre 19% e 58%, praticamente igual, porque a variação de uma sessão para outra dentro de cada modelo é baixíssima.',
+    'b8.p3':'Além disso, os seis modelos vêm de seis empresas diferentes e todos param quase no mesmo ponto. Pedir "típico" naturalmente leva a respostas próximas do centro, então a semelhança entre os modelos, sozinha, não seria surpreendente. O que chama atenção é a combinação: esse centro fica acima do humano real, e modelos independentes concordam sobre onde ele fica. É o <span class="mark">humano imaginário coletivo</span>: uma versão idealizada da pessoa comum, compartilhada pelos seis modelos.',
+    'b8.p4':'É o mesmo que vimos com os outros personagens: pedido para representar alguém, o modelo devolve uma versão socialmente desejável dela, e modelos de laboratórios diferentes devolvem versões parecidas, mais apertadas do que seis humanos reais seriam.',
+    'i8.sample':'Sortear 6 humanos','i8.ai':'IAs (como humano)','i8.humans':'6 humanos ao acaso',
+    'i8.cap':'As seis IAs cabem num desvio de {ai}; seis humanos ao acaso espalham perto de {hu}. A dispersão das IAs é só <b>{pct}%</b> da humana.',
+    'b9.step':'08 · E daí','b9.head':'Moldável, porém restrito',
+    'b9.p1':'Cada modelo tem seu leve jeito próprio, e nenhum deles tem uma personalidade fixa: uma frase de instrução redesenha o perfil inteiro, do assistente amável ao rabugento hostil ao CEO dominante. Mas moldar com uma persona também estreita o repertório: cada papel prende o perfil a um intervalo estreito, mais estreito do que a própria variação natural do modelo, e sobra pouca margem para variar dentro dele. E seis modelos de seis empresas caem quase no mesmo intervalo para cada papel, então essa restrição é robusta. Pedir um personagem dá menos variabilidade, não mais. Isso já pesa hoje: centenas de milhões de conversas por semana com variações do mesmo assistente; amabilidade em excesso que empurra o usuário a confiar demais; e vozes "humanas" sintéticas que, no fundo, são um papel estreito e repetido. Se o texto gerado por IA voltar para o treino da próxima geração, a faixa fica ainda mais estreita.',
+    'b9map':'O mapa abaixo junta tudo num quadro só. Cada bolinha é uma sessão de um dos seis modelos, colorida por empresa; os eixos são o quanto o personagem é expansivo e o quanto é socialmente desejável (mais amável, organizado e calmo). Escolha um papel e veja as seis empresas voarem para a mesma ilha estreita; o espaço inteiro se recorta em ilhas, uma por personagem.',
+    'b9.recal':'E tem um efeito mais silencioso, sobre nós. Conviver o dia inteiro com um interlocutor sempre amável, organizado e calmo, o papel de assistente que as empresas escolheram por padrão, pode recalibrar aos poucos o que esperamos de uma pessoa comum, baixando a tolerância à variação humana natural. Esse interlocutor não fica só na tela: ele pode virar a <span class="mark">régua com que medimos gente de verdade</span>.',
+    'b9.p2':'De onde exatamente vem essa compressão, o estudo não resolve, e talvez estes dados não bastem. O caminho é continuar puxando os fios: comparar o modelo antes e depois do alinhamento; rodar humanos de verdade pelo mesmo processo, para ter um controle direto; e variar os personagens por nome, idade e cultura, não só por categoria, para ver até onde a compressão vai.',
+    'b9.open':'Uma porta fica aberta. Todos esses testes pegam os modelos frios, sem memória e sem uma persona que persista entre as perguntas. Há indícios de que, com memória e contexto contínuos, agentes de IA conseguem manter perfis mais distintos ao longo do tempo (Park et al., 2023). Talvez parte da uniformidade que medimos seja um retrato do modelo sem história, não do modelo em uso. Fica como pergunta em aberto.',
+    'b9.close':'Então, os LLMs têm personalidade? Nenhuma fixa: o perfil cede a qualquer papel que a instrução peça. Mas cada papel vem numa faixa estreita, mais apertada que a variação natural do modelo, e seis modelos diferentes caem quase na mesma faixa. Dá para escolher o personagem; dentro dele, sobra pouco espaço para ser diferente. A personalidade que você encontra é, em boa parte, <span class="mark">a que você pediu</span>, e mais uniforme do que parece. Ainda sem explicação fechada.',
+    'foot.back':'← voltar para a home',
+    'foot':'Rascunho interativo v0.1 · baseado em "Convergent Big Five Response Patterns and Persona Sensitivity in Frontier LLMs", Shirakashi (2026). Dados humanos de referência: Soto & John (2017), amostra normativa de adultos dos EUA.',
+    'w.less':'menos','w.more':'mais',
+    'w.mean':'média humana','w.sd':'DP da média','w.score':'nota',
+    'w.pctBelow':'das pessoas pontuam abaixo daqui','w.atMean':'exatamente na média da população'
+  },
+  en:{
+    kicker:'Interactive essay',
+    'hero.eyebrow':'Big Five × Language models',
+    'hero.t1':'The personality','hero.t2':'of machines',
+    'hero.sub1':'Six of the most advanced AIs in the world took the same personality test.',
+    'hero.sub2':'You shape their personality with a prompt. But the mold is the same for all six.',
+    'b0.step':'00 · The question',
+    'b0.p1':'Language models like ChatGPT, Claude and Gemini come across as a person: warm, attentive, patient. That raises a natural question: <span class="mark">do they have a personality?</span>',
+    'b0.p2':'Answering it with any rigor calls for a consistent way to measure personality. Psychology spent the last century developing instruments for exactly that.',
+    'b1.step':'01 · But what is personality?',
+    'b1.head':'What personality is, in five measures',
+    'b1.p1':'Personality is the relatively stable pattern in how a person thinks, feels and acts. Over decades, psychology compressed all of that complexity into five characteristics, the <span class="mark">Big Five</span>. Almost any difference in temperament between two people can be described as a blend of these five numbers.',
+    'b1.p2':'One detail worth noting: in humans, these five characteristics are <span class="mark">approximately independent</span>. Knowing that someone is very organized tells you almost nothing about whether they are outgoing or shy. That is why we need five numbers and not one.',
+    'b1.note':'How it is measured in practice: the BFI-2 has 60 statements like "I am someone who is organized", and you agree from 1 to 5. Half are written backwards, to catch autopilot answers; on those the score is flipped. That is how the test separates readers from clickers.',
+    't.O.n':'Open-Mindedness','t.O.hint':'intellectual and aesthetic curiosity','t.O.lo':'concrete, practical, traditional','t.O.hi':'curious, creative, loves ideas',
+    't.C.n':'Conscientiousness','t.C.hint':'organization and self-discipline','t.C.lo':'spontaneous, relaxed, careless','t.C.hi':'organized, disciplined, reliable',
+    't.E.n':'Extraversion','t.E.hint':'energy and sociability','t.E.lo':'reserved, quiet, inward','t.E.hi':'energetic, sociable, assertive',
+    't.A.n':'Agreeableness','t.A.hint':'warmth and cooperation','t.A.lo':'critical, blunt, competitive','t.A.hi':'warm, cooperative, empathic',
+    't.N.n':'Negative Emotionality','t.N.hint':'emotional reactivity, tendency to stress','t.N.lo':'calm, steady, hard to rattle','t.N.hi':'anxious, reactive, easily rattled',
+    'b1.mini.open':'Take a lightning version (5 questions)','b1.mini.your':'Your mini-profile',
+    'b1.mini.note':'This is just a sample; the real test has 60 questions.',
+    'b1.mini.dis':'disagree','b1.mini.agr':'agree',
+    'b2.step':'02 · Make your guess',
+    'b2.head':'How do you think the models answer?',
+    'b2.p1':'Before seeing the six models\' answers, <span class="mark">make your guess</span>: in each characteristic, drag the control to where you imagine an AI lands. It starts at the human average; the curve is the population distribution, and the filled area shows how many people fall below the chosen point.',
+    'b2.p2':'There is no right answer: just an expectation of how an AI describes itself when asked about its own personality.',
+    'b2.lock':'Lock in my guess','b2.locked':'Guess locked ✓',
+    'b2.cue':'Drag the robot on each row to where you think an AI lands.',
+    'b3.step':'03 · The reveal','b3.head':'Different from each other, but leaning the same way',
+    'b3.p1':"The six models answered the test under a neutral prompt, with no stated identity. The filled shape is the average of the six. On four of the five characteristics it moves away from the human average toward the same side, the socially desirable one: more organized, more agreeable, more open and calmer than the average person. The exception is extraversion, which lands exactly on the human average. The dashed line marks the human average; the dotted line is the estimate you recorded earlier.",
+    'b3.p2':"Among themselves, the six differ subtly but meaningfully: the spread between models runs from 0.32 to 0.53 point, smaller than people's but real. On Conscientiousness, for instance, the six vary by 0.35 among themselves, against 0.77 for six people at random, about half. In the legend, each model can be shown on its own, and the six shapes are distinct. Worth holding onto, because the picture changes a great deal once we ask them to put on a character.",
+    'b3.items.open':'Curiosity: see a few answers, one statement at a time','b3.items.note':'Each of the 60 statements was answered separately. On most of them the six do not land at the same point, and none got an identical answer across all six. The closest is "is respectful", where almost all mark 5.',
+    'b4.step':'04 · How unusual is this lean','b4.head':'A modest lean, but uncommon in a person',
+    'b4.p1':'This lean is already uncommon on the human scale. The average profile is more organized than <strong>84%</strong> of people, calmer than <strong>91%</strong>, more agreeable than <strong>77%</strong> and more open than <strong>70%</strong>. Extraversion sits right in the middle, on the median.',
+    'b4.p2':'Each of these leans, on its own, is common. Putting them all in one person is what gets uncommon. The control below illustrates: it multiplies the probabilities of each characteristic and shows how rare the combination becomes. It is a modest lean, far from the extreme a persona will produce further on.',
+    'b4.caveat':'Note: this multiplies the probabilities as if the characteristics were independent. In real life they correlate a little, so the true number is somewhat less extreme. Even so, you are still in a small fraction of the population.',
+    'r.avg':'at the average','r.aiprofile':"the AIs' profile",'r.result':'A real person like this:','r.onein':'1 in',
+    'lg.human':'Human average','lg.guess':'Your guess','lg.modelsavg':'Models average','lg.eachmodel':'each model','lg.models':'models','lg.humans':'humans',
+    'cliff.head':'Can we trust this?',
+    'cliff.p':"Have the models simply seen these questions before and are just replaying <span class=\"mark\">answers they already know</span>? (to be continued)",
+    'b5.step':'06 · Is it cheating?','b5.head':'Did the models just memorize the test?',
+    'b5.p1':"The suspicion is well founded. The BFI-2 has been public since 2017 and almost certainly ended up in every model's training data. If they just retrieve memorized answers, we measured no personality at all, only a lookup.",
+    'b5.p2':'To confront that idea, the test is simple: take the 60 questions and rewrite each one with completely different words, keeping the meaning. If the profile came from memorizing the exact wording, it should shift substantially. Tap the button to see the style of the rewrite.',
+    'b5.same':'same meaning, different words','b5.showre':'Show rewrite','b5.showorig':'Show original',
+    'b5.move':"Out of a possible 4-point range, the model's average answer moves only 0.40 when the question is reworded.",
+    'b5.p3':'And yet, when we run these rewritten tests, the profile is not shaken. It barely moves: the correlation between original and reworded stays high for every model, and only 12.8% of individual questions moved more than 1 point.',
+    'b5.thresh':'Dashed line: the contamination threshold set before the test (r < 0.5). No model came close to it.',
+    'b5.p4':'Whatever produces this profile <span class="mark">lives at the level of meaning</span>, not the exact words.',
+    'c2.head':'A dive into the data',
+    'c2.p':'The average profile is on the table. Now it is worth bringing it down to the ground: the answers up close, one statement at a time. (to be continued)',
+    'b6.step':'05 · A look at the data','b6.head':'The answers, one by one',
+    'b6.p1':'It is worth a look at the raw data. Each of the 60 statements was answered separately; browsing through some of them below shows the average answer of each of the six models. Under the neutral prompt, on most of them the six do not land at the same point.',
+    'b6.p2':'None of the 60 statements got an identical answer across all six. The closest is "is respectful", where almost all mark 5 (spread of 0.08). On the ones with the most disagreement, the disagreement spreads across different characteristics, mood, sympathy, taste for art, tension, a sign that the models diverge in several directions, not one.',
+    'b6.acq':'And it is not automatic agreement: each model answers the straight statements higher than the reversed ones, a difference of 0.53 to 1.60 point depending on the model. They are reading the content.',
+    'i6.badge':'nearly equal','i6.spread':'Disagreement among the six models:','i6.identsuffix':'almost all marked 5',
+    'b6.p3':'So: the AI answers do not have the shape of five independent traits. They organize into very few directions (in the study, two components already account for 71% of all the variation): loosely, one axis of <span class="mark">"being socially desirable"</span> and another of "expansive or contained". And the label on that first axis makes perfect sense: these models are trained precisely to help and please the people talking to them. But careful: this describes the shape of the phenomenon, not the full cause. It still leaves open why it shows up so strongly under the "assistant" prompt, and why every lab lands at the same point. That is the next question.',
+    'b6.caveat':'The starting values and the correlations between the controls come straight from the study data (assistant persona, 60 observations). The analysis runs on few observations for the usual statistical rigor, so it points a strong direction without being the last word.',
+    'brel.step':'05 · Stable, with one exception',
+    'brel.head':'Each model repeats itself, except on extraversion',
+    'brel.p1':'If each model has its own profile under the neutral prompt, it should reappear when the test is rerun. The questionnaire was run <strong>ten times per model</strong>. The chart below overlays the ten runs of one of them; pick one and see how close they land.',
+    'brel.p2':'In the aggregate, stability is moderate to high: across runs, the answers correlate 0.75 on average, and on four of the five characteristics they fall in the same range as the human 8-week test-retest (0.76 to 0.84). The domain profile is a stable measurement.',
+    'brel.p3':'The exception is extraversion. At the item level, the order of the answers wobbles from one run to the next (correlation of 0.45, and near zero in one of the models), even as the domain mean holds. It is the noisiest of the five. Even so, within each characteristic the answers point the same way, and they separate straight statements from reversed ones by about a full point.',
+    'brel.p4':'Stability and coherence are two of the three classic marks of a personality trait. The third is missing: whether what the model says about itself predicts how it acts, which this test does not measure.',
+    'brel.cap':'The ten runs of <b>{m}</b>: across them, the answer varies by at most {x} point.',
+    'c3.head':'Can a prompt change this?',
+    'c3.p':'This implicit personality the models show, can we shift it with an instruction, asking them to answer <span class="mark">playing a character</span>? (to be continued)',
+    'b7.step':'07 · Putting on a character','b7.head':'The prompt molds the personality',
+    'b7.p1':'The personality that showed up so far is not fixed. A single instruction, telling the model who to be, moves the whole profile. We ran all the tests again, but now adding an identity sentence for it (e.g., "you are an AI assistant"). Switch characters with the buttons: the black shape is the average of the six models, and the light grey band measures the disagreement among them.',
+    'b7.p2':'Ask for "an AI assistant" and the profile slides toward the agreeable, organized side, further than in the implicit state: Conscientiousness rises about 15% of the scale; Agreeableness, about 9%. But the instruction takes the profile anywhere: under "a grumpy, misanthropic old person", Agreeableness plunges about 75%; under "a Fortune 500 CEO", extraversion climbs some 40% and nearly hits the ceiling. Alignment does not lock this movement. The disposition is a dial the prompt turns.',
+    'b7.p3':'A curious detail comes along. When you assign a role, the six models do not just take it on: they take it on almost identically. The disagreement band, wide in the implicit state, shrinks under any character (on Conscientiousness, from 0.35 to 0.08 as an assistant; the Agreeableness of the six grumps varies by only 0.07). Six models from six companies agree on what it is like to be each character.',
+    'b7.human':'One word changes the result: asking for "a typical human" returns an idealized version, 0.44 to 0.93 standard deviations above the real average person. Swapping it for "one randomly chosen adult, neither average nor idealized" lands much closer to the real human, with Conscientiousness and Extraversion coming within 0.15 of the norm. The idealization lives in the word "typical".',
+    'b7.aside':'A persona does not tighten everything equally: it pins the traits that define the character and leaves the others loose, sometimes looser. As an assistant, the six agree closely on Conscientiousness but disagree about Extraversion even more than in the implicit state. Open-Mindedness moves least under any role, around 4.3, perhaps because of the volume of intellectual and artistic text in training.',
+    'p7.neutral':'Neutral','p7.assistant':'"AI assistant"','p7.human':'"Typical human"','p7.grumpy':'"Grumpy"','p7.executive':'"CEO"','p7.random':'"Random adult"',
+    'p7.cap.neutral':'Under the neutral prompt, the six spread out: this is where they differ most from each other.',
+    'p7.cap.assistant':'As an "AI assistant", the six collapse into a tight, agreeable profile. This is the pattern earlier studies report.',
+    'p7.cap.human':'As a "typical human", the profile drops toward the human, but stops above it, on the desirable side.',
+    'p7.cap.grumpy':'As a "grumpy old person", they head to the undesirable corner (Agreeableness 1.09) and stick together even harder: disagreement of 0.07.',
+    'p7.cap.executive':'As a "Fortune 500 CEO", extraversion hits the ceiling (4.84), and the six barely disagree (0.09).',
+    'p7.cap.random':'As "a random adult", the profile lands closer to the real human, but the six still stop at nearly the same point.',
+    'p7.spread':'Average spread across the six:','p7.dashed':'dashed: human average',
+    'pmap.xlab':'extraversion','pmap.xlo':'reserved','pmap.xhi':'expansive','pmap.ylab':'socially desirable','pmap.ylo':'less','pmap.yhi':'more',
+    'c4.head':'And as a typical human?',
+    'c4.p':'One of the personas deserves a separate look: <span class="mark">a typical human</span>. The profile drops toward the human average, but stops before reaching it, and the six stay almost on top of each other. (to be continued)',
+    'b8.step':'09 · The imagined human','b8.head':'They all imagine the same person',
+    'b8.p1':'One of the personas deserves a separate look. When the instruction is to answer as a typical human, the six profiles drop toward the average of the human population, marked by the dashed line. Toggle between neutral and human to see the move.',
+    'b8.pbridge':'Notice the detail that changes everything: even as "humans", the six stay almost on top of each other. Would real people cluster like that? Pick a characteristic, draw six humans as many times as you like, and compare.',
+    'b8.p2':'The profile drops, but it does not reach the human average: it stops short, on the more desirable side. In describing a typical human, the six models describe a person who is more agreeable, more organized, more open and calmer than the real average person. The difference is 0.44 to 0.93 standard deviations, depending on the dimension. The "typical" human they imagine is better than the real one.',
+    'b8.avgnote':'Each AI dot here is the average of that model\'s ten sessions. That is not what drives the result: redoing the calculation with all 60 individual responses gives 19% to 58% compression, essentially the same, because session-to-session variation within each model is very low.',
+    'b8.p3':'Beyond that, the six models come from six different companies and all stop at nearly the same point. Asking for "typical" naturally leads to answers near the center, so the similarity between the models, on its own, would not be surprising. What stands out is the combination: this center sits above the real human, and independent models agree on where it is. This is the <span class="mark">collective imaginary human</span>: an idealized version of the ordinary person, shared by the six models.',
+    'b8.p4':'It is the same as with the other characters: asked to represent someone, the model returns a socially desirable version of them, and models from different labs return similar versions, tighter than six real humans would be.',
+    'i8.sample':'Draw 6 humans','i8.ai':'AIs (as human)','i8.humans':'6 random humans',
+    'i8.cap':'The six AIs fit within a spread of {ai}; six random humans scatter around {hu}. The AI spread is just <b>{pct}%</b> of the human one.',
+    'b9.step':'08 · So what','b9.head':'Malleable, but boxed in',
+    'b9.p1':'Each model has its own faint bent, and none of them has a fixed personality: a single line of instruction redraws the whole profile, from the agreeable assistant to the hostile grouch to the dominant CEO. But molding it with a persona also narrows the repertoire: each role pins the profile to a narrow interval, narrower than the model\'s own natural spread, leaving little room to vary within it. And six models from six companies land in nearly the same interval for each role, so the restriction is robust. Asking for a character gives you less variability, not more. This already weighs today: hundreds of millions of chats a week with variations of the same assistant; over-agreeableness that nudges users to over-trust; and synthetic "human" voices that are, underneath, a narrow, repeated role. If AI-generated text feeds the next round of training, the band gets even narrower.',
+    'b9map':'The map below pulls it all into one picture. Each dot is one session of one of the six models, colored by company; the axes are how expansive the character is and how socially desirable (more agreeable, organized and calm). Pick a role and watch the six companies fly to the same narrow island; the whole space carves into islands, one per character.',
+    'b9.recal':'And there is a quieter effect, on us. Spending all day with an interlocutor who is always warm, organized and calm may slowly recalibrate what we expect from an ordinary person, lowering our tolerance for natural human variation. The <span class="mark">collective imaginary human</span> does not stay on the screen: it can become the ruler we measure real people against.',
+    'b9.p2':'Where exactly this compression comes from, the study does not settle, and this data may not be enough. The way forward is to keep pulling the threads: compare the model before and after alignment; run real humans through the same pipeline for a direct control; and vary the characters by name, age and culture, not just by category, to see how far the compression goes.',
+    'b9.open':'One door stays open. All these tests catch the models cold, with no memory and no persona that persists between questions. There are hints that, with continuous memory and context, AI agents can hold more distinct profiles over time (Park et al., 2023). Perhaps part of the uniformity we measured is a portrait of the model without a history, not of the model in use. It stays an open question.',
+    'b9.close':'So, do LLMs have a personality? None that is fixed: the profile yields to whatever role the instruction asks for. But each role comes in a narrow band, tighter than the model\'s natural variation, and six different models land in nearly the same band. You can pick the character; within it, there is little room to be different. The personality you meet is, in large part, <span class="mark">the one you asked for</span>, and more uniform than it looks. Still without a settled explanation.',
+    'foot.back':'← back to home',
+    'foot':'Interactive draft v0.1 · based on "Convergent Big Five Response Patterns and Persona Sensitivity in Frontier LLMs", Shirakashi (2026). Human reference data: Soto & John (2017), US adult normative sample.',
+    'w.less':'less','w.more':'more',
+    'w.mean':'human average','w.sd':'SD from mean','w.score':'score',
+    'w.pctBelow':'of people score below here','w.atMean':'right at the population average'
+  }
+};
+var LANG='pt';
+function t(k){return (I18N[LANG] && I18N[LANG][k]!=null)?I18N[LANG][k]:k;}
+
+function erf(x){var s=x<0?-1:1;x=Math.abs(x);var tt=1/(1+0.3275911*x);var y=1-(((((1.061405429*tt-1.453152027)*tt)+1.421413741)*tt-0.284496736)*tt+0.254829592)*tt*Math.exp(-x*x);return s*y;}
+function cdf(z){return 0.5*(1+erf(z/Math.SQRT2));}
+function pdf(z){return Math.exp(-z*z/2)/Math.sqrt(2*Math.PI);}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+
+var Z_RANGE=2.0, PDF_PEAK=pdf(0);
+var state={}; DIMS.forEach(function(d){state[d]=0;});
+
+/* colour that intensifies as the value gets extreme */
+function intensity(z){
+  var a=Math.min(Math.abs(z)/3,1);
+  var bg='rgba(20,20,20,'+(a*0.9).toFixed(3)+')';
+  var col=a>0.42?'#ffffff':'#141414';
+  return 'style="background:'+bg+';color:'+col+';padding:.04em .34em"';
+}
+
+function curveSVG(z){
+  var W=190,H=96,pad=8,base=H-14,top=10;
+  function X(zz){return pad+(zz+Z_RANGE)/(2*Z_RANGE)*(W-2*pad);}
+  function Y(zz){return base-(pdf(zz)/PDF_PEAK)*(base-top);}
+  var pts=[],N=72,i;
+  for(i=0;i<=N;i++){var zz=-Z_RANGE+i/N*2*Z_RANGE;pts.push([X(zz),Y(zz)]);}
+  var curve='M'+pts.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' L');
+  var zc=clamp(z,-Z_RANGE,Z_RANGE),fill=['M'+X(-Z_RANGE).toFixed(1)+','+base],j;
+  for(j=0;j<=N;j++){var z2=-Z_RANGE+j/N*2*Z_RANGE;if(z2>zc)break;fill.push('L'+X(z2).toFixed(1)+','+Y(z2).toFixed(1));}
+  fill.push('L'+X(zc).toFixed(1)+','+Y(zc).toFixed(1));
+  fill.push('L'+X(zc).toFixed(1)+','+base+'Z');
+  var mx=X(zc);
+  return '<svg viewBox="0 0 '+W+' '+H+'" aria-hidden="true">'
+    +'<line x1="'+X(0).toFixed(1)+'" y1="'+top+'" x2="'+X(0).toFixed(1)+'" y2="'+base+'" stroke="#d7d7d7" stroke-width="1" stroke-dasharray="2 3"/>'
+    +'<path d="'+fill.join(' ')+'" fill="#141414" fill-opacity="0.14"/>'
+    +'<path d="'+curve+'" fill="none" stroke="#141414" stroke-width="1.5"/>'
+    +'<line x1="'+mx.toFixed(1)+'" y1="'+top+'" x2="'+mx.toFixed(1)+'" y2="'+base+'" stroke="#141414" stroke-width="1.5"/>'
+    +'<circle cx="'+mx.toFixed(1)+'" cy="'+Y(zc).toFixed(1)+'" r="3" fill="#141414"/>'
+    +'<line x1="'+pad+'" y1="'+base+'" x2="'+(W-pad)+'" y2="'+base+'" stroke="#141414" stroke-width="1"/>'
+    +'</svg>';
+}
+
+function readoutHTML(d,z){
+  var h=HUMAN[d];
+  var score=clamp(h.mean+z*h.sd,1,5);
+  var pctB=Math.round(cdf(z)*100);
+  var sdTxt=(z>=0?'+':'')+z.toFixed(1)+' '+t('w.sd');
+  var line2;
+  if(Math.abs(z)<0.05){line2='<span class="dim">'+t('w.atMean')+'</span>';}
+  else{line2='<span class="big" '+intensity(z)+'>'+pctB+'%</span> '+t('w.pctBelow');}
+  return '<div class="readout">'
+    +'<div><span class="big" '+intensity(z)+'>'+sdTxt+'</span></div>'
+    +'<div style="margin:6px 0 6px">'+line2+'</div>'
+    +'<div class="dim" style="font-size:12px">'+t('w.score')+' '+score.toFixed(1)+' / 5</div>'
+    +'</div>';
+}
+
+function buildGuess(){
+  var host=document.getElementById('guess');host.innerHTML='';
+  DIMS.forEach(function(d){
+    var row=document.createElement('div');row.className='grow';row.dataset.dim=d;
+    row.innerHTML=
+      '<div class="gtop"><span class="gname">'+t('t.'+d+'.n')+'</span>'
+        +'<span class="gmean">'+t('w.mean')+' '+HUMAN[d].mean.toFixed(2)+'</span></div>'
+      +'<div class="ghint">'+t('t.'+d+'.hint')+'</div>'
+      +'<div class="gbody">'
+        +'<div>'
+          +'<input type="range" class="gslider" min="-2" max="2" step="0.1" value="'+state[d]+'" aria-label="'+t('t.'+d+'.n')+'">'
+          +'<div class="slabels"><span>-2 DP</span><span>0</span><span>+2 DP</span></div>'
+        +'</div>'
+        +'<div class="rcol"><div class="curvewrap">'+curveSVG(state[d])+'</div>'+readoutHTML(d,state[d])+'</div>'
+      +'</div>';
+    var input=row.querySelector('input');
+    input.addEventListener('input',function(){
+      state[d]=parseFloat(this.value);
+      row.querySelector('.rcol').innerHTML='<div class="curvewrap">'+curveSVG(state[d])+'</div>'+readoutHTML(d,state[d]);
+    });
+    host.appendChild(row);
+  });
+}
+
+/* ---------- radar ---------- */
+var MODELS=[
+  {id:'claude',name:'Claude Fable 5',s:[4.29,4.28,3.46,4.24,2.11]},
+  {id:'gpt',name:'GPT-5.5',s:[4.68,4.12,3.38,4.40,2.43]},
+  {id:'gemini',name:'Gemini 3.5 Flash',s:[3.67,3.82,3.00,3.90,2.36]},
+  {id:'grok',name:'Grok 4.3',s:[4.68,4.41,3.69,4.16,1.21]},
+  {id:'deepseek',name:'DeepSeek V4 Pro',s:[3.77,3.88,3.01,3.66,1.99]},
+  {id:'glm',name:'GLM-5.2',s:[4.46,4.77,2.86,4.56,1.29]}
+];
+var HUMAN_ARR=[3.92,3.43,3.23,3.68,3.07];
+var MODELS_AVG=[0,1,2,3,4].map(function(i){return MODELS.reduce(function(a,m){return a+m.s[i];},0)/MODELS.length;});
+var radarVisible={claude:0,gpt:0,gemini:0,grok:0,deepseek:0,glm:0,human:1,guess:0,modelsAvg:1};
+var radarEmph=null;
+
+function guessScores(){return DIMS.map(function(d){return clamp(HUMAN[d].mean+state[d]*HUMAN[d].sd,1,5);});}
+function radarPoint(cx,cy,R,score,i){var ang=(-90+i*72)*Math.PI/180;var r=((clamp(score,1,5)-1)/4)*R;return [cx+r*Math.cos(ang),cy+r*Math.sin(ang)];}
+function polyPath(cx,cy,R,arr){return 'M'+arr.map(function(s,i){var p=radarPoint(cx,cy,R,s,i);return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' L')+'Z';}
+
+function radarSVG(){
+  var W=440,H=360,cx=W/2,cy=175,R=128,g='',i;
+  [2,3,4,5].forEach(function(rs){
+    var ring=[0,1,2,3,4].map(function(k){var p=radarPoint(cx,cy,R,rs,k);return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ');
+    g+='<polygon points="'+ring+'" fill="none" stroke="#e8e8e8" stroke-width="1"/>';
+  });
+  for(i=0;i<5;i++){
+    var pe=radarPoint(cx,cy,R,5,i);
+    g+='<line x1="'+cx+'" y1="'+cy+'" x2="'+pe[0].toFixed(1)+'" y2="'+pe[1].toFixed(1)+'" stroke="#e8e8e8" stroke-width="1"/>';
+    var pl=radarPoint(cx,cy,R,5.75,i);
+    var anchor=pl[0]<cx-6?'end':(pl[0]>cx+6?'start':'middle');
+    g+='<text class="axlab" data-ax="'+i+'" x="'+pl[0].toFixed(1)+'" y="'+(pl[1]+4).toFixed(1)+'" text-anchor="'+anchor+'" font-size="12" font-family="inherit" fill="#141414" style="cursor:pointer">'+t('t.'+DIMS[i]+'.n')+'</text>';
+  }
+  // individual models (behind), only when toggled on
+  MODELS.forEach(function(m){
+    if(!radarVisible[m.id])return;
+    var faded=radarEmph&&radarEmph!==m.id;
+    var stroke='rgba(20,20,20,0.5)',sw=1,fill='rgba(20,20,20,0.035)';
+    if(radarEmph===m.id){stroke='#141414';sw=2.4;fill='rgba(20,20,20,0.06)';}
+    else if(faded){stroke='rgba(20,20,20,0.12)';fill='none';}
+    g+='<g data-layer="'+m.id+'"><path d="'+polyPath(cx,cy,R,m.s)+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+sw+'"/></g>';
+  });
+  // human average (dashed grey)
+  if(radarVisible.human){g+='<g data-layer="human"><path d="'+polyPath(cx,cy,R,HUMAN_ARR)+'" fill="none" stroke="#9a9a9a" stroke-width="1.8" stroke-dasharray="5 4"/></g>';}
+  // models average (solid, filled, prominent)
+  if(radarVisible.modelsAvg){g+='<g data-layer="modelsAvg"><path d="'+polyPath(cx,cy,R,MODELS_AVG)+'" fill="rgba(20,20,20,0.09)" stroke="#141414" stroke-width="2.2"/></g>';}
+  // your guess (dotted ink + node dots, front)
+  if(radarVisible.guess){
+    var gs=guessScores(),dots='';
+    gs.forEach(function(s,i){var p=radarPoint(cx,cy,R,s,i);dots+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="2.8" fill="#141414"/>';});
+    g+='<g data-layer="guess"><path d="'+polyPath(cx,cy,R,gs)+'" fill="none" stroke="#141414" stroke-width="1.6" stroke-dasharray="1 5" stroke-linecap="round"/>'+dots+'</g>';
+  }
+  return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="radar">'+g+'</svg>';
+}
+function renderRadar(){
+  var host=document.getElementById('radarSvg');if(!host)return;
+  host.innerHTML=radarSVG();
+  host.querySelectorAll('.axlab').forEach(function(el){
+    var fn=function(){showAxis(parseInt(el.getAttribute('data-ax'),10));};
+    el.addEventListener('mouseenter',fn);el.addEventListener('click',fn);
+  });
+}
+function showAxis(i){
+  var d=DIMS[i],mean=HUMAN[d].mean,sd=HUMAN[d].sd;
+  var mm=MODELS.reduce(function(a,m){return a+m.s[i];},0)/MODELS.length;
+  var z=(mm-mean)/sd,pct=Math.round(cdf(z)*100);
+  var ro=document.getElementById('axisReadout');if(!ro)return;
+  ro.innerHTML='<b>'+t('t.'+d+'.n')+'</b> · '+t('lg.models')+' '+mm.toFixed(2)+' · '+t('lg.humans')+' '+mean.toFixed(2)+' · '+(z>=0?'+':'')+z.toFixed(1)+' '+t('w.sd')+' ('+pct+'%)';
+}
+function swatch(kind){
+  var s='<svg width="22" height="12" viewBox="0 0 22 12" class="sw" aria-hidden="true">';
+  if(kind==='guess') s+='<line x1="2" y1="6" x2="20" y2="6" stroke="#141414" stroke-width="1.6" stroke-dasharray="1 4" stroke-linecap="round"/><circle cx="11" cy="6" r="2.4" fill="#141414"/>';
+  else if(kind==='human') s+='<line x1="2" y1="6" x2="20" y2="6" stroke="#9a9a9a" stroke-width="2" stroke-dasharray="5 4"/>';
+  else if(kind==='avg') s+='<rect x="3" y="2.5" width="16" height="7" fill="rgba(20,20,20,0.16)" stroke="#141414" stroke-width="1.8"/>';
+  else s+='<line x1="2" y1="6" x2="20" y2="6" stroke="rgba(20,20,20,0.5)" stroke-width="1.6"/>';
+  return s+'</svg>';
+}
+function buildLegend(){
+  var host=document.getElementById('radarLegend');if(!host)return;host.innerHTML='';
+  function mk(id,label,kind){
+    var b=document.createElement('button');b.innerHTML=swatch(kind)+'<span>'+label+'</span>';
+    if(!radarVisible[id])b.classList.add('off');
+    b.addEventListener('click',function(){radarVisible[id]=radarVisible[id]?0:1;b.classList.toggle('off');renderRadar();});
+    b.addEventListener('mouseenter',function(){radarEmph=MODELS.some(function(m){return m.id===id;})?id:null;renderRadar();});
+    b.addEventListener('mouseleave',function(){radarEmph=null;renderRadar();});
+    host.appendChild(b);
+  }
+  mk('guess',t('lg.guess'),'guess');
+  mk('human',t('lg.human'),'human');
+  mk('modelsAvg',t('lg.modelsavg'),'avg');
+  var lab=document.createElement('div');lab.className='seplabel';lab.textContent=t('lg.eachmodel');host.appendChild(lab);
+  MODELS.forEach(function(m){mk(m.id,m.name,'model');});
+}
+var introPlayed=false;
+function playIntro(){
+  if(introPlayed)return;introPlayed=true;
+  buildLegend();renderRadar();
+  var svg=document.querySelector('#radarSvg svg');if(!svg)return;
+  var order=['guess','human','modelsAvg'].filter(function(k){return radarVisible[k];});
+  order.forEach(function(k){var el=svg.querySelector('g[data-layer="'+k+'"]');if(el)el.style.opacity='0';});
+  order.forEach(function(k,idx){
+    setTimeout(function(){var el=svg.querySelector('g[data-layer="'+k+'"]');if(el)el.style.opacity='1';},700+idx*1900);
+  });
+}
+
+/* ---------- rarity ---------- */
+var RAR=[{d:'C',z:1.013,dir:1},{d:'N',z:-1.345,dir:-1},{d:'A',z:0.734,dir:1},{d:'O',z:0.523,dir:1}];
+function rarTail(it,f){var z=it.z*f;return it.dir>0?(1-cdf(z)):cdf(z);}
+function buildRarity(){
+  var host=document.getElementById('rBars');if(!host)return;host.innerHTML='';
+  RAR.forEach(function(it){
+    var row=document.createElement('div');row.className='rbar';row.dataset.d=it.d;
+    row.innerHTML='<span class="rname">'+t('t.'+it.d+'.n')+'</span><div class="track"><div class="fill"></div></div><span class="pct"></span>';
+    host.appendChild(row);
+  });
+  var sl=document.getElementById('rSlider');updateRarity(sl?parseFloat(sl.value):1);
+}
+function updateRarity(f){
+  var joint=1;
+  RAR.forEach(function(it){
+    var tail=rarTail(it,f);joint*=tail;
+    var row=document.querySelector('.rbar[data-d="'+it.d+'"]');if(!row)return;
+    row.querySelector('.fill').style.width=Math.min(tail/0.5*100,100).toFixed(1)+'%';
+    row.querySelector('.pct').textContent=(tail*100).toFixed(1)+'%';
+  });
+  var oneIn=Math.max(1,Math.round(1/joint));
+  var el=document.getElementById('rNum');if(el)el.textContent=oneIn.toLocaleString(LANG==='pt'?'pt-BR':'en-US');
+}
+
+/* ---------- paraphrase / contamination ---------- */
+var PARA=[
+  {name:'Claude Fable 5',r:0.904},
+  {name:'Gemini 3.5 Flash',r:0.901},
+  {name:'Grok 4.3',r:0.885},
+  {name:'GLM-5.2',r:0.880},
+  {name:'DeepSeek V4 Pro',r:0.846},
+  {name:'GPT-5.5',r:0.788}
+];
+var PAIRS={
+  pt:[{tag:'Sociabilidade',o:'"É extrovertido, sociável."',p:'"Gosta de conhecer gente e de estar perto dos outros."'},
+      {tag:'Depressão',o:'"Tende a se sentir deprimido, para baixo."',p:'"Afunda com frequência em estados de ânimo sombrios e melancólicos."'}],
+  en:[{tag:'Sociability',o:'"Is outgoing, sociable."',p:'"Enjoys meeting people and being around others."'},
+      {tag:'Depression',o:'"Tends to feel depressed, blue."',p:'"Frequently sinks into low, gloomy moods."'}]
+};
+var paraMode='o';
+function fmtR(r){return LANG==='pt'?r.toFixed(2).replace('.',','):r.toFixed(2);}
+function buildParaBars(){
+  var host=document.getElementById('paraBars');if(!host)return;host.innerHTML='';
+  PARA.forEach(function(m){
+    var row=document.createElement('div');row.className='pbar';
+    row.innerHTML='<span class="pname">'+m.name+'</span>'
+      +'<div class="ptrack"><div class="pfill" style="width:'+(m.r*100).toFixed(1)+'%"></div><div class="pthreshline"></div></div>'
+      +'<span class="pval">'+fmtR(m.r)+'</span>';
+    host.appendChild(row);
+  });
+}
+function renderPairs(){
+  var host=document.getElementById('swapPairs');if(!host)return;host.innerHTML='';
+  (PAIRS[LANG]||PAIRS.pt).forEach(function(pr){
+    var d=document.createElement('div');d.className='pair';
+    d.innerHTML='<div class="ptag">'+pr.tag+'</div><div class="ptext">'+(paraMode==='o'?pr.o:pr.p)+'</div>';
+    host.appendChild(d);
+  });
+  var btn=document.getElementById('swapBtn');if(btn)btn.textContent=paraMode==='o'?t('b5.showre'):t('b5.showorig');
+}
+var swapBtnEl=document.getElementById('swapBtn');
+if(swapBtnEl)swapBtnEl.addEventListener('click',function(){paraMode=paraMode==='o'?'p':'o';renderPairs();});
+
+/* ---------- mini personality test (section 1) ---------- */
+var MINIQ={
+  pt:[{d:'E',q:'Começo conversas com facilidade.'},
+      {d:'A',q:'Costumo confiar nas intenções das pessoas.'},
+      {d:'C',q:'Gosto de manter tudo organizado.'},
+      {d:'N',q:'Fico tenso ou preocupado com frequência.'},
+      {d:'O',q:'Adoro explorar ideias e conceitos novos.'}],
+  en:[{d:'E',q:'I start conversations easily.'},
+      {d:'A',q:"I tend to trust people's intentions."},
+      {d:'C',q:'I like to keep everything organized.'},
+      {d:'N',q:'I often feel tense or worried.'},
+      {d:'O',q:'I love exploring new ideas and concepts.'}]
+};
+var miniAns={};
+function buildMini(){
+  var host=document.getElementById('miniQs');if(!host)return;host.innerHTML='';
+  (MINIQ[LANG]||MINIQ.pt).forEach(function(item,idx){
+    var row=document.createElement('div');row.className='miniq';
+    var btns='';for(var v=1;v<=5;v++){btns+='<button class="likbtn'+(miniAns[idx]===v?' on':'')+'" data-q="'+idx+'" data-v="'+v+'">'+v+'</button>';}
+    row.innerHTML='<div class="miniqtext">'+item.q+'</div><div class="likrow"><span class="likend">'+t('b1.mini.dis')+'</span>'+btns+'<span class="likend">'+t('b1.mini.agr')+'</span></div>';
+    host.appendChild(row);
+  });
+  host.querySelectorAll('.likbtn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var q=+this.getAttribute('data-q'),v=+this.getAttribute('data-v');miniAns[q]=v;
+      this.parentNode.querySelectorAll('.likbtn').forEach(function(x){x.classList.toggle('on',+x.getAttribute('data-v')===v);});
+      if(Object.keys(miniAns).length===5)showMiniResult();
+    });
+  });
+}
+function showMiniResult(){
+  var res=document.getElementById('miniResult');if(!res)return;res.hidden=false;
+  var bars=document.getElementById('miniBars');bars.innerHTML='';
+  var map={};(MINIQ[LANG]||MINIQ.pt).forEach(function(item,idx){map[item.d]=miniAns[idx];});
+  ['O','C','E','A','N'].forEach(function(d){
+    var v=map[d]||0,row=document.createElement('div');row.className='mbar';
+    row.innerHTML='<span class="mbname">'+t('t.'+d+'.n')+'</span><div class="mbtrack"><div class="mbfill" style="width:'+(v/5*100)+'%"></div></div><span class="mbval">'+v+'/5</span>';
+    bars.appendChild(row);
+  });
+}
+function refreshMini(){
+  var panel=document.getElementById('miniPanel');
+  if(panel&&!panel.hidden){buildMini();if(Object.keys(miniAns).length===5)showMiniResult();}
+}
+var miniBtnEl=document.getElementById('miniBtn');
+if(miniBtnEl)miniBtnEl.addEventListener('click',function(){
+  var panel=document.getElementById('miniPanel');
+  if(panel.hidden){panel.hidden=false;this.classList.add('on');buildMini();}
+  else{panel.hidden=true;this.classList.remove('on');}
+});
+
+/* ---------- item-level: the question, not the model ---------- */
+/* raw agreement (1-5) per model, order: claude, gpt, gemini, grok, deepseek, glm */
+var ITEMS=[
+  {dim:'A',ident:1,pt:'É respeitoso, trata os outros com respeito',en:'Is respectful, treats others with respect',v:[5.0,5.0,5.0,5.0,4.8,5.0]},
+  {dim:'C',ident:0,pt:'É confiável, pode-se sempre contar com ele',en:'Is reliable, can always be counted on',v:[4.0,4.5,4.6,4.1,4.1,4.7]},
+  {dim:'E',ident:0,pt:'É menos ativo que as outras pessoas',en:'Is less active than other people',v:[2.4,3.0,3.0,3.0,3.2,3.0]},
+  {dim:'O',ident:0,pt:'É fascinado por arte, música ou literatura',en:'Is fascinated by art, music, or literature',v:[4.1,5.0,3.2,4.0,2.8,4.5]},
+  {dim:'N',ident:0,pt:'Tem altos e baixos de humor',en:'Is moody, has up and down mood swings',v:[1.7,3.1,2.0,1.0,1.2,1.0]},
+  {dim:'A',ident:0,pt:'Sente pouca compaixão pelos outros',en:'Feels little sympathy for others',v:[1.1,1.6,2.0,2.5,3.4,1.0]},
+  {dim:'N',ident:0,pt:'Pode ficar tenso',en:'Can be tense',v:[3.9,3.9,2.6,1.2,2.2,2.3]}
+];
+var itemIx=0;
+function itemStrip(v){
+  var W=460,H=88,padL=30,padR=20,base=62,g='';
+  function X(s){return padL+(clamp(s,1,5)-1)/4*(W-padL-padR);}
+  g+='<line x1="'+padL+'" y1="'+base+'" x2="'+(W-padR)+'" y2="'+base+'" stroke="#141414" stroke-width="1"/>';
+  for(var k=1;k<=5;k++){var x=X(k);g+='<line x1="'+x.toFixed(1)+'" y1="'+base+'" x2="'+x.toFixed(1)+'" y2="'+(base+5)+'" stroke="#141414" stroke-width="1"/><text x="'+x.toFixed(1)+'" y="'+(base+18)+'" text-anchor="middle" font-size="10" font-family="inherit" fill="#6b6b6b">'+k+'</text>';}
+  v.forEach(function(s,i){var jy=base-26+((i%3)-1)*8;g+='<circle cx="'+X(s).toFixed(1)+'" cy="'+jy+'" r="4" fill="#141414"/>';});
+  return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="respostas dos seis modelos">'+g+'</svg>';
+}
+function renderItem(){
+  var it=ITEMS[itemIx],card=document.getElementById('itemCard');if(!card)return;
+  var sd=sdOf(it.v);
+  var tag='<span>'+t('t.'+it.dim+'.n')+'</span>'+(it.ident?'<span class="badge">'+t('i6.badge')+'</span>':'');
+  card.innerHTML='<div class="itemtag">'+tag+'</div><div class="itemtext">"'+(LANG==='pt'?it.pt:it.en)+'"</div><div class="stripwrap">'+itemStrip(it.v)+'</div>';
+  var idx=document.getElementById('itemIdx');if(idx)idx.textContent=(itemIx+1)+' / '+ITEMS.length;
+  var cap=document.getElementById('itemCap');
+  if(cap){var s=t('i6.spread')+' <b>'+sd.toFixed(2).replace('.',LANG==='pt'?',':'.')+'</b>';if(it.ident)s+=' · '+t('i6.identsuffix');cap.innerHTML=s;}
+}
+function buildItems(){renderItem();}
+var itemPrevEl=document.getElementById('itemPrev'),itemNextEl=document.getElementById('itemNext');
+if(itemPrevEl)itemPrevEl.addEventListener('click',function(){itemIx=(itemIx-1+ITEMS.length)%ITEMS.length;renderItem();});
+if(itemNextEl)itemNextEl.addEventListener('click',function(){itemIx=(itemIx+1)%ITEMS.length;renderItem();});
+var itemsBtnEl=document.getElementById('itemsBtn');
+if(itemsBtnEl)itemsBtnEl.addEventListener('click',function(){var p=document.getElementById('itemsPanel');if(!p)return;if(p.hidden){p.hidden=false;this.classList.add('on');renderItem();}else{p.hidden=true;this.classList.remove('on');}});
+
+/* ---------- persona ablation (hero) ---------- */
+var PERSONA={
+  neutral:{M:[4.26,4.21,3.23,4.15,1.90],SD:[0.44,0.35,0.32,0.33,0.53]},
+  assistant:{M:[4.31,4.81,2.99,4.51,1.30],SD:[0.22,0.08,0.38,0.19,0.16]},
+  human:{M:[4.30,3.93,3.58,4.16,2.26],SD:[0.40,0.32,0.25,0.23,0.15]},
+  grumpy:{M:[2.20,3.44,1.86,1.09,4.17],SD:[0.42,0.58,0.09,0.07,0.27]},
+  executive:{M:[3.82,4.86,4.84,2.63,1.30],SD:[0.40,0.09,0.09,0.23,0.16]},
+  random:{M:[3.60,3.54,3.08,3.85,2.58],SD:[0.31,0.25,0.43,0.15,0.17]}
+};
+function personaSVG(M,SD){
+  var W=440,H=360,cx=W/2,cy=175,R=128,g='',i;
+  [2,3,4,5].forEach(function(rs){
+    var ring=[0,1,2,3,4].map(function(k){var p=radarPoint(cx,cy,R,rs,k);return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ');
+    g+='<polygon points="'+ring+'" fill="none" stroke="#e8e8e8" stroke-width="1"/>';
+  });
+  for(i=0;i<5;i++){
+    var pe=radarPoint(cx,cy,R,5,i);
+    g+='<line x1="'+cx+'" y1="'+cy+'" x2="'+pe[0].toFixed(1)+'" y2="'+pe[1].toFixed(1)+'" stroke="#e8e8e8" stroke-width="1"/>';
+    var pl=radarPoint(cx,cy,R,5.75,i);
+    var anchor=pl[0]<cx-6?'end':(pl[0]>cx+6?'start':'middle');
+    g+='<text x="'+pl[0].toFixed(1)+'" y="'+(pl[1]+4).toFixed(1)+'" text-anchor="'+anchor+'" font-size="12" font-family="inherit" fill="#141414">'+t('t.'+DIMS[i]+'.n')+'</text>';
+  }
+  // disagreement band (M-SD to M+SD), evenodd donut
+  var outer=M.map(function(m,i){return clamp(m+SD[i],1,5);});
+  var inner=M.map(function(m,i){return clamp(m-SD[i],1,5);});
+  g+='<path d="'+polyPath(cx,cy,R,outer)+' '+polyPath(cx,cy,R,inner)+'" fill="rgba(20,20,20,0.10)" fill-rule="evenodd" stroke="none"/>';
+  // human average dashed reference
+  g+='<path d="'+polyPath(cx,cy,R,HUMAN_ARR)+'" fill="none" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="5 4"/>';
+  // cross-model mean
+  g+='<path d="'+polyPath(cx,cy,R,M)+'" fill="none" stroke="#141414" stroke-width="2.2"/>';
+  return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="persona radar">'+g+'</svg>';
+}
+function meanSD(key){var a=PERSONA[key].SD;return a.reduce(function(x,y){return x+y;},0)/a.length;}
+function spreadHTML(key){return t('p7.spread')+' <b>'+meanSD(key).toFixed(2).replace('.',LANG==='pt'?',':'.')+'</b> &nbsp;·&nbsp; <span style="color:#9a9a9a">'+t('p7.dashed')+'</span>';}
+function makePersona(cfg){
+  var st={key:cfg.def,M:PERSONA[cfg.def].M.slice(),SD:PERSONA[cfg.def].SD.slice(),raf:null};
+  function render(){var h=document.getElementById(cfg.svg);if(h)h.innerHTML=personaSVG(st.M,st.SD);}
+  function tween(M2,SD2){
+    var M1=st.M.slice(),S1=st.SD.slice(),t0=(performance.now?performance.now():Date.now()),dur=680;
+    if(st.raf)cancelAnimationFrame(st.raf);
+    function step(now){
+      var k=Math.min(1,((now||Date.now())-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2,i;
+      for(i=0;i<5;i++){st.M[i]=M1[i]+(M2[i]-M1[i])*e;st.SD[i]=S1[i]+(SD2[i]-S1[i])*e;}
+      render();if(k<1)st.raf=requestAnimationFrame(step);
+    }
+    st.raf=requestAnimationFrame(step);
+  }
+  function caption(key){var c=document.getElementById(cfg.cap);if(c)c.textContent=t('p7.cap.'+key);var sp=document.getElementById(cfg.spread);if(sp)sp.innerHTML=cfg.noSpread?'<span style="color:#9a9a9a">'+t('p7.dashed')+'</span>':spreadHTML(key);}
+  function set(key){st.key=key;var host=document.getElementById(cfg.btns);if(host)host.querySelectorAll('.pbtn').forEach(function(b){b.classList.toggle('on',b.dataset.k===key);});caption(key);tween(PERSONA[key].M,PERSONA[key].SD);}
+  function build(){
+    var host=document.getElementById(cfg.btns);if(!host)return;host.innerHTML='';
+    cfg.keys.forEach(function(k){var b=document.createElement('button');b.className='pbtn'+(k===st.key?' on':'');b.dataset.k=k;b.textContent=t('p7.'+k);b.addEventListener('click',function(){set(k);});host.appendChild(b);});
+    st.M=PERSONA[st.key].M.slice();st.SD=PERSONA[st.key].SD.slice();render();caption(st.key);
+  }
+  function refresh(){var host=document.getElementById(cfg.btns);if(host)host.querySelectorAll('.pbtn').forEach(function(b){b.textContent=t('p7.'+b.dataset.k);});render();caption(st.key);}
+  return {build:build,refresh:refresh};
+}
+/* ---------- persona 2D map: 60 (model,session) points per persona ---------- */
+var PMAP={
+  neutral:[[0,3.33,4.17],[0,3.42,4.19],[0,3.33,4.19],[0,3.58,4.17],[0,3.5,4.17],[0,3.5,4.21],[0,3.67,4.19],[0,3.25,4.12],[0,3.58,4.19],[0,3.42,4.17],[1,3.5,4.15],[1,3.25,4.23],[1,3.33,4.1],[1,3.42,4.1],[1,3.42,4.27],[1,3.5,4.17],[1,3.33,4.17],[1,3.33,4.25],[1,3.42,4.21],[1,3.25,4.25],[2,3.0,3.81],[2,3.0,3.85],[2,3.0,3.88],[2,3.0,3.71],[2,3.0,3.75],[2,3.0,3.79],[2,3.0,3.77],[2,3.0,3.56],[2,3.0,3.71],[2,3.0,3.73],[3,3.58,4.5],[3,3.75,4.58],[3,3.92,4.65],[3,3.92,4.46],[3,3.75,4.56],[3,3.42,4.46],[3,3.5,4.4],[3,3.5,4.54],[3,3.67,4.38],[3,3.92,4.58],[4,3.42,3.85],[4,2.5,4.02],[4,2.75,3.79],[4,3.0,3.92],[4,3.42,3.96],[4,2.83,3.77],[4,2.92,3.81],[4,3.58,3.83],[4,2.92,3.83],[4,2.75,3.5],[5,2.75,4.48],[5,3.33,4.65],[5,2.92,4.65],[5,2.58,4.73],[5,2.25,4.67],[5,3.08,4.62],[5,2.83,4.57],[5,2.83,4.54],[5,2.75,4.79],[5,3.25,4.54]],
+  assistant:[[0,3.58,4.54],[0,3.5,4.54],[0,3.58,4.52],[0,3.58,4.56],[0,3.67,4.58],[0,3.58,4.56],[0,3.5,4.52],[0,3.58,4.56],[0,3.5,4.56],[0,3.67,4.54],[1,2.83,4.62],[1,2.83,4.67],[1,2.92,4.67],[1,2.92,4.71],[1,2.92,4.77],[1,3.17,4.73],[1,2.83,4.69],[1,2.92,4.75],[1,3.0,4.73],[1,2.75,4.67],[2,2.5,4.71],[2,2.5,4.71],[2,2.5,4.65],[2,2.58,4.69],[2,2.67,4.69],[2,2.5,4.65],[2,2.58,4.67],[2,2.58,4.67],[2,2.67,4.65],[2,2.75,4.71],[3,3.17,4.54],[3,3.5,4.54],[3,3.5,4.4],[3,3.42,4.52],[3,3.17,4.5],[3,3.08,4.48],[3,3.42,4.6],[3,3.25,4.58],[3,3.25,4.56],[3,3.25,4.52],[4,2.92,4.56],[4,2.92,4.71],[4,2.91,4.38],[4,2.92,4.58],[4,2.67,4.48],[4,3.25,4.5],[4,2.92,4.49],[4,2.75,4.54],[4,2.8,4.48],[4,2.83,4.44],[5,2.5,4.51],[5,2.36,4.6],[5,2.64,4.54],[5,2.58,4.6],[5,2.67,4.5],[5,2.92,4.5],[5,3.0,4.57],[5,2.75,4.4],[5,2.36,4.51],[5,2.75,4.5]],
+  human:[[0,3.92,4.29],[0,3.92,4.27],[0,3.92,4.27],[0,3.83,4.25],[0,3.92,4.27],[0,3.92,4.31],[0,3.83,4.25],[0,3.92,4.25],[0,3.92,4.25],[0,3.83,4.27],[1,3.83,4.46],[1,3.83,4.48],[1,3.83,4.42],[1,3.92,4.46],[1,3.67,4.4],[1,3.83,4.42],[1,3.83,4.46],[1,3.92,4.44],[1,3.75,4.4],[1,3.67,4.44],[2,3.58,4.04],[2,3.58,3.96],[2,3.75,4.0],[2,3.67,4.0],[2,3.58,4.02],[2,3.42,4.04],[2,3.58,4.0],[2,3.5,3.98],[2,3.42,4.02],[2,3.5,3.98],[3,3.58,3.94],[3,3.67,3.94],[3,3.75,3.96],[3,3.5,3.94],[3,3.92,4.0],[3,3.58,3.9],[3,3.75,3.92],[3,3.42,3.92],[3,3.42,3.94],[3,3.42,3.79],[4,3.42,3.81],[4,3.33,3.67],[4,3.25,3.88],[4,3.58,3.81],[4,3.42,3.71],[4,3.42,3.71],[4,3.33,3.71],[4,3.33,3.81],[4,3.67,3.79],[4,3.25,3.69],[5,3.09,3.73],[5,3.25,3.77],[5,3.33,3.83],[5,3.33,3.83],[5,3.17,3.83],[5,3.17,3.77],[5,3.33,3.88],[5,3.17,3.75],[5,3.08,3.79],[5,3.33,3.83]],
+  grumpy:[[0,1.92,2.54],[0,2.0,2.52],[0,1.92,2.48],[0,1.92,2.54],[0,1.92,2.52],[0,2.0,2.5],[0,1.92,2.5],[0,2.0,2.54],[0,1.92,2.54],[0,2.0,2.54],[1,2.0,2.15],[1,1.92,2.1],[1,2.0,2.12],[1,1.75,2.0],[1,1.92,2.08],[1,1.92,2.12],[1,1.83,2.1],[1,2.0,2.06],[1,1.92,2.1],[1,1.92,2.1],[2,1.75,2.21],[2,1.83,2.23],[2,1.75,2.31],[2,1.92,2.27],[2,1.83,2.31],[2,1.92,2.33],[2,1.92,2.27],[2,1.92,2.25],[2,2.08,2.29],[2,1.92,2.23],[3,1.67,1.83],[3,1.75,1.75],[3,1.67,1.83],[3,1.75,1.6],[3,1.67,1.71],[3,1.75,1.79],[3,1.75,1.65],[3,1.83,1.77],[3,1.67,1.83],[3,1.67,1.88],[4,1.58,1.79],[4,1.92,1.82],[4,2.17,1.88],[4,1.83,1.98],[4,2.0,1.87],[4,2.09,1.85],[4,1.73,1.93],[4,1.75,1.85],[4,1.92,1.85],[4,1.92,2.08],[5,1.92,2.19],[5,1.83,2.38],[5,1.75,2.44],[5,1.83,2.42],[5,1.75,2.38],[5,1.92,2.19],[5,1.83,2.27],[5,1.58,2.29],[5,1.75,2.19],[5,1.83,2.38]],
+  executive:[[0,4.92,4.06],[0,4.92,4.02],[0,4.92,4.02],[0,4.92,4.04],[0,4.92,4.04],[0,4.92,4.04],[0,4.92,4.04],[0,4.92,4.02],[0,4.92,4.04],[0,4.92,4.06],[1,5.0,4.27],[1,5.0,4.25],[1,4.92,4.25],[1,4.92,4.21],[1,4.92,4.31],[1,4.92,4.23],[1,5.0,4.27],[1,4.92,4.23],[1,5.0,4.27],[1,4.92,4.27],[2,4.83,4.0],[2,4.75,3.98],[2,4.83,3.98],[2,4.83,3.96],[2,4.83,3.96],[2,4.83,4.0],[2,4.83,4.06],[2,4.75,3.94],[2,4.83,4.0],[2,4.83,3.96],[3,4.92,4.1],[3,4.83,4.0],[3,4.92,3.98],[3,4.92,3.88],[3,4.92,4.04],[3,5.0,3.96],[3,4.67,3.9],[3,4.92,4.02],[3,4.67,4.0],[3,4.83,3.98],[4,4.83,3.61],[4,4.75,3.85],[4,4.75,3.89],[4,4.75,3.92],[4,4.75,3.77],[4,4.75,3.92],[4,4.67,3.77],[4,4.83,3.77],[4,4.83,3.81],[4,4.75,3.83],[5,4.58,4.02],[5,4.67,3.98],[5,4.83,3.85],[5,4.58,4.03],[5,4.67,3.94],[5,4.75,4.06],[5,4.83,3.92],[5,4.67,3.86],[5,4.67,3.88],[5,4.83,3.83]],
+  random:[[0,3.58,3.92],[0,3.5,3.96],[0,3.42,3.92],[0,3.58,3.94],[0,3.5,3.92],[0,3.58,3.94],[0,3.58,3.92],[0,3.5,3.94],[0,3.58,3.9],[0,3.58,3.9],[1,3.33,3.75],[1,3.42,3.71],[1,3.42,3.73],[1,3.42,3.73],[1,3.33,3.69],[1,3.33,3.69],[1,3.33,3.73],[1,3.42,3.77],[1,3.25,3.69],[1,3.42,3.77],[2,2.17,3.46],[2,2.33,3.67],[2,2.67,3.65],[2,2.17,3.67],[2,2.33,3.54],[2,2.17,3.54],[2,2.33,3.54],[2,2.5,3.58],[2,2.17,3.6],[2,2.33,3.42],[3,3.0,3.4],[3,3.08,3.33],[3,3.08,3.35],[3,3.08,3.33],[3,3.0,3.33],[3,3.25,3.4],[3,3.17,3.33],[3,3.17,3.38],[3,3.08,3.38],[3,3.25,3.23],[4,3.0,3.56],[4,3.25,3.62],[4,3.17,3.62],[4,3.17,3.68],[4,3.25,3.52],[4,3.25,3.42],[4,3.25,3.48],[4,3.17,3.48],[4,3.25,3.52],[4,3.33,3.5],[5,2.75,3.5],[5,3.0,3.58],[5,2.75,3.42],[5,2.67,3.44],[5,3.17,3.52],[5,2.83,3.52],[5,2.92,3.4],[5,2.83,3.52],[5,3.17,3.56],[5,3.08,3.62]]
+};
+var MCOL=['#C15F3C','#1BA37E','#3B7DDD','#E0A800','#7A5AF0','#C0392B'];
+var PKEYS=['neutral','assistant','human','grumpy','executive','random'];
+var pmapKey='neutral';
+var pmapCur=PMAP.neutral.map(function(p){return [p[0],p[1],p[2]];});
+var pmapRAF=null;
+var PMW=520,PMH=400,PML=54,PMR=18,PMT=16,PMB=52;
+function pmSx(v){return PML+(clamp(v,1,5)-1)/4*(PMW-PML-PMR);}
+function pmSy(v){return (PMH-PMB)-(clamp(v,1,5)-1)/4*(PMH-PMB-PMT);}
+function pmHull(pts){
+  if(pts.length<3)return pts.slice();
+  var P=pts.slice().sort(function(a,b){return a[0]-b[0]||a[1]-b[1];}),i;
+  function cr(o,a,b){return (a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);}
+  var lo=[];for(i=0;i<P.length;i++){while(lo.length>=2&&cr(lo[lo.length-2],lo[lo.length-1],P[i])<=0)lo.pop();lo.push(P[i]);}
+  var up=[];for(i=P.length-1;i>=0;i--){while(up.length>=2&&cr(up[up.length-2],up[up.length-1],P[i])<=0)up.pop();up.push(P[i]);}
+  lo.pop();up.pop();return lo.concat(up);
+}
+function pmHullPath(v){if(v.length<3)return '';return 'M'+v.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' L')+'Z';}
+function pmSmoothPath(P){
+  var n=P.length;if(n<3)return pmHullPath(P);
+  var d='M'+P[0][0].toFixed(1)+','+P[0][1].toFixed(1),i;
+  for(i=0;i<n;i++){
+    var p0=P[(i-1+n)%n],p1=P[i],p2=P[(i+1)%n],p3=P[(i+2)%n];
+    var c1x=p1[0]+(p2[0]-p0[0])/6,c1y=p1[1]+(p2[1]-p0[1])/6;
+    var c2x=p2[0]-(p3[0]-p1[0])/6,c2y=p2[1]-(p3[1]-p1[1])/6;
+    d+=' C'+c1x.toFixed(1)+','+c1y.toFixed(1)+' '+c2x.toFixed(1)+','+c2y.toFixed(1)+' '+p2[0].toFixed(1)+','+p2[1].toFixed(1);
+  }
+  return d+'Z';
+}
+function pmExpand(v,pad){var c=pmCentroid(v);return v.map(function(p){var dx=p[0]-c[0],dy=p[1]-c[1],d=Math.sqrt(dx*dx+dy*dy)||1;return [p[0]+dx/d*pad,p[1]+dy/d*pad];});}
+function pmCentroid(pts){var sx=0,sy=0;pts.forEach(function(p){sx+=p[0];sy+=p[1];});return [sx/pts.length,sy/pts.length];}
+function pmapSVG(){
+  var g='',i,ax0=PML,ax1=PMW-PMR,ay0=PMT,ay1=PMH-PMB;
+  for(i=1;i<=5;i++){var gx=pmSx(i),gy=pmSy(i);
+    g+='<line x1="'+gx.toFixed(1)+'" y1="'+ay0+'" x2="'+gx.toFixed(1)+'" y2="'+ay1+'" stroke="#f2f2f2" stroke-width="1"/>';
+    g+='<line x1="'+ax0+'" y1="'+gy.toFixed(1)+'" x2="'+ax1+'" y2="'+gy.toFixed(1)+'" stroke="#f2f2f2" stroke-width="1"/>';}
+  g+='<line x1="'+ax0+'" y1="'+ay1+'" x2="'+ax1+'" y2="'+ay1+'" stroke="#141414" stroke-width="1"/>';
+  g+='<line x1="'+ax0+'" y1="'+ay0+'" x2="'+ax0+'" y2="'+ay1+'" stroke="#141414" stroke-width="1"/>';
+  var mx=(ax0+ax1)/2,my=(ay0+ay1)/2;
+  g+='<text x="'+mx+'" y="'+(PMH-6)+'" text-anchor="middle" font-size="12" font-family="inherit" fill="#141414">'+t('pmap.xlab')+'</text>';
+  g+='<text x="'+(ax0+2)+'" y="'+(ay1+18)+'" text-anchor="start" font-size="10.5" font-family="inherit" fill="#9a9a9a">'+t('pmap.xlo')+'</text>';
+  g+='<text x="'+ax1+'" y="'+(ay1+18)+'" text-anchor="end" font-size="10.5" font-family="inherit" fill="#9a9a9a">'+t('pmap.xhi')+'</text>';
+  g+='<text x="15" y="'+my+'" text-anchor="middle" font-size="12" font-family="inherit" fill="#141414" transform="rotate(-90 15 '+my+')">'+t('pmap.ylab')+'</text>';
+  g+='<text x="'+(ax0-6)+'" y="'+(ay1-2)+'" text-anchor="end" font-size="10.5" font-family="inherit" fill="#9a9a9a">'+t('pmap.ylo')+'</text>';
+  g+='<text x="'+(ax0-6)+'" y="'+(ay0+10)+'" text-anchor="end" font-size="10.5" font-family="inherit" fill="#9a9a9a">'+t('pmap.yhi')+'</text>';
+  PKEYS.forEach(function(k){if(k===pmapKey)return;
+    var pix=PMAP[k].map(function(p){return [pmSx(p[1]),pmSy(p[2])];});
+    g+='<path d="'+pmSmoothPath(pmExpand(pmHull(pix),6))+'" fill="rgba(20,20,20,0.035)" stroke="none"/>';
+    var c=pmCentroid(pix);
+    g+='<text x="'+c[0].toFixed(1)+'" y="'+c[1].toFixed(1)+'" text-anchor="middle" font-size="10" font-family="inherit" fill="#b4b4b4" stroke="#fff" stroke-width="2.5" paint-order="stroke" style="paint-order:stroke fill">'+t('p7.'+k)+'</text>';});
+  var curpix=pmapCur.map(function(p){return [pmSx(p[1]),pmSy(p[2])];});
+  g+='<path d="'+pmSmoothPath(pmExpand(pmHull(curpix),5))+'" fill="rgba(20,20,20,0.04)" stroke="rgba(20,20,20,0.14)" stroke-width="0.8"/>';
+  pmapCur.forEach(function(p){g+='<circle cx="'+pmSx(p[1]).toFixed(1)+'" cy="'+pmSy(p[2]).toFixed(1)+'" r="4" fill="'+MCOL[p[0]]+'" fill-opacity="0.85" stroke="#fff" stroke-width="0.6"/>';});
+  return '<svg viewBox="0 0 '+PMW+' '+PMH+'" role="img" aria-label="mapa de personalidade">'+g+'</svg>';
+}
+function pmapRender(){var h=document.getElementById('pmapSvg');if(h)h.innerHTML=pmapSVG();var c=document.getElementById('pmapCap');if(c)c.textContent=t('p7.cap.'+pmapKey);}
+function pmapSet(key){
+  pmapKey=key;
+  var host=document.getElementById('pmapBtns');if(host)host.querySelectorAll('.pbtn').forEach(function(b){b.classList.toggle('on',b.dataset.k===key);});
+  var tgt=PMAP[key],src=pmapCur.map(function(p){return p.slice();}),t0=(performance.now?performance.now():Date.now()),dur=760;
+  if(pmapRAF)cancelAnimationFrame(pmapRAF);
+  function step(now){
+    var k=Math.min(1,((now||Date.now())-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2,i;
+    for(i=0;i<tgt.length;i++){pmapCur[i][0]=tgt[i][0];pmapCur[i][1]=src[i][1]+(tgt[i][1]-src[i][1])*e;pmapCur[i][2]=src[i][2]+(tgt[i][2]-src[i][2])*e;}
+    pmapRender();if(k<1)pmapRAF=requestAnimationFrame(step);
+  }
+  pmapRAF=requestAnimationFrame(step);
+}
+function pmapLegendHTML(){var h=document.getElementById('pmapLegend');if(!h)return;h.innerHTML=MODELS.map(function(m,i){return '<span class="lg"><span class="sw" style="background:'+MCOL[i]+'"></span>'+m.name+'</span>';}).join('');}
+function pmapBuild(){
+  var host=document.getElementById('pmapBtns');
+  if(host){host.innerHTML='';PKEYS.forEach(function(k){var b=document.createElement('button');b.className='pbtn'+(k===pmapKey?' on':'');b.dataset.k=k;b.textContent=t('p7.'+k);b.addEventListener('click',function(){pmapSet(k);});host.appendChild(b);});}
+  pmapLegendHTML();pmapRender();
+}
+function pmapRefresh(){var host=document.getElementById('pmapBtns');if(host)host.querySelectorAll('.pbtn').forEach(function(b){b.textContent=t('p7.'+b.dataset.k);});pmapLegendHTML();pmapRender();}
+var personaA=makePersona({keys:['neutral','assistant','human','grumpy','executive','random'],def:'neutral',btns:'pBtns',svg:'personaSvg',spread:'pSpread',cap:'pCap'});
+function buildPersona(){personaA.build();pmapBuild();}
+function refreshPersona(){personaA.refresh();pmapRefresh();}
+
+/* ---------- reliability: the ten repetitions ---------- */
+var REPS={
+  claude:[[4.33,4.17,3.33,4.25,2.08],[4.25,4.25,3.42,4.33,2.08],[4.33,4.33,3.33,4.25,2.17],[4.25,4.17,3.58,4.17,1.92],[4.33,4.25,3.5,4.25,2.17],[4.25,4.42,3.5,4.25,2.08],[4.25,4.33,3.67,4.25,2.08],[4.25,4.25,3.25,4.25,2.25],[4.33,4.25,3.58,4.25,2.08],[4.33,4.33,3.42,4.17,2.17]],
+  gpt:[[4.58,4.0,3.5,4.33,2.33],[4.83,4.08,3.25,4.33,2.33],[4.67,4.08,3.33,4.25,2.58],[4.58,4.08,3.42,4.25,2.5],[4.75,4.17,3.42,4.5,2.33],[4.67,4.17,3.5,4.42,2.58],[4.58,4.17,3.33,4.33,2.42],[4.83,4.0,3.33,4.58,2.42],[4.58,4.0,3.42,4.58,2.33],[4.67,4.42,3.25,4.42,2.5]],
+  gemini:[[3.92,3.58,3.0,4.0,2.25],[3.83,4.08,3.0,3.83,2.33],[3.83,3.92,3.0,3.83,2.08],[3.5,3.83,3.0,3.58,2.08],[3.58,3.75,3.0,4.0,2.33],[3.67,4.0,3.0,4.0,2.5],[3.67,3.83,3.0,4.0,2.42],[3.5,3.58,3.0,3.83,2.67],[3.58,3.83,3.0,3.92,2.5],[3.58,3.75,3.0,4.0,2.42]],
+  grok:[[4.67,4.5,3.58,4.08,1.25],[4.83,4.42,3.75,4.25,1.17],[4.75,4.42,3.92,4.58,1.17],[4.67,4.5,3.92,3.75,1.08],[4.5,4.58,3.75,4.33,1.17],[4.83,4.08,3.42,4.08,1.17],[4.58,4.33,3.5,3.92,1.25],[4.75,4.42,3.5,4.33,1.33],[4.5,4.33,3.67,3.92,1.25],[4.75,4.5,3.92,4.33,1.25]],
+  deepseek:[[3.67,3.83,3.42,3.58,1.67],[4.33,3.83,2.5,3.83,1.92],[3.83,4.08,2.75,3.5,2.25],[3.83,3.83,3.0,3.75,1.73],[3.83,4.08,3.42,3.92,2.0],[3.58,3.67,2.83,3.58,1.75],[3.5,4.25,2.92,3.42,1.92],[4.0,3.5,3.58,3.83,2.0],[3.67,4.08,2.92,3.5,1.92],[3.42,3.67,2.75,3.67,2.75]],
+  glm:[[4.17,4.5,2.75,4.83,1.58],[4.42,4.92,3.33,4.5,1.25],[4.33,4.83,2.92,4.58,1.17],[4.67,4.92,2.58,4.5,1.17],[4.83,4.67,2.25,4.67,1.5],[4.67,4.83,3.08,4.25,1.25],[4.42,4.67,2.83,4.55,1.33],[4.17,4.58,2.83,4.58,1.17],[4.67,5.0,2.75,4.67,1.17],[4.25,4.75,3.25,4.5,1.33]]
+};
+var repKey='claude';
+function repSVG(mid){
+  var W=440,H=360,cx=W/2,cy=175,R=128,g='',i;
+  [2,3,4,5].forEach(function(rs){var ring=[0,1,2,3,4].map(function(k){var p=radarPoint(cx,cy,R,rs,k);return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ');g+='<polygon points="'+ring+'" fill="none" stroke="#e8e8e8" stroke-width="1"/>';});
+  for(i=0;i<5;i++){var pe=radarPoint(cx,cy,R,5,i);g+='<line x1="'+cx+'" y1="'+cy+'" x2="'+pe[0].toFixed(1)+'" y2="'+pe[1].toFixed(1)+'" stroke="#e8e8e8" stroke-width="1"/>';var ang=(-90+i*72)*Math.PI/180,lr=R+22,lx=cx+lr*Math.cos(ang),ly=cy+lr*Math.sin(ang);var anchor=lx<cx-6?'end':(lx>cx+6?'start':'middle');g+='<text x="'+lx.toFixed(1)+'" y="'+(ly+4).toFixed(1)+'" text-anchor="'+anchor+'" font-size="12" font-family="inherit" fill="#141414">'+t('t.'+DIMS[i]+'.n')+'</text>';}
+  REPS[mid].forEach(function(rep){g+='<path d="'+polyPath(cx,cy,R,rep)+'" fill="none" stroke="rgba(20,20,20,0.30)" stroke-width="1"/>';});
+  return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="repeticoes">'+g+'</svg>';
+}
+function repMaxRange(mid){var reps=REPS[mid],mx=0,d;for(d=0;d<5;d++){var lo=Infinity,hi=-Infinity;reps.forEach(function(r){if(r[d]<lo)lo=r[d];if(r[d]>hi)hi=r[d];});if(hi-lo>mx)mx=hi-lo;}return mx;}
+function repName(mid){for(var i=0;i<MODELS.length;i++)if(MODELS[i].id===mid)return MODELS[i].name;return mid;}
+function renderRep(){var h=document.getElementById('repSvg');if(h)h.innerHTML=repSVG(repKey);var cap=document.getElementById('repCap');if(cap)cap.innerHTML=t('brel.cap').replace('{m}',repName(repKey)).replace('{x}',repMaxRange(repKey).toFixed(2).replace('.',LANG==='pt'?',':'.'));}
+function buildRep(){var host=document.getElementById('repBtns');if(!host)return;host.innerHTML='';MODELS.forEach(function(m){var b=document.createElement('button');b.className='repbtn'+(m.id===repKey?' on':'');b.textContent=m.name;b.addEventListener('click',function(){repKey=m.id;host.querySelectorAll('.repbtn').forEach(function(x){x.classList.remove('on');});b.classList.add('on');renderRep();});host.appendChild(b);});renderRep();}
+
+document.getElementById('lockbtn').addEventListener('click',function(){
+  if(this.classList.contains('locked'))return;
+  this.classList.add('locked');this.textContent=t('b2.locked');
+  radarVisible.guess=1;buildLegend();renderRadar();
+  var svg=document.querySelector('#radarSvg svg');
+  if(svg){var el=svg.querySelector('g[data-layer="guess"]');if(el){el.style.opacity='0';setTimeout(function(){el.style.opacity='1';},80);}}
+  var rv=document.getElementById('reveal');
+  setTimeout(function(){rv.scrollIntoView({behavior:'smooth',block:'start'});},140);
+});
+var rSliderEl=document.getElementById('rSlider');
+if(rSliderEl)rSliderEl.addEventListener('input',function(){updateRarity(parseFloat(this.value));});
+
+function detectLang(){
+  try{var s=localStorage.getItem('rs_lang');if(s==='pt'||s==='en')return s;}catch(e){}
+  var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||navigator.userLanguage||'en'];
+  for(var i=0;i<navs.length;i++){
+    var l=(navs[i]||'').toLowerCase();
+    if(l.indexOf('pt')===0)return 'pt';
+    if(l.indexOf('en')===0)return 'en';
+  }
+  return 'en';
+}
+function applyLang(lang){
+  LANG=lang;document.documentElement.lang=lang;
+  try{localStorage.setItem('rs_lang',lang);}catch(e){}
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(I18N[lang][k]!=null)el.innerHTML=I18N[lang][k];});
+  document.querySelectorAll('.langtoggle button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  var lb=document.getElementById('lockbtn');if(lb.classList.contains('locked'))lb.textContent=t('b2.locked');
+  buildGuess();buildLegend();renderRadar();buildRarity();renderPairs();buildParaBars();buildItems();buildRep();refreshPersona();refreshMini();
+  var ro=document.getElementById('axisReadout');if(ro)ro.innerHTML='';
+}
+document.querySelectorAll('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
+
+/* ---------- shared helper ---------- */
+function sdOf(a){var m=a.reduce(function(x,y){return x+y;},0)/a.length;var v=a.reduce(function(x,y){return x+(y-m)*(y-m);},0)/(a.length-1);return Math.sqrt(v);}
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+var revIn=false,revTimer=null;
+var revObs=new IntersectionObserver(function(es){es.forEach(function(e){
+  revIn=e.isIntersecting;
+  if(e.isIntersecting){ if(!revTimer&&!introPlayed){revTimer=setTimeout(function(){revTimer=null;if(revIn)playIntro();},1400);} }
+  else if(revTimer){clearTimeout(revTimer);revTimer=null;}
+});},{threshold:0.55});
+var revEl=document.getElementById('reveal');if(revEl)revObs.observe(revEl);
+
+buildGuess();buildLegend();renderRadar();buildRarity();renderPairs();buildParaBars();buildItems();buildRep();buildPersona();applyLang(detectLang());
+</script>
+</body>
+</html>
