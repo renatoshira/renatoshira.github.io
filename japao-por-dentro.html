@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Japão por dentro</title>
+<meta name="description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos japoneses, e de onde eles vêm, para quem vai viajar para o Japão.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://renatoshira.github.io/japao-por-dentro.html">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="O Japão por dentro">
+<meta property="og:description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos japoneses, e de onde eles vêm, para quem vai viajar para o Japão.">
+<meta property="og:url" content="https://renatoshira.github.io/japao-por-dentro.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-japao.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O Japão por dentro">
+<meta name="twitter:description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos japoneses, e de onde eles vêm, para quem vai viajar para o Japão.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-japao.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<style>
+:root{
+  --bg:#ffffff; --ink:#141414; --dim:#6b6b6b; --faint:#9a9a9a;
+  --line:rgba(20,20,20,.16); --line2:rgba(20,20,20,.08); --fig:#fbfbfb;
+  --terra:#C15F3C; --teal:#1BA37E; --blue:#3B7DDD; --amber:#E0A800; --red:#C0392B;
+  --mono:"Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --jp:"Noto Sans JP", sans-serif;
+  --measure:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font-weight:400;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(193,95,60,.20)}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--terra);z-index:99;transition:width .1s linear}
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:12px 24px}
+.topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0;font-weight:700}
+.topbar .kicker:hover{color:var(--terra)}
+
+p{font-size:18px;line-height:1.75;margin:0 0 20px}
+strong{font-weight:700}
+em{font-style:italic}
+.mark{background:var(--ink);color:#fff;padding:1.5px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.mark em{font-style:italic}
+.term{border-bottom:1px dashed var(--faint);cursor:help;position:relative;outline:none}
+.term::after{content:attr(data-jp);position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-7px);background:var(--ink);color:#fff;font-family:var(--jp);font-weight:500;font-size:13px;line-height:1.3;letter-spacing:.02em;padding:5px 9px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .14s;z-index:6}
+.term::before{content:'';position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-2px);border:5px solid transparent;border-top-color:var(--ink);opacity:0;transition:opacity .14s;z-index:6}
+.term:hover,.term:focus,.term.open{border-bottom-color:var(--terra)}
+.term:hover::after,.term:focus::after,.term.open::after,.term:hover::before,.term:focus::before,.term.open::before{opacity:1}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+a:hover{color:var(--terra);border-color:var(--terra)}
+.jp{font-family:var(--jp);font-weight:500}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:84px 24px}
+header.top{max-width:var(--measure);margin:0 auto;padding:72px 24px 0}
+.eyebrow{font-size:12.5px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+h1{display:flex;flex-direction:column;align-items:flex-start;gap:7px;font-size:30px;font-weight:700;line-height:1.18;margin:0}
+h1 .mark{padding:2px 10px}
+h1 .en{font-family:var(--jp);font-weight:400;font-size:15px;letter-spacing:.02em;color:var(--faint);margin-top:12px}
+.standfirst{font-size:17px;font-weight:400;line-height:1.8;color:var(--ink);max-width:600px;margin:40px 0 0}
+
+.tag{font-size:12px;font-weight:400;letter-spacing:2.16px;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.tag .n{color:inherit}
+h2{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px;color:var(--ink)}
+h2 .jp{font-weight:700}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+figure{margin:34px 0;padding:0}
+.top figure{margin:44px 0 0}
+.widget{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:16px}
+.widget canvas{display:block;width:100%;border-radius:3px;touch-action:none;cursor:grab}
+.widget canvas:active{cursor:grabbing}
+figcaption{color:var(--faint);font-size:12.5px;line-height:1.5;margin-top:12px;text-align:center}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:14px}
+.btn{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 14px;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .16s}
+.btn:hover{border-color:var(--terra);color:var(--terra)}
+.btn.on{background:var(--terra);border-color:var(--terra);color:#fff}
+input[type=range]{-webkit-appearance:none;appearance:none;height:2px;background:var(--line);border-radius:2px;outline:none;width:100%;max-width:340px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--terra);cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px var(--terra)}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--terra);cursor:pointer;border:3px solid #fff}
+
+.readout{text-align:center;margin-top:14px}
+.readout .big{font-size:18px;font-weight:700}
+.readout .desc{color:var(--dim);font-size:15px;margin-top:5px;line-height:1.5;min-height:2.6em}
+.readout .sub{color:var(--faint);font-size:13px;margin-top:5px}
+.verdict{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-top:8px}
+.verdict.ok{color:var(--teal)} .verdict.warn{color:var(--amber)} .verdict.bad{color:var(--red)}
+.meter{height:3px;background:var(--line);border-radius:3px;max-width:240px;margin:12px auto 0;overflow:hidden}
+.meter>i{display:block;height:100%;width:10%;background:linear-gradient(90deg,var(--teal),var(--terra));transition:width .25s}
+
+.quiz{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:22px}
+.q-step{display:none}
+.q-step.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.q-num{font-size:12px;font-weight:400;letter-spacing:1.6px;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.q-text{font-size:18px;font-weight:700;line-height:1.4;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:13px 15px;margin-bottom:9px;cursor:pointer;font-family:var(--mono);font-size:15px;line-height:1.5;transition:all .15s}
+.opt:hover{border-color:var(--dim)}
+.opt.correct{border-color:var(--teal);background:rgba(27,163,126,.08)}
+.opt.wrong{border-color:var(--red);background:rgba(192,57,43,.06)}
+.opt .mk{float:right;font-weight:700;margin-left:10px}
+.opt.correct .mk{color:var(--teal)} .opt.wrong .mk{color:var(--red)}
+.explain{color:var(--dim);font-size:15px;line-height:1.6;border-left:2px solid var(--amber);padding-left:14px;margin:4px 0 12px;display:none}
+.explain.show{display:block;animation:fade .3s ease}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.q-dots{display:flex;gap:6px}
+.q-dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s}
+.q-dots i.on{background:var(--terra)}
+
+/* linha do tempo vertical (§01) */
+.timeline{--gut:66px;position:relative;margin:36px 0 4px}
+.timeline::before{content:'';position:absolute;left:calc(var(--gut) + 14px);top:9px;bottom:34px;width:1px;background:var(--line)}
+.tl-item{position:relative;display:grid;grid-template-columns:var(--gut) 1fr;gap:28px;padding-bottom:44px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:calc(var(--gut) + 14px);transform:translateX(-50%);top:7px;width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid var(--terra)}
+.tl-year{text-align:right;font-size:14px;font-weight:700;color:var(--dim);padding-top:2px;letter-spacing:.5px}
+.tl-year-sfx{color:var(--faint)}
+.tl-title{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 8px}
+.tl-title .jp{font-weight:500;color:var(--faint);font-size:.82em;margin-left:8px}
+.tl-body p{font-size:16.5px;line-height:1.72;margin:0}
+
+footer{border-top:1px solid var(--line);margin-top:20px}
+footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;padding-bottom:70px}
+.srcs{font-size:12.5px;line-height:1.9;margin-top:10px}
+.srcs a{color:var(--dim);border-bottom:1px solid var(--line)}
+
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:56px 20px}
+  header.top{padding:48px 20px 0}
+  .widget{padding:12px}
+  .timeline{--gut:46px}
+  .tl-item{gap:16px}
+  .tl-year{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<div class="topbar"><a class="kicker" href="index.html">← Renato Shirakashi</a></div>
+
+<header class="top">
+  <div class="eyebrow">Cultura japonesa · artigo interativo</div>
+  <h1><span class="mark">O Japão</span><span class="mark">por dentro</span><span class="en">日本のうちがわ</span></h1>
+  <p class="standfirst">Alguns hábitos japoneses parecem estranhos à primeira vista, mas quase todos têm uma origem concreta. Este artigo explica de onde vêm alguns deles, com pequenas demonstrações para você mexer pelo caminho.</p>
+  <figure class="hero-fig">
+    <div class="widget"><canvas id="heroCanvas" height="200"></canvas></div>
+    <figcaption>Padrão <span class="jp">seigaiha</span> (青海波), "ondas do mar", um dos motivos mais antigos do design japonês.</figcaption>
+  </figure>
+</header>
+
+<main>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">00</span> · introdução</div>
+  <h2>Pequenos hábitos com origem concreta</h2>
+  <p>Quem chega ao Japão pela primeira vez costuma reparar em coisas que funcionam de um jeito silencioso e preciso. O trem parte no segundo marcado. As ruas ficam limpas mesmo sem lixeiras à vista. As pessoas se curvam umas para as outras, falam baixo no vagão, e uma tigela de chá pode ter uma rachadura preenchida com ouro em vez de ser jogada fora.</p>
+  <p>Cada um desses hábitos tem uma razão, quase sempre ligada a algum ponto da história do país. Neste artigo eu percorro alguns deles e explico de onde vêm, usando demonstrações interativas ao longo do caminho. Entender a razão por trás de um gesto <span class="mark">muda o modo como você o observa quando está lá</span>.</p>
+</section>
+
+<section class="wrap">
+  <div class="tag"><span class="n">01</span> · a moldura</div>
+  <h2>Como o Japão se fechou e se abriu</h2>
+  <p>Antes de olhar para os detalhes, vale montar a moldura. Boa parte do que o Japão é hoje foi formada por cinco momentos em que o país mudou sua relação com o resto do mundo. Vale ter esses marcos em mente, porque quase tudo o que vem nas próximas seções desce de um deles.</p>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-year">1639</div>
+      <div class="tl-body">
+        <h3 class="tl-title">O fechamento do país<span class="jp">鎖国</span></h3>
+        <p>O Japão fecha as fronteiras e mantém esse isolamento por mais de duzentos anos, um dos mais longos da história. Sair do país passa a ser proibido sob pena de morte, e quase nenhum estrangeiro pode entrar. O único contato regular com o Ocidente acontece por Dejima, uma minúscula ilha artificial em forma de leque, em Nagasaki, onde os comerciantes holandeses ficavam confinados. Sem guerras internas e sem influência de fora, o país passa esse longo período aperfeiçoando as próprias tradições. A cerimônia do chá, o teatro nô e kabuki, a gravura ukiyo-e, os jardins e a culinária ganham nessa época a forma refinada que têm até hoje, e daí vem boa parte do apreço japonês pelo detalhe e por fazer uma coisa só, muito bem feita.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1853</div>
+      <div class="tl-body">
+        <h3 class="tl-title">Os navios de Perry<span class="jp">黒船</span></h3>
+        <p>O comodoro americano Matthew Perry entra na baía de Edo com uma esquadra de navios de guerra a vapor, escuros de fumaça de carvão. Os japoneses os apelidam de <span class="term" tabindex="0" data-jp="kurofune · 黒船">navios negros</span>, e o nome ficou. O país, que ainda dependia de espadas e não tinha uma marinha moderna, percebe em pouco tempo que não tem como resistir e é obrigado a abrir os portos ao comércio. O episódio é um choque, e deixa uma lição que orienta as décadas seguintes: para não ser dominado, é preciso se modernizar depressa.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1868</div>
+      <div class="tl-body">
+        <h3 class="tl-title">A Restauração Meiji<span class="jp">明治維新</span></h3>
+        <p>Em cerca de uma geração, o Japão se transforma. Adota ferrovias, fábricas, um exército moderno e roupas ocidentais, e chega a abolir a classe dos samurais. O lema da época resume o plano, <span class="term" tabindex="0" data-jp="wakon yōsai · 和魂洋才">espírito japonês com técnica ocidental</span>: importar a tecnologia de fora sem deixar de ser japonês. Esse reflexo de absorver o que vem de fora e adaptar até dominar reaparece depois em tudo, do automóvel à animação. É também a origem da cena que surpreende todo visitante, com um templo de mil anos convivendo, sem estranhamento, ao lado de um bairro de arranha-céus e neon.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1945</div>
+      <div class="tl-body">
+        <h3 class="tl-title">O fim da guerra</h3>
+        <p>A derrota na Segunda Guerra, com as bombas atômicas sobre Hiroshima e Nagasaki e a ocupação americana que se segue, deixa o país devastado. Durante anos, a ocupação censura até mesmo falar publicamente da bomba, e o assunto fica represado. Vêm daí um pacifismo profundo e uma relação desconfiada com a tecnologia. Quando a censura afrouxa, esse trauma reaparece transformado na cultura popular: Godzilla, de 1954, é um monstro despertado pela radiação, e muita gente saía do cinema em lágrimas, num raro momento em que era possível chorar aquela perda coletiva.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1990<span class="tl-year-sfx">→</span></div>
+      <div class="tl-body">
+        <h3 class="tl-title">O baixo crescimento e o Cool Japan</h3>
+        <p>Depois de um crescimento acelerado no pós-guerra, a economia estagna a partir dos anos 1990 e a população começa a envelhecer. No mesmo período, a cultura japonesa vira uma das maiores exportações do país. Animação, quadrinhos, videogames, culinária e moda passam a definir a imagem do Japão no mundo, a ponto de o governo criar um programa oficial chamado Cool Japan para incentivar isso e, em 2008, nomear a personagem Hello Kitty embaixadora do turismo japonês no exterior. Boa parte do Japão que se admira hoje nasce dessa fase.</p>
+      </div>
+    </div>
+  </div>
+  <p>Dois desses marcos pesam mais que os outros. O longo isolamento explica o cuidado extremo com a forma e o detalhe; a abertura forçada de 1853 explica a facilidade de <span class="mark">absorver o que vem de fora sem deixar de ser japonês</span>. Guarde os dois, porque reaparecem em quase todas as seções seguintes.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">02</span> · crenças</div>
+  <h2>Duas religiões que convivem sem atrito</h2>
+  <p>O japonês raramente se descreve como religioso, mas a vida diária passa por duas lentes que convivem sem conflito. A primeira é o <strong><span class="term" tabindex="0" data-jp="神道 · shintō">xintoísmo</span></strong>, a religião nativa, sem fundador nem livro sagrado, para a qual espíritos, os <em>kami</em>, habitam montanhas, rios, árvores, objetos e antepassados. Nela quase não existe a ideia de pecado; existe a de <span class="term" tabindex="0" data-jp="kegare · 穢れ">puro e impuro</span>. <span class="mark">Boa parte da mania japonesa de limpeza é, no fundo, teológica.</span> A água para lavar as mãos na entrada de um santuário, o sal usado para purificar, o banho antes de entrar na banheira, tudo vem daí.</p>
+  <p>A segunda lente é o <strong><span class="term" tabindex="0" data-jp="仏教 · bukkyō">budismo</span></strong>, que chegou no século VI e trouxe a ideia de que tudo é passageiro. As duas repartem a vida sem disputa, a ponto de existir um ditado de que o japonês nasce xintoísta, casa no estilo cristão e morre budista: nascimentos e casamentos costumam passar pelo santuário, e os funerais, pelo templo. É uma espiritualidade de gestos e ocasiões, mais do que de doutrina.</p>
+  <p>Dois traços dessa visão aparecem à toa. Os números <strong>4 e 9</strong> são evitados porque soam como as palavras para morte e sofrimento, então muitos prédios e hospitais pulam esses andares e quartos. E o <strong><span class="term" tabindex="0" data-jp="matsuri · 祭り">matsuri</span></strong>, a festa de um santuário, é o momento em que a contenção japonesa se inverte: dezenas de pessoas carregam pelas ruas, aos gritos e empurrões, um <span class="term" tabindex="0" data-jp="mikoshi · 神輿">santuário portátil</span>, para levar o kami a passear.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">03</span> · o grupo</div>
+  <h2>Harmonia e os círculos de proximidade <span class="jp">和</span></h2>
+  <p>O valor que organiza boa parte do comportamento social japonês é o <strong>wa</strong> (<span class="jp">和</span>), a harmonia do grupo. Um nome antigo do próprio país é justamente Wa, e o caractere <span class="jp">和</span> vale até hoje como "japonês" em palavras como <em>washoku</em> (a comida), <em>wafuku</em> (a roupa tradicional) e <em>washi</em> (o papel), de modo que <span class="mark">a ideia de harmonia está dentro do próprio nome</span>. Na prática, a intensidade com que o wa age depende de quão próxima uma pessoa está de você. Os japoneses separam o mundo entre <strong>uchi</strong> (<span class="jp">内</span>, dentro) e <strong>soto</strong> (<span class="jp">外</span>, fora), e tratam os dois de formas bem diferentes.</p>
+  <p>Na demonstração abaixo, o centro é você. Arraste o ponto para as bordas e observe como a linguagem e o comportamento esperados mudam a cada anel. No núcleo, com a família, a fala é casual e você diz o que pensa, o que se chama <em>honne</em>. Nas bordas, com estranhos, a fala passa a ser formal, o <em>keigo</em>, e o que se mostra é a versão cordial e contida, o <em>tatemae</em>.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="rings" height="400"></canvas>
+      <div class="readout">
+        <div class="big" id="ringName">Você</div>
+        <div class="desc" id="ringDesc">O centro, onde não há necessidade de performar.</div>
+        <div class="meter"><i id="ringMeter"></i></div>
+        <div class="sub" id="ringMode">honne · o que se sente</div>
+      </div>
+    </div>
+    <figcaption>Arraste o ponto do centro para a borda. Cada anel formaliza a linguagem e o comportamento.</figcaption>
+  </figure>
+  <p>Isso ajuda a entender algumas cenas comuns. O atendente que trata o cliente com uma cortesia quase cerimoniosa está seguindo a regra do soto. O colega de trabalho que só relaxa de verdade num jantar regado a bebida, o <em>nomikai</em>, está cruzando por algumas horas a fronteira para o uchi. Também é por isso que um "sim" nem sempre é um sim: para não quebrar a harmonia, costuma-se evitar o "não" direto e responder com um "é um pouco difícil", que na prática quer dizer não. <span class="mark">A cortesia distante com quem está de fora é a forma padrão de respeito.</span></p>
+  <p>O wa não anda sozinho. Perto dele vivem outros valores. Há um <span class="term" tabindex="0" data-jp="giri · 義理">senso de obrigação de retribuir favores</span>, sempre em tensão com o sentimento pessoal de cada um, e essa queda de braço move boa parte do teatro e das histórias japonesas. Há o hábito de <span class="term" tabindex="0" data-jp="gaman · 我慢">suportar o difícil em silêncio</span> e o de dar o máximo até o fim; <span class="mark">o lado sombrio dessa última virtude tem até um nome próprio, <span class="term" tabindex="0" data-jp="karōshi · 過労死">a morte por excesso de trabalho</span>.</span> Há a <span class="term" tabindex="0" data-jp="omotenashi · おもてなし">hospitalidade que antecipa a necessidade</span> sem esperar nada em troca, que ajuda a explicar tanto o serviço impecável quanto a ausência de gorjeta. E por baixo de tudo está o apreço pela forma correta de fazer cada coisa, o caminho da maestria que sustenta a figura do <span class="term" tabindex="0" data-jp="shokunin · 職人">artesão de um ofício só</span>.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">04</span> · convivência</div>
+  <h2>Tirar os sapatos, e outros hábitos</h2>
+  <p>Poucas regras surpreendem tão cedo na viagem quanto a dos sapatos. Em casas, ryokans, muitos templos e até alguns restaurantes e escolas, os sapatos ficam num <span class="term" tabindex="0" data-jp="genkan · 玄関">degrau rebaixado na entrada</span>, e dali em diante se anda de meia ou de pantufa. <span class="mark">O chão de dentro é território limpo, e a rua fica do lado de fora, literalmente.</span> Costuma haver ainda um par de chinelos só para o banheiro, que não deve sair de lá. É a mesma fronteira entre uchi e soto, dentro e fora, transformada em piso.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="zones" height="380"></canvas>
+      <div class="readout">
+        <div class="big" id="zoneName">Rua</div>
+        <div class="desc" id="zoneNote">Arraste a pessoa para dentro da casa e acompanhe o que acontece com os pés.</div>
+        <div class="sub" id="zoneWear">nos pés: sapato</div>
+      </div>
+    </div>
+    <figcaption>Arraste a pessoa entre as zonas. O calçado troca sozinho a cada fronteira.</figcaption>
+  </figure>
+  <p>Dois gestos mostram o peso das formas. O <span class="term" tabindex="0" data-jp="meishi · 名刺">cartão de visita</span> é entregue e recebido com as duas mãos e lido com atenção; guardá-lo sem olhar, ou enfiá-lo no bolso de trás, soa quase como uma ofensa, porque o cartão representa a própria pessoa. E há a economia dos presentes: quem viaja costuma voltar com uma <span class="term" tabindex="0" data-jp="omiyage · 土産">lembrancinha de viagem</span> para os colegas, e o capricho do embrulho importa tanto quanto o conteúdo.</p>
+  <p>No trem, o clima é de silêncio, com os celulares no modo silencioso e as conversas em voz baixa, de novo para não incomodar os outros, o <em>meiwaku</em>. Uma palavra resume boa parte dessa delicadeza: <em>sumimasen</em> serve como "com licença", "obrigado" e "desculpe" ao mesmo tempo, numa cultura em que agradecer e pedir desculpa quase se confundem. E, como no banho, não se dá gorjeta, porque o bom serviço é o padrão, não um extra a ser comprado.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">05</span> · o corpo</div>
+  <h2>A reverência e seus ângulos</h2>
+  <p>A <strong><span class="term" tabindex="0" data-jp="ojigi · お辞儀">reverência</span></strong> aparece o tempo todo no Japão, em saudações, agradecimentos e pedidos de desculpa. O que muda o significado é o ângulo do corpo. Ajuste o controle na demonstração abaixo para ver a mesma pessoa passar de um cumprimento casual a uma desculpa formal.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="bow" height="340"></canvas>
+      <div class="controls">
+        <input type="range" id="bowRange" min="0" max="45" value="15">
+      </div>
+      <div class="readout">
+        <div class="big"><span id="bowDeg">15</span>°&nbsp; <span class="jp" id="bowJp">会釈</span></div>
+        <div class="desc" id="bowDesc">Eshaku: saudação cordial do dia a dia.</div>
+      </div>
+    </div>
+    <figcaption>Cerca de 15° para saudação casual, 30° para respeito formal, 45° para desculpa profunda ou grande gratidão.</figcaption>
+  </figure>
+  <p>Há uma convenção prática por trás disso. Entre duas pessoas de posições diferentes, a de posição inferior costuma se curvar primeiro, um pouco mais fundo e por um tempo ligeiramente maior. Um detalhe mostra o quanto o gesto é automático: muitos japoneses <span class="mark">se curvam mesmo ao telefone</span>, para alguém que não pode vê-los.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">06</span> · estética</div>
+  <h2>Wabi-sabi e o conserto com ouro</h2>
+  <p>A estética japonesa tem um conceito central chamado <strong>wabi-sabi</strong> (<span class="jp">侘寂</span>), o apreço pela beleza do que é simples, imperfeito e passageiro. Uma boa forma de entender de onde ele vem é uma história do século XVI.</p>
+  <p>Sen no Rikyū foi o mestre que definiu a cerimônia do chá como ela é praticada até hoje, baseada em utensílios rústicos, um ambiente despojado e gestos econômicos. Seu senhor, o poderoso Toyotomi Hideyoshi, tinha o gosto oposto, e chegou a mandar construir uma sala de chá inteiramente revestida de ouro. Em 1591, por razões que os historiadores atribuem em parte a esse choque de valores, Hideyoshi ordenou que Rikyū cometesse <em>seppuku</em>, o suicídio ritual. Segundo o relato mais conhecido, Rikyū conduziu uma última cerimônia de chá impecável, apresentou cada utensílio para os convidados admirarem, e só então cumpriu a ordem.</p>
+  <p>O <strong>kintsugi</strong> (<span class="jp">金継ぎ</span>) é a aplicação mais direta dessa ideia a um objeto. Quando uma peça de cerâmica quebra, o conserto é feito com laca misturada a pó de ouro, que deixa a linha da fratura visível e brilhante. <span class="mark">A quebra passa a fazer parte da história da peça.</span> Clique no botão abaixo para reparar a tigela.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="kin" height="340"></canvas>
+      <div class="controls">
+        <button class="btn" id="kinBtn">reparar com ouro · 金継ぎ</button>
+        <button class="btn" id="kinReset">quebrar de novo</button>
+      </div>
+    </div>
+    <figcaption>No kintsugi, a fratura é realçada em vez de escondida.</figcaption>
+  </figure>
+  <p>O mesmo gosto aparece no espaço. Existe uma palavra, <em>ma</em> (<span class="jp">間</span>), para o intervalo vazio: a pausa numa conversa, o silêncio entre dois sons, a parte não preenchida de um cômodo. <span class="mark">O vazio não é ausência, é parte da composição.</span> A casa tradicional é feita disso, com o tatame servindo de unidade de medida do próprio cômodo, as <span class="term" tabindex="0" data-jp="shōji · 障子">portas de papel translúcido</span> filtrando a luz em vez de barrá-la, e um <span class="term" tabindex="0" data-jp="tokonoma · 床の間">nicho de contemplação</span> que existe apenas para abrigar uma única flor ou pintura por vez.</p>
+  <p>A <span class="term" tabindex="0" data-jp="chadō · 茶道">cerimônia do chá</span> é onde essas ideias se juntam num só ritual, com cada gesto pensado para transmitir harmonia, respeito, pureza e tranquilidade. E o idioma tem um vocabulário fino para tipos de beleza que o português nem sempre nomeia: <span class="term" tabindex="0" data-jp="iki · 粋">a elegância discreta e sem esforço</span>, <span class="term" tabindex="0" data-jp="shibui · 渋い">a sobriedade que fica mais bonita com o tempo</span>, e <span class="term" tabindex="0" data-jp="miyabi · 雅">o refinamento aristocrático</span>.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">07</span> · o tempo</div>
+  <h2>As setenta e duas estações do ano <span class="jp">七十二候</span></h2>
+  <p>O calendário tradicional japonês divide o ano em muito mais que quatro estações. São vinte e quatro termos solares, os <em>sekki</em>, e dentro deles <span class="mark">setenta e duas microestações</span>, os <em>kō</em>, de cerca de cinco dias cada. Cada microestação tem um nome curto e descritivo, como "chega o vento quente" ou "o orvalho na relva embranquece".</p>
+  <p>Essa divisão fina ainda tem efeito prático. O prato servido num restaurante, o doce tradicional (<em>wagashi</em>), a flor num arranjo e a estampa de um quimono mudam conforme a época do ano. Ela também está ligada ao <strong>mono no aware</strong> (<span class="jp">物の哀れ</span>), a sensibilidade à passagem do tempo, que é parte do motivo pelo qual se dá tanto valor à cerejeira, cuja flor dura poucos dias. Gire a roda abaixo. Ela começa na microestação de hoje.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="wheel" height="430"></canvas>
+      <div class="readout">
+        <div class="big"><span class="jp" id="skName">小暑</span> &nbsp;<span id="skRomaji" style="font-weight:400;color:var(--dim)">Shōsho</span></div>
+        <div class="desc" id="skMeaning">Pequeno calor, o verão aperta.</div>
+        <div class="sub" id="skKo" style="color:var(--teal)">温風至 · chega o vento quente</div>
+        <div class="sub" id="skDate">≈ 7 a 22 de julho</div>
+      </div>
+    </div>
+    <figcaption>Arraste para girar. O ponteiro no topo marca a microestação atual.</figcaption>
+  </figure>
+  <p>Esse calendário fino ganha vida nas festas do ano, e é provável que a sua viagem cruze com alguma. Na primavera vem o <span class="term" tabindex="0" data-jp="hanami · 花見">hanami</span>, a contemplação das cerejeiras, que carrega justamente o mono no aware, já que a flor dura poucos dias. No verão, os matsuri e os <span class="term" tabindex="0" data-jp="hanabi · 花火">festivais de fogos</span>. No outono, a <span class="term" tabindex="0" data-jp="kōyō · 紅葉">temporada das folhas vermelhas</span>, uma espécie de hanami de outono. E o mais importante de todos é o Ano Novo, <span class="term" tabindex="0" data-jp="shōgatsu · 正月">o feriado mais sagrado do país</span>, quando as famílias visitam o templo e os sinos budistas tocam <span class="mark">108 badaladas, uma para cada desejo mundano que o budismo diz nos prender.</span></p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">08</span> · à mesa</div>
+  <h2>A refeição como ritual, três vezes por dia</h2>
+  <p>A refeição começa e termina com duas fórmulas. Antes de comer se diz <em>itadakimasu</em>, que é menos "bom apetite" e mais "recebo esta vida", um agradecimento a todos que trouxeram a comida até ali, inclusive ao que morreu no prato; ao fim, <span class="term" tabindex="0" data-jp="gochisōsama · ごちそうさま">um "foi um banquete"</span>. Há também tabus fortes com os <span class="term" tabindex="0" data-jp="hashi · 箸">palitos</span>: <span class="mark">nunca se finca o palito em pé no arroz nem se passa comida de palito para palito, porque são gestos do ritual de funeral.</span> São erros que causam desconforto imediato, não uma simples questão de boas maneiras.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="hashi" height="360"></canvas>
+      <div class="readout">
+        <div class="big" id="hashiName">No descanso</div>
+        <div class="desc" id="hashiNote">Arraste os palitos até uma das posições marcadas na mesa.</div>
+        <div class="verdict ok" id="hashiVerdict">correto</div>
+      </div>
+    </div>
+    <figcaption>Arraste os palitos. Duas das cinco posições são tabu por virem de ritos funerários.</figcaption>
+  </figure>
+  <p>Outras regras invertem o que se espera no Ocidente. Sugar o macarrão do rámen fazendo barulho é bem-visto, porque esfria a massa e sinaliza que você está gostando, embora assoar o nariz à mesa seja falta grave. Foi um pesquisador japonês, Kikunae Ikeda, quem isolou o <em>umami</em> em 1908 e o descreveu como o quinto sabor, ao lado do doce, do salgado, do azedo e do amargo. E, ao beber, há uma pequena coreografia: você enche o copo dos outros e espera que encham o seu, em vez de se servir.</p>
+  <p>Vale ainda um elogio ao <em>konbini</em>, a loja de conveniência. Aberta 24 horas e presente em cada esquina, ela vende comida pronta de qualidade surpreendente, paga contas e resolve a vida do viajante. Junto das máquinas automáticas espalhadas por toda parte, é um sistema que só funciona bem num país de altíssima confiança e pouquíssimo furto.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">09</span> · o banho</div>
+  <h2>As regras do banho</h2>
+  <p>O banho em fontes termais, o <strong>onsen</strong> (<span class="jp">温泉</span>), reúne várias dessas ideias num só lugar. Historicamente, o banho no Japão tem função de purificação, herança do xintoísmo, em que a sujeira é entendida também como <span class="term" tabindex="0" data-jp="kegare · 穢れ">uma impureza</span> a ser removida antes do contato com o que é limpo ou sagrado. O banho comum também funciona como um espaço sem hierarquia, já que <span class="mark">sem roupa e sem títulos as diferenças de posição ficam menos visíveis</span>.</p>
+  <p>Disso decorre um conjunto de regras, e a maioria surpreende quem visita pela primeira vez. Responda às perguntas abaixo para ver a razão por trás de cada uma.</p>
+  <figure>
+    <div class="quiz" id="quiz">
+      <div class="q-nav">
+        <div class="q-dots" id="qDots"></div>
+        <button class="btn" id="qNext" style="display:none">próxima →</button>
+      </div>
+    </div>
+    <figcaption>Cada escolha revela a razão cultural por trás da regra.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">10</span> · o país que funciona</div>
+  <h2>Trens no segundo, ruas sem lixeira</h2>
+  <p>Boa parte da fama de eficiência do Japão vem de hábitos com raízes bem concretas. Os trens são o exemplo extremo: em algumas linhas o atraso médio é medido em segundos, e quando um trem parte adiantado por engano a empresa chega a divulgar um pedido formal de desculpas. Nas plataformas, é comum ver funcionários apontando para os sinais e dizendo em voz alta o que estão conferindo. Essa técnica, <span class="term" tabindex="0" data-jp="shisa kankō · 指差喚呼">apontar e falar</span>, existe desde o começo do século XX, quando um maquinista de vista fraca passou a confirmar cada sinal em voz alta com o ajudante. Um estudo mediu que apontar e falar ao mesmo tempo <span class="mark">reduz os erros em quase 85%</span>, e o metrô de Nova York adotou a prática depois de ver o resultado.</p>
+  <p>A limpeza das ruas tem uma origem mais sombria. Quase não se veem lixeiras públicas no Japão, e isso remonta a 1995, quando a seita Aum Shinrikyo escondeu numa lixeira parte do material usado no ataque com gás sarin ao metrô de Tóquio; depois disso, as lixeiras foram retiradas de estações e espaços públicos. Ainda assim as ruas ficam limpas, porque vale a regra de que <span class="mark">seu lixo é sua responsabilidade</span>. As pessoas costumam carregar o próprio lixo até em casa, um hábito reforçado desde cedo, já que nas escolas as crianças passam alguns minutos por dia limpando a própria sala.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">11</span> · imaginação</div>
+  <h2>Do trauma à fábrica de imaginação</h2>
+  <p>A fofura onipresente do Japão, o <span class="term" tabindex="0" data-jp="kawaii · かわいい">kawaii</span>, tem uma origem improvável. Nos anos 1970, adolescentes começaram a escrever numa <span class="term" tabindex="0" data-jp="marumoji · 丸文字">letra redonda e infantil</span>, cheia de coraçõezinhos e estrelinhas, como uma forma silenciosa de resistir à rigidez do mundo adulto. As papelarias transformaram aquilo em produto, a Hello Kitty apareceu em 1974, e <span class="mark">o fofo virou uma espécie de língua oficial do país</span>, de mascotes de prefeitura a mascotes de presídio.</p>
+  <p>A base da cultura pop moderna vem um pouco antes. Osamu Tezuka, que foi criança durante a guerra, criou em 1952 o Astro Boy, um menino-robô com coração humano, construído por um cientista que havia perdido o filho. Tezuka trouxe a linguagem do cinema para o papel, com ângulos e movimento, e por isso é chamado de o Deus do Mangá. O robô com sentimentos já carregava a pergunta do Japão do pós-guerra sobre se a tecnologia pode ter compaixão.</p>
+  <p>E há os pequenos enigmas que todo visitante coleciona. O <span class="mark">Natal é celebrado com balde de KFC</span>, tradição que uma campanha publicitária de 1974 inventou do zero, e o dia 24 é a data mais movimentada do ano para a rede. As máscaras faciais já eram comuns muito antes da pandemia, por educação e privacidade. O Kit-Kat virou amuleto de vestibular porque o nome lembra a <span class="term" tabindex="0" data-jp="kitto katsu · きっと勝つ">expressão japonesa para &quot;com certeza vencer&quot;</span>. E muita gente pergunta o seu tipo sanguíneo como quem pergunta o signo, acreditando que ele revela a personalidade. São sistemas com uma lógica interna própria, como as réplicas de comida em plástico nas vitrines, os hotéis-cápsula e as melodias que anunciam cada estação de trem.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">12</span> · fim</div>
+  <h2>Olhar com contexto</h2>
+  <p>Nenhum desses hábitos precisa ser decorado para a viagem valer a pena. O que ajuda é saber que eles existem e de onde vêm. Quando o trem chegar no horário exato, você vai reconhecer a mesma preocupação com precisão que aparece na história do país. Quando precisar guardar o próprio lixo no bolso por algumas horas, vai reconhecer o hábito de evitar incomodar os outros, o <em>meiwaku</em>. Ver o Japão com essa camada de contexto torna a observação mais rica, e <span class="mark">é também uma forma de respeito</span> por um lugar que quase nunca se explica em voz alta.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Rascunho interativo v0.3. Um artigo por trás de alguns hábitos japoneses, feito para ser lido antes ou durante a viagem.</p>
+    <p class="srcs">Fontes das histórias: Sen no Rikyū e o wabi-sabi (<a href="https://en.wikipedia.org/wiki/Sen_no_Riky%C5%AB">Wikipedia</a>, <a href="https://jhistories.com/golden-tea-room-tai-an/">jhistories</a>); pontualidade e a técnica de apontar e falar (<a href="https://www.nippon.com/en/japan-topics/g02575/">Nippon.com</a>); lixeiras e o ataque de 1995 (<a href="https://www.cnn.com/travel/japan-trash-cans-explainer-intl-hnk">CNN</a>); tatuagem e onsen (<a href="https://www.kashiwaya.org/e/magazine/tips-faq/why-tattoos-not-allowed-in-onsen.html">Kashiwaya</a>); as 72 microestações do calendário tradicional japonês.</p>
+  </div>
+</footer>
+</main>
+
+<script>
+/* ===================== utilidades ===================== */
+const DPR = Math.min(window.devicePixelRatio || 1, 2);
+function fit(cv, cssH){
+  const w = cv.clientWidth || cv.parentNode.clientWidth;
+  const h = cssH || cv.clientHeight || 340;
+  cv.style.height = h + 'px';
+  cv.width = Math.round(w*DPR); cv.height = Math.round(h*DPR);
+  const ctx = cv.getContext('2d'); ctx.setTransform(DPR,0,0,DPR,0,0);
+  cv._w = w; cv._h = h; return ctx;
+}
+function ptr(e, cv){
+  const r = cv.getBoundingClientRect();
+  const t = (e.touches && e.touches[0]) || (e.changedTouches && e.changedTouches[0]) || e;
+  return { x: t.clientX - r.left, y: t.clientY - r.top };
+}
+const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+
+const pb=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight; pb.style.width=(h>0?scrollY/h*100:0)+'%';},{passive:true});
+
+/* reveal on scroll */
+(function(){
+  const els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+  const io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:0.06});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* tooltips de termos japoneses (hover / clique) */
+(function(){
+  const terms=[].slice.call(document.querySelectorAll('.term'));
+  terms.forEach(function(t){
+    t.addEventListener('click',function(e){ e.stopPropagation(); const was=t.classList.contains('open');
+      terms.forEach(function(o){o.classList.remove('open');}); if(!was)t.classList.add('open'); });
+  });
+  document.addEventListener('click',function(){ terms.forEach(function(o){o.classList.remove('open');}); });
+})();
+
+/* ===================== hero seigaiha (branco, traço fino) ===================== */
+(function(){
+  const cv=document.getElementById('heroCanvas'); let ctx,W,H,t=0;
+  function size(){ ctx=fit(cv,200); W=cv._w; H=cv._h; }
+  size(); addEventListener('resize',size);
+  const scale=40, ringN=4;
+  function draw(){
+    t+=0.005; ctx.clearRect(0,0,W,H);
+    const cols=Math.ceil(W/scale)+2, rows=Math.ceil(H/(scale*0.6))+2;
+    for(let r=0;r<rows;r++){
+      const y=r*scale*0.6, off=(r%2)?scale/2:0;
+      for(let c=-1;c<cols;c++){
+        const x=c*scale+off, wave=Math.sin(r*0.5+c*0.28-t*2);
+        const a=0.05+0.06*(wave*0.5+0.5);
+        for(let k=0;k<ringN;k++){
+          const rad=scale*0.5*(k+1)/ringN;
+          ctx.beginPath(); ctx.arc(x,y,rad,Math.PI,2*Math.PI);
+          ctx.strokeStyle = wave>0.6 ? `rgba(59,125,221,${a*1.6})` : `rgba(20,20,20,${a})`;
+          ctx.lineWidth=1; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ===================== 02 uchi/soto ===================== */
+(function(){
+  const cv=document.getElementById('rings');
+  const nEl=document.getElementById('ringName'), dEl=document.getElementById('ringDesc'), mEl=document.getElementById('ringMeter'), modeEl=document.getElementById('ringMode');
+  const layers=[
+    {name:'Você', desc:'O centro, onde não há necessidade de performar.', form:0.03, mode:'honne · o que se sente'},
+    {name:'Família · 家族', desc:'Uchi profundo. Linguagem casual, o corpo relaxa, você diz o que pensa.', form:0.12, mode:'honne · o que se sente'},
+    {name:'Amigos íntimos', desc:'Ainda dentro do círculo, espontâneo, com um leve cuidado.', form:0.30, mode:'honne, com cuidado'},
+    {name:'Colegas · 会社', desc:'A fronteira. Keigo brando, hierarquia entre senpai e kōhai, a fachada começa a operar.', form:0.58, mode:'tatemae · a fachada cordial'},
+    {name:'Conhecidos', desc:'Já é soto. Cortesia alta e distância medida.', form:0.80, mode:'tatemae · a fachada cordial'},
+    {name:'Estranhos · 外', desc:'Soto pleno. Keigo máximo e cortesia impecável, a forma padrão de respeito a quem está de fora.', form:0.98, mode:'tatemae · cortesia total'}
+  ];
+  let ctx,W,H,cx,cy,maxR,sel=0,dragR=0.03,t=0;
+  function geom(){ ctx=fit(cv,400); W=cv._w;H=cv._h;cx=W/2;cy=H/2;maxR=Math.min(W,H)/2-34; }
+  function ringOfR(rn){ return clamp(Math.round(rn*(layers.length-1)),0,layers.length-1); }
+  function draw(){
+    t+=0.02; ctx.clearRect(0,0,W,H);
+    for(let i=layers.length-1;i>=0;i--){
+      const r=maxR*(i/(layers.length-1))||8, active=i===sel, pulse=active?1+0.012*Math.sin(t*2):1;
+      ctx.beginPath(); ctx.arc(cx,cy,Math.max(8,r*pulse),0,7);
+      ctx.strokeStyle=active?'rgba(193,95,60,.95)':'rgba(20,20,20,'+(0.14+0.05*(1-i/6))+')'; ctx.lineWidth=active?2:1; ctx.stroke();
+      if(active&&i>0){ ctx.fillStyle='rgba(193,95,60,.05)'; ctx.fill(); }
+      if(i>0){ ctx.fillStyle=active?'#141414':'#9a9a9a'; ctx.font=(active?'700 ':'')+'12px "Space Mono", monospace'; ctx.textAlign='center';
+        ctx.fillText(layers[i].name.split(' · ')[0],cx,cy-r-8); }
+    }
+    ctx.beginPath(); ctx.arc(cx,cy,5,0,7); ctx.fillStyle='#141414'; ctx.fill();
+    const rr=maxR*dragR, ang=-Math.PI/2, mx=cx+Math.cos(ang)*rr, my=cy+Math.sin(ang)*rr;
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(mx,my); ctx.strokeStyle='rgba(193,95,60,.5)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.beginPath(); ctx.arc(mx,my,8,0,7); ctx.fillStyle='#C15F3C'; ctx.fill();
+    ctx.beginPath(); ctx.arc(mx,my,8,0,7); ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.stroke();
+    requestAnimationFrame(draw);
+  }
+  function update(rn){ dragR=clamp(rn,0.03,1); sel=ringOfR(dragR); const L=layers[sel];
+    nEl.textContent=L.name; dEl.textContent=L.desc; modeEl.textContent=L.mode; mEl.style.width=(8+L.form*92)+'%'; }
+  let down=false; function handle(e){ const p=ptr(e,cv); update(Math.hypot(p.x-cx,p.y-cy)/maxR); }
+  cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);handle(e);});
+  cv.addEventListener('pointermove',e=>{if(down)handle(e);});
+  cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  addEventListener('resize',geom); geom(); update(0.03); draw();
+})();
+
+/* ===================== 03 ojigi ===================== */
+(function(){
+  const cv=document.getElementById('bow'), rng=document.getElementById('bowRange');
+  const degEl=document.getElementById('bowDeg'), jpEl=document.getElementById('bowJp'), dEl=document.getElementById('bowDesc');
+  let ctx,W,H;
+  const kinds=[
+    {max:8, jp:'会釈', name:'Eshaku', desc:'aceno leve, usado para dizer oi, passar por alguém ou agradecer algo pequeno.'},
+    {max:20, jp:'会釈', name:'Eshaku', desc:'saudação cordial do dia a dia, informal e amistosa.'},
+    {max:34, jp:'敬礼', name:'Keirei', desc:'reverência de respeito, usada com clientes, superiores e pessoas mais velhas.'},
+    {max:46, jp:'最敬礼', name:'Saikeirei', desc:'a mais profunda, para desculpas sérias, grande gratidão ou grande diferença de posição.'}
+  ];
+  function kindFor(a){ for(const k of kinds){ if(a<=k.max) return k; } return kinds[kinds.length-1]; }
+  function draw(){
+    ctx=fit(cv,340); W=cv._w;H=cv._h; ctx.clearRect(0,0,W,H);
+    const a=+rng.value*Math.PI/180, groundY=H-44, cxp=W/2, hipY=groundY-92, torso=86, headR=14;
+    ctx.strokeStyle='rgba(20,20,20,.2)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(40,groundY); ctx.lineTo(W-40,groundY); ctx.stroke();
+    ctx.beginPath(); ctx.arc(cxp,hipY,40,-Math.PI/2,-Math.PI/2+a); ctx.strokeStyle='rgba(193,95,60,.6)'; ctx.lineWidth=1.4; ctx.stroke();
+    ctx.strokeStyle='#141414'; ctx.lineWidth=3; ctx.lineCap='round';
+    ctx.beginPath(); ctx.moveTo(cxp,hipY); ctx.lineTo(cxp-13,groundY); ctx.moveTo(cxp,hipY); ctx.lineTo(cxp+13,groundY); ctx.stroke();
+    const tx=cxp-Math.sin(a)*torso, ty=hipY-Math.cos(a)*torso;
+    ctx.lineWidth=3.2; ctx.beginPath(); ctx.moveTo(cxp,hipY); ctx.lineTo(tx,ty); ctx.stroke();
+    ctx.lineWidth=2.4; ctx.strokeStyle='rgba(20,20,20,.6)';
+    const shx=cxp-Math.sin(a)*(torso*0.86), shy=hipY-Math.cos(a)*(torso*0.86);
+    const armLen=38, handx=shx-6, handy=shy+armLen;
+    ctx.beginPath(); ctx.moveTo(shx,shy); ctx.lineTo(handx,handy); ctx.stroke();
+    const hx=tx-Math.sin(a)*headR, hy=ty-Math.cos(a)*headR;
+    ctx.beginPath(); ctx.arc(hx,hy,headR,0,7); ctx.fillStyle='#141414'; ctx.fill();
+    ctx.setLineDash([3,4]); ctx.beginPath(); ctx.moveTo(cxp,hipY); ctx.lineTo(cxp,hipY-torso); ctx.strokeStyle='rgba(20,20,20,.22)'; ctx.lineWidth=1; ctx.stroke(); ctx.setLineDash([]);
+  }
+  function update(){ const v=+rng.value; degEl.textContent=v; const k=kindFor(v); jpEl.textContent=k.jp; dEl.textContent=k.name+': '+k.desc; draw(); }
+  rng.addEventListener('input',update); addEventListener('resize',draw); update();
+})();
+
+/* ===================== 04 kintsugi ===================== */
+(function(){
+  const cv=document.getElementById('kin'), btn=document.getElementById('kinBtn'), reset=document.getElementById('kinReset');
+  let ctx,W,H,prog=0,target=0,raf;
+  const cracks=[
+    [[-0.62,-0.30],[-0.34,-0.10],[-0.20,0.16],[-0.28,0.42],[-0.10,0.66]],
+    [[0.05,-0.55],[0.02,-0.22],[0.16,0.02],[0.10,0.30],[0.22,0.58]],
+    [[0.30,-0.20],[0.48,0.00],[0.40,0.10]],
+    [[-0.20,0.16],[0.02,0.14]]
+  ];
+  function bowlPath(cx,cy,rx,ry){ ctx.beginPath();
+    ctx.ellipse(cx,cy-ry*0.55,rx,ry*0.28,0,Math.PI,2*Math.PI);
+    ctx.bezierCurveTo(cx+rx,cy-ry*0.2,cx+rx*0.72,cy+ry*0.75,cx,cy+ry*0.8);
+    ctx.bezierCurveTo(cx-rx*0.72,cy+ry*0.75,cx-rx,cy-ry*0.2,cx-rx,cy-ry*0.55); }
+  function draw(){
+    ctx=fit(cv,340); W=cv._w;H=cv._h; ctx.clearRect(0,0,W,H);
+    const cx=W/2, cy=H/2+8, rx=Math.min(W*0.30,146), ry=rx*1.05;
+    bowlPath(cx,cy,rx,ry);
+    const g=ctx.createLinearGradient(0,cy-ry,0,cy+ry); g.addColorStop(0,'#efe9e2'); g.addColorStop(1,'#e3ddd4');
+    ctx.fillStyle=g; ctx.fill(); ctx.strokeStyle='rgba(20,20,20,.7)'; ctx.lineWidth=1.6; ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(cx,cy-ry*0.55,rx*0.92,ry*0.22,0,0,7); ctx.strokeStyle='rgba(20,20,20,.2)'; ctx.lineWidth=1; ctx.stroke();
+    cracks.forEach((cr,ci)=>{
+      const pts=cr.map(p=>[cx+p[0]*rx, cy+p[1]*ry*0.9]);
+      ctx.beginPath(); pts.forEach((p,i)=> i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));
+      ctx.strokeStyle='rgba(20,20,20,.55)'; ctx.lineWidth=2.2; ctx.lineCap='round'; ctx.lineJoin='round'; ctx.stroke();
+      const local=clamp((prog*cracks.length)-ci,0,1);
+      if(local>0){ const total=pts.length-1, upto=local*total;
+        ctx.beginPath(); ctx.moveTo(pts[0][0],pts[0][1]);
+        for(let i=1;i<pts.length;i++){ const seg=upto-(i-1);
+          if(seg>=1){ ctx.lineTo(pts[i][0],pts[i][1]); }
+          else if(seg>0){ ctx.lineTo(lerp(pts[i-1][0],pts[i][0],seg),lerp(pts[i-1][1],pts[i][1],seg)); break; } else break; }
+        ctx.strokeStyle='rgba(224,168,0,.35)'; ctx.lineWidth=6; ctx.stroke();
+        ctx.strokeStyle='#E0A800'; ctx.lineWidth=2.6; ctx.stroke();
+      }
+    });
+  }
+  function animate(){ prog+=(target-prog)*0.06; if(Math.abs(target-prog)<0.002){prog=target;draw();return;} draw(); raf=requestAnimationFrame(animate); }
+  btn.addEventListener('click',()=>{target=1;cancelAnimationFrame(raf);animate();btn.classList.add('on');});
+  reset.addEventListener('click',()=>{target=0;cancelAnimationFrame(raf);animate();btn.classList.remove('on');});
+  addEventListener('resize',draw); draw();
+})();
+
+/* ===================== 05 roda das 72 estações ===================== */
+(function(){
+  const cv=document.getElementById('wheel');
+  const nameEl=document.getElementById('skName'), romEl=document.getElementById('skRomaji'), meanEl=document.getElementById('skMeaning'), koEl=document.getElementById('skKo'), dateEl=document.getElementById('skDate');
+  const S=[
+    {jp:'立春',r:'Risshun',m:'Começo da primavera',ko:'東風解凍 · o vento leste derrete o gelo',d:'≈ 4 fev',doy:35},
+    {jp:'雨水',r:'Usui',m:'Água da chuva',ko:'土脉潤起 · a terra se umedece',d:'≈ 19 fev',doy:50},
+    {jp:'啓蟄',r:'Keichitsu',m:'Os insetos despertam',ko:'蟄虫啓戸 · os bichos abrem as portas',d:'≈ 6 mar',doy:65},
+    {jp:'春分',r:'Shunbun',m:'Equinócio de primavera',ko:'雀始巣 · os pardais fazem ninho',d:'≈ 21 mar',doy:80},
+    {jp:'清明',r:'Seimei',m:'Clara e brilhante',ko:'玄鳥至 · as andorinhas chegam',d:'≈ 5 abr',doy:95},
+    {jp:'穀雨',r:'Kokuu',m:'Chuva dos grãos',ko:'葭始生 · os juncos brotam',d:'≈ 20 abr',doy:110},
+    {jp:'立夏',r:'Rikka',m:'Começo do verão',ko:'蛙始鳴 · as rãs começam a cantar',d:'≈ 6 mai',doy:126},
+    {jp:'小満',r:'Shōman',m:'Pequena fartura',ko:'蚕起食桑 · os bichos-da-seda comem amoreira',d:'≈ 21 mai',doy:141},
+    {jp:'芒種',r:'Bōshu',m:'Época de semear',ko:'蟷螂生 · nascem os louva-a-deus',d:'≈ 6 jun',doy:157},
+    {jp:'夏至',r:'Geshi',m:'Solstício de verão',ko:'乃東枯 · a prunela murcha',d:'≈ 21 jun',doy:172},
+    {jp:'小暑',r:'Shōsho',m:'Pequeno calor, o verão aperta',ko:'温風至 · chega o vento quente',d:'≈ 7 a 22 jul',doy:188},
+    {jp:'大暑',r:'Taisho',m:'Grande calor',ko:'桐始結花 · a paulóvnia dá frutos',d:'≈ 23 jul',doy:204},
+    {jp:'立秋',r:'Risshū',m:'Começo do outono',ko:'涼風至 · chega o vento fresco',d:'≈ 8 ago',doy:220},
+    {jp:'処暑',r:'Shosho',m:'O calor começa a passar',ko:'綿柎開 · abrem-se os cálices do algodão',d:'≈ 23 ago',doy:235},
+    {jp:'白露',r:'Hakuro',m:'Orvalho branco',ko:'草露白 · o orvalho na relva embranquece',d:'≈ 8 set',doy:251},
+    {jp:'秋分',r:'Shūbun',m:'Equinócio de outono',ko:'雷乃収声 · os trovões se calam',d:'≈ 23 set',doy:266},
+    {jp:'寒露',r:'Kanro',m:'Orvalho frio',ko:'鴻雁来 · voltam os gansos selvagens',d:'≈ 8 out',doy:281},
+    {jp:'霜降',r:'Sōkō',m:'Chegam as geadas',ko:'霜始降 · a geada começa a cair',d:'≈ 24 out',doy:297},
+    {jp:'立冬',r:'Rittō',m:'Começo do inverno',ko:'山茶始開 · abrem as camélias',d:'≈ 7 nov',doy:311},
+    {jp:'小雪',r:'Shōsetsu',m:'Pouca neve',ko:'虹蔵不見 · os arco-íris se escondem',d:'≈ 22 nov',doy:326},
+    {jp:'大雪',r:'Taisetsu',m:'Muita neve',ko:'閉塞成冬 · o céu esfria e faz-se inverno',d:'≈ 7 dez',doy:341},
+    {jp:'冬至',r:'Tōji',m:'Solstício de inverno',ko:'乃東生 · a prunela brota',d:'≈ 22 dez',doy:356},
+    {jp:'小寒',r:'Shōkan',m:'Pequeno frio',ko:'芹乃栄 · o aipo-d’água prospera',d:'≈ 6 jan',doy:6},
+    {jp:'大寒',r:'Daikan',m:'Grande frio',ko:'款冬華 · brotam as flores de fuki',d:'≈ 20 jan',doy:20}
+  ];
+  const N=S.length, seg=2*Math.PI/N;
+  let ctx,W,H,cx,cy,R,rot=0,sel=10;
+  const now=new Date(), start=new Date(now.getFullYear(),0,0), doyNow=Math.floor((now-start)/86400000);
+  (function(){ let best=0,bd=1e9; S.forEach((s,i)=>{ let diff=doyNow-s.doy; if(diff<0)diff+=365; if(diff<bd){bd=diff;best=i;} }); sel=best; })();
+  rot=-sel*seg-seg/2;
+  function geom(){ ctx=fit(cv,430); W=cv._w;H=cv._h;cx=W/2;cy=H/2;R=Math.min(W,H)/2-40; }
+  function topIndex(){ let idx=0,bd=1e9; for(let i=0;i<N;i++){ let ph=(i*seg+seg/2+rot)%(2*Math.PI); ph=((ph+2*Math.PI)%(2*Math.PI)); if(ph>Math.PI)ph-=2*Math.PI; if(Math.abs(ph)<bd){bd=Math.abs(ph);idx=i;} } return idx; }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.beginPath(); ctx.arc(cx,cy,R+14,0,7); ctx.strokeStyle='rgba(20,20,20,.08)'; ctx.lineWidth=1; ctx.stroke();
+    for(let i=0;i<72;i++){ const a=rot+i*(2*Math.PI/72)-Math.PI/2, r1=R-4, r2=R+(i%3===0?10:5);
+      ctx.beginPath(); ctx.moveTo(cx+Math.cos(a)*r1,cy+Math.sin(a)*r1); ctx.lineTo(cx+Math.cos(a)*r2,cy+Math.sin(a)*r2);
+      ctx.strokeStyle=i%3===0?'rgba(27,163,126,.55)':'rgba(20,20,20,.14)'; ctx.lineWidth=1; ctx.stroke(); }
+    sel=topIndex();
+    for(let i=0;i<N;i++){ const a0=rot+i*seg-Math.PI/2, a1=a0+seg, active=i===sel;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,R,a0,a1); ctx.closePath();
+      ctx.fillStyle=active?'rgba(193,95,60,.13)':'rgba(20,20,20,.012)'; ctx.fill();
+      ctx.strokeStyle='rgba(20,20,20,.06)'; ctx.lineWidth=1; ctx.stroke();
+      const am=a0+seg/2, lr=R*0.80, lx=cx+Math.cos(am)*lr, ly=cy+Math.sin(am)*lr;
+      ctx.save(); ctx.translate(lx,ly); ctx.fillStyle=active?'#141414':'#9a9a9a';
+      ctx.font=(active?'700 ':'400 ')+'15px "Noto Sans JP", sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(S[i].jp,0,0); ctx.restore(); }
+    ctx.beginPath(); ctx.arc(cx,cy,R*0.52,0,7); ctx.fillStyle='#fff'; ctx.fill(); ctx.strokeStyle='rgba(20,20,20,.1)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx,cy-R-16); ctx.lineTo(cx-7,cy-R-28); ctx.lineTo(cx+7,cy-R-28); ctx.closePath(); ctx.fillStyle='#C15F3C'; ctx.fill();
+    const s=S[sel]; nameEl.textContent=s.jp; romEl.textContent=s.r; meanEl.textContent=s.m; koEl.textContent=s.ko; dateEl.textContent=s.d;
+  }
+  let down=false,lastA=0; function angleOf(e){ const p=ptr(e,cv); return Math.atan2(p.y-cy,p.x-cx); }
+  cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);lastA=angleOf(e);});
+  cv.addEventListener('pointermove',e=>{ if(!down)return; const a=angleOf(e); let d=a-lastA; if(d>Math.PI)d-=2*Math.PI; if(d<-Math.PI)d+=2*Math.PI; rot+=d; lastA=a; draw(); });
+  cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  addEventListener('resize',()=>{geom();draw();}); geom(); draw();
+})();
+
+/* ===================== 06 onsen quiz ===================== */
+(function(){
+  const quiz=document.getElementById('quiz'), dots=document.getElementById('qDots'), nextBtn=document.getElementById('qNext');
+  const Q=[
+    {q:'Você chega ao vestiário. O que faz com a roupa e as toalhas?',
+     opts:[
+      {t:'Levo a toalha grande para dentro, para me cobrir na água.',ok:false,why:'A toalha grande fica no vestiário. Lá dentro você anda apenas com a toalhinha pequena, e ela não entra na água.'},
+      {t:'Deixo tudo no cesto e levo só a toalhinha pequena.',ok:true,why:'Correto. Entra-se completamente sem roupa. Sem roupa e sem títulos, as diferenças de posição entre as pessoas ficam menos visíveis.'}
+     ]},
+    {q:'Antes de mergulhar na banheira quente, você…',
+     opts:[
+      {t:'Entro direto para relaxar logo.',ok:false,why:'A banheira serve só para o mergulho, nunca para lavar. Como a água é compartilhada por todos, sujá-la é malvisto.'},
+      {t:'Sento no banquinho e me lavo por inteiro primeiro.',ok:true,why:'Correto. Lavar-se por completo antes de entrar mantém a água limpa para todos, e cumpre a função de purificação do banho.'}
+     ]},
+    {q:'Você tem uma tatuagem visível. Qual a melhor conduta?',
+     opts:[
+      {t:'Ignoro, tatuagem é comum no mundo todo.',ok:false,why:'No Japão a tatuagem carregou por muito tempo o estigma da punição criminal e depois da associação com o crime organizado. O incômodo costuma ser dos outros banhistas.'},
+      {t:'Cubro com adesivo, escolho um onsen que aceita tatuagens ou reservo um banho privativo.',ok:true,why:'Boa. Muitos estabelecimentos ainda restringem tatuagens, então cobrir, escolher um lugar que aceita ou usar um banho privativo evita constrangimento. Numa pesquisa recente, cerca de 44% dos japoneses ainda achavam que tatuagens deveriam ser proibidas nos banhos, mas a geração mais jovem vem afrouxando essa regra.'}
+     ]},
+    {q:'Dentro da água, a sua toalhinha vai…',
+     opts:[
+      {t:'Boiando comigo, é mais prático.',ok:false,why:'A toalhinha não deve tocar a água termal, para manter a fonte limpa para quem vem depois.'},
+      {t:'Dobrada sobre a cabeça ou apoiada na borda.',ok:true,why:'Correto. A toalhinha costuma ficar dobrada sobre a cabeça, o que virou quase uma imagem clássica do onsen.'}
+     ]}
+  ];
+  let step=0, answered=[];
+  Q.forEach((item,qi)=>{
+    const div=document.createElement('div'); div.className='q-step'+(qi===0?' active':''); div.dataset.i=qi;
+    let html='<div class="q-num">pergunta '+(qi+1)+' de '+Q.length+'</div><div class="q-text">'+item.q+'</div>';
+    item.opts.forEach((o,oi)=> html+='<button class="opt" data-q="'+qi+'" data-o="'+oi+'">'+o.t+'<span class="mk"></span></button>');
+    item.opts.forEach((o,oi)=> html+='<div class="explain" data-ex="'+qi+'-'+oi+'">'+o.why+'</div>');
+    div.innerHTML=html; quiz.insertBefore(div, quiz.querySelector('.q-nav'));
+    const dot=document.createElement('i'); if(qi===0)dot.className='on'; dots.appendChild(dot);
+  });
+  quiz.addEventListener('click',e=>{
+    const b=e.target.closest('.opt'); if(!b) return;
+    const qi=+b.dataset.q, oi=+b.dataset.o; if(answered[qi]!==undefined) return;
+    answered[qi]=oi; const opt=Q[qi].opts[oi];
+    b.classList.add(opt.ok?'correct':'wrong'); b.querySelector('.mk').textContent=opt.ok?'✓':'✕';
+    const stepEl=b.closest('.q-step');
+    if(!opt.ok){ Q[qi].opts.forEach((o,i)=>{ if(o.ok){ const cb=stepEl.querySelector('.opt[data-o="'+i+'"]'); cb.classList.add('correct'); cb.querySelector('.mk').textContent='✓'; } }); }
+    stepEl.querySelectorAll('.opt').forEach(x=>x.style.pointerEvents='none');
+    stepEl.querySelector('.explain[data-ex="'+qi+'-'+oi+'"]').classList.add('show');
+    nextBtn.style.display='inline-block';
+    if(step===Q.length-1){ nextBtn.textContent='recomeçar ↺'; nextBtn.dataset.done='1'; }
+  });
+  nextBtn.addEventListener('click',()=>{
+    if(nextBtn.dataset.done){ answered=[]; step=0;
+      quiz.querySelectorAll('.q-step').forEach((s,i)=>{ s.classList.toggle('active',i===0);
+        s.querySelectorAll('.opt').forEach(o=>{o.className='opt';o.style.pointerEvents='';o.querySelector('.mk').textContent='';});
+        s.querySelectorAll('.explain').forEach(x=>x.classList.remove('show')); });
+      dots.querySelectorAll('i').forEach((d,i)=>d.className=i===0?'on':'');
+      nextBtn.style.display='none'; nextBtn.textContent='próxima →'; delete nextBtn.dataset.done; return; }
+    step++; quiz.querySelectorAll('.q-step').forEach((s,i)=>s.classList.toggle('active',i===step));
+    dots.querySelectorAll('i').forEach((d,i)=>d.className=i<=step?'on':''); nextBtn.style.display='none';
+  });
+})();
+
+/* ===================== 04 zonas de calçado ===================== */
+(function(){
+  const cv=document.getElementById('zones'); if(!cv) return;
+  const nameEl=document.getElementById('zoneName'), noteEl=document.getElementById('zoneNote'), wearEl=document.getElementById('zoneWear');
+  const info={
+    rua:{name:'Rua', wear:'sapato', note:'Na rua, sapato normal.'},
+    genkan:{name:'Genkan, a soleira', wear:'só de meia', note:'O degrau da entrada é a fronteira entre a rua e a casa.'},
+    corredor:{name:'Corredor', wear:'pantufa da casa', note:'No piso de madeira, pantufas da casa.'},
+    tatame:{name:'Quarto de tatame', wear:'só de meia', note:'No tatame se anda apenas de meia.'},
+    banheiro:{name:'Banheiro', wear:'pantufa do banheiro', note:'O banheiro tem pantufas próprias, que ficam lá dentro.'}
+  };
+  const trans={
+    'rua>genkan':'Aqui os sapatos saem. E há um detalhe: você os vira com a ponta para a porta, prontos para calçar na saída.',
+    'genkan>rua':'Os sapatos já estão virados para a rua. É só calçar e sair.',
+    'genkan>corredor':'No piso de madeira entram as pantufas da casa.',
+    'corredor>genkan':'As pantufas ficam para trás, e você volta a pisar só de meia.',
+    'corredor>tatame':'As pantufas ficam na borda. Pantufa nunca pisa no tatame.',
+    'tatame>corredor':'De volta ao corredor, as pantufas voltam aos pés.',
+    'corredor>banheiro':'O banheiro tem um par exclusivo de pantufas, que nunca sai dali.',
+    'banheiro>corredor':'Troque de volta. Sair de pantufa do banheiro pelo resto da casa é a gafe clássica.'
+  };
+  let ctx,W,H,zones=[],p={x:0,y:0},cur='rua',shoeTurn=0,raf;
+  function layout(){
+    ctx=fit(cv,380); W=cv._w; H=cv._h;
+    zones=[
+      {id:'rua', label:'rua', x:0.03*W, y:0.20*H, w:0.14*W, h:0.60*H},
+      {id:'genkan', label:'genkan', x:0.17*W, y:0.20*H, w:0.14*W, h:0.60*H},
+      {id:'corredor', label:'corredor', x:0.31*W, y:0.43*H, w:0.66*W, h:0.17*H},
+      {id:'tatame', label:'quarto (tatame)', x:0.42*W, y:0.09*H, w:0.36*W, h:0.32*H},
+      {id:'banheiro', label:'banheiro', x:0.60*W, y:0.62*H, w:0.24*W, h:0.26*H}
+    ];
+  }
+  function Z(id){ for(let i=0;i<zones.length;i++) if(zones[i].id===id) return zones[i]; return null; }
+  function zoneAt(x,y){
+    const order=['tatame','banheiro','corredor','genkan','rua'];
+    for(let i=0;i<order.length;i++){ const z=Z(order[i]);
+      if(x>=z.x&&x<=z.x+z.w&&y>=z.y&&y<=z.y+z.h) return z; }
+    return null;
+  }
+  function drawShoes(cx,cy,t){
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(t*Math.PI);
+    ctx.strokeStyle='rgba(20,20,20,.5)'; ctx.lineWidth=1; ctx.fillStyle='rgba(20,20,20,.06)';
+    [-7,7].forEach(function(dx){
+      ctx.beginPath(); ctx.moveTo(dx-4,-8); ctx.lineTo(dx+4,-8); ctx.lineTo(dx+4,5);
+      ctx.quadraticCurveTo(dx,10,dx-4,5); ctx.closePath(); ctx.fill(); ctx.stroke();
+    });
+    ctx.restore();
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    zones.forEach(function(z){
+      const active=z.id===cur;
+      ctx.beginPath(); ctx.rect(z.x,z.y,z.w,z.h);
+      ctx.fillStyle=active?'rgba(193,95,60,.10)':'rgba(20,20,20,.02)'; ctx.fill();
+      ctx.strokeStyle=active?'rgba(193,95,60,.9)':'rgba(20,20,20,.22)'; ctx.lineWidth=active?1.6:1; ctx.stroke();
+      ctx.fillStyle=active?'#141414':'#9a9a9a';
+      ctx.font=(active?'700 ':'400 ')+'11px "Space Mono", monospace';
+      ctx.textAlign='left'; ctx.textBaseline='top';
+      ctx.fillText(z.label, z.x+7, z.y+6);
+    });
+    const tz=Z('tatame');
+    ctx.save(); ctx.beginPath(); ctx.rect(tz.x,tz.y,tz.w,tz.h); ctx.clip();
+    ctx.strokeStyle='rgba(20,20,20,.10)'; ctx.lineWidth=1;
+    for(let i=1;i<4;i++){ const x=tz.x+tz.w*i/4; ctx.beginPath(); ctx.moveTo(x,tz.y); ctx.lineTo(x,tz.y+tz.h); ctx.stroke(); }
+    ctx.restore();
+    const gz=Z('genkan');
+    ctx.setLineDash([4,4]); ctx.beginPath(); ctx.moveTo(gz.x,gz.y); ctx.lineTo(gz.x,gz.y+gz.h);
+    ctx.strokeStyle='rgba(20,20,20,.35)'; ctx.lineWidth=1; ctx.stroke(); ctx.setLineDash([]);
+    drawShoes(gz.x+gz.w*0.5, gz.y+gz.h*0.80, shoeTurn);
+    ctx.beginPath(); ctx.arc(p.x,p.y,9,0,7); ctx.fillStyle='#C15F3C'; ctx.fill();
+    ctx.beginPath(); ctx.arc(p.x,p.y,9,0,7); ctx.strokeStyle='#fff'; ctx.lineWidth=2.5; ctx.stroke();
+  }
+  function animShoes(to){
+    cancelAnimationFrame(raf);
+    (function step(){ shoeTurn+=(to-shoeTurn)*0.18;
+      if(Math.abs(to-shoeTurn)<0.01){ shoeTurn=to; draw(); return; }
+      draw(); raf=requestAnimationFrame(step); })();
+  }
+  function goTo(id){
+    const from=cur; cur=id;
+    const note=trans[from+'>'+id]||info[id].note;
+    nameEl.textContent=info[id].name; noteEl.textContent=note; wearEl.textContent='nos pés: '+info[id].wear;
+    if(from==='rua'&&id==='genkan') animShoes(1);
+    else if(from==='genkan'&&id==='rua') animShoes(0);
+    else draw();
+  }
+  let down=false;
+  function move(e){
+    const q=ptr(e,cv); p.x=clamp(q.x,8,W-8); p.y=clamp(q.y,8,H-8);
+    const z=zoneAt(p.x,p.y);
+    if(z&&z.id!==cur) goTo(z.id); else draw();
+  }
+  cv.addEventListener('pointerdown',function(e){down=true;cv.setPointerCapture(e.pointerId);move(e);});
+  cv.addEventListener('pointermove',function(e){ if(down) move(e); });
+  cv.addEventListener('pointerup',function(){down=false;});
+  cv.addEventListener('pointercancel',function(){down=false;});
+  addEventListener('resize',function(){ layout(); const r=Z('rua'); p.x=clamp(p.x,8,W-8); p.y=clamp(p.y,8,H-8); draw(); });
+  layout(); const r=Z('rua'); p.x=r.x+r.w/2; p.y=r.y+r.h/2; draw();
+})();
+
+/* ===================== 08 posições do hashi ===================== */
+(function(){
+  const cv=document.getElementById('hashi'); if(!cv) return;
+  const nameEl=document.getElementById('hashiName'), noteEl=document.getElementById('hashiNote'), vEl=document.getElementById('hashiVerdict');
+  const LABEL={ok:'correto',warn:'evite',bad:'tabu'};
+  let ctx,W,H,spots=[],cur=0,pose={x:0,y:0,a:0},targetPose={x:0,y:0,a:0},down=false,drag=null,raf,stickLen=90;
+  function layout(){
+    ctx=fit(cv,360); W=cv._w; H=cv._h; stickLen=Math.min(W*0.17,110);
+    spots=[
+      {id:'rest', name:'No descanso', x:0.22*W, y:0.74*H, a:0, verdict:'ok',
+       note:'Correto. Entre uma garfada e outra os palitos descansam no apoio, paralelos e com as pontas para a esquerda.'},
+      {id:'across', name:'Atravessados sobre a tigela', x:0.30*W, y:0.36*H, a:0, verdict:'warn',
+       note:'Evite. Atravessar os palitos sobre a tigela sinaliza que você terminou, e no meio da refeição soa indelicado.'},
+      {id:'upright', name:'Fincados em pé no arroz', x:0.30*W, y:0.53*H, a:-Math.PI/2, verdict:'bad',
+       note:'Tabu. É exatamente assim que se oferece arroz aos mortos num altar budista, e a imagem remete direto a um funeral.'},
+      {id:'stab', name:'Espetando a comida', x:0.56*W, y:0.55*H, a:-1.05, verdict:'warn',
+       note:'Evite. Espetar em vez de pegar é considerado grosseiro, um gesto de quem não tem paciência.'},
+      {id:'pass', name:'Passando de palito para palito', x:0.80*W, y:0.42*H, a:0.12, verdict:'bad',
+       note:'Tabu. É o gesto com que os ossos do falecido são passados entre os parentes na cremação.'}
+    ];
+  }
+  function drawSticks(x,y,a,alpha,w){
+    ctx.save(); ctx.translate(x,y); ctx.rotate(a);
+    ctx.strokeStyle='rgba(20,20,20,'+alpha+')'; ctx.lineWidth=w||2.4; ctx.lineCap='round';
+    [-3,3].forEach(function(dy){ ctx.beginPath(); ctx.moveTo(-stickLen/2,dy); ctx.lineTo(stickLen/2,dy*1.7); ctx.stroke(); });
+    ctx.restore();
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='rgba(20,20,20,.18)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(0.05*W,0.84*H); ctx.lineTo(0.95*W,0.84*H); ctx.stroke();
+    const bx=0.30*W, by=0.50*H, br=Math.min(0.11*W,62);
+    ctx.beginPath(); ctx.moveTo(bx-br,by-br*0.35);
+    ctx.bezierCurveTo(bx-br*0.9,by+br*0.9, bx+br*0.9,by+br*0.9, bx+br,by-br*0.35);
+    ctx.strokeStyle='rgba(20,20,20,.6)'; ctx.lineWidth=1.4; ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(bx,by-br*0.35,br,br*0.26,0,0,7); ctx.strokeStyle='rgba(20,20,20,.35)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(bx,by-br*0.34,br*0.78,br*0.18,0,0,7); ctx.fillStyle='rgba(20,20,20,.05)'; ctx.fill();
+    const px=0.56*W, py=0.62*H, pr=Math.min(0.10*W,58);
+    ctx.beginPath(); ctx.ellipse(px,py,pr,pr*0.30,0,0,7); ctx.strokeStyle='rgba(20,20,20,.45)'; ctx.lineWidth=1.2; ctx.stroke();
+    ctx.beginPath(); ctx.roundRect ? ctx.roundRect(0.20*W-16,0.74*H-4,32,8,3) : ctx.rect(0.20*W-16,0.74*H-4,32,8);
+    ctx.strokeStyle='rgba(20,20,20,.45)'; ctx.lineWidth=1; ctx.stroke();
+    drawSticks(0.86*W,0.36*H,0.12,0.30,2);
+    spots.forEach(function(s,i){
+      const on=i===cur;
+      ctx.beginPath(); ctx.arc(s.x,s.y,15,0,7);
+      ctx.setLineDash([3,4]); ctx.strokeStyle=on?'rgba(193,95,60,.75)':'rgba(20,20,20,.18)'; ctx.lineWidth=1; ctx.stroke(); ctx.setLineDash([]);
+    });
+    if(down&&drag) drawSticks(drag.x,drag.y,pose.a,0.5);
+    else drawSticks(pose.x,pose.y,pose.a,0.9);
+  }
+  function tick(){
+    pose.x+=(targetPose.x-pose.x)*0.18; pose.y+=(targetPose.y-pose.y)*0.18;
+    let da=targetPose.a-pose.a; pose.a+=da*0.18;
+    draw();
+    if(Math.abs(targetPose.x-pose.x)>0.4||Math.abs(targetPose.y-pose.y)>0.4||Math.abs(da)>0.01) raf=requestAnimationFrame(tick);
+  }
+  function select(i){
+    cur=i; const s=spots[i];
+    targetPose={x:s.x,y:s.y,a:s.a};
+    nameEl.textContent=s.name; noteEl.textContent=s.note;
+    vEl.className='verdict '+s.verdict; vEl.textContent=LABEL[s.verdict];
+    cancelAnimationFrame(raf); tick();
+  }
+  function nearest(x,y){
+    let best=0,bd=1e9;
+    spots.forEach(function(s,i){ const d=Math.hypot(s.x-x,s.y-y); if(d<bd){bd=d;best=i;} });
+    return best;
+  }
+  cv.addEventListener('pointerdown',function(e){ down=true; cv.setPointerCapture(e.pointerId); drag=ptr(e,cv); draw(); });
+  cv.addEventListener('pointermove',function(e){ if(!down)return; drag=ptr(e,cv); draw(); });
+  function release(){ if(!down)return; down=false; if(drag) select(nearest(drag.x,drag.y)); drag=null; }
+  cv.addEventListener('pointerup',release);
+  cv.addEventListener('pointercancel',release);
+  addEventListener('resize',function(){ layout(); const s=spots[cur]; pose={x:s.x,y:s.y,a:s.a}; targetPose={x:s.x,y:s.y,a:s.a}; draw(); });
+  layout(); pose={x:spots[0].x,y:spots[0].y,a:spots[0].a}; targetPose={x:pose.x,y:pose.y,a:pose.a}; draw();
+})();
+</script>
+</body>
+</html>

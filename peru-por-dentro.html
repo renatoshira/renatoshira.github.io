@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Peru por dentro</title>
+<meta name="description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos peruanos, e de onde eles vêm, para quem vai viajar para Lima e o Peru.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://renatoshira.github.io/peru-por-dentro.html">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="O Peru por dentro">
+<meta property="og:description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos peruanos, e de onde eles vêm, para quem vai viajar para Lima e o Peru.">
+<meta property="og:url" content="https://renatoshira.github.io/peru-por-dentro.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-peru.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O Peru por dentro">
+<meta name="twitter:description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos peruanos, e de onde eles vêm, para quem vai viajar para Lima e o Peru.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-peru.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<style>
+:root{
+  --bg:#ffffff; --ink:#171310; --dim:#6b6258; --faint:#9a9086;
+  --line:rgba(23,19,16,.16); --line2:rgba(23,19,16,.08); --fig:#fbf9f6;
+  --terra:#C15F3C; --teal:#2E8C6A; --blue:#2F80A8; --amber:#D99A2B; --red:#C0392B;
+  --mono:"Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --loc:"Noto Serif", Georgia, serif;
+  --measure:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font-weight:400;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(193,95,60,.20)}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--terra);z-index:99;transition:width .1s linear}
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:12px 24px}
+.topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0;font-weight:700}
+.topbar .kicker:hover{color:var(--terra)}
+
+p{font-size:18px;line-height:1.75;margin:0 0 20px}
+strong{font-weight:700}
+em{font-style:italic}
+.mark{background:var(--ink);color:#fff;padding:1.5px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.mark em{font-style:italic}
+.term{border-bottom:1px dashed var(--faint);cursor:help;position:relative;outline:none}
+.term::after{content:attr(data-term);position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-7px);background:var(--ink);color:#fff;font-family:var(--loc);font-style:italic;font-size:13.5px;line-height:1.3;letter-spacing:.01em;padding:5px 9px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .14s;z-index:6}
+.term::before{content:'';position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-2px);border:5px solid transparent;border-top-color:var(--ink);opacity:0;transition:opacity .14s;z-index:6}
+.term:hover,.term:focus,.term.open{border-bottom-color:var(--terra)}
+.term:hover::after,.term:focus::after,.term.open::after,.term:hover::before,.term:focus::before,.term.open::before{opacity:1}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+a:hover{color:var(--terra);border-color:var(--terra)}
+.loc{font-family:var(--loc);font-style:italic}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:84px 24px}
+header.top{max-width:var(--measure);margin:0 auto;padding:72px 24px 0}
+.eyebrow{font-size:12.5px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+h1{display:flex;flex-direction:column;align-items:flex-start;gap:7px;font-size:30px;font-weight:700;line-height:1.18;margin:0}
+h1 .mark{padding:2px 10px}
+h1 .en{font-family:var(--loc);font-style:italic;font-weight:400;font-size:15px;letter-spacing:.01em;color:var(--faint);margin-top:12px}
+.standfirst{font-size:17px;font-weight:400;line-height:1.8;color:var(--ink);max-width:600px;margin:40px 0 0}
+
+.tag{font-size:12px;font-weight:400;letter-spacing:2.16px;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.tag .n{color:inherit}
+h2{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px;color:var(--ink)}
+h2 .loc{font-weight:400;color:var(--faint);font-size:.86em;margin-left:6px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+figure{margin:34px 0;padding:0}
+.top figure{margin:44px 0 0}
+.widget{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:16px}
+.widget canvas{display:block;width:100%;border-radius:3px;touch-action:none;cursor:grab}
+.widget canvas:active{cursor:grabbing}
+figcaption{color:var(--faint);font-size:12.5px;line-height:1.5;margin-top:12px;text-align:center}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:14px}
+.btn{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 14px;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .16s}
+.btn:hover{border-color:var(--terra);color:var(--terra)}
+.btn.on{background:var(--terra);border-color:var(--terra);color:#fff}
+input[type=range]{-webkit-appearance:none;appearance:none;height:2px;background:var(--line);border-radius:2px;outline:none;width:100%;max-width:340px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--terra);cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px var(--terra)}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--terra);cursor:pointer;border:3px solid #fff}
+
+.readout{text-align:center;margin-top:14px}
+.readout .big{font-size:18px;font-weight:700}
+.readout .desc{color:var(--dim);font-size:15px;margin-top:5px;line-height:1.5;min-height:2.6em}
+.readout .sub{color:var(--faint);font-size:13px;margin-top:5px}
+.meter{height:3px;background:var(--line);border-radius:3px;max-width:240px;margin:12px auto 0;overflow:hidden}
+.meter>i{display:block;height:100%;width:10%;background:linear-gradient(90deg,var(--blue),var(--teal),var(--amber));transition:width .25s}
+
+.quiz{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:22px}
+.q-step{display:none}
+.q-step.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.q-num{font-size:12px;font-weight:400;letter-spacing:1.6px;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.q-text{font-size:18px;font-weight:700;line-height:1.4;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:13px 15px;margin-bottom:9px;cursor:pointer;font-family:var(--mono);font-size:15px;line-height:1.5;transition:all .15s}
+.opt:hover{border-color:var(--dim)}
+.opt.correct{border-color:var(--teal);background:rgba(46,140,106,.08)}
+.opt.wrong{border-color:var(--red);background:rgba(192,57,43,.06)}
+.opt .mk{float:right;font-weight:700;margin-left:10px}
+.opt.correct .mk{color:var(--teal)} .opt.wrong .mk{color:var(--red)}
+.explain{color:var(--dim);font-size:15px;line-height:1.6;border-left:2px solid var(--amber);padding-left:14px;margin:4px 0 12px;display:none}
+.explain.show{display:block;animation:fade .3s ease}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.q-dots{display:flex;gap:6px}
+.q-dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s}
+.q-dots i.on{background:var(--terra)}
+
+/* linha do tempo vertical (§01) */
+.timeline{--gut:82px;position:relative;margin:36px 0 4px}
+.timeline::before{content:'';position:absolute;left:calc(var(--gut) + 14px);top:9px;bottom:34px;width:1px;background:var(--line)}
+.tl-item{position:relative;display:grid;grid-template-columns:var(--gut) 1fr;gap:28px;padding-bottom:44px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:calc(var(--gut) + 14px);transform:translateX(-50%);top:7px;width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid var(--terra)}
+.tl-year{text-align:right;font-size:13.5px;font-weight:700;color:var(--dim);padding-top:2px;letter-spacing:.3px}
+.tl-year-sfx{color:var(--faint)}
+.tl-title{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 8px}
+.tl-title .loc{font-weight:400;color:var(--faint);font-size:.84em;margin-left:8px}
+.tl-body p{font-size:16.5px;line-height:1.72;margin:0}
+
+footer{border-top:1px solid var(--line);margin-top:20px}
+footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;padding-bottom:70px}
+.srcs{font-size:12.5px;line-height:1.9;margin-top:10px}
+.srcs a{color:var(--dim);border-bottom:1px solid var(--line)}
+
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:56px 20px}
+  header.top{padding:48px 20px 0}
+  .widget{padding:12px}
+  .timeline{--gut:58px}
+  .tl-item{gap:16px}
+  .tl-year{font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<div class="topbar"><a class="kicker" href="index.html">← Renato Shirakashi</a></div>
+
+<header class="top">
+  <div class="eyebrow">Cultura peruana · artigo interativo</div>
+  <h1><span class="mark">O Peru</span><span class="mark">por dentro</span><span class="en">desde Lima, hacia adentro</span></h1>
+  <p class="standfirst">Alguns hábitos peruanos parecem estranhos à primeira vista, mas quase todos têm uma origem concreta, quase sempre ligada às três regiões do país, às suas três raízes e a cinco séculos que se encontram no mesmo prato. Este artigo explica de onde vêm alguns deles, com pequenas demonstrações para você mexer pelo caminho.</p>
+  <figure class="hero-fig">
+    <div class="widget"><canvas id="heroCanvas" height="200"></canvas></div>
+    <figcaption>Padrão de rombos encadeados, um dos motivos mais antigos do têxtil andino, tecido na costa e na serra há milênios (Paracas, Nazca).</figcaption>
+  </figure>
+</header>
+
+<main>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">00</span> · introdução</div>
+  <h2>Pequenos hábitos com origem concreta</h2>
+  <p>Quem chega ao Peru pela primeira vez costuma reparar em coisas que parecem contraditórias. Lima é um deserto colado num dos mares mais ricos do planeta, e mesmo assim quase não chove; o céu do inverno fica branco por meses sem molhar ninguém. Come-se ceviche ao meio-dia e quase nunca à noite. Um mesmo prato pode ter dentro de si o peixe cru dos antigos, o limão trazido pela Espanha e o corte fino aprendido com os japoneses.</p>
+  <p>Cada um desses hábitos tem uma razão, quase sempre ligada a algum ponto da história do país ou à sua geografia partida em três. Neste artigo eu percorro alguns deles e explico de onde vêm, usando demonstrações interativas ao longo do caminho. Entender a razão por trás de um gesto <span class="mark">muda o modo como você o observa quando está lá</span>.</p>
+</section>
+
+<section class="wrap">
+  <div class="tag"><span class="n">01</span> · a moldura</div>
+  <h2>Como o Peru se fez</h2>
+  <p>Antes de olhar para os detalhes, vale montar a moldura. Boa parte do que o Peru é hoje foi formada por cinco momentos, do mundo antiquíssimo dos Andes até a cidade que a serra reconstruiu no século XX. Vale ter esses marcos em mente, porque quase tudo o que vem nas próximas seções desce de um deles.</p>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-year">≈ 3000<br>a.C.</div>
+      <div class="tl-body">
+        <h3 class="tl-title">O berço antiquíssimo<span class="loc">Caral</span></h3>
+        <p>Enquanto o Egito erguia suas primeiras pirâmides, já existia no deserto costeiro peruano a cidade de Caral, hoje considerada a mais antiga das Américas, com pirâmides de terra e praças circulares afundadas quase cinco mil anos atrás. O Peru não começa nem em 1532 nem com os Incas: uma longa fila de civilizações costeiras e serranas, como Chavín, Paracas, Nazca, Moche, Wari e Chimú, empilhou ao longo de milênios um domínio impressionante de tecelagem, cerâmica, metalurgia e agricultura de altitude. É por isso que se veem pirâmides de barro entre os prédios de Lima. Os Incas foram o último capítulo dessa história, não o primeiro.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">séc.<br>XV</div>
+      <div class="tl-body">
+        <h3 class="tl-title">O império sem escrita nem moeda<span class="loc">Tawantinsuyu</span></h3>
+        <p>Em pouco mais de um século, os Incas montaram a partir de Cusco o maior império da América pré-colombiana, o <span class="term" tabindex="0" data-term="Tawantinsuyu · as quatro regiões unidas">Tawantinsuyu</span>. Não tinham escrita alfabética, nem dinheiro, nem roda, mas construíram estradas de milhares de quilômetros, terraços e uma engenharia de pedra que ainda impressiona. O motor não era o mercado, era a reciprocidade: o <span class="term" tabindex="0" data-term="ayni · hoje por ti, amanhã por mim">ajni</span>, a ajuda mútua entre famílias, a <span class="term" tabindex="0" data-term="minka · trabalho para o bem comum">minka</span>, o trabalho comunitário, e a <span class="term" tabindex="0" data-term="mita · turno de trabalho devido ao Estado">mita</span>, o turno devido ao Estado. A conta se guardava em nós de cordão, o <em>quipu</em>, e a língua, o <span class="term" tabindex="0" data-term="quechua · runasimi, a fala do povo">quechua</span>, é falada por milhões até hoje.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1532</div>
+      <div class="tl-body">
+        <h3 class="tl-title">A cilada e o resgate de ouro</h3>
+        <p>Em novembro de 1532, em Cajamarca, menos de duzentos espanhóis emboscam e capturam o imperador Atahualpa diante de um exército de milhares. Preso, ele oferece o maior resgate de que se tem notícia: encher uma sala inteira de ouro e outras duas de prata, até a altura do braço erguido. O resgate é pago, cerca de seis toneladas de ouro e quase doze de prata, e mesmo assim, no ano seguinte, os espanhóis o executam. Um império de milhões cai depressa, pela surpresa, pelas doenças trazidas de fora, por uma guerra civil interna e por alianças com povos que os Incas haviam submetido. Começa aí a fratura que funda o Peru: <span class="mark">o mundo andino é conquistado, mas nunca apagado</span>.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1535</div>
+      <div class="tl-body">
+        <h3 class="tl-title">A Cidade dos Reis<span class="loc">Ciudad de los Reyes</span></h3>
+        <p>Pizarro funda Lima em 1535 e não escolhe a Cusco dos Incas para capital: escolhe a costa, de onde os navios falam com a Espanha. Lima vira o centro do poder espanhol em toda a América do Sul, sede da corte, da alta justiça e da Inquisição, e escoadouro da prata que fazia a Espanha girar, a ponto de nascer a expressão <span class="term" tabindex="0" data-term="vale un Perú · vale uma fortuna">"vale un Perú"</span>. Chegam com a colônia o catolicismo, que se funde ao mundo andino, o barroco das igrejas douradas e a língua espanhola. E chegam também, à força, africanos escravizados, que se tornam a terceira raiz do Peru costeiro. Lima nasce virada para a Europa e de costas para os Andes, uma tensão que ela carrega até hoje.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1821<span class="tl-year-sfx">→</span></div>
+      <div class="tl-body">
+        <h3 class="tl-title">A independência e a Lima que inchou</h3>
+        <p>San Martín declara a independência em 28 de julho de 1821, e Bolívar e Sucre a selam nas batalhas de Junín e Ayacucho, em 1824, que encerram o domínio espanhol na América do Sul. A república nasce instável e leva golpes duros, entre eles a Guerra do Pacífico, no fim do século XIX, quando o Chile chega a ocupar Lima. No século XX, milhões deixam a serra e a selva e descem para a capital: a cidade de meio milhão vira uma metrópole de dez milhões, em boa parte andina, que se reinventa nas bordas. E, virando o milênio, a cozinha faz o país reencontrar o orgulho de si e vira sua maior embaixadora no mundo.</p>
+      </div>
+    </div>
+  </div>
+  <p>Dois traços atravessam quase tudo o que vem a seguir. O primeiro é a <span class="mark">fratura e a mestiçagem da origem</span>, três raízes e três regiões que nunca se fundiram por completo e convivem em tensão. O segundo é a <span class="mark">geografia partida em três</span>, costa, serra e selva, que decide o clima, a comida e até o humor da cidade. Guarde os dois.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">02</span> · o território</div>
+  <h2>Três países num só <span class="loc">costa, sierra, selva</span></h2>
+  <p>O Peru não é bem um país, são três colados. A faixa de deserto na <strong>costa</strong>, a muralha de picos da <strong>serra</strong> andina e a imensidão verde da <strong>selva</strong> amazônica são tão diferentes entre si que quase funcionam como nações distintas, cada uma com seu clima, sua comida, sua música e seu jeito. Entender essa divisão explica quase tudo o que chega ao prato e à cara das cidades.</p>
+  <p>Na demonstração abaixo, arraste o marcador da esquerda para a direita para atravessar o país, do mar até a floresta, e veja como a altitude, o clima e os ingredientes mudam a cada faixa.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="cut" height="360"></canvas>
+      <div class="readout">
+        <div class="big" id="cutName">Costa</div>
+        <div class="desc" id="cutDesc">A faixa de deserto à beira-mar, onde fica Lima.</div>
+        <div class="sub" id="cutAlt">≈ 0 a 500 m</div>
+      </div>
+    </div>
+    <figcaption>Arraste o marcador do mar até a selva. Cada faixa muda o clima e a despensa.</figcaption>
+  </figure>
+  <p>Essa divisão também carrega preconceito e piada: o limenho da costa, o serrano da montanha e o <em>charapa</em> da selva se veem quase como estrangeiros dentro do mesmo país. Mas tudo isso desce e se cruza na capital. <span class="mark">Comer numa mesma quadra de Lima um peixe da costa, uma batata da serra e um fruto da selva é atravessar o país sem sair da cidade.</span></p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">03</span> · o mar frio</div>
+  <h2>Por que Lima é um deserto ao lado de um mar cheio de vida</h2>
+  <p>Uma das primeiras coisas que estranham em Lima é o clima. A cidade fica no litoral, mas é um deserto, um dos lugares mais secos do mundo, e no inverno passa meses sob um céu branco e úmido que nunca vira chuva de verdade. A explicação está no mar. Uma corrente oceânica gelada, a <strong>corrente de Humboldt</strong>, sobe do sul ao longo da costa e faz duas coisas ao mesmo tempo.</p>
+  <p>Antes de mexer na demonstração, vale desfazer uma confusão comum, porque a explicação é menos óbvia do que parece. Água fria é mais <strong>densa</strong> que água morna e, por conta própria, tenderia a ficar no fundo. <span class="mark">Ela não sobe sozinha: quem a puxa para cima é o vento.</span> Sopram de forma constante ventos ao longo da costa peruana que, somados à rotação da Terra, empurram a água da superfície para longe da praia, mar adentro. Esse vazio precisa ser preenchido, e o que sobe para ocupar o lugar é justamente a água profunda e gelada. É um <span class="term" tabindex="0" data-term="afloramento · upwelling, a ressurgência costeira">bombeamento mecânico</span>, contra a densidade, e não uma água fria que flutua.</p>
+  <p>Ligue e desligue esse mecanismo na demonstração abaixo para ver o efeito duplo: com ele, o mar se enche de vida e a costa vira deserto; sem ele, o mar seria mais morno e pobre, e a terra, mais úmida.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="humboldt" height="400"></canvas>
+      <div class="controls">
+        <button class="btn on" id="humbBtn">corrente fria: ligada</button>
+      </div>
+      <div class="readout">
+        <div class="desc" id="humbDesc">O vento sopra ao longo da costa e empurra a água da superfície para longe da praia. Como esse vazio precisa ser preenchido, a água fria do fundo é puxada para cima, mesmo sendo mais densa: é um bombeamento mecânico, não uma água fria que sobe sozinha. Ela chega carregada de nutrientes e enche o mar de peixe. Esse mar gelado resfria o ar logo acima dele e forma uma tampa de ar estável, que impede a umidade de subir e virar chuva. Sobra a garúa.</div>
+      </div>
+    </div>
+    <figcaption>A mesma corrente que faz do Peru um dos maiores pescadores do mundo é a que seca a costa.</figcaption>
+  </figure>
+  <p>O que sobe do fundo é adubo. Séculos de matéria orgânica afundada se acumulam nas águas profundas, e quando elas chegam à superfície alimentam o plâncton, que alimenta a <em>anchoveta</em>, que sustenta uma das pescas mais fartas do planeta. <span class="mark">É daí que vem, no fim das contas, o peixe do seu ceviche.</span></p>
+  <p>O mesmo mar gelado, porém, faz a segunda coisa. Ele resfria o ar logo acima dele e cria uma <strong>inversão térmica</strong>: fica ar frio embaixo e ar mais quente em cima, o contrário do arranjo normal. Como o ar frio é pesado, ele não sobe, e essa espécie de tampa impede que a umidade ganhe altura e vire nuvem de chuva. A umidade então condensa perto do chão, em gotículas finas demais para cair. É a <span class="term" tabindex="0" data-term="garúa · a neblina úmida do inverno limenho">garúa</span>, a neblina que cobre a cidade de maio a novembro sem molhar de verdade. Some a isso o fato de os Andes barrarem a umidade que vem da Amazônia, e o resultado é que Lima é a <span class="mark">segunda capital mais seca do mundo, atrás só do Cairo</span>. É em boa parte desse céu branco que nasce o ar melancólico e cinzento da cidade.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">04</span> · crenças</div>
+  <h2>Um santo por cima, a terra por baixo</h2>
+  <p>O peruano da costa é, na maioria, católico, herança de três séculos de colônia, com santos, procissões e igrejas de ouro em cada esquina. Mas por baixo desse catolicismo mora um mundo andino que a conquista nunca conseguiu apagar, e os dois convivem fundidos, sem que ninguém veja contradição.</p>
+  <p>No pensamento andino, a <strong><span class="term" tabindex="0" data-term="Pachamama · a Mãe Terra">Pachamama</span></strong>, a Mãe Terra, e os <strong><span class="term" tabindex="0" data-term="apus · os espíritos das montanhas">apus</span></strong>, os espíritos das montanhas, seguem vivos, muitas vezes vestidos de santos católicos. Faz-se uma oferenda à terra, o <em>pago a la tierra</em>, e reza-se a um santo no mesmo fôlego. Por isso, quando alguém <span class="mark">derrama no chão o primeiro gole antes de beber</span>, não está desperdiçando: está devolvendo à Pachamama a sua parte, num gesto de reciprocidade que vem de muito antes da Espanha.</p>
+  <p>A devoção mais forte de Lima mostra bem essa mistura. Por volta de <strong>1651</strong>, um escravo de origem angolana pintou um Cristo numa parede de barro no bairro de Pachacamilla. Em 1655, um terremoto arrasou tudo em volta, <span class="mark">e a parede ficou de pé</span>; ela resistiu de novo a outros abalos, inclusive ao grande terremoto de 1746. O povo viu ali um milagre, e a devoção, que começou na comunidade afroperuana, tomou a cidade inteira. Até hoje, todo mês de outubro, centenas de milhares vestem o hábito roxo e acompanham a maior procissão da América, quando Lima fica <span class="term" tabindex="0" data-term="Señor de los Milagros · o Senhor dos Milagres">"morada"</span>. Vale reparar em quem a sustenta: a fé mais forte da cidade nasceu na sua parte mais oprimida.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">05</span> · o sistema</div>
+  <h2>Reciprocidade, jeito e a hora peruana</h2>
+  <p>Por baixo do comportamento social peruano roda um princípio antigo, o da <strong>reciprocidade</strong>. O <em>ayni</em> dos Incas, o "hoje por ti, amanhã por mim", não sumiu com o império: ele sobrevive no mutirão de bairro, na ajuda entre vizinhos e naquele convite insistente para comer que não aceita um não. <span class="mark">Muito do que parece só hospitalidade é, no fundo, um sistema de troca que vem de séculos.</span> A ideia de que se dá para receber, e de que a comunidade constrói junto o que o dinheiro não paga, é uma das heranças mais fundas do mundo andino.</p>
+  <p>Na costa e em Lima, esse fundo se mistura a outro traço, mais colonial: o jeito <span class="term" tabindex="0" data-term="criollo · a esperteza costeira para se virar">criollo</span> de se virar com charme, malícia e improviso. Ele tem um lado luminoso, de humor e resiliência, e um lado sombrio, o do <em>vivo</em> que leva vantagem sobre os outros, que alimenta uma certa desconfiança de que "todo mundo se aproveita". É o mesmo espírito que sustenta a enorme economia informal do país, o comércio de rua e o vira-se de cada dia.</p>
+  <p>E há o tempo. A <span class="term" tabindex="0" data-term="la hora peruana · a hora peruana">hora peruana</span> é elástica: chegar no horário marcado pode ser cedo demais, e um convite para as oito da noite costuma começar bem depois, sem que ninguém ache ruim. Some a isso a ternura embutida na língua, que fala tudo no diminutivo carinhoso, o <em>cafecito</em>, o <em>ahorita</em>, o <em>ratito</em>. <span class="mark">Só saiba que "ahorita" tanto pode ser "já já" quanto "daqui a três horas".</span></p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">06</span> · convivência</div>
+  <h2>O beijo, o casero e a pechincha</h2>
+  <p>A distância física entre as pessoas é curta e o calor é o padrão, o oposto da contenção que se vê em outras culturas. Cumprimenta-se com <span class="mark">um beijo na bochecha</span>, entre mulheres e entre homem e mulher, e com um abraço caloroso entre amigos; o aperto de mão formal fica reservado ao primeiro contato de trabalho. Recusar o prato ou a bebida que alguém oferece pode magoar, porque oferecer comida é o gesto social básico. Um "¿ya comiste?", "você já comeu?", funciona quase como um "você está bem?".</p>
+  <p>No mercado e na feira, a relação também é afetiva. Você vira <span class="term" tabindex="0" data-term="casero / casera · o freguês de sempre">casero</span> do vendedor, o freguês de sempre, tratado por apelido e às vezes premiado com a <span class="term" tabindex="0" data-term="yapa · um pouquinho a mais, de brinde">yapa</span>, aquele pesinho a mais na balança. Ali, pechinchar faz parte do jogo, sem hostilidade: o preço é começo de conversa, não sentença. <span class="mark">Em lojas de preço fixo, porém, não se regateia.</span> São dois códigos que convivem lado a lado, e saber em qual você está evita saia justa.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">07</span> · a mesa</div>
+  <h2>O prato onde o país inteiro cabe</h2>
+  <p>Se em outras culturas a alma está num ritual, no Peru ela está no <strong>prato</strong>. A mesa é onde as três regiões, as três raízes e mais duas grandes imigrações, a chinesa e a japonesa, se encontram, e é o que devolveu ao país o orgulho de si. A despensa ajuda: o Peru tem <span class="mark">milhares de variedades de batata</span> e dezenas de milhos e de <em>ajíes</em>, as pimentas, e foi daqui que a batata e o milho partiram para o mundo.</p>
+  <p>O melhor exemplo é o ceviche, o prato-nação. Ele não nasceu pronto: foi ganhando camadas ao longo da história. Clique para montá-lo, uma época de cada vez.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="ceviche" height="330"></canvas>
+      <div class="controls">
+        <button class="btn" id="cevBtn">montar a próxima camada</button>
+        <button class="btn" id="cevReset">recomeçar</button>
+      </div>
+      <div class="readout">
+        <div class="big" id="cevName">Prato vazio</div>
+        <div class="desc" id="cevDesc">O ceviche não caiu do céu: ele foi somando origens ao longo de dois mil anos. Clique para ver.</div>
+      </div>
+    </div>
+    <figcaption>Cada camada do ceviche vem de uma origem diferente na história do Peru.</figcaption>
+  </figure>
+  <p>Esse mesmo cruzamento aparece em quase tudo que se come. A técnica <span class="term" tabindex="0" data-term="nikkei · a fusão nipo-peruana">nikkei</span> nasce dos imigrantes japoneses que chegaram a partir de <strong>1899</strong> para as fazendas da costa; do encontro do seu corte preciso com o ají e o limão peruanos saiu, entre outros pratos, o <em>tiradito</em>. O <span class="term" tabindex="0" data-term="chifa · a cozinha chinesa-peruana">chifa</span>, a comida dos cerca de cem mil chineses que chegaram entre 1849 e 1874, se fundiu tão fundo que o <em>lomo saltado</em> e o <em>arroz chaufa</em> são hoje comida peruana como qualquer outra. E o coquetel nacional, o <strong>pisco sour</strong>, ganhou forma no bar de um americano em Lima, nos anos 1920. <span class="mark">Só um aviso: Peru e Chile disputam a origem do pisco com paixão, então evite pedir um "pisco chileno" em Lima.</span></p>
+  <p>Nos anos 2000, o chef Gastón Acurio convenceu a elite limenha a valorizar a própria cozinha em vez da francesa, e uma geração o seguiu. Em <strong>2023</strong>, o restaurante Central, de Virgilio Martínez e Pía León, foi eleito o melhor do mundo. <span class="mark">Foi em boa parte pela mesa que o país aprendeu de novo a gostar de ser o que é</span>, ainda que o glamour da alta gastronomia nem sempre chegue a quem planta e pesca.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">08</span> · som e mão</div>
+  <h2>Um instrumento nascido de um caixote</h2>
+  <p>A percussão que embala boa parte da música da costa nasceu de uma proibição. Impedidos de tocar tambores durante a escravidão, os afroperuanos passaram a bater nos <span class="mark">caixotes de madeira que sobravam nos portos</span>, e daí saiu o <strong><span class="term" tabindex="0" data-term="cajón · o caixote-tambor peruano">cajón</span></strong>, hoje instrumento nacional e adotado até pelo flamenco espanhol. Ele é o coração de gêneros afroperuanos como o <em>festejo</em> e o <em>landó</em>, e acompanha a <span class="term" tabindex="0" data-term="marinera · a dança de lenços do Peru">marinera</span>, a dança de galanteio com lenço branco. Um instrumento inventado para driblar uma censura virou símbolo do país.</p>
+  <p>Do lado andino, a trilha é outra: o <em>huayno</em>, de escala pentatônica, é a música da serra, enquanto na velha Lima costeira reina o <em>vals criollo</em>, de guitarra e cajón. E há a herança que se vê com os olhos. Tecer, no Peru, é milenar, e os padrões e as cores de uma manta não são enfeite: <span class="mark">carregam a identidade de cada comunidade</span>, quase como um sobrenome bordado. A cerâmica conta histórias desde os Moche, que modelavam retratos e cenas inteiras em seus vasos.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">09</span> · o calendário</div>
+  <h2>O ano de festas que a viagem vai cruzar</h2>
+  <p>É provável que a sua viagem caia em cima de alguma festa, e vale saber qual. O calendário peruano mistura o santoral católico, as datas da república e o fundo andino, e cada mês tem a sua. Gire a roda abaixo; ela começa no mês de hoje.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="wheel" height="430"></canvas>
+      <div class="readout">
+        <div class="big" id="fName">Fiestas Patrias</div>
+        <div class="desc" id="fLine">A independência de 1821; o país inteiro em vermelho e branco.</div>
+        <div class="sub" id="fWhen" style="color:var(--terra)">28 de julho</div>
+      </div>
+    </div>
+    <figcaption>Arraste para girar. O ponteiro no topo marca o mês atual.</figcaption>
+  </figure>
+  <p>Alguns marcos valem por si. As <strong>Fiestas Patrias</strong>, no fim de julho, celebram a independência e param o país em vermelho e branco. O <span class="term" tabindex="0" data-term="Inti Raymi · a festa do Sol dos Incas">Inti Raymi</span>, em Cusco, reencena em junho a festa do Sol dos Incas, o império que virou espetáculo e afirmação. E outubro é o mês do <strong>Señor de los Milagros</strong>, quando Lima se veste de roxo. <span class="mark">Uma festa para quase toda semana do ano</span>, e cada uma revela uma camada diferente do país.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">10</span> · na prática</div>
+  <h2>As regras que a viagem ensina</h2>
+  <p>Algumas situações do dia a dia peruano têm uma lógica que não é óbvia para quem chega. Responda às perguntas abaixo para ver a razão por trás de cada uma.</p>
+  <figure>
+    <div class="quiz" id="quiz">
+      <div class="q-nav">
+        <div class="q-dots" id="qDots"></div>
+        <button class="btn" id="qNext" style="display:none">próxima →</button>
+      </div>
+    </div>
+    <figcaption>Cada escolha revela a razão cultural por trás do hábito.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">11</span> · a cidade</div>
+  <h2>Lima por dentro</h2>
+  <p>Lima cabe em três cidades numa só. O <strong>Centro Histórico</strong> é a capital virreinal, de praças, sacadas de madeira e igrejas douradas, com as catacumbas de San Francisco por baixo. <strong>Miraflores</strong> é a Lima moderna, debruçada sobre o mar. E <strong>Barranco</strong> é a boêmia e artística. Atravessar a cidade é atravessar séculos e classes numa tarde.</p>
+  <p>A cidade vive num penhasco sobre o Pacífico, e por isso olha o mar mais de cima e de longe do que se banha nele, já que a água é fria e brava. Entre os prédios de Miraflores e San Isidro há <span class="mark">pirâmides de barro pré-incaicas</span>, as <span class="term" tabindex="0" data-term="huacas · sítios sagrados e pirâmides de barro">huacas</span>, cinco mil anos de história espremidos num quarteirão residencial. E há a Lima que a serra reconstruiu: os bairros populares onde a cidade andina se refez a partir de meados do século XX e onde vive, hoje, a maior parte dos limenhos. <span class="mark">O cartão-postal é só uma parte; a cidade real é, em boa medida, serrana.</span></p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">12</span> · fim</div>
+  <h2>Olhar com contexto</h2>
+  <p>Nenhum desses hábitos precisa ser decorado para a viagem valer a pena. O que ajuda é saber que eles existem e de onde vêm. Quando o céu de Lima ficar branco por dias, você vai reconhecer a corrente fria que seca a costa. Quando alguém derramar um gole no chão, vai reconhecer a Pachamama recebendo a sua parte. Quando o ceviche chegar ao meio-dia, vai reconhecer nele os Moche, a Espanha e o Japão na mesma colher. Ver o Peru com essa camada de contexto torna a observação mais rica, e <span class="mark">é também uma forma de respeito</span> por um país que passou séculos aprendendo a gostar de si mesmo.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Rascunho interativo v0.1. Um artigo por trás de alguns hábitos peruanos, com Lima no centro e o Peru ao redor, feito para ser lido antes ou durante a viagem.</p>
+    <p class="srcs">Fontes das histórias: Caral, a cidade mais antiga das Américas (<a href="https://en.wikipedia.org/wiki/Caral">Wikipedia</a>); o resgate de Atahualpa em 1532 (<a href="https://en.wikipedia.org/wiki/Ransom_Room">Wikipedia</a>); fundação de Lima e o Vice-Reino (<a href="https://www.britannica.com/place/Lima/History">Britannica</a>); a corrente de Humboldt e a garúa (<a href="https://en.wikipedia.org/wiki/Humboldt_Current">Wikipedia</a>); o Señor de los Milagros (<a href="https://en.wikipedia.org/wiki/Lord_of_Miracles">Wikipedia</a>); a história do ceviche (<a href="https://www.nationalgeographic.com/travel/article/ceviche-surprising-history-behind-perus-raw-fish-dish">National Geographic</a>); a cozinha nikkei (<a href="https://en.wikipedia.org/wiki/Nikkei_cuisine">Wikipedia</a>) e o chifa (<a href="https://en.wikipedia.org/wiki/Chifa">Wikipedia</a>); o pisco sour (<a href="https://en.wikipedia.org/wiki/Pisco_sour">Wikipedia</a>); o cajón afroperuano (<a href="https://en.wikipedia.org/wiki/Caj%C3%B3n">Wikipedia</a>).</p>
+  </div>
+</footer>
+</main>
+
+<script>
+/* ===================== utilidades ===================== */
+const DPR = Math.min(window.devicePixelRatio || 1, 2);
+function fit(cv, cssH){
+  const w = cv.clientWidth || cv.parentNode.clientWidth;
+  const h = cssH || cv.clientHeight || 340;
+  cv.style.height = h + 'px';
+  cv.width = Math.round(w*DPR); cv.height = Math.round(h*DPR);
+  const ctx = cv.getContext('2d'); ctx.setTransform(DPR,0,0,DPR,0,0);
+  cv._w = w; cv._h = h; return ctx;
+}
+function ptr(e, cv){
+  const r = cv.getBoundingClientRect();
+  const t = (e.touches && e.touches[0]) || (e.changedTouches && e.changedTouches[0]) || e;
+  return { x: t.clientX - r.left, y: t.clientY - r.top };
+}
+const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function mix(c1,c2,t){ return [Math.round(lerp(c1[0],c2[0],t)),Math.round(lerp(c1[1],c2[1],t)),Math.round(lerp(c1[2],c2[2],t))]; }
+function rgb(c,a){ return 'rgba('+c[0]+','+c[1]+','+c[2]+','+(a===undefined?1:a)+')'; }
+
+const pb=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight; pb.style.width=(h>0?scrollY/h*100:0)+'%';},{passive:true});
+
+/* reveal on scroll */
+(function(){
+  const els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+  const io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:0.06});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* tooltips de termos locais (hover / clique) */
+(function(){
+  const terms=[].slice.call(document.querySelectorAll('.term'));
+  terms.forEach(function(t){
+    t.addEventListener('click',function(e){ e.stopPropagation(); const was=t.classList.contains('open');
+      terms.forEach(function(o){o.classList.remove('open');}); if(!was)t.classList.add('open'); });
+  });
+  document.addEventListener('click',function(){ terms.forEach(function(o){o.classList.remove('open');}); });
+})();
+
+/* ===================== hero: rombos andinos ===================== */
+(function(){
+  const cv=document.getElementById('heroCanvas'); let ctx,W,H,t=0;
+  function size(){ ctx=fit(cv,200); W=cv._w; H=cv._h; }
+  size(); addEventListener('resize',size);
+  const scale=58, ringN=4;
+  function diamond(x,y,r){ ctx.beginPath(); ctx.moveTo(x,y-r); ctx.lineTo(x+r,y); ctx.lineTo(x,y+r); ctx.lineTo(x-r,y); ctx.closePath(); }
+  function draw(){
+    t+=0.006; ctx.clearRect(0,0,W,H);
+    const cols=Math.ceil(W/scale)+2, rows=Math.ceil(H/(scale*0.62))+2;
+    for(let r=0;r<rows;r++){
+      const y=r*scale*0.62, off=(r%2)?scale/2:0;
+      for(let c=-1;c<cols;c++){
+        const x=c*scale+off, wave=Math.sin(r*0.6+c*0.5-t*2);
+        const a=0.05+0.07*(wave*0.5+0.5);
+        for(let k=0;k<ringN;k++){
+          const rad=scale*0.46*(k+1)/ringN;
+          diamond(x,y,rad);
+          ctx.strokeStyle = wave>0.6 ? rgb([193,95,60],a*1.7) : (wave<-0.55 ? rgb([46,140,106],a*1.3) : rgb([23,19,16],a));
+          ctx.lineWidth=1; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ===================== 02 corte das três regiões ===================== */
+(function(){
+  const cv=document.getElementById('cut');
+  const nEl=document.getElementById('cutName'), dEl=document.getElementById('cutDesc'), aEl=document.getElementById('cutAlt');
+  // pontos [nx, altNorm] do relevo: mar -> costa -> serra (pico) -> selva
+  const P=[[0,0.05],[0.10,0.05],[0.20,0.09],[0.30,0.30],[0.40,0.78],[0.47,0.99],[0.54,0.88],[0.60,0.95],[0.68,0.62],[0.80,0.40],[1,0.30]];
+  const zones=[
+    {name:'Costa', min:0, max:0.26, desc:'A faixa de deserto à beira-mar, onde fica Lima. Mar frio, garúa e o peixe do ceviche.', alt:'≈ 0 a 500 m'},
+    {name:'Serra andina', min:0.26, max:0.62, desc:'Os Andes: altitude, o soroche (mal de altura), a batata e o milho, o mundo quechua e aimará.', alt:'≈ 2.500 a 4.500 m'},
+    {name:'Selva amazônica', min:0.62, max:1.01, desc:'Mais da metade do território e a menor parte da gente: rios, floresta, peixes e frutas amazônicas.', alt:'≈ 100 a 800 m'}
+  ];
+  let ctx,W,H,mx=0.10;
+  function altAt(nx){ for(let i=0;i<P.length-1;i++){ if(nx>=P[i][0]&&nx<=P[i+1][0]){ const t=(nx-P[i][0])/(P[i+1][0]-P[i][0]); return lerp(P[i][1],P[i+1][1],t);} } return P[P.length-1][1]; }
+  function zoneOf(nx){ for(const z of zones){ if(nx>=z.min&&nx<z.max) return z; } return zones[0]; }
+  function yFor(alt){ const base=H-46, top=30; return base-alt*(base-top); }
+  function draw(){
+    ctx=fit(cv,360); W=cv._w;H=cv._h; ctx.clearRect(0,0,W,H);
+    const base=H-46;
+    // céu suave
+    const sky=ctx.createLinearGradient(0,0,0,base); sky.addColorStop(0,'#f4efe8'); sky.addColorStop(1,'#fbf9f6');
+    ctx.fillStyle=sky; ctx.fillRect(0,0,W,base);
+    // mar à esquerda
+    const seaEnd=0.12*W;
+    const sea=ctx.createLinearGradient(0,base-60,0,base); sea.addColorStop(0,'#4f93ad'); sea.addColorStop(1,'#2F80A8');
+    ctx.fillStyle=sea; ctx.fillRect(0,yFor(0.05),seaEnd,base-yFor(0.05));
+    // relevo preenchido, colorido por faixa
+    ctx.beginPath(); ctx.moveTo(seaEnd,base);
+    for(let px=seaEnd;px<=W;px+=4){ const nx=px/W; ctx.lineTo(px, yFor(altAt(nx))); }
+    ctx.lineTo(W,base); ctx.closePath();
+    const grd=ctx.createLinearGradient(0,0,W,0);
+    grd.addColorStop(0.00,'#d9c39a'); grd.addColorStop(0.24,'#cbb083');
+    grd.addColorStop(0.30,'#b9986a'); grd.addColorStop(0.47,'#8f7a63');
+    grd.addColorStop(0.56,'#e9e6e6'); grd.addColorStop(0.64,'#7d9a5f');
+    grd.addColorStop(0.82,'#5f8f4e'); grd.addColorStop(1.00,'#4f8446');
+    ctx.fillStyle=grd; ctx.fill();
+    // neve no pico
+    ctx.beginPath(); let started=false;
+    for(let px=0.42*W;px<=0.56*W;px+=3){ const nx=px/W, a=altAt(nx); if(a>0.86){ const y=yFor(a); if(!started){ctx.moveTo(px,y);started=true;} else ctx.lineTo(px,y);} }
+    for(let px=0.56*W;px>=0.42*W;px-=3){ const nx=px/W, a=altAt(nx); if(a>0.86){ ctx.lineTo(px,yFor(a)+12);} }
+    ctx.closePath(); ctx.fillStyle='rgba(255,255,255,.85)'; ctx.fill();
+    // rótulos de faixa
+    ctx.font='11px "Space Mono", monospace'; ctx.textAlign='center'; ctx.fillStyle='rgba(23,19,16,.4)';
+    ctx.fillText('COSTA',0.13*W,base+18); ctx.fillText('SERRA',0.44*W,base+18); ctx.fillText('SELVA',0.80*W,base+18);
+    // marcador
+    const my=yFor(altAt(mx));
+    ctx.beginPath(); ctx.moveTo(mx*W,my); ctx.lineTo(mx*W,my-46); ctx.strokeStyle='rgba(193,95,60,.5)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.beginPath(); ctx.arc(mx*W,my-46,4,0,7); ctx.fillStyle='#C15F3C'; ctx.fill();
+    ctx.beginPath(); ctx.arc(mx*W,my,9,0,7); ctx.fillStyle='#C15F3C'; ctx.fill();
+    ctx.beginPath(); ctx.arc(mx*W,my,9,0,7); ctx.strokeStyle='#fff'; ctx.lineWidth=2.5; ctx.stroke();
+  }
+  function update(nx){ mx=clamp(nx,0.02,0.99); const z=zoneOf(mx); nEl.textContent=z.name; dEl.textContent=z.desc; aEl.textContent=z.alt; draw(); }
+  let down=false; function handle(e){ const p=ptr(e,cv); update(p.x/W); }
+  cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);handle(e);});
+  cv.addEventListener('pointermove',e=>{if(down)handle(e);});
+  cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  addEventListener('resize',draw); update(0.10);
+})();
+
+/* ===================== 03 corrente de Humboldt ===================== */
+(function(){
+  const cv=document.getElementById('humboldt'), btn=document.getElementById('humbBtn'), dEl=document.getElementById('humbDesc');
+  let ctx,W,H,prog=1,target=1,raf,t=0,on=true;
+  const fish=[]; for(let i=0;i<30;i++) fish.push({x:Math.random(),y:Math.random(),s:0.6+Math.random()*0.7,ph:Math.random()*6});
+  const drops=[]; for(let i=0;i<40;i++) drops.push({x:Math.random(),y:Math.random(),sp:0.4+Math.random()*0.6});
+  function arrow(x1,y1,x2,y2,head){
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    const a=Math.atan2(y2-y1,x2-x1), h=head||6;
+    ctx.beginPath(); ctx.moveTo(x2,y2);
+    ctx.lineTo(x2-Math.cos(a-0.4)*h, y2-Math.sin(a-0.4)*h);
+    ctx.moveTo(x2,y2);
+    ctx.lineTo(x2-Math.cos(a+0.4)*h, y2-Math.sin(a+0.4)*h); ctx.stroke();
+  }
+  function chip(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+  function badge(x,y,n,col){
+    ctx.beginPath(); ctx.arc(x,y,8.5,0,7); ctx.fillStyle=rgb(col,.95); ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,.9)'; ctx.lineWidth=1.5; ctx.stroke();
+    ctx.fillStyle='#fff'; ctx.font='700 10px "Space Mono", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(n,x,y+0.5);
+  }
+  function draw(){
+    ctx=fit(cv,400); W=cv._w;H=cv._h; ctx.clearRect(0,0,W,H);
+    const coastX=W*0.58, base=H-26, seaTop=H*0.44;
+    // a terra fica ACIMA do nível do mar: Lima é literalmente uma cidade sobre falésia
+    const landY=x=> seaTop - 30 - (x-coastX)*0.10 + Math.sin((x-coastX)*0.05)*4;
+    // céu
+    const sky=ctx.createLinearGradient(0,0,0,seaTop);
+    const skyTop=mix([150,175,190],[222,224,224],prog), skyBot=mix([190,205,205],[212,212,210],prog);
+    sky.addColorStop(0,rgb(skyTop)); sky.addColorStop(1,rgb(skyBot));
+    ctx.fillStyle=sky; ctx.fillRect(0,0,W,seaTop+2);
+    // mar
+    const cold=[44,110,143], warm=[70,150,160], seaC=mix(warm,cold,prog);
+    const g=ctx.createLinearGradient(0,seaTop,0,base); g.addColorStop(0,rgb(seaC,.95)); g.addColorStop(1,rgb(mix(seaC,[18,52,84],.6),.98));
+    ctx.fillStyle=g; ctx.fillRect(0,seaTop,coastX,base-seaTop);
+    // superfície ondulada
+    t+=0.02; ctx.beginPath(); ctx.moveTo(0,seaTop);
+    for(let x=0;x<=coastX;x+=6){ ctx.lineTo(x, seaTop+Math.sin(x*0.05+t)*3); }
+    ctx.strokeStyle='rgba(255,255,255,.4)'; ctx.lineWidth=1.4; ctx.stroke();
+    // peixes (desenhados antes das setas, para ficarem por baixo)
+    const nFish=Math.round(lerp(4,fish.length,prog));
+    for(let i=0;i<nFish;i++){ const f=fish[i]; const fx=10+f.x*(coastX-30), fy=seaTop+48+f.y*(base-seaTop-64)+Math.sin(t+f.ph)*3;
+      ctx.save(); ctx.translate(fx,fy); ctx.fillStyle=rgb([232,240,242],.8); ctx.beginPath();
+      ctx.ellipse(0,0,6*f.s,3*f.s,0,0,7); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(-6*f.s,0); ctx.lineTo(-10*f.s,-3*f.s); ctx.lineTo(-10*f.s,3*f.s); ctx.closePath(); ctx.fill(); ctx.restore(); }
+    // ===== o mecanismo: vento -> superfície sai -> água funda sobe =====
+    if(prog>0.05){
+      // 1. vento, no céu
+      ctx.strokeStyle=rgb([70,90,105],.6*prog); ctx.lineWidth=1.8;
+      arrow(coastX-46, seaTop-46, coastX-210, seaTop-46, 7);
+      badge(coastX-30, seaTop-46, '1', [70,90,105]);
+      // 2. superfície empurrada para longe da praia
+      ctx.strokeStyle=rgb([255,255,255],.7*prog); ctx.lineWidth=1.7;
+      arrow(coastX-46, seaTop+26, coastX-200, seaTop+26, 7);
+      badge(coastX-30, seaTop+26, '2', [90,140,170]);
+      // 3. água profunda puxada para cima
+      ctx.strokeStyle=rgb([190,235,255],.7*prog); ctx.lineWidth=1.7;
+      for(let i=0;i<4;i++){ const x=coastX-64-i*58; arrow(x, base-10, x, seaTop+46, 7); }
+      badge(coastX-64, seaTop+46, '3', [120,180,215]);
+    }
+    // costa: verde (úmido) -> areia (deserto)
+    const land=mix([106,143,78],[201,166,107],prog);
+    ctx.fillStyle=rgb(land); ctx.beginPath();
+    ctx.moveTo(coastX,base); ctx.lineTo(coastX,landY(coastX));
+    for(let x=coastX;x<=W;x+=6){ ctx.lineTo(x, landY(x)); }
+    ctx.lineTo(W,base); ctx.closePath(); ctx.fill();
+    // linha da falésia
+    ctx.beginPath(); ctx.moveTo(coastX,base); ctx.lineTo(coastX,landY(coastX));
+    ctx.strokeStyle=rgb([90,70,50],.35); ctx.lineWidth=1.2; ctx.stroke();
+    // garúa: faixa de neblina colada ao relevo, quando frio
+    if(prog>0.05){
+      ctx.fillStyle=rgb([250,250,249],.88*prog); ctx.beginPath();
+      ctx.moveTo(coastX, landY(coastX)-8);
+      for(let x=coastX;x<=W;x+=6){ ctx.lineTo(x, landY(x)-8+Math.sin(x*0.06+t*0.6)*2.5); }
+      for(let x=W;x>=coastX;x-=6){ ctx.lineTo(x, landY(x)-40+Math.sin(x*0.05-t*0.5)*2.5); }
+      ctx.closePath(); ctx.fill();
+      ctx.strokeStyle=rgb([150,150,148],.35*prog); ctx.lineWidth=1; ctx.stroke();
+      ctx.fillStyle=rgb([95,95,93],.95*prog); ctx.font='10px "Space Mono", monospace';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('garúa', (coastX+W)/2, landY((coastX+W)/2)-24);
+    }
+    // chuva sobre a costa quando morno
+    if(prog<0.95){ ctx.strokeStyle=rgb([110,135,150],.55*(1-prog)); ctx.lineWidth=1;
+      drops.forEach(d=>{ const x=coastX+8+d.x*(W-coastX-16); const top=landY(x)-96;
+        let f=(d.y+t*d.sp*0.28)%1; const y=top+f*90;
+        ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x-2,y+7); ctx.stroke(); }); }
+    // ===== legenda numerada, fora da cena (canto superior esquerdo) =====
+    if(prog>0.05){
+      const L=['o vento empurra a superfície','a superfície vai embora','a água funda sobe no lugar'];
+      const cols=[[70,90,105],[90,140,170],[120,180,215]];
+      ctx.font='10px "Space Mono", monospace'; ctx.textBaseline='middle';
+      let wMax=0; L.forEach(s=>{ wMax=Math.max(wMax, ctx.measureText(s).width); });
+      const bw=Math.min(wMax+40, coastX-70), bh=L.length*18+14, bx=12, by=12;
+      ctx.fillStyle='rgba(255,255,255,.82)'; chip(bx,by,bw,bh,5); ctx.fill();
+      ctx.strokeStyle='rgba(23,19,16,.10)'; ctx.lineWidth=1; ctx.stroke();
+      L.forEach((s,i)=>{ const ly=by+16+i*18;
+        badge(bx+16, ly, String(i+1), cols[i]);
+        ctx.fillStyle='rgba(23,19,16,.72)'; ctx.font='10px "Space Mono", monospace';
+        ctx.textAlign='left'; ctx.textBaseline='middle'; ctx.fillText(s, bx+30, ly); });
+    }
+    if(Math.abs(target-prog)>0.002){ prog+=(target-prog)*0.07; raf=requestAnimationFrame(draw); } else { prog=target; }
+  }
+  function set(v){ on=v; target=v?1:0; btn.textContent='corrente fria: '+(v?'ligada':'desligada'); btn.classList.toggle('on',v);
+    dEl.textContent = v
+      ? 'O vento sopra ao longo da costa e empurra a água da superfície para longe da praia. Como esse vazio precisa ser preenchido, a água fria do fundo é puxada para cima, mesmo sendo mais densa: é um bombeamento mecânico, não uma água fria que sobe sozinha. Ela chega carregada de nutrientes e enche o mar de peixe. Esse mar gelado resfria o ar logo acima dele e forma uma tampa de ar estável, que impede a umidade de subir e virar chuva. Sobra a garúa.'
+      : 'Sem o vento que empurra a superfície, a água fria fica onde a densidade a mantém: no fundo. A superfície fica morna e pobre em nutrientes, com pouco peixe. E, sem a tampa de ar frio por cima, a umidade sobe, forma nuvem alta e cai como chuva de verdade: a costa seria verde, e Lima não teria a sua garúa.';
+    cancelAnimationFrame(raf); draw();
+  }
+  btn.addEventListener('click',()=>set(!on));
+  addEventListener('resize',draw); draw();
+})();
+
+/* ===================== 07 ceviche em camadas ===================== */
+(function(){
+  const cv=document.getElementById('ceviche'), btn=document.getElementById('cevBtn'), reset=document.getElementById('cevReset');
+  const nEl=document.getElementById('cevName'), dEl=document.getElementById('cevDesc');
+  const steps=[
+    {name:'Prato vazio', desc:'O ceviche não caiu do céu: ele foi somando origens ao longo de dois mil anos. Clique para ver.'},
+    {name:'Base Moche · há ~2000 anos', desc:'Os antigos da costa já preparavam peixe cru "cozido" no suco ácido de um fruto local, o tumbo, temperado com ají. É a base indígena do prato.'},
+    {name:'+ limão e cebola · séc. XVI', desc:'Com a colônia espanhola chegam o limão e a cebola, que substituem o tumbo e dão ao ceviche o ácido e o corte que ele tem hoje.'},
+    {name:'+ corte japonês · séc. XX', desc:'A mão dos imigrantes japoneses encurta a marinada: o peixe passa a ser servido quase fresco, macio, do jeito moderno. Nasce também o tiradito.'}
+  ];
+  let ctx,W,H,step=0,prog=0,target=0,raf;
+  function bowl(cx,cy,rx,ry){ ctx.beginPath();
+    ctx.ellipse(cx,cy-ry*0.5,rx,ry*0.30,0,Math.PI,2*Math.PI);
+    ctx.bezierCurveTo(cx+rx,cy-ry*0.15,cx+rx*0.74,cy+ry*0.7,cx,cy+ry*0.75);
+    ctx.bezierCurveTo(cx-rx*0.74,cy+ry*0.7,cx-rx,cy-ry*0.15,cx-rx,cy-ry*0.5); }
+  function draw(){
+    ctx=fit(cv,330); W=cv._w;H=cv._h; ctx.clearRect(0,0,W,H);
+    const cx=W/2, cy=H/2+10, rx=Math.min(W*0.32,150), ry=rx*0.92;
+    // prato
+    bowl(cx,cy,rx,ry);
+    const g=ctx.createLinearGradient(0,cy-ry,0,cy+ry); g.addColorStop(0,'#f3ede4'); g.addColorStop(1,'#e6ddd0');
+    ctx.fillStyle=g; ctx.fill(); ctx.strokeStyle='rgba(23,19,16,.6)'; ctx.lineWidth=1.6; ctx.stroke();
+    // interior (clip)
+    ctx.save(); bowl(cx,cy,rx*0.9,ry*0.9); ctx.clip();
+    const sc=clamp(step+ (target>step?prog:0),0,3);
+    // leche de tigre no fundo (camada 3)
+    if(step>=3){ ctx.fillStyle='rgba(245,240,220,'+(0.5+0.3*prog)+')'; ctx.fillRect(cx-rx,cy-ry*0.2,rx*2,ry); }
+    // peixe cru (camada 1)
+    if(step>=1){ const chunks=[[-0.3,0.05],[0.05,-0.05],[0.28,0.10],[-0.05,0.22],[0.18,0.30],[-0.28,0.28]];
+      chunks.forEach((p,i)=>{ const x=cx+p[0]*rx, y=cy+p[1]*ry; ctx.save(); ctx.translate(x,y); ctx.rotate(i*0.7);
+        ctx.fillStyle='#f6f1ea'; ctx.strokeStyle='rgba(180,120,110,.45)'; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(-13,-8); ctx.lineTo(13,-9); ctx.lineTo(12,9); ctx.lineTo(-12,8); ctx.closePath(); ctx.fill(); ctx.stroke();
+        ctx.restore(); }); }
+    // ají / tumbo (camada 1): pontos vermelhos/laranja
+    if(step>=1){ const aji=[[-0.15,-0.12],[0.32,-0.02],[-0.34,0.14],[0.10,0.20]];
+      aji.forEach(p=>{ ctx.beginPath(); ctx.arc(cx+p[0]*rx,cy+p[1]*ry,3.4,0,7); ctx.fillStyle='#d8622f'; ctx.fill(); }); }
+    // cebola roxa (camada 2)
+    if(step>=2){ const on=[[-0.22,-0.02],[0.16,0.02],[-0.02,0.14],[0.30,0.16],[-0.30,0.20]];
+      on.forEach((p,i)=>{ ctx.save(); ctx.translate(cx+p[0]*rx,cy+p[1]*ry); ctx.rotate(i); ctx.strokeStyle='rgba(140,80,150,.9)'; ctx.lineWidth=2.4; ctx.lineCap='round';
+        ctx.beginPath(); ctx.arc(0,0,7,0.2,2.2); ctx.stroke(); ctx.restore(); }); }
+    // limão (camada 2): meia-lua verde na borda
+    if(step>=2){ ctx.fillStyle='#9bbf3d'; ctx.beginPath(); ctx.arc(cx+rx*0.5,cy+ry*0.28,12,Math.PI*0.9,Math.PI*1.9); ctx.fill();
+      ctx.strokeStyle='#7ea02f'; ctx.lineWidth=1.5; ctx.stroke(); }
+    // coentro + choclo (camada 3)
+    if(step>=3){ const ci=[[-0.18,-0.06],[0.12,0.06],[-0.05,0.24],[0.24,0.24]];
+      ci.forEach(p=>{ ctx.beginPath(); ctx.arc(cx+p[0]*rx,cy+p[1]*ry,2.6,0,7); ctx.fillStyle='#3f7d3a'; ctx.fill(); });
+      const co=[[-0.30,0.02],[0.30,0.10],[0.0,-0.10]];
+      co.forEach(p=>{ ctx.beginPath(); ctx.arc(cx+p[0]*rx,cy+p[1]*ry,3.2,0,7); ctx.fillStyle='#e7c53f'; ctx.fill(); }); }
+    ctx.restore();
+    if(Math.abs(target-step-0)>0){} // no-op
+    if(prog<1 && target>step){ prog+=0.08; if(prog>=1){ prog=1; step=target; } raf=requestAnimationFrame(draw); }
+  }
+  function advance(){ if(target<3){ target++; prog=0; cancelAnimationFrame(raf); draw();
+    const s=steps[target]; nEl.textContent=s.name; dEl.textContent=s.desc; btn.textContent = target>=3 ? 'ceviche pronto ✓' : 'montar a próxima camada'; btn.classList.toggle('on',target>=3); } }
+  function doReset(){ target=0; step=0; prog=0; cancelAnimationFrame(raf); draw();
+    nEl.textContent=steps[0].name; dEl.textContent=steps[0].desc; btn.textContent='montar a próxima camada'; btn.classList.remove('on'); }
+  btn.addEventListener('click',advance); reset.addEventListener('click',doReset);
+  addEventListener('resize',draw); draw();
+})();
+
+/* ===================== 09 roda de festas ===================== */
+(function(){
+  const cv=document.getElementById('wheel');
+  const nEl=document.getElementById('fName'), lEl=document.getElementById('fLine'), wEl=document.getElementById('fWhen');
+  const M=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+  const F=[
+    {name:'Aniversário de Lima', when:'18 de janeiro', li:'A fundação da Ciudad de los Reyes, em 1535.'},
+    {name:'Carnaval andino', when:'fevereiro', li:'Água, tinta e a yunza, a árvore que se derruba dançando. A folia molhada do interior.'},
+    {name:'Semana Santa', when:'março / abril', li:'Procissões intensas pelo país; as de Ayacucho são célebres.'},
+    {name:'Outono na costa', when:'abril', li:'O verão limenho afrouxa e o céu começa a fechar para a garúa.'},
+    {name:'Festas de colheita', when:'maio', li:'Cruz de Mayo e celebrações agrícolas na serra andina.'},
+    {name:'Inti Raymi & Dia do Ceviche', when:'24 e 28 de junho', li:'A festa do Sol dos Incas, em Cusco, e o prato-nação celebrado em todo o país.'},
+    {name:'Fiestas Patrias', when:'28 de julho', li:'A independência de 1821; o país inteiro em vermelho e branco.'},
+    {name:'Santa Rosa de Lima', when:'30 de agosto', li:'A padroeira das Américas, nascida em Lima.'},
+    {name:'Primavera', when:'setembro', li:'O céu de Lima começa a abrir depois do inverno cinza.'},
+    {name:'Señor de los Milagros', when:'outubro', li:'Lima fica "morada"; a maior procissão da América.'},
+    {name:'Todos los Santos', when:'1 e 2 de novembro', li:'A visita aos mortos, com comida e o tanta wawa, o pão em forma de criança.'},
+    {name:'Natal & Santurantikuy', when:'dezembro', li:'A grande feira de artesanato de Cusco, na véspera de Natal.'}
+  ];
+  const N=12, seg=2*Math.PI/N;
+  let ctx,W,H,cx,cy,R,rot=0,sel=0;
+  sel=new Date().getMonth();
+  rot=-sel*seg-seg/2;
+  function geom(){ ctx=fit(cv,430); W=cv._w;H=cv._h;cx=W/2;cy=H/2;R=Math.min(W,H)/2-40; }
+  function topIndex(){ let idx=0,bd=1e9; for(let i=0;i<N;i++){ let ph=(i*seg+seg/2+rot)%(2*Math.PI); ph=((ph+2*Math.PI)%(2*Math.PI)); if(ph>Math.PI)ph-=2*Math.PI; if(Math.abs(ph)<bd){bd=Math.abs(ph);idx=i;} } return idx; }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.beginPath(); ctx.arc(cx,cy,R+14,0,7); ctx.strokeStyle='rgba(23,19,16,.08)'; ctx.lineWidth=1; ctx.stroke();
+    sel=topIndex();
+    for(let i=0;i<N;i++){ const a0=rot+i*seg-Math.PI/2, a1=a0+seg, active=i===sel;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,R,a0,a1); ctx.closePath();
+      ctx.fillStyle=active?'rgba(193,95,60,.14)':'rgba(23,19,16,.015)'; ctx.fill();
+      ctx.strokeStyle='rgba(23,19,16,.07)'; ctx.lineWidth=1; ctx.stroke();
+      const am=a0+seg/2, lr=R*0.82, lx=cx+Math.cos(am)*lr, ly=cy+Math.sin(am)*lr;
+      ctx.save(); ctx.translate(lx,ly); ctx.fillStyle=active?'#171310':'#9a9086';
+      ctx.font=(active?'700 ':'400 ')+'13px "Space Mono", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(M[i],0,0); ctx.restore(); }
+    ctx.beginPath(); ctx.arc(cx,cy,R*0.54,0,7); ctx.fillStyle='#fff'; ctx.fill(); ctx.strokeStyle='rgba(23,19,16,.1)'; ctx.lineWidth=1; ctx.stroke();
+    // rótulo central
+    ctx.fillStyle='#9a9086'; ctx.font='11px "Space Mono", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('o ano', cx, cy-10); ctx.fillText('de festas', cx, cy+8);
+    // ponteiro
+    ctx.beginPath(); ctx.moveTo(cx,cy-R-16); ctx.lineTo(cx-7,cy-R-28); ctx.lineTo(cx+7,cy-R-28); ctx.closePath(); ctx.fillStyle='#C15F3C'; ctx.fill();
+    const f=F[sel]; nEl.textContent=f.name; lEl.textContent=f.li; wEl.textContent=f.when;
+  }
+  let down=false,lastA=0; function angleOf(e){ const p=ptr(e,cv); return Math.atan2(p.y-cy,p.x-cx); }
+  cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);lastA=angleOf(e);});
+  cv.addEventListener('pointermove',e=>{ if(!down)return; const a=angleOf(e); let d=a-lastA; if(d>Math.PI)d-=2*Math.PI; if(d<-Math.PI)d+=2*Math.PI; rot+=d; lastA=a; draw(); });
+  cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  addEventListener('resize',()=>{geom();draw();}); geom(); draw();
+})();
+
+/* ===================== 10 quiz ===================== */
+(function(){
+  const quiz=document.getElementById('quiz'), dots=document.getElementById('qDots'), nextBtn=document.getElementById('qNext');
+  const Q=[
+    {q:'São seis da tarde e você quer comer um bom ceviche. Qual a melhor jogada?',
+     opts:[
+      {t:'Procuro uma cevicheria agora mesmo.',ok:false,why:'Ceviche se come ao meio-dia, com o peixe fresco do dia. Muitas cevicherias tradicionais fecham à tarde, e à noite o peixe já não é o mesmo.'},
+      {t:'Deixo o ceviche para o almoço de amanhã.',ok:true,why:'Correto. O ceviche é prato de meio-dia, feito com o peixe pescado de manhã. À noite, o costume é outro tipo de comida.'}
+     ]},
+    {q:'No mercado, o vendedor te chama de "casero" e joga um pouco a mais na sacola. Isso é…',
+     opts:[
+      {t:'Um erro de conta a seu favor.',ok:false,why:'Não é erro. "Casero" é o freguês de sempre, e o pouquinho a mais é a yapa, um brinde de simpatia. É a economia afetiva do mercado.'},
+      {t:'Um gesto de simpatia, a yapa do freguês.',ok:true,why:'Correto. Virar "casero" rende esse tratamento, e a yapa é o brinde que sela a relação. Ali, comprar é também conversar e pechinchar.'}
+     ]},
+    {q:'Alguém serve uma bebida e derrama o primeiro gole no chão antes de beber. O que está fazendo?',
+     opts:[
+      {t:'Testando se a bebida está boa.',ok:false,why:'É uma oferenda. O primeiro gole vai para a Pachamama, a Mãe Terra, num gesto de reciprocidade que vem do mundo andino, muito anterior à colônia.'},
+      {t:'Oferecendo a primeira parte à Pachamama.',ok:true,why:'Correto. É o "pago a la tierra": devolve-se à terra a sua parte antes de beber. O mesmo princípio de reciprocidade, o ayni, que sustentava o império inca.'}
+     ]},
+    {q:'Você acaba de chegar a Cusco, a 3.400 metros de altitude. Nas primeiras horas, o melhor é…',
+     opts:[
+      {t:'Aproveitar a energia e já subir a uma ruína alta.',ok:false,why:'A altitude cobra caro. O soroche, o mal de altura, pega quem se esforça cedo demais. O costume local é ir devagar.'},
+      {t:'Ir devagar, comer leve e tomar um mate de coca.',ok:true,why:'Correto. Contra o soroche, o hábito andino é descansar nas primeiras horas, comer leve e tomar o mate de folha de coca, que ajuda o corpo a se acostumar.'}
+     ]}
+  ];
+  let step=0, answered=[];
+  Q.forEach((item,qi)=>{
+    const div=document.createElement('div'); div.className='q-step'+(qi===0?' active':''); div.dataset.i=qi;
+    let html='<div class="q-num">pergunta '+(qi+1)+' de '+Q.length+'</div><div class="q-text">'+item.q+'</div>';
+    item.opts.forEach((o,oi)=> html+='<button class="opt" data-q="'+qi+'" data-o="'+oi+'">'+o.t+'<span class="mk"></span></button>');
+    item.opts.forEach((o,oi)=> html+='<div class="explain" data-ex="'+qi+'-'+oi+'">'+o.why+'</div>');
+    div.innerHTML=html; quiz.insertBefore(div, quiz.querySelector('.q-nav'));
+    const dot=document.createElement('i'); if(qi===0)dot.className='on'; dots.appendChild(dot);
+  });
+  quiz.addEventListener('click',e=>{
+    const b=e.target.closest('.opt'); if(!b) return;
+    const qi=+b.dataset.q, oi=+b.dataset.o; if(answered[qi]!==undefined) return;
+    answered[qi]=oi; const opt=Q[qi].opts[oi];
+    b.classList.add(opt.ok?'correct':'wrong'); b.querySelector('.mk').textContent=opt.ok?'✓':'✕';
+    const stepEl=b.closest('.q-step');
+    if(!opt.ok){ Q[qi].opts.forEach((o,i)=>{ if(o.ok){ const cb=stepEl.querySelector('.opt[data-o="'+i+'"]'); cb.classList.add('correct'); cb.querySelector('.mk').textContent='✓'; } }); }
+    stepEl.querySelectorAll('.opt').forEach(x=>x.style.pointerEvents='none');
+    stepEl.querySelector('.explain[data-ex="'+qi+'-'+oi+'"]').classList.add('show');
+    nextBtn.style.display='inline-block';
+    if(step===Q.length-1){ nextBtn.textContent='recomeçar ↺'; nextBtn.dataset.done='1'; }
+  });
+  nextBtn.addEventListener('click',()=>{
+    if(nextBtn.dataset.done){ answered=[]; step=0;
+      quiz.querySelectorAll('.q-step').forEach((s,i)=>{ s.classList.toggle('active',i===0);
+        s.querySelectorAll('.opt').forEach(o=>{o.className='opt';o.style.pointerEvents='';o.querySelector('.mk').textContent='';});
+        s.querySelectorAll('.explain').forEach(x=>x.classList.remove('show')); });
+      dots.querySelectorAll('i').forEach((d,i)=>d.className=i===0?'on':'');
+      nextBtn.style.display='none'; nextBtn.textContent='próxima →'; delete nextBtn.dataset.done; return; }
+    step++; quiz.querySelectorAll('.q-step').forEach((s,i)=>s.classList.toggle('active',i===step));
+    dots.querySelectorAll('i').forEach((d,i)=>d.className=i<=step?'on':''); nextBtn.style.display='none';
+  });
+})();
+</script>
+</body>
+</html>
