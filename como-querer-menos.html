@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como Querer Menos</title>
+<meta name="description" content="A satisfação é uma fração, e passamos a vida puxando só um lado dela. Um ensaio interativo sobre desejo, a esteira hedônica e como querer menos, por Renato Shirakashi.">
+<link rel="canonical" href="https://renatoshira.github.io/como-querer-menos.html">
+<meta name="theme-color" content="#141414">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Como Querer Menos">
+<meta property="og:description" content="A satisfação é uma fração, e passamos a vida puxando só um lado dela. Um ensaio interativo sobre desejo, a esteira hedônica e como querer menos.">
+<meta property="og:url" content="https://renatoshira.github.io/como-querer-menos.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-querer-menos.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="article:author" content="Renato Shirakashi">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Como Querer Menos">
+<meta name="twitter:description" content="A satisfação é uma fração, e passamos a vida puxando só um lado dela. Um ensaio interativo sobre desejo, a esteira hedônica e como querer menos.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-querer-menos.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#141414;
+    --dim:#6b6b6b;
+    --line:#e2e2e2;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Space Mono', ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  .topbar{
+    position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;padding:12px 24px;
+  }
+  .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
+  .topbar .kicker:hover{background:var(--ink);color:var(--paper)}
+  .langtoggle{display:flex;border:1px solid var(--ink);font-size:12px}
+  .langtoggle button{border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:.08em}
+  .langtoggle button.active{background:var(--ink);color:var(--paper)}
+
+  .mark{background:var(--ink);color:var(--paper);padding:.08em .34em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  section{border-bottom:1px solid var(--line);scroll-margin-top:72px}
+  section.wrap{padding:84px 24px}
+  section:last-of-type{border-bottom:0}
+  .hero,.cliff{scroll-margin-top:72px}
+
+  .hero{padding-top:90px;padding-bottom:80px}
+  .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+  .hero h1{font-size:34px;font-weight:700;line-height:1.28;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+  .hero h1 .l2{margin-left:2.2em}
+  .hero .sub{margin-top:40px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
+  .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
+
+  h2.head{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px}
+  .step{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+  p{margin:0 0 20px}
+  .lead{font-size:18px}
+  .dim{color:var(--dim)}
+  strong{font-weight:700}
+  em{font-style:italic}
+
+  .note{font-size:13px;color:var(--dim);line-height:1.65;border-left:1px solid var(--line);padding-left:14px;margin:22px 0}
+
+  .widget{border:1px solid var(--ink);margin:34px 0 0;padding:20px 18px}
+  .wtag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  .wcap{font-size:12.5px;color:var(--dim);margin-top:16px;line-height:1.6}
+  .wcap b{color:var(--ink)}
+  .btn{font-family:inherit;font-size:13px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:9px 14px;cursor:pointer}
+  .btn.on,.btn.solid{background:var(--ink);color:var(--paper)}
+  .btn:active{transform:translateY(1px)}
+  .rowbtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+  .eq{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin:30px 0;font-size:16px}
+  .eq .frac{display:inline-flex;flex-direction:column;align-items:center;text-align:center}
+  .eq .frac .num,.eq .frac .den{padding:6px 10px}
+  .eq .frac .bar{height:2px;background:var(--ink);width:100%}
+  .eq .lhs{font-weight:700}
+
+  .fbig{text-align:center}
+  .fbig .num,.fbig .den{font-size:13px;font-weight:700;padding:6px 6px;color:var(--dim)}
+  .fbig .bar{height:2px;background:var(--ink);margin:4px auto;width:70%}
+  .fbig .num .mark,.fbig .den .mark{font-size:19px}
+  .satnum{font-size:32px;font-weight:700;display:inline-block;line-height:1}
+  .sattrack{height:12px;background:#ededed;margin-top:12px}
+  .satfill{height:100%;background:var(--ink);transition:width .4s ease}
+
+  /* W1 esteira do desejo */
+  .loopgraph svg{display:block;width:100%;height:auto}
+  .loopstats{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--dim);margin:10px 0 14px}
+  .loopstats b{color:var(--ink)}
+  .loopareas{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.loopareas{grid-template-columns:1fr}}
+  .looparea{border:1px solid var(--ink);padding:10px 12px;min-height:120px}
+  .looparea .areahead{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start}
+  .tag{display:inline-block;font-size:11.5px;padding:4px 9px;border:1px solid var(--ink);white-space:nowrap;transition:transform .2s ease,opacity .25s ease}
+  .tag.have{background:var(--ink);color:var(--paper)}
+  .tag.want{background:var(--paper);color:var(--ink);border-style:dashed;cursor:pointer}
+  .tag.want:hover{background:#f0f0f0}
+  .tag.pop{animation:tagpop .35s ease}
+  .tag.more{border:0;color:var(--dim);padding:4px 2px;align-self:center}
+  @keyframes tagpop{0%{transform:scale(.55);opacity:0}60%{transform:scale(1.14)}100%{transform:scale(1);opacity:1}}
+
+  .choices{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+  .qtext{font-size:15px;margin-bottom:14px}
+  .curvewrap svg{display:block;width:100%;height:auto}
+
+  .dopwrap svg{display:block;width:100%;height:auto}
+  .doplegend{display:flex;gap:18px;justify-content:center;font-size:12px;margin-top:10px;color:var(--ink)}
+  .doplegend .lg{display:flex;align-items:center;gap:6px}
+  .doplegend .sw{width:16px;height:3px;display:inline-block}
+
+  .forcewrap svg{display:block;width:100%;height:auto}
+  .erarow{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .erarow input[type=range]{flex:1;accent-color:var(--ink);height:22px}
+  .eralabel{font-weight:700;min-width:58px;text-align:right}
+
+  .tl{position:relative;padding:26px 0 8px}
+  .tlline{position:absolute;left:0;right:0;top:34px;height:1px;background:var(--line)}
+  .tldots{display:flex;justify-content:space-between;position:relative}
+  .tldot{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;flex:1}
+  .tldot .dot{width:12px;height:12px;border-radius:50%;background:var(--paper);border:1px solid var(--ink)}
+  .tldot.on .dot{background:var(--ink)}
+  .tldot .dl{font-size:10px;letter-spacing:.02em;color:var(--dim);text-align:center;line-height:1.2}
+  .tldot.on .dl{color:var(--ink);font-weight:700}
+  .tlbody{border-top:1px solid var(--line);margin-top:14px;padding-top:14px;min-height:70px}
+  .tlbody .who{font-weight:700;margin-bottom:6px}
+  .tlbody .conn{font-size:12.5px;color:var(--dim);margin-top:8px}
+
+  .pracgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+  @media(max-width:560px){.pracgrid{grid-template-columns:1fr}}
+  .praccard{border:1px solid var(--ink);padding:11px 12px;cursor:pointer;font-size:12.5px;line-height:1.4;user-select:none}
+  .praccard .pt{font-weight:700;display:block;margin-bottom:3px}
+  .praccard .pe{color:var(--dim);font-size:11px}
+  .praccard.on{background:var(--ink);color:var(--paper)}
+  .praccard.on .pe{color:#c9c9c9}
+  .satbox{text-align:center}
+
+  .rlform{display:grid;grid-template-columns:1fr auto auto auto;gap:8px;margin-bottom:14px}
+  @media(max-width:640px){.rlform{grid-template-columns:1fr}}
+  .rlform input,.rlform select{font-family:inherit;font-size:13px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 10px}
+  .rlitem{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:10px 0;font-size:13.5px;flex-wrap:wrap}
+  .rlitem:last-child{border-bottom:0}
+  .rltags{font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+  .rlitem.drop{background:#f6f6f6}
+  .rlflag{background:var(--ink);color:var(--paper);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px}
+  .rlx{margin-left:auto;border:0;background:transparent;color:var(--dim);cursor:pointer;font-family:inherit;font-size:15px}
+  .rlactions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .rlclose{border-top:1px solid var(--ink);margin-top:16px;padding-top:14px;font-size:13px;line-height:1.6}
+
+  .cliff{background:var(--ink);color:var(--paper);border:0}
+  .cliff .wrap{padding-top:70px;padding-bottom:70px}
+  .cliff h2{color:var(--paper);font-size:22px;margin:0 0 12px}
+  .cliff p{color:#c9c9c9;margin:0}
+  .cliff .mark{background:var(--paper);color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .refs{font-size:13px;line-height:1.7}
+  .refs li{margin-bottom:12px}
+  .refs a{color:var(--ink)}
+  .foot{padding:40px 0 80px;color:var(--dim);font-size:12.5px}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="kicker" href="index.html">Renato Shirakashi</a>
+  <div class="langtoggle" role="group" aria-label="Idioma">
+    <button data-lang="pt" class="active">PT</button>
+    <button data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" data-i18n="hero.eyebrow">Desejo × Ciência da satisfação</div>
+  <h1>
+    <span class="mark" data-i18n="hero.t1">Como</span>
+    <span class="mark l2" data-i18n="hero.t2">querer menos</span>
+  </h1>
+  <div class="sub" data-i18n="hero.sub">No fim do ano você vai escrever uma lista de desejos: as coisas que quer conquistar nos próximos doze meses. Este texto aposta numa lista inversa, a das coisas que você decide querer menos. Parece às avessas, e mesmo assim é provável que você monte uma dessas quando terminar de ler.</div>
+  <div class="byline" data-i18n="hero.by">por Renato Shirakashi</div>
+</header>
+
+<!-- 00 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b0.step">00 · A pergunta</div>
+  <p class="lead" data-i18n="b0.p1">Você conseguiu a coisa. O emprego, o apartamento, o relacionamento, o número na conta que há cinco anos parecia um teto impossível. Por algumas semanas foi bom. Depois a régua se moveu. O que era o topo virou o novo chão, e uma versão maior da mesma vontade apareceu no lugar da antiga.</p>
+  <p data-i18n="b0.p2">Quase todo mundo já viveu esse ciclo e quase ninguém o considera estranho. Achamos que o problema é a meta ter sido pequena demais. A hipótese deste artigo é outra: o problema está na direção em que tentamos resolver a insatisfação. <span class="mark">Passamos a vida inteira tentando conseguir mais</span>, quando a alavanca mais forte fica do outro lado da conta.</p>
+  <p data-i18n="b0.p3">A pergunta que organiza o texto é simples de enunciar e difícil de levar a sério: e se <span class="mark">dá para ficar mais satisfeito querendo menos, em vez de tendo mais</span>?</p>
+</section>
+
+<!-- 01 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b1.step">01 · A equação</div>
+  <p data-i18n="b1.p1">Arthur Brooks, cientista social que estuda felicidade em Harvard, propõe olhar a satisfação como uma fração:</p>
+
+  <div class="eq">
+    <span class="lhs" data-i18n="eq.lhs">Satisfação</span>
+    <span>=</span>
+    <span class="frac">
+      <span class="num" data-i18n="eq.num">O que você tem</span>
+      <span class="bar"></span>
+      <span class="den" data-i18n="eq.den">O que você quer</span>
+    </span>
+  </div>
+
+  <p data-i18n="b1.p2">A conta é grosseira de propósito. O valor de uma fração cresce de dois jeitos: aumentando o numerador ou diminuindo o denominador. A cultura inteira aponta para o numerador. Ganhe mais, compre mais, acumule mais, e a satisfação vem junto. Ninguém vende a outra metade da conta.</p>
+  <p data-i18n="b1.p3">O detalhe que muda tudo é que o denominador não fica parado. Cada vez que o numerador sobe, o denominador sobe atrás, quase sempre mais rápido. <span class="mark">Você ganha o dobro e passa a querer o triplo</span>. É por isso que dobrar o que se tem raramente dobra a satisfação: a fração inteira se reajusta.</p>
+
+  <div class="widget" id="loopW">
+    <div class="wtag" data-i18n="w1.tag">A esteira do desejo · roda sozinha</div>
+    <div class="loopgraph" id="loopGraph"></div>
+    <div class="loopstats">
+      <span><span data-i18n="w1.stTem">Já tenho:</span> <b id="loopTemN">1</b></span>
+      <span><span data-i18n="w1.stSat">satisfação:</span> <b id="loopSatN">50</b></span>
+      <span><span data-i18n="w1.stQuer">Quero:</span> <b id="loopQuerN">2</b></span>
+    </div>
+    <div class="loopareas">
+      <div class="looparea">
+        <div class="areahead" data-i18n="w1.have">Já tenho</div>
+        <div class="tags" id="loopHave"></div>
+      </div>
+      <div class="looparea">
+        <div class="areahead" data-i18n="w1.want">Quero agora</div>
+        <div class="tags" id="loopWant"></div>
+      </div>
+    </div>
+    <div class="wcap" data-i18n="w1.cap">Começa simples e vai subindo. Cada conquista vira uma etiqueta em <b>Já tenho</b> e dá um pico. Só que os picos vão <b>encolhendo</b> a cada vez, e a <b>linha de base</b> sobe cada vez menos, achatando numa curva de retornos decrescentes. Toque num desejo para conquistar na hora.</div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b2.step">02 · Faça o seu palpite</div>
+  <p data-i18n="b2.p1">Antes de continuar, um exercício de calibração. Pesquisas sobre renda e bem-estar medem exatamente quanto de satisfação extra vem de ter mais. A resposta costuma ser mais baixa do que a intuição sugere.</p>
+  <p data-i18n="b2.p2">O padrão geral encontrado por economistas como Richard Easterlin é que, acima de um patamar de segurança material, <span class="mark">dobrar a renda de um país ou de uma pessoa move a satisfação relatada muito menos do que a intuição prevê</span>. Parte disso é a esteira. Outra parte é comparação: o que pesa para como nos sentimos é o valor comparado ao dos vizinhos, dos colegas, das pessoas que vemos na tela. O valor absoluto conta pouco.</p>
+
+  <div class="widget" id="guessW">
+    <div class="wtag" data-i18n="w2.tag">O palpite · antes de ver o dado</div>
+    <div class="qtext" data-i18n="w2.qtext">Você dobra a sua renda amanhã e ela fica assim para sempre. O quanto melhora a sua satisfação com a vida?</div>
+    <div class="choices" id="guessChoices"></div>
+    <div id="guessReveal" hidden style="margin-top:18px">
+      <div class="curvewrap" id="guessSvg"></div>
+      <div class="wcap" id="guessCap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b3.step">03 · A esteira</div>
+  <p data-i18n="b3.p1">Em 1971, Philip Brickman e Donald Campbell deram um nome ao mecanismo: <span class="mark">esteira hedônica</span>. A ideia é que nos adaptamos às nossas circunstâncias como os olhos se adaptam à luz. Uma sala escura parece muito escura por alguns segundos, depois vira o normal. Um aumento parece muito bom por algumas semanas, depois vira o normal. Corremos na esteira e o cenário não muda de lugar.</p>
+  <p data-i18n="b3.p2">O estudo que virou símbolo disso é de 1978. Brickman e colegas compararam ganhadores de loteria com pessoas que ficaram paraplégicas ou tetraplégicas em acidentes. Meses depois do evento, a diferença de felicidade entre os dois grupos era bem menor do que qualquer um imaginaria. Os ganhadores ainda relatavam <span class="mark">prazer com o dinheiro, mas o encanto com as pequenas alegrias do dia a dia havia caído</span>. A vitória tinha reajustado a régua para cima, e o cotidiano ficou fosco por comparação.</p>
+  <p data-i18n="b3.p3">A esteira tem uma <span class="mark">função evolutiva</span>. Um animal permanentemente satisfeito para de caçar, de cortejar, de se proteger. A insatisfação recorrente foi o que manteve nossos ancestrais em movimento. Fomos <span class="mark">desenhados para buscar, não para chegar</span>. O sistema funciona lindamente para espalhar genes e péssimamente para nos deixar em paz.</p>
+</section>
+
+<!-- 04 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b4.step">04 · Querer não é gostar</div>
+  <p data-i18n="b4.p1">Em 1954, dois pesquisadores de Montreal, James Olds e Peter Milner, implantaram um eletrodo no cérebro de um rato e ligaram o estímulo a uma alavanca. Cada vez que o rato apertava, recebia um pulso elétrico numa região específica. O animal começou a apertar. E não parou. Em experimentos seguintes, ratos chegaram a acionar a alavanca milhares de vezes por hora, ignoravam comida, ignoravam água, atravessavam pisos eletrificados que os machucavam, apertavam até cair de exaustão. Olds e Milner acharam que tinham encontrado o "centro do prazer" do cérebro.</p>
+  <p data-i18n="b4.p2">Décadas depois, ao refazer esse tipo de experimento com medidas mais finas, Kent Berridge percebeu que a história estava trocada. Os ratos não pareciam estar em êxtase. Não havia sinal de prazer, e sim de uma busca sem fim. A alavanca não entregava satisfação, entregava mais vontade de apertar a alavanca. O que Olds e Milner tinham estimulado não era o gozo, era o desejo puro, rodando em círculo.</p>
+  <p data-i18n="b4.p3">Isso levou Berridge a passar décadas mostrando que o cérebro trata <span class="mark">"querer" e "gostar"</span> como sistemas separados, com circuitos e químicas diferentes.</p>
+  <p data-i18n="b4.p4">"Gostar" é o prazer de fato: o sabor bom na boca, o conforto de estar em casa. "Querer" é o puxão que faz a gente buscar algo antes de tê-lo, o que Berridge chama de saliência de incentivo, movido sobretudo por dopamina. Os dois costumam andar juntos, mas dá para separá-los em laboratório. Um rato com o sistema de "querer" superativado busca a recompensa com mais força sem demonstrar mais prazer ao recebê-la. Ele quer mais e gosta igual.</p>
+  <p data-i18n="b4.p5">Isso dá nome a uma experiência comum. <span class="mark">O desejo por uma coisa é frequentemente mais intenso do que o prazer de consegui-la</span>. A antecipação da compra supera a compra. A vontade do próximo cargo é maior que o contentamento de ocupá-lo. O sistema de "querer" foi construído para ser insaciável, porque a insaciabilidade é adaptativa. O sistema de "gostar" é mais quieto e mais fácil de saturar. Grande parte do consumo moderno é uma máquina de estimular o "querer" e chamar isso de felicidade.</p>
+
+  <div class="widget" id="dopW">
+    <div class="wtag" data-i18n="w4.tag">A curva do querer e do gostar · dopamina no tempo</div>
+    <div class="dopwrap" id="dopSvg"></div>
+    <div class="doplegend">
+      <span class="lg"><span class="sw" style="background:#141414"></span><span data-i18n="w4.legW">querer</span></span>
+      <span class="lg"><span class="sw" style="background:#9a9a9a"></span><span data-i18n="w4.legL">gostar</span></span>
+    </div>
+    <div class="rowbtns" style="margin-top:12px"><button class="btn" id="dopReplay" data-i18n="w4.replay">Reproduzir</button></div>
+    <div class="wcap" data-i18n="w4.cap">O "querer" dispara <b>antes</b>, na antecipação, e chega a um pico bem mais alto que o "gostar", que vem depois, no consumo, e é modesto. O desejo promete mais do que a posse entrega.</div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b5.step">05 · Quem construiu o denominador</div>
+  <p data-i18n="b5.p1">Se o denominador cresce sozinho, vale perguntar quem o alimenta. Três forças puxam nossos desejos para cima sem que a gente perceba.</p>
+  <p data-i18n="b5.p2">A primeira é biológica, já vista: fomos selecionados para querer mais. A segunda é a <span class="mark">comparação social</span>. Nosso senso do que é "suficiente" não vem de uma régua interna, vem de olhar para o lado. Quando o padrão do grupo sobe, o nosso "suficiente" sobe junto, mesmo que nada na nossa vida tenha piorado.</p>
+  <p data-i18n="b5.p3">Durante quase toda a história, esse "lado" para onde a gente olhava eram algumas dezenas de vizinhos e parentes. As redes sociais explodiram esse número. Hoje a régua de comparação deixou de ser o vizinho e passou a ser uma seleção dos melhores momentos de milhões de pessoas, ordenada por algoritmos treinados para prender a atenção. Você compara a sua vida inteira com o auge editado da vida dos outros, o dia todo, de graça. A comparação, que já inflava o denominador sozinha, virou um serviço contínuo entregue no seu bolso.</p>
+  <p data-i18n="b5.p4">A terceira força é a mais recente e a mais deliberada. Uma parte enorme da <span class="mark">economia moderna depende de que você queira coisas</span> que ainda não quer. A publicidade sempre fez isso, e a publicidade algorítmica faz melhor. O feed infinito e o design dos aplicativos exploram diretamente o sistema de "querer" de Berridge: medem o que faz você voltar e otimizam para isso, a cada rolagem. É engenharia aplicada sobre o denominador, e ela melhora todo ano.</p>
+  <p data-i18n="b5.p5">O psicólogo Tim Kasser reuniu evidências de que pessoas que organizam a vida em torno de metas materiais e de status relatam, em média, menos bem-estar e mais ansiedade do que pessoas ancoradas em relações, competência e propósito. O material não é neutro. Quanto mais peso ele carrega na definição de uma vida boa, pior tende a ser o resultado subjetivo. O denominador que a cultura instala não só é grande, ele é o tipo de desejo que satisfaz menos.</p>
+
+  <div class="widget" id="forceW">
+    <div class="wtag" data-i18n="w5.tag">A fábrica de desejos · arraste a época</div>
+    <div class="forcewrap" id="forceSvg"></div>
+    <div class="erarow">
+      <span class="dim" style="font-size:11px">1900</span>
+      <input type="range" id="eraSlider" min="1900" max="2025" step="1" value="1900">
+      <span class="eralabel" id="eraLabel">1900</span>
+    </div>
+    <div class="wcap" id="forceCap"></div>
+  </div>
+</section>
+
+<!-- CLIFF -->
+<section class="cliff" id="cliff">
+  <div class="wrap">
+    <h2 data-i18n="cliff.h">As correntes do desejo são antigas.</h2>
+    <p data-i18n="cliff.p">São fortes e não as escolhemos. Mesmo assim, <span class="mark">quem olhou de perto encontrou saídas</span>. (continua)</p>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b6.step">06 · Os antigos já sabiam</div>
+  <p data-i18n="b6.p1">O achado do laboratório de Berridge e a equação de Brooks reencontram, por um caminho diferente, algo que várias tradições antigas descreveram há milênios. Vale ouvi-las, porque elas passaram séculos testando técnicas para o mesmo problema.</p>
+  <p data-i18n="b6.p2">Para os <span class="mark">estoicos</span>, o sofrimento nasce de querer que o mundo seja diferente do que é. Epicteto separava o que está sob nosso controle (nossos julgamentos, nossos desejos) do que não está (praticamente todo o resto), e ensinava a <span class="mark">treinar o desejo em vez de perseguir objetos</span>. Sêneca praticava a pobreza voluntária por alguns dias, comendo pouco e dormindo duro, para descobrir na pele que o piso do "suficiente" era muito mais baixo do que o medo dizia. Reduzir o denominador não era resignação, era liberdade: quem quer pouco depende pouco.</p>
+  <p data-i18n="b6.p3">O <span class="mark">budismo</span> é ainda mais direto. A segunda das quatro nobres verdades identifica a causa do sofrimento na <em>tanha</em>, a sede, o desejo compulsivo por prazer, por permanência, por que as coisas sejam de outro jeito. O caminho proposto afrouxa o apego em vez de tentar matar todo desejo: ver a vontade surgir e passar sem ser arrastado por ela. É a mesma insaciabilidade que Berridge mediu no cérebro, observada de dentro há dois mil e quinhentos anos.</p>
+  <p data-i18n="b6.p4">Tomás de Aquino, muito depois, chegou perto ao dizer que buscar felicidade em dinheiro, poder, prazer e fama é buscá-la em ídolos que nunca entregam, porque são meios tratados como fins. A convergência entre a neurociência, a economia da felicidade e essas tradições aponta para uma característica real e antiga da mente humana. Sozinha, ela não prova nada. O peso de fontes tão distantes chegando ao mesmo lugar é difícil de ignorar.</p>
+
+  <div class="widget" id="tlW">
+    <div class="wtag" data-i18n="w6.tag">Linha do tempo das tradições · toque num marco</div>
+    <div class="tl">
+      <div class="tlline"></div>
+      <div class="tldots" id="tlDots"></div>
+    </div>
+    <div class="tlbody" id="tlBody"></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b7.step">07 · Diminuir o denominador</div>
+  <p data-i18n="b7.p1">Se a alavanca forte é o "quero", como se puxa ela para baixo sem cair na apatia? As tradições e a pesquisa moderna sugerem práticas convergentes. Nenhuma delas é sobre desejar nada. São sobre escolher menos desejos e melhores.</p>
+  <p data-i18n="b7.p2"><strong>Lista reversa de desejos.</strong> Brooks propõe inverter a <em>bucket list</em>. Em vez de escrever tudo que você quer conquistar antes de morrer, escreva os desejos que hoje mais puxam sua energia (o reconhecimento, o próximo upgrade, a aprovação de estranhos) e risque deliberadamente alguns deles. Cada item riscado é uma diminuição consciente do denominador. O ganho de satisfação vem sem nenhuma aquisição.</p>
+  <p data-i18n="b7.p3"><strong>De príncipe a sábio.</strong> A vida empurra a maioria para acumular recursos, status e admiração, o caminho do "príncipe". As tradições apontam a segunda metade da vida para outra direção: sabedoria, conexão, serviço, o caminho do "sábio". Trocar as fontes de satisfação de <span class="mark">externas para internas</span> ataca a raiz, porque desejos internos saturam menos e dependem menos dos outros. O estudo de felicidade mais longo já feito reforça isso com dados. Desde 1938, Harvard acompanha as mesmas pessoas ao longo da vida inteira, medindo o que prevê uma velhice saudável e satisfeita. O melhor preditor não foi renda, fama nem colesterol aos cinquenta. Foi a qualidade das relações próximas. As pessoas mais saudáveis e felizes aos oitenta eram as que, aos cinquenta, estavam mais satisfeitas com quem tinham por perto. Um numerador feito de vínculo envelhece melhor do que um feito de conquista.</p>
+  <p data-i18n="b7.p4"><strong>Ficar menor.</strong> Boa parte do querer vive no passado (arrependimento) e no futuro (ambição, medo). Práticas de <span class="mark">atenção plena</span> treinam a mente a habitar o presente, onde a comparação e a antecipação têm menos combustível. Ficar menor é reduzir o tamanho do "eu" que precisa ser alimentado por conquistas.</p>
+  <p data-i18n="b7.p5"><strong>Satisfazer em vez de maximizar.</strong> O psicólogo Barry Schwartz distingue quem busca "o suficientemente bom" (satisficers) de quem busca "o melhor possível" (maximizers). Os maximizadores obtêm, às vezes, resultados objetivamente melhores e se sentem pior, porque toda escolha carrega o fantasma das alternativas não escolhidas. Adotar uma régua de "bom o bastante" em decisões que não merecem otimização é baixar o denominador em dezenas de pequenas frações por dia.</p>
+  <p data-i18n="b7.p6"><strong>Visualização negativa.</strong> A técnica de Sêneca, imaginar de vez em quando a perda do que se tem, não serve para amargurar. Serve para desfazer a adaptação: recolocar no numerador, por um instante, o valor de coisas que a esteira apagou. É a manobra oposta à propaganda. Em vez de criar um desejo novo, ela revive o apreço por algo que você já possui.</p>
+
+  <div class="widget" id="pracW">
+    <div class="wtag" data-i18n="w7.tag">O painel de práticas · ative e veja a fração</div>
+    <div class="pracgrid" id="pracGrid"></div>
+    <div class="satbox">
+      <div class="fbig">
+        <div class="num"><span data-i18n="w7.have">tem</span> <span class="mark" id="pNum">5</span></div>
+        <div class="bar"></div>
+        <div class="den"><span data-i18n="w7.want">quer</span> <span class="mark" id="pDen">9</span></div>
+      </div>
+      <div style="margin-top:14px"><span class="satnum" id="pSat">56</span> <span class="dim" style="font-size:12px" data-i18n="w7.satis">satisfação</span></div>
+      <div class="sattrack"><div class="satfill" id="pFill" style="width:56%"></div></div>
+    </div>
+    <div class="wcap" data-i18n="w7.cap">Nenhuma prática toca o "ter mais coisas". Todas mexem no denominador ou no apreço pelo numerador que já existe.</div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b8.step">08 · O experimento pessoal</div>
+  <p data-i18n="b8.p1">Ideia sem prática é entretenimento. Esta seção convida você a montar a própria lista reversa e sair da tela com uma ação concreta.</p>
+
+  <div class="widget" id="rlW">
+    <div class="wtag" data-i18n="w8.tag">Sua lista reversa · roda tudo no seu navegador</div>
+    <div class="rlform">
+      <input type="text" id="rlInput" data-i18n-ph="w8.ph" placeholder="algo que você quer ou persegue hoje" maxlength="80">
+      <select id="rlType"><option value="externa" data-i18n="w8.optExt">externa</option><option value="interna" data-i18n="w8.optInt">interna</option></select>
+      <select id="rlSat"><option value="rapida" data-i18n="w8.optFast">satura rápido</option><option value="devagar" data-i18n="w8.optSlow">satura devagar</option></select>
+      <button class="btn solid" id="rlAdd" data-i18n="w8.add">Adicionar</button>
+    </div>
+    <div id="rlList"></div>
+    <div class="rlactions" id="rlActions" hidden>
+      <button class="btn" id="rlCopy" data-i18n="w8.copy">Copiar lista</button>
+      <button class="btn" id="rlDownload" data-i18n="w8.download">Baixar .txt</button>
+    </div>
+    <div class="wcap" id="rlCap" style="margin-top:16px" data-i18n="w8.capDefault">Marque cada desejo como interno (relação, competência, propósito) ou externo (status, aprovação, acúmulo). Os candidatos a soltar aparecem destacados: <b>externos que saturam rápido</b>. Escolha um para largar nas próximas semanas.</div>
+    <div class="rlclose" id="rlClose" hidden></div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b9.step">09 · Onde isso pode dar errado</div>
+  <p data-i18n="b9.p1">Querer menos vira uma péssima ideia quando lida por metade. Três ressalvas importam.</p>
+  <p data-i18n="b9.p2">Primeiro, <span class="mark">ambição continua valendo</span>, e aceitar tudo não faz parte da proposta. Desejo é o motor de quase toda obra humana que vale a pena. A tese pede escolher com cuidado o que entra no denominador, porque a maioria dos nossos desejos foi instalada sem consulta e satisfaz pouco. Reduzir o denominador libera energia para os poucos desejos que merecem.</p>
+  <p data-i18n="b9.p3">Segundo, a equação pressupõe o numerador acima de um piso. Para quem não tem o básico de segurança material, saúde e dignidade, o problema real é aumentar o numerador, e <span class="mark">falar em "querer menos" beira o insulto</span>. A conversa deste artigo começa depois desse piso, no território onde a maioria das pessoas em condições razoáveis passa a vida correndo por um numerador que já bastava.</p>
+  <p data-i18n="b9.p4">Terceiro, há <span class="mark">uma diferença entre querer menos e sentir menos</span>. Anestesiar o desejo por medo de decepção é desistência disfarçada de sabedoria. A prática que as tradições descrevem é o contrário de apatia: é sentir o mundo com mais clareza justamente por parar de ser arrastado pela sede constante do próximo item. Menos denominador, mais presença no numerador que já existe.</p>
+  <p data-i18n="b9.p5">Volte à lista do começo. A que a gente escreve todo fim de ano tem uma coluna só, a das conquistas. Este texto propôs uma segunda coluna, a das coisas que você decide querer menos, e mostrou por que ela costuma render mais satisfação por item do que a primeira. A satisfação sempre esteve dos dois lados da fração, e passamos a vida puxando só um deles. Fica o convite que abriu o texto: <span class="mark">qual vai ser o primeiro nome da sua lista inversa?</span></p>
+</section>
+
+<!-- REFS -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="refs.step">Referências</div>
+  <ul class="refs">
+    <li data-i18n="refs.1"><strong>Arthur C. Brooks.</strong> <em>From Strength to Strength</em> (2022) e a coluna "How to Want Less", <em>The Atlantic</em>, mar. 2022. Origem da equação da satisfação, da lista reversa, do "de príncipe a sábio" e do "ficar menor".</li>
+    <li data-i18n="refs.2"><strong>Deric Bownds.</strong> "How to Want Less", <em>Mindblog</em>, fev. 2022. Resenha que serviu de ponto de partida deste artigo.</li>
+    <li data-i18n="refs.3"><strong>Philip Brickman &amp; Donald T. Campbell.</strong> "Hedonic Relativism and Planning the Good Society" (1971), capítulo em <em>Adaptation-Level Theory</em> (org. M. H. Appley). Origem da esteira hedônica.</li>
+    <li data-i18n="refs.4"><strong>Philip Brickman, Dan Coates &amp; Ronnie Janoff-Bulman.</strong> "Lottery Winners and Accident Victims: Is Happiness Relative?", <em>JPSP</em> (1978).</li>
+    <li data-i18n="refs.5"><strong>James Olds &amp; Peter Milner.</strong> "Positive Reinforcement Produced by Electrical Stimulation of Septal Area and Other Regions of Rat Brain", <em>J. Comp. Physiol. Psychol.</em> (1954). O experimento do rato e a alavanca.</li>
+    <li data-i18n="refs.6"><strong>Kent C. Berridge e Terry E. Robinson.</strong> Corpo de trabalho sobre "wanting" versus "liking" e saliência de incentivo. O artigo "The debate over dopamine's role in reward: the case for incentive salience" (<em>Psychopharmacology</em>, 2007) é de Berridge; a formulação conjunta clássica está em Berridge &amp; Robinson, "What is the role of dopamine in reward?" (<em>Brain Research Reviews</em>, 1998). Base para reler o "centro do prazer" de Olds e Milner como circuito de desejo.</li>
+    <li data-i18n="refs.7"><strong>Harvard Study of Adult Development</strong> (iniciado em 1938); Robert Waldinger &amp; Marc Schulz, <em>The Good Life</em> (2023); sintetizado no vídeo do Veritasium <a href="https://www.youtube.com/watch?v=vJeMwI4AF2w" target="_blank" rel="noopener">"What The Longest-Running Study on Happiness Reveals"</a>.</li>
+    <li data-i18n="refs.8"><strong>Richard A. Easterlin.</strong> "Does Economic Growth Improve the Human Lot?" (1974) e trabalhos posteriores. O "paradoxo de Easterlin" segue debatido (ver Stevenson &amp; Wolfers, 2008).</li>
+    <li data-i18n="refs.9"><strong>Tim Kasser.</strong> <em>The High Price of Materialism</em> (2002).</li>
+    <li data-i18n="refs.10"><strong>Barry Schwartz.</strong> <em>The Paradox of Choice</em> (2004).</li>
+    <li data-i18n="refs.11"><strong>Epicteto</strong>, <em>Enquirídio</em>, e <strong>Sêneca</strong>, <em>Cartas a Lucílio</em>. <strong>Budismo</strong>, as quatro nobres verdades e a <em>tanha</em>. <strong>Tomás de Aquino</strong>, sobre os falsos fins da felicidade.</li>
+  </ul>
+</section>
+
+<div class="wrap foot reveal" data-i18n="foot">
+  Como querer menos · Renato Shirakashi. Um ensaio interativo sobre desejo e satisfação.
+</div>
+
+<script>
+"use strict";
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+function $(id){return document.getElementById(id);}
+var LANG='pt';
+var HOOKS=[];
+
+/* ---------- English strings for [data-i18n] (PT auto-captured from DOM) ---------- */
+var EN={
+ 'hero.eyebrow':`Desire × The science of satisfaction`,
+ 'hero.t1':`How to`,
+ 'hero.t2':`want less`,
+ 'hero.sub':`At the end of the year you will write a wish list: the things you want to achieve over the next twelve months. This essay bets on the reverse list, the things you decide to want less. It sounds backwards, and yet you will probably make one of these by the time you finish reading.`,
+ 'hero.by':`by Renato Shirakashi`,
+ 'b0.step':`00 · The question`,
+ 'b0.p1':`You got the thing. The job, the apartment, the relationship, the number in the bank that five years ago looked like an impossible ceiling. For a few weeks it felt good. Then the bar moved. What had been the top became the new floor, and a bigger version of the same craving showed up in place of the old one.`,
+ 'b0.p2':`Almost everyone has lived this cycle and almost no one finds it strange. We assume the problem was aiming too low. This essay's hypothesis is different: the problem is the direction in which we try to fix dissatisfaction. <span class="mark">We spend our whole lives trying to get more</span>, when the stronger lever sits on the other side of the equation.`,
+ 'b0.p3':`The question that organizes this piece is easy to state and hard to take seriously: what if <span class="mark">you can end up more satisfied by wanting less, instead of having more</span>?`,
+ 'b1.step':`01 · The equation`,
+ 'b1.p1':`Arthur Brooks, a social scientist who studies happiness at Harvard, suggests looking at satisfaction as a fraction:`,
+ 'eq.lhs':`Satisfaction`,
+ 'eq.num':`What you have`,
+ 'eq.den':`What you want`,
+ 'b1.p2':`The formula is crude on purpose. A fraction grows in two ways: by raising the numerator or by lowering the denominator. The whole culture points at the numerator. Earn more, buy more, pile up more, and satisfaction follows. Nobody sells you the other half of the equation.`,
+ 'b1.p3':`The detail that changes everything is that the denominator does not hold still. Every time the numerator rises, the denominator rises right behind it, usually faster. <span class="mark">You earn twice as much and start wanting three times as much</span>. That is why doubling what you have rarely doubles satisfaction: the whole fraction resets.`,
+ 'w1.tag':`The desire treadmill · runs on its own`,
+ 'w1.have':`Already have`,
+ 'w1.want':`Want now`,
+ 'w1.stTem':`Have:`,
+ 'w1.stSat':`satisfaction:`,
+ 'w1.stQuer':`Want:`,
+ 'w1.cap':`It starts simple and climbs. Each thing you get becomes a tag under <b>Already have</b> and gives a spike. But the spikes keep <b>shrinking</b>, and the <b>baseline</b> rises less each time, flattening into a curve of diminishing returns. Tap a desire to get it right away.`,
+ 'b2.step':`02 · Take a guess`,
+ 'b2.p1':`Before we go on, a calibration exercise. Research on income and well-being measures exactly how much extra satisfaction comes from having more. The answer is usually lower than intuition suggests.`,
+ 'b2.p2':`The general pattern found by economists like Richard Easterlin is that, above a floor of material security, <span class="mark">doubling the income of a country or a person moves reported satisfaction far less than intuition predicts</span>. Part of that is the treadmill. Part is comparison: what weighs on how we feel is the value compared to the neighbors, the colleagues, the people we see on the screen. The absolute value counts for little.`,
+ 'w2.tag':`The guess · before you see the data`,
+ 'w2.qtext':`You double your income tomorrow and it stays that way forever. How much does your life satisfaction improve?`,
+ 'b3.step':`03 · The treadmill`,
+ 'b3.p1':`In 1971, Philip Brickman and Donald Campbell gave the mechanism a name: the <span class="mark">hedonic treadmill</span>. The idea is that we adapt to our circumstances the way the eyes adapt to light. A dark room looks very dark for a few seconds, then becomes normal. A raise feels great for a few weeks, then becomes normal. We run on the treadmill and the scenery does not move.`,
+ 'b3.p2':`The study that became its symbol is from 1978. Brickman and colleagues compared lottery winners with people left paraplegic or quadriplegic by accidents. Months after the event, the happiness gap between the two groups was far smaller than anyone would imagine. The winners were still pleased about the money, but <span class="mark">their delight in the small joys of daily life had dropped</span>. The win had reset the bar upward, and everyday life went dim by comparison.`,
+ 'b3.p3':`The treadmill has an <span class="mark">evolutionary function</span>. A permanently satisfied animal stops hunting, courting, protecting itself. Recurring dissatisfaction is what kept our ancestors moving. We were <span class="mark">built to seek, not to arrive</span>. The system works beautifully to spread genes and terribly to leave us in peace.`,
+ 'b4.step':`04 · Wanting is not liking`,
+ 'b4.p1':`In 1954, two researchers in Montreal, James Olds and Peter Milner, implanted an electrode in a rat's brain and wired the stimulus to a lever. Each time the rat pressed, it got an electrical pulse in a specific region. The animal started pressing. And it did not stop. In later experiments, rats pressed the lever thousands of times an hour, ignored food, ignored water, crossed electrified floors that hurt them, pressing until they dropped from exhaustion. Olds and Milner thought they had found the brain's "pleasure center".`,
+ 'b4.p2':`Decades later, redoing this kind of experiment with finer measures, Kent Berridge realized the story was backwards. The rats did not seem to be in ecstasy. There was no sign of pleasure, but of an endless search. The lever was not delivering satisfaction, it was delivering more urge to press the lever. What Olds and Milner had stimulated was not enjoyment, it was pure wanting, running in circles.`,
+ 'b4.p3':`That led Berridge to spend decades showing that the brain treats <span class="mark">"wanting" and "liking"</span> as separate systems, with different circuits and chemistry.`,
+ 'b4.p4':`"Liking" is the actual pleasure: the good taste in your mouth, the comfort of being home. "Wanting" is the pull that makes us chase something before having it, what Berridge calls incentive salience, driven mostly by dopamine. The two usually travel together, but you can split them in the lab. A rat with an overactivated "wanting" system chases the reward harder without showing more pleasure when it arrives. It wants more and likes the same.`,
+ 'b4.p5':`This names a common experience. <span class="mark">The desire for something is often more intense than the pleasure of getting it</span>. Anticipation of the purchase beats the purchase. The craving for the next job title is bigger than the contentment of holding it. The "wanting" system was built to be insatiable, because insatiability is adaptive. The "liking" system is quieter and easier to saturate. Much of modern consumption is a machine for stimulating "wanting" and calling it happiness.`,
+ 'w4.tag':`The wanting and liking curve · dopamine over time`,
+ 'w4.legW':`wanting`,
+ 'w4.legL':`liking`,
+ 'w4.replay':`Replay`,
+ 'w4.cap':`"Wanting" fires <b>earlier</b>, in anticipation, and reaches a much higher peak than "liking", which comes later, at consumption, and is modest. Desire promises more than the having delivers.`,
+ 'b5.step':`05 · Who built the denominator`,
+ 'b5.p1':`If the denominator grows on its own, it is worth asking who feeds it. Three forces pull our desires upward without our noticing.`,
+ 'b5.p2':`The first is biological, already seen: we were selected to want more. The second is <span class="mark">social comparison</span>. Our sense of what is "enough" does not come from an inner ruler, it comes from looking sideways. When the group's standard rises, our "enough" rises with it, even if nothing in our life got worse.`,
+ 'b5.p3':`For almost all of history, that "side" we looked to was a few dozen neighbors and relatives. Social media blew that number up. Today the yardstick of comparison is no longer the neighbor, it is a curated selection of the best moments of millions of people, ranked by algorithms trained to hold your attention. You compare your whole life with the edited peak of everyone else's, all day, for free. Comparison, which already inflated the denominator on its own, became a continuous service delivered to your pocket.`,
+ 'b5.p4':`The third force is the most recent and the most deliberate. A huge part of the <span class="mark">modern economy depends on you wanting things</span> you do not want yet. Advertising always did this, and algorithmic advertising does it better. The infinite feed and the design of the apps tap directly into Berridge's "wanting" system: they measure what brings you back and optimize for it, with every scroll. It is engineering applied to the denominator, and it gets better every year.`,
+ 'b5.p5':`The psychologist Tim Kasser gathered evidence that people who organize their lives around material and status goals report, on average, less well-being and more anxiety than people anchored in relationships, competence and purpose. The material is not neutral. The more weight it carries in the definition of a good life, the worse the subjective result tends to be. The denominator the culture installs is not just big, it is the kind of desire that satisfies least.`,
+ 'w5.tag':`The desire factory · drag the era`,
+ 'cliff.h':`The chains of desire are old.`,
+ 'cliff.p':`They are strong and we did not choose them. Even so, <span class="mark">those who looked closely found ways out</span>. (continues)`,
+ 'b6.step':`06 · The ancients already knew`,
+ 'b6.p1':`Berridge's lab finding and Brooks' equation rediscover, by a different route, something several ancient traditions described millennia ago. They are worth hearing, because they spent centuries testing techniques for the same problem.`,
+ 'b6.p2':`For the <span class="mark">Stoics</span>, suffering comes from wanting the world to be different from what it is. Epictetus separated what is in our control (our judgments, our desires) from what is not (nearly everything else), and taught us to <span class="mark">train desire rather than chase objects</span>. Seneca practiced voluntary poverty for a few days, eating little and sleeping rough, to learn firsthand that the floor of "enough" was far lower than fear claimed. Lowering the denominator was not resignation, it was freedom: whoever wants little depends on little.`,
+ 'b6.p3':`<span class="mark">Buddhism</span> is even more direct. The second of the four noble truths locates the cause of suffering in <em>tanha</em>, thirst, the compulsive craving for pleasure, for permanence, for things to be otherwise. The path it proposes loosens attachment instead of trying to kill all desire: watching the urge arise and pass without being dragged by it. It is the same insatiability Berridge measured in the brain, observed from the inside two and a half thousand years ago.`,
+ 'b6.p4':`Thomas Aquinas, much later, came close by saying that seeking happiness in money, power, pleasure and fame is seeking it in idols that never deliver, because they are means treated as ends. The convergence between neuroscience, the economics of happiness and these traditions points to a real and ancient feature of the human mind. On its own, it proves nothing. The weight of sources so far apart arriving at the same place is hard to ignore.`,
+ 'w6.tag':`Timeline of the traditions · tap a marker`,
+ 'b7.step':`07 · Lowering the denominator`,
+ 'b7.p1':`If the strong lever is "want", how do you pull it down without falling into apathy? The traditions and modern research suggest converging practices. None of them is about wanting nothing. They are about choosing fewer and better desires.`,
+ 'b7.p2':`<strong>Reverse bucket list.</strong> Brooks suggests inverting the bucket list. Instead of writing everything you want to achieve before you die, write the desires that pull most of your energy today (recognition, the next upgrade, the approval of strangers) and deliberately cross some off. Each crossed-off item is a conscious cut to the denominator. The gain in satisfaction comes with no acquisition.`,
+ 'b7.p3':`<strong>From prince to sage.</strong> Life pushes most people to accumulate resources, status and admiration, the "prince" path. The traditions point the second half of life in another direction: wisdom, connection, service, the "sage" path. Swapping the sources of satisfaction from <span class="mark">external to internal</span> attacks the root, because internal desires saturate less and depend less on others. The longest happiness study ever done backs this with data. Since 1938, Harvard has followed the same people across their whole lives, measuring what predicts a healthy, satisfied old age. The best predictor was not income, fame or cholesterol at fifty. It was the quality of close relationships. The healthiest and happiest people at eighty were those who, at fifty, were most satisfied with the people around them. A numerator made of bonds ages better than one made of achievement.`,
+ 'b7.p4':`<strong>Getting smaller.</strong> Much of wanting lives in the past (regret) and the future (ambition, fear). <span class="mark">Mindfulness</span> practices train the mind to inhabit the present, where comparison and anticipation have less fuel. Getting smaller means shrinking the "self" that needs to be fed by conquests.`,
+ 'b7.p5':`<strong>Satisfice instead of maximize.</strong> The psychologist Barry Schwartz distinguishes those who seek "good enough" (satisficers) from those who seek "the best possible" (maximizers). Maximizers sometimes get objectively better results and feel worse, because every choice carries the ghost of the options not chosen. Adopting a "good enough" ruler for decisions that do not deserve optimization lowers the denominator in dozens of small fractions a day.`,
+ 'b7.p6':`<strong>Negative visualization.</strong> Seneca's technique, imagining now and then the loss of what you have, is not there to make you bitter. It is there to undo adaptation: to put back into the numerator, for a moment, the value of things the treadmill erased. It is the opposite move to advertising. Instead of creating a new desire, it revives appreciation for something you already own.`,
+ 'w7.tag':`The practices panel · switch on and watch the fraction`,
+ 'w7.have':`have`,
+ 'w7.want':`want`,
+ 'w7.satis':`satisfaction`,
+ 'w7.cap':`No practice touches "having more stuff". They all work on the denominator or on appreciation for the numerator you already have.`,
+ 'b8.step':`08 · The personal experiment`,
+ 'b8.p1':`An idea without practice is entertainment. This section invites you to build your own reverse list and leave the screen with a concrete action.`,
+ 'w8.tag':`Your reverse list · runs entirely in your browser`,
+ 'w8.ph':`something you want or chase today`,
+ 'w8.optExt':`external`,
+ 'w8.optInt':`internal`,
+ 'w8.optFast':`saturates fast`,
+ 'w8.optSlow':`saturates slow`,
+ 'w8.add':`Add`,
+ 'w8.copy':`Copy list`,
+ 'w8.download':`Download .txt`,
+ 'w8.capDefault':`Mark each desire as internal (relationship, competence, purpose) or external (status, approval, accumulation). The candidates to drop show up highlighted: <b>external ones that saturate fast</b>. Pick one to let go over the next few weeks.`,
+ 'b9.step':`09 · Where this can go wrong`,
+ 'b9.p1':`Wanting less becomes a terrible idea when read halfway. Three caveats matter.`,
+ 'b9.p2':`First, <span class="mark">ambition still holds</span>, and accepting everything is no part of the proposal. Desire is the engine of nearly every human work worth doing. The thesis asks you to choose carefully what enters the denominator, because most of our desires were installed without consulting us and satisfy little. Lowering the denominator frees energy for the few desires that deserve it.`,
+ 'b9.p3':`Second, the equation assumes the numerator above a floor. For those who lack the basics of material security, health and dignity, the real problem is raising the numerator, and <span class="mark">talking about "wanting less" borders on insult</span>. This essay's conversation begins after that floor, in the territory where most people in reasonable conditions spend their lives chasing a numerator that was already enough.`,
+ 'b9.p4':`Third, there is <span class="mark">a difference between wanting less and feeling less</span>. Numbing desire out of fear of disappointment is surrender disguised as wisdom. The practice the traditions describe is the opposite of apathy: it is feeling the world more clearly precisely by stopping being dragged by the constant thirst for the next item. Less denominator, more presence in the numerator that already exists.`,
+ 'b9.p5':`Go back to the list from the start. The one we write every year-end has a single column, the achievements. This essay proposed a second column, the things you decide to want less, and showed why it tends to yield more satisfaction per item than the first. Satisfaction was always on both sides of the fraction, and we spend our lives pulling only one of them. Here is the invitation that opened the text: <span class="mark">what will be the first name on your reverse list?</span>`,
+ 'refs.step':`References`,
+ 'refs.1':`<strong>Arthur C. Brooks.</strong> <em>From Strength to Strength</em> (2022) and the column "How to Want Less", <em>The Atlantic</em>, Mar. 2022. Origin of the satisfaction equation, the reverse bucket list, "prince to sage" and "getting smaller".`,
+ 'refs.2':`<strong>Deric Bownds.</strong> "How to Want Less", <em>Mindblog</em>, Feb. 2022. The review that was this essay's starting point.`,
+ 'refs.3':`<strong>Philip Brickman &amp; Donald T. Campbell.</strong> "Hedonic Relativism and Planning the Good Society" (1971), a chapter in <em>Adaptation-Level Theory</em> (ed. M. H. Appley). Origin of the hedonic treadmill.`,
+ 'refs.4':`<strong>Philip Brickman, Dan Coates &amp; Ronnie Janoff-Bulman.</strong> "Lottery Winners and Accident Victims: Is Happiness Relative?", <em>JPSP</em> (1978).`,
+ 'refs.5':`<strong>James Olds &amp; Peter Milner.</strong> "Positive Reinforcement Produced by Electrical Stimulation of Septal Area and Other Regions of Rat Brain", <em>J. Comp. Physiol. Psychol.</em> (1954). The rat and the lever experiment.`,
+ 'refs.6':`<strong>Kent C. Berridge and Terry E. Robinson.</strong> A body of work on "wanting" versus "liking" and incentive salience. The paper "The debate over dopamine's role in reward: the case for incentive salience" (<em>Psychopharmacology</em>, 2007) is Berridge's; the classic joint formulation is Berridge &amp; Robinson, "What is the role of dopamine in reward?" (<em>Brain Research Reviews</em>, 1998). The basis for rereading Olds and Milner's "pleasure center" as a wanting circuit.`,
+ 'refs.7':`<strong>Harvard Study of Adult Development</strong> (started 1938); Robert Waldinger &amp; Marc Schulz, <em>The Good Life</em> (2023); summarized in the Veritasium video <a href="https://www.youtube.com/watch?v=vJeMwI4AF2w" target="_blank" rel="noopener">"What The Longest-Running Study on Happiness Reveals"</a>.`,
+ 'refs.8':`<strong>Richard A. Easterlin.</strong> "Does Economic Growth Improve the Human Lot?" (1974) and later work. The "Easterlin paradox" remains debated (see Stevenson &amp; Wolfers, 2008).`,
+ 'refs.9':`<strong>Tim Kasser.</strong> <em>The High Price of Materialism</em> (2002).`,
+ 'refs.10':`<strong>Barry Schwartz.</strong> <em>The Paradox of Choice</em> (2004).`,
+ 'refs.11':`<strong>Epictetus</strong>, <em>Enchiridion</em>, and <strong>Seneca</strong>, <em>Letters to Lucilius</em>. <strong>Buddhism</strong>, the four noble truths and <em>tanha</em>. <strong>Thomas Aquinas</strong>, on the false ends of happiness.`,
+ 'foot':`How to want less · Renato Shirakashi. An interactive essay on desire and satisfaction.`
+};
+
+/* ---------- dynamic strings + widget data, per language ---------- */
+var T={
+ pt:{
+  'base':`linha de base`,
+  'g.today':`hoje`,'g.times':`vezes que a renda dobrou`,'g.income':`renda`,'g.satis':`satisfação`,'g.guess':`seu palpite`,
+  'g.incomeEnd':`renda 16×`,'g.satisEnd':`satisfação 1,6×`,
+  'g.cap':`Na média das pesquisas, cada vez que a renda dobra a satisfação sobe sempre <b>o mesmo tanto pequeno</b>, perto de <b>15%</b>. Você apostou em <b>{c}</b>. Para dobrar a satisfação seria preciso dobrar a renda uma <b>meia dúzia de vezes seguidas</b>, e a comparação com os outros ainda comeria parte do ganho.`,
+  'choices':[{mult:1.15,label:'Melhora pouco'},{mult:1.5,label:'Melhora bastante'},{mult:2,label:'Dobra'},{mult:3,label:'Triplica'}],
+  'dop.gotit':`conseguiu`,'dop.antic':`antecipação`,'dop.consume':`consumo`,'dop.wpeak':`pico do querer`,'dop.lpeak':`pico do gostar`,'dop.time':`tempo →`,
+  'force.want':`quero`,'force.labels':['evolução','comparação','redes sociais'],
+  'force.cap1':`A comparação era com algumas dezenas de vizinhos. As redes sociais não existiam, e o desejo crescia devagar.`,
+  'force.cap2':`A publicidade de massa cresce. A comparação ainda é local, mas a televisão começa a ampliar a régua.`,
+  'force.cap3':`As redes sociais surgem e o "lado" para onde você olha vira o mundo inteiro. O denominador acelera.`,
+  'force.cap4':`As <b>redes sociais e a publicidade algorítmica</b> viraram a maior fonte de "quero". É a força mais nova e a mais deliberada.`,
+  'pool':["Um café especial","Tênis novo","Mais curtidas num post","Fone premium","Celular do ano","Um fim de semana fora","A promoção","Notebook top de linha","10 mil seguidores","Um relógio de marca","Carro novo","Férias na Europa","Virar gerente","O selo de verificado","Carro importado","Apartamento próprio","Um post viral","Virar diretor","Casa na praia","Um prêmio da área","Entrar pra lista da Forbes","Ser CEO","Um iate","Capa de revista","Jatinho particular","Uma ilha só sua","Um assento no foguete"],
+  'marks':[
+   {k:"Buda",who:"Budismo · séc. V a.C.",txt:"A causa do sofrimento é a tanha, a sede: o desejo compulsivo por prazer e por permanência.",conn:"Afrouxar o apego é baixar o denominador por dentro."},
+   {k:"Estoicos",who:"Epicteto e Sêneca · séc. I",txt:"Treine o desejo em vez de perseguir objetos. Quem quer pouco depende pouco.",conn:"A pobreza voluntária mostra que o piso do 'suficiente' é baixo."},
+   {k:"Aquino",who:"Tomás de Aquino · séc. XIII",txt:"Dinheiro, poder, prazer e fama são ídolos: meios tratados como fins que nunca entregam.",conn:"São numeradores que não saciam, por mais que cresçam."},
+   {k:"Brickman",who:"Brickman & Campbell · 1971",txt:"A esteira hedônica: nos adaptamos a cada ganho e voltamos à linha de base.",conn:"O denominador se reajusta para cima a cada conquista."},
+   {k:"Kasser",who:"Tim Kasser · 2002",txt:"Vidas organizadas em torno de metas materiais relatam menos bem-estar.",conn:"Nem todo desejo satisfaz igual: o material satisfaz menos."},
+   {k:"Berridge",who:"Kent Berridge · anos 1990–2000",txt:"Querer e gostar são sistemas separados no cérebro. O querer é insaciável.",conn:"A base neural da fração que nunca fecha."},
+   {k:"Brooks",who:"Arthur Brooks · 2022",txt:"Satisfação = o que você tem ÷ o que você quer. Puxe o denominador.",conn:"A equação que amarra dois mil e quinhentos anos de observação."}
+  ],
+  'pracs':[
+   {id:'reversa',t:'Lista reversa',e:'risca desejos',dDen:-2,dNum:0},
+   {id:'sabio',t:'De príncipe a sábio',e:'troca externo por interno',dDen:-1.5,dNum:0},
+   {id:'menor',t:'Ficar menor',e:'presente, menos ambição',dDen:-1,dNum:0},
+   {id:'satisf',t:'Satisfazer',e:'bom o bastante',dDen:-1,dNum:0},
+   {id:'negativa',t:'Visualização negativa',e:'reaviva o que já tem',dDen:0,dNum:1.5}
+  ],
+  'w8.external':`externa`,'w8.internal':`interna`,'w8.fast':`satura rápido`,'w8.slow':`satura devagar`,'w8.flag':`candidato a soltar`,
+  'w8.capNone':`Nenhum candidato óbvio ainda. Desejos externos que saturam rápido são os primeiros a sair.`,
+  'w8.closeNo':`A outra alavanca, feita à mão: cada item que você soltar é uma queda no denominador, satisfação que sobe sem conquistar nada.`,
+  'w8.title':`Minha lista reversa de desejos`,'w8.drop':`[soltar] `,'w8.keep':`[manter] `,'w8.file':`lista-reversa.txt`
+ },
+ en:{
+  'base':`baseline`,
+  'g.today':`today`,'g.times':`times income doubled`,'g.income':`income`,'g.satis':`satisfaction`,'g.guess':`your guess`,
+  'g.incomeEnd':`income 16×`,'g.satisEnd':`satisfaction 1.6×`,
+  'g.cap':`On average across studies, each time income doubles, satisfaction rises by <b>the same small amount</b>, about <b>15%</b>. You guessed <b>{c}</b>. To double satisfaction you would have to double income <b>half a dozen times over</b>, and comparison with others would still eat part of the gain.`,
+  'choices':[{mult:1.15,label:'Improves a little'},{mult:1.5,label:'Improves a lot'},{mult:2,label:'Doubles'},{mult:3,label:'Triples'}],
+  'dop.gotit':`got it`,'dop.antic':`anticipation`,'dop.consume':`consumption`,'dop.wpeak':`wanting peak`,'dop.lpeak':`liking peak`,'dop.time':`time →`,
+  'force.want':`want`,'force.labels':['evolution','comparison','social media'],
+  'force.cap1':`Comparison was with a few dozen neighbors. Social media did not exist, and desire grew slowly.`,
+  'force.cap2':`Mass advertising grows. Comparison is still local, but television starts to widen the yardstick.`,
+  'force.cap3':`Social media appears and the "side" you look to becomes the whole world. The denominator accelerates.`,
+  'force.cap4':`<b>Social media and algorithmic advertising</b> became the biggest source of "want". It is the newest force and the most deliberate.`,
+  'pool':["A good coffee","New sneakers","More likes on a post","Premium headphones","This year's phone","A weekend away","The promotion","A top-tier laptop","10k followers","A designer watch","A new car","A trip to Europe","Make manager","The verified badge","An imported car","Your own apartment","A viral post","Make director","A beach house","An industry award","The Forbes list","Be CEO","A yacht","A magazine cover","A private jet","An island of your own","A seat on the rocket"],
+  'marks':[
+   {k:"Buddha",who:"Buddhism · 5th c. BCE",txt:"The cause of suffering is tanha, thirst: the compulsive craving for pleasure and permanence.",conn:"Loosening attachment lowers the denominator from within."},
+   {k:"Stoics",who:"Epictetus and Seneca · 1st c.",txt:"Train desire instead of chasing objects. Whoever wants little depends on little.",conn:"Voluntary poverty shows the floor of 'enough' is low."},
+   {k:"Aquinas",who:"Thomas Aquinas · 13th c.",txt:"Money, power, pleasure and fame are idols: means treated as ends that never deliver.",conn:"They are numerators that never satisfy, however much they grow."},
+   {k:"Brickman",who:"Brickman & Campbell · 1971",txt:"The hedonic treadmill: we adapt to each gain and return to baseline.",conn:"The denominator resets upward with every conquest."},
+   {k:"Kasser",who:"Tim Kasser · 2002",txt:"Lives built around material goals report less well-being.",conn:"Not every desire satisfies equally: the material satisfies less."},
+   {k:"Berridge",who:"Kent Berridge · 1990s–2000s",txt:"Wanting and liking are separate systems in the brain. Wanting is insatiable.",conn:"The neural basis of the fraction that never closes."},
+   {k:"Brooks",who:"Arthur Brooks · 2022",txt:"Satisfaction = what you have ÷ what you want. Pull the denominator.",conn:"The equation that ties together two and a half thousand years of observation."}
+  ],
+  'pracs':[
+   {id:'reversa',t:'Reverse bucket list',e:'cross off desires',dDen:-2,dNum:0},
+   {id:'sabio',t:'Prince to sage',e:'swap external for internal',dDen:-1.5,dNum:0},
+   {id:'menor',t:'Get smaller',e:'present, less ambition',dDen:-1,dNum:0},
+   {id:'satisf',t:'Satisfice',e:'good enough',dDen:-1,dNum:0},
+   {id:'negativa',t:'Negative visualization',e:'revives what you have',dDen:0,dNum:1.5}
+  ],
+  'w8.external':`external`,'w8.internal':`internal`,'w8.fast':`saturates fast`,'w8.slow':`saturates slow`,'w8.flag':`candidate to drop`,
+  'w8.capNone':`No obvious candidate yet. External desires that saturate fast are the first to go.`,
+  'w8.closeNo':`The other lever, made by hand: every item you drop is a cut to the denominator, satisfaction that rises without acquiring anything.`,
+  'w8.title':`My reverse list of desires`,'w8.drop':`[drop] `,'w8.keep':`[keep] `,'w8.file':`reverse-list.txt`
+ }
+};
+function t(k){return (T[LANG]&&T[LANG][k]!=null)?T[LANG][k]:k;}
+function D(k){return T[LANG][k];}
+
+/* ---------- i18n apply ---------- */
+var PT={}, PTPH={};
+document.querySelectorAll('[data-i18n]').forEach(function(el){PT[el.getAttribute('data-i18n')]=el.innerHTML;});
+document.querySelectorAll('[data-i18n-ph]').forEach(function(el){PTPH[el.getAttribute('data-i18n-ph')]=el.getAttribute('placeholder');});
+function applyLang(lang){
+  LANG=lang;document.documentElement.lang=lang;
+  try{localStorage.setItem('rs_lang_cql',lang);}catch(e){}
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    var v=(lang==='en')?EN[k]:PT[k];
+    if(v!=null)el.innerHTML=v;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+    var k=el.getAttribute('data-i18n-ph');
+    var v=(lang==='en')?EN[k]:PTPH[k];
+    if(v!=null)el.setAttribute('placeholder',v);
+  });
+  document.querySelectorAll('.langtoggle button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  HOOKS.forEach(function(fn){try{fn();}catch(e){}});
+}
+document.querySelectorAll('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
+function detectLang(){
+  try{var s=localStorage.getItem('rs_lang_cql');if(s==='pt'||s==='en')return s;}catch(e){}
+  var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+  for(var i=0;i<navs.length;i++){var l=(navs[i]||'').toLowerCase();if(l.indexOf('pt')===0)return 'pt';if(l.indexOf('en')===0)return 'en';}
+  return 'pt';
+}
+
+/* ============ W1 · A esteira do desejo ============ */
+(function(){
+  var pi=0, WRAP=9;
+  function POOL(){return D('pool');}
+  function nextIdx(){var L=POOL().length;var i=pi<L?pi:WRAP+((pi-L)%(L-WRAP));pi++;return i;}
+  var have=[], want=[], wid=0, n=0;
+  function baseAt(k){return 50+24*(k/(k+8));}
+  function peakAt(k){return 3+19*(5/(k+5));}
+  var sat=baseAt(0);
+  var buf=[], CAP=150;
+  var W=380,H=170,padL=10,padR=10,padT=16,padB=22;
+  function Y(s){return (H-padB)-(clamp(s,46,84)-46)/38*((H-padB)-padT);}
+  function drawGraph(){
+    var g='',i;
+    if(buf.length>1){
+      var step=(W-padL-padR)/(CAP-1),db='',ds='';
+      for(i=0;i<buf.length;i++){var x=padL+i*step;db+=(i===0?'M':'L')+x.toFixed(1)+','+Y(buf[i].b).toFixed(1);ds+=(i===0?'M':'L')+x.toFixed(1)+','+Y(buf[i].s).toFixed(1);}
+      g+='<path d="'+db+'" fill="none" stroke="#c9c9c9" stroke-width="1" stroke-dasharray="4 4"/>';
+      g+='<path d="'+ds+'" fill="none" stroke="#141414" stroke-width="1.6"/>';
+      var lx=padL+(buf.length-1)*step,ly=Y(buf[buf.length-1].s);
+      g+='<circle cx="'+lx.toFixed(1)+'" cy="'+ly.toFixed(1)+'" r="3.2" fill="#141414"/>';
+      g+='<text x="'+(W-padR)+'" y="'+(Y(buf[buf.length-1].b)+14).toFixed(1)+'" font-size="9.5" text-anchor="end" fill="#8a8a8a" font-family="inherit">'+t('base')+'</text>';
+    }
+    $('loopGraph').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="satisfaction over time">'+g+'</svg>';
+  }
+  function esc(s){return s.replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function renderHave(){
+    var show=have.slice(-9), extra=have.length-show.length, html='';
+    if(extra>0)html+='<span class="tag more">+'+extra+'</span>';
+    show.forEach(function(idx,i){html+='<span class="tag have'+(i===show.length-1?' pop':'')+'">'+esc(POOL()[idx])+'</span>';});
+    $('loopHave').innerHTML=html;$('loopTemN').textContent=have.length;
+  }
+  function renderWant(){
+    var host=$('loopWant');
+    host.innerHTML=want.map(function(w){return '<span class="tag want" data-id="'+w.id+'">'+esc(POOL()[w.idx])+'</span>';}).join('');
+    Array.prototype.forEach.call(host.querySelectorAll('.tag.want'),function(el){el.addEventListener('click',function(){acquire(parseInt(this.getAttribute('data-id'),10));});});
+    $('loopQuerN').textContent=want.length;
+  }
+  function spawnWant(cnt){cnt=cnt||1;for(var i=0;i<cnt;i++){if(want.length>=4)break;want.push({id:++wid,idx:nextIdx()});}renderWant();}
+  function acquire(id){
+    var w;
+    if(id){var ix=-1;want.forEach(function(x,i){if(x.id===id)ix=i;});if(ix<0)return;w=want.splice(ix,1)[0];}
+    else{if(!want.length)spawnWant(1);w=want.shift();}
+    have.push(w.idx);
+    n++;sat=baseAt(n)+peakAt(n);
+    renderHave();renderWant();
+    setTimeout(function(){spawnWant(want.length<=1?2:(Math.random()<0.5?2:1));},700);
+  }
+  function tick(){sat+=(baseAt(n)-sat)*0.09;buf.push({s:sat,b:baseAt(n)});if(buf.length>CAP)buf.shift();$('loopSatN').textContent=Math.round(sat);drawGraph();}
+  for(var k=0;k<CAP;k++)buf.push({s:baseAt(0),b:baseAt(0)});
+  have.push(nextIdx());spawnWant(2);renderHave();renderWant();drawGraph();
+  setInterval(tick,55);setInterval(function(){acquire(null);},2200);
+  HOOKS.push(function(){renderHave();renderWant();});
+})();
+
+/* ============ W2 · O palpite ============ */
+(function(){
+  var chosenIdx=null;
+  function opts(){return D('choices');}
+  function build(){
+    var host=$('guessChoices');host.innerHTML='';
+    opts().forEach(function(o,i){
+      var b=document.createElement('button');b.className='btn'+(chosenIdx===i?' solid':'');b.textContent=o.label;
+      if(chosenIdx!=null)b.disabled=true;
+      b.addEventListener('click',function(){if(chosenIdx!=null)return;chosenIdx=i;window.__guessIdx=i;build();reveal();});
+      host.appendChild(b);
+    });
+    if(chosenIdx!=null)reveal();
+  }
+  function reveal(){
+    $('guessReveal').hidden=false;drawChart();
+    var c=opts()[chosenIdx].label.toLowerCase();
+    $('guessCap').innerHTML=t('g.cap').replace('{c}',c);
+  }
+  function drawChart(){
+    var o=opts()[chosenIdx];
+    var W=640,H=300,padL=48,padR=54,padT=24,padB=42;
+    var steps=[0,1,2,3,4],rendaMax=16;
+    function X(i){return padL+i/4*(W-padL-padR);}
+    function Yr(v){return (H-padB)-v/rendaMax*((H-padB)-padT);}
+    var satBase=1,satStep=0.15;function satAt(i){return satBase+satStep*i;}
+    var g='';
+    g+='<line x1="'+padL+'" y1="'+(H-padB)+'" x2="'+(W-padR)+'" y2="'+(H-padB)+'" stroke="#c9c9c9" stroke-width="1"/>';
+    steps.forEach(function(i){g+='<text x="'+X(i).toFixed(1)+'" y="'+(H-padB+18)+'" font-size="10" text-anchor="middle" fill="#8a8a8a" font-family="inherit">'+(i===0?t('g.today'):(Math.pow(2,i)+'×'))+'</text>';});
+    g+='<text x="'+((padL+(W-padR))/2)+'" y="'+(H-6)+'" font-size="10" text-anchor="middle" fill="#8a8a8a" font-family="inherit">'+t('g.times')+'</text>';
+    var dr='';steps.forEach(function(i){dr+=(i===0?'M':'L')+X(i).toFixed(1)+','+Yr(Math.pow(2,i)).toFixed(1);});
+    g+='<path d="'+dr+'" fill="none" stroke="#141414" stroke-width="2"/>';
+    steps.forEach(function(i){g+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Yr(Math.pow(2,i)).toFixed(1)+'" r="3.4" fill="#141414"/>';});
+    g+='<text x="'+X(4).toFixed(1)+'" y="'+(Yr(16)-8).toFixed(1)+'" font-size="11" text-anchor="end" fill="#141414" font-family="inherit">'+t('g.incomeEnd')+'</text>';
+    var ds='';steps.forEach(function(i){ds+=(i===0?'M':'L')+X(i).toFixed(1)+','+Yr(satAt(i)).toFixed(1);});
+    g+='<path d="'+ds+'" fill="none" stroke="#9a9a9a" stroke-width="2"/>';
+    steps.forEach(function(i){g+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Yr(satAt(i)).toFixed(1)+'" r="3.4" fill="#9a9a9a"/>';});
+    g+='<text x="'+X(4).toFixed(1)+'" y="'+(Yr(satAt(4))-8).toFixed(1)+'" font-size="11" text-anchor="end" fill="#6b6b6b" font-family="inherit">'+t('g.satisEnd')+'</text>';
+    var gy=Yr(o.mult);
+    g+='<line x1="'+X(1).toFixed(1)+'" y1="'+gy.toFixed(1)+'" x2="'+X(1).toFixed(1)+'" y2="'+Yr(satAt(1)).toFixed(1)+'" stroke="#141414" stroke-width="1" stroke-dasharray="3 3"/>';
+    g+='<circle cx="'+X(1).toFixed(1)+'" cy="'+gy.toFixed(1)+'" r="4.5" fill="none" stroke="#141414" stroke-width="1.6"/>';
+    g+='<text x="'+(X(1)+8).toFixed(1)+'" y="'+(gy+4).toFixed(1)+'" font-size="10.5" fill="#141414" font-family="inherit">'+t('g.guess')+'</text>';
+    g+='<rect x="'+padL+'" y="'+padT+'" width="14" height="3" fill="#141414"/><text x="'+(padL+20)+'" y="'+(padT+4)+'" font-size="10.5" fill="#141414" font-family="inherit">'+t('g.income')+'</text>';
+    g+='<rect x="'+(padL+90)+'" y="'+padT+'" width="14" height="3" fill="#9a9a9a"/><text x="'+(padL+110)+'" y="'+(padT+4)+'" font-size="10.5" fill="#6b6b6b" font-family="inherit">'+t('g.satis')+'</text>';
+    $('guessSvg').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="income vs satisfaction">'+g+'</svg>';
+  }
+  build();
+  HOOKS.push(build);
+})();
+
+/* ============ W4 · A curva do querer e do gostar ============ */
+(function(){
+  var W=640,H=280,padL=30,padR=20,padT=24,padB=44;
+  function X(x){return padL+x/100*(W-padL-padR);}
+  function Y(v){return (H-padB)-v*((H-padB)-padT);}
+  function querer(x){var up=1/(1+Math.exp(-(x-30)/6));var down=1/(1+Math.exp((x-52)/7));return clamp(0.96*up*down+0.02,0,1);}
+  function gostar(x){return clamp(0.40*Math.exp(-Math.pow((x-64)/10,2))+0.01,0,1);}
+  function path(fn){var d='',i;for(i=0;i<=100;i++){d+=(i===0?'M':'L')+X(i).toFixed(1)+','+Y(fn(i)).toFixed(1);}return d;}
+  function render(){
+    var g='';
+    g+='<line x1="'+padL+'" y1="'+(H-padB)+'" x2="'+(W-padR)+'" y2="'+(H-padB)+'" stroke="#c9c9c9" stroke-width="1"/>';
+    g+='<text x="'+(W-padR)+'" y="'+(H-padB+18)+'" font-size="10" text-anchor="end" fill="#8a8a8a" font-family="inherit">'+t('dop.time')+'</text>';
+    var mx=X(55);
+    g+='<line x1="'+mx+'" y1="'+padT+'" x2="'+mx+'" y2="'+(H-padB)+'" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3 3"/>';
+    g+='<text x="'+mx+'" y="'+(padT-8)+'" font-size="10" text-anchor="middle" fill="#141414" font-family="inherit">'+t('dop.gotit')+'</text>';
+    g+='<text x="'+X(26)+'" y="'+(H-padB+18)+'" font-size="10" text-anchor="middle" fill="#8a8a8a" font-family="inherit">'+t('dop.antic')+'</text>';
+    g+='<text x="'+X(72)+'" y="'+(H-padB+18)+'" font-size="10" text-anchor="middle" fill="#8a8a8a" font-family="inherit">'+t('dop.consume')+'</text>';
+    g+='<path id="dopWant" d="'+path(querer)+'" fill="none" stroke="#141414" stroke-width="2.2"/>';
+    g+='<path id="dopLike" d="'+path(gostar)+'" fill="none" stroke="#9a9a9a" stroke-width="2.2"/>';
+    g+='<text x="'+X(44)+'" y="'+(Y(querer(46))-14)+'" font-size="10.5" text-anchor="middle" fill="#141414" font-family="inherit">'+t('dop.wpeak')+'</text>';
+    g+='<text x="'+X(64)+'" y="'+(Y(gostar(64))-8)+'" font-size="10.5" text-anchor="middle" fill="#6b6b6b" font-family="inherit">'+t('dop.lpeak')+'</text>';
+    $('dopSvg').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="wanting and liking curves">'+g+'</svg>';
+    animate();
+  }
+  function animate(){['dopWant','dopLike'].forEach(function(id){var p=$(id);if(!p||!p.getTotalLength)return;var L=p.getTotalLength();p.style.transition='none';p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.getBoundingClientRect();p.style.transition='stroke-dashoffset 1.6s ease';p.style.strokeDashoffset='0';});}
+  $('dopReplay').addEventListener('click',animate);
+  render();
+  HOOKS.push(render);
+})();
+
+/* ============ W5 · A fábrica de desejos ============ */
+(function(){
+  var W=640,H=260,cx=W-150,cy=H/2,srcX=185,srcY=[H/2-78,H/2,H/2+78];
+  var curYear=1900;
+  function forces(y){var evo=30;var comp=20+15*clamp((y-1900)/125,0,1);var redes;if(y<1997)redes=1;else redes=1+58*Math.pow(clamp((y-1997)/28,0,1),1.45);return {v:[evo,comp,redes],total:evo+comp+redes};}
+  function r(f){return 10+Math.sqrt(f)*3.4;}
+  function render(y){
+    curYear=y;var f=forces(y),vals=f.v,labels=D('force.labels'),g='';
+    vals.forEach(function(v,i){var w=clamp(v/7,1.2,11);g+='<line x1="'+srcX+'" y1="'+srcY[i]+'" x2="'+cx+'" y2="'+cy+'" stroke="#141414" stroke-width="'+w.toFixed(1)+'" opacity="'+(0.22+0.55*v/60).toFixed(2)+'"/>';});
+    var R=14+Math.sqrt(f.total)*3.0;
+    g+='<circle cx="'+cx+'" cy="'+cy+'" r="'+R.toFixed(1)+'" fill="#141414"/>';
+    g+='<text x="'+cx+'" y="'+(cy-R-8).toFixed(1)+'" font-size="11" text-anchor="middle" fill="#141414" font-family="inherit" font-weight="700">'+t('force.want')+'</text>';
+    g+='<text x="'+cx+'" y="'+(cy+4).toFixed(1)+'" font-size="10" text-anchor="middle" fill="#ffffff" font-family="inherit">'+Math.round(f.total)+'</text>';
+    vals.forEach(function(v,i){var rr=r(v),shade=i===2?'#141414':(i===1?'#5a5a5a':'#9a9a9a');g+='<circle cx="'+srcX+'" cy="'+srcY[i]+'" r="'+rr.toFixed(1)+'" fill="'+shade+'"/>';g+='<text x="'+(srcX-rr-8).toFixed(1)+'" y="'+(srcY[i]-2).toFixed(1)+'" font-size="10.5" text-anchor="end" fill="#141414" font-family="inherit">'+labels[i]+'</text>';g+='<text x="'+(srcX-rr-8).toFixed(1)+'" y="'+(srcY[i]+12).toFixed(1)+'" font-size="9.5" text-anchor="end" fill="#8a8a8a" font-family="inherit">'+Math.round(v)+'</text>';});
+    $('forceSvg').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="forces of desire over time">'+g+'</svg>';
+    $('eraLabel').textContent=y;
+    var cap;if(y<1960)cap=t('force.cap1');else if(y<2000)cap=t('force.cap2');else if(y<2015)cap=t('force.cap3');else cap=t('force.cap4');
+    $('forceCap').innerHTML=cap;
+  }
+  $('eraSlider').addEventListener('input',function(){render(parseInt(this.value,10));});
+  render(1900);
+  HOOKS.push(function(){render(curYear);});
+})();
+
+/* ============ W6 · Linha do tempo das tradições ============ */
+(function(){
+  var cur=0;
+  function marks(){return D('marks');}
+  function paint(){
+    var M=marks(),dots='';
+    M.forEach(function(m,i){dots+='<div class="tldot'+(i===cur?' on':'')+'" data-i="'+i+'"><span class="dot"></span><span class="dl">'+m.k+'</span></div>';});
+    $('tlDots').innerHTML=dots;
+    var m=M[cur];
+    $('tlBody').innerHTML='<div class="who">'+m.who+'</div><div>'+m.txt+'</div><div class="conn">↳ '+m.conn+'</div>';
+    Array.prototype.forEach.call($('tlDots').querySelectorAll('.tldot'),function(el){el.addEventListener('click',function(){cur=parseInt(this.getAttribute('data-i'),10);paint();});});
+  }
+  paint();
+  HOOKS.push(paint);
+})();
+
+/* ============ W7 · O painel de práticas ============ */
+(function(){
+  var baseNum=5,baseDen=9,active={};
+  function pracs(){return D('pracs');}
+  function fmt(x){return x.toFixed(1).replace('.0','').replace('.',',');}
+  function paint(){
+    var num=baseNum,den=baseDen;
+    pracs().forEach(function(p){if(active[p.id]){num+=p.dNum;den+=p.dDen;}});
+    den=clamp(den,3,12);num=clamp(num,1,10);
+    $('pNum').textContent=fmt(num);$('pDen').textContent=fmt(den);
+    $('pSat').textContent=Math.round(num/den*100);$('pFill').style.width=clamp(num/den/1.4*100,0,100)+'%';
+  }
+  function build(){
+    var grid=$('pracGrid');grid.innerHTML='';
+    pracs().forEach(function(p){
+      var c=document.createElement('div');c.className='praccard'+(active[p.id]?' on':'');
+      c.innerHTML='<span class="pt">'+p.t+'</span><span class="pe">'+p.e+'</span>';
+      c.addEventListener('click',function(){active[p.id]=!active[p.id];this.classList.toggle('on',active[p.id]);paint();});
+      grid.appendChild(c);
+    });
+    paint();
+  }
+  build();
+  HOOKS.push(build);
+})();
+
+/* ============ W8 · Sua lista reversa ============ */
+(function(){
+  var items=[];
+  function isDrop(it){return it.type==='externa'&&it.sat==='rapida';}
+  function esc(s){return s.replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function typeLabel(it){return it.type==='externa'?t('w8.external'):t('w8.internal');}
+  function satLabel(it){return it.sat==='rapida'?t('w8.fast'):t('w8.slow');}
+  function render(){
+    var html='';
+    items.forEach(function(it,i){
+      html+='<div class="rlitem'+(isDrop(it)?' drop':'')+'"><span>'+esc(it.text)+'</span>'
+        +'<span class="rltags">'+typeLabel(it)+' · '+satLabel(it)+'</span>'
+        +(isDrop(it)?'<span class="rlflag">'+t('w8.flag')+'</span>':'')
+        +'<button class="rlx" data-i="'+i+'" aria-label="remove">✕</button></div>';
+    });
+    $('rlList').innerHTML=html;
+    Array.prototype.forEach.call($('rlList').querySelectorAll('.rlx'),function(b){b.addEventListener('click',function(){items.splice(parseInt(this.getAttribute('data-i'),10),1);render();});});
+    $('rlActions').hidden=items.length===0;
+    var drops=items.filter(isDrop).length;
+    var cap=$('rlCap');
+    if(items.length===0){cap.innerHTML=(LANG==='en')?EN['w8.capDefault']:PT['w8.capDefault'];}
+    else if(drops){
+      cap.innerHTML=(LANG==='en')
+        ?('You have <b>'+drops+'</b> candidate'+(drops>1?'s':'')+' to drop: external ones that saturate fast. Pick <b>one</b> to let go over the next few weeks.')
+        :('Você tem <b>'+drops+'</b> candidato'+(drops>1?'s':'')+' a soltar: externos que saturam rápido. Escolha <b>um</b> para largar nas próximas semanas.');
+    } else {cap.innerHTML=t('w8.capNone');}
+    var close=$('rlClose');
+    if(items.length>=3){
+      close.hidden=false;var gi=window.__guessIdx;
+      if(gi!=null){
+        var c=D('choices')[gi].label.toLowerCase();
+        close.innerHTML=(LANG==='en')
+          ?('At the start, you guessed that doubling your income would make satisfaction <b>'+c+'</b>. '+t('w8.closeNo'))
+          :('No começo, você apostou que dobrar a renda faria a satisfação <b>'+c+'</b>. '+t('w8.closeNo'));
+      } else {close.innerHTML=t('w8.closeNo');}
+    } else {close.hidden=true;}
+  }
+  function add(){var v=$('rlInput').value.trim();if(!v)return;items.push({text:v,type:$('rlType').value,sat:$('rlSat').value});$('rlInput').value='';render();$('rlInput').focus();}
+  function asText(){var lines=[t('w8.title'),''];items.forEach(function(it){lines.push((isDrop(it)?t('w8.drop'):t('w8.keep'))+it.text+'  ('+typeLabel(it)+', '+satLabel(it)+')');});return lines.join('\n');}
+  $('rlAdd').addEventListener('click',add);
+  $('rlInput').addEventListener('keydown',function(e){if(e.key==='Enter')add();});
+  $('rlCopy').addEventListener('click',function(){var tx=asText();if(navigator.clipboard){navigator.clipboard.writeText(tx);}var b=this;b.textContent=(LANG==='en')?'Copied':'Copiado';setTimeout(function(){b.textContent=(LANG==='en')?EN['w8.copy']:PT['w8.copy'];},1400);});
+  $('rlDownload').addEventListener('click',function(){var blob=new Blob([asText()],{type:'text/plain;charset=utf-8'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download=t('w8.file');document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);});
+  render();
+  HOOKS.push(render);
+})();
+
+/* ============ reveal on scroll ============ */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.10});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+applyLang(detectLang());
+</script>
+</body>
+</html>
