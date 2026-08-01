@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Será que finalmente vamos viver para sempre?</title>
+<meta name="description" content="Um panorama interativo e atualizado sobre a ciência do antienvelhecimento: o que já saiu do laboratório, o que ainda é promessa, e quanto tempo os pesquisadores acham que falta. Por Renato Shirakashi.">
+<link rel="canonical" href="https://renatoshira.github.io/viver-para-sempre.html">
+<meta name="theme-color" content="#141414">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Será que finalmente vamos viver para sempre?">
+<meta property="og:description" content="Um panorama interativo e atualizado sobre a ciência do antienvelhecimento.">
+<meta property="og:url" content="https://renatoshira.github.io/viver-para-sempre.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-viver-para-sempre.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="article:author" content="Renato Shirakashi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Será que finalmente vamos viver para sempre?">
+<meta name="twitter:description" content="Um panorama interativo e atualizado sobre a ciência do antienvelhecimento.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-viver-para-sempre.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#141414;
+    --dim:#6b6b6b;
+    --line:#e2e2e2;
+    --mid:#9a9a9a;
+    --maxw:760px;
+    --good:#141414;
+    --warn:#b23b3b;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Space Mono', ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  .topbar{
+    position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;padding:12px 24px;
+  }
+  .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
+  .topbar .kicker:hover{background:var(--ink);color:var(--paper)}
+  .langtoggle{display:flex;border:1px solid var(--ink);font-size:12px}
+  .langtoggle button{border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:.08em}
+  .langtoggle button.active{background:var(--ink);color:var(--paper)}
+
+  .mark{background:var(--ink);color:var(--paper);padding:.08em .34em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  section{border-bottom:1px solid var(--line);scroll-margin-top:72px}
+  section.wrap{padding:84px 24px}
+  section:last-of-type{border-bottom:0}
+  .hero,.cliff{scroll-margin-top:72px}
+
+  .hero{padding-top:90px;padding-bottom:80px}
+  .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+  .hero h1{font-size:33px;font-weight:700;line-height:1.28;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+  .hero h1 .l2{margin-left:1.4em}
+  .hero .sub{margin-top:40px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
+  .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
+
+  h2.head{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px}
+  .step{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+  p{margin:0 0 20px}
+  .lead{font-size:18px}
+  .dim{color:var(--dim)}
+  strong{font-weight:700}
+  em{font-style:italic}
+
+  .note{font-size:13px;color:var(--dim);line-height:1.65;border-left:1px solid var(--line);padding-left:14px;margin:22px 0}
+
+  .widget{border:1px solid var(--ink);margin:34px 0 0;padding:20px 18px}
+  .wtag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
+  .wcap{font-size:12.5px;color:var(--dim);margin-top:16px;line-height:1.62}
+  .wcap b{color:var(--ink)}
+  .btn{font-family:inherit;font-size:13px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:9px 14px;cursor:pointer}
+  .btn.on,.btn.solid{background:var(--ink);color:var(--paper)}
+  .btn:active{transform:translateY(1px)}
+  .btn:disabled{cursor:default;opacity:.9}
+  .rowbtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+  .eq{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin:30px 0;font-size:15px}
+  .eq .frac{display:inline-flex;flex-direction:column;align-items:center;text-align:center}
+  .eq .frac .num,.eq .frac .den{padding:6px 10px}
+  .eq .frac .bar{height:2px;background:var(--ink);width:100%}
+  .eq .lhs{font-weight:700}
+
+  /* generic svg widgets */
+  .svgwrap svg{display:block;width:100%;height:auto}
+
+  /* ---- W1 escape simulator ---- */
+  .escreadout{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:6px 0 12px;flex-wrap:wrap}
+  .escbig{font-size:30px;font-weight:700;line-height:1}
+  .escbig small{font-size:12px;font-weight:400;color:var(--dim);letter-spacing:.02em}
+  .escout{font-size:13px;text-align:right;line-height:1.4}
+  .escout b{font-size:15px}
+  .escrow{display:flex;align-items:center;gap:12px;margin-top:6px}
+  .escrow input[type=range]{flex:1;accent-color:var(--ink);height:24px}
+  .escticks{position:relative;height:16px;margin-top:2px;font-size:9.5px;color:var(--dim)}
+  .escticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+  .escapebadge{display:inline-block;background:var(--ink);color:var(--paper);padding:2px 8px;font-size:11px;letter-spacing:.06em}
+
+  /* ---- W2 guess ---- */
+  .choices{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+  .qtext{font-size:15px;margin-bottom:14px}
+
+  /* ---- W3 hallmarks ---- */
+  .hallgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  @media(max-width:560px){.hallgrid{grid-template-columns:repeat(2,1fr)}}
+  .hcell{position:relative;border:1px solid var(--ink);padding:9px 9px 10px;cursor:pointer;min-height:70px;user-select:none;transition:background .2s ease,color .2s ease}
+  .hcell .hn{font-size:11px;line-height:1.25;display:block}
+  .hcell .hno{position:absolute;top:5px;right:7px;font-size:9px;color:var(--dim)}
+  .hcell.sel{outline:2px solid var(--ink);outline-offset:-4px}
+  .hcell.fixed{background:var(--paper);color:var(--mid);border-style:dashed}
+  .hcell.fixed .hn::before{content:"\2713 ";color:var(--ink);font-weight:700}
+  .hcell.broken{background:var(--ink);color:var(--paper)}
+  .hcell .flag{position:absolute;bottom:5px;right:7px;font-size:8.5px;letter-spacing:.05em;color:var(--warn)}
+  .hcell.broken .flag{color:#ff9a9a}
+  .hcounter{display:flex;justify-content:space-between;align-items:center;margin:14px 0 6px;font-size:12.5px}
+  .hcounter b{font-size:20px}
+  .hdetail{border:1px solid var(--line);padding:12px 13px;margin-top:10px;font-size:13px;line-height:1.55;min-height:66px}
+  .hdetail .who{font-weight:700;margin-bottom:4px}
+  .hdetail .stg{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-top:8px}
+  .hwarn{background:#fbeceb;border:1px solid var(--warn);color:var(--warn);padding:9px 12px;margin-top:10px;font-size:12px;line-height:1.5;display:none}
+  .hwarn.show{display:block}
+
+  /* ---- W4 ladder ---- */
+  .ladder{display:flex;flex-direction:column;gap:0;margin-top:4px}
+  .rung{display:flex;align-items:stretch;gap:12px;border:1px solid var(--ink);border-bottom:0;padding:12px 12px;cursor:pointer;position:relative;transition:background .2s}
+  .ladder .rung:last-child{border-bottom:1px solid var(--ink)}
+  .rung.on{background:#f5f5f5}
+  .rung .rk{min-width:96px;font-weight:700;font-size:13px}
+  .rung .rx{flex:1;font-size:12px;color:var(--dim);line-height:1.45}
+  .rung .rx b{color:var(--ink)}
+  .rung .rsig{min-width:64px;text-align:right;font-size:11px;color:var(--dim)}
+  .sigbar{height:8px;background:#ededed;margin-top:5px;width:100%}
+  .sigfill{height:100%;background:var(--ink);transition:width .5s ease}
+  .rmr{border:1px solid var(--ink);margin-top:12px;padding:11px 12px;font-size:12.5px;line-height:1.5}
+  .rmrtrack{height:16px;background:#ededed;margin-top:8px;position:relative}
+  .rmrfill{height:100%;background:var(--ink);width:33%}
+  .rmrgoal{position:absolute;top:-3px;bottom:-3px;left:100%;width:2px;background:var(--warn)}
+  .rmrlab{display:flex;justify-content:space-between;font-size:10px;color:var(--dim);margin-top:4px}
+
+  /* ---- W5 frontier ---- */
+  .frofilters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .frofilters .btn{font-size:11.5px;padding:6px 10px}
+  .frolegend{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;color:var(--dim);margin:2px 0 14px}
+  .frolegend .lg{display:flex;align-items:center;gap:6px}
+  .dotv{width:11px;height:11px;border:1px solid var(--ink);display:inline-block}
+  .dotv.green{background:var(--ink)}
+  .dotv.yellow{background:var(--mid)}
+  .dotv.red{background:repeating-linear-gradient(45deg,#fff,#fff 2px,#c9c9c9 2px,#c9c9c9 4px)}
+  .frogrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media(max-width:560px){.frogrid{grid-template-columns:1fr}}
+  .frocard{border:1px solid var(--ink);padding:10px 11px;cursor:pointer;transition:background .18s;min-height:78px}
+  .frocard:hover{background:#f7f7f7}
+  .frocard.sel{outline:2px solid var(--ink);outline-offset:-4px}
+  .frocard .fh{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;line-height:1.2}
+  .frocard .ft{font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--dim);margin-top:7px}
+  .frocard .fs{font-size:11px;color:var(--dim);margin-top:3px}
+  .frodetail{border:1px solid var(--line);padding:12px 13px;margin-top:10px;font-size:13px;line-height:1.55;min-height:70px}
+  .frodetail .who{font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:7px}
+  .frodetail .rl{margin-top:6px}.frodetail .rl b{}
+  .frodetail .cav{color:var(--warn);margin-top:6px;font-size:12px}
+  .eff{display:flex;gap:14px;margin-top:12px;font-size:11.5px;flex-wrap:wrap}
+  .eff .ec{flex:1;min-width:130px;border:1px solid var(--line);padding:8px 10px}
+  .eff .ec .et{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+  .eff .ec .ev{font-weight:700;margin-top:2px}
+
+  /* ---- W6 two speeds ---- */
+  .twocount{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--dim);margin:10px 0 8px}
+  .twocount b{color:var(--ink);font-size:15px}
+  .twoarrival{text-align:center;font-size:13px;margin-top:10px}
+  .twoarrival b{font-size:16px}
+
+  /* ---- W7 tribes ---- */
+  .tribmode{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  .tribcols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:620px){.tribcols{grid-template-columns:1fr}}
+  .tribcol{border:1px solid var(--ink);padding:11px 11px}
+  .tribcol .th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;font-weight:700}
+  .tribcol .tsub{font-size:10.5px;color:var(--dim);margin-bottom:10px;line-height:1.35;min-height:28px}
+  .person{border:1px solid var(--line);padding:7px 9px;margin-bottom:6px;cursor:pointer;font-size:12px;transition:background .18s}
+  .person:hover{background:#f6f6f6}
+  .person.sel{background:var(--ink);color:var(--paper)}
+  .person .pn{font-weight:700}
+  .person .py{font-size:10.5px;color:var(--dim)}
+  .person.sel .py{color:#c9c9c9}
+  .tribquote{border-top:1px solid var(--ink);margin-top:14px;padding-top:14px;font-size:13.5px;line-height:1.6;min-height:64px}
+  .tribquote .q{font-style:italic}
+  .tribquote .qb{font-size:12px;color:var(--dim);margin-top:8px}
+  .factchips{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .factchip{border:1px solid var(--line);padding:9px 11px;font-size:12px;line-height:1.45;display:flex;gap:9px;align-items:flex-start}
+  .factchip .fi{font-weight:700;letter-spacing:.03em;white-space:nowrap}
+  .factchip.pro .fi{color:var(--ink)}
+  .factchip.con .fi{color:var(--warn)}
+
+  /* ---- W8 levers ---- */
+  .levgroups{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.levgroups{grid-template-columns:1fr}}
+  .levcol .lh{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+  .levcard{border:1px solid var(--ink);padding:9px 11px;margin-bottom:7px;cursor:pointer;font-size:12.5px;line-height:1.35;user-select:none;position:relative;transition:background .18s}
+  .levcard .lt{font-weight:700;display:block}
+  .levcard .le{font-size:10.5px;color:var(--dim)}
+  .levcard.on{background:var(--ink);color:var(--paper)}
+  .levcard.on .le{color:#c9c9c9}
+  .levcard.soft{border-style:dashed}
+  .levcard .cavtag{display:block;font-size:9.5px;letter-spacing:.03em;color:var(--warn);margin-top:4px}
+  .levcard.on .cavtag{color:#ff9a9a}
+  .levmeter{margin-top:16px;text-align:center}
+  .levmeter .lnum{font-size:30px;font-weight:700;line-height:1}
+  .levmeter .lnum small{font-size:12px;font-weight:400;color:var(--dim)}
+  .levtrack{height:12px;background:#ededed;margin-top:12px}
+  .levfill{height:100%;background:var(--ink);transition:width .45s ease;width:20%}
+
+  .cliff{background:var(--ink);color:var(--paper);border:0}
+  .cliff .wrap{padding-top:70px;padding-bottom:70px}
+  .cliff h2{color:var(--paper);font-size:22px;margin:0 0 12px;line-height:1.4}
+  .cliff p{color:#c9c9c9;margin:0}
+  .cliff .mark{background:var(--paper);color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .refs{font-size:13px;line-height:1.7}
+  .refs li{margin-bottom:12px}
+  .refs a{color:var(--ink)}
+  .foot{padding:40px 0 80px;color:var(--dim);font-size:12.5px}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="kicker" href="index.html">Renato Shirakashi</a>
+  <div class="langtoggle" role="group" aria-label="Idioma">
+    <button data-lang="pt" class="active">PT</button>
+    <button data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" data-i18n="hero.eyebrow">Ciência do antienvelhecimento · panorama 2026</div>
+  <h1>
+    <span class="mark" data-i18n="hero.t1">Será que finalmente</span>
+    <span class="mark l2" data-i18n="hero.t2">vamos viver para sempre?</span>
+  </h1>
+  <div class="sub" data-i18n="hero.sub">Um panorama atualizado sobre os avanços da ciência do antienvelhecimento. O que de fato já saiu do laboratório, o que ainda é promessa de vendedor, quem são os pesquisadores que apostam que a virada chega nesta geração, e a distância honesta entre reverter o envelhecimento de um rato e reverter o seu.</div>
+  <div class="byline" data-i18n="hero.by">por Renato Shirakashi</div>
+</header>
+
+<!-- 00 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b0.step">00 · Do mito ao laboratório</div>
+  <p class="lead" data-i18n="b0.p1">Viver para sempre sempre foi assunto de mito, de religião e de ficção científica. Nos últimos anos virou assunto de laboratório, de rodada de investimento e de agência reguladora. Bilhões de dólares entraram na pesquisa do envelhecimento, empresas fundadas por gente como Sam Altman e Jeff Bezos disputam cientistas, e em junho de 2026, pela primeira vez na história, uma terapia que <span class="mark">reseta a idade de células</span> saiu do animal e entrou num corpo humano. Viver para sempre deixou de ser fantasia e passou a ter gente séria dos dois lados respondendo.</p>
+  <p data-i18n="b0.p2">De um lado, os otimistas. Ray Kurzweil aposta em 2032. Aubrey de Grey dá cerca de 50 por cento de chance para os anos 2030. David Sinclair afirma que a primeira pessoa a viver 150 anos já nasceu. Do outro, os céticos, também de peso, que dizem que já batemos num teto por volta dos 120 anos e que confundir avanço de laboratório com avanço de clínica é o erro mais antigo da área.</p>
+  <p data-i18n="b0.p3">A ideia aqui é simples: um passeio guiado pelo estado real da ciência, sem arredondar promessa para cima nem descartar tudo como hype. No caminho você vai ver <span class="mark">o que já funciona, o que ainda não</span>, quanto tempo os especialistas acham que falta, e por que eles discordam tanto. No fim, dá para colocar a sua própria resposta no mapa.</p>
+</section>
+
+<!-- 01 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b1.step">01 · O que é velocidade de escape</div>
+  <p data-i18n="b1.p1">A área resumiu a questão de "vencer o envelhecimento" num único conceito, a velocidade de escape da longevidade, ou LEV. Vale conhecê-lo antes do passeio, porque é o número em torno do qual toda a conversa gira. A definição é quase boba de tão simples, e entendê-la faz o resto do texto encaixar.</p>
+
+  <div class="eq">
+    <span class="lhs" data-i18n="eq.lhs">Coeficiente de escape</span>
+    <span>=</span>
+    <span class="frac">
+      <span class="num" data-i18n="eq.num">anos de vida ganhos</span>
+      <span class="bar"></span>
+      <span class="den" data-i18n="eq.den">ano de pesquisa que passa</span>
+    </span>
+  </div>
+
+  <p data-i18n="b1.p2">Hoje, cada ano de pesquisa médica adiciona uma fração de ano à sua expectativa de vida. Peter Diamandis estima esse valor entre 0,25 e 0,33: <span class="mark">para cada ano que você vive, a ciência devolve cerca de um terço de ano</span>. Você está perdendo a corrida, só que devagar. A <span class="mark">velocidade de escape</span> é o momento em que esse número passa de 1 e não volta mais. A partir dali, cada ano vivido compra mais de um ano de vida, o seu "prazo de validade" recua mais rápido do que o tempo avança, e a morte por envelhecimento vira, na prática, opcional. Não é preciso curar o envelhecimento de uma vez. Basta manter o número acima de 1 por tempo suficiente para o próximo avanço chegar.</p>
+  <p data-i18n="b1.p3">A palavra que carrega todo o peso é "manter". Um salto isolado não conta. É preciso um ritmo de avanço que se sustente década após década, cada terapia comprando os anos necessários até a seguinte ficar pronta. Toda a discussão sobre "vencer o envelhecimento" é, no fundo, uma discussão sobre quando esse número cruza o 1 e se ele fica lá.</p>
+
+  <div class="widget" id="escW">
+    <div class="wtag" data-i18n="w1.tag">O simulador de escape · arraste o ritmo da ciência</div>
+    <div class="escreadout">
+      <div class="escbig"><span id="escCoef">0,30</span><br><small data-i18n="w1.coeflab">anos ganhos por ano vivido</small></div>
+      <div class="escout" id="escOut"></div>
+    </div>
+    <div class="svgwrap" id="escSvg"></div>
+    <div class="escrow">
+      <input type="range" id="escSlider" min="0" max="1.5" step="0.01" value="0.30">
+    </div>
+    <div class="escticks" id="escTicks"></div>
+    <div class="wcap" data-i18n="w1.cap">A linha preta é a sua idade avançando ano a ano. A linha cinza é a expectativa de vida, que sobe conforme a ciência progride. Enquanto o coeficiente fica <b>abaixo de 1</b>, as duas se cruzam e você morre no encontro. Quando ele passa de <b>1</b>, a expectativa foge para sempre: nenhuma linha alcança você. Arraste do <b>0,3 de hoje</b> até a <b>meta 1,0</b> e veja a idade da morte disparar até virar "escape".</div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b2.step">02 · Seu palpite contra o dos especialistas</div>
+  <p data-i18n="b2.p1">Antes de ver o que os especialistas dizem, arrisque. Não existe resposta certa aqui, e é justamente por isso que o exercício vale: a distância entre o seu palpite e o mapa real dos especialistas já ensina algo sobre o estado do campo.</p>
+
+  <div class="widget" id="guessW">
+    <div class="wtag" data-i18n="w2.tag">O palpite · escolha antes de ver o mapa</div>
+    <div class="qtext" data-i18n="w2.qtext">Em que ano a velocidade de escape chega, o ponto em que quem está vivo pode parar de morrer de velhice?</div>
+    <div class="choices" id="guessChoices"></div>
+    <div id="guessReveal" hidden style="margin-top:18px">
+      <div class="svgwrap" id="guessSvg"></div>
+      <div class="wcap" id="guessCap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b3.step">03 · Os doze marcos do envelhecimento</div>
+  <p data-i18n="b3.p1">Para julgar se dá para consertar o envelhecimento, ajuda saber o que exatamente estraga. A biologia moderna organiza isso numa lista, os <span class="mark">marcos do envelhecimento</span>, hoje em doze itens. Vale conhecê-los porque eles explicam por que o problema é mais difícil do que parece.</p>
+  <p data-i18n="b3.p2">São coisas como o DNA que acumula erros, os telômeros que encurtam a cada divisão celular, o "software" epigenético que perde a configuração original, as células que entram em senescência e passam a secretar inflamação, as células-tronco que se esgotam, o metabolismo que desregula, o microbioma que desequilibra. Cada marco, sozinho, já é um campo de pesquisa. O detalhe que muda a conta é que eles estão interligados e a lista só cresce: eram nove em 2013, viraram doze em 2023. Consertar um não conserta os outros, e alguns dos consertos brigam entre si.</p>
+  <p data-i18n="b3.p3">O exemplo mais duro dessa briga é o câncer. Vários dos mecanismos que limitam o envelhecimento, como a senescência e o encurtamento dos telômeros, <span class="mark">existem porque são defesas contra tumores</span>. Empurrar as células a se regenerar e se multiplicar sem limite, que é o sonho do rejuvenescimento, é também empurrar na direção do câncer. O envelhecimento e o câncer puxam a mesma corda em sentidos opostos, e é por isso que "basta fazer as células voltarem a ser jovens" esconde um problema de segurança no centro.</p>
+
+  <div class="widget" id="hallW">
+    <div class="wtag" data-i18n="w3.tag">Os doze marcos · toque para conhecer, toque de novo para "consertar"</div>
+    <div class="hallgrid" id="hallGrid"></div>
+    <div class="hcounter">
+      <span data-i18n="w3.remain">Ainda quebrados</span> <b id="hallCount">12</b>
+    </div>
+    <div class="hwarn" id="hallWarn"></div>
+    <div class="hdetail" id="hallDetail"></div>
+    <div class="wcap" data-i18n="w3.cap">A fantasia é que existe uma chave só. Você acabou de ver a realidade: doze problemas conectados, e dois deles (senescência e telômeros) acendem um aviso, porque consertá-los empurra na direção do câncer. Uma terapia séria precisa mexer em vários ao mesmo tempo sem acordar o tumor.</div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b4.step">04 · Por que funciona no rato e não em você</div>
+  <p data-i18n="b4.p1">Este é o fato que mais separa a manchete da realidade. Quase tudo que você lê sobre "reverter o envelhecimento" aconteceu em camundongos.</p>
+  <p data-i18n="b4.p2">Em ratos, a reprogramação celular já restaurou visão, melhorou memória, acelerou cicatrização e estendeu a vida. Um bloqueio de uma proteína inflamatória chamada IL-11 esticou a vida de camundongos em cerca de 20 por cento. Esses resultados são reais e impressionantes. O problema é a ponte até o ser humano, que a área conhece bem e chama de lacuna translacional. Intervenções que funcionam num verme funcionam menos num rato, e menos ainda, ou nada, numa pessoa. Os efeitos costumam depender do sexo do animal, da linhagem, da dose. A cada degrau dessa escada, o sinal perde força.</p>
+  <p data-i18n="b4.p3">O experimento que melhor resume o momento é da própria fundação de Aubrey de Grey, o otimista número um da área. Eles combinaram quatro terapias de rejuvenescimento em camundongos idosos esperando dobrar a vida restante, o marco que eles mesmos definiram como o gatilho para levar a sério qualquer previsão para humanos. O resultado, divulgado em 2025, foi um ganho de cerca de quatro meses, um terço da meta. Não foi fracasso, os efeitos se somaram como esperado. Mas ficou muito abaixo do necessário, e vindo do laboratório mais motivado a ter sucesso, isso pesa.</p>
+
+  <div class="widget" id="ladW">
+    <div class="wtag" data-i18n="w4.tag">A escada translacional · toque em cada degrau</div>
+    <div class="ladder" id="ladder"></div>
+    <div class="rmr" id="rmrBox"></div>
+    <div class="wcap" data-i18n="w4.cap">As manchetes vivem no degrau do rato. Você mora no degrau de cima. A barra de sinal encolhe a cada nível, e no topo, o humano, quase nada de rejuvenescimento sistêmico chegou: o que chegou está em fase 1 de segurança, sem prova de que funciona.</div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b5.step">05 · O que já chegou em humanos</div>
+  <p data-i18n="b5.p1">Apesar de tudo, 2026 é um ano diferente dos anteriores, porque pela primeira vez a técnica mais promissora entrou de fato num corpo humano. Vale mapear o que está realmente em humanos hoje, separando por qualidade de evidência, sem arredondar hype para cima.</p>
+  <p data-i18n="b5.p2">O marco do ano foi a Life Biosciences, empresa cofundada por Sinclair, que em junho de 2026 aplicou em um paciente a primeira terapia de reprogramação parcial da história, para uma doença ocular. É segurança primeiro, ainda sem qualquer medida de eficácia, mas é a primeira vez que a <span class="mark">técnica de "resetar a idade"</span> de células sai do animal e entra numa pessoa viva. Do outro lado, a promessa anterior da área, os senolíticos que limpam células velhas, tomou golpes: o principal ensaio da UNITY falhou e a empresa encerrou. O sinal humano mais sólido, curiosamente, veio de algo antigo e simples, a troca de plasma, que num ensaio pequeno baixou a idade biológica medida por relógios epigenéticos. E o marco regulatório mais próximo de acontecer é um <span class="mark">remédio de extensão de vida para cães idosos</span>, da empresa Loyal, que pode virar o primeiro fármaco aprovado para longevidade em qualquer espécie.</p>
+  <p data-i18n="b5.p3">O território a tratar com o maior ceticismo é o das terapias vendidas direto ao consumidor, terapias gênicas aplicadas fora de países com regulação forte, com relatos de uma pessoa só, medidos pela própria empresa. Bryan Johnson injetando folistatina em si mesmo é um caso de n igual a um. A própria FDA emitiu <span class="mark">alertas contra as clínicas de "sangue jovem"</span>. A régua honesta é simples: prova de mecanismo é fácil, prova de que a pessoa vive mais e melhor é o que quase ninguém tem.</p>
+
+  <div class="widget" id="froW">
+    <div class="wtag" data-i18n="w5.tag">O mapa da fronteira em humanos · filtre e toque num cartão</div>
+    <div class="frofilters" id="froFilters"></div>
+    <div class="frolegend" id="froLegend"></div>
+    <div class="frogrid" id="froGrid"></div>
+    <div class="frodetail" id="froDetail"></div>
+    <div class="wcap" data-i18n="w5.cap">Repare na cor. Muita coisa está verde na parte de segurança e vazia na parte de eficácia. O quadrado que diz "faz você viver mais e melhor" ainda não foi preenchido por ninguém.</div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b6.step">06 · O que a inteligência artificial muda (e o que não)</div>
+  <p data-i18n="b6.p1">O argumento mais forte de que desta vez pode ser diferente está na computação. A ideia é que <span class="mark">a IA comprime a parte lenta da descoberta científica</span>. E aqui os fatos de 2026 já saíram do campo da promessa.</p>
+  <p data-i18n="b6.p2">Modelos como o AlphaFold resolveram a estrutura de praticamente todas as proteínas conhecidas, trabalho que rendeu o Nobel de Química de 2024. Um fármaco inteiramente desenhado por IA, da Insilico, chegou à fase 3. A OpenAI construiu um modelo especializado que reprojetou os próprios fatores usados na reprogramação celular, aumentando sua eficiência em mais de 50 vezes. Em fevereiro de 2026, um modelo de fronteira dirigiu sozinho um laboratório robótico e cortou em 40 por cento o custo de produzir proteínas. Demis Hassabis, da DeepMind, fala em <span class="mark">curar a maioria das doenças em cerca de dez anos</span>. Dario Amodei, da Anthropic, escreveu que uma IA poderosa poderia comprimir um século de progresso biomédico em cinco a dez anos.</p>
+  <p data-i18n="b6.p3">A parte que a IA não resolve sozinha é a que decide tudo. Descobrir um candidato ficou rápido. Provar que ele é seguro e funciona em gente continua lento, porque um ensaio clínico leva anos por razões de biologia e de ética, não de falta de computação. O rentosertib, o fármaco de IA mais avançado, só terá resultado por volta de 2029. Venki Ramakrishnan, Nobel e cético, resume a objeção numa frase: "o mundo é analógico, não digital". A IA pode encher a esteira de candidatos, mas a esteira ainda passa por um gargalo humano que não acelera na mesma proporção.</p>
+
+  <div class="widget" id="twoW">
+    <div class="wtag" data-i18n="w6.tag">As duas velocidades · descoberta contra validação</div>
+    <div class="svgwrap" id="twoSvg"></div>
+    <div class="twocount">
+      <span><span data-i18n="w6.found">Candidatos descobertos:</span> <b id="twoFound">0</b></span>
+      <span><span data-i18n="w6.queue">Presos no gargalo:</span> <b id="twoQueue">0</b></span>
+      <span><span data-i18n="w6.approved">Aprovados:</span> <b id="twoApproved">0</b></span>
+    </div>
+    <div class="rowbtns"><button class="btn" id="twoToggle" data-i18n="w6.toggle">E se a IA acelerasse os ensaios?</button></div>
+    <div class="twoarrival" id="twoArrival"></div>
+    <div class="wcap" data-i18n="w6.cap">A esteira de cima é a descoberta, com a IA ligada, cuspindo candidatos cada vez mais rápido. A de baixo é o ensaio clínico, que anda no relógio da biologia. Os candidatos empilham no gargalo. Ligue o botão para ver o que mudaria se a validação também acelerasse: é essa a variável que decide quando a terapia chega até você.</div>
+  </div>
+</section>
+
+<!-- CLIFF -->
+<section class="cliff" id="cliff">
+  <div class="wrap">
+    <h2 data-i18n="cliff.h">O envelhecimento é o problema mais difícil que a biologia já tentou resolver.</h2>
+    <p data-i18n="cliff.p">Talvez leve mais tempo do que os otimistas prometem. Talvez a maior parte do que se vende hoje seja cedo demais. Mesmo assim, pela primeira vez, <span class="mark">a técnica de resetar a idade saiu do rato e entrou numa pessoa</span>. (continua)</p>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b7.step">07 · Otimistas, realistas e céticos</div>
+  <p data-i18n="b7.p1">Se você acompanhar a área por algumas semanas, vai perceber que os pesquisadores se dividem em três grupos, e saber a qual tribo alguém pertence explica quase toda declaração que você vai ler.</p>
+  <p data-i18n="b7.p2">Os otimistas radicais acham que o <span class="mark">envelhecimento é reversível</span> e que a virada vem ainda nesta geração. Sinclair diz que "vamos saber, este ano, se a reversão de idade funciona". De Grey aposta 50 por cento nos anos 2030. Kurzweil crava 2032. É a tribo que ancora em curvas exponenciais e em resultados de laboratório.</p>
+  <p data-i18n="b7.p3">Os realistas pró-healthspan acham que dá para viver mais e, principalmente, melhor, mas tratam a imortalidade próxima como promessa sem lastro. Nir Barzilai lembra que centenários vivem 20 a 30 anos mais saudáveis e foca em comprimir a doença para o fim da vida. Peter Attia fala em prevenir cedo as grandes causas de morte e treinar força para a "década marginal". É a tribo que trabalha com o que já tem evidência.</p>
+  <p data-i18n="b7.p4">Os céticos anti-hype acham que os ganhos serão incrementais e que boa parte do mercado é exagero. Matt Kaeberlein chega a chamar os testes comerciais de idade biológica de "má prática médica" e diz que a maior alavanca <span class="mark">continua sendo o estilo de vida</span>. Venki Ramakrishnan afirma que o teto de 120 anos segue firme. Jay Olshansky publicou o artigo que virou a bandeira do grupo, mostrando que os ganhos de expectativa de vida desaceleraram desde 1990.</p>
+  <p data-i18n="b7.p5">Dois fatos recentes dão munição ao lado cético: o experimento central dos otimistas ficou a um terço da meta, e o principal artigo de reversão de George Church foi retratado por problemas nos dados. Nenhum estudo publicado até agora mostrou <span class="mark">reversão funcional do envelhecimento sistêmico num mamífero adulto grande</span>. A tribo que estiver certa só será conhecida depois, mas dá para ver de que lado o peso da evidência pende hoje.</p>
+
+  <div class="widget" id="tribW">
+    <div class="wtag" data-i18n="w7.tag">As três tribos · toque num nome; alterne para ver a evidência</div>
+    <div class="tribmode" id="tribMode"></div>
+    <div class="tribcols" id="tribCols"></div>
+    <div id="tribQuoteBox" class="tribquote"></div>
+    <div id="tribFacts" class="factchips" hidden></div>
+    <div class="wcap" data-i18n="w7.cap">Quanto mais perto do laboratório a pessoa trabalha, mais tarde ela coloca a data. Os prazos mais curtos vêm dos futuristas; os mais longos, dos biólogos de bancada. Alterne para "o que a evidência mostra" e veja os fatos duros que pesam para cada lado hoje.</div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b8.step">08 · Como chegar à próxima ponte</div>
+  <p data-i18n="b8.p1">Suponha que você leve a sério a possibilidade, mesmo que incerta, de que a velocidade de escape chegue nas próximas décadas. Isso tem uma consequência prática e imediata. Diamandis a resume assim: o que você precisa fazer é chegar com saúde à próxima ponte.</p>
+  <p data-i18n="b8.p2">A lógica é de pontes sucessivas. <span class="mark">Você não precisa que a terapia definitiva exista hoje</span>. Precisa que exista a que compra os anos até a próxima, e depois a próxima. Isso muda a pergunta de "como não envelhecer" para "como não morrer das causas evitáveis antes que a ciência avance", o que é um problema muito mais tratável e com evidência de verdade. As alavancas que já têm respaldo são conhecidas e sem glamour: sono, força muscular, saúde cardiovascular e metabólica, não fumar, laços sociais fortes. O estudo de felicidade mais longo já feito, o de Harvard iniciado em 1938, achou que o melhor preditor de uma velhice saudável não foi renda nem colesterol aos cinquenta, foi a <span class="mark">qualidade das relações próximas</span>.</p>
+  <p data-i18n="b8.p3">A parte desconfortável é que essas alavancas são as mesmas que sua avó recomendaria, e é justamente por isso que funcionam: têm décadas de dados. A fronteira brilhante da reprogramação e da IA é o que pode chegar. As alavancas chatas são o que garante que você esteja aqui, com saúde, se e quando ela chegar.</p>
+
+  <div class="widget" id="levW">
+    <div class="wtag" data-i18n="w8.tag">As suas alavancas · ligue e veja a prontidão</div>
+    <div class="levgroups">
+      <div class="levcol">
+        <div class="lh" data-i18n="w8.solid">Evidência sólida</div>
+        <div id="levSolid"></div>
+      </div>
+      <div class="levcol">
+        <div class="lh" data-i18n="w8.frontier">Fronteira, ainda incerta</div>
+        <div id="levFrontier"></div>
+      </div>
+    </div>
+    <div class="levmeter">
+      <div class="lnum"><span id="levNum">20</span><small data-i18n="w8.unit">/100 de prontidão para a próxima ponte</small></div>
+      <div class="levtrack"><div class="levfill" id="levFill"></div></div>
+    </div>
+    <div class="wcap" data-i18n="w8.cap">Nenhuma alavanca aqui é sobre viver para sempre. Todas são sobre não sair da mesa antes da próxima rodada. O básico entediante é o que tem evidência e move o ponteiro; a fronteira é o que tem esperança, e mal encosta nele por enquanto.</div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="b9.step">09 · Onde isso pode dar errado</div>
+  <p data-i18n="b9.p1">A ideia de vencer o envelhecimento fica perigosa quando lida pela metade. Três ressalvas importam.</p>
+  <p data-i18n="b9.p2">A primeira é confundir torcida com previsão. Querer que algo aconteça, e financiar isso, não faz a biologia obedecer ao cronograma. As <span class="mark">datas de 2029 a 2039 são apostas</span>, não projeções calibradas, e vêm em boa parte de pessoas com interesse direto no otimismo. O próprio marco que os otimistas definiram como necessário, dobrar a vida de um rato, ainda não foi batido.</p>
+  <p data-i18n="b9.p3">A segunda é o inverso: descartar tudo como hype também é preguiça. O ceticismo tem os melhores dados sobre o presente, mas o argumento de Olshansky é sobre extrapolar tendências passadas, e tendências passadas não sabem prever terapias que ainda não existem. <span class="mark">Setenta anos é muito tempo em medicina</span>, e a indústria que ataca o envelhecimento na raiz mal tem uma década. Apostar contra ela para o século inteiro é tão arriscado quanto apostar a favor para a próxima década.</p>
+  <p data-i18n="b9.p4">A terceira é a mais silenciosa. Uma parte enorme da conversa sobre longevidade é comercial: testes, suplementos, protocolos de dezenas de milhares de dólares por ano, vendidos com base em correlações e não em desfechos. A régua contra isso é sempre a mesma. Prova de mecanismo é barata e abundante. Prova de que uma pessoa vive mais e melhor é cara, rara, e o que quase ninguém tem para mostrar. Quando alguém pular essa distinção, é hora de fechar a carteira.</p>
+  <p data-i18n="b9.p5">Então, vamos viver para sempre? A resposta honesta é que ninguém sabe, e quem crava uma data está vendendo confiança que os dados não sustentam. Mas você viu onde mora a incerteza: na ponte entre o rato e o homem, e no gargalo entre descobrir e provar. O número da escape ainda vale por volta de um terço, e fazê-lo passar de 1 é trabalho dos laboratórios. O que cabe a você é a parte mais concreta: <span class="mark">chegar com saúde à próxima ponte</span>, para o caso de eles conseguirem. E isso começa com o que você faz do corpo hoje, muito antes de qualquer terapia de rejuvenescimento existir.</p>
+</section>
+
+<!-- REFS -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="refs.step">Referências</div>
+  <ul class="refs">
+    <li data-i18n="refs.1"><strong>Aubrey de Grey · LEV Foundation.</strong> Conceito de velocidade de escape da longevidade e o estudo Robust Mouse Rejuvenation (atualização de 2025, resultado de ~4 meses ante a meta de 12).</li>
+    <li data-i18n="refs.2"><strong>Ray Kurzweil.</strong> Entrevista à <em>Boston Magazine</em>, fev. 2026, sobre a previsão de 2032. Livro <em>The Singularity Is Nearer</em> (2024).</li>
+    <li data-i18n="refs.3"><strong>Life Biosciences.</strong> Primeiro paciente dosado com o ER-100 (reprogramação parcial OSK), jun. 2026. Cobertura da <em>MIT Technology Review</em>.</li>
+    <li data-i18n="refs.4"><strong>S. Jay Olshansky et al.</strong> "Implausibility of radical life extension in humans in the twenty-first century", <em>Nature Aging</em>, 2024.</li>
+    <li data-i18n="refs.5"><strong>Venki Ramakrishnan.</strong> <em>Why We Die</em> (2024) e entrevista de jul. 2026 ("o mundo é analógico, não digital"; teto de ~120 anos).</li>
+    <li data-i18n="refs.6"><strong>Carlos López-Otín et al.</strong> "Hallmarks of Aging: An Expanding Universe", <em>Cell</em>, 2023. Os doze marcos do envelhecimento.</li>
+    <li data-i18n="refs.7"><strong>Buck Institute.</strong> Ensaio de troca terapêutica de plasma, <em>Aging Cell</em>, 2025 (queda de idade biológica por relógios epigenéticos).</li>
+    <li data-i18n="refs.8"><strong>Insilico Medicine</strong> (fase 3 do rentosertib, fármaco desenhado por IA, 2026); <strong>OpenAI &amp; Retro Biosciences</strong> (GPT-4b para fatores de Yamanaka); <strong>DeepMind</strong> (AlphaFold).</li>
+    <li data-i18n="refs.9"><strong>Peter Diamandis.</strong> Sobre a velocidade de escape e a lógica das pontes sucessivas.</li>
+    <li data-i18n="refs.10"><strong>Harvard Study of Adult Development</strong> (desde 1938); Robert Waldinger &amp; Marc Schulz, <em>The Good Life</em> (2023). As relações próximas como preditor de velhice saudável.</li>
+    <li data-i18n="refs.11"><strong>Nir Barzilai</strong> (TAME, metformina), <strong>Matt Kaeberlein</strong> (rapamicina, crítica ao hype), <strong>Loyal</strong> (LOY-002, longevidade canina) e <strong>UNITY Biotechnology</strong> (senolíticos, falha da fase 2b).</li>
+  </ul>
+</section>
+
+<div class="wrap foot reveal" data-i18n="foot">
+  Será que finalmente vamos viver para sempre? · Renato Shirakashi. Um panorama interativo sobre a ciência do antienvelhecimento.
+</div>
+
+<script>
+"use strict";
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function nfmt(x,d){var s=(d!=null?Number(x).toFixed(d):String(x));return s.replace('.',',');}
+var LANG='pt';
+var HOOKS=[];
+
+/* ================= EN dictionary for [data-i18n] ================= */
+var EN={
+ 'hero.eyebrow':`The science of anti-aging · 2026 briefing`,
+ 'hero.t1':`Are we finally going`,
+ 'hero.t2':`to live forever?`,
+ 'hero.sub':`An updated tour of the science of anti-aging. What has actually left the lab, what is still a salesman's promise, which researchers bet the turning point comes within this generation, and the honest distance between reversing aging in a mouse and reversing it in you.`,
+ 'hero.by':`by Renato Shirakashi`,
+ 'b0.step':`00 · From myth to laboratory`,
+ 'b0.p1':`Living forever was always a matter of myth, religion and science fiction. In the last few years it became a matter of the laboratory, the funding round and the regulatory agency. Billions of dollars poured into aging research, companies founded by the likes of Sam Altman and Jeff Bezos compete for scientists, and in June 2026, for the first time in history, a therapy that <span class="mark">resets the age of cells</span> left the animal and entered a human body. Living forever stopped being fantasy and now has serious people answering on both sides.`,
+ 'b0.p2':`On one side, the optimists. Ray Kurzweil bets on 2032. Aubrey de Grey gives about a 50 percent chance for the 2030s. David Sinclair claims the first person to live to 150 has already been born. On the other, the skeptics, also heavyweights, who say we already hit a ceiling around 120 years and that mistaking lab progress for clinical progress is the oldest error in the field.`,
+ 'b0.p3':`The idea here is simple: a guided tour of the real state of the science, without rounding promises up or dismissing everything as hype. Along the way you will see <span class="mark">what already works, what does not yet</span>, how long the experts think is left, and why they disagree so much. At the end, you can place your own answer on the map.`,
+ 'b1.step':`01 · What escape velocity means`,
+ 'b1.p1':`The field boiled the question of "beating aging" down to a single concept, longevity escape velocity, or LEV. It is worth knowing before the tour, because it is the number the whole conversation revolves around. The definition is almost silly in its simplicity, and understanding it makes the rest of the text click.`,
+ 'eq.lhs':`Escape coefficient`,
+ 'eq.num':`years of life gained`,
+ 'eq.den':`per year of research that passes`,
+ 'b1.p2':`Today, each year of medical research adds a fraction of a year to your life expectancy. Peter Diamandis estimates that value between 0.25 and 0.33: <span class="mark">for every year you live, science gives back about a third of a year</span>. You are losing the race, just slowly. <span class="mark">Escape velocity</span> is the moment that number passes 1 and stays there. From then on, each year lived buys more than a year of life, your "expiration date" recedes faster than time advances, and death by aging becomes, in practice, optional. You do not need to cure aging all at once. You just need to keep the number above 1 long enough for the next advance to arrive.`,
+ 'b1.p3':`The word that carries all the weight is "keep". A single jump does not count. It takes a pace of progress that sustains itself decade after decade, each therapy buying the years needed until the next one is ready. The whole debate about "beating aging" is, at bottom, a debate about when that number crosses 1 and whether it stays there.`,
+ 'w1.tag':`The escape simulator · drag the pace of science`,
+ 'w1.coeflab':`years gained per year lived`,
+ 'w1.cap':`The black line is your age advancing year by year. The gray line is life expectancy, rising as science progresses. While the coefficient stays <b>below 1</b>, the two cross and you die at the meeting point. When it passes <b>1</b>, expectancy runs away forever: no line ever catches you. Drag from <b>today's 0.3</b> to the <b>1.0 target</b> and watch the age of death climb until it becomes "escape".`,
+ 'b2.step':`02 · Your guess against the experts'`,
+ 'b2.p1':`Before seeing what the experts say, take a shot. There is no right answer here, and that is exactly why the exercise is worth it: the gap between your guess and the experts' real map already teaches you something about the state of the field.`,
+ 'w2.tag':`The guess · choose before seeing the map`,
+ 'w2.qtext':`In what year does escape velocity arrive, the point where those alive can stop dying of old age?`,
+ 'b3.step':`03 · The twelve hallmarks of aging`,
+ 'b3.p1':`To judge whether aging can be fixed, it helps to know what exactly breaks. Modern biology organizes this into a list, the <span class="mark">hallmarks of aging</span>, currently twelve items. Worth knowing, because they explain why the problem is harder than it looks.`,
+ 'b3.p2':`Things like DNA accumulating errors, telomeres shortening with each cell division, the epigenetic "software" losing its original settings, cells entering senescence and secreting inflammation, stem cells running out, metabolism going haywire, the microbiome falling out of balance. Each hallmark, on its own, is already a research field. The detail that changes the math is that they are interconnected and the list only grows: nine in 2013, twelve in 2023. Fixing one does not fix the others, and some of the fixes fight each other.`,
+ 'b3.p3':`The hardest example of that fight is cancer. Several of the mechanisms that limit aging, like senescence and telomere shortening, <span class="mark">exist because they are defenses against tumors</span>. Pushing cells to regenerate and multiply without limit, which is the dream of rejuvenation, is also pushing toward cancer. Aging and cancer pull the same rope in opposite directions, which is why "just make the cells young again" hides a safety problem at its core.`,
+ 'w3.tag':`The twelve hallmarks · tap to learn, tap again to "fix"`,
+ 'w3.remain':`Still broken`,
+ 'w3.cap':`The fantasy is that there is a single switch. You just saw the reality: twelve connected problems, and two of them (senescence and telomeres) raise a warning, because fixing them pushes toward cancer. A serious therapy has to touch several at once without waking the tumor.`,
+ 'b4.step':`04 · Why it works in mice and not in you`,
+ 'b4.p1':`This is the fact that most separates the headline from reality. Almost everything you read about "reversing aging" happened in mice.`,
+ 'b4.p2':`In mice, cellular reprogramming has already restored vision, improved memory, sped up healing and extended life. Blocking an inflammatory protein called IL-11 stretched mouse lifespan by about 20 percent. These results are real and impressive. The problem is the bridge to humans, which the field knows well and calls the translational gap. Interventions that work in a worm work less in a mouse, and less still, or not at all, in a person. The effects often depend on the animal's sex, strain, dose. At every step of that ladder, the signal weakens.`,
+ 'b4.p3':`The experiment that best sums up the moment comes from Aubrey de Grey's own foundation, the number-one optimist in the field. They combined four rejuvenation therapies in old mice hoping to double the remaining lifespan, the milestone they themselves defined as the trigger to take any human prediction seriously. The result, reported in 2025, was a gain of about four months, a third of the goal. It was not a failure, the effects added up as expected. But it fell far short of what was needed, and coming from the lab most motivated to succeed, that carries weight.`,
+ 'w4.tag':`The translational ladder · tap each rung`,
+ 'w4.cap':`Headlines live on the mouse rung. You live on the rung above. The signal bar shrinks at each level, and at the top, the human, almost no systemic rejuvenation has arrived: what has is in phase 1 safety, with no proof that it works.`,
+ 'b5.step':`05 · What has already reached humans`,
+ 'b5.p1':`Despite everything, 2026 is a different year, because for the first time the most promising technique actually entered a human body. Worth mapping what is really in humans today, sorted by quality of evidence, without rounding hype up.`,
+ 'b5.p2':`The milestone of the year was Life Biosciences, a company co-founded by Sinclair, which in June 2026 gave a patient the first partial-reprogramming therapy in history, for an eye disease. It is safety first, still with no measure of efficacy, but it is the first time the <span class="mark">technique of "resetting the age"</span> of cells leaves the animal and enters a living person. On the other side, the field's previous promise, the senolytics that clear old cells, took hits: UNITY's main trial failed and the company wound down. The most solid human signal, curiously, came from something old and simple, plasma exchange, which in a small trial lowered biological age measured by epigenetic clocks. And the closest regulatory milestone is a <span class="mark">lifespan-extension drug for old dogs</span>, from the company Loyal, which could become the first drug approved for longevity in any species.`,
+ 'b5.p3':`The territory to treat with the most skepticism is direct-to-consumer therapies, gene therapies given outside countries with strong regulation, with reports of a single person, measured by the company itself. Bryan Johnson injecting himself with follistatin is an n-of-one case. The FDA itself issued <span class="mark">warnings against "young blood" clinics</span>. The honest ruler is simple: proof of mechanism is easy, proof that a person lives longer and better is what almost nobody has.`,
+ 'w5.tag':`The frontier map in humans · filter and tap a card`,
+ 'w5.cap':`Notice the color. A lot of it is green on safety and empty on efficacy. The square that says "makes you live longer and better" has not been filled by anyone yet.`,
+ 'b6.step':`06 · What AI changes (and what it doesn't)`,
+ 'b6.p1':`The strongest argument that this time may be different is in computing. The idea is that <span class="mark">AI compresses the slow part of scientific discovery</span>. And here the 2026 facts have already left the realm of promise.`,
+ 'b6.p2':`Models like AlphaFold solved the structure of nearly every known protein, work that won the 2024 Nobel Prize in Chemistry. A drug entirely designed by AI, from Insilico, reached phase 3. OpenAI built a specialized model that redesigned the very factors used in cellular reprogramming, boosting their efficiency more than 50-fold. In February 2026, a frontier model drove a robotic lab on its own and cut the cost of producing proteins by 40 percent. Demis Hassabis of DeepMind speaks of <span class="mark">curing most diseases in about ten years</span>. Dario Amodei of Anthropic wrote that a powerful AI could compress a century of biomedical progress into five to ten years.`,
+ 'b6.p3':`The part AI does not solve on its own is the part that decides everything. Finding a candidate got fast. Proving it is safe and works in people is still slow, because a clinical trial takes years for reasons of biology and ethics, not lack of computing. Rentosertib, the most advanced AI drug, will only have results around 2029. Venki Ramakrishnan, Nobel laureate and skeptic, sums up the objection in one line: "the world is analog, not digital". AI can fill the conveyor with candidates, but the conveyor still passes through a human bottleneck that does not speed up at the same rate.`,
+ 'w6.tag':`The two speeds · discovery versus validation`,
+ 'w6.found':`Candidates discovered:`,
+ 'w6.queue':`Stuck in the bottleneck:`,
+ 'w6.approved':`Approved:`,
+ 'w6.toggle':`What if AI sped up the trials?`,
+ 'w6.cap':`The top belt is discovery, with AI on, spitting out candidates faster and faster. The bottom one is the clinical trial, moving on biology's clock. Candidates pile up at the bottleneck. Flip the button to see what would change if validation also sped up: that is the variable that decides when the therapy reaches you.`,
+ 'cliff.h':`Aging is the hardest problem biology has ever tried to solve.`,
+ 'cliff.p':`It may take longer than the optimists promise. Most of what is sold today may be too early. Even so, for the first time, <span class="mark">the technique of resetting age left the mouse and entered a person</span>. (continues)`,
+ 'b7.step':`07 · Optimists, realists and skeptics`,
+ 'b7.p1':`If you follow the field for a few weeks, you will notice researchers split into three groups, and knowing which tribe someone belongs to explains almost every statement you will read.`,
+ 'b7.p2':`The radical optimists think <span class="mark">aging is reversible</span> and the turning point comes within this generation. Sinclair says "we will know, this year, if age reversal works". De Grey bets 50 percent on the 2030s. Kurzweil nails it at 2032. This is the tribe that anchors on exponential curves and lab results.`,
+ 'b7.p3':`The pro-healthspan realists think you can live longer and, above all, better, but treat near-term immortality as a promise without backing. Nir Barzilai points out that centenarians live 20 to 30 years healthier and focuses on compressing disease to the end of life. Peter Attia talks about preventing the big causes of death early and training strength for the "marginal decade". This is the tribe that works with what already has evidence.`,
+ 'b7.p4':`The anti-hype skeptics think the gains will be incremental and much of the market is exaggeration. Matt Kaeberlein goes so far as to call commercial biological-age tests "medical malpractice" and says the <span class="mark">biggest lever is still lifestyle</span>. Venki Ramakrishnan states the 120-year ceiling holds. Jay Olshansky published the paper that became the group's banner, showing that life-expectancy gains slowed down after 1990.`,
+ 'b7.p5':`Two recent facts give the skeptics ammunition: the optimists' central experiment landed at a third of its goal, and George Church's main reversal paper was retracted over data problems. No published study so far has shown <span class="mark">functional reversal of systemic aging in a large adult mammal</span>. Which tribe is right will only be known later, but you can see which way the weight of evidence leans today.`,
+ 'w7.tag':`The three tribes · tap a name; switch to see the evidence`,
+ 'w7.cap':`The closer someone works to the lab bench, the later they place the date. The shortest timelines come from the futurists; the longest, from the bench biologists. Switch to "what the evidence shows" and see the hard facts weighing on each side today.`,
+ 'b8.step':`08 · How to reach the next bridge`,
+ 'b8.p1':`Suppose you take seriously the possibility, uncertain as it is, that escape velocity arrives in the coming decades. That has a practical, immediate consequence. Diamandis puts it this way: what you need to do is reach the next bridge in good health.`,
+ 'b8.p2':`The logic is one of successive bridges. <span class="mark">You do not need the definitive therapy to exist today</span>. You need the one that buys the years until the next one, and then the next. That shifts the question from "how not to age" to "how not to die of preventable causes before the science advances", which is a far more tractable problem with real evidence. The levers that already have backing are familiar and unglamorous: sleep, muscle strength, cardiovascular and metabolic health, not smoking, strong social ties. The longest happiness study ever done, Harvard's, started in 1938, found the best predictor of a healthy old age was not income or cholesterol at fifty, it was the <span class="mark">quality of close relationships</span>.`,
+ 'b8.p3':`The uncomfortable part is that these levers are the same ones your grandmother would recommend, and that is exactly why they work: they have decades of data. The bright frontier of reprogramming and AI is what might arrive. The boring levers are what keep you here, healthy, if and when it does.`,
+ 'w8.tag':`Your levers · switch on and watch readiness`,
+ 'w8.solid':`Solid evidence`,
+ 'w8.frontier':`Frontier, still uncertain`,
+ 'w8.unit':`/100 readiness for the next bridge`,
+ 'w8.cap':`No lever here is about living forever. They are all about not leaving the table before the next round. The boring basics are what have evidence and move the needle; the frontier is what has hope, and barely touches it for now.`,
+ 'b9.step':`09 · Where this can go wrong`,
+ 'b9.p1':`The idea of beating aging turns dangerous when read halfway. Three caveats matter.`,
+ 'b9.p2':`First, mistaking cheerleading for forecasting. Wanting something to happen, and funding it, does not make biology obey the schedule. The <span class="mark">2029-to-2039 dates are bets</span>, not calibrated projections, and come largely from people with a direct stake in the optimism. The very milestone the optimists defined as necessary, doubling a mouse's life, has not been hit.`,
+ 'b9.p3':`Second, the reverse: dismissing everything as hype is also lazy. Skepticism has the best data on the present, but Olshansky's argument is about extrapolating past trends, and past trends cannot predict therapies that do not yet exist. <span class="mark">Seventy years is a long time in medicine</span>, and the industry attacking aging at the root is barely a decade old. Betting against it for the whole century is as risky as betting for it in the next decade.`,
+ 'b9.p4':`Third, the quietest one. A huge part of the longevity conversation is commercial: tests, supplements, protocols costing tens of thousands of dollars a year, sold on correlations rather than outcomes. The ruler against that is always the same. Proof of mechanism is cheap and abundant. Proof that a person lives longer and better is expensive, rare, and what almost nobody has to show. When someone skips that distinction, it is time to close your wallet.`,
+ 'b9.p5':`So, are we going to live forever? The honest answer is that nobody knows, and anyone nailing a date is selling confidence the data does not support. But you saw where the uncertainty lives: on the bridge between mouse and human, and in the bottleneck between discovering and proving. The escape number is still about a third, and pushing it past 1 is the labs' job. What is up to you is the most concrete part: <span class="mark">reach the next bridge in good health</span>, in case they pull it off. And that starts with what you do with your body today, long before any rejuvenation therapy exists.`,
+ 'refs.step':`References`,
+ 'refs.1':`<strong>Aubrey de Grey · LEV Foundation.</strong> The concept of longevity escape velocity and the Robust Mouse Rejuvenation study (2025 update, ~4-month result against the 12-month goal).`,
+ 'refs.2':`<strong>Ray Kurzweil.</strong> Interview with <em>Boston Magazine</em>, Feb. 2026, on the 2032 prediction. Book <em>The Singularity Is Nearer</em> (2024).`,
+ 'refs.3':`<strong>Life Biosciences.</strong> First patient dosed with ER-100 (OSK partial reprogramming), Jun. 2026. Coverage in <em>MIT Technology Review</em>.`,
+ 'refs.4':`<strong>S. Jay Olshansky et al.</strong> "Implausibility of radical life extension in humans in the twenty-first century", <em>Nature Aging</em>, 2024.`,
+ 'refs.5':`<strong>Venki Ramakrishnan.</strong> <em>Why We Die</em> (2024) and a Jul. 2026 interview ("the world is analog, not digital"; ~120-year ceiling).`,
+ 'refs.6':`<strong>Carlos López-Otín et al.</strong> "Hallmarks of Aging: An Expanding Universe", <em>Cell</em>, 2023. The twelve hallmarks of aging.`,
+ 'refs.7':`<strong>Buck Institute.</strong> Therapeutic plasma-exchange trial, <em>Aging Cell</em>, 2025 (drop in biological age by epigenetic clocks).`,
+ 'refs.8':`<strong>Insilico Medicine</strong> (phase 3 of rentosertib, an AI-designed drug, 2026); <strong>OpenAI &amp; Retro Biosciences</strong> (GPT-4b for Yamanaka factors); <strong>DeepMind</strong> (AlphaFold).`,
+ 'refs.9':`<strong>Peter Diamandis.</strong> On escape velocity and the logic of successive bridges.`,
+ 'refs.10':`<strong>Harvard Study of Adult Development</strong> (since 1938); Robert Waldinger &amp; Marc Schulz, <em>The Good Life</em> (2023). Close relationships as a predictor of a healthy old age.`,
+ 'refs.11':`<strong>Nir Barzilai</strong> (TAME, metformin), <strong>Matt Kaeberlein</strong> (rapamycin, hype criticism), <strong>Loyal</strong> (LOY-002, canine longevity) and <strong>UNITY Biotechnology</strong> (senolytics, phase 2b failure).`,
+ 'foot':`Are we finally going to live forever? · Renato Shirakashi. An interactive briefing on the science of anti-aging.`
+};
+
+/* ================= dynamic strings + widget data ================= */
+var T={
+ pt:{
+  'esc.age':`sua idade`,'esc.exp':`expectativa de vida`,'esc.death':`morte`,'esc.years':`anos a partir de hoje`,'esc.now':`hoje`,'esc.goal':`meta`,
+  'esc.escape':`VELOCIDADE DE ESCAPE`,'esc.escapeSub':`nenhuma linha alcança você`,'esc.dieAt':`morte por volta dos`,'esc.yo':`anos`,'esc.beyond':`morte além do gráfico`,
+  'esc.outLose':`você ainda perde a corrida`,'esc.outWin':`a expectativa foge para sempre`,
+  'guess.choices':[
+    {k:'2035',label:'Por volta de 2035'},
+    {k:'2045',label:'Por volta de 2045'},
+    {k:'2060',label:'Por volta de 2060'},
+    {k:'2100',label:'Depois de 2100'},
+    {k:'never',label:'Nunca'}
+  ],
+  'guess.experts':[
+    {n:'Cordeiro & Wood',y:2030,c:'ot'},
+    {n:'Kurzweil',y:2032,c:'ot'},
+    {n:'Sinclair',y:2035,c:'ot'},
+    {n:'de Grey',y:2037,c:'ot'},
+    {n:'Church',y:2050,c:'re'},
+    {n:'Olshansky',y:2099,c:'ce'},
+    {n:'Ramakrishnan',y:2099,c:'ce'}
+  ],
+  'guess.you':`seu palpite`,'guess.now':`hoje`,'guess.century':`fim do século →`,
+  'guess.legOt':`otimistas`,'guess.legRe':`realistas`,'guess.legCe':`céticos`,
+  'guess.cap':`Você apostou em <b>{c}</b>. Os otimistas se aglomeram entre 2030 e 2037; os realistas por volta de 2050; e os céticos empurram para o fim do século ou "nunca". Repare na largura: quando as melhores cabeças discordam por 70 anos, isso é sinal de que a incerteza é real, não ruído.`,
+  'hall.remainNote':`(mesmo consertando todos, o dilema do câncer continua)`,
+  'hall.items':[
+   {n:'Instabilidade genômica',d:'O DNA acumula erros e mutações ao longo da vida.',s:'reparo em pesquisa básica'},
+   {n:'Atrito de telômeros',d:'As pontas dos cromossomos encurtam a cada divisão celular.',s:'telomerase (risco de câncer)',flag:'câncer +'},
+   {n:'Alterações epigenéticas',d:'O "software" que liga e desliga genes perde a configuração de fábrica.',s:'reprogramação parcial · fase 1 (2026)'},
+   {n:'Perda de proteostase',d:'Proteínas mal dobradas se acumulam e entopem a célula.',s:'pré-clínico'},
+   {n:'Autofagia desabilitada',d:'A reciclagem de lixo interno da célula falha.',s:'RTR242 · fase 1'},
+   {n:'Sensor de nutrientes desregulado',d:'As vias que leem comida e energia (mTOR, insulina) saem do prumo.',s:'rapamicina, metformina · em humanos'},
+   {n:'Disfunção mitocondrial',d:'As usinas de energia da célula perdem rendimento.',s:'pré-clínico'},
+   {n:'Senescência celular',d:'Células "zumbis" param de se dividir e secretam inflamação.',s:'senolíticos (defesa anticâncer)',flag:'câncer +'},
+   {n:'Exaustão de células-tronco',d:'As reservas que repõem tecidos vão se esgotando.',s:'terapia celular · inicial'},
+   {n:'Comunicação intercelular alterada',d:'As células passam a "conversar" em tom inflamatório (inflammaging).',s:'anti-IL-11 · camundongo'},
+   {n:'Disbiose',d:'O microbioma do intestino perde o equilíbrio.',s:'dieta e probióticos'},
+   {n:'Inflamação crônica',d:'Um fogo inflamatório de fundo queima os tecidos devagar.',s:'várias frentes'}
+  ],
+  'hall.warn':`⚠ Este marco é uma defesa contra o câncer. Forçar a célula a rejuvenescer aqui aumenta o risco de tumor. Este é o dilema no centro do rejuvenescimento.`,
+  'hall.tapHint':`Toque num marco acima para conhecê-lo. Toque de novo para tentar "consertar".`,
+  'lad.rungs':[
+   {k:'Verme',sig:100,x:'Onde quase tudo funciona primeiro. Intervenções chegam a <b>dobrar ou triplicar</b> a vida do <em>C. elegans</em>.'},
+   {k:'Camundongo',sig:55,x:'Reprogramação restaura visão e memória; anti-IL-11 estende a vida em <b>~20%</b>. Efeitos já dependem de sexo, linhagem e dose.'},
+   {k:'Primata',sig:28,x:'Poucos estudos. A Life Biosciences mostrou restauração de função visual em macacos antes de ir para humanos.'},
+   {k:'Humano',sig:8,x:'Quase nenhum rejuvenescimento sistêmico chegou aqui. O que chegou está em <b>fase 1 de segurança</b>, sem prova de eficácia.'}
+  ],
+  'lad.sig':`sinal`,
+  'lad.rmrTitle':`O teste-símbolo: Robust Mouse Rejuvenation (LEV Foundation, 2025)`,
+  'lad.rmrText':`Meta: dobrar a vida restante de camundongos idosos (~12 meses de ganho). Resultado: <b>~4 meses</b>. Um terço da meta, no laboratório mais motivado a ter sucesso.`,
+  'lad.rmrGoal':`meta: 12 meses`,'lad.rmrGot':`obtido: ~4 meses`,
+  'fro.filters':[
+   {k:'all',label:'Todas'},
+   {k:'reprog',label:'Reprogramação'},
+   {k:'seno',label:'Senolíticos'},
+   {k:'plasma',label:'Plasma'},
+   {k:'gene',label:'Terapia gênica'},
+   {k:'farmaco',label:'Fármacos'}
+  ],
+  'fro.leg':[
+   {c:'green',t:'ensaio controlado'},
+   {c:'yellow',t:'piloto / sem eficácia ainda'},
+   {c:'red',t:'anedótico / direto ao consumidor'}
+  ],
+  'fro.items':[
+   {n:'ER-100 (Life Biosciences)',cat:'reprog',ev:'yellow',stage:'Fase 1 · 2026',res:'Primeira reprogramação parcial (OSK) dosada em humano, numa doença ocular.',cav:'Só segurança. Nenhuma medida de eficácia ainda.'},
+   {n:'Troca de plasma (Buck Institute)',cat:'plasma',ev:'green',stage:'RCT pequeno · 2025',res:'Baixou a idade biológica em ~2 anos por relógios epigenéticos.',cav:'Amostra pequena; idade epigenética não é desfecho clínico validado.'},
+   {n:'Rapamicina (PEARL)',cat:'farmaco',ev:'green',stage:'RCT · 2024',res:'Seguro em baixa dose; melhora de massa magra em mulheres.',cav:'Sem prova de que estende a vida humana.'},
+   {n:'Senolíticos (UNITY UBX1325)',cat:'seno',ev:'red',stage:'Fase 2b · falhou',res:'Não bateu o desfecho primário; a empresa encerrou operações.',cav:'A grande promessa anterior tropeçou em humanos.'},
+   {n:'Metformina (TAME)',cat:'farmaco',ev:'yellow',stage:'travado',res:'Ensaio desenhado para testar o envelhecimento como alvo.',cav:'Sem resultado: financiamento parado há anos.'},
+   {n:'Precursores de NAD+ (NMN)',cat:'farmaco',ev:'yellow',stage:'vários ensaios',res:'Dobram o NAD+ no sangue de forma confiável.',cav:'Nenhum benefício de longevidade demonstrado.'},
+   {n:'Rentosertib (Insilico · IA)',cat:'farmaco',ev:'green',stage:'Fase 3 · 2026',res:'Primeiro fármaco desenhado por IA a chegar tão longe (fibrose).',cav:'Resultado definitivo só por volta de 2029.'},
+   {n:'LOY-002 (Loyal · cães)',cat:'farmaco',ev:'yellow',stage:'regulatório · 2026',res:'Perto de virar o 1º fármaco de longevidade aprovado (em cães).',cav:'É em cães. Ainda falta a etapa final na FDA.'},
+   {n:'Folistatina (Minicircle)',cat:'gene',ev:'red',stage:'direto ao consumidor',res:'Terapia gênica aplicada fora de regulação forte; auto-relatos.',cav:'n≈1, medido pela própria empresa; risco de segurança.'},
+   {n:'Telomerase (Libella)',cat:'gene',ev:'red',stage:'ensaio pago',res:'Cobra do paciente para participar; fora dos EUA.',cav:'Sem dados críveis publicados.'}
+  ],
+  'fro.effTitle':['Segurança em humanos','Prova de que faz viver mais/melhor'],
+  'fro.effSafe':`vários já mostraram`,'fro.effEff':`ainda vazio`,
+  'fro.tapHint':`Toque num cartão para ver o estágio, o resultado e a ressalva.`,
+  'two.disc':`descoberta (IA)`,'two.val':`ensaios clínicos`,'two.gate':`gargalo · anos`,
+  'two.arrivalSlow':`Nesse ritmo, a terapia chega até você por volta de <b>{y}</b>.`,
+  'two.arrivalFast':`Com os ensaios acelerados, a chegada salta para <b>{y}</b>. A descoberta nunca foi o gargalo.`,
+  'trib.modes':[{k:'say',label:'O que dizem'},{k:'ev',label:'O que a evidência mostra'}],
+  'trib.cols':[
+   {c:'ot',h:'Otimistas',sub:'Reversível, e a virada vem nesta geração.'},
+   {c:'re',h:'Realistas',sub:'Viver melhor, sim; imortalidade próxima, não.'},
+   {c:'ce',h:'Céticos',sub:'Ganhos incrementais; muito do mercado é hype.'}
+  ],
+  'trib.people':[
+   {c:'ot',n:'David Sinclair',y:'reversão iminente',q:'Vamos saber, este ano, talvez nos próximos meses, se a reversão de idade funciona.',b:'Ancora na reprogramação epigenética e nos primeiros ensaios humanos de 2026.'},
+   {c:'ot',n:'Aubrey de Grey',y:'~50% nos anos 2030',q:'Há cerca de 50% de chance de chegarmos à velocidade de escape em 12 a 15 anos.',b:'Ancora no reparo de dano e num marco em camundongos que ele mesmo definiu.'},
+   {c:'ot',n:'Ray Kurzweil',y:'2032',b:'Ancora em curvas exponenciais e na aceleração pela IA.',q:'Por volta de 2032, você ganha de volta mais de um ano para cada ano vivido.'},
+   {c:'re',n:'Nir Barzilai',y:'healthspan',q:'Centenários não vivem só mais: vivem 20 a 30 anos mais saudáveis.',b:'Foco em comprimir a doença, não em imortalidade. Trabalha com o ensaio TAME.'},
+   {c:'re',n:'Peter Attia',y:'healthspan',q:'Prevenir cedo as grandes causas de morte e treinar força para a década marginal.',b:'Otimista com healthspan, cético com extensão radical.'},
+   {c:'ce',n:'Matt Kaeberlein',y:'incremental',q:'A maioria dos testes de idade biológica é, para mim, má prática médica.',b:'Diz que a maior alavanca continua sendo o estilo de vida.'},
+   {c:'ce',n:'Venki Ramakrishnan',y:'teto ~120',q:'O mundo é analógico, não digital. Extensão radical é altamente irrealista hoje.',b:'Nobel; lembra que o teto de ~120 anos segue firme.'},
+   {c:'ce',n:'Jay Olshansky',y:'improvável no século',q:'Sem desacelerar o próprio envelhecimento, a extensão radical é implausível neste século.',b:'Mostra que os ganhos de expectativa de vida desaceleraram desde 1990.'}
+  ],
+  'trib.facts':[
+   {t:'con',i:'Contra',x:'O experimento central dos otimistas (RMR, de Grey) ficou em ~4 dos 12 meses de meta, em 2025.'},
+   {t:'con',i:'Contra',x:'O principal artigo de reversão de George Church foi retratado por problemas nos dados, em 2025.'},
+   {t:'con',i:'Contra',x:'Nenhum estudo mostrou reversão funcional do envelhecimento sistêmico num mamífero adulto grande.'},
+   {t:'pro',i:'A favor',x:'Pela 1ª vez, uma reprogramação parcial foi dosada em humano (Life Biosciences, jun. 2026).'},
+   {t:'pro',i:'A favor',x:'Um fármaco desenhado por IA chegou à fase 3, e a IA já corta custos reais de laboratório.'}
+  ],
+  'trib.factHint':`Alterne para "o que dizem" para voltar às citações.`,
+  'lev.solid':[
+   {id:'sono',t:'Sono',e:'7-9h, regular',w:16},
+   {id:'forca',t:'Força muscular',e:'treino de resistência',w:20},
+   {id:'cardio',t:'Saúde cardiometabólica',e:'zona 2, pressão, glicose',w:20},
+   {id:'fumo',t:'Não fumar',e:'o maior fator isolado',w:14},
+   {id:'vinculo',t:'Vínculo social',e:'o melhor preditor de Harvard',w:12}
+  ],
+  'lev.frontier':[
+   {id:'rapa',t:'Rapamicina',e:'off-label, sob supervisão',w:2,cav:'sem prova de longevidade em humanos'},
+   {id:'seno',t:'Senolíticos',e:'ensaios em curso',w:1,cav:'eficácia não comprovada em humanos'},
+   {id:'reprog',t:'Reprogramação',e:'fase 1, só olho',w:1,cav:'ainda não existe para você'},
+   {id:'nad',t:'Precursores de NAD+',e:'suplemento popular',w:1,cav:'sobe NAD no sangue, sem desfecho'}
+  ],
+  'lev.base':20
+ },
+ en:{
+  'esc.age':`your age`,'esc.exp':`life expectancy`,'esc.death':`death`,'esc.years':`years from today`,'esc.now':`now`,'esc.goal':`goal`,
+  'esc.escape':`ESCAPE VELOCITY`,'esc.escapeSub':`no line ever catches you`,'esc.dieAt':`death around`,'esc.yo':`years old`,'esc.beyond':`death beyond the chart`,
+  'esc.outLose':`you still lose the race`,'esc.outWin':`expectancy runs away forever`,
+  'guess.choices':[
+    {k:'2035',label:'Around 2035'},
+    {k:'2045',label:'Around 2045'},
+    {k:'2060',label:'Around 2060'},
+    {k:'2100',label:'After 2100'},
+    {k:'never',label:'Never'}
+  ],
+  'guess.experts':[
+    {n:'Cordeiro & Wood',y:2030,c:'ot'},
+    {n:'Kurzweil',y:2032,c:'ot'},
+    {n:'Sinclair',y:2035,c:'ot'},
+    {n:'de Grey',y:2037,c:'ot'},
+    {n:'Church',y:2050,c:'re'},
+    {n:'Olshansky',y:2099,c:'ce'},
+    {n:'Ramakrishnan',y:2099,c:'ce'}
+  ],
+  'guess.you':`your guess`,'guess.now':`now`,'guess.century':`end of century →`,
+  'guess.legOt':`optimists`,'guess.legRe':`realists`,'guess.legCe':`skeptics`,
+  'guess.cap':`You guessed <b>{c}</b>. The optimists cluster between 2030 and 2037; the realists around 2050; the skeptics push to the end of the century or "never". Notice the width: when the best minds disagree by 70 years, that is a sign the uncertainty is real, not noise.`,
+  'hall.remainNote':`(even fixing all of them, the cancer dilemma remains)`,
+  'hall.items':[
+   {n:'Genomic instability',d:'DNA accumulates errors and mutations over a lifetime.',s:'repair in basic research'},
+   {n:'Telomere attrition',d:'Chromosome ends shorten with each cell division.',s:'telomerase (cancer risk)',flag:'cancer +'},
+   {n:'Epigenetic alterations',d:'The "software" that switches genes on and off loses its factory setting.',s:'partial reprogramming · phase 1 (2026)'},
+   {n:'Loss of proteostasis',d:'Misfolded proteins pile up and clog the cell.',s:'preclinical'},
+   {n:'Disabled autophagy',d:'The cell’s internal waste-recycling fails.',s:'RTR242 · phase 1'},
+   {n:'Deregulated nutrient sensing',d:'The pathways that read food and energy (mTOR, insulin) drift.',s:'rapamycin, metformin · in humans'},
+   {n:'Mitochondrial dysfunction',d:'The cell’s power plants lose output.',s:'preclinical'},
+   {n:'Cellular senescence',d:'"Zombie" cells stop dividing and secrete inflammation.',s:'senolytics (anti-cancer defense)',flag:'cancer +'},
+   {n:'Stem-cell exhaustion',d:'The reserves that replenish tissues run down.',s:'cell therapy · early'},
+   {n:'Altered intercellular communication',d:'Cells start "talking" in an inflammatory tone (inflammaging).',s:'anti-IL-11 · mouse'},
+   {n:'Dysbiosis',d:'The gut microbiome loses its balance.',s:'diet and probiotics'},
+   {n:'Chronic inflammation',d:'A background inflammatory fire slowly burns tissues.',s:'several fronts'}
+  ],
+  'hall.warn':`⚠ This hallmark is a defense against cancer. Forcing the cell to rejuvenate here raises tumor risk. This is the dilemma at the core of rejuvenation.`,
+  'hall.tapHint':`Tap a hallmark above to learn about it. Tap again to try to "fix" it.`,
+  'lad.rungs':[
+   {k:'Worm',sig:100,x:'Where almost everything works first. Interventions can <b>double or triple</b> the life of <em>C. elegans</em>.'},
+   {k:'Mouse',sig:55,x:'Reprogramming restores vision and memory; anti-IL-11 extends life by <b>~20%</b>. Effects already depend on sex, strain and dose.'},
+   {k:'Primate',sig:28,x:'Few studies. Life Biosciences showed restored visual function in monkeys before going to humans.'},
+   {k:'Human',sig:8,x:'Almost no systemic rejuvenation has arrived here. What has is in <b>phase 1 safety</b>, with no proof of efficacy.'}
+  ],
+  'lad.sig':`signal`,
+  'lad.rmrTitle':`The symbolic test: Robust Mouse Rejuvenation (LEV Foundation, 2025)`,
+  'lad.rmrText':`Goal: double the remaining life of old mice (~12 months of gain). Result: <b>~4 months</b>. A third of the goal, in the lab most motivated to succeed.`,
+  'lad.rmrGoal':`goal: 12 months`,'lad.rmrGot':`achieved: ~4 months`,
+  'fro.filters':[
+   {k:'all',label:'All'},
+   {k:'reprog',label:'Reprogramming'},
+   {k:'seno',label:'Senolytics'},
+   {k:'plasma',label:'Plasma'},
+   {k:'gene',label:'Gene therapy'},
+   {k:'farmaco',label:'Drugs'}
+  ],
+  'fro.leg':[
+   {c:'green',t:'controlled trial'},
+   {c:'yellow',t:'pilot / no efficacy yet'},
+   {c:'red',t:'anecdotal / direct-to-consumer'}
+  ],
+  'fro.items':[
+   {n:'ER-100 (Life Biosciences)',cat:'reprog',ev:'yellow',stage:'Phase 1 · 2026',res:'First partial reprogramming (OSK) dosed in a human, in an eye disease.',cav:'Safety only. No measure of efficacy yet.'},
+   {n:'Plasma exchange (Buck Institute)',cat:'plasma',ev:'green',stage:'small RCT · 2025',res:'Lowered biological age by ~2 years on epigenetic clocks.',cav:'Small sample; epigenetic age is not a validated clinical endpoint.'},
+   {n:'Rapamycin (PEARL)',cat:'farmaco',ev:'green',stage:'RCT · 2024',res:'Safe at low dose; lean-mass improvement in women.',cav:'No proof it extends human life.'},
+   {n:'Senolytics (UNITY UBX1325)',cat:'seno',ev:'red',stage:'Phase 2b · failed',res:'Missed the primary endpoint; the company wound down.',cav:'The field’s previous big promise stumbled in humans.'},
+   {n:'Metformin (TAME)',cat:'farmaco',ev:'yellow',stage:'stalled',res:'Trial designed to test aging as a target.',cav:'No result: funding stalled for years.'},
+   {n:'NAD+ precursors (NMN)',cat:'farmaco',ev:'yellow',stage:'several trials',res:'Reliably double blood NAD+.',cav:'No longevity benefit demonstrated.'},
+   {n:'Rentosertib (Insilico · AI)',cat:'farmaco',ev:'green',stage:'Phase 3 · 2026',res:'First AI-designed drug to get this far (fibrosis).',cav:'Definitive result only around 2029.'},
+   {n:'LOY-002 (Loyal · dogs)',cat:'farmaco',ev:'yellow',stage:'regulatory · 2026',res:'Close to becoming the 1st approved longevity drug (in dogs).',cav:'It is in dogs. The final FDA step is still pending.'},
+   {n:'Follistatin (Minicircle)',cat:'gene',ev:'red',stage:'direct-to-consumer',res:'Gene therapy given outside strong regulation; self-reports.',cav:'n≈1, measured by the company itself; safety risk.'},
+   {n:'Telomerase (Libella)',cat:'gene',ev:'red',stage:'pay-to-play',res:'Charges the patient to enroll; outside the US.',cav:'No credible published data.'}
+  ],
+  'fro.effTitle':['Safety in humans','Proof it makes you live longer/better'],
+  'fro.effSafe':`several have shown it`,'fro.effEff':`still empty`,
+  'fro.tapHint':`Tap a card to see the stage, the result and the caveat.`,
+  'two.disc':`discovery (AI)`,'two.val':`clinical trials`,'two.gate':`bottleneck · years`,
+  'two.arrivalSlow':`At this pace, the therapy reaches you around <b>{y}</b>.`,
+  'two.arrivalFast':`With trials sped up, arrival jumps to <b>{y}</b>. Discovery was never the bottleneck.`,
+  'trib.modes':[{k:'say',label:'What they say'},{k:'ev',label:'What the evidence shows'}],
+  'trib.cols':[
+   {c:'ot',h:'Optimists',sub:'Reversible, and the turn comes this generation.'},
+   {c:'re',h:'Realists',sub:'Live better, yes; near immortality, no.'},
+   {c:'ce',h:'Skeptics',sub:'Incremental gains; much of the market is hype.'}
+  ],
+  'trib.people':[
+   {c:'ot',n:'David Sinclair',y:'reversal imminent',q:'We will know, this year, maybe in the next few months, if age reversal works.',b:'Anchors on epigenetic reprogramming and the first human trials of 2026.'},
+   {c:'ot',n:'Aubrey de Grey',y:'~50% in the 2030s',q:'There is about a 50% chance we reach escape velocity in 12 to 15 years.',b:'Anchors on damage repair and a mouse milestone he defined himself.'},
+   {c:'ot',n:'Ray Kurzweil',y:'2032',b:'Anchors on exponential curves and AI acceleration.',q:'Around 2032, you get back more than a year for every year you live.'},
+   {c:'re',n:'Nir Barzilai',y:'healthspan',q:'Centenarians don’t just live longer: they live 20 to 30 years healthier.',b:'Focus on compressing disease, not immortality. Runs the TAME trial.'},
+   {c:'re',n:'Peter Attia',y:'healthspan',q:'Prevent the big causes of death early and train strength for the marginal decade.',b:'Optimistic on healthspan, skeptical on radical extension.'},
+   {c:'ce',n:'Matt Kaeberlein',y:'incremental',q:'Most biological-age tests are, to me, medical malpractice.',b:'Says the biggest lever is still lifestyle.'},
+   {c:'ce',n:'Venki Ramakrishnan',y:'~120 ceiling',q:'The world is analog, not digital. Radical extension is highly unrealistic today.',b:'Nobel laureate; notes the ~120-year ceiling holds.'},
+   {c:'ce',n:'Jay Olshansky',y:'unlikely this century',q:'Without slowing aging itself, radical extension is implausible this century.',b:'Shows life-expectancy gains slowed after 1990.'}
+  ],
+  'trib.facts':[
+   {t:'con',i:'Against',x:'The optimists’ central experiment (RMR, de Grey) landed at ~4 of the 12-month goal, in 2025.'},
+   {t:'con',i:'Against',x:'George Church’s main reversal paper was retracted over data problems, in 2025.'},
+   {t:'con',i:'Against',x:'No study has shown functional reversal of systemic aging in a large adult mammal.'},
+   {t:'pro',i:'For',x:'For the first time, a partial reprogramming was dosed in a human (Life Biosciences, Jun. 2026).'},
+   {t:'pro',i:'For',x:'An AI-designed drug reached phase 3, and AI already cuts real lab costs.'}
+  ],
+  'trib.factHint':`Switch to "what they say" to return to the quotes.`,
+  'lev.solid':[
+   {id:'sono',t:'Sleep',e:'7-9h, regular',w:16},
+   {id:'forca',t:'Muscle strength',e:'resistance training',w:20},
+   {id:'cardio',t:'Cardiometabolic health',e:'zone 2, blood pressure, glucose',w:20},
+   {id:'fumo',t:'Not smoking',e:'the single biggest factor',w:14},
+   {id:'vinculo',t:'Social ties',e:'Harvard’s best predictor',w:12}
+  ],
+  'lev.frontier':[
+   {id:'rapa',t:'Rapamycin',e:'off-label, supervised',w:2,cav:'no human longevity proof'},
+   {id:'seno',t:'Senolytics',e:'trials ongoing',w:1,cav:'efficacy unproven in humans'},
+   {id:'reprog',t:'Reprogramming',e:'phase 1, eye only',w:1,cav:'does not exist for you yet'},
+   {id:'nad',t:'NAD+ precursors',e:'popular supplement',w:1,cav:'raises blood NAD, no outcome'}
+  ],
+  'lev.base':20
+ }
+};
+function t(k){return (T[LANG]&&T[LANG][k]!=null)?T[LANG][k]:k;}
+function D(k){return T[LANG][k];}
+
+/* ================= i18n apply ================= */
+var PT={};
+document.querySelectorAll('[data-i18n]').forEach(function(el){PT[el.getAttribute('data-i18n')]=el.innerHTML;});
+function applyLang(lang){
+  LANG=lang;document.documentElement.lang=lang;
+  try{localStorage.setItem('rs_lang_vps',lang);}catch(e){}
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    var v=(lang==='en')?EN[k]:PT[k];
+    if(v!=null)el.innerHTML=v;
+  });
+  document.querySelectorAll('.langtoggle button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  HOOKS.forEach(function(fn){try{fn();}catch(e){}});
+}
+document.querySelectorAll('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
+function detectLang(){
+  try{var s=localStorage.getItem('rs_lang_vps');if(s==='pt'||s==='en')return s;}catch(e){}
+  var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+  for(var i=0;i<navs.length;i++){var l=(navs[i]||'').toLowerCase();if(l.indexOf('pt')===0)return 'pt';if(l.indexOf('en')===0)return 'en';}
+  return 'pt';
+}
+
+/* ============ W1 · Simulador de escape ============ */
+(function(){
+  var g=0.30, START_AGE=40, EXP0=82;
+  function outcome(){
+    if(g>=1) return {escape:true};
+    var tCross=(EXP0-START_AGE)/(1-g);
+    return {escape:false, dieAge:START_AGE+tCross, tCross:tCross};
+  }
+  function render(){
+    var W=640,H=300,padL=42,padR=18,padT=22,padB=40;
+    var TMAX=70, AMAX=150;
+    function X(tt){return padL+tt/TMAX*(W-padL-padR);}
+    function Y(a){return (H-padB)-a/AMAX*((H-padB)-padT);}
+    var o=outcome(), g_=g;
+    var ageEnd=START_AGE+TMAX, expEnd=EXP0+g_*TMAX;
+    var gr='';
+    // grid baseline
+    gr+='<line x1="'+padL+'" y1="'+(H-padB)+'" x2="'+(W-padR)+'" y2="'+(H-padB)+'" stroke="#c9c9c9" stroke-width="1"/>';
+    // y ticks
+    [40,80,120].forEach(function(a){gr+='<line x1="'+padL+'" y1="'+Y(a).toFixed(1)+'" x2="'+(W-padR)+'" y2="'+Y(a).toFixed(1)+'" stroke="#f0f0f0" stroke-width="1"/>';gr+='<text x="'+(padL-6)+'" y="'+(Y(a)+3).toFixed(1)+'" font-size="9" text-anchor="end" fill="#8a8a8a" font-family="inherit">'+a+'</text>';});
+    gr+='<text x="'+((padL+W-padR)/2)+'" y="'+(H-6)+'" font-size="9.5" text-anchor="middle" fill="#8a8a8a" font-family="inherit">'+t('esc.years')+'</text>';
+    // expectancy line (gray)
+    gr+='<line x1="'+X(0)+'" y1="'+Y(EXP0)+'" x2="'+X(TMAX)+'" y2="'+Y(expEnd)+'" stroke="#9a9a9a" stroke-width="2"/>';
+    gr+='<text x="'+X(4).toFixed(1)+'" y="'+(Y(EXP0+g_*4)-8).toFixed(1)+'" font-size="10" text-anchor="start" fill="#6b6b6b" font-family="inherit">'+t('esc.exp')+'</text>';
+    // age line (black)
+    gr+='<line x1="'+X(0)+'" y1="'+Y(START_AGE)+'" x2="'+X(TMAX)+'" y2="'+Y(ageEnd)+'" stroke="#141414" stroke-width="2.2"/>';
+    gr+='<text x="'+X(4).toFixed(1)+'" y="'+(Y(START_AGE+4)+17).toFixed(1)+'" font-size="10" text-anchor="start" fill="#141414" font-family="inherit">'+t('esc.age')+'</text>';
+    // crossing / escape marker
+    if(o.escape){
+      gr+='<text x="'+((padL+W-padR)/2)+'" y="'+(padT+16)+'" font-size="13" text-anchor="middle" fill="#141414" font-family="inherit" font-weight="700">'+t('esc.escape')+'</text>';
+    } else if(o.tCross<=TMAX && o.dieAge<=AMAX){
+      var cx=X(o.tCross), cy=Y(o.dieAge);
+      gr+='<line x1="'+cx.toFixed(1)+'" y1="'+padT+'" x2="'+cx.toFixed(1)+'" y2="'+(H-padB)+'" stroke="#b23b3b" stroke-width="1" stroke-dasharray="3 3"/>';
+      gr+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="5" fill="#b23b3b"/>';
+      gr+='<text x="'+(cx-9).toFixed(1)+'" y="'+(cy-9).toFixed(1)+'" font-size="10.5" text-anchor="end" fill="#b23b3b" font-family="inherit">'+t('esc.death')+' '+Math.round(o.dieAge)+'</text>';
+    } else {
+      gr+='<text x="'+(W-padR)+'" y="'+(padT+16)+'" font-size="11" text-anchor="end" fill="#b23b3b" font-family="inherit">'+t('esc.beyond')+'</text>';
+    }
+    $('escSvg').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="escape simulator">'+gr+'</svg>';
+    $('escCoef').textContent=nfmt(g,2);
+    var out;
+    if(o.escape){out='<b>'+t('esc.escape')+'</b><br>'+t('esc.escapeSub');}
+    else if(o.dieAge>AMAX){out=t('esc.outLose')+'<br><b>'+t('esc.beyond')+'</b>';}
+    else{out=t('esc.outLose')+'<br><b>'+t('esc.dieAt')+' '+Math.round(o.dieAge)+'</b> '+t('esc.yo');}
+    $('escOut').innerHTML=out;
+  }
+  function ticks(){
+    var host=$('escTicks');
+    host.innerHTML='<span style="left:'+(0.30/1.5*100)+'%">'+t('esc.now')+' 0,3</span>'
+      +'<span style="left:'+(1.0/1.5*100)+'%">'+t('esc.goal')+' 1,0</span>';
+  }
+  $('escSlider').addEventListener('input',function(){g=parseFloat(this.value);render();});
+  render();ticks();
+  HOOKS.push(function(){render();ticks();});
+})();
+
+/* ============ W2 · O palpite ============ */
+(function(){
+  var chosen=null;
+  function opts(){return D('guess.choices');}
+  function build(){
+    var host=$('guessChoices');host.innerHTML='';
+    opts().forEach(function(o,i){
+      var b=document.createElement('button');b.className='btn'+(chosen===i?' solid':'');b.textContent=o.label;
+      if(chosen!=null)b.disabled=true;
+      b.addEventListener('click',function(){if(chosen!=null)return;chosen=i;build();reveal();});
+      host.appendChild(b);
+    });
+    if(chosen!=null)reveal();
+  }
+  function yearToX(y,padL,W,padR){
+    // axis 2028 .. 2100 ; "never" pinned at far right beyond 2100
+    var y0=2028,y1=2100;
+    var xv=clamp((y-y0)/(y1-y0),0,1.08);
+    return padL+xv*(W-padL-padR);
+  }
+  function reveal(){
+    $('guessReveal').hidden=false;draw();
+    var c=opts()[chosen].label.toLowerCase();
+    $('guessCap').innerHTML=t('guess.cap').replace('{c}',c);
+  }
+  function draw(){
+    var W=640,H=250,padL=20,padR=30,padT=40,padB=54;
+    var axisY=H-padB;
+    var col={ot:'#141414',re:'#6b6b6b',ce:'#b23b3b'};
+    var g='';
+    g+='<line x1="'+padL+'" y1="'+axisY+'" x2="'+(W-padR)+'" y2="'+axisY+'" stroke="#c9c9c9" stroke-width="1"/>';
+    [2030,2040,2050,2060,2080,2100].forEach(function(y){var x=yearToX(y,padL,W,padR);g+='<line x1="'+x.toFixed(1)+'" y1="'+(axisY-4)+'" x2="'+x.toFixed(1)+'" y2="'+(axisY+4)+'" stroke="#c9c9c9" stroke-width="1"/>';g+='<text x="'+x.toFixed(1)+'" y="'+(axisY+18)+'" font-size="9.5" text-anchor="middle" fill="#8a8a8a" font-family="inherit">'+y+'</text>';});
+    g+='<text x="'+(W-padR)+'" y="'+(axisY+34)+'" font-size="9.5" text-anchor="end" fill="#8a8a8a" font-family="inherit">'+t('guess.century')+'</text>';
+    // stagger experts to avoid overlap
+    var ex=D('guess.experts');
+    ex.forEach(function(e,i){
+      var x=yearToX(e.y,padL,W,padR);
+      var yy=padT+ (i%4)*22;
+      g+='<line x1="'+x.toFixed(1)+'" y1="'+yy.toFixed(1)+'" x2="'+x.toFixed(1)+'" y2="'+axisY+'" stroke="#e2e2e2" stroke-width="1"/>';
+      g+='<circle cx="'+x.toFixed(1)+'" cy="'+yy.toFixed(1)+'" r="4" fill="'+col[e.c]+'"/>';
+      var anchor=(x>W-140)?'end':'start', dx=(anchor==='end'?-8:8);
+      g+='<text x="'+(x+dx).toFixed(1)+'" y="'+(yy+3.5).toFixed(1)+'" font-size="10" text-anchor="'+anchor+'" fill="#141414" font-family="inherit">'+esc(e.n)+'</text>';
+    });
+    // reader guess marker
+    var gy=opts()[chosen].k, gx;
+    if(gy==='never') gx=W-padR-2; else gx=yearToX(parseInt(gy,10),padL,W,padR);
+    g+='<line x1="'+gx.toFixed(1)+'" y1="'+(padT-16)+'" x2="'+gx.toFixed(1)+'" y2="'+axisY+'" stroke="#141414" stroke-width="1.6" stroke-dasharray="4 3"/>';
+    g+='<rect x="'+(gx-4).toFixed(1)+'" y="'+(padT-22)+'" width="8" height="8" fill="#141414" transform="rotate(45 '+gx.toFixed(1)+' '+(padT-18)+')"/>';
+    var ga=(gx>W-120)?'end':'middle';
+    g+='<text x="'+gx.toFixed(1)+'" y="'+(padT-26)+'" font-size="10.5" text-anchor="'+ga+'" fill="#141414" font-family="inherit" font-weight="700">'+t('guess.you')+'</text>';
+    // legend
+    var lx=padL,ly=H-8;
+    g+='<circle cx="'+lx+'" cy="'+(ly-3)+'" r="4" fill="#141414"/><text x="'+(lx+9)+'" y="'+ly+'" font-size="9.5" fill="#6b6b6b" font-family="inherit">'+t('guess.legOt')+'</text>';
+    g+='<circle cx="'+(lx+92)+'" cy="'+(ly-3)+'" r="4" fill="#6b6b6b"/><text x="'+(lx+101)+'" y="'+ly+'" font-size="9.5" fill="#6b6b6b" font-family="inherit">'+t('guess.legRe')+'</text>';
+    g+='<circle cx="'+(lx+184)+'" cy="'+(ly-3)+'" r="4" fill="#b23b3b"/><text x="'+(lx+193)+'" y="'+ly+'" font-size="9.5" fill="#6b6b6b" font-family="inherit">'+t('guess.legCe')+'</text>';
+    $('guessSvg').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="expert predictions timeline">'+g+'</svg>';
+  }
+  build();
+  HOOKS.push(build);
+})();
+
+/* ============ W3 · Os doze marcos ============ */
+(function(){
+  var sel=null, fixed={};
+  function items(){return D('hall.items');}
+  function build(){
+    var grid=$('hallGrid');grid.innerHTML='';
+    items().forEach(function(it,i){
+      var c=document.createElement('div');
+      c.className='hcell '+(fixed[i]?'fixed':'broken')+(sel===i?' sel':'');
+      c.innerHTML='<span class="hno">'+(i+1)+'</span><span class="hn">'+esc(it.n)+'</span>'+(it.flag?'<span class="flag">'+esc(it.flag)+'</span>':'');
+      c.addEventListener('click',function(){
+        if(sel===i){ // second tap: toggle fixed
+          fixed[i]=!fixed[i];
+        } else { sel=i; }
+        paint();
+      });
+      grid.appendChild(c);
+    });
+    paint();
+  }
+  function paint(){
+    var its=items();
+    Array.prototype.forEach.call($('hallGrid').children,function(c,i){
+      c.className='hcell '+(fixed[i]?'fixed':'broken')+(sel===i?' sel':'');
+    });
+    var broken=0;its.forEach(function(_,i){if(!fixed[i])broken++;});
+    $('hallCount').textContent=broken + (broken===0?' *':'');
+    // detail
+    if(sel==null){$('hallDetail').innerHTML='<span class="dim">'+t('hall.tapHint')+'</span>';}
+    else{var it=its[sel];$('hallDetail').innerHTML='<div class="who">'+esc(it.n)+(fixed[sel]?' ✓':'')+'</div><div>'+esc(it.d)+'</div><div class="stg">'+esc(it.s)+'</div>';}
+    // warn if a flagged one is fixed
+    var warn=false;its.forEach(function(it,i){if(it.flag&&fixed[i])warn=true;});
+    var wEl=$('hallWarn');
+    if(warn){wEl.classList.add('show');wEl.innerHTML=t('hall.warn');}
+    else{wEl.classList.remove('show');}
+  }
+  build();
+  HOOKS.push(build);
+})();
+
+/* ============ W4 · Escada translacional ============ */
+(function(){
+  var sel=0;
+  function rungs(){return D('lad.rungs');}
+  function build(){
+    var host=$('ladder');host.innerHTML='';
+    rungs().forEach(function(r,i){
+      var el=document.createElement('div');el.className='rung'+(sel===i?' on':'');
+      el.innerHTML='<div class="rk">'+esc(r.k)+'</div>'
+        +'<div class="rx">'+r.x+'<div class="sigbar"><div class="sigfill" style="width:'+r.sig+'%"></div></div></div>'
+        +'<div class="rsig">'+t('lad.sig')+' '+r.sig+'</div>';
+      el.addEventListener('click',function(){sel=i;paint();});
+      host.appendChild(el);
+    });
+    paintRmr();
+    paint();
+  }
+  function paint(){
+    Array.prototype.forEach.call($('ladder').children,function(el,i){el.classList.toggle('on',sel===i);});
+  }
+  function paintRmr(){
+    $('rmrBox').innerHTML='<div style="font-weight:700;font-size:12.5px;margin-bottom:4px">'+t('lad.rmrTitle')+'</div>'
+      +'<div>'+t('lad.rmrText')+'</div>'
+      +'<div class="rmrtrack"><div class="rmrfill"></div><div class="rmrgoal"></div></div>'
+      +'<div class="rmrlab"><span>'+t('lad.rmrGot')+'</span><span>'+t('lad.rmrGoal')+'</span></div>';
+  }
+  build();
+  HOOKS.push(build);
+})();
+
+/* ============ W5 · Mapa da fronteira ============ */
+(function(){
+  var filter='all', sel=0;
+  function items(){return D('fro.items');}
+  function buildFilters(){
+    var host=$('froFilters');host.innerHTML='';
+    D('fro.filters').forEach(function(f){
+      var b=document.createElement('button');b.className='btn'+(filter===f.k?' on':'');b.textContent=f.label;
+      b.addEventListener('click',function(){filter=f.k;buildFilters();buildGrid();});
+      host.appendChild(b);
+    });
+  }
+  function buildLegend(){
+    var host=$('froLegend');host.innerHTML=D('fro.leg').map(function(l){return '<span class="lg"><span class="dotv '+l.c+'"></span>'+esc(l.t)+'</span>';}).join('');
+  }
+  function buildGrid(){
+    var host=$('froGrid');host.innerHTML='';
+    var list=items();
+    list.forEach(function(it,i){
+      if(filter!=='all'&&it.cat!==filter)return;
+      var c=document.createElement('div');c.className='frocard'+(sel===i?' sel':'');
+      c.innerHTML='<div class="fh"><span class="dotv '+it.ev+'"></span>'+esc(it.n)+'</div><div class="ft">'+esc(it.stage)+'</div>';
+      c.addEventListener('click',function(){sel=i;buildGrid();paintDetail();});
+      host.appendChild(c);
+    });
+    if(!host.children.length){host.innerHTML='<div class="dim" style="font-size:12.5px">—</div>';}
+    paintDetail();
+  }
+  function paintDetail(){
+    var it=items()[sel];
+    if(!it){$('froDetail').innerHTML='<span class="dim">'+t('fro.tapHint')+'</span>';return;}
+    var eff=t('fro.effTitle');
+    $('froDetail').innerHTML='<div class="who"><span class="dotv '+it.ev+'"></span>'+esc(it.n)+'</div>'
+      +'<div class="rl">'+esc(it.res)+'</div>'
+      +'<div class="cav">↳ '+esc(it.cav)+'</div>'
+      +'<div class="eff"><div class="ec"><div class="et">'+esc(eff[0])+'</div><div class="ev">'+t('fro.effSafe')+'</div></div>'
+      +'<div class="ec"><div class="et">'+esc(eff[1])+'</div><div class="ev" style="color:#b23b3b">'+t('fro.effEff')+'</div></div></div>';
+  }
+  function build(){buildFilters();buildLegend();buildGrid();}
+  build();
+  HOOKS.push(build);
+})();
+
+/* ============ W6 · As duas velocidades ============ */
+(function(){
+  var W=640,H=210;
+  var discY=60, valY=150;
+  var particles=[], approved=[], found=0, queue=0, done=0;
+  var fastTrials=false, last=0, acc=0, spawnEvery=520, running=true;
+  var gateX=430, exitX=W-30;
+  function reset(){particles=[];approved=[];found=0;queue=0;done=0;}
+  function draw(){
+    var g='';
+    // belts
+    g+='<line x1="20" y1="'+discY+'" x2="'+gateX+'" y2="'+discY+'" stroke="#e2e2e2" stroke-width="1"/>';
+    g+='<line x1="'+gateX+'" y1="'+valY+'" x2="'+exitX+'" y2="'+valY+'" stroke="#e2e2e2" stroke-width="1"/>';
+    // labels
+    g+='<text x="20" y="'+(discY-14)+'" font-size="10.5" fill="#141414" font-family="inherit" font-weight="700">'+t('two.disc')+'</text>';
+    g+='<text x="'+(gateX+34)+'" y="'+(valY-14)+'" font-size="10.5" fill="#141414" font-family="inherit" font-weight="700">'+t('two.val')+'</text>';
+    // gate box
+    g+='<rect x="'+(gateX-24)+'" y="'+(discY-8)+'" width="48" height="'+(valY-discY+16)+'" fill="none" stroke="#141414" stroke-width="1.4"/>';
+    g+='<text x="'+gateX+'" y="'+((discY+valY)/2)+'" font-size="9" text-anchor="middle" fill="#8a8a8a" font-family="inherit" transform="rotate(90 '+gateX+' '+((discY+valY)/2)+')">'+t('two.gate')+'</text>';
+    // particles
+    particles.forEach(function(p){
+      var col=p.stage==='disc'?'#141414':'#141414';
+      g+='<rect x="'+(p.x-3).toFixed(1)+'" y="'+(p.y-3).toFixed(1)+'" width="6" height="6" fill="'+(p.stage==='queue'?'#9a9a9a':'#141414')+'"/>';
+    });
+    // approved dots
+    approved.forEach(function(a){g+='<circle cx="'+a.x.toFixed(1)+'" cy="'+valY+'" r="3.2" fill="#141414"/>';});
+    $('twoSvg').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="two speeds of drug development">'+g+'</svg>';
+    $('twoFound').textContent=found;
+    $('twoQueue').textContent=queue;
+    $('twoApproved').textContent=done;
+  }
+  function step(ts){
+    if(!running){return;}
+    if(!last)last=ts;var dt=ts-last;last=ts;if(dt>80)dt=80;acc+=dt;
+    // spawn discovery particles
+    if(acc>spawnEvery){acc=0;particles.push({x:20,y:discY,stage:'disc'});found++;}
+    var discSpeed=0.16, gateSpeed=0.055*(fastTrials?4:1);
+    particles.forEach(function(p){
+      if(p.stage==='disc'){p.x+=discSpeed*dt; if(p.x>=gateX-24){p.x=gateX-24;p.stage='queue';}}
+      else if(p.stage==='queue'){/* waits, counted */}
+    });
+    // process queue: release into validation at gate throughput
+    // compute queue count
+    var q=particles.filter(function(p){return p.stage==='queue';});
+    queue=q.length;
+    // release probability per frame
+    var releaseRate=(fastTrials?0.9:0.16); // per second
+    if(q.length && Math.random()<releaseRate*dt/1000){
+      var pp=q[0];pp.stage='val';pp.x=gateX+24;pp.y=valY;
+    }
+    // move validation particles to exit
+    var valSpeed=0.05*(fastTrials?3.4:1);
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
+      if(p.stage==='val'){p.x+=valSpeed*dt; if(p.x>=exitX){particles.splice(i,1);done++;approved.push({x:exitX});if(approved.length>10)approved.shift();}}
+    }
+    // cap particles
+    if(particles.length>60){/* stop counting visual, but keep queue realistic */}
+    draw();
+    raf=requestAnimationFrame(step);
+  }
+  var raf=null;
+  function arrival(){
+    var y=fastTrials?2030:2038;
+    $('twoArrival').innerHTML=(fastTrials?t('two.arrivalFast'):t('two.arrivalSlow')).replace('{y}',y);
+  }
+  $('twoToggle').addEventListener('click',function(){fastTrials=!fastTrials;this.classList.toggle('on',fastTrials);arrival();});
+  arrival();
+  draw();
+  raf=requestAnimationFrame(step);
+  HOOKS.push(function(){arrival();draw();});
+  // pause when tab hidden to save cpu
+  document.addEventListener('visibilitychange',function(){running=!document.hidden;if(running){last=0;raf=requestAnimationFrame(step);}});
+})();
+
+/* ============ W7 · As três tribos ============ */
+(function(){
+  var mode='say', sel={n:'David Sinclair'};
+  function people(){return D('trib.people');}
+  function buildMode(){
+    var host=$('tribMode');host.innerHTML='';
+    D('trib.modes').forEach(function(m){
+      var b=document.createElement('button');b.className='btn'+(mode===m.k?' on':'');b.textContent=m.label;
+      b.addEventListener('click',function(){mode=m.k;render();});
+      host.appendChild(b);
+    });
+  }
+  function render(){
+    buildMode();
+    var cols=D('trib.cols'), ppl=people();
+    var host=$('tribCols');host.innerHTML='';
+    cols.forEach(function(col){
+      var box=document.createElement('div');box.className='tribcol';
+      var inner='<div class="th">'+esc(col.h)+'</div><div class="tsub">'+esc(col.sub)+'</div>';
+      ppl.filter(function(p){return p.c===col.c;}).forEach(function(p){
+        inner+='<div class="person'+(sel.n===p.n?' sel':'')+'" data-n="'+esc(p.n)+'"><span class="pn">'+esc(p.n)+'</span><br><span class="py">'+esc(p.y)+'</span></div>';
+      });
+      box.innerHTML=inner;host.appendChild(box);
+    });
+    Array.prototype.forEach.call($('tribCols').querySelectorAll('.person'),function(el){
+      el.addEventListener('click',function(){var n=this.getAttribute('data-n');ppl.forEach(function(p){if(p.n===n)sel=p;});render();});
+    });
+    var q=$('tribQuoteBox'), f=$('tribFacts');
+    if(mode==='say'){
+      f.hidden=true;q.hidden=false;
+      var cur=null;ppl.forEach(function(p){if(p.n===sel.n)cur=p;});
+      if(cur){q.innerHTML='<div class="q">“'+esc(cur.q)+'”</div><div class="qb">— '+esc(cur.n)+' · '+esc(cur.b)+'</div>';}
+    } else {
+      q.hidden=true;f.hidden=false;
+      f.innerHTML=D('trib.facts').map(function(fc){return '<div class="factchip '+fc.t+'"><span class="fi">'+esc(fc.i)+'</span><span>'+esc(fc.x)+'</span></div>';}).join('')
+        +'<div class="wcap" style="margin-top:4px">'+t('trib.factHint')+'</div>';
+    }
+  }
+  render();
+  HOOKS.push(render);
+})();
+
+/* ============ W8 · As suas alavancas ============ */
+(function(){
+  var on={};
+  function solid(){return D('lev.solid');}
+  function frontier(){return D('lev.frontier');}
+  function build(){
+    var s=$('levSolid');s.innerHTML='';
+    solid().forEach(function(l){
+      var c=document.createElement('div');c.className='levcard'+(on[l.id]?' on':'');
+      c.innerHTML='<span class="lt">'+esc(l.t)+'</span><span class="le">'+esc(l.e)+'</span>';
+      c.addEventListener('click',function(){on[l.id]=!on[l.id];paint();build();});
+      s.appendChild(c);
+    });
+    var fr=$('levFrontier');fr.innerHTML='';
+    frontier().forEach(function(l){
+      var c=document.createElement('div');c.className='levcard soft'+(on[l.id]?' on':'');
+      c.innerHTML='<span class="lt">'+esc(l.t)+'</span><span class="le">'+esc(l.e)+'</span><span class="cavtag">'+esc(l.cav)+'</span>';
+      c.addEventListener('click',function(){on[l.id]=!on[l.id];paint();build();});
+      fr.appendChild(c);
+    });
+    paint();
+  }
+  function paint(){
+    var base=D('lev.base'),score=base;
+    solid().concat(frontier()).forEach(function(l){if(on[l.id])score+=l.w;});
+    score=clamp(score,0,100);
+    $('levNum').textContent=Math.round(score);
+    $('levFill').style.width=score+'%';
+  }
+  build();
+  HOOKS.push(build);
+})();
+
+/* ============ reveal on scroll ============ */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.10});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+applyLang(detectLang());
+</script>
+</body>
+</html>
