@@ -453,7 +453,8 @@ function donut(c,x,y,r,col){c.beginPath();c.arc(x,y,r,0,6.28);c.fillStyle=col;c.
 var prog=$('#progress');
 function onScroll(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);prog.style.width=(p*100)+'%';}
 document.addEventListener('scroll',onScroll,{passive:true});onScroll();
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+/* threshold 0 + rootMargin: seções mais altas que a tela nunca alcançariam uma fração fixa */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0,rootMargin:'0px 0px -80px 0px'});
 $all('.reveal').forEach(function(el){io.observe(el)});
 
 /* canvas helper: retorna ctx com escala DPR e um objeto de tamanho */
