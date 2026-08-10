@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fibras e probióticos</title>
+<meta name="description" content="O que de fato o seu microbioma interfere na sua saúde? O intestino é um segundo cérebro? Um ensaio interativo sobre a ciência por trás do hype, por Renato Shirakashi.">
+<link rel="canonical" href="https://renatoshira.github.io/o-outro-genoma.html">
+<meta name="theme-color" content="#141414">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Fibras e probióticos">
+<meta property="og:description" content="O que de fato o seu microbioma interfere na sua saúde? O intestino é um segundo cérebro? A ciência por trás do hype.">
+<meta property="og:url" content="https://renatoshira.github.io/o-outro-genoma.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-genoma.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:author" content="Renato Shirakashi">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fibras e probióticos">
+<meta name="twitter:description" content="O que de fato o seu microbioma interfere na sua saúde? O intestino é um segundo cérebro? A ciência por trás do hype.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-genoma.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#141414;
+    --dim:#6b6b6b;
+    --line:#e2e2e2;
+    --mid:#9a9a9a;
+    --maxw:760px;
+    /* acentos: teal = microbioma benéfico/saudável ; vermelho = patógeno/inflamação/ruim */
+    --bio:#0f9d73;
+    --bio-deep:#0b7d5c;
+    --bio-soft:rgba(15,157,115,.14);
+    --bad:#b23b3b;
+    --bad-soft:rgba(178,59,59,.12);
+    --cell:#2f6fd0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Space Mono', ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  .topbar{
+    position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;padding:12px 24px;
+  }
+  .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
+  .topbar .kicker:hover{background:var(--ink);color:var(--paper)}
+  .progress{position:fixed;top:0;left:0;height:2px;background:var(--ink);width:0;z-index:60;transition:width .1s linear}
+
+  .mark{background:var(--ink);color:var(--paper);padding:.08em .34em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  section{border-bottom:1px solid var(--line);scroll-margin-top:72px}
+  section.wrap{padding:84px 24px}
+  section:last-of-type{border-bottom:0}
+  .hero,.cliff{scroll-margin-top:72px}
+
+  .hero{padding-top:90px;padding-bottom:80px}
+  .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+  .hero h1{font-size:34px;font-weight:700;line-height:1.24;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .hero h1 .l2{margin-left:1.1em}
+  .hero .sub{margin-top:38px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
+  .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
+
+  h2.head{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px}
+  .step{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+  p{margin:0 0 20px}
+  .lead{font-size:18px}
+  .subh{font-weight:700;font-size:15px;margin:28px 0 10px;letter-spacing:.01em}
+  .dim{color:var(--dim)}
+  strong{font-weight:700}
+  code,.tok{font-family:inherit;color:var(--ink);font-weight:700}
+
+  .note{font-size:13px;color:var(--dim);line-height:1.65;border-left:1px solid var(--line);padding-left:14px;margin:22px 0}
+
+  /* ---- widget shell ---- */
+  .widget{border:1px solid var(--ink);margin:34px 0 0;padding:18px 16px}
+  .wtag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .wtag .dot{width:8px;height:8px;border-radius:50%;background:var(--bio);display:inline-block}
+  .wcap{font-size:12.5px;color:var(--dim);margin-top:14px;line-height:1.62}
+  .wcap b{color:var(--ink)}
+  .btn{font-family:inherit;font-size:12.5px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 13px;cursor:pointer;transition:background .15s,color .15s}
+  .btn:active{transform:translateY(1px)}
+  .btn.on,.btn.solid{background:var(--ink);color:var(--paper)}
+  .btn.bio.on{background:var(--bio);border-color:var(--bio);color:#fff}
+  .rowbtns{display:flex;gap:7px;flex-wrap:wrap}
+  canvas{display:block;width:100%;touch-action:pan-y}
+  .cvwrap{position:relative}
+
+  .bigread{font-size:27px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+  .bigread small{font-size:12px;font-weight:400;color:var(--dim);letter-spacing:.02em}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--dim);margin-top:10px}
+  .legend .lg{display:flex;align-items:center;gap:6px}
+  .sw{width:11px;height:11px;border-radius:50%;display:inline-block;flex:none}
+  .sw.ink{background:var(--ink)} .sw.bio{background:var(--bio)} .sw.bad{background:var(--bad)} .sw.cell{background:var(--cell)}
+
+  input[type=range]{width:100%;accent-color:var(--bio);height:26px}
+  .ctrlrow{display:flex;align-items:center;gap:12px;margin-top:10px}
+  .ctrlrow label{font-size:11.5px;color:var(--dim);min-width:74px}
+  .slabels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--dim);margin-top:-2px}
+
+  /* markers panel (widget 03) */
+  .mk{display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center;font-size:11.5px;margin:7px 0}
+  .mk .mkt{color:var(--ink)}
+  .mktrack{height:9px;background:#ededed;position:relative;border-radius:2px;overflow:hidden}
+  .mkfill{height:100%;width:50%;transition:width .18s ease,background .18s}
+  .mk .mkv{text-align:right;color:var(--dim);font-variant-numeric:tabular-nums}
+  .verdict{margin-top:12px;font-size:13px;font-weight:700}
+  .verdict .pill{padding:2px 9px;border-radius:2px;color:#fff}
+
+  /* body map (04/05) */
+  .bodywrap{display:block}
+  .bodysvg{display:block;width:100%;max-width:300px;margin:0 auto;height:auto}
+  .zone{cursor:pointer;fill:var(--paper);stroke:var(--ink);stroke-width:1.4;transition:fill .25s}
+  .zone.pick{fill:var(--ink)}
+  .zone.lit{fill:var(--bio)}
+  .zonelabel{font-size:9px;fill:var(--dim);pointer-events:none}
+  .organcard{border:1px solid var(--ink);margin-top:14px;padding:14px;display:none}
+  .organcard.show{display:block}
+  .organcard .oh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
+  .organcard .on{font-weight:700;font-size:15px}
+  .organcard .obadge{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+  .organcard .obadge.hum{border-color:var(--bio);color:var(--bio-deep)}
+  .organcard .obadge.assoc{border-color:var(--mid);color:var(--dim)}
+  .organcard .obadge.mouse{border-color:var(--bad);color:var(--bad)}
+  .organrow{display:grid;grid-template-columns:52px 1fr;gap:10px;font-size:12.5px;margin:6px 0;line-height:1.4}
+  .organrow .rl{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);padding-top:2px}
+  .organrow.bad .rl{color:var(--bad)} .organrow.good .rl{color:var(--bio-deep)}
+  .organdelta{font-size:24px;font-weight:700;margin:8px 0 2px;font-variant-numeric:tabular-nums}
+  .organwho{font-size:11.5px;color:var(--dim)}
+
+  /* forest (06) */
+  .fbar{display:grid;grid-template-columns:1fr;gap:0}
+  .frow{padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}
+  .frow:last-child{border-bottom:0}
+  .frow .fl{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:6px}
+  .frow .fn{color:var(--ink)} .frow .fn .ev{font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:2px;margin-left:6px;vertical-align:middle}
+  .ev.hum{background:var(--bio-soft);color:var(--bio-deep)} .ev.assoc{background:#eee;color:var(--dim)} .ev.mouse{background:var(--bad-soft);color:var(--bad)}
+  .frow .fv{color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ftrack{position:relative;height:14px}
+  .faxis{position:absolute;top:0;bottom:0;width:1px;background:var(--mid);left:8%}
+  .fdot{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;transform:translate(-50%,-50%);background:var(--ink)}
+  .fdot.hum{background:var(--bio)} .fdot.mouse{background:var(--bad)} .fdot.assoc{background:var(--ink)}
+  .fci{position:absolute;top:50%;height:3px;transform:translateY(-50%);background:currentColor;opacity:.28}
+  .fsrc{font-size:11px;color:var(--dim);margin-top:8px;display:none;line-height:1.5}
+  .fsrc.show{display:block}
+
+  /* hype cards (08) */
+  .hypewrap{position:relative;min-height:220px}
+  .hcard{border:1px solid var(--ink);padding:18px 16px;background:var(--paper);user-select:none}
+  .hcard .hq{font-size:16px;line-height:1.45;margin-bottom:16px;min-height:70px}
+  .hchoices{display:flex;gap:8px}
+  .hchoices .btn{flex:1}
+  .hreveal{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:13px;line-height:1.55;display:none}
+  .hreveal.show{display:block}
+  .hreveal .tag{font-weight:700;padding:2px 9px;border-radius:2px;color:#fff;font-size:12px}
+  .hprog{font-size:11px;color:var(--dim);margin-top:12px;text-align:center}
+
+  .cliff{background:var(--ink);color:var(--paper);border:0}
+  .cliff .wrap{padding-top:70px;padding-bottom:70px}
+  .cliff h2{color:var(--paper);font-size:22px;margin:0 0 12px;line-height:1.4}
+  .cliff p{color:#c9c9c9;margin:0}
+  .cliff .mark{background:var(--paper);color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .refs{font-size:12.5px;line-height:1.7;color:var(--dim)}
+  .refs b{color:var(--ink)}
+  .foot{padding:40px 0 80px;color:var(--dim);font-size:12.5px}
+  [hidden]{display:none !important}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body data-palette="#141414,#0f9d73,#b23b3b,#2f6fd0">
+
+<div class="progress" id="progress"></div>
+<div class="topbar">
+  <a class="kicker" href="index.html">Renato Shirakashi</a>
+  <span class="kicker" style="color:var(--dim);font-weight:400">Microbioma · 2026</span>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow">Microbioma · 2026</div>
+  <h1>
+    <span class="mark">Fibras e</span>
+    <span class="mark l2">probióticos</span>
+  </h1>
+  <div class="sub">O que de fato o seu microbioma interfere na sua saúde? O intestino é um "segundo cérebro"? A ciência por trás do hype.</div>
+  <div class="byline">por Renato Shirakashi</div>
+</header>
+
+<!-- 00 -->
+<section class="wrap reveal">
+  <div class="step">00 · A pergunta</div>
+  <p class="lead">Você pensa em si mesmo como um organismo. Uma coisa só, humana, com o seu DNA em cada célula. Nos últimos vinte anos a biologia foi desmontando essa imagem, e hoje ela está errada por uma margem que custa a acreditar.</p>
+  <p><span class="mark">Cerca de metade das células que compõem o seu corpo não são suas.</span> São bactérias, na maioria alojadas no intestino, e elas carregam um segundo conjunto de genes que trabalha para você a cada refeição. Esse conjunto é muito maior que o seu, faz reações químicas que as suas próprias células nunca aprenderam, e muda conforme você come, dorme, toma antibiótico e envelhece. A pergunta que este ensaio persegue é direta e desconfortável: <span class="mark">quanto da sua saúde é decidido por um genoma que não é o seu?</span></p>
+  <p>Vale enfrentar essa pergunta com cuidado, porque ela virou território de dois exageros. De um lado, os entusiastas, que transformaram o microbioma na explicação de quase tudo, de depressão a autismo, e venderam junto uma prateleira de probióticos e testes caseiros. Do outro, os céticos, que passaram a última década lembrando que a maior parte dos estudos mostra associação, não causa, e que "bactéria diferente em pessoa doente" não prova que a bactéria causou a doença. O microbiologista Jonathan Eisen chegou a criar um prêmio público, o "Overselling the Microbiome Award", só para constranger quem extrapola.</p>
+  <p>A ideia aqui é ficar no meio honesto. Um passeio guiado pelo que a ciência de 2026 realmente sabe, sem arredondar promessa para cima nem descartar tudo como modismo. Você vai ver os números de escala, o que muda em cada parte do corpo e em que grau, o que fazer com isso hoje, e onde estão gastando o seu dinheiro à toa. No fim, a régua para separar as duas coisas fica na sua mão.</p>
+</section>
+
+<!-- 01 -->
+<section class="wrap reveal">
+  <div class="step">01 · A escala</div>
+  <p>Antes do passeio pelo corpo, vale parar nos números de escala, porque é neles que a conversa deixa de ser vaga. Eles são a fundação de tudo o que vem depois, e são grandes o bastante para mudar a forma como você se enxerga.</p>
+  <p>O seu corpo abriga cerca de <code>38 trilhões</code> de bactérias. As suas próprias células somam cerca de <code>30 trilhões</code>. A proporção real é de aproximadamente uma para uma, e não os dez para um que se repetiu por décadas nos livros, até três pesquisadores do Instituto Weizmann refazerem a conta em 2016. Toda essa massa bacteriana pesa em torno de <code>0,2 kg</code>, quase o peso do seu cérebro, quase toda no cólon.</p>
+  <p>O número que vira a chave não é o de células, é o de genes. O seu genoma humano tem cerca de <code>20 mil</code> genes. Quando o consórcio europeu MetaHIT sequenciou o conteúdo genético do intestino, em 2010, encontrou <code>3,3 milhões</code> de genes bacterianos distintos. É da ordem de <span class="mark">150 vezes</span> o seu repertório. Para cada gene seu, o seu intestino carrega cerca de cento e cinquenta genes microbianos à disposição.</p>
+  <p>Pare no que isso significa. Não é que você tenha uma ajudinha bacteriana na digestão. É que <span class="mark">a maior parte do maquinário bioquímico que roda no seu corpo foi escrita por outra forma de vida</span>, e você depende dela para digerir fibra, treinar a imunidade, fabricar vitaminas e conversar com o próprio cérebro. Jeffrey Gordon, o pesquisador da Universidade de Washington que praticamente fundou o campo, gosta de dizer que somos ecossistemas ambulantes. O número dá razão a ele.</p>
+
+  <div class="widget" id="w1">
+    <div class="wtag"><span class="dot"></span>Widget · o campo · arraste e toque</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+      <div class="bigread"><span id="w1num">10 : 1</span><br><small id="w1lab">o mito antigo: 10 bactérias por célula</small></div>
+      <div class="rowbtns" id="w1modes">
+        <button class="btn on" data-m="cells">células</button>
+        <button class="btn" data-m="genes">genes</button>
+        <button class="btn" data-m="mass">massa</button>
+      </div>
+    </div>
+    <div class="cvwrap"><canvas id="w1cv" height="300"></canvas></div>
+    <div class="rowbtns" style="margin-top:10px"><button class="btn bio" id="w1recount">recontar (2016)</button></div>
+    <div class="legend"><span class="lg"><span class="sw cell"></span>suas células (~30 tri)</span><span class="lg"><span class="sw bio"></span>bactérias (~38 tri)</span></div>
+    <div class="wcap" id="w1cap">A régua clássica dizia dez bactérias para cada célula sua. Toque em <b>recontar</b> e veja a ciência corrigir o número para perto de <b>1 para 1</b> (Sender, Fuchs & Milo, 2016). Depois troque para <b>genes</b>: a sua coluna tem ~20 mil, a do microbioma tem 3,3 milhões, e não cabe na tela.</div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="wrap reveal">
+  <div class="step">02 · O que esse genoma fabrica</div>
+  <p>Um segundo genoma só interessa se ele faz algo por você. Vale ver o que ele fabrica, porque é aqui que a ligação entre bactéria e saúde deixa de ser abstrata e vira química. O produto mais importante tem nome: ácidos graxos de cadeia curta, sobretudo o butirato.</p>
+  <p>Quando você come fibra que o seu corpo não digere, ela chega intacta ao cólon. Lá, as bactérias a fermentam e produzem acetato, propionato e butirato, na proporção aproximada de <code>60:20:20</code>. Justin e Erica Sonnenburg, o casal de microbiologistas de Stanford que virou uma das vozes mais escutadas do campo, chamam essas fibras de MACs, os carboidratos acessíveis à microbiota, e resumem a lógica numa imagem simples: fibra é a comida das suas bactérias, e uma bactéria bem alimentada trabalha a seu favor.</p>
+  <p>O butirato faz quatro coisas que decidem saúde. Alimenta as células que revestem o cólon, fornecendo cerca de <code>70%</code> da energia delas. Sela as junções entre essas células, o que impede que fragmentos bacterianos vazem para o sangue e acendam inflamação. Induz um tipo de célula de defesa, as células T reguladoras, que ensinam a imunidade a tolerar em vez de atacar, um mecanismo que Kenya Honda e Sarkis Mazmanian ajudaram a mapear célula a célula. E sinaliza para o resto do corpo, inclusive para o cérebro.</p>
+  <p>Há mais na fábrica. A microbiota sintetiza vitamina K e várias do complexo B, e produz <span class="mark">a maior parte da serotonina do seu corpo, cerca de 90%, fabricada no intestino e não na cabeça</span>. É por isso que a linha entre digestão e humor é bem mais borrada do que a intuição sugere.</p>
+  <p>E aqui cabe uma honestidade, porque butirato e serotonina são só os exemplos mais bem estudados. Um genoma de 3 milhões de genes não fabrica três ou quatro moléculas, fabrica milhares. Há neurotransmissores como o GABA e precursores de dopamina, ácidos biliares secundários que regulam o metabolismo, uma família inteira de compostos derivados do triptofano que conversam com a imunidade e, por vias indiretas, com o cérebro, o TMAO que você encontra mais adiante, e um oceano de metabólitos que sequer têm nome ou função conhecida. Se este texto volta tanto aos ácidos graxos, é porque são a parte que já saiu do escuro, não porque são a única que importa. A maior parte dessa química ainda é território não mapeado.</p>
+
+  <div class="widget" id="w2">
+    <div class="wtag"><span class="dot"></span>Widget · a colônia · arraste a fibra</div>
+    <div class="cvwrap"><canvas id="w2cv" height="300"></canvas></div>
+    <div class="ctrlrow"><label>fibra na dieta</label><input type="range" id="w2fiber" min="0" max="100" value="55"></div>
+    <div class="slabels"><span>pouca</span><span>muita</span></div>
+    <div class="legend"><span class="lg"><span class="sw bio"></span>bactéria boa</span><span class="lg"><span class="sw bad"></span>oportunista</span><span class="lg"><span style="color:var(--bio);font-size:13px">◆</span>&nbsp;butirato</span><span class="lg"><span style="color:var(--bad);font-size:13px">▲</span>&nbsp;fragmento (LPS)</span><span class="lg"><span style="width:16px;height:3px;background:var(--ink);display:inline-block"></span>barreira</span></div>
+    <div class="wcap" id="w2cap">Arraste a fibra. Com muita, os produtores de butirato (◆) florescem e o epitélio fica <b>grosso e verde</b>, barrando os fragmentos (▲) que ricocheteiam de volta. Com pouca, a barreira afina e fica <b>vermelha</b>, e os fragmentos <b>atravessam para o sangue</b>, o começo da inflamação.</div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="wrap reveal">
+  <div class="step">03 · A diferença</div>
+  <p>Aqui está a pergunta central deste ensaio, feita em número: qual a diferença entre um microbioma ruim e um ótimo, e o que ela provoca em você? Vale insistir nesse ponto porque é ele que separa "microbioma importa" de uma frase de efeito.</p>
+  <p>Em 2013, uma equipe ligada ao MetaHIT contou os genes bacterianos de centenas de pessoas e achou algo limpo demais para ser coincidência: a população se partia em dois grupos, com um limiar em torno de <code>480 mil genes</code>. As pessoas do grupo pobre carregavam cerca de <code>380 mil</code> genes microbianos. As do grupo rico, cerca de <code>640 mil</code>. A diferença entre um extremo e o outro chega a <code>40%</code>.</p>
+  <p>E essa diferença não era cosmética. O grupo pobre em genes tinha mais gordura corporal, mais resistência à insulina, colesterol pior e um estado inflamatório mais alto. O grupo rico tinha mais bactérias anti-inflamatórias e um metabolismo melhor. Cerca de um quarto das pessoas caía no grupo pobre. Aqui entra a ressalva que um cético colocaria na hora, e com razão: isso é associação, não sentença. Ter poucos genes não condena ninguém, e a foto não prevê o seu futuro individual. Mas há uma boa notícia embutida no mesmo estudo: uma intervenção alimentar conseguiu aumentar a riqueza genética justamente em quem estava pobre. O parâmetro se move, e você move parte dele com o garfo.</p>
+
+  <div class="widget" id="w3">
+    <div class="wtag"><span class="dot"></span>Widget · a régua da riqueza · arraste os genes</div>
+    <div class="cvwrap"><canvas id="w3cv" height="150"></canvas></div>
+    <div class="ctrlrow"><label>riqueza gênica</label><input type="range" id="w3rich" min="300" max="700" value="380" step="5"></div>
+    <div class="slabels"><span>300 mil</span><span>limiar 480 mil</span><span>700 mil</span></div>
+    <div class="verdict" id="w3verd"></div>
+    <div id="w3mk" style="margin-top:8px"></div>
+    <div class="rowbtns" style="margin-top:12px"><button class="btn bio" id="w3diet">intervir com dieta</button></div>
+    <div class="wcap">Arraste a riqueza gênica e veja onde você cai na população e os marcadores de saúde acompanharem. <b>Lembrete honesto:</b> os marcadores são associação, não previsão individual. O botão mostra que a riqueza sobe com dieta.</div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="wrap reveal">
+  <div class="step">04 · O seu palpite</div>
+  <p>Antes de percorrer o corpo, arrisque. Em quais partes do seu corpo você acha que a microbiota faz diferença de verdade? O exercício vale porque a distância entre o seu palpite e o mapa real já diz algo sobre o quanto o campo avançou longe da intuição.</p>
+  <p>A maioria das pessoas para no intestino, na digestão, talvez na imunidade. A ciência de 2026 estende a lista para lugares que parecem não ter nada com bactéria: o humor, o risco de infarto, a resposta a um tratamento de câncer, a pele do rosto, o risco de um parto prematuro. Dê o seu palpite e depois compare com os números.</p>
+
+  <div class="widget" id="w4">
+    <div class="wtag"><span class="dot"></span>Widget · o palpite · toque nas zonas</div>
+    <div class="bodywrap"><div id="w4svg"></div></div>
+    <div class="rowbtns" style="margin-top:12px;justify-content:center"><button class="btn solid" id="w4lock">revelar o mapa real</button></div>
+    <div class="wcap" id="w4cap">Toque nas zonas onde você acha que a microbiota faz diferença. Depois toque em <b>revelar</b>.</div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="wrap reveal">
+  <div class="step">05 · O corpo, parte por parte</div>
+  <p>Agora a mesma régua aplicada a cada região. Para cada uma, o mesmo formato: o cenário ruim, o cenário bom, o tamanho da diferença, e o nome de quem a descobriu. Repare num padrão que atravessa tudo: a evidência mais forte quase sempre vem de camundongo, e enfraquece ao subir para o humano. É a tal lacuna translacional, e ela é o freio honesto de toda esta seção.</p>
+  <h3 class="subh">Intestino e metabolismo</h3>
+  <p>É o palco principal, e o experimento fundador é de tirar o fôlego. No laboratório de Jeffrey Gordon, camundongos criados sem nenhum micróbio receberam a flora de um doador obeso e ganharam mais gordura que os que receberam a de um doador magro, comendo a mesma coisa. Depois a equipe repetiu com flora de gêmeos humanos discordantes para obesidade, publicado na Science em 2013, e o fenótipo se transferiu junto com as bactérias. O peso viajou de humano para rato dentro de um tubo.</p>
+  <p>No diabetes, a coisa subiu do rato para você. Patrice Cani, na Bélgica, apostou numa bactéria chamada <code>Akkermansia muciniphila</code>, que vive na camada de muco do intestino. Num ensaio de 2019, a forma pasteurizada dela melhorou a sensibilidade à insulina em cerca de <code>28%</code> em pessoas com sobrepeso, e um ensaio maior de 2026, de 24 semanas, confirmou benefício na manutenção do peso. É modesto e ainda em construção, mas é raro: uma bactéria isolada, testada em gente, com efeito medido.</p>
+  <p>E há o achado que mais mexe com a prática, tocado por Eran Segal e Eran Elinav em Israel e levado ao público por Tim Spector, do King's College, com o estudo PREDICT. A mesma refeição produz respostas de açúcar e gordura no sangue radicalmente diferentes entre pessoas. A variação da resposta de triglicérides a comidas idênticas chega a <code>103%</code>. Parte dessa diferença mora no seu microbioma, o que explica por que a dieta que funciona para o seu vizinho pode não fazer nada por você.</p>
+
+  <h3 class="subh">Coração</h3>
+  <p>Existe uma cadeia que liga bactéria a infarto de forma quase direta, e ela tem um culpado com nome. Stanley Hazen, na Cleveland Clinic, mapeou o <code>TMAO</code>: a partir de colina e carnitina, presentes em carne vermelha e gema de ovo, certas bactérias fabricam um precursor que o fígado converte nessa molécula, que empurra a formação de placa nas artérias. A prova de que a bactéria é peça necessária é elegante: antibióticos derrubam a produção de TMAO, e camundongos sem micróbios simplesmente não a fazem.</p>
+  <p>O tamanho do risco é para levar a sério. As pessoas com TMAO mais alto tiveram risco de morte cerca de <code>1,9 vez maior</code> numa análise que juntou 26 mil pessoas, e cada aumento de dez unidades elevou o risco de morte em cerca de <code>7,6%</code>. Aqui a ressalva do cético é sobre o próximo passo: o TMAO prevê risco muito bem, mas ainda não se provou que baixá-lo com dieta salva vidas.</p>
+
+  <h3 class="subh">Cérebro e humor</h3>
+  <p>O intestino fabrica cerca de <code>90%</code> da serotonina do corpo e conversa com o cérebro pelo nervo vago. Ele tem uma malha de neurônios própria tão densa que o neurocientista Michael Gershon o apelidou de segundo cérebro, num livro de 1998. A disbiose aparece ligada a humor e a doença neurológica, com graus de prova bem diferentes entre uma coisa e outra.</p>
+  <p>No Parkinson está a ligação mais forte de toda a neurologia. A constipação precede o diagnóstico em anos: num estudo que acompanhou milhares de homens no Havaí desde os anos 1970, quem tinha menos de uma evacuação por dia teve risco <code>2,7 vezes maior</code> de desenvolver a doença. O modelo do patologista Heiko Braak propõe que a proteína que se agrega no cérebro do parkinsoniano começa a se acumular no intestino e sobe pelo vago, uma hipótese forte e ainda em disputa.</p>
+  <p>Na depressão, o grupo de Jeroen Raes, em Leuven, examinou mais de mil pessoas e achou dois gêneros de bactéria consistentemente reduzidos em quem tinha depressão, mesmo descontando o efeito dos antidepressivos. Os ensaios que dão probiótico para tratar depressão mostram efeito de tamanho moderado, com a ressalva honesta de que a qualidade dos estudos varia e os melhores números vêm de amostras pequenas.</p>
+
+  <h3 class="subh">Imunidade e câncer</h3>
+  <p>A maior parte das células de defesa do corpo fica no intestino, treinada em grande parte pela microbiota. Os primeiros mil dias de vida montam essa flora e programam o sistema imune, e mexer nessa janela desloca o risco pela vida inteira: parto por cesárea associa-se a risco de asma cerca de <code>18% maior</code>, e a introdução precoce de amendoim em bebês de risco, no estudo LEAP de 2015, reduziu a alergia ao amendoim em <code>81%</code>, um dos maiores efeitos já vistos na área e que mudou diretrizes no mundo todo.</p>
+  <p>O avanço mais impressionante do período está na oncologia, e ele é recente. Descobriu-se, a partir de 2018, que a resposta à imunoterapia depende do microbioma do paciente. Em 2025, um ensaio combinou transplante de microbiota de doador saudável com a imunoterapia de primeira linha e atingiu resposta de <code>80%</code> no câncer de pulmão e <code>75%</code> no melanoma, acima das taxas históricas. São grupos pequenos, sem braço randomizado, então a prova ainda não está fechada. Mas é a primeira vez que mexer na flora parece melhorar um tratamento de câncer de verdade.</p>
+
+  <h3 class="subh">Pele, boca, vagina, pulmão</h3>
+  <p>Aqui a regra da diversidade se inverte, e vale segurar a intuição: em várias dessas superfícies, saúde é baixa diversidade dominada pelo micróbio certo, não muita variedade.</p>
+  <p>Na pele, a dermatite atópica tem assinatura clara. A bactéria <code>Staphylococcus aureus</code> coloniza cerca de <code>70%</code> da pele lesional contra <code>39%</code> da pele sã, e a gravidade cai conforme sobem cepas comensais que a combatem, uma linha que Richard Gallo, em San Diego, transformou em tentativa de tratamento com bactéria da própria pele do paciente.</p>
+  <p>Na boca, o segundo microbioma mais diverso do corpo, a periodontite dispara efeitos que passam longe da gengiva: a doença grave associa-se a risco de AVC cerca de <code>2,5 vezes maior</code>, com ligações também para diabetes, Alzheimer e parto prematuro. O intervalo de confiança é largo, então trate como associação robusta na direção, não como número cravado.</p>
+  <p>Na vagina, o domínio de <code>Lactobacillus</code> protege, e a sua perda, a vaginose bacteriana, afeta entre um quarto e um terço das mulheres em idade reprodutiva e aumenta o risco de infecções e de parto prematuro. No pulmão, que não é o órgão estéril que os livros diziam, a disbiose acompanha asma e DPOC, e a proteção viaja do intestino pelo eixo intestino-pulmão.</p>
+
+  <p class="dim">Toque em cada órgão abaixo para ver o cenário ruim, o cenário bom, a diferença e a fonte.</p>
+
+  <div class="widget" id="w5">
+    <div class="wtag"><span class="dot"></span>Widget · o corpo por dentro · toque num órgão</div>
+    <div class="bodywrap"><div id="w5svg"></div></div>
+    <div class="rowbtns" id="w5sort" style="margin-top:12px;justify-content:center">
+      <button class="btn on" data-s="body">ordem anatômica</button>
+      <button class="btn" data-s="ev">por força da evidência</button>
+    </div>
+    <div class="organcard" id="w5card"></div>
+    <div class="wcap">Toque num órgão para ver cenário ruim, cenário bom, a diferença e quem descobriu. O selo indica o tipo de prova: <b style="color:var(--bio-deep)">humano robusto</b>, <b>associativo</b> ou <b style="color:var(--bad)">modelo animal</b>.</div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="wrap reveal">
+  <div class="step">06 · O tamanho das diferenças, lado a lado</div>
+  <p>Vale reunir tudo num lugar só, porque juntos os números contam algo difícil de contestar: em quase todo sistema do corpo, a diferença entre uma flora pobre e uma rica se mede em fatores, não em pontinhos percentuais. Repare, ao ler o gráfico, na cor da evidência: quanto mais forte o efeito no rato, mais frágil costuma ser a prova em gente, e os dois casos com prova humana dura, o transplante fecal para infecção por C. difficile e a imunoterapia de câncer, são os que menos aparecem nas manchetes de bem-estar.</p>
+
+  <div class="widget" id="w6">
+    <div class="wtag"><span class="dot"></span>Widget · a prova, com a incerteza junto · toque numa linha</div>
+    <div class="rowbtns" id="w6sort" style="margin-bottom:12px">
+      <button class="btn on" data-s="mag">por magnitude</button>
+      <button class="btn" data-s="ev">por evidência</button>
+    </div>
+    <div class="legend" style="margin:0 0 10px"><span class="lg"><span class="sw bio"></span>humano robusto</span><span class="lg"><span class="sw ink"></span>associativo</span><span class="lg"><span class="sw bad"></span>modelo animal</span></div>
+    <div class="fbar" id="w6bars"></div>
+    <div class="wcap">Posição = tamanho do efeito (linha vertical marca "sem efeito"). A cor é o tipo de prova. Ordene por evidência e repare: os efeitos gigantes tendem a ser os de prova mais fraca.</div>
+  </div>
+</section>
+
+<!-- CLIFF -->
+<section class="cliff" id="cliff">
+  <div class="wrap">
+    <h2>Você viu o tamanho do que está em jogo.</h2>
+    <p>Agora a parte que quase ninguém espera: dá para mexer nesse genoma inteiro em poucos dias, só com o que você põe no prato. <span class="mark">(continua)</span></p>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="wrap reveal">
+  <div class="step">07 · O que fazer</div>
+  <p>Vale chegar na parte prática com uma vantagem rara nesta área: as recomendações mais bem embasadas são baratas, seguras e estão ao seu alcance hoje, sem passar por clínica nem por assinatura de aplicativo.</p>
+  <p>Coma mais fibra e, principalmente, mais variedade de plantas. A meta é <code>25 a 38 g</code> de fibra por dia, e a maioria ingere cerca de metade disso. O número que Tim Spector transformou em bandeira, tirado do American Gut Project de Rob Knight, é fácil de lembrar: quem come mais de <code>30 tipos diferentes de plantas</code> por semana tem microbioma mais diverso que quem come dez ou menos. <span class="mark">A variedade importa porque cada fibra alimenta bactérias diferentes.</span> Conte verduras, legumes, frutas, leguminosas, grãos integrais, castanhas, sementes e ervas.</p>
+  <p>Inclua <span class="mark">alimentos fermentados</span> vivos todos os dias. Este é o achado mais forte do período, e veio do laboratório dos Sonnenburg com Christopher Gardner, em Stanford. Num ensaio de 2021, uma dieta rica em fermentados, como iogurte, kefir, kimchi e chucrute, aumentou a diversidade do microbioma e reduziu <code>19 marcadores</code> de inflamação no sangue em dez semanas. O detalhe que surpreendeu os próprios autores: só aumentar a fibra, no mesmo período, não fez nem uma coisa nem outra na média do grupo. Remodelar o ecossistema leva tempo e parece pedir as duas coisas juntas.</p>
+  <p>Adote um padrão mediterrâneo, <span class="mark">reduza ultraprocessados</span>, cuide do sono, do exercício e do álcool, que empurram na direção certa. E use antibiótico só quando for preciso. Num experimento com adultos saudáveis, um coquetel de amplo espectro por quatro dias derrubou a diversidade, e mesmo depois de seis meses de recuperação <code>nove espécies benéficas</code> seguiam sumidas. A flora se recompõe, mas nem sempre inteira.</p>
+
+  <div class="widget" id="w7">
+    <div class="wtag"><span class="dot"></span>Widget · a semana · monte seus hábitos</div>
+    <div class="cvwrap"><canvas id="w7cv" height="220"></canvas></div>
+    <div class="mk" style="grid-template-columns:120px 1fr 44px;margin-top:10px"><span class="mkt">diversidade</span><div class="mktrack"><div class="mkfill" id="w7div" style="background:var(--bio)"></div></div><span class="mkv" id="w7divv">–</span></div>
+    <div class="rowbtns" id="w7habits" style="margin-top:12px">
+      <button class="btn bio" data-h="plants">+ variedade de plantas</button>
+      <button class="btn bio" data-h="ferm">+ fermentados</button>
+      <button class="btn bio" data-h="fiber">+ fibra</button>
+      <button class="btn bio" data-h="exercise">+ exercício</button>
+      <button class="btn" data-h="antibiotic">antibiótico</button>
+    </div>
+    <div class="rowbtns" id="w7presets" style="margin-top:8px">
+      <button class="btn" data-p="dysbiosis">cenário: disbiose</button>
+      <button class="btn" data-p="postab">cenário: pós-antibiótico</button>
+      <button class="btn" data-p="reset">reset</button>
+    </div>
+    <div class="wcap">Cada forma é uma família de micróbios. A <b>diversidade</b> é a variedade de formas presentes, não a quantidade de bichos. O <b>antibiótico</b> colapsa para poucas famílias, e um oportunista (vermelho) passa a dominar. Ilustrativo e direcional, não uma medida do seu intestino.</div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="wrap reveal">
+  <div class="step">08 · O que é hype</div>
+  <p>Um passeio honesto precisa dizer onde não gastar dinheiro nem esperança, e é aqui que os céticos do começo do texto ganham a palavra. William Hanage, epidemiologista de Harvard, escreveu que a ciência do microbioma precisa de uma dose saudável de ceticismo, e a lista abaixo é essa dose.</p>
+  <p>Os testes comerciais de microbioma vendidos direto ao consumidor ainda não servem para decisão clínica. Um consenso internacional de 2024 apontou falta de padronização e baixa reprodutibilidade: a mesma amostra, mandada para duas empresas, pode voltar com recomendações diferentes. Você paga por um relatório colorido cujas conclusões trocariam de laboratório.</p>
+  <p>A maioria dos suplementos probióticos "para saúde geral" não tem benefício comprovado em pessoa saudável. O efeito é específico de cepa, dose e indicação, e a própria diretriz da associação americana de gastroenterologia, em 2020, não recomenda probióticos para a maioria das condições digestivas. Onde a evidência é sólida, ela é pontual e pouco glamourosa: certas cepas previnem diarreia por antibiótico, e o transplante de microbiota fecal cura cerca de <code>90%</code> das infecções recorrentes por <code>C. difficile</code> contra cerca de <code>30%</code> do antibiótico, com dois produtos já aprovados pela agência reguladora americana, em 2022 e 2023.</p>
+  <p>E a ideia de que um pote de fibra em pó resolve tudo em uma semana não se sustenta. O mesmo ensaio de Stanford que elogiou os fermentados mostrou a fibra isolada patinando no curto prazo. Comida de verdade, variada, com fermentados, e paciência, batem qualquer atalho de prateleira. É essa a diferença que Jonathan Eisen cobra quando entrega o seu prêmio de exagero: mecanismo interessante não é a mesma coisa que benefício provado em gente.</p>
+
+  <div class="widget" id="w8">
+    <div class="wtag"><span class="dot"></span>Widget · verdade ou hype · decida</div>
+    <div class="hypewrap" id="w8wrap"></div>
+    <div class="hprog" id="w8prog"></div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="wrap reveal">
+  <div class="step">09 · Fechamento</div>
+  <p>Você começou este passeio se achando um organismo. Termina como um consórcio: células humanas e um genoma parceiro cento e cinquenta vezes maior, negociando a sua saúde a cada refeição. Essa é a parte que os entusiastas acertam, e ela é grande.</p>
+  <p>A parte que os céticos acertam é igualmente importante: a maior parte das promessas que você vê em rótulo e em teste caseiro corre muito à frente da prova. Entre as duas, sobra uma verdade útil e sem glamour. O seu genoma humano você não escolhe. O outro, o de 3 milhões de genes, você alimenta todos os dias, e as alavancas que funcionam já estão na sua cozinha: mais plantas, mais variedade, comida viva, menos veneno, e tempo.</p>
+</section>
+
+<!-- REFS -->
+<section class="wrap reveal">
+  <div class="step">Fontes principais</div>
+  <p class="refs">
+  <b>Escala e genes:</b> Sender, Fuchs, Milo, PLOS Biology 2016; Qin et al., Nature 2010; Almeida et al., Nature Biotechnology 2021.<br>
+  <b>Riqueza genética:</b> Le Chatelier et al., Nature 2013; Cotillard et al., Nature 2013.<br>
+  <b>Mecanismos:</b> Nature Reviews Microbiology 2025; Nature Reviews Immunology 2024; Furusawa et al., Nature 2013; Yano et al., Cell 2015.<br>
+  <b>Metabólico:</b> Turnbaugh et al., Nature 2006; Ridaura et al., Science 2013; Depommier/Cani, Nature Medicine 2019; Berry et al., Nature Medicine 2020.<br>
+  <b>Coração:</b> Tang/Hazen, NEJM 2013; Schiattarella et al., European Heart Journal 2017.<br>
+  <b>Cérebro:</b> Valles-Colomer et al., Nature Microbiology 2019; Abbott et al., Neurology 2001; npj Parkinson's Disease 2024.<br>
+  <b>Imune e câncer:</b> BMC Pediatrics 2023; LEAP, NEJM 2015; Scher et al., eLife 2013; FMT-LUMINate, Nature Medicine 2025; J Cancer 2021.<br>
+  <b>Intervenções e hype:</b> McDonald et al., mSystems 2018; Wastyk et al., Cell 2021; Palleja et al., Nature Microbiology 2018; van Nood et al., NEJM 2013; consenso Lancet Gastroenterol Hepatol 2024; diretriz AGA, Gastroenterology 2020; Hanage, Nature 2014.
+  </p>
+  <div class="foot">O outro genoma · ensaio interativo · dados verificados contra fontes primárias · agosto de 2026</div>
+</section>
+
+<script>
+/* ---------- utilitários ---------- */
+var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $(s,c){return (c||document).querySelector(s)}
+function $all(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))}
+function lerp(a,b,t){return a+(b-a)*t}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function fmt(n){return n.toLocaleString('pt-BR')}
+var COL={ink:'#141414',bio:'#0f9d73',bad:'#b23b3b',cell:'#2f6fd0',dim:'#9a9a9a',line:'#e2e2e2'};
+/* formas (para diferenciar tipos de partícula/espécie) */
+function tri(c,x,y,r,col){c.beginPath();c.moveTo(x,y-r);c.lineTo(x+r,y+r);c.lineTo(x-r,y+r);c.closePath();c.fillStyle=col;c.fill();}
+function diamond(c,x,y,r,col){c.beginPath();c.moveTo(x,y-r);c.lineTo(x+r,y);c.lineTo(x,y+r);c.lineTo(x-r,y);c.closePath();c.fillStyle=col;c.fill();}
+function sq(c,x,y,r,col){c.fillStyle=col;c.fillRect(x-r,y-r,2*r,2*r);}
+function ring(c,x,y,r,col){c.beginPath();c.arc(x,y,r,0,6.28);c.strokeStyle=col;c.lineWidth=1.7;c.stroke();}
+function plus(c,x,y,r,col){c.strokeStyle=col;c.lineWidth=1.9;c.beginPath();c.moveTo(x-r,y);c.lineTo(x+r,y);c.moveTo(x,y-r);c.lineTo(x,y+r);c.stroke();}
+function ex(c,x,y,r,col){c.strokeStyle=col;c.lineWidth=1.7;c.beginPath();c.moveTo(x-r,y-r);c.lineTo(x+r,y+r);c.moveTo(x+r,y-r);c.lineTo(x-r,y+r);c.stroke();}
+function hexg(c,x,y,r,col){c.beginPath();for(var i=0;i<6;i++){var a=Math.PI/3*i-Math.PI/6;var px=x+r*Math.cos(a),py=y+r*Math.sin(a);i?c.lineTo(px,py):c.moveTo(px,py);}c.closePath();c.fillStyle=col;c.fill();}
+function donut(c,x,y,r,col){c.beginPath();c.arc(x,y,r,0,6.28);c.fillStyle=col;c.fill();c.fillStyle='#fff';c.beginPath();c.arc(x,y,r*0.42,0,6.28);c.fill();}
+
+/* progress + reveal */
+var prog=$('#progress');
+function onScroll(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);prog.style.width=(p*100)+'%';}
+document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+$all('.reveal').forEach(function(el){io.observe(el)});
+
+/* canvas helper: retorna ctx com escala DPR e um objeto de tamanho */
+function setupCanvas(cv,h){
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  function resize(){
+    var w=cv.clientWidth||cv.parentNode.clientWidth;
+    cv.width=w*dpr;cv.height=h*dpr;cv.style.height=h+'px';
+    var ctx=cv.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);
+    cv._w=w;cv._h=h;
+  }
+  resize();window.addEventListener('resize',resize);
+  return cv.getContext('2d');
+}
+/* só anima quando visível */
+function visibleLoop(cv,step){
+  var on=false;
+  var vio=new IntersectionObserver(function(es){on=es[0].isIntersecting;if(on)req();},{threshold:.05});
+  vio.observe(cv);
+  var raf=null;
+  function req(){if(raf)return;raf=requestAnimationFrame(tick);}
+  function tick(){raf=null;step();if(on&&!RM)req();}
+  step();
+  return {kick:req,isOn:function(){return on}};
+}
+
+/* ============ WIDGET 1 — O CAMPO ============ */
+(function(){
+  var cv=$('#w1cv');if(!cv)return;
+  var ctx=setupCanvas(cv,300);
+  var mode='cells', ratio=10, genesT=0; // 10:1 -> 1.27:1
+  var pts=[];
+  function seed(){
+    pts=[];var N=RM?260:520;
+    for(var i=0;i<N;i++){pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0006,vy:(Math.random()-.5)*.0006,bug:false});}
+    assign();
+  }
+  function assign(){
+    // proporção bactéria:célula = ratio:1
+    var frac=ratio/(ratio+1);
+    for(var i=0;i<pts.length;i++)pts[i].bug=(i/pts.length)<frac;
+  }
+  function draw(){
+    var w=cv._w,h=cv._h;ctx.clearRect(0,0,w,h);
+    if(mode==='genes'){drawGenes(w,h);return;}
+    if(mode==='mass'){drawMass(w,h);return;}
+    for(var i=0;i<pts.length;i++){var p=pts[i];
+      if(!RM){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<0||p.y>1)p.vy*=-1;}
+      ctx.beginPath();ctx.arc(p.x*w,p.y*h,p.bug?2.4:2.9,0,6.28);
+      ctx.fillStyle=p.bug?COL.bio:COL.cell;ctx.globalAlpha=p.bug?.85:.9;ctx.fill();
+    }
+    ctx.globalAlpha=1;
+  }
+  function drawGenes(w,h){
+    // grade de 150 quadrados: 1 quadrado = o SEU genoma inteiro; 150 = o microbioma
+    var cols=15, rows=10, total=cols*rows;
+    var padX=12, padTop=26, padBot=30;
+    var cw=(w-padX*2)/cols, chh=(h-padTop-padBot)/rows;
+    var s=Math.min(cw,chh)*0.72;
+    for(var idx=0;idx<total;idx++){
+      var c=idx%cols, rr=Math.floor(idx/cols);
+      var x=padX+c*cw+cw/2, y=padTop+rr*chh+chh/2;
+      if(idx===0){ctx.fillStyle=COL.ink;ctx.fillRect(x-s/2,y-s/2,s,s);}
+      else{ctx.fillStyle=COL.bio;ctx.globalAlpha=.5;ctx.fillRect(x-s/2,y-s/2,s,s);ctx.globalAlpha=1;}
+    }
+    // realce do quadrado "você"
+    var x0=padX+cw/2, y0=padTop+chh/2;
+    ctx.strokeStyle=COL.ink;ctx.lineWidth=1.5;ctx.strokeRect(x0-s/2-2,y0-s/2-2,s+4,s+4);
+    // rótulos
+    ctx.textAlign='left';ctx.fillStyle=COL.ink;ctx.font='700 11px "Space Mono",monospace';
+    ctx.fillText('■ = o seu genoma (~20 mil genes)', padX, 15);
+    ctx.textAlign='center';ctx.fillStyle=COL.bio;ctx.font='700 11px "Space Mono",monospace';
+    ctx.fillText('150 quadrados = o microbioma', w/2, h-16);
+    ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';
+    ctx.fillText('3,3 milhões de genes · o seu cabe 150× nele', w/2, h-4);
+    ctx.textAlign='start';
+  }
+  function drawMass(w,h){
+    ctx.textAlign='center';
+    // barra da massa bacteriana ~0,2kg vs corpo
+    var cx=w/2;
+    ctx.fillStyle=COL.bio;ctx.fillRect(cx-70,h/2-30,140,60);
+    ctx.fillStyle='#fff';ctx.font='700 15px "Space Mono",monospace';ctx.fillText('~0,2 kg',cx,h/2+5);
+    ctx.fillStyle=COL.dim;ctx.font='11px "Space Mono",monospace';
+    ctx.fillText('a massa da sua flora, quase o peso do cérebro',cx,h/2+50);
+    ctx.fillText('38 trilhões de bactérias, quase todas no cólon',cx,h/2-45);
+    ctx.textAlign='start';
+  }
+  var loop=visibleLoop(cv,draw);
+  seed();
+  function setReadout(){
+    var num=$('#w1num'),lab=$('#w1lab');
+    if(mode==='cells'){var r=ratio.toFixed(ratio>2?0:2).replace('.',',');num.textContent=(ratio>2?'10 : 1':'1,3 : 1');lab.textContent=ratio>2?'o mito antigo: 10 bactérias por célula':'a conta real: ~1 bactéria por célula';}
+    else if(mode==='genes'){num.textContent='150×';lab.textContent='mais genes no microbioma que no seu genoma';}
+    else {num.textContent='0,2 kg';lab.textContent='a massa da sua flora microbiana';}
+  }
+  $all('#w1modes .btn').forEach(function(b){b.addEventListener('click',function(){
+    $all('#w1modes .btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+    mode=b.dataset.m;if(mode==='genes')genesT=0;setReadout();loop.kick();
+  });});
+  $('#w1recount').addEventListener('click',function(){
+    if(mode!=='cells'){$all('#w1modes .btn')[0].click();}
+    var start=ratio,end=(ratio>2?1.27:10),t0=null;
+    function anim(ts){if(!t0)t0=ts;var t=clamp((ts-t0)/900,0,1);ratio=lerp(start,end,t);assign();draw();if(t<1)requestAnimationFrame(anim);else{ratio=end;setReadout();}}
+    requestAnimationFrame(anim);
+    this.textContent=(ratio>2?'recontar (2016)':'ver o mito (10:1)');
+  });
+  setReadout();
+})();
+
+/* ============ WIDGET 2 — A COLÔNIA ============ */
+(function(){
+  var cv=$('#w2cv');if(!cv)return;
+  var ctx=setupCanvas(cv,300);
+  var fiber=.55, tclock=0;
+  var good=[],bad=[],lps=[];
+  function mk(g){return {x:Math.random(),y:.10+Math.random()*.42,vx:(Math.random()-.5)*.002,vy:(Math.random()-.5)*.002,g:g,on:Math.random()<.6};}
+  function seed(){good=[];bad=[];lps=[];
+    for(var i=0;i<130;i++)good.push(mk(true));
+    for(var j=0;j<55;j++)bad.push(mk(false));
+    for(var k=0;k<9;k++)lps.push({x:Math.random(),y:Math.random()*.35,cross:false});}
+  function target(){var gOn=Math.round(lerp(36,130,fiber)),bOn=Math.round(lerp(55,10,fiber));
+    var c=0;for(var i=0;i<good.length;i++)good[i].on=(c++<gOn);
+    c=0;for(var j=0;j<bad.length;j++)bad[j].on=(c++<bOn);}
+  function draw(){
+    tclock+=0.016;
+    var w=cv._w,h=cv._h;ctx.clearRect(0,0,w,h);
+    var mucusY=h*.58, epiY=h*.80, seal=fiber;
+    // muco
+    ctx.fillStyle='rgba(15,157,115,0.05)';ctx.fillRect(0,mucusY,w,epiY-mucusY);
+    ctx.strokeStyle=COL.line;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,mucusY);ctx.lineTo(w,mucusY);ctx.stroke();
+    // sangue (abaixo do epitélio) — avermelha se houver fragmentos atravessando
+    var crossed=lps.filter(function(q){return q.cross}).length;
+    if(crossed>0){ctx.fillStyle='rgba(178,59,59,'+Math.min(.14,crossed*0.03)+')';ctx.fillRect(0,epiY,w,h-epiY);}
+    // epitélio: grosso/verde (selado) x fino/vermelho (permeável)
+    ctx.lineWidth=lerp(1,5,seal);ctx.strokeStyle=seal>.42?COL.bio:COL.bad;
+    ctx.beginPath();for(var x=0;x<=w;x+=6){var yy=epiY+Math.sin(x*.09)*(seal>.42?1:3*(1-seal));x?ctx.lineTo(x,yy):ctx.moveTo(x,yy);}ctx.stroke();
+    // rótulos
+    ctx.fillStyle=COL.dim;ctx.font='10px "Space Mono",monospace';ctx.textAlign='left';
+    ctx.fillText('lúmen',6,14);ctx.fillText('muco',6,mucusY+13);ctx.fillText('epitélio',6,epiY+15);ctx.fillText('sangue',6,h-6);
+    // bactérias (círculos)
+    function upd(arr){for(var i=0;i<arr.length;i++){var p=arr[i];if(!p.on)continue;
+      if(!RM){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<.05||p.y>.54)p.vy*=-1;}
+      ctx.beginPath();ctx.arc(p.x*w,p.y*h,p.g?2.6:2.4,0,6.28);ctx.fillStyle=p.g?COL.bio:COL.bad;ctx.globalAlpha=.85;ctx.fill();}ctx.globalAlpha=1;}
+    upd(good);upd(bad);
+    // butirato (losangos) subindo do muco ao epitélio, proporcional à fibra
+    var nb=Math.round(fiber*11);
+    for(var b=0;b<nb;b++){var t=((tclock*0.5)+b/Math.max(nb,1))%1;var by=lerp(mucusY,epiY-2,t);var bx=(b+0.5)/Math.max(nb,1)*w;
+      ctx.globalAlpha=.45+.45*(1-t);diamond(ctx,bx,by,2.8,COL.bio);}ctx.globalAlpha=1;
+    // fragmentos LPS (triângulos) descendo; batem ou atravessam
+    for(var l=0;l<lps.length;l++){var q=lps[l];
+      if(!RM)q.y+=0.0018;
+      var qy=q.y*h;
+      if(!q.cross && qy>=epiY){ if(seal>.45){q.y=Math.random()*0.28;} else {q.cross=true;} }
+      if(q.cross){ if(qy>=h-6){q.y=Math.random()*0.28;q.cross=false;} }
+      if(q.y>1){q.y=Math.random()*0.28;q.cross=false;}
+      qy=q.y*h;
+      tri(ctx,q.x*w,qy,3.4,COL.bad);
+    }
+    ctx.textAlign='start';
+  }
+  var loop=visibleLoop(cv,draw);seed();target();
+  $('#w2fiber').addEventListener('input',function(){fiber=this.value/100;target();loop.kick();});
+})();
+
+/* ============ WIDGET 3 — A RÉGUA DA RIQUEZA ============ */
+(function(){
+  var cv=$('#w3cv');if(!cv)return;
+  var ctx=setupCanvas(cv,160);
+  var rich=380; // mil de genes
+  function xpos(g,w){return ((g-300)/400)*w;}
+  function curve(g){function gs(mu,sd){return Math.exp(-Math.pow((g-mu)/sd,2)/2);}return 0.95*gs(385,52)+0.75*gs(600,62);}
+  function draw(){
+    var w=cv._w,h=cv._h;ctx.clearRect(0,0,w,h);
+    var baseY=h-22, top=16, thX=xpos(480,w);
+    // caminho da curva para clip
+    ctx.beginPath();ctx.moveTo(0,baseY);
+    for(var g=300;g<=700;g+=3){var x=xpos(g,w);var y=baseY-curve(g)*(baseY-top);ctx.lineTo(x,y);}
+    ctx.lineTo(w,baseY);ctx.closePath();
+    ctx.save();ctx.clip();
+    ctx.fillStyle=COL.bad;ctx.globalAlpha=.13;ctx.fillRect(0,0,thX,h);
+    ctx.fillStyle=COL.bio;ctx.globalAlpha=.15;ctx.fillRect(thX,0,w-thX,h);
+    ctx.restore();ctx.globalAlpha=1;
+    // contorno
+    ctx.beginPath();for(var g2=300;g2<=700;g2+=3){var x2=xpos(g2,w);var y2=baseY-curve(g2)*(baseY-top);g2>300?ctx.lineTo(x2,y2):ctx.moveTo(x2,y2);}
+    ctx.strokeStyle=COL.dim;ctx.lineWidth=1.3;ctx.stroke();
+    // limiar 480
+    ctx.setLineDash([4,4]);ctx.strokeStyle=COL.ink;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(thX,top-4);ctx.lineTo(thX,baseY);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';ctx.textAlign='center';ctx.fillText('limiar 480 mil',thX,top-7);
+    // marcador do leitor
+    var rico=rich>=480, mx=xpos(rich,w);
+    ctx.strokeStyle=rico?COL.bio:COL.bad;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(mx,top);ctx.lineTo(mx,baseY);ctx.stroke();
+    ctx.fillStyle=rico?COL.bio:COL.bad;ctx.beginPath();ctx.arc(mx,top,4,0,6.28);ctx.fill();
+    // eixo e rótulos de regime
+    ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';ctx.textAlign='left';ctx.fillText('300 mil',2,h-4);ctx.textAlign='right';ctx.fillText('700 mil genes',w-2,h-4);
+    ctx.textAlign='center';ctx.fillStyle=COL.bad;ctx.font='700 10px "Space Mono",monospace';ctx.fillText('pobre',thX/2,baseY-5);
+    ctx.fillStyle=COL.bio;ctx.fillText('rico',thX+(w-thX)/2,baseY-5);
+    ctx.textAlign='start';
+  }
+  var loop=visibleLoop(cv,draw);
+  var markers=[{k:'adiposidade'},{k:'resistência à insulina'},{k:'inflamação'}];
+  var mkEl=$('#w3mk');
+  markers.forEach(function(m,idx){var row=document.createElement('div');row.className='mk';
+    row.innerHTML='<span class="mkt">'+m.k+'</span><div class="mktrack"><div class="mkfill" id="w3m'+idx+'"></div></div><span class="mkv" id="w3v'+idx+'"></span>';mkEl.appendChild(row);});
+  function upd(){
+    var d=clamp((rich-300)/400,0,1);
+    markers.forEach(function(m,idx){var val=1-d;var pct=Math.round(18+val*72);var f=$('#w3m'+idx);
+      f.style.width=pct+'%';f.style.background=val>.5?COL.bad:COL.bio;
+      $('#w3v'+idx).textContent=(val>.66?'alto':val>.4?'médio':'baixo');});
+    var rico=rich>=480;$('#w3verd').innerHTML='<span class="pill" style="background:'+(rico?COL.bio:COL.bad)+'">'+(rico?'microbioma rico':'microbioma pobre')+'</span> &nbsp;'+fmt(rich*1000)+' genes';
+    draw();
+  }
+  $('#w3rich').addEventListener('input',function(){rich=+this.value;upd();loop.kick();});
+  $('#w3diet').addEventListener('click',function(){var el=$('#w3rich'),start=rich,end=Math.max(rich,620),t0=null;
+    function a(ts){if(!t0)t0=ts;var t=clamp((ts-t0)/1000,0,1);rich=Math.round(lerp(start,end,t));el.value=rich;upd();if(t<1)requestAnimationFrame(a);}requestAnimationFrame(a);});
+  upd();
+})();
+
+/* ============ mapa corporal compartilhado (SVG) ============ */
+var ORGANS=[
+  {id:'brain',label:'cérebro',cx:150,cy:40,r:20,ev:'assoc',lit:.7,
+   delta:'2,7×',metric:'risco de Parkinson',bad:'constipação anos antes; Coprococcus e Dialister em baixa na depressão',good:'flora produtora de butirato, humor mais estável',who:'Abbott 2001 · Valles-Colomer/Raes 2019'},
+  {id:'mouth',label:'boca',cx:150,cy:78,r:12,ev:'assoc',lit:.55,
+   delta:'~2,5×',metric:'risco de AVC (periodontite grave)',bad:'periodontite, P. gingivalis, efeito sistêmico',good:'comunidade oral simbiótica',who:'revisões 2025 · IC largo'},
+  {id:'lung',label:'pulmão',cx:120,cy:135,r:20,ev:'assoc',lit:.45,
+   delta:'disbiose',metric:'asma e DPOC',bad:'expansão de Haemophilus na asma neutrofílica',good:'proteção via eixo intestino-pulmão',who:'revisões 2025'},
+  {id:'heart',label:'coração',cx:172,cy:130,r:14,ev:'assoc',lit:.75,
+   delta:'1,9×',metric:'risco de morte (TMAO alto)',bad:'carne vermelha → TMA → TMAO, placa na artéria',good:'TMAO baixo',who:'Tang/Hazen 2013 · Schiattarella 2017'},
+  {id:'gut',label:'intestino',cx:150,cy:180,r:26,ev:'hum',lit:1,
+   delta:'103%',metric:'variação da resposta a refeições idênticas',bad:'flora obesa transfere ganho de gordura (camundongo)',good:'Akkermansia +28% de sensibilidade à insulina',who:'lab Gordon · Cani 2019 · Berry 2020'},
+  {id:'skin',label:'pele',cx:210,cy:150,r:14,ev:'assoc',lit:.5,
+   delta:'70% vs 39%',metric:'S. aureus na dermatite atópica',bad:'S. aureus domina a pele lesional',good:'cepas comensais que o combatem',who:'revisão 2026'},
+  {id:'immune',label:'imune',cx:95,cy:185,r:15,ev:'hum',lit:.9,
+   delta:'−81%',metric:'alergia a amendoim (introdução precoce)',bad:'cesárea → asma +18%; antibiótico precoce eleva risco',good:'flora treina a imunidade nos mil primeiros dias',who:'LEAP 2015 · BMC Pediatrics 2023'},
+  {id:'cancer',label:'câncer',cx:150,cy:230,r:16,ev:'hum',lit:.85,
+   delta:'80% / 75%',metric:'resposta à imunoterapia + transplante fecal',bad:'sem a flora certa, imunoterapia responde menos',good:'FMT de doador saudável eleva a resposta',who:'FMT-LUMINate, Nature Medicine 2025'},
+  {id:'vagina',label:'região vaginal',cx:150,cy:270,r:12,ev:'assoc',lit:.55,
+   delta:'~1/3',metric:'vaginose em idade reprodutiva',bad:'perda de Lactobacillus, risco de infecção e parto prematuro',good:'domínio de Lactobacillus',who:'revisões 2025-26'}
+];
+function bodyPath(){
+  // silhueta simples
+  return '<path d="M150 12 q16 0 16 20 q0 14 -6 20 q14 6 14 26 l6 60 q2 20 -8 26 l-4 70 q-2 30 -6 60 l-2 30 M150 12 q-16 0 -16 20 q0 14 6 20 q-14 6 -14 26 l-6 60 q-2 20 8 26 l4 70 q2 30 6 60 l2 30" fill="none" stroke="'+COL.line+'" stroke-width="1.5"/>';
+}
+function buildBody(svgId,opts){
+  var s='<svg viewBox="0 0 300 300" class="bodysvg" role="img" aria-label="mapa do corpo">';
+  s+='<ellipse cx="150" cy="150" rx="86" ry="140" fill="#fafafa" stroke="'+COL.line+'"/>';
+  ORGANS.forEach(function(o){
+    s+='<circle class="zone" data-id="'+o.id+'" cx="'+o.cx+'" cy="'+o.cy+'" r="'+o.r+'"><title>'+o.label+'</title></circle>';
+    s+='<text class="zonelabel" x="'+o.cx+'" y="'+(o.cy+o.r+9)+'" text-anchor="middle">'+o.label+'</text>';
+  });
+  s+='</svg>';
+  $(svgId).innerHTML=s;
+}
+
+/* ============ WIDGET 4 — PALPITE ============ */
+(function(){
+  if(!$('#w4svg'))return;
+  buildBody('#w4svg');
+  var picked={};var revealed=false;
+  $all('#w4svg .zone').forEach(function(z){z.addEventListener('click',function(){
+    if(revealed)return;var id=z.dataset.id;picked[id]=!picked[id];z.classList.toggle('pick',picked[id]);
+  });});
+  $('#w4lock').addEventListener('click',function(){
+    revealed=true;this.disabled=true;this.textContent='mapa revelado';
+    $all('#w4svg .zone').forEach(function(z){var o=ORGANS.find(function(x){return x.id===z.dataset.id});
+      z.classList.remove('pick');
+      setTimeout(function(){z.classList.add('lit');z.style.opacity=0.35+o.lit*0.65;},Math.random()*500);
+    });
+    var np=Object.keys(picked).filter(function(k){return picked[k]}).length;
+    $('#w4cap').innerHTML='Você marcou <b>'+np+'</b> de <b>'+ORGANS.length+'</b>. A ciência de 2026 acende quase todas, com a intensidade proporcional à força da evidência. Role para o próximo widget e veja os números.';
+  });
+})();
+
+/* ============ WIDGET 5 — CORPO POR DENTRO ============ */
+(function(){
+  if(!$('#w5svg'))return;
+  buildBody('#w5svg');
+  $all('#w5svg .zone').forEach(function(z){var o=ORGANS.find(function(x){return x.id===z.dataset.id});z.classList.add('lit');z.style.opacity=0.3+o.lit*0.7;});
+  var card=$('#w5card');
+  function show(o){
+    var badgeCls=o.ev==='hum'?'hum':o.ev==='mouse'?'mouse':'assoc';
+    var badgeTxt=o.ev==='hum'?'humano robusto':o.ev==='mouse'?'modelo animal':'associativo';
+    card.className='organcard show';
+    card.innerHTML='<div class="oh"><span class="on">'+o.label+'</span><span class="obadge '+badgeCls+'">'+badgeTxt+'</span></div>'+
+      '<div class="organdelta" style="color:'+(o.ev==='hum'?'var(--bio-deep)':'var(--ink)')+'">'+o.delta+'</div>'+
+      '<div class="organwho" style="margin-bottom:10px">'+o.metric+'</div>'+
+      '<div class="organrow bad"><span class="rl">ruim</span><span>'+o.bad+'</span></div>'+
+      '<div class="organrow good"><span class="rl">bom</span><span>'+o.good+'</span></div>'+
+      '<div class="organwho" style="margin-top:10px">fonte · '+o.who+'</div>';
+    card.scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'});
+  }
+  $all('#w5svg .zone').forEach(function(z){z.addEventListener('click',function(){
+    $all('#w5svg .zone').forEach(function(x){x.style.stroke=COL.ink;x.style.strokeWidth=1.4;});
+    z.style.stroke=COL.bio;z.style.strokeWidth=3;
+    show(ORGANS.find(function(x){return x.id===z.dataset.id}));
+  });});
+  var order={hum:3,assoc:2,mouse:1};
+  $all('#w5sort .btn').forEach(function(b){b.addEventListener('click',function(){
+    $all('#w5sort .btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+    // apenas realça: se por evidência, pisca os humanos
+    if(b.dataset.s==='ev'){$all('#w5svg .zone').forEach(function(z){var o=ORGANS.find(function(x){return x.id===z.dataset.id});z.style.opacity=o.ev==='hum'?1:0.28;});}
+    else {$all('#w5svg .zone').forEach(function(z){var o=ORGANS.find(function(x){return x.id===z.dataset.id});z.style.opacity=0.3+o.lit*0.7;});}
+  });});
+})();
+
+/* ============ WIDGET 6 — FOREST ============ */
+(function(){
+  var box=$('#w6bars');if(!box)return;
+  // valor = magnitude relativa (log-ish) para posição; mag = número exibido
+  var D=[
+    {n:'Genes microbianos vs humanos',v:150,disp:'150×',ev:'assoc',src:'Qin et al., Nature 2010'},
+    {n:'Riqueza: pobre vs rico',v:1.7,disp:'40% (380k→640k)',ev:'assoc',src:'Le Chatelier et al., Nature 2013'},
+    {n:'Akkermansia → sensib. insulina',v:1.28,disp:'+28%',ev:'hum',src:'Depommier/Cani, Nature Medicine 2019'},
+    {n:'TMAO alto → morte',v:1.91,disp:'1,91×',ev:'assoc',src:'Schiattarella, Eur Heart J 2017'},
+    {n:'Constipação → Parkinson',v:2.7,disp:'2,7×',ev:'assoc',src:'Abbott, Neurology 2001'},
+    {n:'Cesárea → asma',v:1.18,disp:'1,18×',ev:'assoc',src:'BMC Pediatrics 2023'},
+    {n:'Amendoim precoce → alergia',v:5.3,disp:'−81%',ev:'hum',src:'LEAP, NEJM 2015',neg:true},
+    {n:'P. copri na artrite reumatoide',v:3.5,disp:'75% vs 21%',ev:'assoc',src:'Scher et al., eLife 2013'},
+    {n:'FMT + imunoterapia (câncer)',v:4,disp:'80% / 75% resposta',ev:'hum',src:'FMT-LUMINate, Nat Med 2025'},
+    {n:'F. nucleatum → mortalidade',v:1.93,disp:'1,93×',ev:'assoc',src:'meta-análise, J Cancer 2021'},
+    {n:'S. aureus na dermatite',v:1.8,disp:'70% vs 39%',ev:'assoc',src:'revisão 2026'},
+    {n:'Periodontite → AVC',v:2.5,disp:'2,5×',ev:'assoc',src:'revisão 2025'},
+    {n:'FMT vs antibiótico (C. difficile)',v:3,disp:'~90% vs ~30%',ev:'hum',src:'van Nood, NEJM 2013'}
+  ];
+  var order={hum:3,assoc:2,mouse:1};
+  var maxV=Math.max.apply(null,D.map(function(d){return Math.log(d.v)}));
+  function render(sort){
+    var arr=D.slice();
+    if(sort==='mag')arr.sort(function(a,b){return b.v-a.v});
+    else arr.sort(function(a,b){return (order[b.ev]-order[a.ev])|| (b.v-a.v)});
+    box.innerHTML='';
+    arr.forEach(function(d){
+      var evCls=d.ev==='hum'?'hum':d.ev==='mouse'?'mouse':'assoc';
+      var evTxt=d.ev==='hum'?'humano':d.ev==='mouse'?'animal':'assoc';
+      var pos=8+ (Math.log(d.v)/maxV)*84; // %
+      var row=document.createElement('div');row.className='frow';
+      row.innerHTML='<div class="fl"><span class="fn">'+d.n+'<span class="ev '+evCls+'">'+evTxt+'</span></span><span class="fv">'+d.disp+'</span></div>'+
+        '<div class="ftrack"><div class="faxis"></div><div class="fci '+evCls+'" style="left:8%;width:'+(pos-8)+'%;color:'+(d.ev==='hum'?COL.bio:d.ev==='mouse'?COL.bad:COL.ink)+'"></div><div class="fdot '+evCls+'" style="left:'+pos+'%"></div></div>'+
+        '<div class="fsrc">fonte · '+d.src+'</div>';
+      row.addEventListener('click',function(){var s=row.querySelector('.fsrc');s.classList.toggle('show');});
+      box.appendChild(row);
+    });
+  }
+  $all('#w6sort .btn').forEach(function(b){b.addEventListener('click',function(){
+    $all('#w6sort .btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');render(b.dataset.s);
+  });});
+  render('mag');
+})();
+
+/* ============ WIDGET 7 — A SEMANA ============ */
+(function(){
+  var cv=$('#w7cv');if(!cv)return;
+  var ctx=setupCanvas(cv,220);
+  var TYPES=12, BAD=[4,6];
+  var state={plants:0,ferm:0,fiber:0,exercise:0}, forced=null;
+  var present=new Array(TYPES).fill(0);
+  function diversity(){ if(forced!=null)return forced; var b=3+state.plants*2+state.ferm*2+state.fiber+state.exercise; return clamp(b,1,TYPES); }
+  function recompute(){ var n=Math.round(diversity());
+    for(var i=0;i<TYPES;i++){present[i]= i<n ? 0.55+Math.random()*0.45 : 0;}
+    if(n<=4){BAD.forEach(function(b){present[b]=0.95;});}
+  }
+  function glyph(i,x,y,r,col){switch(i%12){
+    case 0:ctx.beginPath();ctx.arc(x,y,r,0,6.28);ctx.fillStyle=col;ctx.fill();break;
+    case 1:ring(ctx,x,y,r,col);break;
+    case 2:sq(ctx,x,y,r*0.9,col);break;
+    case 3:diamond(ctx,x,y,r,col);break;
+    case 4:tri(ctx,x,y,r,col);break;
+    case 5:plus(ctx,x,y,r,col);break;
+    case 6:ex(ctx,x,y,r,col);break;
+    case 7:hexg(ctx,x,y,r,col);break;
+    case 8:donut(ctx,x,y,r,col);break;
+    case 9:sq(ctx,x,y,r*0.55,col);break;
+    case 10:tri(ctx,x,y,r*0.85,col);ring(ctx,x,y,r,col);break;
+    case 11:diamond(ctx,x,y,r*0.6,col);ring(ctx,x,y,r,col);break;
+  }}
+  function draw(){
+    var w=cv._w,h=cv._h;ctx.clearRect(0,0,w,h);
+    var cols=4,rows=3,padX=24,padY=22;var cw=(w-padX*2)/cols,ch=(h-padY*2)/rows;var n=Math.round(diversity());
+    for(var i=0;i<TYPES;i++){var c=i%cols,rr=Math.floor(i/cols);var x=padX+c*cw+cw/2,y=padY+rr*ch+ch/2;var ab=present[i];
+      if(ab>0){var bad=(BAD.indexOf(i)>=0 && n<=5);var col=bad?COL.bad:COL.bio;var r=7+ab*7;ctx.globalAlpha=.55+ab*.45;glyph(i,x,y,r,col);ctx.globalAlpha=1;}
+      else{ctx.strokeStyle=COL.line;ctx.lineWidth=1;ctx.beginPath();ctx.arc(x,y,4,0,6.28);ctx.stroke();}
+    }
+  }
+  var loop=visibleLoop(cv,draw);
+  function upd(){recompute();var n=Math.round(diversity());var pct=Math.round(n/TYPES*100);
+    $('#w7div').style.width=pct+'%';$('#w7divv').textContent=n+'/'+TYPES;$('#w7div').style.background=n>4?COL.bio:COL.bad;loop.kick();}
+  $all('#w7habits .btn').forEach(function(b){b.addEventListener('click',function(){var hh=b.dataset.h;
+    if(hh==='antibiotic'){forced=3;$all('#w7habits .btn').forEach(function(x){if(x.dataset.h!=='antibiotic')x.classList.remove('on')});upd();return;}
+    forced=null;b.classList.toggle('on');state[hh]=b.classList.contains('on')?((hh==='plants'||hh==='ferm')?2:1):0;upd();});});
+  $all('#w7presets .btn').forEach(function(b){b.addEventListener('click',function(){var pp=b.dataset.p;$all('#w7habits .btn').forEach(function(x){x.classList.remove('on')});
+    if(pp==='dysbiosis'){forced=4;state={plants:0,ferm:0,fiber:0,exercise:0};}
+    else if(pp==='postab'){forced=2;state={plants:0,ferm:0,fiber:0,exercise:0};}
+    else{forced=null;state={plants:2,ferm:2,fiber:1,exercise:1};$all('#w7habits .btn').forEach(function(x){if(x.dataset.h!=='antibiotic')x.classList.add('on')});}
+    upd();});});
+  upd();
+})();
+
+/* ============ WIDGET 8 — VERDADE OU HYPE ============ */
+(function(){
+  var wrap=$('#w8wrap');if(!wrap)return;
+  var Q=[
+    {q:'Um teste de microbioma caseiro me diz o que comer.',a:'hype',ev:'A mesma amostra em duas empresas volta com recomendações diferentes. Consenso internacional, Lancet Gastroenterol Hepatol 2024.'},
+    {q:'Probiótico genérico melhora a saúde de qualquer pessoa.',a:'hype',ev:'O efeito é específico de cepa e indicação. A diretriz AGA 2020 não recomenda para a maioria das condições.'},
+    {q:'Transplante fecal cura infecção recorrente por C. difficile.',a:'base',ev:'Cura ~90% vs ~30% do antibiótico. Dois produtos aprovados pela FDA (2022 e 2023). van Nood, NEJM 2013.'},
+    {q:'Fibra em pó, sozinha, resolve o intestino em uma semana.',a:'hype',ev:'O ensaio de Stanford mostrou a fibra isolada patinando no curto prazo; fermentados é que baixaram a inflamação. Wastyk, Cell 2021.'},
+    {q:'Comer 30 tipos de plantas por semana associa-se a mais diversidade.',a:'base',ev:'Achado do American Gut Project. É associação, mas robusta e barata de seguir. McDonald, mSystems 2018.'}
+  ];
+  var idx=0,score=0;
+  function render(){
+    if(idx>=Q.length){wrap.innerHTML='<div class="hcard"><div class="hq">Você acertou <b>'+score+'</b> de <b>'+Q.length+'</b>. Agora a régua é sua: mecanismo interessante não é benefício provado em gente.</div></div>';$('#w8prog').textContent='';return;}
+    var it=Q[idx];
+    wrap.innerHTML='<div class="hcard" id="hcard"><div class="hq">'+it.q+'</div>'+
+      '<div class="hchoices"><button class="btn" data-c="base">tem base</button><button class="btn" data-c="hype">é hype</button></div>'+
+      '<div class="hreveal" id="hrev"></div></div>';
+    $('#w8prog').textContent='cartão '+(idx+1)+' de '+Q.length;
+    $all('#hcard .hchoices .btn').forEach(function(b){b.addEventListener('click',function(){
+      var correct=b.dataset.c===it.a;if(correct)score++;
+      $all('#hcard .hchoices .btn').forEach(function(x){x.disabled=true;
+        if(x.dataset.c===it.a){x.classList.add('bio');x.classList.add('on');}
+      });
+      var rev=$('#hrev');rev.classList.add('show');
+      rev.innerHTML='<span class="tag" style="background:'+(it.a==='base'?COL.bio:COL.bad)+'">'+(it.a==='base'?'TEM BASE':'É HYPE')+'</span> '+(correct?'você acertou. ':'não é bem assim. ')+it.ev+'<div style="margin-top:10px"><button class="btn solid" id="hnext">'+(idx+1<Q.length?'próximo':'ver resultado')+'</button></div>';
+      $('#hnext').addEventListener('click',function(){idx++;render();});
+    });});
+  }
+  render();
+})();
+</script>
+</body>
+</html>
