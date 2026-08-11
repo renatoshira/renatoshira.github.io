@@ -21,6 +21,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="article:author" content="Renato Shirakashi">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -62,6 +63,10 @@
   }
   .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
   .topbar .kicker:hover{background:var(--ink);color:var(--paper)}
+  .topbar .right{display:flex;align-items:center;gap:12px}
+  .langtoggle{display:flex;border:1px solid var(--ink);font-size:12px}
+  .langtoggle button{border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:.08em}
+  .langtoggle button.active{background:var(--ink);color:var(--paper)}
   .progress{position:fixed;top:0;left:0;height:2px;background:var(--ink);width:0;z-index:60;transition:width .1s linear}
 
   .mark{background:var(--ink);color:var(--paper);padding:.08em .34em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
@@ -197,212 +202,218 @@
 <div class="progress" id="progress"></div>
 <div class="topbar">
   <a class="kicker" href="index.html">Renato Shirakashi</a>
-  <span class="kicker" style="color:var(--dim);font-weight:400">Microbioma · 2026</span>
+  <div class="right">
+    <span class="kicker" style="color:var(--dim);font-weight:400" data-i18n="topbar.kicker">Microbioma · 2026</span>
+    <div class="langtoggle" role="group" aria-label="Idioma">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
 <header class="hero wrap">
-  <div class="eyebrow">Microbioma · 2026</div>
+  <div class="eyebrow" data-i18n="hero.eyebrow1">Microbioma · 2026</div>
   <h1>
-    <span class="mark">Fibras e</span>
-    <span class="mark l2">probióticos</span>
+    <span class="mark" data-i18n="hero.hero1">Fibras e</span>
+    <span class="mark l2" data-i18n="hero.hero2">probióticos</span>
   </h1>
-  <div class="sub">O que de fato o seu microbioma interfere na sua saúde? O intestino é um "segundo cérebro"? A ciência por trás do hype.</div>
-  <div class="byline">por Renato Shirakashi</div>
+  <div class="sub" data-i18n="hero.sub1">O que de fato o seu microbioma interfere na sua saúde? O intestino é um "segundo cérebro"? A ciência por trás do hype.</div>
+  <div class="byline" data-i18n="hero.byline1">por Renato Shirakashi</div>
 </header>
 
 <!-- 00 -->
 <section class="wrap reveal">
-  <div class="step">00 · A pergunta</div>
-  <p class="lead">Quem se olha no espelho costuma enxergar um indivíduo singular: um único organismo biológico, construído pelo próprio DNA do topo da cabeça aos pés. Só que a biologia das últimas duas décadas destruiu essa imagem por uma margem surpreendente.</p>
-  <p><span class="mark">Aproximadamente metade das células do seu corpo tem origem bacteriana.</span> A vasta maioria habita o intestino, carregando um ecossistema genético paralelo que reage a cada refeição. Esse repertório ultrapassa de longe o genoma humano, executa vias metabólicas que nossas células jamais desenvolveram e oscila continuamente com dieta, sono, uso de antibióticos e envelhecimento. Resta determinar, em termos concretos, <span class="mark">até que ponto nossa saúde depende de um genoma alheio</span>.</p>
-  <p>Abordar a questão exige filtro rigoroso. A discussão oscila entre dois extremos barulhentos: entusiastas que transformaram a microbiota na explicação para quase tudo (da depressão ao autismo, vendendo testes caseiros e frascos de probióticos) e céticos lembrando que correlação não significa causalidade (encontrar uma bactéria atípica em alguém doente não prova que o micróbio causou a patologia). O microbiologista Jonathan Eisen criou até o prêmio público "Overselling the Microbiome Award" para expor exagero acadêmico e mercadológico.</p>
-  <p>O objetivo desta análise é examinar o estado real da evidência científica em 2026, sem inflar expectativas nem descartar achados sólidos. As seções a seguir detalham a escala numérica, o impacto em diferentes sistemas corporais, as intervenções práticas validadas e os pontos em que o mercado vende ilusão.</p>
+  <div class="step" data-i18n="s00.step1">00 · A pergunta</div>
+  <p class="lead" data-i18n="s00.p1">Quem se olha no espelho costuma enxergar um indivíduo singular: um único organismo biológico, construído pelo próprio DNA do topo da cabeça aos pés. Só que a biologia das últimas duas décadas destruiu essa imagem por uma margem surpreendente.</p>
+  <p data-i18n="s00.p2"><span class="mark">Aproximadamente metade das células do seu corpo tem origem bacteriana.</span> A vasta maioria habita o intestino, carregando um ecossistema genético paralelo que reage a cada refeição. Esse repertório ultrapassa de longe o genoma humano, executa vias metabólicas que nossas células jamais desenvolveram e oscila continuamente com dieta, sono, uso de antibióticos e envelhecimento. Resta determinar, em termos concretos, <span class="mark">até que ponto nossa saúde depende de um genoma alheio</span>.</p>
+  <p data-i18n="s00.p3">Abordar a questão exige filtro rigoroso. A discussão oscila entre dois extremos barulhentos: entusiastas que transformaram a microbiota na explicação para quase tudo (da depressão ao autismo, vendendo testes caseiros e frascos de probióticos) e céticos lembrando que correlação não significa causalidade (encontrar uma bactéria atípica em alguém doente não prova que o micróbio causou a patologia). O microbiologista Jonathan Eisen criou até o prêmio público "Overselling the Microbiome Award" para expor exagero acadêmico e mercadológico.</p>
+  <p data-i18n="s00.p4">O objetivo desta análise é examinar o estado real da evidência científica em 2026, sem inflar expectativas nem descartar achados sólidos. As seções a seguir detalham a escala numérica, o impacto em diferentes sistemas corporais, as intervenções práticas validadas e os pontos em que o mercado vende ilusão.</p>
 </section>
 
 <!-- 01 -->
 <section class="wrap reveal">
-  <div class="step">01 · A escala</div>
-  <p>Compreender o impacto da microbiota exige primeiro examinar sua escala real. Os dados numéricos afastam a discussão da abstração e dimensionam a extensão dessa coexistência.</p>
-  <p>O corpo humano abriga aproximadamente <code>38 trilhões</code> de bactérias, contra cerca de <code>30 trilhões</code> de células humanas. A proporção real beira 1:1 (distante do mito de 10:1 repetido por décadas em livros didáticos, até pesquisadores do Instituto Weizmann revisarem o cálculo em 2016). Essa massa bacteriana pesa em torno de <code>0,2 kg</code>, concentrando-se quase totalmente no cólon.</p>
-  <p>A divergência de maior impacto surge na contagem genética. O genoma humano possui perto de <code>20 mil</code> genes. Em 2010, o consórcio europeu MetaHIT sequenciou o DNA intestinal e identificou <code>3,3 milhões</code> de genes bacterianos distintos. O repertório microbiano é cerca de <span class="mark">150 vezes</span> maior: para cada gene propriamente humano, existem aproximadamente 150 genes bacterianos no trato digestivo.</p>
-  <p>Essa diferença revela que <span class="mark">a maior parte da maquinaria bioquímica em funcionamento no organismo foi codificada por outros seres vivos</span>. A digestão de fibras, o treinamento do sistema imune, a síntese de certas vitaminas e a sinalização neuroquímica dependem diretamente dessa capacidade genética adicional. Jeffrey Gordon, pesquisador da Universidade de Washington considerado pioneiro na área, descreve os seres humanos como ecossistemas ambulantes. A quantificação genética confirma essa tese.</p>
+  <div class="step" data-i18n="s01.step1">01 · A escala</div>
+  <p data-i18n="s01.p1">Compreender o impacto da microbiota exige primeiro examinar sua escala real. Os dados numéricos afastam a discussão da abstração e dimensionam a extensão dessa coexistência.</p>
+  <p data-i18n="s01.p2">O corpo humano abriga aproximadamente <code>38 trilhões</code> de bactérias, contra cerca de <code>30 trilhões</code> de células humanas. A proporção real beira 1:1 (distante do mito de 10:1 repetido por décadas em livros didáticos, até pesquisadores do Instituto Weizmann revisarem o cálculo em 2016). Essa massa bacteriana pesa em torno de <code>0,2 kg</code>, concentrando-se quase totalmente no cólon.</p>
+  <p data-i18n="s01.p3">A divergência de maior impacto surge na contagem genética. O genoma humano possui perto de <code>20 mil</code> genes. Em 2010, o consórcio europeu MetaHIT sequenciou o DNA intestinal e identificou <code>3,3 milhões</code> de genes bacterianos distintos. O repertório microbiano é cerca de <span class="mark">150 vezes</span> maior: para cada gene propriamente humano, existem aproximadamente 150 genes bacterianos no trato digestivo.</p>
+  <p data-i18n="s01.p4">Essa diferença revela que <span class="mark">a maior parte da maquinaria bioquímica em funcionamento no organismo foi codificada por outros seres vivos</span>. A digestão de fibras, o treinamento do sistema imune, a síntese de certas vitaminas e a sinalização neuroquímica dependem diretamente dessa capacidade genética adicional. Jeffrey Gordon, pesquisador da Universidade de Washington considerado pioneiro na área, descreve os seres humanos como ecossistemas ambulantes. A quantificação genética confirma essa tese.</p>
 
   <div class="widget" id="w1">
-    <div class="wtag"><span class="dot"></span>o campo · arraste e toque</div>
+    <div class="wtag" data-i18n="s01.wtag1"><span class="dot"></span>o campo · arraste e toque</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:10px">
-      <div class="bigread"><span id="w1num">10 : 1</span><br><small id="w1lab">o mito antigo: 10 bactérias por célula</small></div>
+      <div class="bigread"><span id="w1num" data-i18n="s01.w1num">10 : 1</span><br><small id="w1lab" data-i18n="s01.w1lab">o mito antigo: 10 bactérias por célula</small></div>
       <div class="rowbtns" id="w1modes">
-        <button class="btn on" data-m="cells">células</button>
-        <button class="btn" data-m="genes">genes</button>
-        <button class="btn" data-m="mass">massa</button>
+        <button data-i18n="s01.btn1" class="btn on" data-m="cells">células</button>
+        <button data-i18n="s01.btn2" class="btn" data-m="genes">genes</button>
+        <button data-i18n="s01.btn3" class="btn" data-m="mass">massa</button>
       </div>
     </div>
     <div class="cvwrap"><canvas id="w1cv" height="300"></canvas></div>
-    <div class="rowbtns" style="margin-top:10px"><button class="btn bio" id="w1recount">recontar (2016)</button></div>
-    <div class="legend"><span class="lg"><span class="sw cell"></span>suas células (~30 tri)</span><span class="lg"><span class="sw bio"></span>bactérias (~38 tri)</span></div>
-    <div class="wcap" id="w1cap">A proporção clássica apontava dez bactérias para cada célula humana. Selecione <b>recontar</b> para visualizar a correção matemática para aproximadamente <b>1 para 1</b> (Sender, Fuchs & Milo, 2016). Em <b>genes</b>, o genoma humano registra ~20 mil genes contra 3,3 milhões de genes microbianos.</div>
+    <div class="rowbtns" style="margin-top:10px"><button data-i18n="s01.btn4" class="btn bio" id="w1recount">recontar (2016)</button></div>
+    <div class="legend"data-i18n="s01.legend1" ><span class="lg"><span class="sw cell"></span>suas células (~30 tri)</span><span class="lg"><span class="sw bio"></span>bactérias (~38 tri)</span></div>
+    <div class="wcap" id="w1cap"data-i18n="s01.wcap1" >A proporção clássica apontava dez bactérias para cada célula humana. Selecione <b>recontar</b> para visualizar a correção matemática para aproximadamente <b>1 para 1</b> (Sender, Fuchs & Milo, 2016). Em <b>genes</b>, o genoma humano registra ~20 mil genes contra 3,3 milhões de genes microbianos.</div>
   </div>
 </section>
 
 <!-- 02 -->
 <section class="wrap reveal">
-  <div class="step">02 · O que esse genoma fabrica</div>
-  <p>Ter milhões de genes adicionais é irrelevante se eles não gerarem atividade bioquímica ativa. O vínculo entre microbiota e saúde materializa-se em compostos químicos específicos, sendo os ácidos graxos de cadeia curta (com destaque para o butirato) os produtos mais estudados.</p>
-  <p>Fibras alimentares não digeridas pelo estômago humano chegam intactas ao cólon. Ali, populações bacterianas fermentam esse material, gerando acetato, propionato e butirato na proporção média de <code>60:20:20</code>. Justin e Erica Sonnenburg, microbiologistas de Stanford, denominam esses compostos de MACs (carboidratos acessíveis à microbiota), enfatizando que a fibra funciona como combustível biológico para manter bactérias benéficas ativas.</p>
-  <p>O butirato atua em quatro frentes fisiológicas cruciais. Fornece cerca de <code>70%</code> da energia consumida pelas células do epitélio intestinal. Fortalece as junções celulares da parede intestinal, evitando que fragmentos bacterianos migrem para a circulação sanguínea e desencadeiem inflamação sistêmica. Estimula a diferenciação de células T reguladoras (mecanismo imune mapeado por pesquisadores como Kenya Honda e Sarkis Mazmanian), instruindo o sistema imunitário a modular reações inflamatórias. Por fim, atua como molécula de sinalização para diversos órgãos, incluindo o sistema nervoso central.</p>
-  <p>Além dos ácidos graxos, a microbiota sintetiza vitamina K, diversas vitaminas do complexo B e produz <span class="mark">aproximadamente 90% da serotonina total do organismo (gerada no intestino, não no cérebro)</span>. Esse fato biológico fundamenta a conexão direta entre função digestiva e regulação do humor.</p>
-  <p>Butirato e serotonina representam apenas a fração mais documentada pela literatura. Um conjunto de 3 milhões de genes produz milhares de metabólitos ativos: neurotransmissores como GABA e precursores de dopamina, ácidos biliares secundários reguladores do metabolismo, derivados do triptofano que modulam a imunidade e a função cerebral, precursores de TMAO e uma vasta quantidade de moléculas ainda sem nomenclatura ou papel completamente elucidado. A atenção dada aos ácidos graxos deve-se ao estágio avançado das pesquisas nessa via, embora grande parte do mapa metabólico permaneça em investigação.</p>
+  <div class="step" data-i18n="s02.step1">02 · O que esse genoma fabrica</div>
+  <p data-i18n="s02.p1">Ter milhões de genes adicionais é irrelevante se eles não gerarem atividade bioquímica ativa. O vínculo entre microbiota e saúde materializa-se em compostos químicos específicos, sendo os ácidos graxos de cadeia curta (com destaque para o butirato) os produtos mais estudados.</p>
+  <p data-i18n="s02.p2">Fibras alimentares não digeridas pelo estômago humano chegam intactas ao cólon. Ali, populações bacterianas fermentam esse material, gerando acetato, propionato e butirato na proporção média de <code>60:20:20</code>. Justin e Erica Sonnenburg, microbiologistas de Stanford, denominam esses compostos de MACs (carboidratos acessíveis à microbiota), enfatizando que a fibra funciona como combustível biológico para manter bactérias benéficas ativas.</p>
+  <p data-i18n="s02.p3">O butirato atua em quatro frentes fisiológicas cruciais. Fornece cerca de <code>70%</code> da energia consumida pelas células do epitélio intestinal. Fortalece as junções celulares da parede intestinal, evitando que fragmentos bacterianos migrem para a circulação sanguínea e desencadeiem inflamação sistêmica. Estimula a diferenciação de células T reguladoras (mecanismo imune mapeado por pesquisadores como Kenya Honda e Sarkis Mazmanian), instruindo o sistema imunitário a modular reações inflamatórias. Por fim, atua como molécula de sinalização para diversos órgãos, incluindo o sistema nervoso central.</p>
+  <p data-i18n="s02.p4">Além dos ácidos graxos, a microbiota sintetiza vitamina K, diversas vitaminas do complexo B e produz <span class="mark">aproximadamente 90% da serotonina total do organismo (gerada no intestino, não no cérebro)</span>. Esse fato biológico fundamenta a conexão direta entre função digestiva e regulação do humor.</p>
+  <p data-i18n="s02.p5">Butirato e serotonina representam apenas a fração mais documentada pela literatura. Um conjunto de 3 milhões de genes produz milhares de metabólitos ativos: neurotransmissores como GABA e precursores de dopamina, ácidos biliares secundários reguladores do metabolismo, derivados do triptofano que modulam a imunidade e a função cerebral, precursores de TMAO e uma vasta quantidade de moléculas ainda sem nomenclatura ou papel completamente elucidado. A atenção dada aos ácidos graxos deve-se ao estágio avançado das pesquisas nessa via, embora grande parte do mapa metabólico permaneça em investigação.</p>
 
   <div class="widget" id="w2">
-    <div class="wtag"><span class="dot"></span>a colônia · arraste a fibra</div>
+    <div class="wtag" data-i18n="s02.wtag1"><span class="dot"></span>a colônia · arraste a fibra</div>
     <div class="cvwrap"><canvas id="w2cv" height="300"></canvas></div>
-    <div class="ctrlrow"><label>fibra na dieta</label><input type="range" id="w2fiber" min="0" max="100" value="55"></div>
-    <div class="slabels"><span>pouca</span><span>muita</span></div>
-    <div class="legend"><span class="lg"><span class="sw bio"></span>bactéria boa</span><span class="lg"><span class="sw bad"></span>oportunista</span><span class="lg"><span style="color:var(--bio);font-size:13px">◆</span>&nbsp;butirato</span><span class="lg"><span style="color:var(--bad);font-size:13px">▲</span>&nbsp;fragmento (LPS)</span><span class="lg"><span style="width:16px;height:3px;background:var(--ink);display:inline-block"></span>barreira</span></div>
-    <div class="wcap" id="w2cap">Ajuste o controle de fibra. Em níveis elevados, as bactérias produtoras de butirato (◆) multiplicam-se e a barreira epitelial fortalece-se (<b>verde e espessa</b>), impedindo a passagem de fragmentos (▲). Em níveis reduzidos, a barreira torna-se permeável (<b>vermelha</b>), permitindo a translocação de fragmentos bacterianos para a circulação.</div>
+    <div class="ctrlrow"><label data-i18n="s02.label1">fibra na dieta</label><input type="range" id="w2fiber" min="0" max="100" value="55"></div>
+    <div class="slabels"><span data-i18n="s02.sl1">pouca</span><span data-i18n="s02.sl2">muita</span></div>
+    <div class="legend"data-i18n="s02.legend1" ><span class="lg"><span class="sw bio"></span>bactéria boa</span><span class="lg"><span class="sw bad"></span>oportunista</span><span class="lg"><span style="color:var(--bio);font-size:13px">◆</span>&nbsp;butirato</span><span class="lg"><span style="color:var(--bad);font-size:13px">▲</span>&nbsp;fragmento (LPS)</span><span class="lg"><span style="width:16px;height:3px;background:var(--ink);display:inline-block"></span>barreira</span></div>
+    <div class="wcap" id="w2cap" data-i18n="s02.wcap1">Ajuste o controle de fibra. Em níveis elevados, as bactérias produtoras de butirato (◆) multiplicam-se e a barreira epitelial fortalece-se (<b>verde e espessa</b>), impedindo a passagem de fragmentos (▲). Em níveis reduzidos, a barreira torna-se permeável (<b>vermelha</b>), permitindo a translocação de fragmentos bacterianos para a circulação.</div>
   </div>
 </section>
 
 <!-- 03 -->
 <section class="wrap reveal">
-  <div class="step">03 · A diferença</div>
-  <p>Para além do conceito genérico de que a microbiota influencia a saúde, os estudos buscam quantificar a variação entre diferentes perfis intestinais e suas consequências clínicas.</p>
-  <p>Em 2013, pesquisadores vinculados ao consórcio MetaHIT analisaram o DNA bacteriano de centenas de indivíduos e identificaram uma divisão populacional nítida em torno do patamar de <code>480 mil genes</code>. O grupo com baixa diversidade apresentava uma média de <code>380 mil</code> genes microbianos, enquanto o grupo de alta riqueza registrava cerca de <code>640 mil</code> genes (uma variação que atinge <code>40%</code> entre os extremos).</p>
-  <p>A divergência correlacionou-se diretamente com marcadores de saúde. Indivíduos no grupo de menor riqueza gênica exibiram maior adiposidade corporal, resistência à insulina mais pronunciada, perfil lipídico desfavorável e marcadores inflamatórios elevados. Já o grupo com alta diversidade apresentou maior abundância de espécies anti-inflamatórias e melhor regulação metabólica. Aproximadamente 25% dos voluntários situavam-se na faixa de baixa diversidade. Deve-se ressaltar que os dados demonstram associação estatística, sem estabelecer causalidade direta nem determinar diagnósticos individuais automáticos. Contudo, o próprio ensaio clínico demonstrou que modificações direcionadas na dieta foram capazes de elevar a riqueza gênica nos indivíduos do grupo com baixa diversidade, confirmando que o perfil microbiótico é dinâmico e modificável.</p>
+  <div class="step" data-i18n="s03.step1">03 · A diferença</div>
+  <p data-i18n="s03.p1">Para além do conceito genérico de que a microbiota influencia a saúde, os estudos buscam quantificar a variação entre diferentes perfis intestinais e suas consequências clínicas.</p>
+  <p data-i18n="s03.p2">Em 2013, pesquisadores vinculados ao consórcio MetaHIT analisaram o DNA bacteriano de centenas de indivíduos e identificaram uma divisão populacional nítida em torno do patamar de <code>480 mil genes</code>. O grupo com baixa diversidade apresentava uma média de <code>380 mil</code> genes microbianos, enquanto o grupo de alta riqueza registrava cerca de <code>640 mil</code> genes (uma variação que atinge <code>40%</code> entre os extremos).</p>
+  <p data-i18n="s03.p3">A divergência correlacionou-se diretamente com marcadores de saúde. Indivíduos no grupo de menor riqueza gênica exibiram maior adiposidade corporal, resistência à insulina mais pronunciada, perfil lipídico desfavorável e marcadores inflamatórios elevados. Já o grupo com alta diversidade apresentou maior abundância de espécies anti-inflamatórias e melhor regulação metabólica. Aproximadamente 25% dos voluntários situavam-se na faixa de baixa diversidade. Deve-se ressaltar que os dados demonstram associação estatística, sem estabelecer causalidade direta nem determinar diagnósticos individuais automáticos. Contudo, o próprio ensaio clínico demonstrou que modificações direcionadas na dieta foram capazes de elevar a riqueza gênica nos indivíduos do grupo com baixa diversidade, confirmando que o perfil microbiótico é dinâmico e modificável.</p>
 
   <div class="widget" id="w3">
-    <div class="wtag"><span class="dot"></span>a régua da riqueza · arraste os genes</div>
+    <div class="wtag" data-i18n="s03.wtag1"><span class="dot"></span>a régua da riqueza · arraste os genes</div>
     <div class="cvwrap"><canvas id="w3cv" height="150"></canvas></div>
-    <div class="ctrlrow"><label>riqueza gênica</label><input type="range" id="w3rich" min="300" max="700" value="380" step="5"></div>
-    <div class="slabels"><span>300 mil</span><span>limiar 480 mil</span><span>700 mil</span></div>
+    <div class="ctrlrow"><label data-i18n="s03.label1">riqueza gênica</label><input type="range" id="w3rich" min="300" max="700" value="380" step="5"></div>
+    <div class="slabels"><span data-i18n="s03.sl1">300 mil</span><span data-i18n="s03.sl2">limiar 480 mil</span><span data-i18n="s03.sl3">700 mil</span></div>
     <div class="verdict" id="w3verd"></div>
     <div id="w3mk" style="margin-top:8px"></div>
-    <div class="rowbtns" style="margin-top:12px"><button class="btn bio" id="w3diet">intervir com dieta</button></div>
-    <div class="wcap">Ajuste o indicador de riqueza gênica para visualizar os marcadores de saúde correspondentes na população. Os dados refletem associação epidemiológica, não diagnóstico individual. O botão de intervenção exemplifica a capacidade de elevar a diversidade via dieta.</div>
+    <div class="rowbtns" style="margin-top:12px"><button data-i18n="s03.btn1" class="btn bio" id="w3diet">intervir com dieta</button></div>
+    <div class="wcap"data-i18n="s03.wcap1" >Ajuste o indicador de riqueza gênica para visualizar os marcadores de saúde correspondentes na população. Os dados refletem associação epidemiológica, não diagnóstico individual. O botão de intervenção exemplifica a capacidade de elevar a diversidade via dieta.</div>
   </div>
 </section>
 
 <!-- 04 -->
 <section class="wrap reveal">
-  <div class="step">04 · O seu palpite</div>
-  <p>Antes de analisar o mapa anatômico detalhado, vale testar sua intuição inicial sobre a abrangência da microbiota. A comparação entre o senso comum e os achados científicos ilustra como a pesquisa médica expandiu-se além dos limites do trato digestivo.</p>
-  <p>A intuição habitual costuma restringir a ação bacteriana à digestão e à imunidade local. Os dados consolidados em 2026 conectam populações microbianas a sistemas distantes: regulação do humor, risco cardiovascular, eficácia de imunoterapias oncológicas, dermatologia facial e risco de prematuridade gestacional. Selecione as áreas no painel abaixo para comparar suas suposições com as medições clínicas.</p>
+  <div class="step" data-i18n="s04.step1">04 · O seu palpite</div>
+  <p data-i18n="s04.p1">Antes de analisar o mapa anatômico detalhado, vale testar sua intuição inicial sobre a abrangência da microbiota. A comparação entre o senso comum e os achados científicos ilustra como a pesquisa médica expandiu-se além dos limites do trato digestivo.</p>
+  <p data-i18n="s04.p2">A intuição habitual costuma restringir a ação bacteriana à digestão e à imunidade local. Os dados consolidados em 2026 conectam populações microbianas a sistemas distantes: regulação do humor, risco cardiovascular, eficácia de imunoterapias oncológicas, dermatologia facial e risco de prematuridade gestacional. Selecione as áreas no painel abaixo para comparar suas suposições com as medições clínicas.</p>
 
   <div class="widget" id="w4">
-    <div class="wtag"><span class="dot"></span>o palpite · toque nas zonas</div>
+    <div class="wtag" data-i18n="s04.wtag1"><span class="dot"></span>o palpite · toque nas zonas</div>
     <div class="bodywrap"><div id="w4svg"></div></div>
-    <div class="rowbtns" style="margin-top:12px;justify-content:center"><button class="btn solid" id="w4lock">revelar o mapa real</button></div>
-    <div class="wcap" id="w4cap">Toque nas zonas onde você acha que a microbiota faz diferença. Depois toque em <b>revelar</b>.</div>
+    <div class="rowbtns" style="margin-top:12px;justify-content:center"><button data-i18n="s04.btn1" class="btn solid" id="w4lock">revelar o mapa real</button></div>
+    <div class="wcap" id="w4cap"data-i18n="s04.wcap1" >Toque nas zonas onde você acha que a microbiota faz diferença. Depois toque em <b>revelar</b>.</div>
   </div>
 </section>
 
 <!-- 05 -->
 <section class="wrap reveal">
-  <div class="step">05 · O corpo, parte por parte</div>
-  <p>A análise detalhada de cada área exige avaliar o cenário desfavorável, o perfil protetor, a magnitude do efeito e a autoria das descobertas. Observa-se um padrão constante na literatura: evidências obtidas em modelos animais costumam apresentar sinal mais forte, reduzindo de intensidade ao serem testadas em humanos (a chamada lacuna translacional, que serve como parâmetro de cautela).</p>
+  <div class="step" data-i18n="s05.step1">05 · O corpo, parte por parte</div>
+  <p data-i18n="s05.p1">A análise detalhada de cada área exige avaliar o cenário desfavorável, o perfil protetor, a magnitude do efeito e a autoria das descobertas. Observa-se um padrão constante na literatura: evidências obtidas em modelos animais costumam apresentar sinal mais forte, reduzindo de intensidade ao serem testadas em humanos (a chamada lacuna translacional, que serve como parâmetro de cautela).</p>
   
-  <h3 class="subh">Intestino e metabolismo</h3>
-  <p>O trato gastrointestinal sedia os experimentos fundamentais da área. No laboratório de Jeffrey Gordon, camundongos germ-free (nascidos sem microbiota) receberam transplante de microbiota de doadores obesos e acumularam significativamente mais gordura corporal do que os receptores de microbiota de doadores magros, mantendo consumo calórico idêntico. Em 2013, o estudo publicado na Science confirmou a transferência do fenótipo metabólico ao utilizar amostras de gêmeos humanos discordantes para obesidade.</p>
-  <p>No campo do diabetes, as pesquisas avançaram para ensaios clínicos em humanos. Patrice Cani, na Bélgica, investigou a <code>Akkermansia muciniphila</code>, bactéria habitante da camada mucosa intestinal. Em ensaio clínico de 2019, a administração da bactéria pasteurizada aumentou a sensibilidade à insulina em <code>28%</code> em indivíduos com sobrepeso, resultado corroborado por um estudo de 24 semanas em 2026 focado na manutenção ponderal. Trata-se de um achado notável de cepa isolada avaliada diretamente em humanos com métricas objetivas.</p>
-  <p>Paralelamente, pesquisas conduzidas por Eran Segal e Eran Elinav em Israel (e expandidas por Tim Spector, do King's College, no estudo PREDICT) demonstraram que refeições idênticas geram respostas glicêmicas e lipídicas marcadamente distintas entre indivíduos. A variação nos níveis de triglicérides pós-prandiais atinge <code>103%</code> entre diferentes pessoas submetidas ao mesmo alimento. A composição individual da microbiota explica parte dessa variabilidade, justificando por que intervenções dietéticas idênticas produzem efeitos heterogêneos.</p>
+  <h3 class="subh" data-i18n="s05.h31">Intestino e metabolismo</h3>
+  <p data-i18n="s05.p2">O trato gastrointestinal sedia os experimentos fundamentais da área. No laboratório de Jeffrey Gordon, camundongos germ-free (nascidos sem microbiota) receberam transplante de microbiota de doadores obesos e acumularam significativamente mais gordura corporal do que os receptores de microbiota de doadores magros, mantendo consumo calórico idêntico. Em 2013, o estudo publicado na Science confirmou a transferência do fenótipo metabólico ao utilizar amostras de gêmeos humanos discordantes para obesidade.</p>
+  <p data-i18n="s05.p3">No campo do diabetes, as pesquisas avançaram para ensaios clínicos em humanos. Patrice Cani, na Bélgica, investigou a <code>Akkermansia muciniphila</code>, bactéria habitante da camada mucosa intestinal. Em ensaio clínico de 2019, a administração da bactéria pasteurizada aumentou a sensibilidade à insulina em <code>28%</code> em indivíduos com sobrepeso, resultado corroborado por um estudo de 24 semanas em 2026 focado na manutenção ponderal. Trata-se de um achado notável de cepa isolada avaliada diretamente em humanos com métricas objetivas.</p>
+  <p data-i18n="s05.p4">Paralelamente, pesquisas conduzidas por Eran Segal e Eran Elinav em Israel (e expandidas por Tim Spector, do King's College, no estudo PREDICT) demonstraram que refeições idênticas geram respostas glicêmicas e lipídicas marcadamente distintas entre indivíduos. A variação nos níveis de triglicérides pós-prandiais atinge <code>103%</code> entre diferentes pessoas submetidas ao mesmo alimento. A composição individual da microbiota explica parte dessa variabilidade, justificando por que intervenções dietéticas idênticas produzem efeitos heterogêneos.</p>
 
-  <h3 class="subh">Coração</h3>
-  <p>A relação entre microbiota e doença cardiovascular possui mecanismo bioquímico bem delimitado. Stanley Hazen, na Cleveland Clinic, identificou a rota do <code>TMAO</code>: a partir de colina e carnitina (abundantes em carne vermelha e gemas de ovo), bactérias específicas produzem trimetilamina (TMA), metabolizada no fígado em TMAO, composto que acelera a formação de placas ateroscleróticas. A dependência bacteriana da via foi confirmada ao demonstrar que antibióticos zeram a produção de TMAO e que animais germ-free não sintetizam a molécula.</p>
-  <p>O impacto epidemiológico é expressivo. Em metanálise abrangendo 26 mil indivíduos, os participantes com maiores concentrações de TMAO apresentaram risco de mortalidade <code>1,91 vez maior</code> (cada acréscimo de 10 unidades na circulação elevou a mortalidade geral em <code>7,6%</code>). Permanece em investigação se a redução direta do TMAO por meio de intervenções alimentares reduz desfechos clínicos cardiovasculares duros.</p>
+  <h3 class="subh" data-i18n="s05.h32">Coração</h3>
+  <p data-i18n="s05.p5">A relação entre microbiota e doença cardiovascular possui mecanismo bioquímico bem delimitado. Stanley Hazen, na Cleveland Clinic, identificou a rota do <code>TMAO</code>: a partir de colina e carnitina (abundantes em carne vermelha e gemas de ovo), bactérias específicas produzem trimetilamina (TMA), metabolizada no fígado em TMAO, composto que acelera a formação de placas ateroscleróticas. A dependência bacteriana da via foi confirmada ao demonstrar que antibióticos zeram a produção de TMAO e que animais germ-free não sintetizam a molécula.</p>
+  <p data-i18n="s05.p6">O impacto epidemiológico é expressivo. Em metanálise abrangendo 26 mil indivíduos, os participantes com maiores concentrações de TMAO apresentaram risco de mortalidade <code>1,91 vez maior</code> (cada acréscimo de 10 unidades na circulação elevou a mortalidade geral em <code>7,6%</code>). Permanece em investigação se a redução direta do TMAO por meio de intervenções alimentares reduz desfechos clínicos cardiovasculares duros.</p>
 
-  <h3 class="subh">Cérebro e humor</h3>
-  <p>Além de sintetizar perto de <code>90%</code> da serotonina corporal, o intestino comunica-se diretamente com o cérebro através do nervo vago e de seu sistema nervoso entérico (composto por uma densa rede de neurônios que levou o neurocientista Michael Gershon a denominá-lo "segundo cérebro" em 1998). Desequilíbrios na microbiota associam-se a manifestações neurológicas e psiquiátricas em diferentes níveis de evidência.</p>
-  <p>No contexto da Doença de Parkinson, a constipação intestinal crônica precede os sintomas motores em vários anos. Um estudo longitudinal no Havaí que acompanhou milhares de homens desde a década de 1970 identificou risco <code>2,7 vezes maior</code> de desenvolvimento de Parkinson em indivíduos com menos de uma evacuação diária. O modelo neuropatológico de Heiko Braak propõe que a agregação patológica da alfa-sinucleína possa iniciar-se no tecido intestinal e progredir no sentido ascendente pelo nervo vago até o cérebro.</p>
-  <p>Quanto aos transtornos depressivos, a equipe de Jeroen Raes, em Leuven, analisou dados de mais de mil voluntários e constatou a redução consistente de dois gêneros bacterianos em pacientes diagnosticados com depressão (independente do uso de medicação antidepressiva). Testes com administração de probióticos específicos indicam redução moderada de sintomas, embora a literatura apresente heterogeneidade metodológica e tamanho amostral restrito.</p>
+  <h3 class="subh" data-i18n="s05.h33">Cérebro e humor</h3>
+  <p data-i18n="s05.p7">Além de sintetizar perto de <code>90%</code> da serotonina corporal, o intestino comunica-se diretamente com o cérebro através do nervo vago e de seu sistema nervoso entérico (composto por uma densa rede de neurônios que levou o neurocientista Michael Gershon a denominá-lo "segundo cérebro" em 1998). Desequilíbrios na microbiota associam-se a manifestações neurológicas e psiquiátricas em diferentes níveis de evidência.</p>
+  <p data-i18n="s05.p8">No contexto da Doença de Parkinson, a constipação intestinal crônica precede os sintomas motores em vários anos. Um estudo longitudinal no Havaí que acompanhou milhares de homens desde a década de 1970 identificou risco <code>2,7 vezes maior</code> de desenvolvimento de Parkinson em indivíduos com menos de uma evacuação diária. O modelo neuropatológico de Heiko Braak propõe que a agregação patológica da alfa-sinucleína possa iniciar-se no tecido intestinal e progredir no sentido ascendente pelo nervo vago até o cérebro.</p>
+  <p data-i18n="s05.p9">Quanto aos transtornos depressivos, a equipe de Jeroen Raes, em Leuven, analisou dados de mais de mil voluntários e constatou a redução consistente de dois gêneros bacterianos em pacientes diagnosticados com depressão (independente do uso de medicação antidepressiva). Testes com administração de probióticos específicos indicam redução moderada de sintomas, embora a literatura apresente heterogeneidade metodológica e tamanho amostral restrito.</p>
 
-  <h3 class="subh">Imunidade e câncer</h3>
-  <p>A maior concentração de tecido linfoide do organismo reside no intestino, onde passa por modulação contínua pela microbiota. Os primeiros mil dias de vida constituem uma janela crítica de maturação imune. Partos por cesariana associam-se a um aumento de <code>18%</code> no risco de desenvolvimento de asma. Por outro lado, a introdução precoce de amendoim em lactentes de alto risco (estudo LEAP, 2015) reduziu a incidência de alergia alimentar em <code>81%</code>, achado que redefiniu diretrizes pediátricas globais.</p>
-  <p>Na oncologia, pesquisas iniciadas em 2018 estabeleceram que a eficácia da imunoterapia por inibidores de <em>immune checkpoint</em> correlaciona-se com a composição microbiótica intestinal. Em 2025, o ensaio clínico FMT-LUMINate combinou o transplante de microbiota fecal de doadores saudáveis à imunoterapia padrão, alcançando taxas de resposta objetiva de <code>80%</code> em câncer de pulmão e <code>75%</code> em melanoma (superando taxas históricas da monoterapia). Trata-se de evidência promissora sobre a modulação da microbiota como adjuvante em terapêutica oncológica.</p>
+  <h3 class="subh" data-i18n="s05.h34">Imunidade e câncer</h3>
+  <p data-i18n="s05.p10">A maior concentração de tecido linfoide do organismo reside no intestino, onde passa por modulação contínua pela microbiota. Os primeiros mil dias de vida constituem uma janela crítica de maturação imune. Partos por cesariana associam-se a um aumento de <code>18%</code> no risco de desenvolvimento de asma. Por outro lado, a introdução precoce de amendoim em lactentes de alto risco (estudo LEAP, 2015) reduziu a incidência de alergia alimentar em <code>81%</code>, achado que redefiniu diretrizes pediátricas globais.</p>
+  <p data-i18n="s05.p11">Na oncologia, pesquisas iniciadas em 2018 estabeleceram que a eficácia da imunoterapia por inibidores de <em>immune checkpoint</em> correlaciona-se com a composição microbiótica intestinal. Em 2025, o ensaio clínico FMT-LUMINate combinou o transplante de microbiota fecal de doadores saudáveis à imunoterapia padrão, alcançando taxas de resposta objetiva de <code>80%</code> em câncer de pulmão e <code>75%</code> em melanoma (superando taxas históricas da monoterapia). Trata-se de evidência promissora sobre a modulação da microbiota como adjuvante em terapêutica oncológica.</p>
 
-  <h3 class="subh">Pele, boca, vagina, pulmão</h3>
-  <p>Em diversas superfícies epiteliais externas e mucosas, o padrão protetor difere do modelo intestinal: o estado de saúde caracteriza-se pela dominância de espécies específicas em baixa diversidade, e não pela alta variedade microbiana.</p>
-  <p>Na dermatologia, a dermatite atópica apresenta colonização por <code>Staphylococcus aureus</code> em aproximadamente <code>70%</code> das lesões ativas, contra <code>39%</code> na pele íntegra. A gravidade dos quadros reduz-se na presença de cepas comensais antagônicas, linha investigada por Richard Gallo em San Diego para terapias com bactérias autóctones.</p>
-  <p>Na cavidade oral (segundo ambiente mais diverso do corpo), a periodontite grave associa-se a um aumento de cerca de <code>2,5 vezes</code> no risco de acidente vascular cerebral (AVC), além de correlações com diabetes, Alzheimer e parto prematuro.</p>
-  <p>Na microbiota vaginal, a dominância de espécies de <code>Lactobacillus</code> mantém o pH ácido protetor. A substituição por flora mista (vaginose bacteriana) afeta entre 25% e 33% das mulheres em idade fértil, elevando o risco de infecções urogenitais e prematuridade. No aparelho respiratório, a modulação pelo eixo intestino-pulmão acompanha quadros de asma e DPOC.</p>
+  <h3 class="subh" data-i18n="s05.h35">Pele, boca, vagina, pulmão</h3>
+  <p data-i18n="s05.p12">Em diversas superfícies epiteliais externas e mucosas, o padrão protetor difere do modelo intestinal: o estado de saúde caracteriza-se pela dominância de espécies específicas em baixa diversidade, e não pela alta variedade microbiana.</p>
+  <p data-i18n="s05.p13">Na dermatologia, a dermatite atópica apresenta colonização por <code>Staphylococcus aureus</code> em aproximadamente <code>70%</code> das lesões ativas, contra <code>39%</code> na pele íntegra. A gravidade dos quadros reduz-se na presença de cepas comensais antagônicas, linha investigada por Richard Gallo em San Diego para terapias com bactérias autóctones.</p>
+  <p data-i18n="s05.p14">Na cavidade oral (segundo ambiente mais diverso do corpo), a periodontite grave associa-se a um aumento de cerca de <code>2,5 vezes</code> no risco de acidente vascular cerebral (AVC), além de correlações com diabetes, Alzheimer e parto prematuro.</p>
+  <p data-i18n="s05.p15">Na microbiota vaginal, a dominância de espécies de <code>Lactobacillus</code> mantém o pH ácido protetor. A substituição por flora mista (vaginose bacteriana) afeta entre 25% e 33% das mulheres em idade fértil, elevando o risco de infecções urogenitais e prematuridade. No aparelho respiratório, a modulação pelo eixo intestino-pulmão acompanha quadros de asma e DPOC.</p>
 
-  <p class="dim">Toque em cada órgão abaixo para ver o cenário ruim, o cenário bom, a diferença e a fonte.</p>
+  <p class="dim" data-i18n="s05.p16">Toque em cada órgão abaixo para ver o cenário ruim, o cenário bom, a diferença e a fonte.</p>
 
   <div class="widget" id="w5">
-    <div class="wtag"><span class="dot"></span>o corpo por dentro · toque num órgão</div>
+    <div class="wtag" data-i18n="s05.wtag1"><span class="dot"></span>o corpo por dentro · toque num órgão</div>
     <div class="bodywrap"><div id="w5svg"></div></div>
     <div class="rowbtns" id="w5sort" style="margin-top:12px;justify-content:center">
-      <button class="btn on" data-s="body">ordem anatômica</button>
-      <button class="btn" data-s="ev">por força da evidência</button>
+      <button data-i18n="s05.btn1" class="btn on" data-s="body">ordem anatômica</button>
+      <button data-i18n="s05.btn2" class="btn" data-s="ev">por força da evidência</button>
     </div>
     <div class="organcard" id="w5card"></div>
-    <div class="wcap">Selecione um órgão para consultar o perfil desfavorável, o cenário protetor, o efeito medido e a fonte científica. As etiquetas indicam a força da evidência: <b style="color:var(--bio-deep)">humano robusto</b>, <b>associativo</b> ou <b style="color:var(--bad)">modelo animal</b>.</div>
+    <div class="wcap"data-i18n="s05.wcap1" >Selecione um órgão para consultar o perfil desfavorável, o cenário protetor, o efeito medido e a fonte científica. As etiquetas indicam a força da evidência: <b style="color:var(--bio-deep)">humano robusto</b>, <b>associativo</b> ou <b style="color:var(--bad)">modelo animal</b>.</div>
   </div>
 </section>
 
 <!-- 06 -->
 <section class="wrap reveal">
-  <div class="step">06 · O tamanho das diferenças, lado a lado</div>
-  <p>A compilação gráfica dos dados permite comparar a ordem de magnitude dos efeitos observados em diferentes sistemas biológicos. Ao examinar a distribuição, cabe observar a natureza metodológica das evidências: quatro dos doze cenários possuem validação clínica robusta em humanos (transplante fecal para <code>C. difficile</code>, imunoterapia oncológica adjuvante, prevenção de alergia alimentar via introdução precoce e modulação da sensibilidade à insulina por <code>Akkermansia</code>). As demais oito linhas registram associações epidemiológicas significativas em humanos, sem demonstração de causalidade direta.</p>
+  <div class="step" data-i18n="s06.step1">06 · O tamanho das diferenças, lado a lado</div>
+  <p data-i18n="s06.p1">A compilação gráfica dos dados permite comparar a ordem de magnitude dos efeitos observados em diferentes sistemas biológicos. Ao examinar a distribuição, cabe observar a natureza metodológica das evidências: quatro dos doze cenários possuem validação clínica robusta em humanos (transplante fecal para <code>C. difficile</code>, imunoterapia oncológica adjuvante, prevenção de alergia alimentar via introdução precoce e modulação da sensibilidade à insulina por <code>Akkermansia</code>). As demais oito linhas registram associações epidemiológicas significativas em humanos, sem demonstração de causalidade direta.</p>
 
   <div class="widget" id="w6">
-    <div class="wtag"><span class="dot"></span>a prova, com a incerteza junto · toque numa linha</div>
+    <div class="wtag" data-i18n="s06.wtag1"><span class="dot"></span>a prova, com a incerteza junto · toque numa linha</div>
     <div class="rowbtns" id="w6sort" style="margin-bottom:12px">
-      <button class="btn on" data-s="mag">por magnitude</button>
-      <button class="btn" data-s="ev">por evidência</button>
+      <button data-i18n="s06.btn1" class="btn on" data-s="mag">por magnitude</button>
+      <button data-i18n="s06.btn2" class="btn" data-s="ev">por evidência</button>
     </div>
-    <div class="legend" style="margin:0 0 10px"><span class="lg"><span class="sw bio"></span>humano robusto</span><span class="lg"><span class="sw ink"></span>associativo</span></div>
+    <div class="legend"data-i18n="s06.legend1"  style="margin:0 0 10px"><span class="lg"><span class="sw bio"></span>humano robusto</span><span class="lg"><span class="sw ink"></span>associativo</span></div>
     <div class="fbar" id="w6bars"></div>
-    <div class="wcap">A posição horizontal indica a magnitude relativa do efeito (a linha vertical representa ausência de efeito). A cor identifica o nível de evidência. Utilize a ordenação para distinguir ensaios clínicos diretos em humanos de estudos associativos.</div>
+    <div class="wcap"data-i18n="s06.wcap1" >A posição horizontal indica a magnitude relativa do efeito (a linha vertical representa ausência de efeito). A cor identifica o nível de evidência. Utilize a ordenação para distinguir ensaios clínicos diretos em humanos de estudos associativos.</div>
   </div>
 </section>
 
 <!-- CLIFF -->
 <section class="cliff" id="cliff">
   <div class="wrap">
-    <h2>Compreendida a extensão do impacto da microbiota nos sistemas corporais, coloca-se a questão da intervenção.</h2>
-    <p>A composição desse genoma auxiliar responde a modificações alimentares em questão de dias. <span class="mark">(continua)</span></p>
+    <h2 data-i18n="cliff.h21">Compreendida a extensão do impacto da microbiota nos sistemas corporais, coloca-se a questão da intervenção.</h2>
+    <p data-i18n="cliff.p1">A composição desse genoma auxiliar responde a modificações alimentares em questão de dias. <span class="mark">(continua)</span></p>
   </div>
 </section>
 
 <!-- 07 -->
 <section class="wrap reveal">
-  <div class="step">07 · O que fazer</div>
-  <p>As intervenções de maior suporte científico para a modulação da microbiota caracterizam-se por serem acessíveis, seguras e de implementação direta na rotina alimentar.</p>
-  <p>O consumo de fibras deve atingir entre <code>25 g e 38 g</code> diárias (a média populacional consome aproximadamente metade desse valor), com ênfase na diversidade de fontes vegetais. Dados do <em>American Gut Project</em> (liderado por Rob Knight e difundido por Tim Spector) apontam que indivíduos que consomem mais de <code>30 espécies vegetais distintas</code> por semana possuem microbiotas significativamente mais diversas do que aqueles que ingerem 10 ou menos. <span class="mark">A variedade vegetal atua fornecendo substratos fermentáveis distintos para diferentes linhagens bacterianas</span> (incluindo hortaliças, legumes, frutas, leguminosas, cereais integrais, oleaginosas, sementes e temperos).</p>
-  <p>A inclusão diária de <span class="mark">alimentos fermentados</span> contendo culturas vivas representa um dos achados mais consistentes da literatura recente. Em ensaio clínico conduzido em Stanford por Justin e Erica Sonnenburg ao lado de Christopher Gardner (2021), voluntários que adotaram uma dieta rica em alimentos fermentados (como iogurte, kefir, kimchi e chucrute) apresentaram aumento de diversidade microbiótica e redução de <code>19 marcadores</code> inflamatórios sanguíneos ao longo de 10 semanas. No mesmo ensaio, a elevação isolada de fibras no mesmo intervalo de tempo não produziu impacto idêntico nos marcadores inflamatórios médios do grupo, sugerindo que a reestruturação da microbiota se beneficia da combinação de substrato e culturas vivas.</p>
-  <p>Recomenda-se a adoção de padrões alimentares no estilo mediterrâneo, <span class="mark">redução de produtos ultraprocessados</span>, regularização do sono, prática de atividade física e moderação no consumo de álcool. O uso de antibióticos deve restringir-se a indicações médicas estritas: um estudo com voluntários hígidos submetidos a antibioticoterapia de amplo espectro por quatro dias demonstrou queda acentuada da diversidade, com persistência na ausência de <code>nove espécies benéficas</code> mesmo seis meses após a intervenção.</p>
+  <div class="step" data-i18n="s07.step1">07 · O que fazer</div>
+  <p data-i18n="s07.p1">As intervenções de maior suporte científico para a modulação da microbiota caracterizam-se por serem acessíveis, seguras e de implementação direta na rotina alimentar.</p>
+  <p data-i18n="s07.p2">O consumo de fibras deve atingir entre <code>25 g e 38 g</code> diárias (a média populacional consome aproximadamente metade desse valor), com ênfase na diversidade de fontes vegetais. Dados do <em>American Gut Project</em> (liderado por Rob Knight e difundido por Tim Spector) apontam que indivíduos que consomem mais de <code>30 espécies vegetais distintas</code> por semana possuem microbiotas significativamente mais diversas do que aqueles que ingerem 10 ou menos. <span class="mark">A variedade vegetal atua fornecendo substratos fermentáveis distintos para diferentes linhagens bacterianas</span> (incluindo hortaliças, legumes, frutas, leguminosas, cereais integrais, oleaginosas, sementes e temperos).</p>
+  <p data-i18n="s07.p3">A inclusão diária de <span class="mark">alimentos fermentados</span> contendo culturas vivas representa um dos achados mais consistentes da literatura recente. Em ensaio clínico conduzido em Stanford por Justin e Erica Sonnenburg ao lado de Christopher Gardner (2021), voluntários que adotaram uma dieta rica em alimentos fermentados (como iogurte, kefir, kimchi e chucrute) apresentaram aumento de diversidade microbiótica e redução de <code>19 marcadores</code> inflamatórios sanguíneos ao longo de 10 semanas. No mesmo ensaio, a elevação isolada de fibras no mesmo intervalo de tempo não produziu impacto idêntico nos marcadores inflamatórios médios do grupo, sugerindo que a reestruturação da microbiota se beneficia da combinação de substrato e culturas vivas.</p>
+  <p data-i18n="s07.p4">Recomenda-se a adoção de padrões alimentares no estilo mediterrâneo, <span class="mark">redução de produtos ultraprocessados</span>, regularização do sono, prática de atividade física e moderação no consumo de álcool. O uso de antibióticos deve restringir-se a indicações médicas estritas: um estudo com voluntários hígidos submetidos a antibioticoterapia de amplo espectro por quatro dias demonstrou queda acentuada da diversidade, com persistência na ausência de <code>nove espécies benéficas</code> mesmo seis meses após a intervenção.</p>
 
   <div class="widget" id="w7">
-    <div class="wtag"><span class="dot"></span>a semana · monte seus hábitos</div>
+    <div class="wtag" data-i18n="s07.wtag1"><span class="dot"></span>a semana · monte seus hábitos</div>
     <div class="cvwrap"><canvas id="w7cv" height="220"></canvas></div>
     <div class="mk" style="grid-template-columns:120px 1fr 44px;margin-top:10px"><span class="mkt">diversidade</span><div class="mktrack"><div class="mkfill" id="w7div" style="background:var(--bio)"></div></div><span class="mkv" id="w7divv">–</span></div>
     <div class="rowbtns" id="w7habits" style="margin-top:12px">
-      <button class="btn bio" data-h="plants">+ variedade de plantas</button>
-      <button class="btn bio" data-h="ferm">+ fermentados</button>
-      <button class="btn bio" data-h="fiber">+ fibra</button>
-      <button class="btn bio" data-h="exercise">+ exercício</button>
-      <button class="btn" data-h="antibiotic">antibiótico</button>
+      <button data-i18n="s07.btn1" class="btn bio" data-h="plants">+ variedade de plantas</button>
+      <button data-i18n="s07.btn2" class="btn bio" data-h="ferm">+ fermentados</button>
+      <button data-i18n="s07.btn3" class="btn bio" data-h="fiber">+ fibra</button>
+      <button data-i18n="s07.btn4" class="btn bio" data-h="exercise">+ exercício</button>
+      <button data-i18n="s07.btn5" class="btn" data-h="antibiotic">antibiótico</button>
     </div>
     <div class="rowbtns" id="w7presets" style="margin-top:8px">
-      <button class="btn" data-p="dysbiosis">cenário: disbiose</button>
-      <button class="btn" data-p="postab">cenário: pós-antibiótico</button>
-      <button class="btn" data-p="reset">reset</button>
+      <button data-i18n="s07.btn6" class="btn" data-p="dysbiosis">cenário: disbiose</button>
+      <button data-i18n="s07.btn7" class="btn" data-p="postab">cenário: pós-antibiótico</button>
+      <button data-i18n="s07.btn8" class="btn" data-p="reset">reset</button>
     </div>
-    <div class="wcap">Cada elemento geométrico representa um grupo microbiano. A <b>diversidade</b> mensura a variedade de linhagens presentes. A antibioticoterapia reduz a diversidade a poucas famílias, permitindo a dominância de cepas oportunistas (vermelhas). Diagrama ilustrativo de princípios ecológicos.</div>
+    <div class="wcap"data-i18n="s07.wcap1" >Cada elemento geométrico representa um grupo microbiano. A <b>diversidade</b> mensura a variedade de linhagens presentes. A antibioticoterapia reduz a diversidade a poucas famílias, permitindo a dominância de cepas oportunistas (vermelhas). Diagrama ilustrativo de princípios ecológicos.</div>
   </div>
 </section>
 
 <!-- 08 -->
 <section class="wrap reveal">
-  <div class="step">08 · O que é hype</div>
-  <p>A avaliação crítica do setor exige identificar aplicações sem respaldo científico. William Hanage, epidemiologista de Harvard, destaca a necessidade de ceticismo metodológico diante das alegações comerciais associadas ao microbioma.</p>
-  <p>Os testes comerciais de sequenciamento de microbiota vendidos diretamente ao consumidor carecem de utilidade clínica comprovada. Um consenso internacional publicado em 2024 na <em>Lancet Gastroenterology & Hepatology</em> apontou ausência de padronização técnica e baixa reprodutibilidade, registrando que alíquotas de uma mesma amostra enviadas a empresas distintas resultam em relatórios e recomendações divergentes.</p>
-  <p>Suplementos probióticos formulados para "saúde geral" carecem de comprovação de eficácia em indivíduos saudáveis. Os efeitos terapêuticos dependem de cepa específica, dosagem adequada e indicação clínica precisa. As diretrizes de 2020 da American Gastroenterological Association (AGA) não recomendam o uso rotineiro de probióticos para a maioria dos transtornos digestivos. As aplicações com evidência robusta limitam-se a cenários específicos: cepas pontuais para prevenção de diarreia associada a antibióticos e transplante de microbiota fecal (FMT) para infecções recorrentes por <code>C. difficile</code> (com taxa de cura de aproximadamente <code>90%</code>, contra <code>30%</code> da antibioticoterapia convencional, resultando na aprovação de duas terapias biológicas pela FDA em 2022 e 2023).</p>
-  <p>Igualmente, a premissa de que suplementos isolados de fibra solúvel revertam quadros complexos em curto prazo carece de confirmação. O ensaio conduzido em Stanford demonstrou limites na resposta rápida ao uso exclusivo de fibras isoladas. A literatura aponta que alimentos integrais, diversidade vegetal e fermentados naturais mantidos de forma consistente superam intervenções isoladas de prateleira. O critério defendido por Jonathan Eisen permanece central: a existência de um mecanismo biológico plausível difere de um benefício clínico demonstrado em ensaios humanos.</p>
+  <div class="step" data-i18n="s08.step1">08 · O que é hype</div>
+  <p data-i18n="s08.p1">A avaliação crítica do setor exige identificar aplicações sem respaldo científico. William Hanage, epidemiologista de Harvard, destaca a necessidade de ceticismo metodológico diante das alegações comerciais associadas ao microbioma.</p>
+  <p data-i18n="s08.p2">Os testes comerciais de sequenciamento de microbiota vendidos diretamente ao consumidor carecem de utilidade clínica comprovada. Um consenso internacional publicado em 2024 na <em>Lancet Gastroenterology & Hepatology</em> apontou ausência de padronização técnica e baixa reprodutibilidade, registrando que alíquotas de uma mesma amostra enviadas a empresas distintas resultam em relatórios e recomendações divergentes.</p>
+  <p data-i18n="s08.p3">Suplementos probióticos formulados para "saúde geral" carecem de comprovação de eficácia em indivíduos saudáveis. Os efeitos terapêuticos dependem de cepa específica, dosagem adequada e indicação clínica precisa. As diretrizes de 2020 da American Gastroenterological Association (AGA) não recomendam o uso rotineiro de probióticos para a maioria dos transtornos digestivos. As aplicações com evidência robusta limitam-se a cenários específicos: cepas pontuais para prevenção de diarreia associada a antibióticos e transplante de microbiota fecal (FMT) para infecções recorrentes por <code>C. difficile</code> (com taxa de cura de aproximadamente <code>90%</code>, contra <code>30%</code> da antibioticoterapia convencional, resultando na aprovação de duas terapias biológicas pela FDA em 2022 e 2023).</p>
+  <p data-i18n="s08.p4">Igualmente, a premissa de que suplementos isolados de fibra solúvel revertam quadros complexos em curto prazo carece de confirmação. O ensaio conduzido em Stanford demonstrou limites na resposta rápida ao uso exclusivo de fibras isoladas. A literatura aponta que alimentos integrais, diversidade vegetal e fermentados naturais mantidos de forma consistente superam intervenções isoladas de prateleira. O critério defendido por Jonathan Eisen permanece central: a existência de um mecanismo biológico plausível difere de um benefício clínico demonstrado em ensaios humanos.</p>
 
   <div class="widget" id="w8">
-    <div class="wtag"><span class="dot"></span>verdade ou hype · decida</div>
+    <div class="wtag" data-i18n="s08.wtag1"><span class="dot"></span>verdade ou hype · decida</div>
     <div class="hypewrap" id="w8wrap"></div>
     <div class="hprog" id="w8prog"></div>
   </div>
@@ -410,15 +421,15 @@
 
 <!-- FECHAMENTO -->
 <section class="wrap reveal">
-  <div class="step">09 · Fechamento</div>
-  <p>O avanço da microbiologia redefine a compreensão sobre a individualidade biológica: a saúde humana resulta da interação constante entre nossas próprias células e um patrimônio genético microbiano 150 vezes superior, modulado diariamente pela alimentação.</p>
-  <p>Ao mesmo tempo em que a ciência confirma a relevância fisiológica desse ecossistema, a validação de produtos comerciais exige cautela, visto que grande parte das promessas de mercado antecipa-se aos ensaios clínicos conclusivos. O genoma humano permanece fixo; contudo, o conjunto de 3 milhões de genes microbianos responde continuamente às escolhas diárias. As intervenções de maior impacto fundamentam-se em princípios práticos e sustentáveis: maior diversidade de plantas, inclusão de alimentos fermentados naturais, redução de ultraprocessados e constância ao longo do tempo.</p>
+  <div class="step" data-i18n="end.step1">09 · Fechamento</div>
+  <p data-i18n="end.p1">O avanço da microbiologia redefine a compreensão sobre a individualidade biológica: a saúde humana resulta da interação constante entre nossas próprias células e um patrimônio genético microbiano 150 vezes superior, modulado diariamente pela alimentação.</p>
+  <p data-i18n="end.p2">Ao mesmo tempo em que a ciência confirma a relevância fisiológica desse ecossistema, a validação de produtos comerciais exige cautela, visto que grande parte das promessas de mercado antecipa-se aos ensaios clínicos conclusivos. O genoma humano permanece fixo; contudo, o conjunto de 3 milhões de genes microbianos responde continuamente às escolhas diárias. As intervenções de maior impacto fundamentam-se em princípios práticos e sustentáveis: maior diversidade de plantas, inclusão de alimentos fermentados naturais, redução de ultraprocessados e constância ao longo do tempo.</p>
 </section>
 
 <!-- REFS -->
 <section class="wrap reveal">
-  <div class="step">Fontes principais</div>
-  <p class="refs">
+  <div class="step" data-i18n="refs.step1">Fontes principais</div>
+  <p class="refs" data-i18n="refs.refs1">
   <b>Escala e genes:</b> Sender, Fuchs, Milo, PLOS Biology 2016; Qin et al., Nature 2010; Almeida et al., Nature Biotechnology 2021.<br>
   <b>Riqueza genética:</b> Le Chatelier et al., Nature 2013; Cotillard et al., Nature 2013.<br>
   <b>Mecanismos:</b> Nature Reviews Microbiology 2025; Nature Reviews Immunology 2024; Furusawa et al., Nature 2013; Yano et al., Cell 2015.<br>
@@ -428,7 +439,7 @@
   <b>Imune e câncer:</b> BMC Pediatrics 2023; LEAP, NEJM 2015; Scher et al., eLife 2013; FMT-LUMINate, Nature Medicine 2025; J Cancer 2021.<br>
   <b>Intervenções e hype:</b> McDonald et al., mSystems 2018; Wastyk et al., Cell 2021; Palleja et al., Nature Microbiology 2018; van Nood et al., NEJM 2013; consenso Lancet Gastroenterol Hepatol 2024; diretriz AGA, Gastroenterology 2020; Hanage, Nature 2014.
   </p>
-  <div class="foot">O outro genoma · ensaio interativo · dados verificados contra fontes primárias · agosto de 2026</div>
+  <div class="foot" data-i18n="refs.foot1">O outro genoma · ensaio interativo · dados verificados contra fontes primárias · agosto de 2026</div>
 </section>
 
 <script>
@@ -438,8 +449,566 @@ function $(s,c){return (c||document).querySelector(s)}
 function $all(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))}
 function lerp(a,b,t){return a+(b-a)*t}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
-function fmt(n){return n.toLocaleString('pt-BR')}
+function fmt(n){return n.toLocaleString(tr('locale'))}
 var COL={ink:'#141414',bio:'#0f9d73',bad:'#b23b3b',cell:'#2f6fd0',dim:'#9a9a9a',line:'#e2e2e2'};
+/* ================= i18n ================= */
+var LANG='pt';
+var HOOKS=[];
+var EN={
+ "topbar.kicker": "Microbiome · 2026",
+ "hero.eyebrow1": "Microbiome · 2026",
+ "hero.hero1": "Fiber and",
+ "hero.hero2": "probiotics",
+ "hero.sub1": "How much does your microbiome really affect your health? Is the gut a “second brain”? The science behind the hype.",
+ "hero.byline1": "by Renato Shirakashi",
+ "s00.step1": "00 · The question",
+ "s00.p1": "Look in the mirror and you see a single individual: one biological organism, built by your own DNA from head to toe. Yet the biology of the past two decades has dismantled that picture by a startling margin.",
+ "s00.p2": "<span class=\"mark\">Roughly half the cells in your body are bacterial in origin.</span> The vast majority live in the gut, carrying a parallel genetic ecosystem that responds to every meal. That repertoire far exceeds the human genome, runs metabolic pathways our own cells never evolved, and shifts continuously with diet, sleep, antibiotics and age. What remains to be established, in concrete terms, is <span class=\"mark\">how far our health depends on a genome that is not ours</span>.",
+ "s00.p3": "The question demands a strict filter. The debate swings between two loud extremes: enthusiasts who turned the microbiota into the explanation for nearly everything (from depression to autism, selling home test kits and shelves of probiotics), and skeptics pointing out that correlation is not causation (finding an atypical bacterium in a sick person does not prove the microbe caused the disease). Microbiologist Jonathan Eisen went as far as creating a public “Overselling the Microbiome Award” to call out academic and commercial hype.",
+ "s00.p4": "The aim of this analysis is to examine the real state of the scientific evidence in 2026, without inflating expectations or dismissing solid findings. The sections that follow lay out the numerical scale, the impact across different body systems, the practical interventions that hold up, and the points where the market sells illusion.",
+ "s01.step1": "01 · The scale",
+ "s01.p1": "Understanding the microbiota's impact means first examining its actual scale. The numbers pull the discussion out of the abstract and give the coexistence its real dimensions.",
+ "s01.p2": "The human body hosts roughly <code>38 trillion</code> bacteria against some <code>30 trillion</code> human cells. The real ratio is close to 1:1 — far from the 10:1 myth repeated in textbooks for decades, until Weizmann Institute researchers redid the arithmetic in 2016. That bacterial mass weighs about <code>0.2 kg</code>, concentrated almost entirely in the colon.",
+ "s01.p3": "The starker divergence shows up in the gene count. The human genome holds close to <code>20,000</code> genes. In 2010 the European MetaHIT consortium sequenced the genetic content of the gut and identified <code>3.3 million</code> distinct bacterial genes. The microbial repertoire is about <span class=\"mark\">150 times</span> larger: for every properly human gene, there are roughly 150 bacterial genes in the digestive tract.",
+ "s01.p4": "That gap reveals that <span class=\"mark\">most of the biochemical machinery running in the body was written by other living things</span>. Fiber digestion, immune training, the synthesis of certain vitamins and neurochemical signaling all depend directly on this additional genetic capacity. Jeffrey Gordon, the University of Washington researcher regarded as a founder of the field, describes human beings as walking ecosystems. The gene count backs him up.",
+ "s01.wtag1": "<span class=\"dot\"></span>the field · drag and tap",
+ "s01.w1num": "10 : 1",
+ "s01.w1lab": "the old myth: 10 bacteria per cell",
+ "s01.btn1": "cells",
+ "s01.btn2": "genes",
+ "s01.btn3": "mass",
+ "s01.btn4": "recount (2016)",
+ "s01.legend1": "<span class=\"lg\"><span class=\"sw cell\"></span>your cells (~30 tri)</span><span class=\"lg\"><span class=\"sw bio\"></span>bacteria (~38 tri)</span>",
+ "s01.wcap1": "The classic ratio claimed ten bacteria for every human cell. Tap <b>recount</b> to see the arithmetic corrected to roughly <b>1 to 1</b> (Sender, Fuchs &amp; Milo, 2016). Under <b>genes</b>, the human genome registers ~20,000 against 3.3 million microbial genes.",
+ "s02.step1": "02 · What this genome manufactures",
+ "s02.p1": "Millions of extra genes are irrelevant unless they generate actual biochemical activity. The link between microbiota and health takes shape in specific compounds, and the most studied of them are the short-chain fatty acids — butyrate above all.",
+ "s02.p2": "Dietary fiber the human stomach cannot digest arrives intact in the colon. There, bacterial populations ferment it into acetate, propionate and butyrate at an average ratio of <code>60:20:20</code>. Justin and Erica Sonnenburg, microbiologists at Stanford, call these compounds MACs (microbiota-accessible carbohydrates), stressing that fiber works as biological fuel keeping beneficial bacteria active.",
+ "s02.p3": "Butyrate acts on four decisive physiological fronts. It supplies about <code>70%</code> of the energy consumed by the cells lining the colon. It reinforces the junctions in the intestinal wall, preventing bacterial fragments from migrating into the bloodstream and triggering systemic inflammation. It drives the differentiation of regulatory T cells — an immune mechanism mapped by researchers including Kenya Honda and Sarkis Mazmanian — instructing the immune system to temper inflammatory reactions. Finally, it acts as a signaling molecule for several organs, the central nervous system included.",
+ "s02.p4": "Beyond fatty acids, the microbiota synthesizes vitamin K, several B-complex vitamins and produces <span class=\"mark\">roughly 90% of the body's total serotonin, generated in the gut rather than the brain</span>. That biological fact underpins the direct connection between digestive function and mood regulation.",
+ "s02.p5": "Butyrate and serotonin are merely the best-documented fraction in the literature. A set of 3 million genes yields thousands of active metabolites: neurotransmitters such as GABA and dopamine precursors, secondary bile acids that regulate metabolism, tryptophan derivatives that modulate immunity and brain function, TMAO precursors, and a vast quantity of molecules with no name or fully established role. Fatty acids get the attention here because research along that pathway is furthest along, even though much of the metabolic map remains under investigation.",
+ "s02.wtag1": "<span class=\"dot\"></span>the colony · drag the fiber",
+ "s02.label1": "fiber in the diet",
+ "s02.sl1": "little",
+ "s02.sl2": "a lot",
+ "s02.legend1": "<span class=\"lg\"><span class=\"sw bio\"></span>good bacteria</span><span class=\"lg\"><span class=\"sw bad\"></span>opportunist</span><span class=\"lg\"><span style=\"color:var(--bio);font-size:13px\">◆</span>&nbsp;butyrate</span><span class=\"lg\"><span style=\"color:var(--bad);font-size:13px\">▲</span>&nbsp;fragment (LPS)</span><span class=\"lg\"><span style=\"width:16px;height:3px;background:var(--ink);display:inline-block\"></span>barrier</span>",
+ "s02.wcap1": "Adjust the fiber control. At high levels, butyrate-producing bacteria (◆) multiply and the epithelial barrier strengthens (<b>green and thick</b>), blocking fragments (▲). At low levels the barrier turns permeable (<b>red</b>), letting bacterial fragments translocate into the bloodstream.",
+ "s03.step1": "03 · The difference",
+ "s03.p1": "Beyond the generic claim that the microbiota influences health, the research tries to quantify the variation between gut profiles and its clinical consequences.",
+ "s03.p2": "In 2013, researchers tied to the MetaHIT consortium analyzed bacterial DNA from hundreds of individuals and found a sharp population split around the <code>480,000 gene</code> mark. The low-diversity group averaged <code>380,000</code> microbial genes, while the high-richness group registered about <code>640,000</code> — a spread reaching <code>40%</code> between the extremes.",
+ "s03.p3": "The divergence correlated directly with health markers. Individuals in the lower gene-richness group showed greater body adiposity, more pronounced insulin resistance, an unfavorable lipid profile and elevated inflammatory markers. The high-diversity group showed a greater abundance of anti-inflammatory species and better metabolic regulation. Roughly 25% of the volunteers fell in the low-diversity band. It bears stressing that the data demonstrate statistical association, without establishing direct causation or supporting automatic individual diagnoses. Even so, the trial itself showed that targeted dietary changes were able to raise gene richness in the low-diversity group, confirming that the microbial profile is dynamic and modifiable.",
+ "s03.wtag1": "<span class=\"dot\"></span>the richness ruler · drag the genes",
+ "s03.label1": "gene richness",
+ "s03.sl1": "300k",
+ "s03.sl2": "480k threshold",
+ "s03.sl3": "700k",
+ "s03.btn1": "intervene with diet",
+ "s03.wcap1": "Move the gene-richness control to see the corresponding health markers across the population. The data reflect epidemiological association, not individual diagnosis. The intervention button illustrates how diet can raise diversity.",
+ "s04.step1": "04 · Your guess",
+ "s04.p1": "Before the detailed anatomical map, it is worth testing your initial intuition about the microbiota's reach. Comparing common sense against the findings shows how far medical research has moved beyond the digestive tract.",
+ "s04.p2": "Intuition usually confines bacterial action to digestion and local immunity. The evidence consolidated by 2026 connects microbial populations to distant systems: mood regulation, cardiovascular risk, the efficacy of cancer immunotherapy, facial dermatology and the risk of preterm birth. Select the areas in the panel below to compare your assumptions against the clinical measurements.",
+ "s04.wtag1": "<span class=\"dot\"></span>your guess · tap the zones",
+ "s04.btn1": "reveal the real map",
+ "s04.wcap1": "Tap the zones where you think the microbiota makes a difference. Then tap <b>reveal</b>.",
+ "s05.step1": "05 · The body, part by part",
+ "s05.p1": "Examining each area in detail means weighing the unfavorable scenario, the protective profile, the size of the effect and who made the discovery. One pattern is constant in the literature: evidence from animal models tends to show a stronger signal that weakens when tested in humans — the translational gap, which serves as the honest brake on this whole section.",
+ "s05.h31": "Gut and metabolism",
+ "s05.p2": "The gastrointestinal tract hosts the field's foundational experiments. In Jeffrey Gordon's lab, germ-free mice — born without any microbiota — received transplants from obese donors and accumulated significantly more body fat than recipients of microbiota from lean donors, on identical caloric intake. In 2013 a study in Science confirmed the transfer of the metabolic phenotype using samples from human twins discordant for obesity.",
+ "s05.p3": "In diabetes, the research moved up into human trials. Patrice Cani, in Belgium, investigated <code>Akkermansia muciniphila</code>, a bacterium living in the intestinal mucus layer. In a 2019 clinical trial, administering the pasteurized bacterium improved insulin sensitivity by <code>28%</code> in overweight individuals, a result supported by a 24-week study in 2026 focused on weight maintenance. It is a notable case of an isolated strain evaluated directly in humans with objective metrics.",
+ "s05.p4": "In parallel, work by Eran Segal and Eran Elinav in Israel — extended by Tim Spector of King's College in the PREDICT study — showed that identical meals produce markedly different glycemic and lipid responses between individuals. Post-meal triglyceride levels vary by up to <code>103%</code> between different people eating the same food. Individual microbiota composition explains part of that variability, which is why identical dietary interventions produce heterogeneous effects.",
+ "s05.h32": "Heart",
+ "s05.p5": "The relationship between microbiota and cardiovascular disease has a well-defined biochemical mechanism. Stanley Hazen, at the Cleveland Clinic, identified the <code>TMAO</code> route: from choline and carnitine — abundant in red meat and egg yolks — specific bacteria produce trimethylamine (TMA), metabolized in the liver into TMAO, a compound that accelerates atherosclerotic plaque formation. The pathway's dependence on bacteria was confirmed by showing that antibiotics zero out TMAO production and that germ-free animals do not synthesize the molecule.",
+ "s05.p6": "The epidemiological impact is substantial. In a meta-analysis covering 26,000 individuals, participants with the highest TMAO concentrations carried a <code>1.91-fold</code> greater mortality risk, with each 10-unit increase in circulation raising all-cause mortality by <code>7.6%</code>. Whether lowering TMAO directly through dietary intervention reduces hard cardiovascular outcomes remains under investigation.",
+ "s05.h33": "Brain and mood",
+ "s05.p7": "Besides synthesizing close to <code>90%</code> of the body's serotonin, the gut communicates directly with the brain through the vagus nerve and its own enteric nervous system — a dense neuronal network that led neuroscientist Michael Gershon to call it the “second brain” in 1998. Imbalances in the microbiota are associated with neurological and psychiatric manifestations at varying levels of evidence.",
+ "s05.p8": "In Parkinson's disease, chronic constipation precedes motor symptoms by several years. A longitudinal study in Hawaii that followed thousands of men from the 1970s onward found a <code>2.7-fold</code> higher risk of developing Parkinson's among individuals with fewer than one bowel movement a day. Heiko Braak's neuropathological model proposes that pathological alpha-synuclein aggregation may begin in gut tissue and ascend through the vagus nerve to the brain.",
+ "s05.p9": "On depressive disorders, Jeroen Raes's team in Leuven analyzed data from more than a thousand volunteers and found two bacterial genera consistently depleted in patients diagnosed with depression, independent of antidepressant use. Trials administering specific probiotics indicate a moderate reduction in symptoms, though the literature is methodologically heterogeneous and the samples are small.",
+ "s05.h34": "Immunity and cancer",
+ "s05.p10": "The body's largest concentration of lymphoid tissue sits in the gut, under continuous modulation by the microbiota. The first thousand days of life are a critical window for immune maturation. Cesarean delivery is associated with an <code>18%</code> increase in asthma risk. Conversely, early peanut introduction in high-risk infants (the LEAP study, 2015) cut food allergy incidence by <code>81%</code>, a finding that rewrote pediatric guidelines worldwide.",
+ "s05.p11": "In oncology, research beginning in 2018 established that the efficacy of <em>immune checkpoint</em> inhibitor therapy correlates with gut microbiota composition. In 2025 the FMT-LUMINate trial combined fecal microbiota transplant from healthy donors with standard immunotherapy, reaching objective response rates of <code>80%</code> in lung cancer and <code>75%</code> in melanoma, above historical monotherapy rates. It is promising evidence for microbiota modulation as an adjuvant in cancer therapy.",
+ "s05.h35": "Skin, mouth, vagina, lung",
+ "s05.p12": "Across several external epithelial and mucosal surfaces, the protective pattern differs from the gut model: health is characterized by the dominance of specific species at low diversity, not by high microbial variety.",
+ "s05.p13": "In dermatology, atopic dermatitis shows <code>Staphylococcus aureus</code> colonization in roughly <code>70%</code> of active lesions against <code>39%</code> of intact skin. Severity drops in the presence of antagonistic commensal strains, a line Richard Gallo has pursued in San Diego toward therapies using native bacteria.",
+ "s05.p14": "In the oral cavity — the body's second most diverse environment — severe periodontitis is associated with roughly a <code>2.5-fold</code> increase in stroke risk, alongside correlations with diabetes, Alzheimer's and preterm birth.",
+ "s05.p15": "In the vaginal microbiota, dominance by <code>Lactobacillus</code> species maintains the protective acidic pH. Its replacement by mixed flora (bacterial vaginosis) affects between 25% and 33% of women of reproductive age, raising the risk of urogenital infection and prematurity. In the respiratory tract, modulation through the gut-lung axis tracks with asthma and COPD.",
+ "s05.p16": "Tap each organ below to see the bad scenario, the good scenario, the difference and the source.",
+ "s05.wtag1": "<span class=\"dot\"></span>the body from within · tap an organ",
+ "s05.btn1": "anatomical order",
+ "s05.btn2": "by strength of evidence",
+ "s05.wcap1": "Select an organ to see the unfavorable profile, the protective scenario, the measured effect and the scientific source. The tags indicate the strength of the evidence: <b style=\"color:var(--bio-deep)\">robust human</b>, <b>associational</b> or <b style=\"color:var(--bad)\">animal model</b>.",
+ "s06.step1": "06 · The size of the differences, side by side",
+ "s06.p1": "Compiling the data in one chart makes it possible to compare the order of magnitude of the effects observed across biological systems. Reading the distribution, it is worth noting the methodological nature of the evidence: four of the twelve scenarios carry robust clinical validation in humans (fecal transplant for <code>C. difficile</code>, adjuvant cancer immunotherapy, food allergy prevention through early introduction, and insulin sensitivity modulation by <code>Akkermansia</code>). The remaining eight lines record significant epidemiological associations in humans, with no demonstration of direct causality.",
+ "s06.wtag1": "<span class=\"dot\"></span>the evidence, with its uncertainty · tap a line",
+ "s06.btn1": "by magnitude",
+ "s06.btn2": "by evidence",
+ "s06.legend1": "<span class=\"lg\"><span class=\"sw bio\"></span>robust human</span><span class=\"lg\"><span class=\"sw ink\"></span>associational</span>",
+ "s06.wcap1": "Horizontal position indicates the relative magnitude of the effect; the vertical line marks no effect. Color identifies the level of evidence. Use the sorting to separate direct human trials from associational studies.",
+ "cliff.h21": "Having seen how far the microbiota reaches across the body, the question becomes what to do about it.",
+ "cliff.p1": "The composition of this auxiliary genome responds to dietary change within days. <span class=\"mark\">(continues)</span>",
+ "s07.step1": "07 · What to do",
+ "s07.p1": "The interventions with the strongest scientific support for modulating the microbiota are the accessible, safe ones that fit directly into an everyday diet.",
+ "s07.p2": "Fiber intake should reach between <code>25 g and 38 g</code> a day — the population average is about half that — with the emphasis on variety of plant sources. Data from the <em>American Gut Project</em>, led by Rob Knight and popularized by Tim Spector, indicate that people eating more than <code>30 distinct plant species</code> a week have significantly more diverse microbiotas than those eating 10 or fewer. <span class=\"mark\">Plant variety works by supplying different fermentable substrates to different bacterial lineages</span>, counting vegetables, fruit, legumes, whole grains, nuts, seeds and herbs.",
+ "s07.p3": "Including <span class=\"mark\">fermented foods</span> with live cultures daily is one of the most consistent findings in the recent literature. In a Stanford trial run by Justin and Erica Sonnenburg alongside Christopher Gardner (2021), volunteers on a diet rich in fermented foods — yogurt, kefir, kimchi, sauerkraut — showed increased microbial diversity and a drop across <code>19 inflammatory markers</code> in blood over 10 weeks. In the same trial, raising fiber alone over the same period did not produce the same effect on the group's average inflammatory markers, suggesting that restructuring the microbiota benefits from combining substrate with live cultures.",
+ "s07.p4": "The recommended pattern is Mediterranean-style eating, <span class=\"mark\">fewer ultra-processed products</span>, regular sleep, physical activity and moderate alcohol. Antibiotics should be restricted to strict medical indications: a study of healthy volunteers given four days of broad-spectrum antibiotics showed a sharp drop in diversity, with <code>nine beneficial species</code> still missing six months after the intervention.",
+ "s07.wtag1": "<span class=\"dot\"></span>the week · build your habits",
+ "s07.btn1": "+ plant variety",
+ "s07.btn2": "+ fermented foods",
+ "s07.btn3": "+ fiber",
+ "s07.btn4": "+ exercise",
+ "s07.btn5": "antibiotic",
+ "s07.btn6": "scenario: dysbiosis",
+ "s07.btn7": "scenario: post-antibiotic",
+ "s07.btn8": "reset",
+ "s07.wcap1": "Each geometric element represents a microbial group. <b>Diversity</b> measures how many distinct lineages are present. Antibiotic therapy cuts diversity down to a few families, letting opportunistic strains (red) dominate. Illustrative diagram of ecological principles.",
+ "s08.step1": "08 · What is hype",
+ "s08.p1": "Assessing the field critically means identifying the applications with no scientific backing. William Hanage, an epidemiologist at Harvard, stresses the need for methodological skepticism toward commercial claims built on the microbiome.",
+ "s08.p2": "Direct-to-consumer microbiome sequencing tests lack proven clinical utility. An international consensus published in 2024 in <em>Lancet Gastroenterology &amp; Hepatology</em> pointed to an absence of technical standardization and low reproducibility, noting that aliquots of the same sample sent to different companies come back with divergent reports and recommendations.",
+ "s08.p3": "Probiotic supplements formulated for “general wellness” lack evidence of efficacy in healthy individuals. Therapeutic effects depend on the specific strain, the right dose and a precise clinical indication. The 2020 guidelines from the American Gastroenterological Association (AGA) do not recommend routine probiotic use for most digestive disorders. The applications with robust evidence are confined to specific scenarios: particular strains for preventing antibiotic-associated diarrhea, and fecal microbiota transplant (FMT) for recurrent <code>C. difficile</code> infection, with a cure rate of roughly <code>90%</code> against <code>30%</code> for conventional antibiotic therapy — which led the FDA to approve two biological therapies in 2022 and 2023.",
+ "s08.p4": "Likewise, the premise that isolated soluble fiber supplements reverse complex conditions in the short term is unconfirmed. The Stanford trial showed the limits of a rapid response to isolated fiber alone. The literature indicates that whole foods, plant diversity and natural fermented foods sustained consistently outperform isolated off-the-shelf interventions. Jonathan Eisen's criterion remains central: a plausible biological mechanism is not the same thing as a clinical benefit demonstrated in human trials.",
+ "s08.wtag1": "<span class=\"dot\"></span>true or hype · decide",
+ "end.step1": "09 · Closing",
+ "end.p1": "The advance of microbiology redefines what biological individuality means: human health emerges from the constant interaction between our own cells and a microbial genetic estate 150 times larger, modulated daily by what we eat.",
+ "end.p2": "Even as the science confirms the physiological relevance of this ecosystem, commercial products call for caution, since much of what the market promises runs ahead of conclusive trials. The human genome stays fixed; the set of 3 million microbial genes responds continuously to daily choices. The interventions that matter most rest on practical, sustainable principles: more plant diversity, natural fermented foods, fewer ultra-processed products, and consistency over time.",
+ "refs.step1": "Main sources",
+ "refs.foot1": "The other genome · interactive essay · data checked against primary sources · August 2026",
+ "refs.refs1": "<b>Scale and genes:</b> Sender, Fuchs, Milo, PLOS Biology 2016; Qin et al., Nature 2010; Almeida et al., Nature Biotechnology 2021.<br>\n  <b>Gene richness:</b> Le Chatelier et al., Nature 2013; Cotillard et al., Nature 2013.<br>\n  <b>Mechanisms:</b> Nature Reviews Microbiology 2025; Nature Reviews Immunology 2024; Furusawa et al., Nature 2013; Yano et al., Cell 2015.<br>\n  <b>Metabolic:</b> Turnbaugh et al., Nature 2006; Ridaura et al., Science 2013; Depommier/Cani, Nature Medicine 2019; Berry et al., Nature Medicine 2020.<br>\n  <b>Heart:</b> Tang/Hazen, NEJM 2013; Schiattarella et al., European Heart Journal 2017.<br>\n  <b>Brain:</b> Valles-Colomer et al., Nature Microbiology 2019; Abbott et al., Neurology 2001; npj Parkinson's Disease 2024.<br>\n  <b>Immunity and cancer:</b> BMC Pediatrics 2023; LEAP, NEJM 2015; Scher et al., eLife 2013; FMT-LUMINate, Nature Medicine 2025; J Cancer 2021.<br>\n  <b>Interventions and hype:</b> McDonald et al., mSystems 2018; Wastyk et al., Cell 2021; Palleja et al., Nature Microbiology 2018; van Nood et al., NEJM 2013; Lancet consensus Gastroenterol Hepatol 2024; AGA guideline, Gastroenterology 2020; Hanage, Nature 2014."
+};
+var T={pt:{
+ "w1.numMyth": "10 : 1",
+ "w1.numReal": "1,3 : 1",
+ "w1.numGenes": "150×",
+ "w1.numMass": "0,2 kg",
+ "w1.labMyth": "o mito antigo: 10 bactérias por célula",
+ "w1.labReal": "a conta real: ~1 bactéria por célula",
+ "w1.labGenes": "mais genes no microbioma que no seu genoma",
+ "w1.labMass": "a massa da sua flora microbiana",
+ "w1.btnRecount": "recontar (2016)",
+ "w1.btnMyth": "ver o mito (10:1)",
+ "w1.cvGenome": "■ = o seu genoma (~20 mil genes)",
+ "w1.cvSquares": "150 quadrados = o microbioma",
+ "w1.cvSub": "3,3 milhões de genes · o seu cabe 150× nele",
+ "w1.cvKg": "~0,2 kg",
+ "w1.cvMass1": "a massa da sua flora, quase o peso do cérebro",
+ "w1.cvMass2": "38 trilhões de bactérias, quase todas no cólon",
+ "w2.lumen": "lúmen",
+ "w2.mucus": "muco",
+ "w2.epi": "epitélio",
+ "w2.blood": "sangue",
+ "w3.threshold": "limiar 480 mil",
+ "w3.min": "300 mil",
+ "w3.max": "700 mil",
+ "w3.poor": "pobre",
+ "w3.rich": "rico",
+ "w3.high": "alto",
+ "w3.mid": "médio",
+ "w3.low": "baixo",
+ "w3.mk1": "adiposidade",
+ "w3.mk2": "resistência à insulina",
+ "w3.mk3": "inflamação",
+ "w3.maxg": "700 mil genes",
+ "w3.vRich": "microbioma rico",
+ "w3.vPoor": "microbioma pobre",
+ "w3.genes": "genes",
+ "w4.revealed": "mapa revelado",
+ "w4.capDone": "Você marcou <b>{n}</b> de <b>{total}</b>. A ciência de 2026 acende quase todas, com a intensidade proporcional à força da evidência. Consulte a seguir os dados medidos por região.",
+ "ev.hum": "humano robusto",
+ "ev.assoc": "associativo",
+ "ev.mouse": "modelo animal",
+ "evs.hum": "humano",
+ "evs.assoc": "assoc",
+ "evs.mouse": "animal",
+ "card.bad": "ruim",
+ "card.good": "bom",
+ "card.src": "fonte · ",
+ "w8.base": "tem base",
+ "w8.hype": "é hype",
+ "w8.tagBase": "TEM BASE",
+ "w8.tagHype": "É HYPE",
+ "w8.right": "resposta correta. ",
+ "w8.wrong": "avaliação incorreta. ",
+ "w8.next": "próximo",
+ "w8.result": "ver resultado",
+ "w8.card": "cartão {i} de {n}",
+ "w8.final": "Você acertou <b>{score}</b> de <b>{n}</b>. A avaliação crítica permanece: mecanismo plausível difere de benefício clínico comprovado em humanos.",
+ "locale": "pt-BR",
+ "organs": {
+  "brain": {
+   "label": "cérebro",
+   "delta": "2,7×",
+   "metric": "risco de Parkinson",
+   "bad": "constipação anos antes; Coprococcus e Dialister em baixa na depressão",
+   "good": "flora produtora de butirato, humor mais estável",
+   "who": "Abbott 2001 · Valles-Colomer/Raes 2019"
+  },
+  "mouth": {
+   "label": "boca",
+   "delta": "~2,5×",
+   "metric": "risco de AVC (periodontite grave)",
+   "bad": "periodontite, P. gingivalis, efeito sistêmico",
+   "good": "comunidade oral simbiótica",
+   "who": "revisões 2025 · IC largo"
+  },
+  "lung": {
+   "label": "pulmão",
+   "delta": "disbiose",
+   "metric": "asma e DPOC",
+   "bad": "expansão de Haemophilus na asma neutrofílica",
+   "good": "proteção via eixo intestino-pulmão",
+   "who": "revisões 2025"
+  },
+  "heart": {
+   "label": "coração",
+   "delta": "1,9×",
+   "metric": "risco de morte (TMAO alto)",
+   "bad": "carne vermelha → TMA → TMAO, placa na artéria",
+   "good": "TMAO baixo",
+   "who": "Tang/Hazen 2013 · Schiattarella 2017"
+  },
+  "gut": {
+   "label": "intestino",
+   "delta": "103%",
+   "metric": "variação da resposta a refeições idênticas",
+   "bad": "flora obesa transfere ganho de gordura (camundongo)",
+   "good": "Akkermansia +28% de sensibilidade à insulina",
+   "who": "lab Gordon · Cani 2019 · Berry 2020"
+  },
+  "skin": {
+   "label": "pele",
+   "delta": "70% vs 39%",
+   "metric": "S. aureus na dermatite atópica",
+   "bad": "S. aureus domina a pele lesional",
+   "good": "cepas comensais que o combatem",
+   "who": "revisão 2026"
+  },
+  "immune": {
+   "label": "imune",
+   "delta": "−81%",
+   "metric": "alergia a amendoim (introdução precoce)",
+   "bad": "cesárea → asma +18%; antibiótico precoce eleva risco",
+   "good": "flora treina a imunidade nos mil primeiros dias",
+   "who": "LEAP 2015 · BMC Pediatrics 2023"
+  },
+  "cancer": {
+   "label": "câncer",
+   "delta": "80% / 75%",
+   "metric": "resposta à imunoterapia + transplante fecal",
+   "bad": "sem a flora certa, imunoterapia responde menos",
+   "good": "FMT de doador saudável eleva a resposta",
+   "who": "FMT-LUMINate, Nature Medicine 2025"
+  },
+  "vagina": {
+   "label": "região vaginal",
+   "delta": "~1/3",
+   "metric": "vaginose em idade reprodutiva",
+   "bad": "perda de Lactobacillus, risco de infecção e parto prematuro",
+   "good": "domínio de Lactobacillus",
+   "who": "revisões 2025-26"
+  }
+ },
+ "rows": [
+  {
+   "n": "Riqueza: pobre vs rico",
+   "disp": "40% (380k→640k)",
+   "src": "Le Chatelier et al., Nature 2013"
+  },
+  {
+   "n": "Akkermansia → sensib. insulina",
+   "disp": "+28%",
+   "src": "Depommier/Cani, Nature Medicine 2019"
+  },
+  {
+   "n": "TMAO alto → morte",
+   "disp": "1,91×",
+   "src": "Schiattarella, Eur Heart J 2017"
+  },
+  {
+   "n": "Constipação → Parkinson",
+   "disp": "2,7×",
+   "src": "Abbott, Neurology 2001"
+  },
+  {
+   "n": "Cesárea → asma",
+   "disp": "1,18×",
+   "src": "BMC Pediatrics 2023"
+  },
+  {
+   "n": "Amendoim precoce → alergia",
+   "disp": "−81%",
+   "src": "LEAP, NEJM 2015"
+  },
+  {
+   "n": "P. copri na artrite reumatoide",
+   "disp": "75% vs 21%",
+   "src": "Scher et al., eLife 2013"
+  },
+  {
+   "n": "FMT + imunoterapia (câncer)",
+   "disp": "80% / 75% resposta",
+   "src": "FMT-LUMINate, Nat Med 2025"
+  },
+  {
+   "n": "F. nucleatum → mortalidade",
+   "disp": "1,93×",
+   "src": "meta-análise, J Cancer 2021"
+  },
+  {
+   "n": "S. aureus na dermatite",
+   "disp": "70% vs 39%",
+   "src": "revisão 2026"
+  },
+  {
+   "n": "Periodontite → AVC",
+   "disp": "2,5×",
+   "src": "revisão 2025"
+  },
+  {
+   "n": "FMT vs antibiótico (C. difficile)",
+   "disp": "~90% vs ~30%",
+   "src": "van Nood, NEJM 2013"
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Um teste de microbioma caseiro me diz o que comer.",
+   "ev": "A mesma amostra enviada a duas empresas distintas resulta em recomendações divergentes. Consenso internacional, Lancet Gastroenterol Hepatol 2024."
+  },
+  {
+   "q": "Probiótico genérico melhora a saúde de qualquer pessoa.",
+   "ev": "O efeito é específico de cepa, dosagem e indicação. As diretrizes da AGA (2020) não recomendam para a maioria dos transtornos digestivos."
+  },
+  {
+   "q": "Transplante fecal cura infecção recorrente por C. difficile.",
+   "ev": "Taxa de cura de ~90% contra ~30% do antibiótico convencional. Dois produtos biológicos aprovados pela FDA (2022 e 2023). van Nood, NEJM 2013."
+  },
+  {
+   "q": "Fibra em pó, sozinha, resolve o intestino em uma semana.",
+   "ev": "O ensaio de Stanford registrou baixa eficácia da fibra isolada em curto prazo, enquanto os alimentos fermentados reduziram os marcadores inflamatórios. Wastyk, Cell 2021."
+  },
+  {
+   "q": "Comer 30 tipos de plantas por semana associa-se a mais diversidade.",
+   "ev": "Achado do American Gut Project. Associação epidemiológica robusta e acessível. McDonald, mSystems 2018."
+  }
+ ]
+},
+en:{
+ "w1.numMyth": "10 : 1",
+ "w1.numReal": "1.3 : 1",
+ "w1.numGenes": "150×",
+ "w1.numMass": "0.2 kg",
+ "w1.labMyth": "the old myth: 10 bacteria per cell",
+ "w1.labReal": "the real count: ~1 bacterium per cell",
+ "w1.labGenes": "more genes in the microbiome than in your genome",
+ "w1.labMass": "the mass of your microbial flora",
+ "w1.btnRecount": "recount (2016)",
+ "w1.btnMyth": "see the myth (10:1)",
+ "w1.cvGenome": "■ = your genome (~20k genes)",
+ "w1.cvSquares": "150 squares = the microbiome",
+ "w1.cvSub": "3.3 million genes · yours fits inside it 150×",
+ "w1.cvKg": "~0.2 kg",
+ "w1.cvMass1": "the mass of your flora, about the weight of your brain",
+ "w1.cvMass2": "38 trillion bacteria, nearly all in the colon",
+ "w2.lumen": "lumen",
+ "w2.mucus": "mucus",
+ "w2.epi": "epithelium",
+ "w2.blood": "blood",
+ "w3.threshold": "480k threshold",
+ "w3.min": "300k",
+ "w3.max": "700k",
+ "w3.poor": "poor",
+ "w3.rich": "rich",
+ "w3.high": "high",
+ "w3.mid": "medium",
+ "w3.low": "low",
+ "w3.mk1": "adiposity",
+ "w3.mk2": "insulin resistance",
+ "w3.mk3": "inflammation",
+ "w3.maxg": "700k genes",
+ "w3.vRich": "rich microbiome",
+ "w3.vPoor": "poor microbiome",
+ "w3.genes": "genes",
+ "w4.revealed": "map revealed",
+ "w4.capDone": "You marked <b>{n}</b> of <b>{total}</b>. The science of 2026 lights up almost all of them, at an intensity proportional to the strength of the evidence. The measured figures by region follow below.",
+ "ev.hum": "robust human",
+ "ev.assoc": "associational",
+ "ev.mouse": "animal model",
+ "evs.hum": "human",
+ "evs.assoc": "assoc",
+ "evs.mouse": "animal",
+ "card.bad": "bad",
+ "card.good": "good",
+ "card.src": "source · ",
+ "w8.base": "has basis",
+ "w8.hype": "is hype",
+ "w8.tagBase": "HAS BASIS",
+ "w8.tagHype": "IS HYPE",
+ "w8.right": "correct. ",
+ "w8.wrong": "not quite. ",
+ "w8.next": "next",
+ "w8.result": "see result",
+ "w8.card": "card {i} of {n}",
+ "w8.final": "You got <b>{score}</b> of <b>{n}</b> right. The critical test still holds: a plausible mechanism is not the same as a clinical benefit proven in humans.",
+ "locale": "en-US",
+ "organs": {
+  "brain": {
+   "label": "brain",
+   "delta": "2.7×",
+   "metric": "Parkinson's risk",
+   "bad": "constipation years earlier; Coprococcus and Dialister depleted in depression",
+   "good": "butyrate-producing flora, steadier mood",
+   "who": "Abbott 2001 · Valles-Colomer/Raes 2019"
+  },
+  "mouth": {
+   "label": "mouth",
+   "delta": "~2.5×",
+   "metric": "stroke risk (severe periodontitis)",
+   "bad": "periodontitis, P. gingivalis, systemic effect",
+   "good": "symbiotic oral community",
+   "who": "2025 reviews · wide CI"
+  },
+  "lung": {
+   "label": "lung",
+   "delta": "dysbiosis",
+   "metric": "asthma and COPD",
+   "bad": "Haemophilus expansion in neutrophilic asthma",
+   "good": "protection via the gut-lung axis",
+   "who": "2025 reviews"
+  },
+  "heart": {
+   "label": "heart",
+   "delta": "1.9×",
+   "metric": "death risk (high TMAO)",
+   "bad": "red meat → TMA → TMAO, arterial plaque",
+   "good": "low TMAO",
+   "who": "Tang/Hazen 2013 · Schiattarella 2017"
+  },
+  "gut": {
+   "label": "gut",
+   "delta": "103%",
+   "metric": "variation in response to identical meals",
+   "bad": "obese flora transfers fat gain (mouse)",
+   "good": "Akkermansia +28% insulin sensitivity",
+   "who": "Gordon lab · Cani 2019 · Berry 2020"
+  },
+  "skin": {
+   "label": "skin",
+   "delta": "70% vs 39%",
+   "metric": "S. aureus in atopic dermatitis",
+   "bad": "S. aureus dominates lesional skin",
+   "good": "commensal strains that fight it",
+   "who": "2026 review"
+  },
+  "immune": {
+   "label": "immune",
+   "delta": "−81%",
+   "metric": "peanut allergy (early introduction)",
+   "bad": "C-section → asthma +18%; early antibiotics raise risk",
+   "good": "flora trains immunity in the first thousand days",
+   "who": "LEAP 2015 · BMC Pediatrics 2023"
+  },
+  "cancer": {
+   "label": "cancer",
+   "delta": "80% / 75%",
+   "metric": "response to immunotherapy + fecal transplant",
+   "bad": "without the right flora, immunotherapy responds less",
+   "good": "FMT from a healthy donor raises response",
+   "who": "FMT-LUMINate, Nature Medicine 2025"
+  },
+  "vagina": {
+   "label": "vaginal tract",
+   "delta": "~1/3",
+   "metric": "vaginosis in reproductive age",
+   "bad": "loss of Lactobacillus, risk of infection and preterm birth",
+   "good": "Lactobacillus dominance",
+   "who": "2025-26 reviews"
+  }
+ },
+ "rows": [
+  {
+   "n": "Richness: poor vs rich",
+   "disp": "40% (380k→640k)",
+   "src": "Le Chatelier et al., Nature 2013"
+  },
+  {
+   "n": "Akkermansia → insulin sensitivity",
+   "disp": "+28%",
+   "src": "Depommier/Cani, Nature Medicine 2019"
+  },
+  {
+   "n": "High TMAO → death",
+   "disp": "1.91×",
+   "src": "Schiattarella, Eur Heart J 2017"
+  },
+  {
+   "n": "Constipation → Parkinson's",
+   "disp": "2.7×",
+   "src": "Abbott, Neurology 2001"
+  },
+  {
+   "n": "C-section → asthma",
+   "disp": "1.18×",
+   "src": "BMC Pediatrics 2023"
+  },
+  {
+   "n": "Early peanut → allergy",
+   "disp": "−81%",
+   "src": "LEAP, NEJM 2015"
+  },
+  {
+   "n": "P. copri in rheumatoid arthritis",
+   "disp": "75% vs 21%",
+   "src": "Scher et al., eLife 2013"
+  },
+  {
+   "n": "FMT + immunotherapy (cancer)",
+   "disp": "80% / 75% response",
+   "src": "FMT-LUMINate, Nat Med 2025"
+  },
+  {
+   "n": "F. nucleatum → mortality",
+   "disp": "1.93×",
+   "src": "meta-analysis, J Cancer 2021"
+  },
+  {
+   "n": "S. aureus in dermatitis",
+   "disp": "70% vs 39%",
+   "src": "2026 review"
+  },
+  {
+   "n": "Periodontitis → stroke",
+   "disp": "2.5×",
+   "src": "2025 review"
+  },
+  {
+   "n": "FMT vs antibiotic (C. difficile)",
+   "disp": "~90% vs ~30%",
+   "src": "van Nood, NEJM 2013"
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A home microbiome test tells me what to eat.",
+   "ev": "The same sample sent to two different companies comes back with divergent recommendations. International consensus, Lancet Gastroenterol Hepatol 2024."
+  },
+  {
+   "q": "A generic probiotic improves anyone's health.",
+   "ev": "The effect is specific to strain, dose and indication. The AGA guidelines (2020) do not recommend it for most digestive disorders."
+  },
+  {
+   "q": "Fecal transplant cures recurrent C. difficile infection.",
+   "ev": "Cure rate of ~90% against ~30% for conventional antibiotics. Two biological products approved by the FDA (2022 and 2023). van Nood, NEJM 2013."
+  },
+  {
+   "q": "Fiber powder on its own fixes the gut in a week.",
+   "ev": "The Stanford trial recorded low short-term efficacy for isolated fiber, while fermented foods lowered inflammatory markers. Wastyk, Cell 2021."
+  },
+  {
+   "q": "Eating 30 kinds of plants a week is associated with more diversity.",
+   "ev": "A finding from the American Gut Project. A robust, accessible epidemiological association. McDonald, mSystems 2018."
+  }
+ ]
+}};
+function tr(k){var d=T[LANG]||T.pt;return d[k]!=null?d[k]:(T.pt[k]!=null?T.pt[k]:k);}
+function trf(k,vals){return tr(k).replace(/\{(\w+)\}/g,function(_,n){return vals[n];});}
+
 /* formas (para diferenciar tipos de partícula/espécie) */
 function tri(c,x,y,r,col){c.beginPath();c.moveTo(x,y-r);c.lineTo(x+r,y+r);c.lineTo(x-r,y+r);c.closePath();c.fillStyle=col;c.fill();}
 function diamond(c,x,y,r,col){c.beginPath();c.moveTo(x,y-r);c.lineTo(x+r,y);c.lineTo(x,y+r);c.lineTo(x-r,y);c.closePath();c.fillStyle=col;c.fill();}
@@ -526,11 +1095,11 @@ function visibleLoop(cv,step){
     ctx.strokeStyle=COL.ink;ctx.lineWidth=1.5;ctx.strokeRect(x0-s/2-2,y0-s/2-2,s+4,s+4);
     // rótulos
     ctx.textAlign='left';ctx.fillStyle=COL.ink;ctx.font='700 11px "Space Mono",monospace';
-    ctx.fillText('■ = o seu genoma (~20 mil genes)', padX, 15);
+    ctx.fillText(tr('w1.cvGenome'), padX, 15);
     ctx.textAlign='center';ctx.fillStyle=COL.bio;ctx.font='700 11px "Space Mono",monospace';
-    ctx.fillText('150 quadrados = o microbioma', w/2, h-16);
+    ctx.fillText(tr('w1.cvSquares'), w/2, h-16);
     ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';
-    ctx.fillText('3,3 milhões de genes · o seu cabe 150× nele', w/2, h-4);
+    ctx.fillText(tr('w1.cvSub'), w/2, h-4);
     ctx.textAlign='start';
   }
   function drawMass(w,h){
@@ -538,19 +1107,20 @@ function visibleLoop(cv,step){
     // barra da massa bacteriana ~0,2kg vs corpo
     var cx=w/2;
     ctx.fillStyle=COL.bio;ctx.fillRect(cx-70,h/2-30,140,60);
-    ctx.fillStyle='#fff';ctx.font='700 15px "Space Mono",monospace';ctx.fillText('~0,2 kg',cx,h/2+5);
+    ctx.fillStyle='#fff';ctx.font='700 15px "Space Mono",monospace';ctx.fillText(tr('w1.cvKg'),cx,h/2+5);
     ctx.fillStyle=COL.dim;ctx.font='11px "Space Mono",monospace';
-    ctx.fillText('a massa da sua flora, quase o peso do cérebro',cx,h/2+50);
-    ctx.fillText('38 trilhões de bactérias, quase todas no cólon',cx,h/2-45);
+    ctx.fillText(tr('w1.cvMass1'),cx,h/2+50);
+    ctx.fillText(tr('w1.cvMass2'),cx,h/2-45);
     ctx.textAlign='start';
   }
   var loop=visibleLoop(cv,draw);
   seed();
   function setReadout(){
     var num=$('#w1num'),lab=$('#w1lab');
-    if(mode==='cells'){var r=ratio.toFixed(ratio>2?0:2).replace('.',',');num.textContent=(ratio>2?'10 : 1':'1,3 : 1');lab.textContent=ratio>2?'o mito antigo: 10 bactérias por célula':'a conta real: ~1 bactéria por célula';}
-    else if(mode==='genes'){num.textContent='150×';lab.textContent='mais genes no microbioma que no seu genoma';}
-    else {num.textContent='0,2 kg';lab.textContent='a massa da sua flora microbiana';}
+    if(mode==='cells'){num.textContent=(ratio>2?tr('w1.numMyth'):tr('w1.numReal'));lab.textContent=ratio>2?tr('w1.labMyth'):tr('w1.labReal');}
+    else if(mode==='genes'){num.textContent=tr('w1.numGenes');lab.textContent=tr('w1.labGenes');}
+    else {num.textContent=tr('w1.numMass');lab.textContent=tr('w1.labMass');}
+    $('#w1recount').textContent=(ratio>2?tr('w1.btnRecount'):tr('w1.btnMyth'));
   }
   $all('#w1modes .btn').forEach(function(b){b.addEventListener('click',function(){
     $all('#w1modes .btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
@@ -561,9 +1131,10 @@ function visibleLoop(cv,step){
     var start=ratio,end=(ratio>2?1.27:10),t0=null;
     function anim(ts){if(!t0)t0=ts;var t=clamp((ts-t0)/900,0,1);ratio=lerp(start,end,t);assign();draw();if(t<1)requestAnimationFrame(anim);else{ratio=end;setReadout();}}
     requestAnimationFrame(anim);
-    this.textContent=(ratio>2?'recontar (2016)':'ver o mito (10:1)');
+    this.textContent=(ratio>2?tr('w1.btnRecount'):tr('w1.btnMyth'));
   });
   setReadout();
+  HOOKS.push(function(){setReadout();loop.kick();});
 })();
 
 /* ============ WIDGET 2 : A COLÔNIA ============ */
@@ -595,7 +1166,7 @@ function visibleLoop(cv,step){
     ctx.beginPath();for(var x=0;x<=w;x+=6){var yy=epiY+Math.sin(x*.09)*(seal>.42?1:3*(1-seal));x?ctx.lineTo(x,yy):ctx.moveTo(x,yy);}ctx.stroke();
     // rótulos
     ctx.fillStyle=COL.dim;ctx.font='10px "Space Mono",monospace';ctx.textAlign='left';
-    ctx.fillText('lúmen',6,14);ctx.fillText('muco',6,mucusY+13);ctx.fillText('epitélio',6,epiY+15);ctx.fillText('sangue',6,h-6);
+    ctx.fillText(tr('w2.lumen'),6,14);ctx.fillText(tr('w2.mucus'),6,mucusY+13);ctx.fillText(tr('w2.epi'),6,epiY+15);ctx.fillText(tr('w2.blood'),6,h-6);
     // bactérias (círculos)
     function upd(arr){for(var i=0;i<arr.length;i++){var p=arr[i];if(!p.on)continue;
       if(!RM){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<.05||p.y>.54)p.vy*=-1;}
@@ -644,57 +1215,52 @@ function visibleLoop(cv,step){
     ctx.strokeStyle=COL.dim;ctx.lineWidth=1.3;ctx.stroke();
     // limiar 480
     ctx.setLineDash([4,4]);ctx.strokeStyle=COL.ink;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(thX,top-4);ctx.lineTo(thX,baseY);ctx.stroke();ctx.setLineDash([]);
-    ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';ctx.textAlign='center';ctx.fillText('limiar 480 mil',thX,top-7);
+    ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';ctx.textAlign='center';ctx.fillText(tr('w3.threshold'),thX,top-7);
     // marcador do leitor
     var rico=rich>=480, mx=xpos(rich,w);
     ctx.strokeStyle=rico?COL.bio:COL.bad;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(mx,top);ctx.lineTo(mx,baseY);ctx.stroke();
     ctx.fillStyle=rico?COL.bio:COL.bad;ctx.beginPath();ctx.arc(mx,top,4,0,6.28);ctx.fill();
     // eixo e rótulos de regime
-    ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';ctx.textAlign='left';ctx.fillText('300 mil',2,h-4);ctx.textAlign='right';ctx.fillText('700 mil genes',w-2,h-4);
-    ctx.textAlign='center';ctx.fillStyle=COL.bad;ctx.font='700 10px "Space Mono",monospace';ctx.fillText('pobre',thX/2,baseY-5);
-    ctx.fillStyle=COL.bio;ctx.fillText('rico',thX+(w-thX)/2,baseY-5);
+    ctx.fillStyle=COL.dim;ctx.font='9px "Space Mono",monospace';ctx.textAlign='left';ctx.fillText(tr('w3.min'),2,h-4);ctx.textAlign='right';ctx.fillText(tr('w3.maxg'),w-2,h-4);
+    ctx.textAlign='center';ctx.fillStyle=COL.bad;ctx.font='700 10px "Space Mono",monospace';ctx.fillText(tr('w3.poor'),thX/2,baseY-5);
+    ctx.fillStyle=COL.bio;ctx.fillText(tr('w3.rich'),thX+(w-thX)/2,baseY-5);
     ctx.textAlign='start';
   }
   var loop=visibleLoop(cv,draw);
-  var markers=[{k:'adiposidade'},{k:'resistência à insulina'},{k:'inflamação'}];
+  var MK=['w3.mk1','w3.mk2','w3.mk3'];
   var mkEl=$('#w3mk');
-  markers.forEach(function(m,idx){var row=document.createElement('div');row.className='mk';
-    row.innerHTML='<span class="mkt">'+m.k+'</span><div class="mktrack"><div class="mkfill" id="w3m'+idx+'"></div></div><span class="mkv" id="w3v'+idx+'"></span>';mkEl.appendChild(row);});
+  function buildMk(){mkEl.innerHTML='';MK.forEach(function(k,idx){var row=document.createElement('div');row.className='mk';
+    row.innerHTML='<span class="mkt">'+tr(k)+'</span><div class="mktrack"><div class="mkfill" id="w3m'+idx+'"></div></div><span class="mkv" id="w3v'+idx+'"></span>';mkEl.appendChild(row);});}
+  buildMk();
   function upd(){
     var d=clamp((rich-300)/400,0,1);
-    markers.forEach(function(m,idx){var val=1-d;var pct=Math.round(18+val*72);var f=$('#w3m'+idx);
+    MK.forEach(function(m,idx){var val=1-d;var pct=Math.round(18+val*72);var f=$('#w3m'+idx);
       f.style.width=pct+'%';f.style.background=val>.5?COL.bad:COL.bio;
-      $('#w3v'+idx).textContent=(val>.66?'alto':val>.4?'médio':'baixo');});
-    var rico=rich>=480;$('#w3verd').innerHTML='<span class="pill" style="background:'+(rico?COL.bio:COL.bad)+'">'+(rico?'microbioma rico':'microbioma pobre')+'</span> &nbsp;'+fmt(rich*1000)+' genes';
+      $('#w3v'+idx).textContent=(val>.66?tr('w3.high'):val>.4?tr('w3.mid'):tr('w3.low'));});
+    var rico=rich>=480;$('#w3verd').innerHTML='<span class="pill" style="background:'+(rico?COL.bio:COL.bad)+'">'+(rico?tr('w3.vRich'):tr('w3.vPoor'))+'</span> &nbsp;'+fmt(rich*1000)+' '+tr('w3.genes');
     draw();
   }
   $('#w3rich').addEventListener('input',function(){rich=+this.value;upd();loop.kick();});
   $('#w3diet').addEventListener('click',function(){var el=$('#w3rich'),start=rich,end=Math.max(rich,620),t0=null;
     function a(ts){if(!t0)t0=ts;var t=clamp((ts-t0)/1000,0,1);rich=Math.round(lerp(start,end,t));el.value=rich;upd();if(t<1)requestAnimationFrame(a);}requestAnimationFrame(a);});
   upd();
+  HOOKS.push(function(){buildMk();upd();loop.kick();});
 })();
 
 /* ============ mapa corporal compartilhado (SVG) ============ */
 var ORGANS=[
-  {id:'brain',label:'cérebro',cx:150,cy:40,r:20,ev:'assoc',lit:.7,
-   delta:'2,7×',metric:'risco de Parkinson',bad:'constipação anos antes; Coprococcus e Dialister em baixa na depressão',good:'flora produtora de butirato, humor mais estável',who:'Abbott 2001 · Valles-Colomer/Raes 2019'},
-  {id:'mouth',label:'boca',cx:150,cy:78,r:12,ev:'assoc',lit:.55,
-   delta:'~2,5×',metric:'risco de AVC (periodontite grave)',bad:'periodontite, P. gingivalis, efeito sistêmico',good:'comunidade oral simbiótica',who:'revisões 2025 · IC largo'},
-  {id:'lung',label:'pulmão',cx:120,cy:135,r:20,ev:'assoc',lit:.45,
-   delta:'disbiose',metric:'asma e DPOC',bad:'expansão de Haemophilus na asma neutrofílica',good:'proteção via eixo intestino-pulmão',who:'revisões 2025'},
-  {id:'heart',label:'coração',cx:172,cy:130,r:14,ev:'assoc',lit:.75,
-   delta:'1,9×',metric:'risco de morte (TMAO alto)',bad:'carne vermelha → TMA → TMAO, placa na artéria',good:'TMAO baixo',who:'Tang/Hazen 2013 · Schiattarella 2017'},
-  {id:'gut',label:'intestino',cx:150,cy:180,r:26,ev:'hum',lit:1,
-   delta:'103%',metric:'variação da resposta a refeições idênticas',bad:'flora obesa transfere ganho de gordura (camundongo)',good:'Akkermansia +28% de sensibilidade à insulina',who:'lab Gordon · Cani 2019 · Berry 2020'},
-  {id:'skin',label:'pele',cx:210,cy:150,r:14,ev:'assoc',lit:.5,
-   delta:'70% vs 39%',metric:'S. aureus na dermatite atópica',bad:'S. aureus domina a pele lesional',good:'cepas comensais que o combatem',who:'revisão 2026'},
-  {id:'immune',label:'imune',cx:95,cy:185,r:15,ev:'hum',lit:.9,
-   delta:'−81%',metric:'alergia a amendoim (introdução precoce)',bad:'cesárea → asma +18%; antibiótico precoce eleva risco',good:'flora treina a imunidade nos mil primeiros dias',who:'LEAP 2015 · BMC Pediatrics 2023'},
-  {id:'cancer',label:'câncer',cx:150,cy:230,r:16,ev:'hum',lit:.85,
-   delta:'80% / 75%',metric:'resposta à imunoterapia + transplante fecal',bad:'sem a flora certa, imunoterapia responde menos',good:'FMT de doador saudável eleva a resposta',who:'FMT-LUMINate, Nature Medicine 2025'},
-  {id:'vagina',label:'região vaginal',cx:150,cy:270,r:12,ev:'assoc',lit:.55,
-   delta:'~1/3',metric:'vaginose em idade reprodutiva',bad:'perda de Lactobacillus, risco de infecção e parto prematuro',good:'domínio de Lactobacillus',who:'revisões 2025-26'}
+  {id:'brain',cx:150,cy:40,r:20,ev:'assoc',lit:.7},
+  {id:'mouth',cx:150,cy:78,r:12,ev:'assoc',lit:.55},
+  {id:'lung',cx:120,cy:135,r:20,ev:'assoc',lit:.45},
+  {id:'heart',cx:172,cy:130,r:14,ev:'assoc',lit:.75},
+  {id:'gut',cx:150,cy:180,r:26,ev:'hum',lit:1},
+  {id:'skin',cx:210,cy:150,r:14,ev:'assoc',lit:.5},
+  {id:'immune',cx:95,cy:185,r:15,ev:'hum',lit:.9},
+  {id:'cancer',cx:150,cy:230,r:16,ev:'hum',lit:.85},
+  {id:'vagina',cx:150,cy:270,r:12,ev:'assoc',lit:.55}
 ];
+/* textos dos órgãos vêm do dicionário do idioma corrente */
+function ORG(id){var o=(T[LANG]&&T[LANG].organs)?T[LANG].organs:T.pt.organs;return o[id]||T.pt.organs[id];}
 function bodyPath(){
   return '<path d="M150 12 q16 0 16 20 q0 14 -6 20 q14 6 14 26 l6 60 q2 20 -8 26 l-4 70 q-2 30 -6 60 l-2 30 M150 12 q-16 0 -16 20 q0 14 6 20 q-14 6 -14 26 l-6 60 q-2 20 8 26 l4 70 q2 30 6 60 l2 30" fill="none" stroke="'+COL.line+'" stroke-width="1.5"/>';
 }
@@ -702,8 +1268,8 @@ function buildBody(svgId,opts){
   var s='<svg viewBox="0 0 300 300" class="bodysvg" role="img" aria-label="mapa do corpo">';
   s+='<ellipse cx="150" cy="150" rx="86" ry="140" fill="#fafafa" stroke="'+COL.line+'"/>';
   ORGANS.forEach(function(o){
-    s+='<circle class="zone" data-id="'+o.id+'" cx="'+o.cx+'" cy="'+o.cy+'" r="'+o.r+'"><title>'+o.label+'</title></circle>';
-    s+='<text class="zonelabel" x="'+o.cx+'" y="'+(o.cy+o.r+9)+'" text-anchor="middle">'+o.label+'</text>';
+    s+='<circle class="zone" data-id="'+o.id+'" cx="'+o.cx+'" cy="'+o.cy+'" r="'+o.r+'"><title>'+ORG(o.id).label+'</title></circle>';
+    s+='<text class="zonelabel" x="'+o.cx+'" y="'+(o.cy+o.r+9)+'" text-anchor="middle">'+ORG(o.id).label+'</text>';
   });
   s+='</svg>';
   $(svgId).innerHTML=s;
@@ -718,13 +1284,28 @@ function buildBody(svgId,opts){
     if(revealed)return;var id=z.dataset.id;picked[id]=!picked[id];z.classList.toggle('pick',picked[id]);
   });});
   $('#w4lock').addEventListener('click',function(){
-    revealed=true;this.disabled=true;this.textContent='mapa revelado';
+    revealed=true;this.disabled=true;this.textContent=tr('w4.revealed');
     $all('#w4svg .zone').forEach(function(z){var o=ORGANS.find(function(x){return x.id===z.dataset.id});
       z.classList.remove('pick');
       setTimeout(function(){z.classList.add('lit');z.style.opacity=0.35+o.lit*0.65;},Math.random()*500);
     });
     var np=Object.keys(picked).filter(function(k){return picked[k]}).length;
-    $('#w4cap').innerHTML='Você marcou <b>'+np+'</b> de <b>'+ORGANS.length+'</b>. A ciência de 2026 acende quase todas, com a intensidade proporcional à força da evidência. Consulte a seguir os dados medidos por região.';
+    $('#w4cap').innerHTML=trf('w4.capDone',{n:np,total:ORGANS.length});
+  });
+  HOOKS.push(function(){
+    var lit={};$all('#w4svg .zone').forEach(function(z){lit[z.dataset.id]=z.className.baseVal;z.getAttribute('style');});
+    var styles={};$all('#w4svg .zone').forEach(function(z){styles[z.dataset.id]=z.getAttribute('style')||'';});
+    buildBody('#w4svg');
+    $all('#w4svg .zone').forEach(function(z){var id=z.dataset.id;
+      if(lit[id])z.setAttribute('class',lit[id]);
+      if(styles[id])z.setAttribute('style',styles[id]);
+      z.addEventListener('click',function(){if(revealed)return;picked[id]=!picked[id];z.classList.toggle('pick',picked[id]);});
+    });
+    if(revealed){
+      var np=Object.keys(picked).filter(function(k){return picked[k]}).length;
+      $('#w4lock').textContent=tr('w4.revealed');
+      $('#w4cap').innerHTML=trf('w4.capDone',{n:np,total:ORGANS.length});
+    }
   });
 })();
 
@@ -736,21 +1317,37 @@ function buildBody(svgId,opts){
   var card=$('#w5card');
   function show(o){
     var badgeCls=o.ev==='hum'?'hum':o.ev==='mouse'?'mouse':'assoc';
-    var badgeTxt=o.ev==='hum'?'humano robusto':o.ev==='mouse'?'modelo animal':'associativo';
+    var badgeTxt=o.ev==='hum'?tr('ev.hum'):o.ev==='mouse'?tr('ev.mouse'):tr('ev.assoc');
     card.className='organcard show';
-    card.innerHTML='<div class="oh"><span class="on">'+o.label+'</span><span class="obadge '+badgeCls+'">'+badgeTxt+'</span></div>'+
-      '<div class="organdelta" style="color:'+(o.ev==='hum'?'var(--bio-deep)':'var(--ink)')+'">'+o.delta+'</div>'+
-      '<div class="organwho" style="margin-bottom:10px">'+o.metric+'</div>'+
-      '<div class="organrow bad"><span class="rl">ruim</span><span>'+o.bad+'</span></div>'+
-      '<div class="organrow good"><span class="rl">bom</span><span>'+o.good+'</span></div>'+
-      '<div class="organwho" style="margin-top:10px">fonte · '+o.who+'</div>';
-    card.scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'});
+    var x=ORG(o.id);
+    card.innerHTML='<div class="oh"><span class="on">'+x.label+'</span><span class="obadge '+badgeCls+'">'+badgeTxt+'</span></div>'+
+      '<div class="organdelta" style="color:'+(o.ev==='hum'?'var(--bio-deep)':'var(--ink)')+'">'+x.delta+'</div>'+
+      '<div class="organwho" style="margin-bottom:10px">'+x.metric+'</div>'+
+      '<div class="organrow bad"><span class="rl">'+tr('card.bad')+'</span><span>'+x.bad+'</span></div>'+
+      '<div class="organrow good"><span class="rl">'+tr('card.good')+'</span><span>'+x.good+'</span></div>'+
+      '<div class="organwho" style="margin-top:10px">'+tr('card.src')+x.who+'</div>';
+    if(!QUIET)card.scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'});
+    current=o;
   }
+  var current=null,QUIET=false;
   $all('#w5svg .zone').forEach(function(z){z.addEventListener('click',function(){
     $all('#w5svg .zone').forEach(function(x){x.style.stroke=COL.ink;x.style.strokeWidth=1.4;});
     z.style.stroke=COL.bio;z.style.strokeWidth=3;
     show(ORGANS.find(function(x){return x.id===z.dataset.id}));
   });});
+  function wire(){$all('#w5svg .zone').forEach(function(z){z.addEventListener('click',function(){
+    $all('#w5svg .zone').forEach(function(x){x.style.stroke=COL.ink;x.style.strokeWidth=1.4;});
+    z.style.stroke=COL.bio;z.style.strokeWidth=3;
+    show(ORGANS.find(function(x){return x.id===z.dataset.id}));
+  });});}
+  HOOKS.push(function(){
+    var styles={};$all('#w5svg .zone').forEach(function(z){styles[z.dataset.id]=z.getAttribute('style')||'';});
+    buildBody('#w5svg');
+    $all('#w5svg .zone').forEach(function(z){z.classList.add('lit');
+      if(styles[z.dataset.id])z.setAttribute('style',styles[z.dataset.id]);});
+    wire();
+    if(current){QUIET=true;show(current);QUIET=false;}
+  });
   var order={hum:3,assoc:2,mouse:1};
   $all('#w5sort .btn').forEach(function(b){b.addEventListener('click',function(){
     $all('#w5sort .btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
@@ -763,34 +1360,37 @@ function buildBody(svgId,opts){
 (function(){
   var box=$('#w6bars');if(!box)return;
   var D=[
-    {n:'Riqueza: pobre vs rico',v:1.7,disp:'40% (380k→640k)',ev:'assoc',src:'Le Chatelier et al., Nature 2013'},
-    {n:'Akkermansia → sensib. insulina',v:1.28,disp:'+28%',ev:'hum',src:'Depommier/Cani, Nature Medicine 2019'},
-    {n:'TMAO alto → morte',v:1.91,disp:'1,91×',ev:'assoc',src:'Schiattarella, Eur Heart J 2017'},
-    {n:'Constipação → Parkinson',v:2.7,disp:'2,7×',ev:'assoc',src:'Abbott, Neurology 2001'},
-    {n:'Cesárea → asma',v:1.18,disp:'1,18×',ev:'assoc',src:'BMC Pediatrics 2023'},
-    {n:'Amendoim precoce → alergia',v:5.3,disp:'−81%',ev:'hum',src:'LEAP, NEJM 2015',neg:true},
-    {n:'P. copri na artrite reumatoide',v:3.5,disp:'75% vs 21%',ev:'assoc',src:'Scher et al., eLife 2013'},
-    {n:'FMT + imunoterapia (câncer)',v:4,disp:'80% / 75% resposta',ev:'hum',src:'FMT-LUMINate, Nat Med 2025'},
-    {n:'F. nucleatum → mortalidade',v:1.93,disp:'1,93×',ev:'assoc',src:'meta-análise, J Cancer 2021'},
-    {n:'S. aureus na dermatite',v:1.8,disp:'70% vs 39%',ev:'assoc',src:'revisão 2026'},
-    {n:'Periodontite → AVC',v:2.5,disp:'2,5×',ev:'assoc',src:'revisão 2025'},
-    {n:'FMT vs antibiótico (C. difficile)',v:3,disp:'~90% vs ~30%',ev:'hum',src:'van Nood, NEJM 2013'}
+    {v:1.7,ev:'assoc'},
+    {v:1.28,ev:'hum'},
+    {v:1.91,ev:'assoc'},
+    {v:2.7,ev:'assoc'},
+    {v:1.18,ev:'assoc'},
+    {v:5.3,ev:'hum',neg:true},
+    {v:3.5,ev:'assoc'},
+    {v:4,ev:'hum'},
+    {v:1.93,ev:'assoc'},
+    {v:1.8,ev:'assoc'},
+    {v:2.5,ev:'assoc'},
+    {v:3,ev:'hum'}
   ];
+  function ROW(i){var r=(T[LANG]&&T[LANG].rows)?T[LANG].rows:T.pt.rows;return r[i]||T.pt.rows[i];}
   var order={hum:3,assoc:2,mouse:1};
   var maxV=Math.max.apply(null,D.map(function(d){return Math.log(d.v)}));
+  var curSort='mag';
   function render(sort){
-    var arr=D.slice();
+    curSort=sort;
+    var arr=D.map(function(d,i){var r=ROW(i);return {v:d.v,ev:d.ev,neg:d.neg,n:r.n,disp:r.disp,src:r.src};});
     if(sort==='mag')arr.sort(function(a,b){return b.v-a.v});
     else arr.sort(function(a,b){return (order[b.ev]-order[a.ev])|| (b.v-a.v)});
     box.innerHTML='';
     arr.forEach(function(d){
       var evCls=d.ev==='hum'?'hum':d.ev==='mouse'?'mouse':'assoc';
-      var evTxt=d.ev==='hum'?'humano':d.ev==='mouse'?'animal':'assoc';
+      var evTxt=d.ev==='hum'?tr('evs.hum'):d.ev==='mouse'?tr('evs.mouse'):tr('evs.assoc');
       var pos=8+ (Math.log(d.v)/maxV)*84;
       var row=document.createElement('div');row.className='frow';
       row.innerHTML='<div class="fl"><span class="fn">'+d.n+'<span class="ev '+evCls+'">'+evTxt+'</span></span><span class="fv">'+d.disp+'</span></div>'+
         '<div class="ftrack"><div class="faxis"></div><div class="fci '+evCls+'" style="left:8%;width:'+(pos-8)+'%;color:'+(d.ev==='hum'?COL.bio:d.ev==='mouse'?COL.bad:COL.ink)+'"></div><div class="fdot '+evCls+'" style="left:'+pos+'%"></div></div>'+
-        '<div class="fsrc">fonte · '+d.src+'</div>';
+        '<div class="fsrc">'+tr('card.src')+d.src+'</div>';
       row.addEventListener('click',function(){var s=row.querySelector('.fsrc');s.classList.toggle('show');});
       box.appendChild(row);
     });
@@ -799,6 +1399,7 @@ function buildBody(svgId,opts){
     $all('#w6sort .btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');render(b.dataset.s);
   });});
   render('mag');
+  HOOKS.push(function(){render(curSort);});
 })();
 
 /* ============ WIDGET 7 : A SEMANA ============ */
@@ -852,33 +1453,63 @@ function buildBody(svgId,opts){
 /* ============ WIDGET 8 : VERDADE OU HYPE ============ */
 (function(){
   var wrap=$('#w8wrap');if(!wrap)return;
-  var Q=[
-    {q:'Um teste de microbioma caseiro me diz o que comer.',a:'hype',ev:'A mesma amostra enviada a duas empresas distintas resulta em recomendações divergentes. Consenso internacional, Lancet Gastroenterol Hepatol 2024.'},
-    {q:'Probiótico genérico melhora a saúde de qualquer pessoa.',a:'hype',ev:'O efeito é específico de cepa, dosagem e indicação. As diretrizes da AGA (2020) não recomendam para a maioria dos transtornos digestivos.'},
-    {q:'Transplante fecal cura infecção recorrente por C. difficile.',a:'base',ev:'Taxa de cura de ~90% contra ~30% do antibiótico convencional. Dois produtos biológicos aprovados pela FDA (2022 e 2023). van Nood, NEJM 2013.'},
-    {q:'Fibra em pó, sozinha, resolve o intestino em uma semana.',a:'hype',ev:'O ensaio de Stanford registrou baixa eficácia da fibra isolada em curto prazo, enquanto os alimentos fermentados reduziram os marcadores inflamatórios. Wastyk, Cell 2021.'},
-    {q:'Comer 30 tipos de plantas por semana associa-se a mais diversidade.',a:'base',ev:'Achado do American Gut Project. Associação epidemiológica robusta e acessível. McDonald, mSystems 2018.'}
-  ];
-  var idx=0,score=0;
+  var A=['hype','hype','base','hype','base'];
+  function QZ(){var q=(T[LANG]&&T[LANG].quiz)?T[LANG].quiz:T.pt.quiz;
+    return q.map(function(x,i){return {q:x.q,ev:x.ev,a:A[i]};});}
+  var Q=QZ();
+  var idx=0,score=0,answered=null;
+  /* revela sem pontuar: usado no clique e ao redesenhar o cartão já respondido */
+  function reveal(choice){
+    var it=Q[idx],correct=choice===it.a;
+    $all('#hcard .hchoices .btn').forEach(function(x){x.disabled=true;
+      if(x.dataset.c===it.a){x.classList.add('bio');x.classList.add('on');}
+    });
+    var rev=$('#hrev');rev.classList.add('show');
+    rev.innerHTML='<span class="tag" style="background:'+(it.a==='base'?COL.bio:COL.bad)+'">'+(it.a==='base'?tr('w8.tagBase'):tr('w8.tagHype'))+'</span> '+(correct?tr('w8.right'):tr('w8.wrong'))+it.ev+'<div style="margin-top:10px"><button class="btn solid" id="hnext">'+(idx+1<Q.length?tr('w8.next'):tr('w8.result'))+'</button></div>';
+    $('#hnext').addEventListener('click',function(){idx++;answered=null;render();});
+  }
   function render(){
-    if(idx>=Q.length){wrap.innerHTML='<div class="hcard"><div class="hq">Você acertou <b>'+score+'</b> de <b>'+Q.length+'</b>. A avaliação crítica permanece: mecanismo plausível difere de benefício clínico comprovado em humanos.</div></div>';$('#w8prog').textContent='';return;}
+    Q=QZ();
+    if(idx>=Q.length){wrap.innerHTML='<div class="hcard"><div class="hq">'+trf('w8.final',{score:score,n:Q.length})+'</div></div>';$('#w8prog').textContent='';return;}
     var it=Q[idx];
     wrap.innerHTML='<div class="hcard" id="hcard"><div class="hq">'+it.q+'</div>'+
-      '<div class="hchoices"><button class="btn" data-c="base">tem base</button><button class="btn" data-c="hype">é hype</button></div>'+
+      '<div class="hchoices"><button class="btn" data-c="base">'+tr('w8.base')+'</button><button class="btn" data-c="hype">'+tr('w8.hype')+'</button></div>'+
       '<div class="hreveal" id="hrev"></div></div>';
-    $('#w8prog').textContent='cartão '+(idx+1)+' de '+Q.length;
+    $('#w8prog').textContent=trf('w8.card',{i:idx+1,n:Q.length});
     $all('#hcard .hchoices .btn').forEach(function(b){b.addEventListener('click',function(){
-      var correct=b.dataset.c===it.a;if(correct)score++;
-      $all('#hcard .hchoices .btn').forEach(function(x){x.disabled=true;
-        if(x.dataset.c===it.a){x.classList.add('bio');x.classList.add('on');}
-      });
-      var rev=$('#hrev');rev.classList.add('show');
-      rev.innerHTML='<span class="tag" style="background:'+(it.a==='base'?COL.bio:COL.bad)+'">'+(it.a==='base'?'TEM BASE':'É HYPE')+'</span> '+(correct?'resposta correta. ':'avaliação incorreta. ')+it.ev+'<div style="margin-top:10px"><button class="btn solid" id="hnext">'+(idx+1<Q.length?'próximo':'ver resultado')+'</button></div>';
-      $('#hnext').addEventListener('click',function(){idx++;render();});
+      if(answered)return;
+      answered=b.dataset.c;
+      if(answered===it.a)score++;
+      reveal(answered);
     });});
+    if(answered)reveal(answered);
   }
   render();
+  HOOKS.push(function(){render();});
 })();
+
+/* ================= troca de idioma ================= */
+var PT={};
+$all('[data-i18n]').forEach(function(el){PT[el.getAttribute('data-i18n')]=el.innerHTML;});
+function applyLang(lang){
+  LANG=lang;document.documentElement.lang=lang;
+  try{localStorage.setItem('rs_lang_gen',lang);}catch(e){}
+  $all('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    var v=(lang==='en')?EN[k]:PT[k];
+    if(v!=null)el.innerHTML=v;
+  });
+  $all('.langtoggle button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  HOOKS.forEach(function(fn){try{fn();}catch(e){}});
+}
+$all('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
+function detectLang(){
+  try{var st=localStorage.getItem('rs_lang_gen');if(st==='pt'||st==='en')return st;}catch(e){}
+  var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+  for(var i=0;i<navs.length;i++){var l=(navs[i]||'').toLowerCase();if(l.indexOf('pt')===0)return 'pt';if(l.indexOf('en')===0)return 'en';}
+  return 'pt';
+}
+applyLang(detectLang());
 </script>
 </body>
 </html>
