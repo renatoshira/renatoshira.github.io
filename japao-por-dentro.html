@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O Japão por dentro</title>
+<title data-i18n="hero.title1">O Japão por dentro</title>
 <meta name="description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos japoneses, e de onde eles vêm, para quem vai viajar para o Japão.">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://renatoshira.github.io/japao-por-dentro.html">
@@ -51,6 +51,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font
 .topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:12px 24px}
 .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0;font-weight:700}
 .topbar .kicker:hover{color:var(--terra)}
+.topbar .right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.langtoggle{display:flex;border:1px solid var(--ink);font-size:11px}
+.langtoggle button{border:0;background:transparent;color:var(--ink);font-family:var(--mono);font-size:11px;padding:4px 9px;cursor:pointer;letter-spacing:.09em}
+.langtoggle button.active{background:var(--ink);color:#fff}
 
 p{font-size:18px;line-height:1.75;margin:0 0 20px}
 strong{font-weight:700}
@@ -156,84 +160,92 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
 <body>
 <div class="progress" id="progress"></div>
 
-<div class="topbar"><a class="kicker" href="index.html">← Renato Shirakashi</a></div>
+<div class="topbar">
+  <a class="kicker" href="index.html">← Renato Shirakashi</a>
+  <div class="right">
+    <div class="langtoggle" role="group" aria-label="Idioma">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
 
 <header class="top">
-  <div class="eyebrow">Cultura japonesa · artigo interativo</div>
-  <h1><span class="mark">O Japão</span><span class="mark">por dentro</span><span class="en">日本のうちがわ</span></h1>
-  <p class="standfirst">Alguns hábitos japoneses parecem estranhos à primeira vista, mas quase todos têm uma origem concreta. Este artigo explica de onde vêm alguns deles, com pequenas demonstrações para você mexer pelo caminho.</p>
+  <div class="eyebrow" data-i18n="hero.eyebrow1">Cultura japonesa · artigo interativo</div>
+  <h1><span class="mark" data-i18n="hero.h1a">O Japão</span><span class="mark" data-i18n="hero.h1b">por dentro</span><span class="en">日本のうちがわ</span></h1>
+  <p class="standfirst" data-i18n="hero.p1">Alguns hábitos japoneses parecem estranhos à primeira vista, mas quase todos têm uma origem concreta. Este artigo explica de onde vêm alguns deles, com pequenas demonstrações para você mexer pelo caminho.</p>
   <figure class="hero-fig">
     <div class="widget"><canvas id="heroCanvas" height="200"></canvas></div>
-    <figcaption>Padrão <span class="jp">seigaiha</span> (青海波), "ondas do mar", um dos motivos mais antigos do design japonês.</figcaption>
+    <figcaption data-i18n="hero.figcaption1">Padrão <span class="jp">seigaiha</span> (青海波), "ondas do mar", um dos motivos mais antigos do design japonês.</figcaption>
   </figure>
 </header>
 
 <main>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">00</span> · introdução</div>
-  <h2>Pequenos hábitos com origem concreta</h2>
-  <p>Quem chega ao Japão pela primeira vez costuma reparar em coisas que funcionam de um jeito silencioso e preciso. O trem parte no segundo marcado. As ruas ficam limpas mesmo sem lixeiras à vista. As pessoas se curvam umas para as outras, falam baixo no vagão, e uma tigela de chá pode ter uma rachadura preenchida com ouro em vez de ser jogada fora.</p>
-  <p>Cada um desses hábitos tem uma razão, quase sempre ligada a algum ponto da história do país. Neste artigo eu percorro alguns deles e explico de onde vêm, usando demonstrações interativas ao longo do caminho. Entender a razão por trás de um gesto <span class="mark">muda o modo como você o observa quando está lá</span>.</p>
+  <div class="tag" data-i18n="s00.tag1"><span class="n">00</span> · introdução</div>
+  <h2 data-i18n="s00.h21">Pequenos hábitos com origem concreta</h2>
+  <p data-i18n="s00.p1">Quem chega ao Japão pela primeira vez costuma reparar em coisas que funcionam de um jeito silencioso e preciso. O trem parte no segundo marcado. As ruas ficam limpas mesmo sem lixeiras à vista. As pessoas se curvam umas para as outras, falam baixo no vagão, e uma tigela de chá pode ter uma rachadura preenchida com ouro em vez de ser jogada fora.</p>
+  <p data-i18n="s00.p2">Cada um desses hábitos tem uma razão, quase sempre ligada a algum ponto da história do país. Neste artigo eu percorro alguns deles e explico de onde vêm, usando demonstrações interativas ao longo do caminho. Entender a razão por trás de um gesto <span class="mark">muda o modo como você o observa quando está lá</span>.</p>
 </section>
 
 <section class="wrap">
-  <div class="tag"><span class="n">01</span> · a moldura</div>
-  <h2>Como o Japão se fechou e se abriu</h2>
-  <p>Antes de olhar para os detalhes, vale montar a moldura. Boa parte do que o Japão é hoje foi formada por cinco momentos em que o país mudou sua relação com o resto do mundo. Vale ter esses marcos em mente, porque quase tudo o que vem nas próximas seções desce de um deles.</p>
+  <div class="tag" data-i18n="s01.tag1"><span class="n">01</span> · a moldura</div>
+  <h2 data-i18n="s01.h21">Como o Japão se fechou e se abriu</h2>
+  <p data-i18n="s01.p1">Antes de olhar para os detalhes, vale montar a moldura. Boa parte do que o Japão é hoje foi formada por cinco momentos em que o país mudou sua relação com o resto do mundo. Vale ter esses marcos em mente, porque quase tudo o que vem nas próximas seções desce de um deles.</p>
   <div class="timeline">
     <div class="tl-item reveal">
       <div class="tl-year">1639</div>
       <div class="tl-body">
-        <h3 class="tl-title">O fechamento do país<span class="jp">鎖国</span></h3>
-        <p>O Japão fecha as fronteiras e mantém esse isolamento por mais de duzentos anos, um dos mais longos da história. Sair do país passa a ser proibido sob pena de morte, e quase nenhum estrangeiro pode entrar. O único contato regular com o Ocidente acontece por Dejima, uma minúscula ilha artificial em forma de leque, em Nagasaki, onde os comerciantes holandeses ficavam confinados. Sem guerras internas e sem influência de fora, o país passa esse longo período aperfeiçoando as próprias tradições. A cerimônia do chá, o teatro nô e kabuki, a gravura ukiyo-e, os jardins e a culinária ganham nessa época a forma refinada que têm até hoje, e daí vem boa parte do apreço japonês pelo detalhe e por fazer uma coisa só, muito bem feita.</p>
+        <h3 class="tl-title" data-i18n="s01.h31">O fechamento do país<span class="jp">鎖国</span></h3>
+        <p data-i18n="s01.p2">O Japão fecha as fronteiras e mantém esse isolamento por mais de duzentos anos, um dos mais longos da história. Sair do país passa a ser proibido sob pena de morte, e quase nenhum estrangeiro pode entrar. O único contato regular com o Ocidente acontece por Dejima, uma minúscula ilha artificial em forma de leque, em Nagasaki, onde os comerciantes holandeses ficavam confinados. Sem guerras internas e sem influência de fora, o país passa esse longo período aperfeiçoando as próprias tradições. A cerimônia do chá, o teatro nô e kabuki, a gravura ukiyo-e, os jardins e a culinária ganham nessa época a forma refinada que têm até hoje, e daí vem boa parte do apreço japonês pelo detalhe e por fazer uma coisa só, muito bem feita.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">1853</div>
       <div class="tl-body">
-        <h3 class="tl-title">Os navios de Perry<span class="jp">黒船</span></h3>
-        <p>O comodoro americano Matthew Perry entra na baía de Edo com uma esquadra de navios de guerra a vapor, escuros de fumaça de carvão. Os japoneses os apelidam de <span class="term" tabindex="0" data-jp="kurofune · 黒船">navios negros</span>, e o nome ficou. O país, que ainda dependia de espadas e não tinha uma marinha moderna, percebe em pouco tempo que não tem como resistir e é obrigado a abrir os portos ao comércio. O episódio é um choque, e deixa uma lição que orienta as décadas seguintes: para não ser dominado, é preciso se modernizar depressa.</p>
+        <h3 class="tl-title" data-i18n="s01.h32">Os navios de Perry<span class="jp">黒船</span></h3>
+        <p data-i18n="s01.p3">O comodoro americano Matthew Perry entra na baía de Edo com uma esquadra de navios de guerra a vapor, escuros de fumaça de carvão. Os japoneses os apelidam de <span class="term" tabindex="0" data-jp="kurofune · 黒船">navios negros</span>, e o nome ficou. O país, que ainda dependia de espadas e não tinha uma marinha moderna, percebe em pouco tempo que não tem como resistir e é obrigado a abrir os portos ao comércio. O episódio é um choque, e deixa uma lição que orienta as décadas seguintes: para não ser dominado, é preciso se modernizar depressa.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">1868</div>
       <div class="tl-body">
-        <h3 class="tl-title">A Restauração Meiji<span class="jp">明治維新</span></h3>
-        <p>Em cerca de uma geração, o Japão se transforma. Adota ferrovias, fábricas, um exército moderno e roupas ocidentais, e chega a abolir a classe dos samurais. O lema da época resume o plano, <span class="term" tabindex="0" data-jp="wakon yōsai · 和魂洋才">espírito japonês com técnica ocidental</span>: importar a tecnologia de fora sem deixar de ser japonês. Esse reflexo de absorver o que vem de fora e adaptar até dominar reaparece depois em tudo, do automóvel à animação. É também a origem da cena que surpreende todo visitante, com um templo de mil anos convivendo, sem estranhamento, ao lado de um bairro de arranha-céus e neon.</p>
+        <h3 class="tl-title" data-i18n="s01.h33">A Restauração Meiji<span class="jp">明治維新</span></h3>
+        <p data-i18n="s01.p4">Em cerca de uma geração, o Japão se transforma. Adota ferrovias, fábricas, um exército moderno e roupas ocidentais, e chega a abolir a classe dos samurais. O lema da época resume o plano, <span class="term" tabindex="0" data-jp="wakon yōsai · 和魂洋才">espírito japonês com técnica ocidental</span>: importar a tecnologia de fora sem deixar de ser japonês. Esse reflexo de absorver o que vem de fora e adaptar até dominar reaparece depois em tudo, do automóvel à animação. É também a origem da cena que surpreende todo visitante, com um templo de mil anos convivendo, sem estranhamento, ao lado de um bairro de arranha-céus e neon.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">1945</div>
       <div class="tl-body">
-        <h3 class="tl-title">O fim da guerra</h3>
-        <p>A derrota na Segunda Guerra, com as bombas atômicas sobre Hiroshima e Nagasaki e a ocupação americana que se segue, deixa o país devastado. Durante anos, a ocupação censura até mesmo falar publicamente da bomba, e o assunto fica represado. Vêm daí um pacifismo profundo e uma relação desconfiada com a tecnologia. Quando a censura afrouxa, esse trauma reaparece transformado na cultura popular: Godzilla, de 1954, é um monstro despertado pela radiação, e muita gente saía do cinema em lágrimas, num raro momento em que era possível chorar aquela perda coletiva.</p>
+        <h3 class="tl-title" data-i18n="s01.h34">O fim da guerra</h3>
+        <p data-i18n="s01.p5">A derrota na Segunda Guerra, com as bombas atômicas sobre Hiroshima e Nagasaki e a ocupação americana que se segue, deixa o país devastado. Durante anos, a ocupação censura até mesmo falar publicamente da bomba, e o assunto fica represado. Vêm daí um pacifismo profundo e uma relação desconfiada com a tecnologia. Quando a censura afrouxa, esse trauma reaparece transformado na cultura popular: Godzilla, de 1954, é um monstro despertado pela radiação, e muita gente saía do cinema em lágrimas, num raro momento em que era possível chorar aquela perda coletiva.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">1990<span class="tl-year-sfx">→</span></div>
       <div class="tl-body">
-        <h3 class="tl-title">O baixo crescimento e o Cool Japan</h3>
-        <p>Depois de um crescimento acelerado no pós-guerra, a economia estagna a partir dos anos 1990 e a população começa a envelhecer. No mesmo período, a cultura japonesa vira uma das maiores exportações do país. Animação, quadrinhos, videogames, culinária e moda passam a definir a imagem do Japão no mundo, a ponto de o governo criar um programa oficial chamado Cool Japan para incentivar isso e, em 2008, nomear a personagem Hello Kitty embaixadora do turismo japonês no exterior. Boa parte do Japão que se admira hoje nasce dessa fase.</p>
+        <h3 class="tl-title" data-i18n="s01.h35">O baixo crescimento e o Cool Japan</h3>
+        <p data-i18n="s01.p6">Depois de um crescimento acelerado no pós-guerra, a economia estagna a partir dos anos 1990 e a população começa a envelhecer. No mesmo período, a cultura japonesa vira uma das maiores exportações do país. Animação, quadrinhos, videogames, culinária e moda passam a definir a imagem do Japão no mundo, a ponto de o governo criar um programa oficial chamado Cool Japan para incentivar isso e, em 2008, nomear a personagem Hello Kitty embaixadora do turismo japonês no exterior. Boa parte do Japão que se admira hoje nasce dessa fase.</p>
       </div>
     </div>
   </div>
-  <p>Dois desses marcos pesam mais que os outros. O longo isolamento explica o cuidado extremo com a forma e o detalhe; a abertura forçada de 1853 explica a facilidade de <span class="mark">absorver o que vem de fora sem deixar de ser japonês</span>. Guarde os dois, porque reaparecem em quase todas as seções seguintes.</p>
+  <p data-i18n="s01.p7">Dois desses marcos pesam mais que os outros. O longo isolamento explica o cuidado extremo com a forma e o detalhe; a abertura forçada de 1853 explica a facilidade de <span class="mark">absorver o que vem de fora sem deixar de ser japonês</span>. Guarde os dois, porque reaparecem em quase todas as seções seguintes.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">02</span> · crenças</div>
-  <h2>Duas religiões que convivem sem atrito</h2>
-  <p>O japonês raramente se descreve como religioso, mas a vida diária passa por duas lentes que convivem sem conflito. A primeira é o <strong><span class="term" tabindex="0" data-jp="神道 · shintō">xintoísmo</span></strong>, a religião nativa, sem fundador nem livro sagrado, para a qual espíritos, os <em>kami</em>, habitam montanhas, rios, árvores, objetos e antepassados. Nela quase não existe a ideia de pecado; existe a de <span class="term" tabindex="0" data-jp="kegare · 穢れ">puro e impuro</span>. <span class="mark">Boa parte da mania japonesa de limpeza é, no fundo, teológica.</span> A água para lavar as mãos na entrada de um santuário, o sal usado para purificar, o banho antes de entrar na banheira, tudo vem daí.</p>
-  <p>A segunda lente é o <strong><span class="term" tabindex="0" data-jp="仏教 · bukkyō">budismo</span></strong>, que chegou no século VI e trouxe a ideia de que tudo é passageiro. As duas repartem a vida sem disputa, a ponto de existir um ditado de que o japonês nasce xintoísta, casa no estilo cristão e morre budista: nascimentos e casamentos costumam passar pelo santuário, e os funerais, pelo templo. É uma espiritualidade de gestos e ocasiões, mais do que de doutrina.</p>
-  <p>Dois traços dessa visão aparecem à toa. Os números <strong>4 e 9</strong> são evitados porque soam como as palavras para morte e sofrimento, então muitos prédios e hospitais pulam esses andares e quartos. E o <strong><span class="term" tabindex="0" data-jp="matsuri · 祭り">matsuri</span></strong>, a festa de um santuário, é o momento em que a contenção japonesa se inverte: dezenas de pessoas carregam pelas ruas, aos gritos e empurrões, um <span class="term" tabindex="0" data-jp="mikoshi · 神輿">santuário portátil</span>, para levar o kami a passear.</p>
+  <div class="tag" data-i18n="s02.tag1"><span class="n">02</span> · crenças</div>
+  <h2 data-i18n="s02.h21">Duas religiões que convivem sem atrito</h2>
+  <p data-i18n="s02.p1">O japonês raramente se descreve como religioso, mas a vida diária passa por duas lentes que convivem sem conflito. A primeira é o <strong><span class="term" tabindex="0" data-jp="神道 · shintō">xintoísmo</span></strong>, a religião nativa, sem fundador nem livro sagrado, para a qual espíritos, os <em>kami</em>, habitam montanhas, rios, árvores, objetos e antepassados. Nela quase não existe a ideia de pecado; existe a de <span class="term" tabindex="0" data-jp="kegare · 穢れ">puro e impuro</span>. <span class="mark">Boa parte da mania japonesa de limpeza é, no fundo, teológica.</span> A água para lavar as mãos na entrada de um santuário, o sal usado para purificar, o banho antes de entrar na banheira, tudo vem daí.</p>
+  <p data-i18n="s02.p2">A segunda lente é o <strong><span class="term" tabindex="0" data-jp="仏教 · bukkyō">budismo</span></strong>, que chegou no século VI e trouxe a ideia de que tudo é passageiro. As duas repartem a vida sem disputa, a ponto de existir um ditado de que o japonês nasce xintoísta, casa no estilo cristão e morre budista: nascimentos e casamentos costumam passar pelo santuário, e os funerais, pelo templo. É uma espiritualidade de gestos e ocasiões, mais do que de doutrina.</p>
+  <p data-i18n="s02.p3">Dois traços dessa visão aparecem à toa. Os números <strong>4 e 9</strong> são evitados porque soam como as palavras para morte e sofrimento, então muitos prédios e hospitais pulam esses andares e quartos. E o <strong><span class="term" tabindex="0" data-jp="matsuri · 祭り">matsuri</span></strong>, a festa de um santuário, é o momento em que a contenção japonesa se inverte: dezenas de pessoas carregam pelas ruas, aos gritos e empurrões, um <span class="term" tabindex="0" data-jp="mikoshi · 神輿">santuário portátil</span>, para levar o kami a passear.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">03</span> · o grupo</div>
-  <h2>Harmonia e os círculos de proximidade <span class="jp">和</span></h2>
-  <p>O valor que organiza boa parte do comportamento social japonês é o <strong>wa</strong> (<span class="jp">和</span>), a harmonia do grupo. Um nome antigo do próprio país é justamente Wa, e o caractere <span class="jp">和</span> vale até hoje como "japonês" em palavras como <em>washoku</em> (a comida), <em>wafuku</em> (a roupa tradicional) e <em>washi</em> (o papel), de modo que <span class="mark">a ideia de harmonia está dentro do próprio nome</span>. Na prática, a intensidade com que o wa age depende de quão próxima uma pessoa está de você. Os japoneses separam o mundo entre <strong>uchi</strong> (<span class="jp">内</span>, dentro) e <strong>soto</strong> (<span class="jp">外</span>, fora), e tratam os dois de formas bem diferentes.</p>
-  <p>Na demonstração abaixo, o centro é você. Arraste o ponto para as bordas e observe como a linguagem e o comportamento esperados mudam a cada anel. No núcleo, com a família, a fala é casual e você diz o que pensa, o que se chama <em>honne</em>. Nas bordas, com estranhos, a fala passa a ser formal, o <em>keigo</em>, e o que se mostra é a versão cordial e contida, o <em>tatemae</em>.</p>
+  <div class="tag" data-i18n="s03.tag1"><span class="n">03</span> · o grupo</div>
+  <h2 data-i18n="s03.h21">Harmonia e os círculos de proximidade <span class="jp">和</span></h2>
+  <p data-i18n="s03.p1">O valor que organiza boa parte do comportamento social japonês é o <strong>wa</strong> (<span class="jp">和</span>), a harmonia do grupo. Um nome antigo do próprio país é justamente Wa, e o caractere <span class="jp">和</span> vale até hoje como "japonês" em palavras como <em>washoku</em> (a comida), <em>wafuku</em> (a roupa tradicional) e <em>washi</em> (o papel), de modo que <span class="mark">a ideia de harmonia está dentro do próprio nome</span>. Na prática, a intensidade com que o wa age depende de quão próxima uma pessoa está de você. Os japoneses separam o mundo entre <strong>uchi</strong> (<span class="jp">内</span>, dentro) e <strong>soto</strong> (<span class="jp">外</span>, fora), e tratam os dois de formas bem diferentes.</p>
+  <p data-i18n="s03.p2">Na demonstração abaixo, o centro é você. Arraste o ponto para as bordas e observe como a linguagem e o comportamento esperados mudam a cada anel. No núcleo, com a família, a fala é casual e você diz o que pensa, o que se chama <em>honne</em>. Nas bordas, com estranhos, a fala passa a ser formal, o <em>keigo</em>, e o que se mostra é a versão cordial e contida, o <em>tatemae</em>.</p>
   <figure>
     <div class="widget">
       <canvas id="rings" height="400"></canvas>
@@ -244,16 +256,16 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="sub" id="ringMode">honne · o que se sente</div>
       </div>
     </div>
-    <figcaption>Arraste o ponto do centro para a borda. Cada anel formaliza a linguagem e o comportamento.</figcaption>
+    <figcaption data-i18n="s03.figcaption1">Arraste o ponto do centro para a borda. Cada anel formaliza a linguagem e o comportamento.</figcaption>
   </figure>
-  <p>Isso ajuda a entender algumas cenas comuns. O atendente que trata o cliente com uma cortesia quase cerimoniosa está seguindo a regra do soto. O colega de trabalho que só relaxa de verdade num jantar regado a bebida, o <em>nomikai</em>, está cruzando por algumas horas a fronteira para o uchi. Também é por isso que um "sim" nem sempre é um sim: para não quebrar a harmonia, costuma-se evitar o "não" direto e responder com um "é um pouco difícil", que na prática quer dizer não. <span class="mark">A cortesia distante com quem está de fora é a forma padrão de respeito.</span></p>
-  <p>O wa não anda sozinho. Perto dele vivem outros valores. Há um <span class="term" tabindex="0" data-jp="giri · 義理">senso de obrigação de retribuir favores</span>, sempre em tensão com o sentimento pessoal de cada um, e essa queda de braço move boa parte do teatro e das histórias japonesas. Há o hábito de <span class="term" tabindex="0" data-jp="gaman · 我慢">suportar o difícil em silêncio</span> e o de dar o máximo até o fim; <span class="mark">o lado sombrio dessa última virtude tem até um nome próprio, <span class="term" tabindex="0" data-jp="karōshi · 過労死">a morte por excesso de trabalho</span>.</span> Há a <span class="term" tabindex="0" data-jp="omotenashi · おもてなし">hospitalidade que antecipa a necessidade</span> sem esperar nada em troca, que ajuda a explicar tanto o serviço impecável quanto a ausência de gorjeta. E por baixo de tudo está o apreço pela forma correta de fazer cada coisa, o caminho da maestria que sustenta a figura do <span class="term" tabindex="0" data-jp="shokunin · 職人">artesão de um ofício só</span>.</p>
+  <p data-i18n="s03.p3">Isso ajuda a entender algumas cenas comuns. O atendente que trata o cliente com uma cortesia quase cerimoniosa está seguindo a regra do soto. O colega de trabalho que só relaxa de verdade num jantar regado a bebida, o <em>nomikai</em>, está cruzando por algumas horas a fronteira para o uchi. Também é por isso que um "sim" nem sempre é um sim: para não quebrar a harmonia, costuma-se evitar o "não" direto e responder com um "é um pouco difícil", que na prática quer dizer não. <span class="mark">A cortesia distante com quem está de fora é a forma padrão de respeito.</span></p>
+  <p data-i18n="s03.p4">O wa não anda sozinho. Perto dele vivem outros valores. Há um <span class="term" tabindex="0" data-jp="giri · 義理">senso de obrigação de retribuir favores</span>, sempre em tensão com o sentimento pessoal de cada um, e essa queda de braço move boa parte do teatro e das histórias japonesas. Há o hábito de <span class="term" tabindex="0" data-jp="gaman · 我慢">suportar o difícil em silêncio</span> e o de dar o máximo até o fim; <span class="mark">o lado sombrio dessa última virtude tem até um nome próprio, <span class="term" tabindex="0" data-jp="karōshi · 過労死">a morte por excesso de trabalho</span>.</span> Há a <span class="term" tabindex="0" data-jp="omotenashi · おもてなし">hospitalidade que antecipa a necessidade</span> sem esperar nada em troca, que ajuda a explicar tanto o serviço impecável quanto a ausência de gorjeta. E por baixo de tudo está o apreço pela forma correta de fazer cada coisa, o caminho da maestria que sustenta a figura do <span class="term" tabindex="0" data-jp="shokunin · 職人">artesão de um ofício só</span>.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">04</span> · convivência</div>
-  <h2>Tirar os sapatos, e outros hábitos</h2>
-  <p>Poucas regras surpreendem tão cedo na viagem quanto a dos sapatos. Em casas, ryokans, muitos templos e até alguns restaurantes e escolas, os sapatos ficam num <span class="term" tabindex="0" data-jp="genkan · 玄関">degrau rebaixado na entrada</span>, e dali em diante se anda de meia ou de pantufa. <span class="mark">O chão de dentro é território limpo, e a rua fica do lado de fora, literalmente.</span> Costuma haver ainda um par de chinelos só para o banheiro, que não deve sair de lá. É a mesma fronteira entre uchi e soto, dentro e fora, transformada em piso.</p>
+  <div class="tag" data-i18n="s04.tag1"><span class="n">04</span> · convivência</div>
+  <h2 data-i18n="s04.h21">Tirar os sapatos, e outros hábitos</h2>
+  <p data-i18n="s04.p1">Poucas regras surpreendem tão cedo na viagem quanto a dos sapatos. Em casas, ryokans, muitos templos e até alguns restaurantes e escolas, os sapatos ficam num <span class="term" tabindex="0" data-jp="genkan · 玄関">degrau rebaixado na entrada</span>, e dali em diante se anda de meia ou de pantufa. <span class="mark">O chão de dentro é território limpo, e a rua fica do lado de fora, literalmente.</span> Costuma haver ainda um par de chinelos só para o banheiro, que não deve sair de lá. É a mesma fronteira entre uchi e soto, dentro e fora, transformada em piso.</p>
   <figure>
     <div class="widget">
       <canvas id="zones" height="380"></canvas>
@@ -263,16 +275,16 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="sub" id="zoneWear">nos pés: sapato</div>
       </div>
     </div>
-    <figcaption>Arraste a pessoa entre as zonas. O calçado troca sozinho a cada fronteira.</figcaption>
+    <figcaption data-i18n="s04.figcaption1">Arraste a pessoa entre as zonas. O calçado troca sozinho a cada fronteira.</figcaption>
   </figure>
-  <p>Dois gestos mostram o peso das formas. O <span class="term" tabindex="0" data-jp="meishi · 名刺">cartão de visita</span> é entregue e recebido com as duas mãos e lido com atenção; guardá-lo sem olhar, ou enfiá-lo no bolso de trás, soa quase como uma ofensa, porque o cartão representa a própria pessoa. E há a economia dos presentes: quem viaja costuma voltar com uma <span class="term" tabindex="0" data-jp="omiyage · 土産">lembrancinha de viagem</span> para os colegas, e o capricho do embrulho importa tanto quanto o conteúdo.</p>
-  <p>No trem, o clima é de silêncio, com os celulares no modo silencioso e as conversas em voz baixa, de novo para não incomodar os outros, o <em>meiwaku</em>. Uma palavra resume boa parte dessa delicadeza: <em>sumimasen</em> serve como "com licença", "obrigado" e "desculpe" ao mesmo tempo, numa cultura em que agradecer e pedir desculpa quase se confundem. E, como no banho, não se dá gorjeta, porque o bom serviço é o padrão, não um extra a ser comprado.</p>
+  <p data-i18n="s04.p2">Dois gestos mostram o peso das formas. O <span class="term" tabindex="0" data-jp="meishi · 名刺">cartão de visita</span> é entregue e recebido com as duas mãos e lido com atenção; guardá-lo sem olhar, ou enfiá-lo no bolso de trás, soa quase como uma ofensa, porque o cartão representa a própria pessoa. E há a economia dos presentes: quem viaja costuma voltar com uma <span class="term" tabindex="0" data-jp="omiyage · 土産">lembrancinha de viagem</span> para os colegas, e o capricho do embrulho importa tanto quanto o conteúdo.</p>
+  <p data-i18n="s04.p3">No trem, o clima é de silêncio, com os celulares no modo silencioso e as conversas em voz baixa, de novo para não incomodar os outros, o <em>meiwaku</em>. Uma palavra resume boa parte dessa delicadeza: <em>sumimasen</em> serve como "com licença", "obrigado" e "desculpe" ao mesmo tempo, numa cultura em que agradecer e pedir desculpa quase se confundem. E, como no banho, não se dá gorjeta, porque o bom serviço é o padrão, não um extra a ser comprado.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">05</span> · o corpo</div>
-  <h2>A reverência e seus ângulos</h2>
-  <p>A <strong><span class="term" tabindex="0" data-jp="ojigi · お辞儀">reverência</span></strong> aparece o tempo todo no Japão, em saudações, agradecimentos e pedidos de desculpa. O que muda o significado é o ângulo do corpo. Ajuste o controle na demonstração abaixo para ver a mesma pessoa passar de um cumprimento casual a uma desculpa formal.</p>
+  <div class="tag" data-i18n="s05.tag1"><span class="n">05</span> · o corpo</div>
+  <h2 data-i18n="s05.h21">A reverência e seus ângulos</h2>
+  <p data-i18n="s05.p1">A <strong><span class="term" tabindex="0" data-jp="ojigi · お辞儀">reverência</span></strong> aparece o tempo todo no Japão, em saudações, agradecimentos e pedidos de desculpa. O que muda o significado é o ângulo do corpo. Ajuste o controle na demonstração abaixo para ver a mesma pessoa passar de um cumprimento casual a uma desculpa formal.</p>
   <figure>
     <div class="widget">
       <canvas id="bow" height="340"></canvas>
@@ -284,36 +296,36 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="desc" id="bowDesc">Eshaku: saudação cordial do dia a dia.</div>
       </div>
     </div>
-    <figcaption>Cerca de 15° para saudação casual, 30° para respeito formal, 45° para desculpa profunda ou grande gratidão.</figcaption>
+    <figcaption data-i18n="s05.figcaption1">Cerca de 15° para saudação casual, 30° para respeito formal, 45° para desculpa profunda ou grande gratidão.</figcaption>
   </figure>
-  <p>Há uma convenção prática por trás disso. Entre duas pessoas de posições diferentes, a de posição inferior costuma se curvar primeiro, um pouco mais fundo e por um tempo ligeiramente maior. Um detalhe mostra o quanto o gesto é automático: muitos japoneses <span class="mark">se curvam mesmo ao telefone</span>, para alguém que não pode vê-los.</p>
+  <p data-i18n="s05.p2">Há uma convenção prática por trás disso. Entre duas pessoas de posições diferentes, a de posição inferior costuma se curvar primeiro, um pouco mais fundo e por um tempo ligeiramente maior. Um detalhe mostra o quanto o gesto é automático: muitos japoneses <span class="mark">se curvam mesmo ao telefone</span>, para alguém que não pode vê-los.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">06</span> · estética</div>
-  <h2>Wabi-sabi e o conserto com ouro</h2>
-  <p>A estética japonesa tem um conceito central chamado <strong>wabi-sabi</strong> (<span class="jp">侘寂</span>), o apreço pela beleza do que é simples, imperfeito e passageiro. Uma boa forma de entender de onde ele vem é uma história do século XVI.</p>
-  <p>Sen no Rikyū foi o mestre que definiu a cerimônia do chá como ela é praticada até hoje, baseada em utensílios rústicos, um ambiente despojado e gestos econômicos. Seu senhor, o poderoso Toyotomi Hideyoshi, tinha o gosto oposto, e chegou a mandar construir uma sala de chá inteiramente revestida de ouro. Em 1591, por razões que os historiadores atribuem em parte a esse choque de valores, Hideyoshi ordenou que Rikyū cometesse <em>seppuku</em>, o suicídio ritual. Segundo o relato mais conhecido, Rikyū conduziu uma última cerimônia de chá impecável, apresentou cada utensílio para os convidados admirarem, e só então cumpriu a ordem.</p>
-  <p>O <strong>kintsugi</strong> (<span class="jp">金継ぎ</span>) é a aplicação mais direta dessa ideia a um objeto. Quando uma peça de cerâmica quebra, o conserto é feito com laca misturada a pó de ouro, que deixa a linha da fratura visível e brilhante. <span class="mark">A quebra passa a fazer parte da história da peça.</span> Clique no botão abaixo para reparar a tigela.</p>
+  <div class="tag" data-i18n="s06.tag1"><span class="n">06</span> · estética</div>
+  <h2 data-i18n="s06.h21">Wabi-sabi e o conserto com ouro</h2>
+  <p data-i18n="s06.p1">A estética japonesa tem um conceito central chamado <strong>wabi-sabi</strong> (<span class="jp">侘寂</span>), o apreço pela beleza do que é simples, imperfeito e passageiro. Uma boa forma de entender de onde ele vem é uma história do século XVI.</p>
+  <p data-i18n="s06.p2">Sen no Rikyū foi o mestre que definiu a cerimônia do chá como ela é praticada até hoje, baseada em utensílios rústicos, um ambiente despojado e gestos econômicos. Seu senhor, o poderoso Toyotomi Hideyoshi, tinha o gosto oposto, e chegou a mandar construir uma sala de chá inteiramente revestida de ouro. Em 1591, por razões que os historiadores atribuem em parte a esse choque de valores, Hideyoshi ordenou que Rikyū cometesse <em>seppuku</em>, o suicídio ritual. Segundo o relato mais conhecido, Rikyū conduziu uma última cerimônia de chá impecável, apresentou cada utensílio para os convidados admirarem, e só então cumpriu a ordem.</p>
+  <p data-i18n="s06.p3">O <strong>kintsugi</strong> (<span class="jp">金継ぎ</span>) é a aplicação mais direta dessa ideia a um objeto. Quando uma peça de cerâmica quebra, o conserto é feito com laca misturada a pó de ouro, que deixa a linha da fratura visível e brilhante. <span class="mark">A quebra passa a fazer parte da história da peça.</span> Clique no botão abaixo para reparar a tigela.</p>
   <figure>
     <div class="widget">
       <canvas id="kin" height="340"></canvas>
       <div class="controls">
-        <button class="btn" id="kinBtn">reparar com ouro · 金継ぎ</button>
-        <button class="btn" id="kinReset">quebrar de novo</button>
+        <button class="btn" id="kinBtn" data-i18n="s06.btnKin1">reparar com ouro · 金継ぎ</button>
+        <button class="btn" id="kinReset" data-i18n="s06.btnKin2">quebrar de novo</button>
       </div>
     </div>
-    <figcaption>No kintsugi, a fratura é realçada em vez de escondida.</figcaption>
+    <figcaption data-i18n="s06.figcaption1">No kintsugi, a fratura é realçada em vez de escondida.</figcaption>
   </figure>
-  <p>O mesmo gosto aparece no espaço. Existe uma palavra, <em>ma</em> (<span class="jp">間</span>), para o intervalo vazio: a pausa numa conversa, o silêncio entre dois sons, a parte não preenchida de um cômodo. <span class="mark">O vazio não é ausência, é parte da composição.</span> A casa tradicional é feita disso, com o tatame servindo de unidade de medida do próprio cômodo, as <span class="term" tabindex="0" data-jp="shōji · 障子">portas de papel translúcido</span> filtrando a luz em vez de barrá-la, e um <span class="term" tabindex="0" data-jp="tokonoma · 床の間">nicho de contemplação</span> que existe apenas para abrigar uma única flor ou pintura por vez.</p>
-  <p>A <span class="term" tabindex="0" data-jp="chadō · 茶道">cerimônia do chá</span> é onde essas ideias se juntam num só ritual, com cada gesto pensado para transmitir harmonia, respeito, pureza e tranquilidade. E o idioma tem um vocabulário fino para tipos de beleza que o português nem sempre nomeia: <span class="term" tabindex="0" data-jp="iki · 粋">a elegância discreta e sem esforço</span>, <span class="term" tabindex="0" data-jp="shibui · 渋い">a sobriedade que fica mais bonita com o tempo</span>, e <span class="term" tabindex="0" data-jp="miyabi · 雅">o refinamento aristocrático</span>.</p>
+  <p data-i18n="s06.p4">O mesmo gosto aparece no espaço. Existe uma palavra, <em>ma</em> (<span class="jp">間</span>), para o intervalo vazio: a pausa numa conversa, o silêncio entre dois sons, a parte não preenchida de um cômodo. <span class="mark">O vazio não é ausência, é parte da composição.</span> A casa tradicional é feita disso, com o tatame servindo de unidade de medida do próprio cômodo, as <span class="term" tabindex="0" data-jp="shōji · 障子">portas de papel translúcido</span> filtrando a luz em vez de barrá-la, e um <span class="term" tabindex="0" data-jp="tokonoma · 床の間">nicho de contemplação</span> que existe apenas para abrigar uma única flor ou pintura por vez.</p>
+  <p data-i18n="s06.p5">A <span class="term" tabindex="0" data-jp="chadō · 茶道">cerimônia do chá</span> é onde essas ideias se juntam num só ritual, com cada gesto pensado para transmitir harmonia, respeito, pureza e tranquilidade. E o idioma tem um vocabulário fino para tipos de beleza que o português nem sempre nomeia: <span class="term" tabindex="0" data-jp="iki · 粋">a elegância discreta e sem esforço</span>, <span class="term" tabindex="0" data-jp="shibui · 渋い">a sobriedade que fica mais bonita com o tempo</span>, e <span class="term" tabindex="0" data-jp="miyabi · 雅">o refinamento aristocrático</span>.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">07</span> · o tempo</div>
-  <h2>As setenta e duas estações do ano <span class="jp">七十二候</span></h2>
-  <p>O calendário tradicional japonês divide o ano em muito mais que quatro estações. São vinte e quatro termos solares, os <em>sekki</em>, e dentro deles <span class="mark">setenta e duas microestações</span>, os <em>kō</em>, de cerca de cinco dias cada. Cada microestação tem um nome curto e descritivo, como "chega o vento quente" ou "o orvalho na relva embranquece".</p>
-  <p>Essa divisão fina ainda tem efeito prático. O prato servido num restaurante, o doce tradicional (<em>wagashi</em>), a flor num arranjo e a estampa de um quimono mudam conforme a época do ano. Ela também está ligada ao <strong>mono no aware</strong> (<span class="jp">物の哀れ</span>), a sensibilidade à passagem do tempo, que é parte do motivo pelo qual se dá tanto valor à cerejeira, cuja flor dura poucos dias. Gire a roda abaixo. Ela começa na microestação de hoje.</p>
+  <div class="tag" data-i18n="s07.tag1"><span class="n">07</span> · o tempo</div>
+  <h2 data-i18n="s07.h21">As setenta e duas estações do ano <span class="jp">七十二候</span></h2>
+  <p data-i18n="s07.p1">O calendário tradicional japonês divide o ano em muito mais que quatro estações. São vinte e quatro termos solares, os <em>sekki</em>, e dentro deles <span class="mark">setenta e duas microestações</span>, os <em>kō</em>, de cerca de cinco dias cada. Cada microestação tem um nome curto e descritivo, como "chega o vento quente" ou "o orvalho na relva embranquece".</p>
+  <p data-i18n="s07.p2">Essa divisão fina ainda tem efeito prático. O prato servido num restaurante, o doce tradicional (<em>wagashi</em>), a flor num arranjo e a estampa de um quimono mudam conforme a época do ano. Ela também está ligada ao <strong>mono no aware</strong> (<span class="jp">物の哀れ</span>), a sensibilidade à passagem do tempo, que é parte do motivo pelo qual se dá tanto valor à cerejeira, cuja flor dura poucos dias. Gire a roda abaixo. Ela começa na microestação de hoje.</p>
   <figure>
     <div class="widget">
       <canvas id="wheel" height="430"></canvas>
@@ -324,15 +336,15 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="sub" id="skDate">≈ 7 a 22 de julho</div>
       </div>
     </div>
-    <figcaption>Arraste para girar. O ponteiro no topo marca a microestação atual.</figcaption>
+    <figcaption data-i18n="s07.figcaption1">Arraste para girar. O ponteiro no topo marca a microestação atual.</figcaption>
   </figure>
-  <p>Esse calendário fino ganha vida nas festas do ano, e é provável que a sua viagem cruze com alguma. Na primavera vem o <span class="term" tabindex="0" data-jp="hanami · 花見">hanami</span>, a contemplação das cerejeiras, que carrega justamente o mono no aware, já que a flor dura poucos dias. No verão, os matsuri e os <span class="term" tabindex="0" data-jp="hanabi · 花火">festivais de fogos</span>. No outono, a <span class="term" tabindex="0" data-jp="kōyō · 紅葉">temporada das folhas vermelhas</span>, uma espécie de hanami de outono. E o mais importante de todos é o Ano Novo, <span class="term" tabindex="0" data-jp="shōgatsu · 正月">o feriado mais sagrado do país</span>, quando as famílias visitam o templo e os sinos budistas tocam <span class="mark">108 badaladas, uma para cada desejo mundano que o budismo diz nos prender.</span></p>
+  <p data-i18n="s07.p3">Esse calendário fino ganha vida nas festas do ano, e é provável que a sua viagem cruze com alguma. Na primavera vem o <span class="term" tabindex="0" data-jp="hanami · 花見">hanami</span>, a contemplação das cerejeiras, que carrega justamente o mono no aware, já que a flor dura poucos dias. No verão, os matsuri e os <span class="term" tabindex="0" data-jp="hanabi · 花火">festivais de fogos</span>. No outono, a <span class="term" tabindex="0" data-jp="kōyō · 紅葉">temporada das folhas vermelhas</span>, uma espécie de hanami de outono. E o mais importante de todos é o Ano Novo, <span class="term" tabindex="0" data-jp="shōgatsu · 正月">o feriado mais sagrado do país</span>, quando as famílias visitam o templo e os sinos budistas tocam <span class="mark">108 badaladas, uma para cada desejo mundano que o budismo diz nos prender.</span></p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">08</span> · à mesa</div>
-  <h2>A refeição como ritual, três vezes por dia</h2>
-  <p>A refeição começa e termina com duas fórmulas. Antes de comer se diz <em>itadakimasu</em>, que é menos "bom apetite" e mais "recebo esta vida", um agradecimento a todos que trouxeram a comida até ali, inclusive ao que morreu no prato; ao fim, <span class="term" tabindex="0" data-jp="gochisōsama · ごちそうさま">um "foi um banquete"</span>. Há também tabus fortes com os <span class="term" tabindex="0" data-jp="hashi · 箸">palitos</span>: <span class="mark">nunca se finca o palito em pé no arroz nem se passa comida de palito para palito, porque são gestos do ritual de funeral.</span> São erros que causam desconforto imediato, não uma simples questão de boas maneiras.</p>
+  <div class="tag" data-i18n="s08.tag1"><span class="n">08</span> · à mesa</div>
+  <h2 data-i18n="s08.h21">A refeição como ritual, três vezes por dia</h2>
+  <p data-i18n="s08.p1">A refeição começa e termina com duas fórmulas. Antes de comer se diz <em>itadakimasu</em>, que é menos "bom apetite" e mais "recebo esta vida", um agradecimento a todos que trouxeram a comida até ali, inclusive ao que morreu no prato; ao fim, <span class="term" tabindex="0" data-jp="gochisōsama · ごちそうさま">um "foi um banquete"</span>. Há também tabus fortes com os <span class="term" tabindex="0" data-jp="hashi · 箸">palitos</span>: <span class="mark">nunca se finca o palito em pé no arroz nem se passa comida de palito para palito, porque são gestos do ritual de funeral.</span> São erros que causam desconforto imediato, não uma simples questão de boas maneiras.</p>
   <figure>
     <div class="widget">
       <canvas id="hashi" height="360"></canvas>
@@ -342,17 +354,17 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="verdict ok" id="hashiVerdict">correto</div>
       </div>
     </div>
-    <figcaption>Arraste os palitos. Duas das cinco posições são tabu por virem de ritos funerários.</figcaption>
+    <figcaption data-i18n="s08.figcaption1">Arraste os palitos. Duas das cinco posições são tabu por virem de ritos funerários.</figcaption>
   </figure>
-  <p>Outras regras invertem o que se espera no Ocidente. Sugar o macarrão do rámen fazendo barulho é bem-visto, porque esfria a massa e sinaliza que você está gostando, embora assoar o nariz à mesa seja falta grave. Foi um pesquisador japonês, Kikunae Ikeda, quem isolou o <em>umami</em> em 1908 e o descreveu como o quinto sabor, ao lado do doce, do salgado, do azedo e do amargo. E, ao beber, há uma pequena coreografia: você enche o copo dos outros e espera que encham o seu, em vez de se servir.</p>
-  <p>Vale ainda um elogio ao <em>konbini</em>, a loja de conveniência. Aberta 24 horas e presente em cada esquina, ela vende comida pronta de qualidade surpreendente, paga contas e resolve a vida do viajante. Junto das máquinas automáticas espalhadas por toda parte, é um sistema que só funciona bem num país de altíssima confiança e pouquíssimo furto.</p>
+  <p data-i18n="s08.p2">Outras regras invertem o que se espera no Ocidente. Sugar o macarrão do rámen fazendo barulho é bem-visto, porque esfria a massa e sinaliza que você está gostando, embora assoar o nariz à mesa seja falta grave. Foi um pesquisador japonês, Kikunae Ikeda, quem isolou o <em>umami</em> em 1908 e o descreveu como o quinto sabor, ao lado do doce, do salgado, do azedo e do amargo. E, ao beber, há uma pequena coreografia: você enche o copo dos outros e espera que encham o seu, em vez de se servir.</p>
+  <p data-i18n="s08.p3">Vale ainda um elogio ao <em>konbini</em>, a loja de conveniência. Aberta 24 horas e presente em cada esquina, ela vende comida pronta de qualidade surpreendente, paga contas e resolve a vida do viajante. Junto das máquinas automáticas espalhadas por toda parte, é um sistema que só funciona bem num país de altíssima confiança e pouquíssimo furto.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">09</span> · o banho</div>
-  <h2>As regras do banho</h2>
-  <p>O banho em fontes termais, o <strong>onsen</strong> (<span class="jp">温泉</span>), reúne várias dessas ideias num só lugar. Historicamente, o banho no Japão tem função de purificação, herança do xintoísmo, em que a sujeira é entendida também como <span class="term" tabindex="0" data-jp="kegare · 穢れ">uma impureza</span> a ser removida antes do contato com o que é limpo ou sagrado. O banho comum também funciona como um espaço sem hierarquia, já que <span class="mark">sem roupa e sem títulos as diferenças de posição ficam menos visíveis</span>.</p>
-  <p>Disso decorre um conjunto de regras, e a maioria surpreende quem visita pela primeira vez. Responda às perguntas abaixo para ver a razão por trás de cada uma.</p>
+  <div class="tag" data-i18n="s09.tag1"><span class="n">09</span> · o banho</div>
+  <h2 data-i18n="s09.h21">As regras do banho</h2>
+  <p data-i18n="s09.p1">O banho em fontes termais, o <strong>onsen</strong> (<span class="jp">温泉</span>), reúne várias dessas ideias num só lugar. Historicamente, o banho no Japão tem função de purificação, herança do xintoísmo, em que a sujeira é entendida também como <span class="term" tabindex="0" data-jp="kegare · 穢れ">uma impureza</span> a ser removida antes do contato com o que é limpo ou sagrado. O banho comum também funciona como um espaço sem hierarquia, já que <span class="mark">sem roupa e sem títulos as diferenças de posição ficam menos visíveis</span>.</p>
+  <p data-i18n="s09.p2">Disso decorre um conjunto de regras, e a maioria surpreende quem visita pela primeira vez. Responda às perguntas abaixo para ver a razão por trás de cada uma.</p>
   <figure>
     <div class="quiz" id="quiz">
       <div class="q-nav">
@@ -360,35 +372,35 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <button class="btn" id="qNext" style="display:none">próxima →</button>
       </div>
     </div>
-    <figcaption>Cada escolha revela a razão cultural por trás da regra.</figcaption>
+    <figcaption data-i18n="s09.figcaption1">Cada escolha revela a razão cultural por trás da regra.</figcaption>
   </figure>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">10</span> · o país que funciona</div>
-  <h2>Trens no segundo, ruas sem lixeira</h2>
-  <p>Boa parte da fama de eficiência do Japão vem de hábitos com raízes bem concretas. Os trens são o exemplo extremo: em algumas linhas o atraso médio é medido em segundos, e quando um trem parte adiantado por engano a empresa chega a divulgar um pedido formal de desculpas. Nas plataformas, é comum ver funcionários apontando para os sinais e dizendo em voz alta o que estão conferindo. Essa técnica, <span class="term" tabindex="0" data-jp="shisa kankō · 指差喚呼">apontar e falar</span>, existe desde o começo do século XX, quando um maquinista de vista fraca passou a confirmar cada sinal em voz alta com o ajudante. Um estudo mediu que apontar e falar ao mesmo tempo <span class="mark">reduz os erros em quase 85%</span>, e o metrô de Nova York adotou a prática depois de ver o resultado.</p>
-  <p>A limpeza das ruas tem uma origem mais sombria. Quase não se veem lixeiras públicas no Japão, e isso remonta a 1995, quando a seita Aum Shinrikyo escondeu numa lixeira parte do material usado no ataque com gás sarin ao metrô de Tóquio; depois disso, as lixeiras foram retiradas de estações e espaços públicos. Ainda assim as ruas ficam limpas, porque vale a regra de que <span class="mark">seu lixo é sua responsabilidade</span>. As pessoas costumam carregar o próprio lixo até em casa, um hábito reforçado desde cedo, já que nas escolas as crianças passam alguns minutos por dia limpando a própria sala.</p>
+  <div class="tag" data-i18n="s10.tag1"><span class="n">10</span> · o país que funciona</div>
+  <h2 data-i18n="s10.h21">Trens no segundo, ruas sem lixeira</h2>
+  <p data-i18n="s10.p1">Boa parte da fama de eficiência do Japão vem de hábitos com raízes bem concretas. Os trens são o exemplo extremo: em algumas linhas o atraso médio é medido em segundos, e quando um trem parte adiantado por engano a empresa chega a divulgar um pedido formal de desculpas. Nas plataformas, é comum ver funcionários apontando para os sinais e dizendo em voz alta o que estão conferindo. Essa técnica, <span class="term" tabindex="0" data-jp="shisa kankō · 指差喚呼">apontar e falar</span>, existe desde o começo do século XX, quando um maquinista de vista fraca passou a confirmar cada sinal em voz alta com o ajudante. Um estudo mediu que apontar e falar ao mesmo tempo <span class="mark">reduz os erros em quase 85%</span>, e o metrô de Nova York adotou a prática depois de ver o resultado.</p>
+  <p data-i18n="s10.p2">A limpeza das ruas tem uma origem mais sombria. Quase não se veem lixeiras públicas no Japão, e isso remonta a 1995, quando a seita Aum Shinrikyo escondeu numa lixeira parte do material usado no ataque com gás sarin ao metrô de Tóquio; depois disso, as lixeiras foram retiradas de estações e espaços públicos. Ainda assim as ruas ficam limpas, porque vale a regra de que <span class="mark">seu lixo é sua responsabilidade</span>. As pessoas costumam carregar o próprio lixo até em casa, um hábito reforçado desde cedo, já que nas escolas as crianças passam alguns minutos por dia limpando a própria sala.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">11</span> · imaginação</div>
-  <h2>Do trauma à fábrica de imaginação</h2>
-  <p>A fofura onipresente do Japão, o <span class="term" tabindex="0" data-jp="kawaii · かわいい">kawaii</span>, tem uma origem improvável. Nos anos 1970, adolescentes começaram a escrever numa <span class="term" tabindex="0" data-jp="marumoji · 丸文字">letra redonda e infantil</span>, cheia de coraçõezinhos e estrelinhas, como uma forma silenciosa de resistir à rigidez do mundo adulto. As papelarias transformaram aquilo em produto, a Hello Kitty apareceu em 1974, e <span class="mark">o fofo virou uma espécie de língua oficial do país</span>, de mascotes de prefeitura a mascotes de presídio.</p>
-  <p>A base da cultura pop moderna vem um pouco antes. Osamu Tezuka, que foi criança durante a guerra, criou em 1952 o Astro Boy, um menino-robô com coração humano, construído por um cientista que havia perdido o filho. Tezuka trouxe a linguagem do cinema para o papel, com ângulos e movimento, e por isso é chamado de o Deus do Mangá. O robô com sentimentos já carregava a pergunta do Japão do pós-guerra sobre se a tecnologia pode ter compaixão.</p>
-  <p>E há os pequenos enigmas que todo visitante coleciona. O <span class="mark">Natal é celebrado com balde de KFC</span>, tradição que uma campanha publicitária de 1974 inventou do zero, e o dia 24 é a data mais movimentada do ano para a rede. As máscaras faciais já eram comuns muito antes da pandemia, por educação e privacidade. O Kit-Kat virou amuleto de vestibular porque o nome lembra a <span class="term" tabindex="0" data-jp="kitto katsu · きっと勝つ">expressão japonesa para &quot;com certeza vencer&quot;</span>. E muita gente pergunta o seu tipo sanguíneo como quem pergunta o signo, acreditando que ele revela a personalidade. São sistemas com uma lógica interna própria, como as réplicas de comida em plástico nas vitrines, os hotéis-cápsula e as melodias que anunciam cada estação de trem.</p>
+  <div class="tag" data-i18n="s11.tag1"><span class="n">11</span> · imaginação</div>
+  <h2 data-i18n="s11.h21">Do trauma à fábrica de imaginação</h2>
+  <p data-i18n="s11.p1">A fofura onipresente do Japão, o <span class="term" tabindex="0" data-jp="kawaii · かわいい">kawaii</span>, tem uma origem improvável. Nos anos 1970, adolescentes começaram a escrever numa <span class="term" tabindex="0" data-jp="marumoji · 丸文字">letra redonda e infantil</span>, cheia de coraçõezinhos e estrelinhas, como uma forma silenciosa de resistir à rigidez do mundo adulto. As papelarias transformaram aquilo em produto, a Hello Kitty apareceu em 1974, e <span class="mark">o fofo virou uma espécie de língua oficial do país</span>, de mascotes de prefeitura a mascotes de presídio.</p>
+  <p data-i18n="s11.p2">A base da cultura pop moderna vem um pouco antes. Osamu Tezuka, que foi criança durante a guerra, criou em 1952 o Astro Boy, um menino-robô com coração humano, construído por um cientista que havia perdido o filho. Tezuka trouxe a linguagem do cinema para o papel, com ângulos e movimento, e por isso é chamado de o Deus do Mangá. O robô com sentimentos já carregava a pergunta do Japão do pós-guerra sobre se a tecnologia pode ter compaixão.</p>
+  <p data-i18n="s11.p3">E há os pequenos enigmas que todo visitante coleciona. O <span class="mark">Natal é celebrado com balde de KFC</span>, tradição que uma campanha publicitária de 1974 inventou do zero, e o dia 24 é a data mais movimentada do ano para a rede. As máscaras faciais já eram comuns muito antes da pandemia, por educação e privacidade. O Kit-Kat virou amuleto de vestibular porque o nome lembra a <span class="term" tabindex="0" data-jp="kitto katsu · きっと勝つ">expressão japonesa para &quot;com certeza vencer&quot;</span>. E muita gente pergunta o seu tipo sanguíneo como quem pergunta o signo, acreditando que ele revela a personalidade. São sistemas com uma lógica interna própria, como as réplicas de comida em plástico nas vitrines, os hotéis-cápsula e as melodias que anunciam cada estação de trem.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">12</span> · fim</div>
-  <h2>Olhar com contexto</h2>
-  <p>Nenhum desses hábitos precisa ser decorado para a viagem valer a pena. O que ajuda é saber que eles existem e de onde vêm. Quando o trem chegar no horário exato, você vai reconhecer a mesma preocupação com precisão que aparece na história do país. Quando precisar guardar o próprio lixo no bolso por algumas horas, vai reconhecer o hábito de evitar incomodar os outros, o <em>meiwaku</em>. Ver o Japão com essa camada de contexto torna a observação mais rica, e <span class="mark">é também uma forma de respeito</span> por um lugar que quase nunca se explica em voz alta.</p>
+  <div class="tag" data-i18n="s12.tag1"><span class="n">12</span> · fim</div>
+  <h2 data-i18n="s12.h21">Olhar com contexto</h2>
+  <p data-i18n="s12.p1">Nenhum desses hábitos precisa ser decorado para a viagem valer a pena. O que ajuda é saber que eles existem e de onde vêm. Quando o trem chegar no horário exato, você vai reconhecer a mesma preocupação com precisão que aparece na história do país. Quando precisar guardar o próprio lixo no bolso por algumas horas, vai reconhecer o hábito de evitar incomodar os outros, o <em>meiwaku</em>. Ver o Japão com essa camada de contexto torna a observação mais rica, e <span class="mark">é também uma forma de respeito</span> por um lugar que quase nunca se explica em voz alta.</p>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Rascunho interativo v0.3. Um artigo por trás de alguns hábitos japoneses, feito para ser lido antes ou durante a viagem.</p>
-    <p class="srcs">Fontes das histórias: Sen no Rikyū e o wabi-sabi (<a href="https://en.wikipedia.org/wiki/Sen_no_Riky%C5%AB">Wikipedia</a>, <a href="https://jhistories.com/golden-tea-room-tai-an/">jhistories</a>); pontualidade e a técnica de apontar e falar (<a href="https://www.nippon.com/en/japan-topics/g02575/">Nippon.com</a>); lixeiras e o ataque de 1995 (<a href="https://www.cnn.com/travel/japan-trash-cans-explainer-intl-hnk">CNN</a>); tatuagem e onsen (<a href="https://www.kashiwaya.org/e/magazine/tips-faq/why-tattoos-not-allowed-in-onsen.html">Kashiwaya</a>); as 72 microestações do calendário tradicional japonês.</p>
+    <p data-i18n="foot.p1">Rascunho interativo v0.3. Um artigo por trás de alguns hábitos japoneses, feito para ser lido antes ou durante a viagem.</p>
+    <p class="srcs" data-i18n="foot.p2">Fontes das histórias: Sen no Rikyū e o wabi-sabi (<a href="https://en.wikipedia.org/wiki/Sen_no_Riky%C5%AB">Wikipedia</a>, <a href="https://jhistories.com/golden-tea-room-tai-an/">jhistories</a>); pontualidade e a técnica de apontar e falar (<a href="https://www.nippon.com/en/japan-topics/g02575/">Nippon.com</a>); lixeiras e o ataque de 1995 (<a href="https://www.cnn.com/travel/japan-trash-cans-explainer-intl-hnk">CNN</a>); tatuagem e onsen (<a href="https://www.kashiwaya.org/e/magazine/tips-faq/why-tattoos-not-allowed-in-onsen.html">Kashiwaya</a>); as 72 microestações do calendário tradicional japonês.</p>
   </div>
 </footer>
 </main>
@@ -410,6 +422,11 @@ function ptr(e, cv){
   return { x: t.clientX - r.left, y: t.clientY - r.top };
 }
 const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+
+/* idioma: T() resolve um par {pt,en}; HOOKS redesenha os widgets na troca */
+var LANG='pt', HOOKS=[];
+function T(o){ return (o && typeof o==='object' && o.pt!==undefined) ? (o[LANG]!=null?o[LANG]:o.pt) : o; }
+function $all(sel){ return [].slice.call(document.querySelectorAll(sel)); }
 
 const pb=document.getElementById('progress');
 addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight; pb.style.width=(h>0?scrollY/h*100:0)+'%';},{passive:true});
@@ -464,12 +481,24 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   const cv=document.getElementById('rings');
   const nEl=document.getElementById('ringName'), dEl=document.getElementById('ringDesc'), mEl=document.getElementById('ringMeter'), modeEl=document.getElementById('ringMode');
   const layers=[
-    {name:'Você', desc:'O centro, onde não há necessidade de performar.', form:0.03, mode:'honne · o que se sente'},
-    {name:'Família · 家族', desc:'Uchi profundo. Linguagem casual, o corpo relaxa, você diz o que pensa.', form:0.12, mode:'honne · o que se sente'},
-    {name:'Amigos íntimos', desc:'Ainda dentro do círculo, espontâneo, com um leve cuidado.', form:0.30, mode:'honne, com cuidado'},
-    {name:'Colegas · 会社', desc:'A fronteira. Keigo brando, hierarquia entre senpai e kōhai, a fachada começa a operar.', form:0.58, mode:'tatemae · a fachada cordial'},
-    {name:'Conhecidos', desc:'Já é soto. Cortesia alta e distância medida.', form:0.80, mode:'tatemae · a fachada cordial'},
-    {name:'Estranhos · 外', desc:'Soto pleno. Keigo máximo e cortesia impecável, a forma padrão de respeito a quem está de fora.', form:0.98, mode:'tatemae · cortesia total'}
+    {name:{pt:'Você',en:'You'}, form:0.03,
+     desc:{pt:'O centro, onde não há necessidade de performar.',en:'The centre, where there is no need to perform.'},
+     mode:{pt:'honne · o que se sente',en:'honne · what you feel'}},
+    {name:{pt:'Família · 家族',en:'Family · 家族'}, form:0.12,
+     desc:{pt:'Uchi profundo. Linguagem casual, o corpo relaxa, você diz o que pensa.',en:'Deep uchi. Casual language, the body relaxes, you say what you think.'},
+     mode:{pt:'honne · o que se sente',en:'honne · what you feel'}},
+    {name:{pt:'Amigos íntimos',en:'Close friends'}, form:0.30,
+     desc:{pt:'Ainda dentro do círculo, espontâneo, com um leve cuidado.',en:'Still inside the circle, spontaneous, with a light care.'},
+     mode:{pt:'honne, com cuidado',en:'honne, with care'}},
+    {name:{pt:'Colegas · 会社',en:'Colleagues · 会社'}, form:0.58,
+     desc:{pt:'A fronteira. Keigo brando, hierarquia entre senpai e kōhai, a fachada começa a operar.',en:'The border. Mild keigo, the senpai and kōhai hierarchy, the façade starts working.'},
+     mode:{pt:'tatemae · a fachada cordial',en:'tatemae · the polite façade'}},
+    {name:{pt:'Conhecidos',en:'Acquaintances'}, form:0.80,
+     desc:{pt:'Já é soto. Cortesia alta e distância medida.',en:'Already soto. High courtesy and measured distance.'},
+     mode:{pt:'tatemae · a fachada cordial',en:'tatemae · the polite façade'}},
+    {name:{pt:'Estranhos · 外',en:'Strangers · 外'}, form:0.98,
+     desc:{pt:'Soto pleno. Keigo máximo e cortesia impecável, a forma padrão de respeito a quem está de fora.',en:'Full soto. Maximum keigo and impeccable courtesy, the default form of respect for those outside.'},
+     mode:{pt:'tatemae · cortesia total',en:'tatemae · total courtesy'}}
   ];
   let ctx,W,H,cx,cy,maxR,sel=0,dragR=0.03,t=0;
   function geom(){ ctx=fit(cv,400); W=cv._w;H=cv._h;cx=W/2;cy=H/2;maxR=Math.min(W,H)/2-34; }
@@ -482,7 +511,7 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
       ctx.strokeStyle=active?'rgba(193,95,60,.95)':'rgba(20,20,20,'+(0.14+0.05*(1-i/6))+')'; ctx.lineWidth=active?2:1; ctx.stroke();
       if(active&&i>0){ ctx.fillStyle='rgba(193,95,60,.05)'; ctx.fill(); }
       if(i>0){ ctx.fillStyle=active?'#141414':'#9a9a9a'; ctx.font=(active?'700 ':'')+'12px "Space Mono", monospace'; ctx.textAlign='center';
-        ctx.fillText(layers[i].name.split(' · ')[0],cx,cy-r-8); }
+        ctx.fillText(T(layers[i].name).split(' · ')[0],cx,cy-r-8); }
     }
     ctx.beginPath(); ctx.arc(cx,cy,5,0,7); ctx.fillStyle='#141414'; ctx.fill();
     const rr=maxR*dragR, ang=-Math.PI/2, mx=cx+Math.cos(ang)*rr, my=cy+Math.sin(ang)*rr;
@@ -492,7 +521,8 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     requestAnimationFrame(draw);
   }
   function update(rn){ dragR=clamp(rn,0.03,1); sel=ringOfR(dragR); const L=layers[sel];
-    nEl.textContent=L.name; dEl.textContent=L.desc; modeEl.textContent=L.mode; mEl.style.width=(8+L.form*92)+'%'; }
+    nEl.textContent=T(L.name); dEl.textContent=T(L.desc); modeEl.textContent=T(L.mode); mEl.style.width=(8+L.form*92)+'%'; }
+  HOOKS.push(function(){ update(dragR); });
   let down=false; function handle(e){ const p=ptr(e,cv); update(Math.hypot(p.x-cx,p.y-cy)/maxR); }
   cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);handle(e);});
   cv.addEventListener('pointermove',e=>{if(down)handle(e);});
@@ -506,10 +536,10 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   const degEl=document.getElementById('bowDeg'), jpEl=document.getElementById('bowJp'), dEl=document.getElementById('bowDesc');
   let ctx,W,H;
   const kinds=[
-    {max:8, jp:'会釈', name:'Eshaku', desc:'aceno leve, usado para dizer oi, passar por alguém ou agradecer algo pequeno.'},
-    {max:20, jp:'会釈', name:'Eshaku', desc:'saudação cordial do dia a dia, informal e amistosa.'},
-    {max:34, jp:'敬礼', name:'Keirei', desc:'reverência de respeito, usada com clientes, superiores e pessoas mais velhas.'},
-    {max:46, jp:'最敬礼', name:'Saikeirei', desc:'a mais profunda, para desculpas sérias, grande gratidão ou grande diferença de posição.'}
+    {max:8, jp:'会釈', name:'Eshaku', desc:{pt:'aceno leve, usado para dizer oi, passar por alguém ou agradecer algo pequeno.',en:'a light nod, used to say hello, to pass someone or to thank them for something small.'}},
+    {max:20, jp:'会釈', name:'Eshaku', desc:{pt:'saudação cordial do dia a dia, informal e amistosa.',en:'the cordial everyday greeting, informal and friendly.'}},
+    {max:34, jp:'敬礼', name:'Keirei', desc:{pt:'reverência de respeito, usada com clientes, superiores e pessoas mais velhas.',en:'a bow of respect, used with customers, superiors and older people.'}},
+    {max:46, jp:'最敬礼', name:'Saikeirei', desc:{pt:'a mais profunda, para desculpas sérias, grande gratidão ou grande diferença de posição.',en:'the deepest, for serious apologies, great gratitude or a large difference in rank.'}}
   ];
   function kindFor(a){ for(const k of kinds){ if(a<=k.max) return k; } return kinds[kinds.length-1]; }
   function draw(){
@@ -529,7 +559,8 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     ctx.beginPath(); ctx.arc(hx,hy,headR,0,7); ctx.fillStyle='#141414'; ctx.fill();
     ctx.setLineDash([3,4]); ctx.beginPath(); ctx.moveTo(cxp,hipY); ctx.lineTo(cxp,hipY-torso); ctx.strokeStyle='rgba(20,20,20,.22)'; ctx.lineWidth=1; ctx.stroke(); ctx.setLineDash([]);
   }
-  function update(){ const v=+rng.value; degEl.textContent=v; const k=kindFor(v); jpEl.textContent=k.jp; dEl.textContent=k.name+': '+k.desc; draw(); }
+  function update(){ const v=+rng.value; degEl.textContent=v; const k=kindFor(v); jpEl.textContent=k.jp; dEl.textContent=k.name+': '+T(k.desc); draw(); }
+  HOOKS.push(update);
   rng.addEventListener('input',update); addEventListener('resize',draw); update();
 })();
 
@@ -580,30 +611,30 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   const cv=document.getElementById('wheel');
   const nameEl=document.getElementById('skName'), romEl=document.getElementById('skRomaji'), meanEl=document.getElementById('skMeaning'), koEl=document.getElementById('skKo'), dateEl=document.getElementById('skDate');
   const S=[
-    {jp:'立春',r:'Risshun',m:'Começo da primavera',ko:'東風解凍 · o vento leste derrete o gelo',d:'≈ 4 fev',doy:35},
-    {jp:'雨水',r:'Usui',m:'Água da chuva',ko:'土脉潤起 · a terra se umedece',d:'≈ 19 fev',doy:50},
-    {jp:'啓蟄',r:'Keichitsu',m:'Os insetos despertam',ko:'蟄虫啓戸 · os bichos abrem as portas',d:'≈ 6 mar',doy:65},
-    {jp:'春分',r:'Shunbun',m:'Equinócio de primavera',ko:'雀始巣 · os pardais fazem ninho',d:'≈ 21 mar',doy:80},
-    {jp:'清明',r:'Seimei',m:'Clara e brilhante',ko:'玄鳥至 · as andorinhas chegam',d:'≈ 5 abr',doy:95},
-    {jp:'穀雨',r:'Kokuu',m:'Chuva dos grãos',ko:'葭始生 · os juncos brotam',d:'≈ 20 abr',doy:110},
-    {jp:'立夏',r:'Rikka',m:'Começo do verão',ko:'蛙始鳴 · as rãs começam a cantar',d:'≈ 6 mai',doy:126},
-    {jp:'小満',r:'Shōman',m:'Pequena fartura',ko:'蚕起食桑 · os bichos-da-seda comem amoreira',d:'≈ 21 mai',doy:141},
-    {jp:'芒種',r:'Bōshu',m:'Época de semear',ko:'蟷螂生 · nascem os louva-a-deus',d:'≈ 6 jun',doy:157},
-    {jp:'夏至',r:'Geshi',m:'Solstício de verão',ko:'乃東枯 · a prunela murcha',d:'≈ 21 jun',doy:172},
-    {jp:'小暑',r:'Shōsho',m:'Pequeno calor, o verão aperta',ko:'温風至 · chega o vento quente',d:'≈ 7 a 22 jul',doy:188},
-    {jp:'大暑',r:'Taisho',m:'Grande calor',ko:'桐始結花 · a paulóvnia dá frutos',d:'≈ 23 jul',doy:204},
-    {jp:'立秋',r:'Risshū',m:'Começo do outono',ko:'涼風至 · chega o vento fresco',d:'≈ 8 ago',doy:220},
-    {jp:'処暑',r:'Shosho',m:'O calor começa a passar',ko:'綿柎開 · abrem-se os cálices do algodão',d:'≈ 23 ago',doy:235},
-    {jp:'白露',r:'Hakuro',m:'Orvalho branco',ko:'草露白 · o orvalho na relva embranquece',d:'≈ 8 set',doy:251},
-    {jp:'秋分',r:'Shūbun',m:'Equinócio de outono',ko:'雷乃収声 · os trovões se calam',d:'≈ 23 set',doy:266},
-    {jp:'寒露',r:'Kanro',m:'Orvalho frio',ko:'鴻雁来 · voltam os gansos selvagens',d:'≈ 8 out',doy:281},
-    {jp:'霜降',r:'Sōkō',m:'Chegam as geadas',ko:'霜始降 · a geada começa a cair',d:'≈ 24 out',doy:297},
-    {jp:'立冬',r:'Rittō',m:'Começo do inverno',ko:'山茶始開 · abrem as camélias',d:'≈ 7 nov',doy:311},
-    {jp:'小雪',r:'Shōsetsu',m:'Pouca neve',ko:'虹蔵不見 · os arco-íris se escondem',d:'≈ 22 nov',doy:326},
-    {jp:'大雪',r:'Taisetsu',m:'Muita neve',ko:'閉塞成冬 · o céu esfria e faz-se inverno',d:'≈ 7 dez',doy:341},
-    {jp:'冬至',r:'Tōji',m:'Solstício de inverno',ko:'乃東生 · a prunela brota',d:'≈ 22 dez',doy:356},
-    {jp:'小寒',r:'Shōkan',m:'Pequeno frio',ko:'芹乃栄 · o aipo-d’água prospera',d:'≈ 6 jan',doy:6},
-    {jp:'大寒',r:'Daikan',m:'Grande frio',ko:'款冬華 · brotam as flores de fuki',d:'≈ 20 jan',doy:20}
+    {jp:'立春',r:'Risshun',m:{pt:'Começo da primavera',en:'Start of spring'},ko:{pt:'東風解凍 · o vento leste derrete o gelo',en:'東風解凍 · the east wind melts the ice'},d:{pt:'≈ 4 fev',en:'≈ 4 Feb'},doy:35},
+    {jp:'雨水',r:'Usui',m:{pt:'Água da chuva',en:'Rainwater'},ko:{pt:'土脉潤起 · a terra se umedece',en:'土脉潤起 · the earth grows damp'},d:{pt:'≈ 19 fev',en:'≈ 19 Feb'},doy:50},
+    {jp:'啓蟄',r:'Keichitsu',m:{pt:'Os insetos despertam',en:'Insects awaken'},ko:{pt:'蟄虫啓戸 · os bichos abrem as portas',en:'蟄虫啓戸 · the creatures open their doors'},d:{pt:'≈ 6 mar',en:'≈ 6 Mar'},doy:65},
+    {jp:'春分',r:'Shunbun',m:{pt:'Equinócio de primavera',en:'Spring equinox'},ko:{pt:'雀始巣 · os pardais fazem ninho',en:'雀始巣 · sparrows start to nest'},d:{pt:'≈ 21 mar',en:'≈ 21 Mar'},doy:80},
+    {jp:'清明',r:'Seimei',m:{pt:'Clara e brilhante',en:'Clear and bright'},ko:{pt:'玄鳥至 · as andorinhas chegam',en:'玄鳥至 · the swallows arrive'},d:{pt:'≈ 5 abr',en:'≈ 5 Apr'},doy:95},
+    {jp:'穀雨',r:'Kokuu',m:{pt:'Chuva dos grãos',en:'Grain rain'},ko:{pt:'葭始生 · os juncos brotam',en:'葭始生 · the reeds begin to sprout'},d:{pt:'≈ 20 abr',en:'≈ 20 Apr'},doy:110},
+    {jp:'立夏',r:'Rikka',m:{pt:'Começo do verão',en:'Start of summer'},ko:{pt:'蛙始鳴 · as rãs começam a cantar',en:'蛙始鳴 · the frogs start singing'},d:{pt:'≈ 6 mai',en:'≈ 6 May'},doy:126},
+    {jp:'小満',r:'Shōman',m:{pt:'Pequena fartura',en:'Lesser ripening'},ko:{pt:'蚕起食桑 · os bichos-da-seda comem amoreira',en:'蚕起食桑 · silkworms feast on mulberry'},d:{pt:'≈ 21 mai',en:'≈ 21 May'},doy:141},
+    {jp:'芒種',r:'Bōshu',m:{pt:'Época de semear',en:'Grain sowing'},ko:{pt:'蟷螂生 · nascem os louva-a-deus',en:'蟷螂生 · the mantises hatch'},d:{pt:'≈ 6 jun',en:'≈ 6 Jun'},doy:157},
+    {jp:'夏至',r:'Geshi',m:{pt:'Solstício de verão',en:'Summer solstice'},ko:{pt:'乃東枯 · a prunela murcha',en:'乃東枯 · self-heal withers'},d:{pt:'≈ 21 jun',en:'≈ 21 Jun'},doy:172},
+    {jp:'小暑',r:'Shōsho',m:{pt:'Pequeno calor, o verão aperta',en:'Lesser heat, summer tightens'},ko:{pt:'温風至 · chega o vento quente',en:'温風至 · the warm wind arrives'},d:{pt:'≈ 7 a 22 jul',en:'≈ 7 to 22 Jul'},doy:188},
+    {jp:'大暑',r:'Taisho',m:{pt:'Grande calor',en:'Greater heat'},ko:{pt:'桐始結花 · a paulóvnia dá frutos',en:'桐始結花 · the paulownia bears fruit'},d:{pt:'≈ 23 jul',en:'≈ 23 Jul'},doy:204},
+    {jp:'立秋',r:'Risshū',m:{pt:'Começo do outono',en:'Start of autumn'},ko:{pt:'涼風至 · chega o vento fresco',en:'涼風至 · the cool wind arrives'},d:{pt:'≈ 8 ago',en:'≈ 8 Aug'},doy:220},
+    {jp:'処暑',r:'Shosho',m:{pt:'O calor começa a passar',en:'The heat begins to ease'},ko:{pt:'綿柎開 · abrem-se os cálices do algodão',en:'綿柎開 · the cotton bolls open'},d:{pt:'≈ 23 ago',en:'≈ 23 Aug'},doy:235},
+    {jp:'白露',r:'Hakuro',m:{pt:'Orvalho branco',en:'White dew'},ko:{pt:'草露白 · o orvalho na relva embranquece',en:'草露白 · dew on the grass turns white'},d:{pt:'≈ 8 set',en:'≈ 8 Sep'},doy:251},
+    {jp:'秋分',r:'Shūbun',m:{pt:'Equinócio de outono',en:'Autumn equinox'},ko:{pt:'雷乃収声 · os trovões se calam',en:'雷乃収声 · the thunder falls silent'},d:{pt:'≈ 23 set',en:'≈ 23 Sep'},doy:266},
+    {jp:'寒露',r:'Kanro',m:{pt:'Orvalho frio',en:'Cold dew'},ko:{pt:'鴻雁来 · voltam os gansos selvagens',en:'鴻雁来 · the wild geese return'},d:{pt:'≈ 8 out',en:'≈ 8 Oct'},doy:281},
+    {jp:'霜降',r:'Sōkō',m:{pt:'Chegam as geadas',en:'Frost falls'},ko:{pt:'霜始降 · a geada começa a cair',en:'霜始降 · the first frost begins to fall'},d:{pt:'≈ 24 out',en:'≈ 24 Oct'},doy:297},
+    {jp:'立冬',r:'Rittō',m:{pt:'Começo do inverno',en:'Start of winter'},ko:{pt:'山茶始開 · abrem as camélias',en:'山茶始開 · the camellias open'},d:{pt:'≈ 7 nov',en:'≈ 7 Nov'},doy:311},
+    {jp:'小雪',r:'Shōsetsu',m:{pt:'Pouca neve',en:'Lesser snow'},ko:{pt:'虹蔵不見 · os arco-íris se escondem',en:'虹蔵不見 · the rainbows hide'},d:{pt:'≈ 22 nov',en:'≈ 22 Nov'},doy:326},
+    {jp:'大雪',r:'Taisetsu',m:{pt:'Muita neve',en:'Greater snow'},ko:{pt:'閉塞成冬 · o céu esfria e faz-se inverno',en:'閉塞成冬 · the sky cools and winter sets in'},d:{pt:'≈ 7 dez',en:'≈ 7 Dec'},doy:341},
+    {jp:'冬至',r:'Tōji',m:{pt:'Solstício de inverno',en:'Winter solstice'},ko:{pt:'乃東生 · a prunela brota',en:'乃東生 · self-heal sprouts'},d:{pt:'≈ 22 dez',en:'≈ 22 Dec'},doy:356},
+    {jp:'小寒',r:'Shōkan',m:{pt:'Pequeno frio',en:'Lesser cold'},ko:{pt:'芹乃栄 · o aipo-d’água prospera',en:'芹乃栄 · the water dropwort thrives'},d:{pt:'≈ 6 jan',en:'≈ 6 Jan'},doy:6},
+    {jp:'大寒',r:'Daikan',m:{pt:'Grande frio',en:'Greater cold'},ko:{pt:'款冬華 · brotam as flores de fuki',en:'款冬華 · the butterbur flowers bud'},d:{pt:'≈ 20 jan',en:'≈ 20 Jan'},doy:20}
   ];
   const N=S.length, seg=2*Math.PI/N;
   let ctx,W,H,cx,cy,R,rot=0,sel=10;
@@ -629,49 +660,82 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
       ctx.fillText(S[i].jp,0,0); ctx.restore(); }
     ctx.beginPath(); ctx.arc(cx,cy,R*0.52,0,7); ctx.fillStyle='#fff'; ctx.fill(); ctx.strokeStyle='rgba(20,20,20,.1)'; ctx.lineWidth=1; ctx.stroke();
     ctx.beginPath(); ctx.moveTo(cx,cy-R-16); ctx.lineTo(cx-7,cy-R-28); ctx.lineTo(cx+7,cy-R-28); ctx.closePath(); ctx.fillStyle='#C15F3C'; ctx.fill();
-    const s=S[sel]; nameEl.textContent=s.jp; romEl.textContent=s.r; meanEl.textContent=s.m; koEl.textContent=s.ko; dateEl.textContent=s.d;
+    const s=S[sel]; nameEl.textContent=s.jp; romEl.textContent=s.r; meanEl.textContent=T(s.m); koEl.textContent=T(s.ko); dateEl.textContent=T(s.d);
   }
   let down=false,lastA=0; function angleOf(e){ const p=ptr(e,cv); return Math.atan2(p.y-cy,p.x-cx); }
   cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);lastA=angleOf(e);});
   cv.addEventListener('pointermove',e=>{ if(!down)return; const a=angleOf(e); let d=a-lastA; if(d>Math.PI)d-=2*Math.PI; if(d<-Math.PI)d+=2*Math.PI; rot+=d; lastA=a; draw(); });
   cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  HOOKS.push(draw);
   addEventListener('resize',()=>{geom();draw();}); geom(); draw();
 })();
 
 /* ===================== 06 onsen quiz ===================== */
 (function(){
   const quiz=document.getElementById('quiz'), dots=document.getElementById('qDots'), nextBtn=document.getElementById('qNext');
+  const L={ q:{pt:'pergunta',en:'question'}, of:{pt:'de',en:'of'},
+            next:{pt:'próxima →',en:'next →'}, again:{pt:'recomeçar ↺',en:'start again ↺'} };
   const Q=[
-    {q:'Você chega ao vestiário. O que faz com a roupa e as toalhas?',
+    {q:{pt:'Você chega ao vestiário. O que faz com a roupa e as toalhas?',
+        en:'You arrive at the changing room. What do you do with your clothes and towels?'},
      opts:[
-      {t:'Levo a toalha grande para dentro, para me cobrir na água.',ok:false,why:'A toalha grande fica no vestiário. Lá dentro você anda apenas com a toalhinha pequena, e ela não entra na água.'},
-      {t:'Deixo tudo no cesto e levo só a toalhinha pequena.',ok:true,why:'Correto. Entra-se completamente sem roupa. Sem roupa e sem títulos, as diferenças de posição entre as pessoas ficam menos visíveis.'}
+      {ok:false,
+       t:{pt:'Levo a toalha grande para dentro, para me cobrir na água.',en:'Take the big towel in with me, to cover myself in the water.'},
+       why:{pt:'A toalha grande fica no vestiário. Lá dentro você anda apenas com a toalhinha pequena, e ela não entra na água.',
+            en:'The big towel stays in the changing room. Inside you carry only the small towel, and it does not go into the water.'}},
+      {ok:true,
+       t:{pt:'Deixo tudo no cesto e levo só a toalhinha pequena.',en:'Leave everything in the basket and take only the small towel.'},
+       why:{pt:'Correto. Entra-se completamente sem roupa. Sem roupa e sem títulos, as diferenças de posição entre as pessoas ficam menos visíveis.',
+            en:'Correct. You go in completely undressed. Without clothes and without titles, differences of rank between people become less visible.'}}
      ]},
-    {q:'Antes de mergulhar na banheira quente, você…',
+    {q:{pt:'Antes de mergulhar na banheira quente, você…',en:'Before getting into the hot bath, you…'},
      opts:[
-      {t:'Entro direto para relaxar logo.',ok:false,why:'A banheira serve só para o mergulho, nunca para lavar. Como a água é compartilhada por todos, sujá-la é malvisto.'},
-      {t:'Sento no banquinho e me lavo por inteiro primeiro.',ok:true,why:'Correto. Lavar-se por completo antes de entrar mantém a água limpa para todos, e cumpre a função de purificação do banho.'}
+      {ok:false,
+       t:{pt:'Entro direto para relaxar logo.',en:'Get straight in, to relax sooner.'},
+       why:{pt:'A banheira serve só para o mergulho, nunca para lavar. Como a água é compartilhada por todos, sujá-la é malvisto.',
+            en:'The bath is only for soaking, never for washing. Since the water is shared by everyone, dirtying it is frowned upon.'}},
+      {ok:true,
+       t:{pt:'Sento no banquinho e me lavo por inteiro primeiro.',en:'Sit on the stool and wash myself thoroughly first.'},
+       why:{pt:'Correto. Lavar-se por completo antes de entrar mantém a água limpa para todos, e cumpre a função de purificação do banho.',
+            en:'Correct. Washing completely before getting in keeps the water clean for everyone, and fulfils the purifying function of the bath.'}}
      ]},
-    {q:'Você tem uma tatuagem visível. Qual a melhor conduta?',
+    {q:{pt:'Você tem uma tatuagem visível. Qual a melhor conduta?',en:'You have a visible tattoo. What is the best course of action?'},
      opts:[
-      {t:'Ignoro, tatuagem é comum no mundo todo.',ok:false,why:'No Japão a tatuagem carregou por muito tempo o estigma da punição criminal e depois da associação com o crime organizado. O incômodo costuma ser dos outros banhistas.'},
-      {t:'Cubro com adesivo, escolho um onsen que aceita tatuagens ou reservo um banho privativo.',ok:true,why:'Boa. Muitos estabelecimentos ainda restringem tatuagens, então cobrir, escolher um lugar que aceita ou usar um banho privativo evita constrangimento. Numa pesquisa recente, cerca de 44% dos japoneses ainda achavam que tatuagens deveriam ser proibidas nos banhos, mas a geração mais jovem vem afrouxando essa regra.'}
+      {ok:false,
+       t:{pt:'Ignoro, tatuagem é comum no mundo todo.',en:'Ignore it, tattoos are common everywhere.'},
+       why:{pt:'No Japão a tatuagem carregou por muito tempo o estigma da punição criminal e depois da associação com o crime organizado. O incômodo costuma ser dos outros banhistas.',
+            en:'In Japan the tattoo carried for a long time the stigma of criminal punishment and later of association with organised crime. The discomfort usually belongs to the other bathers.'}},
+      {ok:true,
+       t:{pt:'Cubro com adesivo, escolho um onsen que aceita tatuagens ou reservo um banho privativo.',en:'Cover it with a patch, choose an onsen that accepts tattoos, or book a private bath.'},
+       why:{pt:'Boa. Muitos estabelecimentos ainda restringem tatuagens, então cobrir, escolher um lugar que aceita ou usar um banho privativo evita constrangimento. Numa pesquisa recente, cerca de 44% dos japoneses ainda achavam que tatuagens deveriam ser proibidas nos banhos, mas a geração mais jovem vem afrouxando essa regra.',
+            en:'Good. Many establishments still restrict tattoos, so covering up, choosing a place that accepts them or using a private bath avoids embarrassment. In a recent survey, around 44% of Japanese people still thought tattoos should be banned from the baths, though the younger generation has been loosening the rule.'}}
      ]},
-    {q:'Dentro da água, a sua toalhinha vai…',
+    {q:{pt:'Dentro da água, a sua toalhinha vai…',en:'Once in the water, your small towel goes…'},
      opts:[
-      {t:'Boiando comigo, é mais prático.',ok:false,why:'A toalhinha não deve tocar a água termal, para manter a fonte limpa para quem vem depois.'},
-      {t:'Dobrada sobre a cabeça ou apoiada na borda.',ok:true,why:'Correto. A toalhinha costuma ficar dobrada sobre a cabeça, o que virou quase uma imagem clássica do onsen.'}
+      {ok:false,
+       t:{pt:'Boiando comigo, é mais prático.',en:'Floating along with me, it is more practical.'},
+       why:{pt:'A toalhinha não deve tocar a água termal, para manter a fonte limpa para quem vem depois.',
+            en:'The small towel must not touch the thermal water, so the spring stays clean for whoever comes next.'}},
+      {ok:true,
+       t:{pt:'Dobrada sobre a cabeça ou apoiada na borda.',en:'Folded on top of my head or resting on the edge.'},
+       why:{pt:'Correto. A toalhinha costuma ficar dobrada sobre a cabeça, o que virou quase uma imagem clássica do onsen.',
+            en:'Correct. The small towel usually sits folded on the head, which has become almost a classic image of the onsen.'}}
      ]}
   ];
   let step=0, answered=[];
-  Q.forEach((item,qi)=>{
-    const div=document.createElement('div'); div.className='q-step'+(qi===0?' active':''); div.dataset.i=qi;
-    let html='<div class="q-num">pergunta '+(qi+1)+' de '+Q.length+'</div><div class="q-text">'+item.q+'</div>';
-    item.opts.forEach((o,oi)=> html+='<button class="opt" data-q="'+qi+'" data-o="'+oi+'">'+o.t+'<span class="mk"></span></button>');
-    item.opts.forEach((o,oi)=> html+='<div class="explain" data-ex="'+qi+'-'+oi+'">'+o.why+'</div>');
-    div.innerHTML=html; quiz.insertBefore(div, quiz.querySelector('.q-nav'));
-    const dot=document.createElement('i'); if(qi===0)dot.className='on'; dots.appendChild(dot);
-  });
+  function build(){
+    quiz.querySelectorAll('.q-step').forEach(function(e){e.remove();});
+    dots.innerHTML=''; step=0; answered=[];
+    Q.forEach((item,qi)=>{
+      const div=document.createElement('div'); div.className='q-step'+(qi===0?' active':''); div.dataset.i=qi;
+      let html='<div class="q-num">'+T(L.q)+' '+(qi+1)+' '+T(L.of)+' '+Q.length+'</div><div class="q-text">'+T(item.q)+'</div>';
+      item.opts.forEach((o,oi)=> html+='<button class="opt" data-q="'+qi+'" data-o="'+oi+'">'+T(o.t)+'<span class="mk"></span></button>');
+      item.opts.forEach((o,oi)=> html+='<div class="explain" data-ex="'+qi+'-'+oi+'">'+T(o.why)+'</div>');
+      div.innerHTML=html; quiz.insertBefore(div, quiz.querySelector('.q-nav'));
+      const dot=document.createElement('i'); if(qi===0)dot.className='on'; dots.appendChild(dot);
+    });
+    nextBtn.style.display='none'; nextBtn.textContent=T(L.next); delete nextBtn.dataset.done;
+  }
   quiz.addEventListener('click',e=>{
     const b=e.target.closest('.opt'); if(!b) return;
     const qi=+b.dataset.q, oi=+b.dataset.o; if(answered[qi]!==undefined) return;
@@ -682,18 +746,15 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     stepEl.querySelectorAll('.opt').forEach(x=>x.style.pointerEvents='none');
     stepEl.querySelector('.explain[data-ex="'+qi+'-'+oi+'"]').classList.add('show');
     nextBtn.style.display='inline-block';
-    if(step===Q.length-1){ nextBtn.textContent='recomeçar ↺'; nextBtn.dataset.done='1'; }
+    if(step===Q.length-1){ nextBtn.textContent=T(L.again); nextBtn.dataset.done='1'; }
   });
   nextBtn.addEventListener('click',()=>{
-    if(nextBtn.dataset.done){ answered=[]; step=0;
-      quiz.querySelectorAll('.q-step').forEach((s,i)=>{ s.classList.toggle('active',i===0);
-        s.querySelectorAll('.opt').forEach(o=>{o.className='opt';o.style.pointerEvents='';o.querySelector('.mk').textContent='';});
-        s.querySelectorAll('.explain').forEach(x=>x.classList.remove('show')); });
-      dots.querySelectorAll('i').forEach((d,i)=>d.className=i===0?'on':'');
-      nextBtn.style.display='none'; nextBtn.textContent='próxima →'; delete nextBtn.dataset.done; return; }
+    if(nextBtn.dataset.done){ build(); return; }
     step++; quiz.querySelectorAll('.q-step').forEach((s,i)=>s.classList.toggle('active',i===step));
     dots.querySelectorAll('i').forEach((d,i)=>d.className=i<=step?'on':''); nextBtn.style.display='none';
   });
+  HOOKS.push(build);
+  build();
 })();
 
 /* ===================== 04 zonas de calçado ===================== */
@@ -701,31 +762,37 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   const cv=document.getElementById('zones'); if(!cv) return;
   const nameEl=document.getElementById('zoneName'), noteEl=document.getElementById('zoneNote'), wearEl=document.getElementById('zoneWear');
   const info={
-    rua:{name:'Rua', wear:'sapato', note:'Na rua, sapato normal.'},
-    genkan:{name:'Genkan, a soleira', wear:'só de meia', note:'O degrau da entrada é a fronteira entre a rua e a casa.'},
-    corredor:{name:'Corredor', wear:'pantufa da casa', note:'No piso de madeira, pantufas da casa.'},
-    tatame:{name:'Quarto de tatame', wear:'só de meia', note:'No tatame se anda apenas de meia.'},
-    banheiro:{name:'Banheiro', wear:'pantufa do banheiro', note:'O banheiro tem pantufas próprias, que ficam lá dentro.'}
+    rua:{name:{pt:'Rua',en:'Street'}, wear:{pt:'sapato',en:'shoes'},
+         note:{pt:'Na rua, sapato normal.',en:'Out in the street, ordinary shoes.'}},
+    genkan:{name:{pt:'Genkan, a soleira',en:'Genkan, the threshold'}, wear:{pt:'só de meia',en:'socks only'},
+         note:{pt:'O degrau da entrada é a fronteira entre a rua e a casa.',en:'The step at the entrance is the border between the street and the house.'}},
+    corredor:{name:{pt:'Corredor',en:'Hallway'}, wear:{pt:'pantufa da casa',en:'house slippers'},
+         note:{pt:'No piso de madeira, pantufas da casa.',en:'On the wooden floor, house slippers.'}},
+    tatame:{name:{pt:'Quarto de tatame',en:'Tatami room'}, wear:{pt:'só de meia',en:'socks only'},
+         note:{pt:'No tatame se anda apenas de meia.',en:'On tatami you walk in socks only.'}},
+    banheiro:{name:{pt:'Banheiro',en:'Bathroom'}, wear:{pt:'pantufa do banheiro',en:'bathroom slippers'},
+         note:{pt:'O banheiro tem pantufas próprias, que ficam lá dentro.',en:'The bathroom has its own slippers, which stay inside it.'}}
   };
+  const WEAR={pt:'nos pés: ',en:'on your feet: '};
   const trans={
-    'rua>genkan':'Aqui os sapatos saem. E há um detalhe: você os vira com a ponta para a porta, prontos para calçar na saída.',
-    'genkan>rua':'Os sapatos já estão virados para a rua. É só calçar e sair.',
-    'genkan>corredor':'No piso de madeira entram as pantufas da casa.',
-    'corredor>genkan':'As pantufas ficam para trás, e você volta a pisar só de meia.',
-    'corredor>tatame':'As pantufas ficam na borda. Pantufa nunca pisa no tatame.',
-    'tatame>corredor':'De volta ao corredor, as pantufas voltam aos pés.',
-    'corredor>banheiro':'O banheiro tem um par exclusivo de pantufas, que nunca sai dali.',
-    'banheiro>corredor':'Troque de volta. Sair de pantufa do banheiro pelo resto da casa é a gafe clássica.'
+    'rua>genkan':{pt:'Aqui os sapatos saem. E há um detalhe: você os vira com a ponta para a porta, prontos para calçar na saída.',en:'Here the shoes come off. And there is a detail: you turn them toe towards the door, ready to step into on the way out.'},
+    'genkan>rua':{pt:'Os sapatos já estão virados para a rua. É só calçar e sair.',en:'The shoes are already facing the street. Just step in and go.'},
+    'genkan>corredor':{pt:'No piso de madeira entram as pantufas da casa.',en:'On the wooden floor the house slippers go on.'},
+    'corredor>genkan':{pt:'As pantufas ficam para trás, e você volta a pisar só de meia.',en:'The slippers stay behind, and you are back to socks only.'},
+    'corredor>tatame':{pt:'As pantufas ficam na borda. Pantufa nunca pisa no tatame.',en:'The slippers stay at the edge. A slipper never treads on tatami.'},
+    'tatame>corredor':{pt:'De volta ao corredor, as pantufas voltam aos pés.',en:'Back in the hallway, the slippers go back on.'},
+    'corredor>banheiro':{pt:'O banheiro tem um par exclusivo de pantufas, que nunca sai dali.',en:'The bathroom has its own dedicated pair of slippers, which never leaves it.'},
+    'banheiro>corredor':{pt:'Troque de volta. Sair de pantufa do banheiro pelo resto da casa é a gafe clássica.',en:'Change back. Walking through the rest of the house in the bathroom slippers is the classic blunder.'}
   };
   let ctx,W,H,zones=[],p={x:0,y:0},cur='rua',shoeTurn=0,raf;
   function layout(){
     ctx=fit(cv,380); W=cv._w; H=cv._h;
     zones=[
-      {id:'rua', label:'rua', x:0.03*W, y:0.20*H, w:0.14*W, h:0.60*H},
-      {id:'genkan', label:'genkan', x:0.17*W, y:0.20*H, w:0.14*W, h:0.60*H},
-      {id:'corredor', label:'corredor', x:0.31*W, y:0.43*H, w:0.66*W, h:0.17*H},
-      {id:'tatame', label:'quarto (tatame)', x:0.42*W, y:0.09*H, w:0.36*W, h:0.32*H},
-      {id:'banheiro', label:'banheiro', x:0.60*W, y:0.62*H, w:0.24*W, h:0.26*H}
+      {id:'rua', label:{pt:'rua',en:'street'}, x:0.03*W, y:0.20*H, w:0.14*W, h:0.60*H},
+      {id:'genkan', label:{pt:'genkan',en:'genkan'}, x:0.17*W, y:0.20*H, w:0.14*W, h:0.60*H},
+      {id:'corredor', label:{pt:'corredor',en:'hallway'}, x:0.31*W, y:0.43*H, w:0.66*W, h:0.17*H},
+      {id:'tatame', label:{pt:'quarto (tatame)',en:'room (tatami)'}, x:0.42*W, y:0.09*H, w:0.36*W, h:0.32*H},
+      {id:'banheiro', label:{pt:'banheiro',en:'bathroom'}, x:0.60*W, y:0.62*H, w:0.24*W, h:0.26*H}
     ];
   }
   function Z(id){ for(let i=0;i<zones.length;i++) if(zones[i].id===id) return zones[i]; return null; }
@@ -754,7 +821,7 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
       ctx.fillStyle=active?'#141414':'#9a9a9a';
       ctx.font=(active?'700 ':'400 ')+'11px "Space Mono", monospace';
       ctx.textAlign='left'; ctx.textBaseline='top';
-      ctx.fillText(z.label, z.x+7, z.y+6);
+      ctx.fillText(T(z.label), z.x+7, z.y+6);
     });
     const tz=Z('tatame');
     ctx.save(); ctx.beginPath(); ctx.rect(tz.x,tz.y,tz.w,tz.h); ctx.clip();
@@ -774,14 +841,19 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
       if(Math.abs(to-shoeTurn)<0.01){ shoeTurn=to; draw(); return; }
       draw(); raf=requestAnimationFrame(step); })();
   }
+  var lastFrom='rua';
   function goTo(id){
-    const from=cur; cur=id;
-    const note=trans[from+'>'+id]||info[id].note;
-    nameEl.textContent=info[id].name; noteEl.textContent=note; wearEl.textContent='nos pés: '+info[id].wear;
+    const from=cur; cur=id; lastFrom=from;
+    render(from,id);
     if(from==='rua'&&id==='genkan') animShoes(1);
     else if(from==='genkan'&&id==='rua') animShoes(0);
     else draw();
   }
+  function render(from,id){
+    const note=trans[from+'>'+id]||info[id].note;
+    nameEl.textContent=T(info[id].name); noteEl.textContent=T(note); wearEl.textContent=T(WEAR)+T(info[id].wear);
+  }
+  HOOKS.push(function(){ render(lastFrom,cur); draw(); });
   let down=false;
   function move(e){
     const q=ptr(e,cv); p.x=clamp(q.x,8,W-8); p.y=clamp(q.y,8,H-8);
@@ -800,21 +872,21 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
 (function(){
   const cv=document.getElementById('hashi'); if(!cv) return;
   const nameEl=document.getElementById('hashiName'), noteEl=document.getElementById('hashiNote'), vEl=document.getElementById('hashiVerdict');
-  const LABEL={ok:'correto',warn:'evite',bad:'tabu'};
+  const LABEL={ok:{pt:'correto',en:'correct'},warn:{pt:'evite',en:'avoid'},bad:{pt:'tabu',en:'taboo'}};
   let ctx,W,H,spots=[],cur=0,pose={x:0,y:0,a:0},targetPose={x:0,y:0,a:0},down=false,drag=null,raf,stickLen=90;
   function layout(){
     ctx=fit(cv,360); W=cv._w; H=cv._h; stickLen=Math.min(W*0.17,110);
     spots=[
-      {id:'rest', name:'No descanso', x:0.22*W, y:0.74*H, a:0, verdict:'ok',
-       note:'Correto. Entre uma garfada e outra os palitos descansam no apoio, paralelos e com as pontas para a esquerda.'},
-      {id:'across', name:'Atravessados sobre a tigela', x:0.30*W, y:0.36*H, a:0, verdict:'warn',
-       note:'Evite. Atravessar os palitos sobre a tigela sinaliza que você terminou, e no meio da refeição soa indelicado.'},
-      {id:'upright', name:'Fincados em pé no arroz', x:0.30*W, y:0.53*H, a:-Math.PI/2, verdict:'bad',
-       note:'Tabu. É exatamente assim que se oferece arroz aos mortos num altar budista, e a imagem remete direto a um funeral.'},
-      {id:'stab', name:'Espetando a comida', x:0.56*W, y:0.55*H, a:-1.05, verdict:'warn',
-       note:'Evite. Espetar em vez de pegar é considerado grosseiro, um gesto de quem não tem paciência.'},
-      {id:'pass', name:'Passando de palito para palito', x:0.80*W, y:0.42*H, a:0.12, verdict:'bad',
-       note:'Tabu. É o gesto com que os ossos do falecido são passados entre os parentes na cremação.'}
+      {id:'rest', name:{pt:'No descanso',en:'On the rest'}, x:0.22*W, y:0.74*H, a:0, verdict:'ok',
+       note:{pt:'Correto. Entre uma garfada e outra os palitos descansam no apoio, paralelos e com as pontas para a esquerda.',en:'Correct. Between mouthfuls the chopsticks rest on their holder, parallel and with the tips pointing left.'}},
+      {id:'across', name:{pt:'Atravessados sobre a tigela',en:'Laid across the bowl'}, x:0.30*W, y:0.36*H, a:0, verdict:'warn',
+       note:{pt:'Evite. Atravessar os palitos sobre a tigela sinaliza que você terminou, e no meio da refeição soa indelicado.',en:'Avoid. Laying the chopsticks across the bowl signals that you have finished, and mid-meal it comes across as rude.'}},
+      {id:'upright', name:{pt:'Fincados em pé no arroz',en:'Standing upright in the rice'}, x:0.30*W, y:0.53*H, a:-Math.PI/2, verdict:'bad',
+       note:{pt:'Tabu. É exatamente assim que se oferece arroz aos mortos num altar budista, e a imagem remete direto a um funeral.',en:'Taboo. This is exactly how rice is offered to the dead on a Buddhist altar, and the image points straight to a funeral.'}},
+      {id:'stab', name:{pt:'Espetando a comida',en:'Spearing the food'}, x:0.56*W, y:0.55*H, a:-1.05, verdict:'warn',
+       note:{pt:'Evite. Espetar em vez de pegar é considerado grosseiro, um gesto de quem não tem paciência.',en:'Avoid. Spearing instead of picking up is considered coarse, the gesture of someone with no patience.'}},
+      {id:'pass', name:{pt:'Passando de palito para palito',en:'Passing from chopstick to chopstick'}, x:0.80*W, y:0.42*H, a:0.12, verdict:'bad',
+       note:{pt:'Tabu. É o gesto com que os ossos do falecido são passados entre os parentes na cremação.',en:'Taboo. It is the gesture by which the bones of the deceased are passed between relatives at a cremation.'}}
     ];
   }
   function drawSticks(x,y,a,alpha,w){
@@ -855,10 +927,11 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   function select(i){
     cur=i; const s=spots[i];
     targetPose={x:s.x,y:s.y,a:s.a};
-    nameEl.textContent=s.name; noteEl.textContent=s.note;
-    vEl.className='verdict '+s.verdict; vEl.textContent=LABEL[s.verdict];
+    nameEl.textContent=T(s.name); noteEl.textContent=T(s.note);
+    vEl.className='verdict '+s.verdict; vEl.textContent=T(LABEL[s.verdict]);
     cancelAnimationFrame(raf); tick();
   }
+  HOOKS.push(function(){ layout(); select(cur); });
   function nearest(x,y){
     let best=0,bd=1e9;
     spots.forEach(function(s,i){ const d=Math.hypot(s.x-x,s.y-y); if(d<bd){bd=d;best=i;} });
@@ -872,6 +945,120 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   addEventListener('resize',function(){ layout(); const s=spots[cur]; pose={x:s.x,y:s.y,a:s.a}; targetPose={x:s.x,y:s.y,a:s.a}; draw(); });
   layout(); pose={x:spots[0].x,y:spots[0].y,a:spots[0].a}; targetPose={x:pose.x,y:pose.y,a:pose.a}; draw();
 })();
+
+/* ================= dicionário EN ================= */
+var EN = {
+"hero.title1": "Japan from the inside",
+"hero.eyebrow1": "Japanese culture · interactive article",
+"hero.h1a": "Japan",
+"hero.h1b": "from the inside",
+"hero.p1": "Some Japanese habits look odd at first, but nearly all of them have a concrete origin. This article explains where a few of them come from, with small demonstrations for you to play with along the way.",
+"hero.figcaption1": "The <span class=\"jp\">seigaiha</span> pattern (青海波), \"waves of the blue sea\", one of the oldest motifs in Japanese design.",
+"s00.tag1": "<span class=\"n\">00</span> · introduction",
+"s00.h21": "Small habits with concrete origins",
+"s00.p1": "People arriving in Japan for the first time tend to notice things that work in a quiet, precise way. The train leaves on the marked second. The streets stay clean even with no bins in sight. People bow to one another, speak softly in the carriage, and a tea bowl may have its crack filled with gold rather than being thrown away.",
+"s00.p2": "Each of these habits has a reason, almost always tied to some point in the country's history. In this article I walk through a few of them and explain where they come from, using interactive demonstrations along the way. Understanding the reason behind a gesture <span class=\"mark\">changes the way you see it when you are there</span>.",
+"s01.tag1": "<span class=\"n\">01</span> · the frame",
+"s01.h21": "How Japan closed itself off and opened up",
+"s01.p1": "Before looking at the details, it is worth setting the frame. Much of what Japan is today was shaped by five moments in which the country changed its relationship with the rest of the world. Keep these markers in mind, because almost everything in the sections that follow descends from one of them.",
+"s01.h31": "The closing of the country<span class=\"jp\">鎖国</span>",
+"s01.p2": "Japan closes its borders and holds that isolation for more than two hundred years, one of the longest in history. Leaving the country becomes punishable by death, and almost no foreigner may enter. The only regular contact with the West happens through Dejima, a tiny fan-shaped artificial island in Nagasaki where Dutch traders were confined. With no internal wars and no outside influence, the country spends that long stretch perfecting its own traditions. The tea ceremony, noh and kabuki theatre, ukiyo-e printmaking, the gardens and the cooking all take on in this period the refined form they still have, and from it comes much of the Japanese regard for detail and for doing one thing only, extremely well.",
+"s01.h32": "Perry's ships<span class=\"jp\">黒船</span>",
+"s01.p3": "The American commodore Matthew Perry enters Edo bay with a squadron of steam warships, black with coal smoke. The Japanese nickname them the <span class=\"term\" tabindex=\"0\" data-jp=\"kurofune · 黒船\">black ships</span>, and the name stuck. The country, still relying on swords and without a modern navy, realises quickly that it cannot resist and is forced to open its ports to trade. The episode is a shock, and leaves a lesson that guides the decades that follow: to avoid being dominated, you must modernise fast.",
+"s01.h33": "The Meiji Restoration<span class=\"jp\">明治維新</span>",
+"s01.p4": "In roughly a single generation, Japan transforms itself. It adopts railways, factories, a modern army and Western clothes, and goes as far as abolishing the samurai class. The slogan of the era sums up the plan, <span class=\"term\" tabindex=\"0\" data-jp=\"wakon yōsai · 和魂洋才\">Japanese spirit with Western technique</span>: import the technology from outside without ceasing to be Japanese. That reflex of absorbing what comes from abroad and adapting it until mastered reappears later in everything, from the car to animation. It is also the origin of the scene that surprises every visitor, a thousand-year-old temple sitting, without any awkwardness, beside a district of skyscrapers and neon.",
+"s01.h34": "The end of the war",
+"s01.p5": "Defeat in the Second World War, with the atomic bombs on Hiroshima and Nagasaki and the American occupation that follows, leaves the country devastated. For years the occupation censors even public discussion of the bomb, and the subject is dammed up. From this come a deep pacifism and a wary relationship with technology. When the censorship loosens, the trauma reappears transformed in popular culture: Godzilla, in 1954, is a monster woken by radiation, and many people left the cinema in tears, in a rare moment when it was possible to grieve that collective loss.",
+"s01.h35": "Low growth and Cool Japan",
+"s01.p6": "After rapid growth in the post-war years, the economy stagnates from the 1990s on and the population begins to age. In the same period, Japanese culture becomes one of the country's largest exports. Animation, comics, video games, food and fashion come to define Japan's image in the world, to the point that the government creates an official programme called Cool Japan to encourage it and, in 2008, names the character Hello Kitty ambassador for Japanese tourism abroad. Much of the Japan admired today is born in this phase.",
+"s01.p7": "Two of these markers weigh more than the others. The long isolation explains the extreme care with form and detail; the forced opening of 1853 explains the ease of <span class=\"mark\">absorbing what comes from outside without ceasing to be Japanese</span>. Hold on to both, because they reappear in almost every section that follows.",
+"s02.tag1": "<span class=\"n\">02</span> · beliefs",
+"s02.h21": "Two religions that coexist without friction",
+"s02.p1": "Japanese people rarely describe themselves as religious, but daily life passes through two lenses that coexist without conflict. The first is <strong><span class=\"term\" tabindex=\"0\" data-jp=\"神道 · shintō\">Shinto</span></strong>, the native religion, with no founder and no sacred book, for which spirits, the <em>kami</em>, inhabit mountains, rivers, trees, objects and ancestors. It has almost no notion of sin; it has one of <span class=\"term\" tabindex=\"0\" data-jp=\"kegare · 穢れ\">pure and impure</span>. <span class=\"mark\">Much of the Japanese obsession with cleanliness is, at bottom, theological.</span> The water for washing hands at a shrine entrance, the salt used to purify, the shower before getting into the bath, all of it comes from there.",
+"s02.p2": "The second lens is <strong><span class=\"term\" tabindex=\"0\" data-jp=\"仏教 · bukkyō\">Buddhism</span></strong>, which arrived in the sixth century and brought the idea that everything is passing. The two divide life up without dispute, to the point that there is a saying that a Japanese person is born Shinto, marries in the Christian style and dies Buddhist: births and weddings tend to go through the shrine, and funerals through the temple. It is a spirituality of gestures and occasions rather than of doctrine.",
+"s02.p3": "Two traits of this view turn up casually. The numbers <strong>4 and 9</strong> are avoided because they sound like the words for death and suffering, so many buildings and hospitals skip those floors and room numbers. And the <strong><span class=\"term\" tabindex=\"0\" data-jp=\"matsuri · 祭り\">matsuri</span></strong>, a shrine festival, is the moment when Japanese restraint inverts itself: dozens of people carry a <span class=\"term\" tabindex=\"0\" data-jp=\"mikoshi · 神輿\">portable shrine</span> through the streets, shouting and shoving, to take the kami out for a walk.",
+"s03.tag1": "<span class=\"n\">03</span> · the group",
+"s03.h21": "Harmony and the circles of closeness <span class=\"jp\">和</span>",
+"s03.p1": "The value that organises much of Japanese social behaviour is <strong>wa</strong> (<span class=\"jp\">和</span>), the harmony of the group. An old name for the country itself is precisely Wa, and the character <span class=\"jp\">和</span> still stands for \"Japanese\" in words like <em>washoku</em> (the food), <em>wafuku</em> (traditional clothing) and <em>washi</em> (the paper), so that <span class=\"mark\">the idea of harmony sits inside the name itself</span>. In practice, how strongly wa applies depends on how close a person is to you. Japanese people divide the world into <strong>uchi</strong> (<span class=\"jp\">内</span>, inside) and <strong>soto</strong> (<span class=\"jp\">外</span>, outside), and treat the two very differently.",
+"s03.p2": "In the demonstration below, the centre is you. Drag the dot towards the edges and watch how the expected language and behaviour change with each ring. At the core, with family, speech is casual and you say what you think, which is called <em>honne</em>. At the edges, with strangers, speech becomes formal, <em>keigo</em>, and what is shown is the polite, restrained version, <em>tatemae</em>.",
+"s03.figcaption1": "Drag the dot from the centre to the edge. Each ring formalises the language and the behaviour.",
+"s03.p3": "This helps explain some common scenes. The shop assistant who treats a customer with almost ceremonial courtesy is following the rule of soto. The colleague who only truly relaxes at a drink-fuelled dinner, the <em>nomikai</em>, is crossing the border into uchi for a few hours. It is also why a \"yes\" is not always a yes: to avoid breaking the harmony, a direct \"no\" is usually avoided in favour of \"that is a little difficult\", which in practice means no. <span class=\"mark\">Distant courtesy towards those on the outside is the default form of respect.</span>",
+"s03.p4": "Wa does not travel alone. Other values live near it. There is a <span class=\"term\" tabindex=\"0\" data-jp=\"giri · 義理\">sense of obligation to return favours</span>, always in tension with each person's own feelings, and that tug of war drives much of Japanese theatre and storytelling. There is the habit of <span class=\"term\" tabindex=\"0\" data-jp=\"gaman · 我慢\">enduring hardship in silence</span> and of giving everything until the end; <span class=\"mark\">the dark side of that last virtue even has a name of its own, <span class=\"term\" tabindex=\"0\" data-jp=\"karōshi · 過労死\">death from overwork</span>.</span> There is <span class=\"term\" tabindex=\"0\" data-jp=\"omotenashi · おもてなし\">hospitality that anticipates the need</span> without expecting anything in return, which helps explain both the impeccable service and the absence of tipping. And beneath all of it lies the regard for the correct way of doing each thing, the path of mastery that sustains the figure of the <span class=\"term\" tabindex=\"0\" data-jp=\"shokunin · 職人\">craftsman of a single trade</span>.",
+"s04.tag1": "<span class=\"n\">04</span> · getting along",
+"s04.h21": "Taking off your shoes, and other habits",
+"s04.p1": "Few rules surprise you so early in the trip as the one about shoes. In homes, ryokans, many temples and even some restaurants and schools, shoes stay on a <span class=\"term\" tabindex=\"0\" data-jp=\"genkan · 玄関\">lowered step at the entrance</span>, and from there on you walk in socks or slippers. <span class=\"mark\">The floor inside is clean territory, and the street stays outside, literally.</span> There is usually a separate pair of slippers for the bathroom, which must not leave it. It is the same border between uchi and soto, inside and outside, turned into flooring.",
+"s04.figcaption1": "Drag the person between the zones. The footwear changes on its own at every border.",
+"s04.p2": "Two gestures show the weight of form. The <span class=\"term\" tabindex=\"0\" data-jp=\"meishi · 名刺\">business card</span> is handed over and received with both hands and read attentively; putting it away without looking, or shoving it into a back pocket, comes close to an insult, because the card stands for the person. And there is the economy of gifts: whoever travels tends to come back with a <span class=\"term\" tabindex=\"0\" data-jp=\"omiyage · 土産\">souvenir from the trip</span> for colleagues, and the care taken over the wrapping matters as much as the contents.",
+"s04.p3": "On the train the mood is one of silence, phones on silent and conversations kept low, again so as not to bother others, <em>meiwaku</em>. One word sums up much of this delicacy: <em>sumimasen</em> serves as \"excuse me\", \"thank you\" and \"sorry\" all at once, in a culture where thanking and apologising almost merge. And, as with the bath, you do not tip, because good service is the standard, not an extra to be bought.",
+"s05.tag1": "<span class=\"n\">05</span> · the body",
+"s05.h21": "The bow and its angles",
+"s05.p1": "The <strong><span class=\"term\" tabindex=\"0\" data-jp=\"ojigi · お辞儀\">bow</span></strong> appears constantly in Japan, in greetings, thanks and apologies. What changes the meaning is the angle of the body. Adjust the control in the demonstration below to watch the same person go from a casual greeting to a formal apology.",
+"s05.figcaption1": "About 15° for a casual greeting, 30° for formal respect, 45° for a deep apology or great gratitude.",
+"s05.p2": "There is a practical convention behind it. Between two people of different rank, the lower-ranking one usually bows first, a little deeper and for slightly longer. One detail shows how automatic the gesture is: many Japanese people <span class=\"mark\">bow even on the telephone</span>, to someone who cannot see them.",
+"s06.tag1": "<span class=\"n\">06</span> · aesthetics",
+"s06.h21": "Wabi-sabi and the repair in gold",
+"s06.p1": "Japanese aesthetics has a central concept called <strong>wabi-sabi</strong> (<span class=\"jp\">侘寂</span>), the regard for the beauty of what is simple, imperfect and passing. A good way to understand where it comes from is a story from the sixteenth century.",
+"s06.p2": "Sen no Rikyū was the master who defined the tea ceremony as it is still practised, built on rustic utensils, a bare setting and economical gestures. His lord, the powerful Toyotomi Hideyoshi, had the opposite taste, and went so far as to have a tea room built entirely lined with gold. In 1591, for reasons historians attribute in part to that clash of values, Hideyoshi ordered Rikyū to commit <em>seppuku</em>, ritual suicide. According to the best-known account, Rikyū conducted one last impeccable tea ceremony, presented each utensil for his guests to admire, and only then carried out the order.",
+"s06.p3": "<strong>Kintsugi</strong> (<span class=\"jp\">金継ぎ</span>) is the most direct application of that idea to an object. When a piece of ceramic breaks, the repair is made with lacquer mixed with gold powder, which leaves the line of the fracture visible and shining. <span class=\"mark\">The break becomes part of the piece's history.</span> Click the button below to repair the bowl.",
+"s06.figcaption1": "In kintsugi, the fracture is highlighted rather than hidden.",
+"s06.p4": "The same taste shows up in space. There is a word, <em>ma</em> (<span class=\"jp\">間</span>), for the empty interval: the pause in a conversation, the silence between two sounds, the unfilled part of a room. <span class=\"mark\">Emptiness is not absence, it is part of the composition.</span> The traditional house is made of this, with the tatami serving as the unit of measurement for the room itself, the <span class=\"term\" tabindex=\"0\" data-jp=\"shōji · 障子\">translucent paper doors</span> filtering the light rather than blocking it, and an <span class=\"term\" tabindex=\"0\" data-jp=\"tokonoma · 床の間\">alcove for contemplation</span> that exists only to hold a single flower or painting at a time.",
+"s06.p5": "The <span class=\"term\" tabindex=\"0\" data-jp=\"chadō · 茶道\">tea ceremony</span> is where these ideas come together in a single ritual, with every gesture designed to convey harmony, respect, purity and tranquillity. And the language has a fine vocabulary for kinds of beauty that English does not always name: <span class=\"term\" tabindex=\"0\" data-jp=\"iki · 粋\">discreet, effortless elegance</span>, <span class=\"term\" tabindex=\"0\" data-jp=\"shibui · 渋い\">the restraint that grows more beautiful with time</span>, and <span class=\"term\" tabindex=\"0\" data-jp=\"miyabi · 雅\">aristocratic refinement</span>.",
+"s07.tag1": "<span class=\"n\">07</span> · time",
+"s07.h21": "The seventy-two seasons of the year <span class=\"jp\">七十二候</span>",
+"s07.p1": "The traditional Japanese calendar divides the year into far more than four seasons. There are twenty-four solar terms, the <em>sekki</em>, and inside them <span class=\"mark\">seventy-two microseasons</span>, the <em>kō</em>, of about five days each. Each microseason has a short, descriptive name, such as \"the warm wind arrives\" or \"dew on the grass turns white\".",
+"s07.p2": "This fine division still has practical effect. The dish served in a restaurant, the traditional sweet (<em>wagashi</em>), the flower in an arrangement and the pattern on a kimono all change with the time of year. It is also tied to <strong>mono no aware</strong> (<span class=\"jp\">物の哀れ</span>), the sensitivity to the passing of time, which is part of why the cherry tree is so treasured, its blossom lasting only a few days. Spin the wheel below. It starts on today's microseason.",
+"s07.figcaption1": "Drag to spin. The pointer at the top marks the current microseason.",
+"s07.p3": "This fine calendar comes alive in the festivals of the year, and your trip will probably cross one. In spring comes <span class=\"term\" tabindex=\"0\" data-jp=\"hanami · 花見\">hanami</span>, the contemplation of the cherry blossom, which carries precisely that mono no aware, since the flower lasts only days. In summer, the matsuri and the <span class=\"term\" tabindex=\"0\" data-jp=\"hanabi · 花火\">fireworks festivals</span>. In autumn, the <span class=\"term\" tabindex=\"0\" data-jp=\"kōyō · 紅葉\">season of red leaves</span>, a kind of autumn hanami. And the most important of all is New Year, <span class=\"term\" tabindex=\"0\" data-jp=\"shōgatsu · 正月\">the most sacred holiday in the country</span>, when families visit the temple and the Buddhist bells ring <span class=\"mark\">108 times, one for each worldly desire that Buddhism says binds us.</span>",
+"s08.tag1": "<span class=\"n\">08</span> · at the table",
+"s08.h21": "The meal as ritual, three times a day",
+"s08.p1": "The meal begins and ends with two formulas. Before eating you say <em>itadakimasu</em>, which is less \"enjoy your meal\" and more \"I receive this life\", a thanks to everyone who brought the food there, including what died on the plate; at the end, <span class=\"term\" tabindex=\"0\" data-jp=\"gochisōsama · ごちそうさま\">a \"that was a feast\"</span>. There are also strong taboos around <span class=\"term\" tabindex=\"0\" data-jp=\"hashi · 箸\">chopsticks</span>: <span class=\"mark\">you never stand a chopstick upright in the rice, nor pass food from chopstick to chopstick, because both are gestures from the funeral rite.</span> These are mistakes that cause immediate discomfort, not a simple matter of manners.",
+"s08.figcaption1": "Drag the chopsticks. Two of the five positions are taboo because they come from funeral rites.",
+"s08.p2": "Other rules invert what is expected in the West. Slurping ramen noodles noisily is well regarded, because it cools the noodles and signals that you are enjoying them, though blowing your nose at the table is a serious offence. It was a Japanese researcher, Kikunae Ikeda, who isolated <em>umami</em> in 1908 and described it as the fifth taste, alongside sweet, salty, sour and bitter. And when drinking there is a small choreography: you fill the others' glasses and wait for them to fill yours, rather than serving yourself.",
+"s08.p3": "A word of praise is also due to the <em>konbini</em>, the convenience store. Open 24 hours and present on every corner, it sells prepared food of surprising quality, pays bills and solves the traveller's life. Together with the vending machines scattered everywhere, it is a system that only works well in a country of very high trust and very little theft.",
+"s09.tag1": "<span class=\"n\">09</span> · the bath",
+"s09.h21": "The rules of the bath",
+"s09.p1": "Bathing in hot springs, the <strong>onsen</strong> (<span class=\"jp\">温泉</span>), gathers several of these ideas in one place. Historically, bathing in Japan has a purifying function, inherited from Shinto, in which dirt is also understood as <span class=\"term\" tabindex=\"0\" data-jp=\"kegare · 穢れ\">an impurity</span> to be removed before contact with what is clean or sacred. The communal bath also works as a space without hierarchy, since <span class=\"mark\">without clothes and without titles, differences of rank become less visible</span>.",
+"s09.p2": "From this follows a set of rules, and most of them surprise first-time visitors. Answer the questions below to see the reason behind each one.",
+"s09.figcaption1": "Each choice reveals the cultural reason behind the rule.",
+"s10.tag1": "<span class=\"n\">10</span> · the country that works",
+"s10.h21": "Trains to the second, streets with no bins",
+"s10.p1": "Much of Japan's reputation for efficiency comes from habits with very concrete roots. The trains are the extreme example: on some lines the average delay is measured in seconds, and when a train leaves early by mistake the company will issue a formal apology. On the platforms it is common to see staff pointing at the signals and saying out loud what they are checking. This technique, <span class=\"term\" tabindex=\"0\" data-jp=\"shisa kankō · 指差喚呼\">point and call</span>, has existed since the early twentieth century, when a train driver with poor eyesight began confirming each signal aloud with his assistant. A study measured that pointing and speaking at the same time <span class=\"mark\">cuts errors by almost 85%</span>, and the New York subway adopted the practice after seeing the result.",
+"s10.p2": "The cleanliness of the streets has a darker origin. You almost never see public bins in Japan, and this goes back to 1995, when the Aum Shinrikyo cult hid part of the material used in the sarin gas attack on the Tokyo subway inside a bin; after that, bins were removed from stations and public spaces. The streets stay clean anyway, because the rule holds that <span class=\"mark\">your rubbish is your responsibility</span>. People tend to carry their own rubbish all the way home, a habit reinforced early, since at school children spend a few minutes a day cleaning their own classroom.",
+"s11.tag1": "<span class=\"n\">11</span> · imagination",
+"s11.h21": "From trauma to a factory of imagination",
+"s11.p1": "Japan's omnipresent cuteness, <span class=\"term\" tabindex=\"0\" data-jp=\"kawaii · かわいい\">kawaii</span>, has an unlikely origin. In the 1970s, teenagers began writing in a <span class=\"term\" tabindex=\"0\" data-jp=\"marumoji · 丸文字\">round, childlike hand</span>, full of little hearts and stars, as a silent way of resisting the rigidity of the adult world. The stationery shops turned it into a product, Hello Kitty appeared in 1974, and <span class=\"mark\">cuteness became a kind of official language of the country</span>, from town hall mascots to prison mascots.",
+"s11.p2": "The foundation of modern pop culture comes a little earlier. Osamu Tezuka, who was a child during the war, created Astro Boy in 1952, a robot boy with a human heart, built by a scientist who had lost his son. Tezuka brought the language of cinema onto the page, with angles and movement, and for that he is called the God of Manga. The robot with feelings already carried post-war Japan's question about whether technology can have compassion.",
+"s11.p3": "And then there are the small puzzles every visitor collects. <span class=\"mark\">Christmas is celebrated with a bucket of KFC</span>, a tradition invented from nothing by an advertising campaign in 1974, and the 24th is the chain's busiest day of the year. Face masks were common long before the pandemic, out of politeness and privacy. Kit Kat became an exam charm because the name resembles the <span class=\"term\" tabindex=\"0\" data-jp=\"kitto katsu · きっと勝つ\">Japanese expression for &quot;you will surely win&quot;</span>. And many people will ask your blood type the way others ask your star sign, believing it reveals your personality. These are systems with an internal logic of their own, like the plastic food replicas in the windows, the capsule hotels and the melodies that announce each train station.",
+"s12.tag1": "<span class=\"n\">12</span> · end",
+"s12.h21": "Looking with context",
+"s12.p1": "None of these habits has to be memorised for the trip to be worth it. What helps is knowing they exist and where they come from. When the train arrives at the exact minute, you will recognise the same concern with precision that runs through the country's history. When you have to keep your own rubbish in your pocket for a few hours, you will recognise the habit of avoiding inconvenience to others, <em>meiwaku</em>. Seeing Japan with that layer of context makes the looking richer, and <span class=\"mark\">it is also a form of respect</span> for a place that almost never explains itself out loud.",
+"foot.p1": "Interactive draft v0.3. An article about the reasons behind a few Japanese habits, meant to be read before or during the trip.",
+"foot.p2": "Sources for the stories: Sen no Rikyū and wabi-sabi (<a href=\"https://en.wikipedia.org/wiki/Sen_no_Riky%C5%AB\">Wikipedia</a>, <a href=\"https://jhistories.com/golden-tea-room-tai-an/\">jhistories</a>); punctuality and the point-and-call technique (<a href=\"https://www.nippon.com/en/japan-topics/g02575/\">Nippon.com</a>); bins and the 1995 attack (<a href=\"https://www.cnn.com/travel/japan-trash-cans-explainer-intl-hnk\">CNN</a>); tattoos and onsen (<a href=\"https://www.kashiwaya.org/e/magazine/tips-faq/why-tattoos-not-allowed-in-onsen.html\">Kashiwaya</a>); the 72 microseasons of the traditional Japanese calendar.",
+"s06.btnKin1": "repair with gold · 金継ぎ",
+"s06.btnKin2": "break it again"
+};
+
+/* ================= troca de idioma ================= */
+var PT={};
+$all('[data-i18n]').forEach(function(el){ PT[el.getAttribute('data-i18n')]=el.innerHTML; });
+function applyLang(lang){
+  LANG=lang; document.documentElement.lang=(lang==='en'?'en':'pt-BR');
+  try{ localStorage.setItem('rs_lang',lang); }catch(e){}
+  $all('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n'), v=(lang==='en')?EN[k]:PT[k];
+    if(v!=null) el.innerHTML=v;
+  });
+  $all('.langtoggle button').forEach(function(b){ b.classList.toggle('active',b.dataset.lang===lang); });
+  HOOKS.forEach(function(fn){ try{ fn(); }catch(e){} });
+}
+$all('.langtoggle button').forEach(function(b){ b.addEventListener('click',function(){ applyLang(this.dataset.lang); }); });
+function detectLang(){
+  try{ var st=localStorage.getItem('rs_lang'); if(st==='pt'||st==='en') return st; }catch(e){}
+  var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+  for(var i=0;i<navs.length;i++){ var l=(navs[i]||'').toLowerCase(); if(l.indexOf('pt')===0) return 'pt'; if(l.indexOf('en')===0) return 'en'; }
+  return 'pt';
+}
+applyLang(detectLang());
 </script>
 </body>
 </html>

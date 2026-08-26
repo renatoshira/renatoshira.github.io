@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O Peru por dentro</title>
+<title data-i18n="hero.title1">O Peru por dentro</title>
 <meta name="description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos peruanos, e de onde eles vêm, para quem vai viajar para Lima e o Peru.">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://renatoshira.github.io/peru-por-dentro.html">
@@ -51,6 +51,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font
 .topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:12px 24px}
 .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0;font-weight:700}
 .topbar .kicker:hover{color:var(--terra)}
+.topbar .right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.langtoggle{display:flex;border:1px solid var(--ink);font-size:11px}
+.langtoggle button{border:0;background:transparent;color:var(--ink);font-family:var(--mono);font-size:11px;padding:4px 9px;cursor:pointer;letter-spacing:.09em}
+.langtoggle button.active{background:var(--ink);color:#fff}
 
 p{font-size:18px;line-height:1.75;margin:0 0 20px}
 strong{font-weight:700}
@@ -148,82 +152,93 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
   .timeline{--gut:58px}
   .tl-item{gap:16px}
   .tl-year{font-size:12.5px}
+  /* tooltips longos quebram em vez de esticar a página para o lado */
+  .term::after{white-space:normal;width:max-content;max-width:min(58vw,165px);text-align:center;line-height:1.35}
+  html{overflow-x:clip}
 }
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
 
-<div class="topbar"><a class="kicker" href="index.html">← Renato Shirakashi</a></div>
+<div class="topbar">
+  <a class="kicker" href="index.html">← Renato Shirakashi</a>
+  <div class="right">
+    <div class="langtoggle" role="group" aria-label="Idioma">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
 
 <header class="top">
-  <div class="eyebrow">Cultura peruana · artigo interativo</div>
-  <h1><span class="mark">O Peru</span><span class="mark">por dentro</span><span class="en">desde Lima, hacia adentro</span></h1>
-  <p class="standfirst">Alguns hábitos peruanos parecem estranhos à primeira vista, mas quase todos têm uma origem concreta, quase sempre ligada às três regiões do país, às suas três raízes e a cinco séculos que se encontram no mesmo prato. Este artigo explica de onde vêm alguns deles, com pequenas demonstrações para você mexer pelo caminho.</p>
+  <div class="eyebrow" data-i18n="hero.eyebrow1">Cultura peruana · artigo interativo</div>
+  <h1><span class="mark" data-i18n="hero.h1a">O Peru</span><span class="mark" data-i18n="hero.h1b">por dentro</span><span class="en">desde Lima, hacia adentro</span></h1>
+  <p class="standfirst" data-i18n="hero.p1">Alguns hábitos peruanos parecem estranhos à primeira vista, mas quase todos têm uma origem concreta, quase sempre ligada às três regiões do país, às suas três raízes e a cinco séculos que se encontram no mesmo prato. Este artigo explica de onde vêm alguns deles, com pequenas demonstrações para você mexer pelo caminho.</p>
   <figure class="hero-fig">
     <div class="widget"><canvas id="heroCanvas" height="200"></canvas></div>
-    <figcaption>Padrão de rombos encadeados, um dos motivos mais antigos do têxtil andino, tecido na costa e na serra há milênios (Paracas, Nazca).</figcaption>
+    <figcaption data-i18n="hero.figcaption1">Padrão de rombos encadeados, um dos motivos mais antigos do têxtil andino, tecido na costa e na serra há milênios (Paracas, Nazca).</figcaption>
   </figure>
 </header>
 
 <main>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">00</span> · introdução</div>
-  <h2>Pequenos hábitos com origem concreta</h2>
-  <p>Quem chega ao Peru pela primeira vez costuma reparar em coisas que parecem contraditórias. Lima é um deserto colado num dos mares mais ricos do planeta, e mesmo assim quase não chove; o céu do inverno fica branco por meses sem molhar ninguém. Come-se ceviche ao meio-dia e quase nunca à noite. Um mesmo prato pode ter dentro de si o peixe cru dos antigos, o limão trazido pela Espanha e o corte fino aprendido com os japoneses.</p>
-  <p>Cada um desses hábitos tem uma razão, quase sempre ligada a algum ponto da história do país ou à sua geografia partida em três. Neste artigo eu percorro alguns deles e explico de onde vêm, usando demonstrações interativas ao longo do caminho. Entender a razão por trás de um gesto <span class="mark">muda o modo como você o observa quando está lá</span>.</p>
+  <div class="tag" data-i18n="s00.tag1"><span class="n">00</span> · introdução</div>
+  <h2 data-i18n="s00.h21">Pequenos hábitos com origem concreta</h2>
+  <p data-i18n="s00.p1">Quem chega ao Peru pela primeira vez costuma reparar em coisas que parecem contraditórias. Lima é um deserto colado num dos mares mais ricos do planeta, e mesmo assim quase não chove; o céu do inverno fica branco por meses sem molhar ninguém. Come-se ceviche ao meio-dia e quase nunca à noite. Um mesmo prato pode ter dentro de si o peixe cru dos antigos, o limão trazido pela Espanha e o corte fino aprendido com os japoneses.</p>
+  <p data-i18n="s00.p2">Cada um desses hábitos tem uma razão, quase sempre ligada a algum ponto da história do país ou à sua geografia partida em três. Neste artigo eu percorro alguns deles e explico de onde vêm, usando demonstrações interativas ao longo do caminho. Entender a razão por trás de um gesto <span class="mark">muda o modo como você o observa quando está lá</span>.</p>
 </section>
 
 <section class="wrap">
-  <div class="tag"><span class="n">01</span> · a moldura</div>
-  <h2>Como o Peru se fez</h2>
-  <p>Antes de olhar para os detalhes, vale montar a moldura. Boa parte do que o Peru é hoje foi formada por cinco momentos, do mundo antiquíssimo dos Andes até a cidade que a serra reconstruiu no século XX. Vale ter esses marcos em mente, porque quase tudo o que vem nas próximas seções desce de um deles.</p>
+  <div class="tag" data-i18n="s01.tag1"><span class="n">01</span> · a moldura</div>
+  <h2 data-i18n="s01.h21">Como o Peru se fez</h2>
+  <p data-i18n="s01.p1">Antes de olhar para os detalhes, vale montar a moldura. Boa parte do que o Peru é hoje foi formada por cinco momentos, do mundo antiquíssimo dos Andes até a cidade que a serra reconstruiu no século XX. Vale ter esses marcos em mente, porque quase tudo o que vem nas próximas seções desce de um deles.</p>
   <div class="timeline">
     <div class="tl-item reveal">
       <div class="tl-year">≈ 3000<br>a.C.</div>
       <div class="tl-body">
-        <h3 class="tl-title">O berço antiquíssimo<span class="loc">Caral</span></h3>
-        <p>Enquanto o Egito erguia suas primeiras pirâmides, já existia no deserto costeiro peruano a cidade de Caral, hoje considerada a mais antiga das Américas, com pirâmides de terra e praças circulares afundadas quase cinco mil anos atrás. O Peru não começa nem em 1532 nem com os Incas: uma longa fila de civilizações costeiras e serranas, como Chavín, Paracas, Nazca, Moche, Wari e Chimú, empilhou ao longo de milênios um domínio impressionante de tecelagem, cerâmica, metalurgia e agricultura de altitude. É por isso que se veem pirâmides de barro entre os prédios de Lima. Os Incas foram o último capítulo dessa história, não o primeiro.</p>
+        <h3 class="tl-title" data-i18n="s01.h31">O berço antiquíssimo<span class="loc">Caral</span></h3>
+        <p data-i18n="s01.p2">Enquanto o Egito erguia suas primeiras pirâmides, já existia no deserto costeiro peruano a cidade de Caral, hoje considerada a mais antiga das Américas, com pirâmides de terra e praças circulares afundadas quase cinco mil anos atrás. O Peru não começa nem em 1532 nem com os Incas: uma longa fila de civilizações costeiras e serranas, como Chavín, Paracas, Nazca, Moche, Wari e Chimú, empilhou ao longo de milênios um domínio impressionante de tecelagem, cerâmica, metalurgia e agricultura de altitude. É por isso que se veem pirâmides de barro entre os prédios de Lima. Os Incas foram o último capítulo dessa história, não o primeiro.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">séc.<br>XV</div>
       <div class="tl-body">
-        <h3 class="tl-title">O império sem escrita nem moeda<span class="loc">Tawantinsuyu</span></h3>
-        <p>Em pouco mais de um século, os Incas montaram a partir de Cusco o maior império da América pré-colombiana, o <span class="term" tabindex="0" data-term="Tawantinsuyu · as quatro regiões unidas">Tawantinsuyu</span>. Não tinham escrita alfabética, nem dinheiro, nem roda, mas construíram estradas de milhares de quilômetros, terraços e uma engenharia de pedra que ainda impressiona. O motor não era o mercado, era a reciprocidade: o <span class="term" tabindex="0" data-term="ayni · hoje por ti, amanhã por mim">ajni</span>, a ajuda mútua entre famílias, a <span class="term" tabindex="0" data-term="minka · trabalho para o bem comum">minka</span>, o trabalho comunitário, e a <span class="term" tabindex="0" data-term="mita · turno de trabalho devido ao Estado">mita</span>, o turno devido ao Estado. A conta se guardava em nós de cordão, o <em>quipu</em>, e a língua, o <span class="term" tabindex="0" data-term="quechua · runasimi, a fala do povo">quechua</span>, é falada por milhões até hoje.</p>
+        <h3 class="tl-title" data-i18n="s01.h32">O império sem escrita nem moeda<span class="loc">Tawantinsuyu</span></h3>
+        <p data-i18n="s01.p3">Em pouco mais de um século, os Incas montaram a partir de Cusco o maior império da América pré-colombiana, o <span class="term" tabindex="0" data-term="Tawantinsuyu · as quatro regiões unidas">Tawantinsuyu</span>. Não tinham escrita alfabética, nem dinheiro, nem roda, mas construíram estradas de milhares de quilômetros, terraços e uma engenharia de pedra que ainda impressiona. O motor não era o mercado, era a reciprocidade: o <span class="term" tabindex="0" data-term="ayni · hoje por ti, amanhã por mim">ajni</span>, a ajuda mútua entre famílias, a <span class="term" tabindex="0" data-term="minka · trabalho para o bem comum">minka</span>, o trabalho comunitário, e a <span class="term" tabindex="0" data-term="mita · turno de trabalho devido ao Estado">mita</span>, o turno devido ao Estado. A conta se guardava em nós de cordão, o <em>quipu</em>, e a língua, o <span class="term" tabindex="0" data-term="quechua · runasimi, a fala do povo">quechua</span>, é falada por milhões até hoje.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">1532</div>
       <div class="tl-body">
-        <h3 class="tl-title">A cilada e o resgate de ouro</h3>
-        <p>Em novembro de 1532, em Cajamarca, menos de duzentos espanhóis emboscam e capturam o imperador Atahualpa diante de um exército de milhares. Preso, ele oferece o maior resgate de que se tem notícia: encher uma sala inteira de ouro e outras duas de prata, até a altura do braço erguido. O resgate é pago, cerca de seis toneladas de ouro e quase doze de prata, e mesmo assim, no ano seguinte, os espanhóis o executam. Um império de milhões cai depressa, pela surpresa, pelas doenças trazidas de fora, por uma guerra civil interna e por alianças com povos que os Incas haviam submetido. Começa aí a fratura que funda o Peru: <span class="mark">o mundo andino é conquistado, mas nunca apagado</span>.</p>
+        <h3 class="tl-title" data-i18n="s01.h33">A cilada e o resgate de ouro</h3>
+        <p data-i18n="s01.p4">Em novembro de 1532, em Cajamarca, menos de duzentos espanhóis emboscam e capturam o imperador Atahualpa diante de um exército de milhares. Preso, ele oferece o maior resgate de que se tem notícia: encher uma sala inteira de ouro e outras duas de prata, até a altura do braço erguido. O resgate é pago, cerca de seis toneladas de ouro e quase doze de prata, e mesmo assim, no ano seguinte, os espanhóis o executam. Um império de milhões cai depressa, pela surpresa, pelas doenças trazidas de fora, por uma guerra civil interna e por alianças com povos que os Incas haviam submetido. Começa aí a fratura que funda o Peru: <span class="mark">o mundo andino é conquistado, mas nunca apagado</span>.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">1535</div>
       <div class="tl-body">
-        <h3 class="tl-title">A Cidade dos Reis<span class="loc">Ciudad de los Reyes</span></h3>
-        <p>Pizarro funda Lima em 1535 e não escolhe a Cusco dos Incas para capital: escolhe a costa, de onde os navios falam com a Espanha. Lima vira o centro do poder espanhol em toda a América do Sul, sede da corte, da alta justiça e da Inquisição, e escoadouro da prata que fazia a Espanha girar, a ponto de nascer a expressão <span class="term" tabindex="0" data-term="vale un Perú · vale uma fortuna">"vale un Perú"</span>. Chegam com a colônia o catolicismo, que se funde ao mundo andino, o barroco das igrejas douradas e a língua espanhola. E chegam também, à força, africanos escravizados, que se tornam a terceira raiz do Peru costeiro. Lima nasce virada para a Europa e de costas para os Andes, uma tensão que ela carrega até hoje.</p>
+        <h3 class="tl-title" data-i18n="s01.h34">A Cidade dos Reis<span class="loc">Ciudad de los Reyes</span></h3>
+        <p data-i18n="s01.p5">Pizarro funda Lima em 1535 e não escolhe a Cusco dos Incas para capital: escolhe a costa, de onde os navios falam com a Espanha. Lima vira o centro do poder espanhol em toda a América do Sul, sede da corte, da alta justiça e da Inquisição, e escoadouro da prata que fazia a Espanha girar, a ponto de nascer a expressão <span class="term" tabindex="0" data-term="vale un Perú · vale uma fortuna">"vale un Perú"</span>. Chegam com a colônia o catolicismo, que se funde ao mundo andino, o barroco das igrejas douradas e a língua espanhola. E chegam também, à força, africanos escravizados, que se tornam a terceira raiz do Peru costeiro. Lima nasce virada para a Europa e de costas para os Andes, uma tensão que ela carrega até hoje.</p>
       </div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-year">1821<span class="tl-year-sfx">→</span></div>
       <div class="tl-body">
-        <h3 class="tl-title">A independência e a Lima que inchou</h3>
-        <p>San Martín declara a independência em 28 de julho de 1821, e Bolívar e Sucre a selam nas batalhas de Junín e Ayacucho, em 1824, que encerram o domínio espanhol na América do Sul. A república nasce instável e leva golpes duros, entre eles a Guerra do Pacífico, no fim do século XIX, quando o Chile chega a ocupar Lima. No século XX, milhões deixam a serra e a selva e descem para a capital: a cidade de meio milhão vira uma metrópole de dez milhões, em boa parte andina, que se reinventa nas bordas. E, virando o milênio, a cozinha faz o país reencontrar o orgulho de si e vira sua maior embaixadora no mundo.</p>
+        <h3 class="tl-title" data-i18n="s01.h35">A independência e a Lima que inchou</h3>
+        <p data-i18n="s01.p6">San Martín declara a independência em 28 de julho de 1821, e Bolívar e Sucre a selam nas batalhas de Junín e Ayacucho, em 1824, que encerram o domínio espanhol na América do Sul. A república nasce instável e leva golpes duros, entre eles a Guerra do Pacífico, no fim do século XIX, quando o Chile chega a ocupar Lima. No século XX, milhões deixam a serra e a selva e descem para a capital: a cidade de meio milhão vira uma metrópole de dez milhões, em boa parte andina, que se reinventa nas bordas. E, virando o milênio, a cozinha faz o país reencontrar o orgulho de si e vira sua maior embaixadora no mundo.</p>
       </div>
     </div>
   </div>
-  <p>Dois traços atravessam quase tudo o que vem a seguir. O primeiro é a <span class="mark">fratura e a mestiçagem da origem</span>, três raízes e três regiões que nunca se fundiram por completo e convivem em tensão. O segundo é a <span class="mark">geografia partida em três</span>, costa, serra e selva, que decide o clima, a comida e até o humor da cidade. Guarde os dois.</p>
+  <p data-i18n="s01.p7">Dois traços atravessam quase tudo o que vem a seguir. O primeiro é a <span class="mark">fratura e a mestiçagem da origem</span>, três raízes e três regiões que nunca se fundiram por completo e convivem em tensão. O segundo é a <span class="mark">geografia partida em três</span>, costa, serra e selva, que decide o clima, a comida e até o humor da cidade. Guarde os dois.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">02</span> · o território</div>
-  <h2>Três países num só <span class="loc">costa, sierra, selva</span></h2>
-  <p>O Peru não é bem um país, são três colados. A faixa de deserto na <strong>costa</strong>, a muralha de picos da <strong>serra</strong> andina e a imensidão verde da <strong>selva</strong> amazônica são tão diferentes entre si que quase funcionam como nações distintas, cada uma com seu clima, sua comida, sua música e seu jeito. Entender essa divisão explica quase tudo o que chega ao prato e à cara das cidades.</p>
-  <p>Na demonstração abaixo, arraste o marcador da esquerda para a direita para atravessar o país, do mar até a floresta, e veja como a altitude, o clima e os ingredientes mudam a cada faixa.</p>
+  <div class="tag" data-i18n="s02.tag1"><span class="n">02</span> · o território</div>
+  <h2 data-i18n="s02.h21">Três países num só <span class="loc">costa, sierra, selva</span></h2>
+  <p data-i18n="s02.p1">O Peru não é bem um país, são três colados. A faixa de deserto na <strong>costa</strong>, a muralha de picos da <strong>serra</strong> andina e a imensidão verde da <strong>selva</strong> amazônica são tão diferentes entre si que quase funcionam como nações distintas, cada uma com seu clima, sua comida, sua música e seu jeito. Entender essa divisão explica quase tudo o que chega ao prato e à cara das cidades.</p>
+  <p data-i18n="s02.p2">Na demonstração abaixo, arraste o marcador da esquerda para a direita para atravessar o país, do mar até a floresta, e veja como a altitude, o clima e os ingredientes mudam a cada faixa.</p>
   <figure>
     <div class="widget">
       <canvas id="cut" height="360"></canvas>
@@ -233,17 +248,17 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="sub" id="cutAlt">≈ 0 a 500 m</div>
       </div>
     </div>
-    <figcaption>Arraste o marcador do mar até a selva. Cada faixa muda o clima e a despensa.</figcaption>
+    <figcaption data-i18n="s02.figcaption1">Arraste o marcador do mar até a selva. Cada faixa muda o clima e a despensa.</figcaption>
   </figure>
-  <p>Essa divisão também carrega preconceito e piada: o limenho da costa, o serrano da montanha e o <em>charapa</em> da selva se veem quase como estrangeiros dentro do mesmo país. Mas tudo isso desce e se cruza na capital. <span class="mark">Comer numa mesma quadra de Lima um peixe da costa, uma batata da serra e um fruto da selva é atravessar o país sem sair da cidade.</span></p>
+  <p data-i18n="s02.p3">Essa divisão também carrega preconceito e piada: o limenho da costa, o serrano da montanha e o <em>charapa</em> da selva se veem quase como estrangeiros dentro do mesmo país. Mas tudo isso desce e se cruza na capital. <span class="mark">Comer numa mesma quadra de Lima um peixe da costa, uma batata da serra e um fruto da selva é atravessar o país sem sair da cidade.</span></p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">03</span> · o mar frio</div>
-  <h2>Por que Lima é um deserto ao lado de um mar cheio de vida</h2>
-  <p>Uma das primeiras coisas que estranham em Lima é o clima. A cidade fica no litoral, mas é um deserto, um dos lugares mais secos do mundo, e no inverno passa meses sob um céu branco e úmido que nunca vira chuva de verdade. A explicação está no mar. Uma corrente oceânica gelada, a <strong>corrente de Humboldt</strong>, sobe do sul ao longo da costa e faz duas coisas ao mesmo tempo.</p>
-  <p>Antes de mexer na demonstração, vale desfazer uma confusão comum, porque a explicação é menos óbvia do que parece. Água fria é mais <strong>densa</strong> que água morna e, por conta própria, tenderia a ficar no fundo. <span class="mark">Ela não sobe sozinha: quem a puxa para cima é o vento.</span> Sopram de forma constante ventos ao longo da costa peruana que, somados à rotação da Terra, empurram a água da superfície para longe da praia, mar adentro. Esse vazio precisa ser preenchido, e o que sobe para ocupar o lugar é justamente a água profunda e gelada. É um <span class="term" tabindex="0" data-term="afloramento · upwelling, a ressurgência costeira">bombeamento mecânico</span>, contra a densidade, e não uma água fria que flutua.</p>
-  <p>Ligue e desligue esse mecanismo na demonstração abaixo para ver o efeito duplo: com ele, o mar se enche de vida e a costa vira deserto; sem ele, o mar seria mais morno e pobre, e a terra, mais úmida.</p>
+  <div class="tag" data-i18n="s03.tag1"><span class="n">03</span> · o mar frio</div>
+  <h2 data-i18n="s03.h21">Por que Lima é um deserto ao lado de um mar cheio de vida</h2>
+  <p data-i18n="s03.p1">Uma das primeiras coisas que estranham em Lima é o clima. A cidade fica no litoral, mas é um deserto, um dos lugares mais secos do mundo, e no inverno passa meses sob um céu branco e úmido que nunca vira chuva de verdade. A explicação está no mar. Uma corrente oceânica gelada, a <strong>corrente de Humboldt</strong>, sobe do sul ao longo da costa e faz duas coisas ao mesmo tempo.</p>
+  <p data-i18n="s03.p2">Antes de mexer na demonstração, vale desfazer uma confusão comum, porque a explicação é menos óbvia do que parece. Água fria é mais <strong>densa</strong> que água morna e, por conta própria, tenderia a ficar no fundo. <span class="mark">Ela não sobe sozinha: quem a puxa para cima é o vento.</span> Sopram de forma constante ventos ao longo da costa peruana que, somados à rotação da Terra, empurram a água da superfície para longe da praia, mar adentro. Esse vazio precisa ser preenchido, e o que sobe para ocupar o lugar é justamente a água profunda e gelada. É um <span class="term" tabindex="0" data-term="afloramento · upwelling, a ressurgência costeira">bombeamento mecânico</span>, contra a densidade, e não uma água fria que flutua.</p>
+  <p data-i18n="s03.p3">Ligue e desligue esse mecanismo na demonstração abaixo para ver o efeito duplo: com ele, o mar se enche de vida e a costa vira deserto; sem ele, o mar seria mais morno e pobre, e a terra, mais úmida.</p>
   <figure>
     <div class="widget">
       <canvas id="humboldt" height="400"></canvas>
@@ -254,69 +269,69 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="desc" id="humbDesc">O vento sopra ao longo da costa e empurra a água da superfície para longe da praia. Como esse vazio precisa ser preenchido, a água fria do fundo é puxada para cima, mesmo sendo mais densa: é um bombeamento mecânico, não uma água fria que sobe sozinha. Ela chega carregada de nutrientes e enche o mar de peixe. Esse mar gelado resfria o ar logo acima dele e forma uma tampa de ar estável, que impede a umidade de subir e virar chuva. Sobra a garúa.</div>
       </div>
     </div>
-    <figcaption>A mesma corrente que faz do Peru um dos maiores pescadores do mundo é a que seca a costa.</figcaption>
+    <figcaption data-i18n="s03.figcaption1">A mesma corrente que faz do Peru um dos maiores pescadores do mundo é a que seca a costa.</figcaption>
   </figure>
-  <p>O que sobe do fundo é adubo. Séculos de matéria orgânica afundada se acumulam nas águas profundas, e quando elas chegam à superfície alimentam o plâncton, que alimenta a <em>anchoveta</em>, que sustenta uma das pescas mais fartas do planeta. <span class="mark">É daí que vem, no fim das contas, o peixe do seu ceviche.</span></p>
-  <p>O mesmo mar gelado, porém, faz a segunda coisa. Ele resfria o ar logo acima dele e cria uma <strong>inversão térmica</strong>: fica ar frio embaixo e ar mais quente em cima, o contrário do arranjo normal. Como o ar frio é pesado, ele não sobe, e essa espécie de tampa impede que a umidade ganhe altura e vire nuvem de chuva. A umidade então condensa perto do chão, em gotículas finas demais para cair. É a <span class="term" tabindex="0" data-term="garúa · a neblina úmida do inverno limenho">garúa</span>, a neblina que cobre a cidade de maio a novembro sem molhar de verdade. Some a isso o fato de os Andes barrarem a umidade que vem da Amazônia, e o resultado é que Lima é a <span class="mark">segunda capital mais seca do mundo, atrás só do Cairo</span>. É em boa parte desse céu branco que nasce o ar melancólico e cinzento da cidade.</p>
+  <p data-i18n="s03.p4">O que sobe do fundo é adubo. Séculos de matéria orgânica afundada se acumulam nas águas profundas, e quando elas chegam à superfície alimentam o plâncton, que alimenta a <em>anchoveta</em>, que sustenta uma das pescas mais fartas do planeta. <span class="mark">É daí que vem, no fim das contas, o peixe do seu ceviche.</span></p>
+  <p data-i18n="s03.p5">O mesmo mar gelado, porém, faz a segunda coisa. Ele resfria o ar logo acima dele e cria uma <strong>inversão térmica</strong>: fica ar frio embaixo e ar mais quente em cima, o contrário do arranjo normal. Como o ar frio é pesado, ele não sobe, e essa espécie de tampa impede que a umidade ganhe altura e vire nuvem de chuva. A umidade então condensa perto do chão, em gotículas finas demais para cair. É a <span class="term" tabindex="0" data-term="garúa · a neblina úmida do inverno limenho">garúa</span>, a neblina que cobre a cidade de maio a novembro sem molhar de verdade. Some a isso o fato de os Andes barrarem a umidade que vem da Amazônia, e o resultado é que Lima é a <span class="mark">segunda capital mais seca do mundo, atrás só do Cairo</span>. É em boa parte desse céu branco que nasce o ar melancólico e cinzento da cidade.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">04</span> · crenças</div>
-  <h2>Um santo por cima, a terra por baixo</h2>
-  <p>O peruano da costa é, na maioria, católico, herança de três séculos de colônia, com santos, procissões e igrejas de ouro em cada esquina. Mas por baixo desse catolicismo mora um mundo andino que a conquista nunca conseguiu apagar, e os dois convivem fundidos, sem que ninguém veja contradição.</p>
-  <p>No pensamento andino, a <strong><span class="term" tabindex="0" data-term="Pachamama · a Mãe Terra">Pachamama</span></strong>, a Mãe Terra, e os <strong><span class="term" tabindex="0" data-term="apus · os espíritos das montanhas">apus</span></strong>, os espíritos das montanhas, seguem vivos, muitas vezes vestidos de santos católicos. Faz-se uma oferenda à terra, o <em>pago a la tierra</em>, e reza-se a um santo no mesmo fôlego. Por isso, quando alguém <span class="mark">derrama no chão o primeiro gole antes de beber</span>, não está desperdiçando: está devolvendo à Pachamama a sua parte, num gesto de reciprocidade que vem de muito antes da Espanha.</p>
-  <p>A devoção mais forte de Lima mostra bem essa mistura. Por volta de <strong>1651</strong>, um escravo de origem angolana pintou um Cristo numa parede de barro no bairro de Pachacamilla. Em 1655, um terremoto arrasou tudo em volta, <span class="mark">e a parede ficou de pé</span>; ela resistiu de novo a outros abalos, inclusive ao grande terremoto de 1746. O povo viu ali um milagre, e a devoção, que começou na comunidade afroperuana, tomou a cidade inteira. Até hoje, todo mês de outubro, centenas de milhares vestem o hábito roxo e acompanham a maior procissão da América, quando Lima fica <span class="term" tabindex="0" data-term="Señor de los Milagros · o Senhor dos Milagres">"morada"</span>. Vale reparar em quem a sustenta: a fé mais forte da cidade nasceu na sua parte mais oprimida.</p>
+  <div class="tag" data-i18n="s04.tag1"><span class="n">04</span> · crenças</div>
+  <h2 data-i18n="s04.h21">Um santo por cima, a terra por baixo</h2>
+  <p data-i18n="s04.p1">O peruano da costa é, na maioria, católico, herança de três séculos de colônia, com santos, procissões e igrejas de ouro em cada esquina. Mas por baixo desse catolicismo mora um mundo andino que a conquista nunca conseguiu apagar, e os dois convivem fundidos, sem que ninguém veja contradição.</p>
+  <p data-i18n="s04.p2">No pensamento andino, a <strong><span class="term" tabindex="0" data-term="Pachamama · a Mãe Terra">Pachamama</span></strong>, a Mãe Terra, e os <strong><span class="term" tabindex="0" data-term="apus · os espíritos das montanhas">apus</span></strong>, os espíritos das montanhas, seguem vivos, muitas vezes vestidos de santos católicos. Faz-se uma oferenda à terra, o <em>pago a la tierra</em>, e reza-se a um santo no mesmo fôlego. Por isso, quando alguém <span class="mark">derrama no chão o primeiro gole antes de beber</span>, não está desperdiçando: está devolvendo à Pachamama a sua parte, num gesto de reciprocidade que vem de muito antes da Espanha.</p>
+  <p data-i18n="s04.p3">A devoção mais forte de Lima mostra bem essa mistura. Por volta de <strong>1651</strong>, um escravo de origem angolana pintou um Cristo numa parede de barro no bairro de Pachacamilla. Em 1655, um terremoto arrasou tudo em volta, <span class="mark">e a parede ficou de pé</span>; ela resistiu de novo a outros abalos, inclusive ao grande terremoto de 1746. O povo viu ali um milagre, e a devoção, que começou na comunidade afroperuana, tomou a cidade inteira. Até hoje, todo mês de outubro, centenas de milhares vestem o hábito roxo e acompanham a maior procissão da América, quando Lima fica <span class="term" tabindex="0" data-term="Señor de los Milagros · o Senhor dos Milagres">"morada"</span>. Vale reparar em quem a sustenta: a fé mais forte da cidade nasceu na sua parte mais oprimida.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">05</span> · o sistema</div>
-  <h2>Reciprocidade, jeito e a hora peruana</h2>
-  <p>Por baixo do comportamento social peruano roda um princípio antigo, o da <strong>reciprocidade</strong>. O <em>ayni</em> dos Incas, o "hoje por ti, amanhã por mim", não sumiu com o império: ele sobrevive no mutirão de bairro, na ajuda entre vizinhos e naquele convite insistente para comer que não aceita um não. <span class="mark">Muito do que parece só hospitalidade é, no fundo, um sistema de troca que vem de séculos.</span> A ideia de que se dá para receber, e de que a comunidade constrói junto o que o dinheiro não paga, é uma das heranças mais fundas do mundo andino.</p>
-  <p>Na costa e em Lima, esse fundo se mistura a outro traço, mais colonial: o jeito <span class="term" tabindex="0" data-term="criollo · a esperteza costeira para se virar">criollo</span> de se virar com charme, malícia e improviso. Ele tem um lado luminoso, de humor e resiliência, e um lado sombrio, o do <em>vivo</em> que leva vantagem sobre os outros, que alimenta uma certa desconfiança de que "todo mundo se aproveita". É o mesmo espírito que sustenta a enorme economia informal do país, o comércio de rua e o vira-se de cada dia.</p>
-  <p>E há o tempo. A <span class="term" tabindex="0" data-term="la hora peruana · a hora peruana">hora peruana</span> é elástica: chegar no horário marcado pode ser cedo demais, e um convite para as oito da noite costuma começar bem depois, sem que ninguém ache ruim. Some a isso a ternura embutida na língua, que fala tudo no diminutivo carinhoso, o <em>cafecito</em>, o <em>ahorita</em>, o <em>ratito</em>. <span class="mark">Só saiba que "ahorita" tanto pode ser "já já" quanto "daqui a três horas".</span></p>
+  <div class="tag" data-i18n="s05.tag1"><span class="n">05</span> · o sistema</div>
+  <h2 data-i18n="s05.h21">Reciprocidade, jeito e a hora peruana</h2>
+  <p data-i18n="s05.p1">Por baixo do comportamento social peruano roda um princípio antigo, o da <strong>reciprocidade</strong>. O <em>ayni</em> dos Incas, o "hoje por ti, amanhã por mim", não sumiu com o império: ele sobrevive no mutirão de bairro, na ajuda entre vizinhos e naquele convite insistente para comer que não aceita um não. <span class="mark">Muito do que parece só hospitalidade é, no fundo, um sistema de troca que vem de séculos.</span> A ideia de que se dá para receber, e de que a comunidade constrói junto o que o dinheiro não paga, é uma das heranças mais fundas do mundo andino.</p>
+  <p data-i18n="s05.p2">Na costa e em Lima, esse fundo se mistura a outro traço, mais colonial: o jeito <span class="term" tabindex="0" data-term="criollo · a esperteza costeira para se virar">criollo</span> de se virar com charme, malícia e improviso. Ele tem um lado luminoso, de humor e resiliência, e um lado sombrio, o do <em>vivo</em> que leva vantagem sobre os outros, que alimenta uma certa desconfiança de que "todo mundo se aproveita". É o mesmo espírito que sustenta a enorme economia informal do país, o comércio de rua e o vira-se de cada dia.</p>
+  <p data-i18n="s05.p3">E há o tempo. A <span class="term" tabindex="0" data-term="la hora peruana · a hora peruana">hora peruana</span> é elástica: chegar no horário marcado pode ser cedo demais, e um convite para as oito da noite costuma começar bem depois, sem que ninguém ache ruim. Some a isso a ternura embutida na língua, que fala tudo no diminutivo carinhoso, o <em>cafecito</em>, o <em>ahorita</em>, o <em>ratito</em>. <span class="mark">Só saiba que "ahorita" tanto pode ser "já já" quanto "daqui a três horas".</span></p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">06</span> · convivência</div>
-  <h2>O beijo, o casero e a pechincha</h2>
-  <p>A distância física entre as pessoas é curta e o calor é o padrão, o oposto da contenção que se vê em outras culturas. Cumprimenta-se com <span class="mark">um beijo na bochecha</span>, entre mulheres e entre homem e mulher, e com um abraço caloroso entre amigos; o aperto de mão formal fica reservado ao primeiro contato de trabalho. Recusar o prato ou a bebida que alguém oferece pode magoar, porque oferecer comida é o gesto social básico. Um "¿ya comiste?", "você já comeu?", funciona quase como um "você está bem?".</p>
-  <p>No mercado e na feira, a relação também é afetiva. Você vira <span class="term" tabindex="0" data-term="casero / casera · o freguês de sempre">casero</span> do vendedor, o freguês de sempre, tratado por apelido e às vezes premiado com a <span class="term" tabindex="0" data-term="yapa · um pouquinho a mais, de brinde">yapa</span>, aquele pesinho a mais na balança. Ali, pechinchar faz parte do jogo, sem hostilidade: o preço é começo de conversa, não sentença. <span class="mark">Em lojas de preço fixo, porém, não se regateia.</span> São dois códigos que convivem lado a lado, e saber em qual você está evita saia justa.</p>
+  <div class="tag" data-i18n="s06.tag1"><span class="n">06</span> · convivência</div>
+  <h2 data-i18n="s06.h21">O beijo, o casero e a pechincha</h2>
+  <p data-i18n="s06.p1">A distância física entre as pessoas é curta e o calor é o padrão, o oposto da contenção que se vê em outras culturas. Cumprimenta-se com <span class="mark">um beijo na bochecha</span>, entre mulheres e entre homem e mulher, e com um abraço caloroso entre amigos; o aperto de mão formal fica reservado ao primeiro contato de trabalho. Recusar o prato ou a bebida que alguém oferece pode magoar, porque oferecer comida é o gesto social básico. Um "¿ya comiste?", "você já comeu?", funciona quase como um "você está bem?".</p>
+  <p data-i18n="s06.p2">No mercado e na feira, a relação também é afetiva. Você vira <span class="term" tabindex="0" data-term="casero / casera · o freguês de sempre">casero</span> do vendedor, o freguês de sempre, tratado por apelido e às vezes premiado com a <span class="term" tabindex="0" data-term="yapa · um pouquinho a mais, de brinde">yapa</span>, aquele pesinho a mais na balança. Ali, pechinchar faz parte do jogo, sem hostilidade: o preço é começo de conversa, não sentença. <span class="mark">Em lojas de preço fixo, porém, não se regateia.</span> São dois códigos que convivem lado a lado, e saber em qual você está evita saia justa.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">07</span> · a mesa</div>
-  <h2>O prato onde o país inteiro cabe</h2>
-  <p>Se em outras culturas a alma está num ritual, no Peru ela está no <strong>prato</strong>. A mesa é onde as três regiões, as três raízes e mais duas grandes imigrações, a chinesa e a japonesa, se encontram, e é o que devolveu ao país o orgulho de si. A despensa ajuda: o Peru tem <span class="mark">milhares de variedades de batata</span> e dezenas de milhos e de <em>ajíes</em>, as pimentas, e foi daqui que a batata e o milho partiram para o mundo.</p>
-  <p>O melhor exemplo é o ceviche, o prato-nação. Ele não nasceu pronto: foi ganhando camadas ao longo da história. Clique para montá-lo, uma época de cada vez.</p>
+  <div class="tag" data-i18n="s07.tag1"><span class="n">07</span> · a mesa</div>
+  <h2 data-i18n="s07.h21">O prato onde o país inteiro cabe</h2>
+  <p data-i18n="s07.p1">Se em outras culturas a alma está num ritual, no Peru ela está no <strong>prato</strong>. A mesa é onde as três regiões, as três raízes e mais duas grandes imigrações, a chinesa e a japonesa, se encontram, e é o que devolveu ao país o orgulho de si. A despensa ajuda: o Peru tem <span class="mark">milhares de variedades de batata</span> e dezenas de milhos e de <em>ajíes</em>, as pimentas, e foi daqui que a batata e o milho partiram para o mundo.</p>
+  <p data-i18n="s07.p2">O melhor exemplo é o ceviche, o prato-nação. Ele não nasceu pronto: foi ganhando camadas ao longo da história. Clique para montá-lo, uma época de cada vez.</p>
   <figure>
     <div class="widget">
       <canvas id="ceviche" height="330"></canvas>
       <div class="controls">
         <button class="btn" id="cevBtn">montar a próxima camada</button>
-        <button class="btn" id="cevReset">recomeçar</button>
+        <button class="btn" id="cevReset" data-i18n="s07.btnCev1">recomeçar</button>
       </div>
       <div class="readout">
         <div class="big" id="cevName">Prato vazio</div>
         <div class="desc" id="cevDesc">O ceviche não caiu do céu: ele foi somando origens ao longo de dois mil anos. Clique para ver.</div>
       </div>
     </div>
-    <figcaption>Cada camada do ceviche vem de uma origem diferente na história do Peru.</figcaption>
+    <figcaption data-i18n="s07.figcaption1">Cada camada do ceviche vem de uma origem diferente na história do Peru.</figcaption>
   </figure>
-  <p>Esse mesmo cruzamento aparece em quase tudo que se come. A técnica <span class="term" tabindex="0" data-term="nikkei · a fusão nipo-peruana">nikkei</span> nasce dos imigrantes japoneses que chegaram a partir de <strong>1899</strong> para as fazendas da costa; do encontro do seu corte preciso com o ají e o limão peruanos saiu, entre outros pratos, o <em>tiradito</em>. O <span class="term" tabindex="0" data-term="chifa · a cozinha chinesa-peruana">chifa</span>, a comida dos cerca de cem mil chineses que chegaram entre 1849 e 1874, se fundiu tão fundo que o <em>lomo saltado</em> e o <em>arroz chaufa</em> são hoje comida peruana como qualquer outra. E o coquetel nacional, o <strong>pisco sour</strong>, ganhou forma no bar de um americano em Lima, nos anos 1920. <span class="mark">Só um aviso: Peru e Chile disputam a origem do pisco com paixão, então evite pedir um "pisco chileno" em Lima.</span></p>
-  <p>Nos anos 2000, o chef Gastón Acurio convenceu a elite limenha a valorizar a própria cozinha em vez da francesa, e uma geração o seguiu. Em <strong>2023</strong>, o restaurante Central, de Virgilio Martínez e Pía León, foi eleito o melhor do mundo. <span class="mark">Foi em boa parte pela mesa que o país aprendeu de novo a gostar de ser o que é</span>, ainda que o glamour da alta gastronomia nem sempre chegue a quem planta e pesca.</p>
+  <p data-i18n="s07.p3">Esse mesmo cruzamento aparece em quase tudo que se come. A técnica <span class="term" tabindex="0" data-term="nikkei · a fusão nipo-peruana">nikkei</span> nasce dos imigrantes japoneses que chegaram a partir de <strong>1899</strong> para as fazendas da costa; do encontro do seu corte preciso com o ají e o limão peruanos saiu, entre outros pratos, o <em>tiradito</em>. O <span class="term" tabindex="0" data-term="chifa · a cozinha chinesa-peruana">chifa</span>, a comida dos cerca de cem mil chineses que chegaram entre 1849 e 1874, se fundiu tão fundo que o <em>lomo saltado</em> e o <em>arroz chaufa</em> são hoje comida peruana como qualquer outra. E o coquetel nacional, o <strong>pisco sour</strong>, ganhou forma no bar de um americano em Lima, nos anos 1920. <span class="mark">Só um aviso: Peru e Chile disputam a origem do pisco com paixão, então evite pedir um "pisco chileno" em Lima.</span></p>
+  <p data-i18n="s07.p4">Nos anos 2000, o chef Gastón Acurio convenceu a elite limenha a valorizar a própria cozinha em vez da francesa, e uma geração o seguiu. Em <strong>2023</strong>, o restaurante Central, de Virgilio Martínez e Pía León, foi eleito o melhor do mundo. <span class="mark">Foi em boa parte pela mesa que o país aprendeu de novo a gostar de ser o que é</span>, ainda que o glamour da alta gastronomia nem sempre chegue a quem planta e pesca.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">08</span> · som e mão</div>
-  <h2>Um instrumento nascido de um caixote</h2>
-  <p>A percussão que embala boa parte da música da costa nasceu de uma proibição. Impedidos de tocar tambores durante a escravidão, os afroperuanos passaram a bater nos <span class="mark">caixotes de madeira que sobravam nos portos</span>, e daí saiu o <strong><span class="term" tabindex="0" data-term="cajón · o caixote-tambor peruano">cajón</span></strong>, hoje instrumento nacional e adotado até pelo flamenco espanhol. Ele é o coração de gêneros afroperuanos como o <em>festejo</em> e o <em>landó</em>, e acompanha a <span class="term" tabindex="0" data-term="marinera · a dança de lenços do Peru">marinera</span>, a dança de galanteio com lenço branco. Um instrumento inventado para driblar uma censura virou símbolo do país.</p>
-  <p>Do lado andino, a trilha é outra: o <em>huayno</em>, de escala pentatônica, é a música da serra, enquanto na velha Lima costeira reina o <em>vals criollo</em>, de guitarra e cajón. E há a herança que se vê com os olhos. Tecer, no Peru, é milenar, e os padrões e as cores de uma manta não são enfeite: <span class="mark">carregam a identidade de cada comunidade</span>, quase como um sobrenome bordado. A cerâmica conta histórias desde os Moche, que modelavam retratos e cenas inteiras em seus vasos.</p>
+  <div class="tag" data-i18n="s08.tag1"><span class="n">08</span> · som e mão</div>
+  <h2 data-i18n="s08.h21">Um instrumento nascido de um caixote</h2>
+  <p data-i18n="s08.p1">A percussão que embala boa parte da música da costa nasceu de uma proibição. Impedidos de tocar tambores durante a escravidão, os afroperuanos passaram a bater nos <span class="mark">caixotes de madeira que sobravam nos portos</span>, e daí saiu o <strong><span class="term" tabindex="0" data-term="cajón · o caixote-tambor peruano">cajón</span></strong>, hoje instrumento nacional e adotado até pelo flamenco espanhol. Ele é o coração de gêneros afroperuanos como o <em>festejo</em> e o <em>landó</em>, e acompanha a <span class="term" tabindex="0" data-term="marinera · a dança de lenços do Peru">marinera</span>, a dança de galanteio com lenço branco. Um instrumento inventado para driblar uma censura virou símbolo do país.</p>
+  <p data-i18n="s08.p2">Do lado andino, a trilha é outra: o <em>huayno</em>, de escala pentatônica, é a música da serra, enquanto na velha Lima costeira reina o <em>vals criollo</em>, de guitarra e cajón. E há a herança que se vê com os olhos. Tecer, no Peru, é milenar, e os padrões e as cores de uma manta não são enfeite: <span class="mark">carregam a identidade de cada comunidade</span>, quase como um sobrenome bordado. A cerâmica conta histórias desde os Moche, que modelavam retratos e cenas inteiras em seus vasos.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">09</span> · o calendário</div>
-  <h2>O ano de festas que a viagem vai cruzar</h2>
-  <p>É provável que a sua viagem caia em cima de alguma festa, e vale saber qual. O calendário peruano mistura o santoral católico, as datas da república e o fundo andino, e cada mês tem a sua. Gire a roda abaixo; ela começa no mês de hoje.</p>
+  <div class="tag" data-i18n="s09.tag1"><span class="n">09</span> · o calendário</div>
+  <h2 data-i18n="s09.h21">O ano de festas que a viagem vai cruzar</h2>
+  <p data-i18n="s09.p1">É provável que a sua viagem caia em cima de alguma festa, e vale saber qual. O calendário peruano mistura o santoral católico, as datas da república e o fundo andino, e cada mês tem a sua. Gire a roda abaixo; ela começa no mês de hoje.</p>
   <figure>
     <div class="widget">
       <canvas id="wheel" height="430"></canvas>
@@ -326,15 +341,15 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <div class="sub" id="fWhen" style="color:var(--terra)">28 de julho</div>
       </div>
     </div>
-    <figcaption>Arraste para girar. O ponteiro no topo marca o mês atual.</figcaption>
+    <figcaption data-i18n="s09.figcaption1">Arraste para girar. O ponteiro no topo marca o mês atual.</figcaption>
   </figure>
-  <p>Alguns marcos valem por si. As <strong>Fiestas Patrias</strong>, no fim de julho, celebram a independência e param o país em vermelho e branco. O <span class="term" tabindex="0" data-term="Inti Raymi · a festa do Sol dos Incas">Inti Raymi</span>, em Cusco, reencena em junho a festa do Sol dos Incas, o império que virou espetáculo e afirmação. E outubro é o mês do <strong>Señor de los Milagros</strong>, quando Lima se veste de roxo. <span class="mark">Uma festa para quase toda semana do ano</span>, e cada uma revela uma camada diferente do país.</p>
+  <p data-i18n="s09.p2">Alguns marcos valem por si. As <strong>Fiestas Patrias</strong>, no fim de julho, celebram a independência e param o país em vermelho e branco. O <span class="term" tabindex="0" data-term="Inti Raymi · a festa do Sol dos Incas">Inti Raymi</span>, em Cusco, reencena em junho a festa do Sol dos Incas, o império que virou espetáculo e afirmação. E outubro é o mês do <strong>Señor de los Milagros</strong>, quando Lima se veste de roxo. <span class="mark">Uma festa para quase toda semana do ano</span>, e cada uma revela uma camada diferente do país.</p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">10</span> · na prática</div>
-  <h2>As regras que a viagem ensina</h2>
-  <p>Algumas situações do dia a dia peruano têm uma lógica que não é óbvia para quem chega. Responda às perguntas abaixo para ver a razão por trás de cada uma.</p>
+  <div class="tag" data-i18n="s10.tag1"><span class="n">10</span> · na prática</div>
+  <h2 data-i18n="s10.h21">As regras que a viagem ensina</h2>
+  <p data-i18n="s10.p1">Algumas situações do dia a dia peruano têm uma lógica que não é óbvia para quem chega. Responda às perguntas abaixo para ver a razão por trás de cada uma.</p>
   <figure>
     <div class="quiz" id="quiz">
       <div class="q-nav">
@@ -342,27 +357,27 @@ footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;
         <button class="btn" id="qNext" style="display:none">próxima →</button>
       </div>
     </div>
-    <figcaption>Cada escolha revela a razão cultural por trás do hábito.</figcaption>
+    <figcaption data-i18n="s10.figcaption1">Cada escolha revela a razão cultural por trás do hábito.</figcaption>
   </figure>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">11</span> · a cidade</div>
-  <h2>Lima por dentro</h2>
-  <p>Lima cabe em três cidades numa só. O <strong>Centro Histórico</strong> é a capital virreinal, de praças, sacadas de madeira e igrejas douradas, com as catacumbas de San Francisco por baixo. <strong>Miraflores</strong> é a Lima moderna, debruçada sobre o mar. E <strong>Barranco</strong> é a boêmia e artística. Atravessar a cidade é atravessar séculos e classes numa tarde.</p>
-  <p>A cidade vive num penhasco sobre o Pacífico, e por isso olha o mar mais de cima e de longe do que se banha nele, já que a água é fria e brava. Entre os prédios de Miraflores e San Isidro há <span class="mark">pirâmides de barro pré-incaicas</span>, as <span class="term" tabindex="0" data-term="huacas · sítios sagrados e pirâmides de barro">huacas</span>, cinco mil anos de história espremidos num quarteirão residencial. E há a Lima que a serra reconstruiu: os bairros populares onde a cidade andina se refez a partir de meados do século XX e onde vive, hoje, a maior parte dos limenhos. <span class="mark">O cartão-postal é só uma parte; a cidade real é, em boa medida, serrana.</span></p>
+  <div class="tag" data-i18n="s11.tag1"><span class="n">11</span> · a cidade</div>
+  <h2 data-i18n="s11.h21">Lima por dentro</h2>
+  <p data-i18n="s11.p1">Lima cabe em três cidades numa só. O <strong>Centro Histórico</strong> é a capital virreinal, de praças, sacadas de madeira e igrejas douradas, com as catacumbas de San Francisco por baixo. <strong>Miraflores</strong> é a Lima moderna, debruçada sobre o mar. E <strong>Barranco</strong> é a boêmia e artística. Atravessar a cidade é atravessar séculos e classes numa tarde.</p>
+  <p data-i18n="s11.p2">A cidade vive num penhasco sobre o Pacífico, e por isso olha o mar mais de cima e de longe do que se banha nele, já que a água é fria e brava. Entre os prédios de Miraflores e San Isidro há <span class="mark">pirâmides de barro pré-incaicas</span>, as <span class="term" tabindex="0" data-term="huacas · sítios sagrados e pirâmides de barro">huacas</span>, cinco mil anos de história espremidos num quarteirão residencial. E há a Lima que a serra reconstruiu: os bairros populares onde a cidade andina se refez a partir de meados do século XX e onde vive, hoje, a maior parte dos limenhos. <span class="mark">O cartão-postal é só uma parte; a cidade real é, em boa medida, serrana.</span></p>
 </section>
 
 <section class="wrap reveal">
-  <div class="tag"><span class="n">12</span> · fim</div>
-  <h2>Olhar com contexto</h2>
-  <p>Nenhum desses hábitos precisa ser decorado para a viagem valer a pena. O que ajuda é saber que eles existem e de onde vêm. Quando o céu de Lima ficar branco por dias, você vai reconhecer a corrente fria que seca a costa. Quando alguém derramar um gole no chão, vai reconhecer a Pachamama recebendo a sua parte. Quando o ceviche chegar ao meio-dia, vai reconhecer nele os Moche, a Espanha e o Japão na mesma colher. Ver o Peru com essa camada de contexto torna a observação mais rica, e <span class="mark">é também uma forma de respeito</span> por um país que passou séculos aprendendo a gostar de si mesmo.</p>
+  <div class="tag" data-i18n="s12.tag1"><span class="n">12</span> · fim</div>
+  <h2 data-i18n="s12.h21">Olhar com contexto</h2>
+  <p data-i18n="s12.p1">Nenhum desses hábitos precisa ser decorado para a viagem valer a pena. O que ajuda é saber que eles existem e de onde vêm. Quando o céu de Lima ficar branco por dias, você vai reconhecer a corrente fria que seca a costa. Quando alguém derramar um gole no chão, vai reconhecer a Pachamama recebendo a sua parte. Quando o ceviche chegar ao meio-dia, vai reconhecer nele os Moche, a Espanha e o Japão na mesma colher. Ver o Peru com essa camada de contexto torna a observação mais rica, e <span class="mark">é também uma forma de respeito</span> por um país que passou séculos aprendendo a gostar de si mesmo.</p>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Rascunho interativo v0.1. Um artigo por trás de alguns hábitos peruanos, com Lima no centro e o Peru ao redor, feito para ser lido antes ou durante a viagem.</p>
-    <p class="srcs">Fontes das histórias: Caral, a cidade mais antiga das Américas (<a href="https://en.wikipedia.org/wiki/Caral">Wikipedia</a>); o resgate de Atahualpa em 1532 (<a href="https://en.wikipedia.org/wiki/Ransom_Room">Wikipedia</a>); fundação de Lima e o Vice-Reino (<a href="https://www.britannica.com/place/Lima/History">Britannica</a>); a corrente de Humboldt e a garúa (<a href="https://en.wikipedia.org/wiki/Humboldt_Current">Wikipedia</a>); o Señor de los Milagros (<a href="https://en.wikipedia.org/wiki/Lord_of_Miracles">Wikipedia</a>); a história do ceviche (<a href="https://www.nationalgeographic.com/travel/article/ceviche-surprising-history-behind-perus-raw-fish-dish">National Geographic</a>); a cozinha nikkei (<a href="https://en.wikipedia.org/wiki/Nikkei_cuisine">Wikipedia</a>) e o chifa (<a href="https://en.wikipedia.org/wiki/Chifa">Wikipedia</a>); o pisco sour (<a href="https://en.wikipedia.org/wiki/Pisco_sour">Wikipedia</a>); o cajón afroperuano (<a href="https://en.wikipedia.org/wiki/Caj%C3%B3n">Wikipedia</a>).</p>
+    <p data-i18n="foot.p1">Rascunho interativo v0.1. Um artigo por trás de alguns hábitos peruanos, com Lima no centro e o Peru ao redor, feito para ser lido antes ou durante a viagem.</p>
+    <p class="srcs" data-i18n="foot.p2">Fontes das histórias: Caral, a cidade mais antiga das Américas (<a href="https://en.wikipedia.org/wiki/Caral">Wikipedia</a>); o resgate de Atahualpa em 1532 (<a href="https://en.wikipedia.org/wiki/Ransom_Room">Wikipedia</a>); fundação de Lima e o Vice-Reino (<a href="https://www.britannica.com/place/Lima/History">Britannica</a>); a corrente de Humboldt e a garúa (<a href="https://en.wikipedia.org/wiki/Humboldt_Current">Wikipedia</a>); o Señor de los Milagros (<a href="https://en.wikipedia.org/wiki/Lord_of_Miracles">Wikipedia</a>); a história do ceviche (<a href="https://www.nationalgeographic.com/travel/article/ceviche-surprising-history-behind-perus-raw-fish-dish">National Geographic</a>); a cozinha nikkei (<a href="https://en.wikipedia.org/wiki/Nikkei_cuisine">Wikipedia</a>) e o chifa (<a href="https://en.wikipedia.org/wiki/Chifa">Wikipedia</a>); o pisco sour (<a href="https://en.wikipedia.org/wiki/Pisco_sour">Wikipedia</a>); o cajón afroperuano (<a href="https://en.wikipedia.org/wiki/Caj%C3%B3n">Wikipedia</a>).</p>
   </div>
 </footer>
 </main>
@@ -384,6 +399,11 @@ function ptr(e, cv){
   return { x: t.clientX - r.left, y: t.clientY - r.top };
 }
 const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+
+/* idioma: T() resolve um par {pt,en}; HOOKS redesenha os widgets na troca */
+var LANG='pt', HOOKS=[];
+function T(o){ return (o && typeof o==='object' && o.pt!==undefined) ? (o[LANG]!=null?o[LANG]:o.pt) : o; }
+function $all(sel){ return [].slice.call(document.querySelectorAll(sel)); }
 function mix(c1,c2,t){ return [Math.round(lerp(c1[0],c2[0],t)),Math.round(lerp(c1[1],c2[1],t)),Math.round(lerp(c1[2],c2[2],t))]; }
 function rgb(c,a){ return 'rgba('+c[0]+','+c[1]+','+c[2]+','+(a===undefined?1:a)+')'; }
 
@@ -443,10 +463,14 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   // pontos [nx, altNorm] do relevo: mar -> costa -> serra (pico) -> selva
   const P=[[0,0.05],[0.10,0.05],[0.20,0.09],[0.30,0.30],[0.40,0.78],[0.47,0.99],[0.54,0.88],[0.60,0.95],[0.68,0.62],[0.80,0.40],[1,0.30]];
   const zones=[
-    {name:'Costa', min:0, max:0.26, desc:'A faixa de deserto à beira-mar, onde fica Lima. Mar frio, garúa e o peixe do ceviche.', alt:'≈ 0 a 500 m'},
-    {name:'Serra andina', min:0.26, max:0.62, desc:'Os Andes: altitude, o soroche (mal de altura), a batata e o milho, o mundo quechua e aimará.', alt:'≈ 2.500 a 4.500 m'},
-    {name:'Selva amazônica', min:0.62, max:1.01, desc:'Mais da metade do território e a menor parte da gente: rios, floresta, peixes e frutas amazônicas.', alt:'≈ 100 a 800 m'}
+    {name:{pt:'Costa',en:'Coast'}, min:0, max:0.26, alt:{pt:'≈ 0 a 500 m',en:'≈ 0 to 500 m'},
+     desc:{pt:'A faixa de deserto à beira-mar, onde fica Lima. Mar frio, garúa e o peixe do ceviche.',en:'The strip of desert by the sea, where Lima sits. Cold sea, garúa and the fish for the ceviche.'}},
+    {name:{pt:'Serra andina',en:'Andean sierra'}, min:0.26, max:0.62, alt:{pt:'≈ 2.500 a 4.500 m',en:'≈ 2,500 to 4,500 m'},
+     desc:{pt:'Os Andes: altitude, o soroche (mal de altura), a batata e o milho, o mundo quechua e aimará.',en:'The Andes: altitude, soroche (altitude sickness), the potato and maize, the Quechua and Aymara world.'}},
+    {name:{pt:'Selva amazônica',en:'Amazon selva'}, min:0.62, max:1.01, alt:{pt:'≈ 100 a 800 m',en:'≈ 100 to 800 m'},
+     desc:{pt:'Mais da metade do território e a menor parte da gente: rios, floresta, peixes e frutas amazônicas.',en:'More than half the territory and the smallest share of the people: rivers, forest, Amazonian fish and fruit.'}}
   ];
+  const CUTL={pt:['COSTA','SERRA','SELVA'],en:['COAST','SIERRA','SELVA']};
   let ctx,W,H,mx=0.10;
   function altAt(nx){ for(let i=0;i<P.length-1;i++){ if(nx>=P[i][0]&&nx<=P[i+1][0]){ const t=(nx-P[i][0])/(P[i+1][0]-P[i][0]); return lerp(P[i][1],P[i+1][1],t);} } return P[P.length-1][1]; }
   function zoneOf(nx){ for(const z of zones){ if(nx>=z.min&&nx<z.max) return z; } return zones[0]; }
@@ -478,7 +502,7 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     ctx.closePath(); ctx.fillStyle='rgba(255,255,255,.85)'; ctx.fill();
     // rótulos de faixa
     ctx.font='11px "Space Mono", monospace'; ctx.textAlign='center'; ctx.fillStyle='rgba(23,19,16,.4)';
-    ctx.fillText('COSTA',0.13*W,base+18); ctx.fillText('SERRA',0.44*W,base+18); ctx.fillText('SELVA',0.80*W,base+18);
+    const cl=T(CUTL); ctx.fillText(cl[0],0.13*W,base+18); ctx.fillText(cl[1],0.44*W,base+18); ctx.fillText(cl[2],0.80*W,base+18);
     // marcador
     const my=yFor(altAt(mx));
     ctx.beginPath(); ctx.moveTo(mx*W,my); ctx.lineTo(mx*W,my-46); ctx.strokeStyle='rgba(193,95,60,.5)'; ctx.lineWidth=1; ctx.stroke();
@@ -486,7 +510,8 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     ctx.beginPath(); ctx.arc(mx*W,my,9,0,7); ctx.fillStyle='#C15F3C'; ctx.fill();
     ctx.beginPath(); ctx.arc(mx*W,my,9,0,7); ctx.strokeStyle='#fff'; ctx.lineWidth=2.5; ctx.stroke();
   }
-  function update(nx){ mx=clamp(nx,0.02,0.99); const z=zoneOf(mx); nEl.textContent=z.name; dEl.textContent=z.desc; aEl.textContent=z.alt; draw(); }
+  function update(nx){ mx=clamp(nx,0.02,0.99); const z=zoneOf(mx); nEl.textContent=T(z.name); dEl.textContent=T(z.desc); aEl.textContent=T(z.alt); draw(); }
+  HOOKS.push(function(){ update(mx); });
   let down=false; function handle(e){ const p=ptr(e,cv); update(p.x/W); }
   cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);handle(e);});
   cv.addEventListener('pointermove',e=>{if(down)handle(e);});
@@ -573,7 +598,7 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
       ctx.strokeStyle=rgb([150,150,148],.35*prog); ctx.lineWidth=1; ctx.stroke();
       ctx.fillStyle=rgb([95,95,93],.95*prog); ctx.font='10px "Space Mono", monospace';
       ctx.textAlign='center'; ctx.textBaseline='middle';
-      ctx.fillText('garúa', (coastX+W)/2, landY((coastX+W)/2)-24);
+      ctx.fillText(T({pt:'garúa',en:'garúa'}), (coastX+W)/2, landY((coastX+W)/2)-24);
     }
     // chuva sobre a costa quando morno
     if(prog<0.95){ ctx.strokeStyle=rgb([110,135,150],.55*(1-prog)); ctx.lineWidth=1;
@@ -582,7 +607,7 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
         ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x-2,y+7); ctx.stroke(); }); }
     // ===== legenda numerada, fora da cena (canto superior esquerdo) =====
     if(prog>0.05){
-      const L=['o vento empurra a superfície','a superfície vai embora','a água funda sobe no lugar'];
+      const L=T({pt:['o vento empurra a superfície','a superfície vai embora','a água funda sobe no lugar'],en:['the wind pushes the surface','the surface moves away','deep water rises in its place']});
       const cols=[[70,90,105],[90,140,170],[120,180,215]];
       ctx.font='10px "Space Mono", monospace'; ctx.textBaseline='middle';
       let wMax=0; L.forEach(s=>{ wMax=Math.max(wMax, ctx.measureText(s).width); });
@@ -596,13 +621,19 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     }
     if(Math.abs(target-prog)>0.002){ prog+=(target-prog)*0.07; raf=requestAnimationFrame(draw); } else { prog=target; }
   }
-  function set(v){ on=v; target=v?1:0; btn.textContent='corrente fria: '+(v?'ligada':'desligada'); btn.classList.toggle('on',v);
-    dEl.textContent = v
-      ? 'O vento sopra ao longo da costa e empurra a água da superfície para longe da praia. Como esse vazio precisa ser preenchido, a água fria do fundo é puxada para cima, mesmo sendo mais densa: é um bombeamento mecânico, não uma água fria que sobe sozinha. Ela chega carregada de nutrientes e enche o mar de peixe. Esse mar gelado resfria o ar logo acima dele e forma uma tampa de ar estável, que impede a umidade de subir e virar chuva. Sobra a garúa.'
-      : 'Sem o vento que empurra a superfície, a água fria fica onde a densidade a mantém: no fundo. A superfície fica morna e pobre em nutrientes, com pouco peixe. E, sem a tampa de ar frio por cima, a umidade sobe, forma nuvem alta e cai como chuva de verdade: a costa seria verde, e Lima não teria a sua garúa.';
+  const HTXT={
+    bon:{pt:'corrente fria: ligada',en:'cold current: on'}, boff:{pt:'corrente fria: desligada',en:'cold current: off'},
+    on:{pt:'O vento sopra ao longo da costa e empurra a água da superfície para longe da praia. Como esse vazio precisa ser preenchido, a água fria do fundo é puxada para cima, mesmo sendo mais densa: é um bombeamento mecânico, não uma água fria que sobe sozinha. Ela chega carregada de nutrientes e enche o mar de peixe. Esse mar gelado resfria o ar logo acima dele e forma uma tampa de ar estável, que impede a umidade de subir e virar chuva. Sobra a garúa.',
+        en:'The wind blows along the coast and pushes the surface water away from the shore. Because that gap has to be filled, the cold water from below is pulled upwards even though it is denser: it is a mechanical pumping, not cold water rising on its own. It arrives loaded with nutrients and fills the sea with fish. That freezing sea cools the air just above it and forms a lid of stable air, which stops the moisture from rising and becoming rain. What is left is the garúa.'},
+    off:{pt:'Sem o vento que empurra a superfície, a água fria fica onde a densidade a mantém: no fundo. A superfície fica morna e pobre em nutrientes, com pouco peixe. E, sem a tampa de ar frio por cima, a umidade sobe, forma nuvem alta e cai como chuva de verdade: a costa seria verde, e Lima não teria a sua garúa.',
+         en:'Without the wind pushing the surface, the cold water stays where density keeps it: at the bottom. The surface turns warm and poor in nutrients, with few fish. And, with no lid of cold air above, the moisture rises, forms high cloud and falls as real rain: the coast would be green, and Lima would not have its garúa.'}
+  };
+  function set(v){ on=v; target=v?1:0; btn.textContent=T(v?HTXT.bon:HTXT.boff); btn.classList.toggle('on',v);
+    dEl.textContent = T(v?HTXT.on:HTXT.off);
     cancelAnimationFrame(raf); draw();
   }
   btn.addEventListener('click',()=>set(!on));
+  HOOKS.push(function(){ set(on); });
   addEventListener('resize',draw); draw();
 })();
 
@@ -611,11 +642,16 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
   const cv=document.getElementById('ceviche'), btn=document.getElementById('cevBtn'), reset=document.getElementById('cevReset');
   const nEl=document.getElementById('cevName'), dEl=document.getElementById('cevDesc');
   const steps=[
-    {name:'Prato vazio', desc:'O ceviche não caiu do céu: ele foi somando origens ao longo de dois mil anos. Clique para ver.'},
-    {name:'Base Moche · há ~2000 anos', desc:'Os antigos da costa já preparavam peixe cru "cozido" no suco ácido de um fruto local, o tumbo, temperado com ají. É a base indígena do prato.'},
-    {name:'+ limão e cebola · séc. XVI', desc:'Com a colônia espanhola chegam o limão e a cebola, que substituem o tumbo e dão ao ceviche o ácido e o corte que ele tem hoje.'},
-    {name:'+ corte japonês · séc. XX', desc:'A mão dos imigrantes japoneses encurta a marinada: o peixe passa a ser servido quase fresco, macio, do jeito moderno. Nasce também o tiradito.'}
+    {name:{pt:'Prato vazio',en:'Empty plate'},
+     desc:{pt:'O ceviche não caiu do céu: ele foi somando origens ao longo de dois mil anos. Clique para ver.',en:'Ceviche did not fall from the sky: it gathered origins over two thousand years. Click to see.'}},
+    {name:{pt:'Base Moche · há ~2000 anos',en:'Moche base · ~2000 years ago'},
+     desc:{pt:'Os antigos da costa já preparavam peixe cru "cozido" no suco ácido de um fruto local, o tumbo, temperado com ají. É a base indígena do prato.',en:'The ancients of the coast already prepared raw fish "cooked" in the acid juice of a local fruit, the tumbo, seasoned with ají. It is the indigenous base of the dish.'}},
+    {name:{pt:'+ limão e cebola · séc. XVI',en:'+ lime and onion · 16th c.'},
+     desc:{pt:'Com a colônia espanhola chegam o limão e a cebola, que substituem o tumbo e dão ao ceviche o ácido e o corte que ele tem hoje.',en:'With the Spanish colony arrive the lime and the onion, which replace the tumbo and give ceviche the acidity and the bite it has today.'}},
+    {name:{pt:'+ corte japonês · séc. XX',en:'+ Japanese knifework · 20th c.'},
+     desc:{pt:'A mão dos imigrantes japoneses encurta a marinada: o peixe passa a ser servido quase fresco, macio, do jeito moderno. Nasce também o tiradito.',en:'The hand of the Japanese immigrants shortens the marinade: the fish comes to be served almost fresh and tender, in the modern way. The tiradito is born too.'}}
   ];
+  const CBTN={next:{pt:'montar a próxima camada',en:'add the next layer'},done:{pt:'ceviche pronto ✓',en:'ceviche complete ✓'}};
   let ctx,W,H,step=0,prog=0,target=0,raf;
   function bowl(cx,cy,rx,ry){ ctx.beginPath();
     ctx.ellipse(cx,cy-ry*0.5,rx,ry*0.30,0,Math.PI,2*Math.PI);
@@ -659,9 +695,10 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     if(prog<1 && target>step){ prog+=0.08; if(prog>=1){ prog=1; step=target; } raf=requestAnimationFrame(draw); }
   }
   function advance(){ if(target<3){ target++; prog=0; cancelAnimationFrame(raf); draw();
-    const s=steps[target]; nEl.textContent=s.name; dEl.textContent=s.desc; btn.textContent = target>=3 ? 'ceviche pronto ✓' : 'montar a próxima camada'; btn.classList.toggle('on',target>=3); } }
+    const s=steps[target]; nEl.textContent=T(s.name); dEl.textContent=T(s.desc); btn.textContent = T(target>=3 ? CBTN.done : CBTN.next); btn.classList.toggle('on',target>=3); } }
+  HOOKS.push(function(){ const s=steps[target]; nEl.textContent=T(s.name); dEl.textContent=T(s.desc); btn.textContent=T(target>=3?CBTN.done:CBTN.next); });
   function doReset(){ target=0; step=0; prog=0; cancelAnimationFrame(raf); draw();
-    nEl.textContent=steps[0].name; dEl.textContent=steps[0].desc; btn.textContent='montar a próxima camada'; btn.classList.remove('on'); }
+    nEl.textContent=T(steps[0].name); dEl.textContent=T(steps[0].desc); btn.textContent=T(CBTN.next); btn.classList.remove('on'); }
   btn.addEventListener('click',advance); reset.addEventListener('click',doReset);
   addEventListener('resize',draw); draw();
 })();
@@ -670,20 +707,34 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
 (function(){
   const cv=document.getElementById('wheel');
   const nEl=document.getElementById('fName'), lEl=document.getElementById('fLine'), wEl=document.getElementById('fWhen');
-  const M=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+  const M={pt:['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'],
+           en:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']};
+  const CEN={pt:['o ano','de festas'],en:['the year of','festivals']};
   const F=[
-    {name:'Aniversário de Lima', when:'18 de janeiro', li:'A fundação da Ciudad de los Reyes, em 1535.'},
-    {name:'Carnaval andino', when:'fevereiro', li:'Água, tinta e a yunza, a árvore que se derruba dançando. A folia molhada do interior.'},
-    {name:'Semana Santa', when:'março / abril', li:'Procissões intensas pelo país; as de Ayacucho são célebres.'},
-    {name:'Outono na costa', when:'abril', li:'O verão limenho afrouxa e o céu começa a fechar para a garúa.'},
-    {name:'Festas de colheita', when:'maio', li:'Cruz de Mayo e celebrações agrícolas na serra andina.'},
-    {name:'Inti Raymi & Dia do Ceviche', when:'24 e 28 de junho', li:'A festa do Sol dos Incas, em Cusco, e o prato-nação celebrado em todo o país.'},
-    {name:'Fiestas Patrias', when:'28 de julho', li:'A independência de 1821; o país inteiro em vermelho e branco.'},
-    {name:'Santa Rosa de Lima', when:'30 de agosto', li:'A padroeira das Américas, nascida em Lima.'},
-    {name:'Primavera', when:'setembro', li:'O céu de Lima começa a abrir depois do inverno cinza.'},
-    {name:'Señor de los Milagros', when:'outubro', li:'Lima fica "morada"; a maior procissão da América.'},
-    {name:'Todos los Santos', when:'1 e 2 de novembro', li:'A visita aos mortos, com comida e o tanta wawa, o pão em forma de criança.'},
-    {name:'Natal & Santurantikuy', when:'dezembro', li:'A grande feira de artesanato de Cusco, na véspera de Natal.'}
+    {name:{pt:'Aniversário de Lima',en:'Lima\u2019s founding day'}, when:{pt:'18 de janeiro',en:'18 January'},
+     li:{pt:'A fundação da Ciudad de los Reyes, em 1535.',en:'The founding of the Ciudad de los Reyes, in 1535.'}},
+    {name:{pt:'Carnaval andino',en:'Andean carnival'}, when:{pt:'fevereiro',en:'February'},
+     li:{pt:'Água, tinta e a yunza, a árvore que se derruba dançando. A folia molhada do interior.',en:'Water, paint and the yunza, the tree felled while dancing. The soaking revelry of the interior.'}},
+    {name:{pt:'Semana Santa',en:'Holy Week'}, when:{pt:'março / abril',en:'March / April'},
+     li:{pt:'Procissões intensas pelo país; as de Ayacucho são célebres.',en:'Intense processions across the country; those of Ayacucho are famous.'}},
+    {name:{pt:'Outono na costa',en:'Autumn on the coast'}, when:{pt:'abril',en:'April'},
+     li:{pt:'O verão limenho afrouxa e o céu começa a fechar para a garúa.',en:'Lima\u2019s summer loosens and the sky begins to close in for the garúa.'}},
+    {name:{pt:'Festas de colheita',en:'Harvest festivals'}, when:{pt:'maio',en:'May'},
+     li:{pt:'Cruz de Mayo e celebrações agrícolas na serra andina.',en:'Cruz de Mayo and agricultural celebrations in the Andean highlands.'}},
+    {name:{pt:'Inti Raymi & Dia do Ceviche',en:'Inti Raymi & Ceviche Day'}, when:{pt:'24 e 28 de junho',en:'24 and 28 June'},
+     li:{pt:'A festa do Sol dos Incas, em Cusco, e o prato-nação celebrado em todo o país.',en:'The Incas\u2019 festival of the Sun, in Cusco, and the nation-dish celebrated across the country.'}},
+    {name:{pt:'Fiestas Patrias',en:'Fiestas Patrias'}, when:{pt:'28 de julho',en:'28 July'},
+     li:{pt:'A independência de 1821; o país inteiro em vermelho e branco.',en:'Independence in 1821; the whole country in red and white.'}},
+    {name:{pt:'Santa Rosa de Lima',en:'Santa Rosa de Lima'}, when:{pt:'30 de agosto',en:'30 August'},
+     li:{pt:'A padroeira das Américas, nascida em Lima.',en:'The patron saint of the Americas, born in Lima.'}},
+    {name:{pt:'Primavera',en:'Spring'}, when:{pt:'setembro',en:'September'},
+     li:{pt:'O céu de Lima começa a abrir depois do inverno cinza.',en:'Lima\u2019s sky starts to clear after the grey winter.'}},
+    {name:{pt:'Señor de los Milagros',en:'Señor de los Milagros'}, when:{pt:'outubro',en:'October'},
+     li:{pt:'Lima fica "morada"; a maior procissão da América.',en:'Lima turns purple; the largest procession in the Americas.'}},
+    {name:{pt:'Todos los Santos',en:'Todos los Santos'}, when:{pt:'1 e 2 de novembro',en:'1 and 2 November'},
+     li:{pt:'A visita aos mortos, com comida e o tanta wawa, o pão em forma de criança.',en:'The visit to the dead, with food and the tanta wawa, bread shaped like a child.'}},
+    {name:{pt:'Natal & Santurantikuy',en:'Christmas & Santurantikuy'}, when:{pt:'dezembro',en:'December'},
+     li:{pt:'A grande feira de artesanato de Cusco, na véspera de Natal.',en:'The great craft fair of Cusco, on Christmas Eve.'}}
   ];
   const N=12, seg=2*Math.PI/N;
   let ctx,W,H,cx,cy,R,rot=0,sel=0;
@@ -702,56 +753,92 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
       const am=a0+seg/2, lr=R*0.82, lx=cx+Math.cos(am)*lr, ly=cy+Math.sin(am)*lr;
       ctx.save(); ctx.translate(lx,ly); ctx.fillStyle=active?'#171310':'#9a9086';
       ctx.font=(active?'700 ':'400 ')+'13px "Space Mono", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
-      ctx.fillText(M[i],0,0); ctx.restore(); }
+      ctx.fillText(T(M)[i],0,0); ctx.restore(); }
     ctx.beginPath(); ctx.arc(cx,cy,R*0.54,0,7); ctx.fillStyle='#fff'; ctx.fill(); ctx.strokeStyle='rgba(23,19,16,.1)'; ctx.lineWidth=1; ctx.stroke();
     // rótulo central
     ctx.fillStyle='#9a9086'; ctx.font='11px "Space Mono", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.fillText('o ano', cx, cy-10); ctx.fillText('de festas', cx, cy+8);
+    ctx.fillText(T(CEN)[0], cx, cy-10); ctx.fillText(T(CEN)[1], cx, cy+8);
     // ponteiro
     ctx.beginPath(); ctx.moveTo(cx,cy-R-16); ctx.lineTo(cx-7,cy-R-28); ctx.lineTo(cx+7,cy-R-28); ctx.closePath(); ctx.fillStyle='#C15F3C'; ctx.fill();
-    const f=F[sel]; nEl.textContent=f.name; lEl.textContent=f.li; wEl.textContent=f.when;
+    const f=F[sel]; nEl.textContent=T(f.name); lEl.textContent=T(f.li); wEl.textContent=T(f.when);
   }
   let down=false,lastA=0; function angleOf(e){ const p=ptr(e,cv); return Math.atan2(p.y-cy,p.x-cx); }
   cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);lastA=angleOf(e);});
   cv.addEventListener('pointermove',e=>{ if(!down)return; const a=angleOf(e); let d=a-lastA; if(d>Math.PI)d-=2*Math.PI; if(d<-Math.PI)d+=2*Math.PI; rot+=d; lastA=a; draw(); });
   cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  HOOKS.push(draw);
   addEventListener('resize',()=>{geom();draw();}); geom(); draw();
 })();
 
 /* ===================== 10 quiz ===================== */
 (function(){
   const quiz=document.getElementById('quiz'), dots=document.getElementById('qDots'), nextBtn=document.getElementById('qNext');
+  const L={ q:{pt:'pergunta',en:'question'}, of:{pt:'de',en:'of'},
+            next:{pt:'próxima →',en:'next →'}, again:{pt:'recomeçar ↺',en:'start again ↺'} };
   const Q=[
-    {q:'São seis da tarde e você quer comer um bom ceviche. Qual a melhor jogada?',
+    {q:{pt:'São seis da tarde e você quer comer um bom ceviche. Qual a melhor jogada?',
+        en:'It is six in the evening and you want a good ceviche. What is the best move?'},
      opts:[
-      {t:'Procuro uma cevicheria agora mesmo.',ok:false,why:'Ceviche se come ao meio-dia, com o peixe fresco do dia. Muitas cevicherias tradicionais fecham à tarde, e à noite o peixe já não é o mesmo.'},
-      {t:'Deixo o ceviche para o almoço de amanhã.',ok:true,why:'Correto. O ceviche é prato de meio-dia, feito com o peixe pescado de manhã. À noite, o costume é outro tipo de comida.'}
+      {ok:false,
+       t:{pt:'Procuro uma cevicheria agora mesmo.',en:'Look for a cevichería right now.'},
+       why:{pt:'Ceviche se come ao meio-dia, com o peixe fresco do dia. Muitas cevicherias tradicionais fecham à tarde, e à noite o peixe já não é o mesmo.',
+            en:'Ceviche is eaten at midday, with the fresh fish of the day. Many traditional cevicherías close in the afternoon, and by evening the fish is no longer the same.'}},
+      {ok:true,
+       t:{pt:'Deixo o ceviche para o almoço de amanhã.',en:'Leave the ceviche for tomorrow’s lunch.'},
+       why:{pt:'Correto. O ceviche é prato de meio-dia, feito com o peixe pescado de manhã. À noite, o costume é outro tipo de comida.',
+            en:'Correct. Ceviche is a midday dish, made with fish caught that morning. In the evening, the custom is a different kind of food.'}}
      ]},
-    {q:'No mercado, o vendedor te chama de "casero" e joga um pouco a mais na sacola. Isso é…',
+    {q:{pt:'No mercado, o vendedor te chama de "casero" e joga um pouco a mais na sacola. Isso é…',
+        en:'At the market, the vendor calls you "casero" and drops a bit extra into the bag. That is…'},
      opts:[
-      {t:'Um erro de conta a seu favor.',ok:false,why:'Não é erro. "Casero" é o freguês de sempre, e o pouquinho a mais é a yapa, um brinde de simpatia. É a economia afetiva do mercado.'},
-      {t:'Um gesto de simpatia, a yapa do freguês.',ok:true,why:'Correto. Virar "casero" rende esse tratamento, e a yapa é o brinde que sela a relação. Ali, comprar é também conversar e pechinchar.'}
+      {ok:false,
+       t:{pt:'Um erro de conta a seu favor.',en:'A mistake in the count, in your favour.'},
+       why:{pt:'Não é erro. "Casero" é o freguês de sempre, e o pouquinho a mais é a yapa, um brinde de simpatia. É a economia afetiva do mercado.',
+            en:'It is no mistake. "Casero" is the regular customer, and the little extra is the yapa, a gift of goodwill. It is the market’s economy of affection.'}},
+      {ok:true,
+       t:{pt:'Um gesto de simpatia, a yapa do freguês.',en:'A gesture of goodwill, the regular’s yapa.'},
+       why:{pt:'Correto. Virar "casero" rende esse tratamento, e a yapa é o brinde que sela a relação. Ali, comprar é também conversar e pechinchar.',
+            en:'Correct. Becoming a "casero" earns you this treatment, and the yapa is the gift that seals the relationship. There, buying is also talking and haggling.'}}
      ]},
-    {q:'Alguém serve uma bebida e derrama o primeiro gole no chão antes de beber. O que está fazendo?',
+    {q:{pt:'Alguém serve uma bebida e derrama o primeiro gole no chão antes de beber. O que está fazendo?',
+        en:'Someone pours a drink and spills the first sip on the ground before drinking. What are they doing?'},
      opts:[
-      {t:'Testando se a bebida está boa.',ok:false,why:'É uma oferenda. O primeiro gole vai para a Pachamama, a Mãe Terra, num gesto de reciprocidade que vem do mundo andino, muito anterior à colônia.'},
-      {t:'Oferecendo a primeira parte à Pachamama.',ok:true,why:'Correto. É o "pago a la tierra": devolve-se à terra a sua parte antes de beber. O mesmo princípio de reciprocidade, o ayni, que sustentava o império inca.'}
+      {ok:false,
+       t:{pt:'Testando se a bebida está boa.',en:'Testing whether the drink is any good.'},
+       why:{pt:'É uma oferenda. O primeiro gole vai para a Pachamama, a Mãe Terra, num gesto de reciprocidade que vem do mundo andino, muito anterior à colônia.',
+            en:'It is an offering. The first sip goes to Pachamama, Mother Earth, in a gesture of reciprocity from the Andean world, long predating the colony.'}},
+      {ok:true,
+       t:{pt:'Oferecendo a primeira parte à Pachamama.',en:'Offering the first share to Pachamama.'},
+       why:{pt:'Correto. É o "pago a la tierra": devolve-se à terra a sua parte antes de beber. O mesmo princípio de reciprocidade, o ayni, que sustentava o império inca.',
+            en:'Correct. It is the "pago a la tierra": you give the earth its share before drinking. The same principle of reciprocity, ayni, that sustained the Inca empire.'}}
      ]},
-    {q:'Você acaba de chegar a Cusco, a 3.400 metros de altitude. Nas primeiras horas, o melhor é…',
+    {q:{pt:'Você acaba de chegar a Cusco, a 3.400 metros de altitude. Nas primeiras horas, o melhor é…',
+        en:'You have just arrived in Cusco, at 3,400 metres. In the first few hours, the best thing is…'},
      opts:[
-      {t:'Aproveitar a energia e já subir a uma ruína alta.',ok:false,why:'A altitude cobra caro. O soroche, o mal de altura, pega quem se esforça cedo demais. O costume local é ir devagar.'},
-      {t:'Ir devagar, comer leve e tomar um mate de coca.',ok:true,why:'Correto. Contra o soroche, o hábito andino é descansar nas primeiras horas, comer leve e tomar o mate de folha de coca, que ajuda o corpo a se acostumar.'}
+      {ok:false,
+       t:{pt:'Aproveitar a energia e já subir a uma ruína alta.',en:'Make the most of the energy and climb straight up to a high ruin.'},
+       why:{pt:'A altitude cobra caro. O soroche, o mal de altura, pega quem se esforça cedo demais. O costume local é ir devagar.',
+            en:'Altitude charges dearly. Soroche, altitude sickness, catches those who exert themselves too early. The local custom is to go slowly.'}},
+      {ok:true,
+       t:{pt:'Ir devagar, comer leve e tomar um mate de coca.',en:'Go slowly, eat lightly and have a coca tea.'},
+       why:{pt:'Correto. Contra o soroche, o hábito andino é descansar nas primeiras horas, comer leve e tomar o mate de folha de coca, que ajuda o corpo a se acostumar.',
+            en:'Correct. Against soroche, the Andean habit is to rest for the first few hours, eat lightly and drink coca leaf tea, which helps the body adjust.'}}
      ]}
   ];
   let step=0, answered=[];
-  Q.forEach((item,qi)=>{
-    const div=document.createElement('div'); div.className='q-step'+(qi===0?' active':''); div.dataset.i=qi;
-    let html='<div class="q-num">pergunta '+(qi+1)+' de '+Q.length+'</div><div class="q-text">'+item.q+'</div>';
-    item.opts.forEach((o,oi)=> html+='<button class="opt" data-q="'+qi+'" data-o="'+oi+'">'+o.t+'<span class="mk"></span></button>');
-    item.opts.forEach((o,oi)=> html+='<div class="explain" data-ex="'+qi+'-'+oi+'">'+o.why+'</div>');
-    div.innerHTML=html; quiz.insertBefore(div, quiz.querySelector('.q-nav'));
-    const dot=document.createElement('i'); if(qi===0)dot.className='on'; dots.appendChild(dot);
-  });
+  function build(){
+    quiz.querySelectorAll('.q-step').forEach(function(e){e.remove();});
+    dots.innerHTML=''; step=0; answered=[];
+    Q.forEach((item,qi)=>{
+      const div=document.createElement('div'); div.className='q-step'+(qi===0?' active':''); div.dataset.i=qi;
+      let html='<div class="q-num">'+T(L.q)+' '+(qi+1)+' '+T(L.of)+' '+Q.length+'</div><div class="q-text">'+T(item.q)+'</div>';
+      item.opts.forEach((o,oi)=> html+='<button class="opt" data-q="'+qi+'" data-o="'+oi+'">'+T(o.t)+'<span class="mk"></span></button>');
+      item.opts.forEach((o,oi)=> html+='<div class="explain" data-ex="'+qi+'-'+oi+'">'+T(o.why)+'</div>');
+      div.innerHTML=html; quiz.insertBefore(div, quiz.querySelector('.q-nav'));
+      const dot=document.createElement('i'); if(qi===0)dot.className='on'; dots.appendChild(dot);
+    });
+    nextBtn.style.display='none'; nextBtn.textContent=T(L.next); delete nextBtn.dataset.done;
+  }
   quiz.addEventListener('click',e=>{
     const b=e.target.closest('.opt'); if(!b) return;
     const qi=+b.dataset.q, oi=+b.dataset.o; if(answered[qi]!==undefined) return;
@@ -762,19 +849,124 @@ addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-inn
     stepEl.querySelectorAll('.opt').forEach(x=>x.style.pointerEvents='none');
     stepEl.querySelector('.explain[data-ex="'+qi+'-'+oi+'"]').classList.add('show');
     nextBtn.style.display='inline-block';
-    if(step===Q.length-1){ nextBtn.textContent='recomeçar ↺'; nextBtn.dataset.done='1'; }
+    if(step===Q.length-1){ nextBtn.textContent=T(L.again); nextBtn.dataset.done='1'; }
   });
   nextBtn.addEventListener('click',()=>{
-    if(nextBtn.dataset.done){ answered=[]; step=0;
-      quiz.querySelectorAll('.q-step').forEach((s,i)=>{ s.classList.toggle('active',i===0);
-        s.querySelectorAll('.opt').forEach(o=>{o.className='opt';o.style.pointerEvents='';o.querySelector('.mk').textContent='';});
-        s.querySelectorAll('.explain').forEach(x=>x.classList.remove('show')); });
-      dots.querySelectorAll('i').forEach((d,i)=>d.className=i===0?'on':'');
-      nextBtn.style.display='none'; nextBtn.textContent='próxima →'; delete nextBtn.dataset.done; return; }
+    if(nextBtn.dataset.done){ build(); return; }
     step++; quiz.querySelectorAll('.q-step').forEach((s,i)=>s.classList.toggle('active',i===step));
     dots.querySelectorAll('i').forEach((d,i)=>d.className=i<=step?'on':''); nextBtn.style.display='none';
   });
+  HOOKS.push(build);
+  build();
 })();
+
+/* ================= dicionário EN ================= */
+var EN = {
+"hero.title1": "Peru from the inside",
+"hero.eyebrow1": "Peruvian culture · interactive article",
+"hero.h1a": "Peru",
+"hero.h1b": "from the inside",
+"hero.p1": "Some Peruvian habits look odd at first, but nearly all of them have a concrete origin, usually tied to the country's three regions, its three roots and five centuries that meet on the same plate. This article explains where a few of them come from, with small demonstrations for you to play with along the way.",
+"hero.figcaption1": "A pattern of interlocking rhombuses, one of the oldest motifs in Andean textiles, woven on the coast and in the highlands for millennia (Paracas, Nazca).",
+"s00.tag1": "<span class=\"n\">00</span> · introduction",
+"s00.h21": "Small habits with concrete origins",
+"s00.p1": "People arriving in Peru for the first time tend to notice things that seem contradictory. Lima is a desert pressed up against one of the richest seas on the planet, and even so it barely rains; the winter sky turns white for months without wetting anyone. Ceviche is eaten at midday and almost never at night. A single dish can hold inside it the raw fish of the ancients, the lime brought by Spain and the fine knifework learned from the Japanese.",
+"s00.p2": "Each of these habits has a reason, almost always tied to some point in the country's history or to its geography split in three. In this article I walk through a few of them and explain where they come from, using interactive demonstrations along the way. Understanding the reason behind a gesture <span class=\"mark\">changes the way you see it when you are there</span>.",
+"s01.tag1": "<span class=\"n\">01</span> · the frame",
+"s01.h21": "How Peru came to be",
+"s01.p1": "Before looking at the details, it is worth setting the frame. Much of what Peru is today was shaped by five moments, from the very ancient world of the Andes to the city the highlands rebuilt in the twentieth century. Keep these markers in mind, because almost everything in the sections that follow descends from one of them.",
+"s01.h31": "The very ancient cradle<span class=\"loc\">Caral</span>",
+"s01.p2": "While Egypt was raising its first pyramids, the city of Caral already existed in the Peruvian coastal desert, today considered the oldest in the Americas, with earthen pyramids and sunken circular plazas built almost five thousand years ago. Peru begins neither in 1532 nor with the Incas: a long line of coastal and highland civilisations, such as Chavín, Paracas, Nazca, Moche, Wari and Chimú, stacked up over millennia an impressive command of weaving, ceramics, metalwork and high-altitude agriculture. That is why you see mud pyramids among the buildings of Lima. The Incas were the last chapter of that story, not the first.",
+"s01.h32": "The empire with no writing and no money<span class=\"loc\">Tawantinsuyu</span>",
+"s01.p3": "In little more than a century, the Incas built from Cusco the largest empire in pre-Columbian America, the <span class=\"term\" tabindex=\"0\" data-term=\"Tawantinsuyu · the four regions united\">Tawantinsuyu</span>. They had no alphabetic writing, no money and no wheel, but they built roads running thousands of kilometres, terraces and a stone engineering that still astonishes. The engine was not the market, it was reciprocity: <span class=\"term\" tabindex=\"0\" data-term=\"ayni · today for you, tomorrow for me\">ayni</span>, mutual help between families, <span class=\"term\" tabindex=\"0\" data-term=\"minka · work for the common good\">minka</span>, communal labour, and <span class=\"term\" tabindex=\"0\" data-term=\"mita · a work shift owed to the state\">mita</span>, the shift owed to the state. Accounts were kept in knotted cords, the <em>quipu</em>, and the language, <span class=\"term\" tabindex=\"0\" data-term=\"Quechua · runasimi, the speech of the people\">Quechua</span>, is still spoken by millions.",
+"s01.h33": "The ambush and the ransom in gold",
+"s01.p4": "In November 1532, at Cajamarca, fewer than two hundred Spaniards ambush and capture the emperor Atahualpa in front of an army of thousands. Imprisoned, he offers the largest ransom on record: to fill an entire room with gold and two more with silver, up to the height of a raised arm. The ransom is paid, some six tonnes of gold and almost twelve of silver, and even so, the following year, the Spaniards execute him. An empire of millions falls quickly, through surprise, through diseases brought from outside, through an internal civil war and through alliances with peoples the Incas had subjugated. There begins the fracture that founds Peru: <span class=\"mark\">the Andean world is conquered, but never erased</span>.",
+"s01.h34": "The City of Kings<span class=\"loc\">Ciudad de los Reyes</span>",
+"s01.p5": "Pizarro founds Lima in 1535 and does not choose the Incas' Cusco for his capital: he chooses the coast, from where ships can speak to Spain. Lima becomes the centre of Spanish power in all of South America, seat of the court, of the high court and of the Inquisition, and the outlet for the silver that kept Spain turning, to the point that the expression <span class=\"term\" tabindex=\"0\" data-term=\"vale un Perú · worth a fortune\">\"vale un Perú\"</span> was born. With the colony arrive Catholicism, which fuses with the Andean world, the baroque of gilded churches and the Spanish language. And there arrive too, by force, enslaved Africans, who become the third root of coastal Peru. Lima is born facing Europe with its back to the Andes, a tension it carries to this day.",
+"s01.h35": "Independence and the Lima that swelled",
+"s01.p6": "San Martín declares independence on 28 July 1821, and Bolívar and Sucre seal it at the battles of Junín and Ayacucho in 1824, which end Spanish rule in South America. The republic is born unstable and takes hard blows, among them the War of the Pacific at the end of the nineteenth century, when Chile goes as far as occupying Lima. In the twentieth century, millions leave the highlands and the jungle and come down to the capital: a city of half a million becomes a metropolis of ten million, largely Andean, reinventing itself at its edges. And, at the turn of the millennium, the cooking makes the country rediscover its pride in itself and becomes its greatest ambassador in the world.",
+"s01.p7": "Two traits run through almost everything that follows. The first is <span class=\"mark\">the fracture and the mixing at the origin</span>, three roots and three regions that never fully merged and coexist in tension. The second is <span class=\"mark\">the geography split in three</span>, coast, highlands and jungle, which decides the climate, the food and even the mood of the city. Hold on to both.",
+"s02.tag1": "<span class=\"n\">02</span> · the territory",
+"s02.h21": "Three countries in one <span class=\"loc\">costa, sierra, selva</span>",
+"s02.p1": "Peru is not quite one country, it is three stuck together. The strip of desert on the <strong>coast</strong>, the wall of peaks of the Andean <strong>sierra</strong> and the green immensity of the Amazonian <strong>selva</strong> are so different from one another that they almost work as separate nations, each with its own climate, food, music and manner. Understanding that division explains almost everything that reaches the plate and the face of the cities.",
+"s02.p2": "In the demonstration below, drag the marker from left to right to cross the country, from the sea to the forest, and watch how the altitude, the climate and the ingredients change with each band.",
+"s02.figcaption1": "Drag the marker from the sea to the jungle. Each band changes the climate and the larder.",
+"s02.p3": "This division also carries prejudice and jokes: the limeño of the coast, the serrano of the mountains and the <em>charapa</em> of the jungle see one another almost as foreigners inside the same country. But all of it comes down and crosses in the capital. <span class=\"mark\">Eating a fish from the coast, a potato from the highlands and a fruit from the jungle within one block of Lima is crossing the country without leaving the city.</span>",
+"s03.tag1": "<span class=\"n\">03</span> · the cold sea",
+"s03.h21": "Why Lima is a desert next to a sea full of life",
+"s03.p1": "One of the first things people find strange in Lima is the climate. The city sits on the coast, yet it is a desert, one of the driest places in the world, and in winter it spends months under a white, damp sky that never becomes real rain. The explanation is in the sea. A freezing ocean current, the <strong>Humboldt Current</strong>, comes up from the south along the coast and does two things at once.",
+"s03.p2": "Before touching the demonstration, it is worth clearing up a common confusion, because the explanation is less obvious than it seems. Cold water is <strong>denser</strong> than warm water and, left to itself, would tend to stay at the bottom. <span class=\"mark\">It does not rise on its own: what pulls it up is the wind.</span> Winds blow steadily along the Peruvian coast which, combined with the rotation of the Earth, push the surface water away from the beach and out to sea. That gap has to be filled, and what rises to take its place is precisely the deep, freezing water. It is a <span class=\"term\" tabindex=\"0\" data-term=\"upwelling · the coastal resurgence\">mechanical pumping</span>, against density, and not cold water that floats.",
+"s03.p3": "Switch this mechanism on and off in the demonstration below to see the double effect: with it, the sea fills with life and the coast becomes desert; without it, the sea would be warmer and poorer, and the land damper.",
+"s03.figcaption1": "The same current that makes Peru one of the world's great fishing nations is the one that dries out the coast.",
+"s03.p4": "What rises from the bottom is fertiliser. Centuries of sunken organic matter accumulate in the deep water, and when it reaches the surface it feeds the plankton, which feeds the <em>anchoveta</em>, which sustains one of the most abundant fisheries on the planet. <span class=\"mark\">That, in the end, is where the fish in your ceviche comes from.</span>",
+"s03.p5": "The same freezing sea, however, does the second thing. It cools the air just above it and creates a <strong>thermal inversion</strong>: cold air below and warmer air above, the opposite of the normal arrangement. Since cold air is heavy, it does not rise, and this kind of lid stops the moisture from gaining height and turning into rain cloud. The moisture then condenses near the ground, in droplets too fine to fall. This is the <span class=\"term\" tabindex=\"0\" data-term=\"garúa · the damp mist of Lima's winter\">garúa</span>, the mist that covers the city from May to November without properly wetting it. Add to that the fact that the Andes block the moisture coming from the Amazon, and the result is that Lima is the <span class=\"mark\">second driest capital in the world, behind only Cairo</span>. It is largely out of that white sky that the city's melancholy, grey air is born.",
+"s04.tag1": "<span class=\"n\">04</span> · beliefs",
+"s04.h21": "A saint above, the earth below",
+"s04.p1": "Peruvians on the coast are mostly Catholic, an inheritance of three centuries of colony, with saints, processions and gilded churches on every corner. But beneath that Catholicism lives an Andean world the conquest never managed to erase, and the two coexist fused together, without anyone seeing a contradiction.",
+"s04.p2": "In Andean thought, <strong><span class=\"term\" tabindex=\"0\" data-term=\"Pachamama · Mother Earth\">Pachamama</span></strong>, Mother Earth, and the <strong><span class=\"term\" tabindex=\"0\" data-term=\"apus · the spirits of the mountains\">apus</span></strong>, the mountain spirits, remain alive, often dressed as Catholic saints. An offering is made to the earth, the <em>pago a la tierra</em>, and a saint is prayed to in the same breath. That is why, when someone <span class=\"mark\">pours the first sip onto the ground before drinking</span>, they are not wasting it: they are giving Pachamama her share, in a gesture of reciprocity that comes from long before Spain.",
+"s04.p3": "Lima's strongest devotion shows this mixture well. Around <strong>1651</strong>, an enslaved man of Angolan origin painted a Christ on a mud wall in the Pachacamilla district. In 1655 an earthquake flattened everything around it, <span class=\"mark\">and the wall stayed standing</span>; it survived further tremors, including the great earthquake of 1746. People saw a miracle there, and the devotion, which began in the Afro-Peruvian community, took over the whole city. To this day, every October, hundreds of thousands put on the purple habit and follow the largest procession in the Americas, when Lima turns <span class=\"term\" tabindex=\"0\" data-term=\"Señor de los Milagros · the Lord of Miracles\">\"purple\"</span>. It is worth noticing who sustains it: the city's strongest faith was born in its most oppressed part.",
+"s05.tag1": "<span class=\"n\">05</span> · the system",
+"s05.h21": "Reciprocity, cunning and Peruvian time",
+"s05.p1": "Beneath Peruvian social behaviour runs an ancient principle, that of <strong>reciprocity</strong>. The Incas' <em>ayni</em>, \"today for you, tomorrow for me\", did not vanish with the empire: it survives in the neighbourhood work party, in help between neighbours and in that insistent invitation to eat that will not take no for an answer. <span class=\"mark\">Much of what looks like mere hospitality is, underneath, a system of exchange centuries old.</span> The idea that you give in order to receive, and that the community builds together what money does not pay for, is one of the deepest inheritances of the Andean world.",
+"s05.p2": "On the coast and in Lima, that foundation mixes with another, more colonial trait: the <span class=\"term\" tabindex=\"0\" data-term=\"criollo · coastal cunning for getting by\">criollo</span> way of getting by with charm, guile and improvisation. It has a bright side, of humour and resilience, and a dark one, that of the <em>vivo</em> who takes advantage of others, which feeds a certain suspicion that \"everyone is on the make\". It is the same spirit that sustains the country's enormous informal economy, the street trade and the daily business of managing.",
+"s05.p3": "And there is time. <span class=\"term\" tabindex=\"0\" data-term=\"la hora peruana · Peruvian time\">Peruvian time</span> is elastic: arriving at the appointed hour can be too early, and an invitation for eight in the evening usually starts well after, without anyone minding. Add to that the tenderness built into the language, which says everything in the affectionate diminutive, the <em>cafecito</em>, the <em>ahorita</em>, the <em>ratito</em>. <span class=\"mark\">Just know that \"ahorita\" can mean either \"in a moment\" or \"in three hours\".</span>",
+"s06.tag1": "<span class=\"n\">06</span> · getting along",
+"s06.h21": "The kiss, the casero and the haggle",
+"s06.p1": "Physical distance between people is short and warmth is the default, the opposite of the restraint you see in other cultures. People greet each other with <span class=\"mark\">a kiss on the cheek</span>, between women and between a man and a woman, and with a warm hug between friends; the formal handshake is reserved for a first work contact. Refusing the plate or the drink someone offers can hurt, because offering food is the basic social gesture. A \"¿ya comiste?\", \"have you eaten?\", works almost like a \"are you all right?\".",
+"s06.p2": "In the market and at the stalls, the relationship is affectionate too. You become the vendor's <span class=\"term\" tabindex=\"0\" data-term=\"casero / casera · the regular customer\">casero</span>, the regular, addressed by nickname and sometimes rewarded with the <span class=\"term\" tabindex=\"0\" data-term=\"yapa · a little extra, thrown in\">yapa</span>, that bit more on the scales. There, haggling is part of the game, with no hostility: the price is the start of a conversation, not a sentence. <span class=\"mark\">In fixed-price shops, however, you do not haggle.</span> These are two codes living side by side, and knowing which one you are in saves you awkwardness.",
+"s07.tag1": "<span class=\"n\">07</span> · the table",
+"s07.h21": "The plate the whole country fits on",
+"s07.p1": "If in other cultures the soul sits in a ritual, in Peru it sits on the <strong>plate</strong>. The table is where the three regions, the three roots and two further great migrations, the Chinese and the Japanese, meet, and it is what gave the country back its pride in itself. The larder helps: Peru has <span class=\"mark\">thousands of varieties of potato</span> and dozens of maizes and <em>ajíes</em>, the chillies, and it was from here that the potato and maize set out for the world.",
+"s07.p2": "The best example is ceviche, the nation-dish. It did not arrive finished: it gathered layers through history. Click to build it, one era at a time.",
+"s07.figcaption1": "Each layer of the ceviche comes from a different origin in Peru's history.",
+"s07.p3": "That same crossing shows up in almost everything eaten there. The <span class=\"term\" tabindex=\"0\" data-term=\"nikkei · the Japanese-Peruvian fusion\">nikkei</span> technique is born of the Japanese immigrants who began arriving in <strong>1899</strong> to work the coastal farms; out of the meeting between their precise knifework and Peruvian ají and lime came, among other dishes, the <em>tiradito</em>. <span class=\"term\" tabindex=\"0\" data-term=\"chifa · the Chinese-Peruvian kitchen\">Chifa</span>, the food of the roughly one hundred thousand Chinese who arrived between 1849 and 1874, fused so deeply that <em>lomo saltado</em> and <em>arroz chaufa</em> are now Peruvian food like any other. And the national cocktail, the <strong>pisco sour</strong>, took shape in an American's bar in Lima in the 1920s. <span class=\"mark\">One warning: Peru and Chile dispute the origin of pisco with passion, so avoid ordering a \"Chilean pisco\" in Lima.</span>",
+"s07.p4": "In the 2000s, the chef Gastón Acurio persuaded Lima's elite to value their own cooking instead of the French, and a generation followed him. In <strong>2023</strong>, the restaurant Central, run by Virgilio Martínez and Pía León, was voted the best in the world. <span class=\"mark\">It was largely through the table that the country learned again to like being what it is</span>, even if the glamour of high gastronomy does not always reach those who farm and fish.",
+"s08.tag1": "<span class=\"n\">08</span> · sound and hand",
+"s08.h21": "An instrument born from a crate",
+"s08.p1": "The percussion that carries much of the coast's music was born of a prohibition. Barred from playing drums during slavery, Afro-Peruvians began beating on the <span class=\"mark\">wooden crates left over at the ports</span>, and out of that came the <strong><span class=\"term\" tabindex=\"0\" data-term=\"cajón · the Peruvian box-drum\">cajón</span></strong>, today a national instrument and adopted even by Spanish flamenco. It is the heart of Afro-Peruvian genres such as the <em>festejo</em> and the <em>landó</em>, and it accompanies the <span class=\"term\" tabindex=\"0\" data-term=\"marinera · Peru's handkerchief dance\">marinera</span>, the courtship dance with a white handkerchief. An instrument invented to get around a censorship became a symbol of the country.",
+"s08.p2": "On the Andean side the soundtrack is different: the <em>huayno</em>, on a pentatonic scale, is the music of the highlands, while in old coastal Lima the <em>vals criollo</em> reigns, with guitar and cajón. And there is the inheritance you see with your eyes. Weaving, in Peru, is millennia old, and the patterns and colours of a blanket are not decoration: <span class=\"mark\">they carry the identity of each community</span>, almost like an embroidered surname. Ceramics have told stories since the Moche, who modelled portraits and whole scenes onto their vessels.",
+"s09.tag1": "<span class=\"n\">09</span> · the calendar",
+"s09.h21": "The year of festivals your trip will run into",
+"s09.p1": "Your trip will probably land on some festival or other, and it is worth knowing which. The Peruvian calendar mixes the Catholic saints' days, the dates of the republic and the Andean substrate, and every month has its own. Spin the wheel below; it starts on the current month.",
+"s09.figcaption1": "Drag to spin. The pointer at the top marks the current month.",
+"s09.p2": "Some markers stand on their own. The <strong>Fiestas Patrias</strong>, at the end of July, celebrate independence and stop the country in red and white. <span class=\"term\" tabindex=\"0\" data-term=\"Inti Raymi · the Incas' festival of the Sun\">Inti Raymi</span>, in Cusco, re-enacts in June the Incas' festival of the Sun, the empire turned into spectacle and assertion. And October is the month of the <strong>Señor de los Milagros</strong>, when Lima dresses in purple. <span class=\"mark\">A festival for almost every week of the year</span>, and each one reveals a different layer of the country.",
+"s10.tag1": "<span class=\"n\">10</span> · in practice",
+"s10.h21": "The rules the trip teaches you",
+"s10.p1": "Some everyday Peruvian situations have a logic that is not obvious to a newcomer. Answer the questions below to see the reason behind each one.",
+"s10.figcaption1": "Each choice reveals the cultural reason behind the habit.",
+"s11.tag1": "<span class=\"n\">11</span> · the city",
+"s11.h21": "Lima from the inside",
+"s11.p1": "Lima fits three cities into one. The <strong>Centro Histórico</strong> is the viceregal capital, of plazas, wooden balconies and gilded churches, with the catacombs of San Francisco beneath. <strong>Miraflores</strong> is modern Lima, leaning out over the sea. And <strong>Barranco</strong> is the bohemian, artistic one. Crossing the city is crossing centuries and classes in an afternoon.",
+"s11.p2": "The city lives on a cliff above the Pacific, and so it looks at the sea more from above and from a distance than it bathes in it, since the water is cold and rough. Between the buildings of Miraflores and San Isidro there are <span class=\"mark\">pre-Incan mud pyramids</span>, the <span class=\"term\" tabindex=\"0\" data-term=\"huacas · sacred sites and mud pyramids\">huacas</span>, five thousand years of history squeezed into a residential block. And there is the Lima the highlands rebuilt: the working-class districts where the Andean city remade itself from the middle of the twentieth century and where most limeños live today. <span class=\"mark\">The postcard is only a part; the real city is, to a large extent, a highland one.</span>",
+"s12.tag1": "<span class=\"n\">12</span> · end",
+"s12.h21": "Looking with context",
+"s12.p1": "None of these habits has to be memorised for the trip to be worth it. What helps is knowing they exist and where they come from. When Lima's sky turns white for days, you will recognise the cold current that dries out the coast. When someone pours a sip onto the ground, you will recognise Pachamama receiving her share. When the ceviche arrives at midday, you will recognise the Moche, Spain and Japan in the same spoonful. Seeing Peru with that layer of context makes the looking richer, and <span class=\"mark\">it is also a form of respect</span> for a country that spent centuries learning to like itself.",
+"foot.p1": "Interactive draft v0.1. An article about the reasons behind a few Peruvian habits, with Lima at the centre and Peru around it, meant to be read before or during the trip.",
+"foot.p2": "Sources for the stories: Caral, the oldest city in the Americas (<a href=\"https://en.wikipedia.org/wiki/Caral\">Wikipedia</a>); the ransom of Atahualpa in 1532 (<a href=\"https://en.wikipedia.org/wiki/Ransom_Room\">Wikipedia</a>); the founding of Lima and the Viceroyalty (<a href=\"https://www.britannica.com/place/Lima/History\">Britannica</a>); the Humboldt Current and the garúa (<a href=\"https://en.wikipedia.org/wiki/Humboldt_Current\">Wikipedia</a>); the Señor de los Milagros (<a href=\"https://en.wikipedia.org/wiki/Lord_of_Miracles\">Wikipedia</a>); the history of ceviche (<a href=\"https://www.nationalgeographic.com/travel/article/ceviche-surprising-history-behind-perus-raw-fish-dish\">National Geographic</a>); nikkei cuisine (<a href=\"https://en.wikipedia.org/wiki/Nikkei_cuisine\">Wikipedia</a>) and chifa (<a href=\"https://en.wikipedia.org/wiki/Chifa\">Wikipedia</a>); the pisco sour (<a href=\"https://en.wikipedia.org/wiki/Pisco_sour\">Wikipedia</a>); the Afro-Peruvian cajón (<a href=\"https://en.wikipedia.org/wiki/Caj%C3%B3n\">Wikipedia</a>).",
+"s07.btnCev1": "start again"
+};
+
+/* ================= troca de idioma ================= */
+var PT={};
+$all('[data-i18n]').forEach(function(el){ PT[el.getAttribute('data-i18n')]=el.innerHTML; });
+function applyLang(lang){
+  LANG=lang; document.documentElement.lang=(lang==='en'?'en':'pt-BR');
+  try{ localStorage.setItem('rs_lang',lang); }catch(e){}
+  $all('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n'), v=(lang==='en')?EN[k]:PT[k];
+    if(v!=null) el.innerHTML=v;
+  });
+  $all('.langtoggle button').forEach(function(b){ b.classList.toggle('active',b.dataset.lang===lang); });
+  HOOKS.forEach(function(fn){ try{ fn(); }catch(e){} });
+}
+$all('.langtoggle button').forEach(function(b){ b.addEventListener('click',function(){ applyLang(this.dataset.lang); }); });
+function detectLang(){
+  try{ var st=localStorage.getItem('rs_lang'); if(st==='pt'||st==='en') return st; }catch(e){}
+  var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+  for(var i=0;i<navs.length;i++){ var l=(navs[i]||'').toLowerCase(); if(l.indexOf('pt')===0) return 'pt'; if(l.indexOf('en')===0) return 'en'; }
+  return 'pt';
+}
+applyLang(detectLang());
 </script>
 </body>
 </html>
