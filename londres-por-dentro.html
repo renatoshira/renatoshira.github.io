@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Londres por dentro</title>
+<meta name="description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos britânicos, e de onde eles vêm, para quem vai viajar para Londres.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://renatoshira.github.io/londres-por-dentro.html">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Londres por dentro">
+<meta property="og:description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos britânicos, e de onde eles vêm, para quem vai viajar para Londres.">
+<meta property="og:url" content="https://renatoshira.github.io/londres-por-dentro.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-londres.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Londres por dentro">
+<meta name="twitter:description" content="Um artigo interativo sobre a lógica por trás de alguns hábitos britânicos, e de onde eles vêm, para quem vai viajar para Londres.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-londres.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Cabin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<style>
+:root{
+  --bg:#ffffff; --ink:#14161a; --dim:#61666e; --faint:#949aa3;
+  --line:rgba(20,22,26,.16); --line2:rgba(20,22,26,.08); --fig:#fafafb;
+  --acc:#DC241F; --teal:#00782A; --blue:#003688; --amber:#B36305; --red:#C0392B; --vic:#0098D4;
+  --mono:"Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --loc:"Cabin", "Gill Sans", Calibri, sans-serif;
+  --measure:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font-weight:400;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(220,36,31,.18)}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--acc);z-index:99;transition:width .1s linear}
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:12px 24px}
+.topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0;font-weight:700}
+.topbar .kicker:hover{color:var(--acc)}
+.topbar .right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.langtoggle{display:flex;border:1px solid var(--ink);font-size:11px}
+.langtoggle button{border:0;background:transparent;color:var(--ink);font-family:var(--mono);font-size:11px;padding:4px 9px;cursor:pointer;letter-spacing:.09em}
+.langtoggle button.active{background:var(--ink);color:#fff}
+
+p{font-size:18px;line-height:1.75;margin:0 0 20px}
+strong{font-weight:700}
+em{font-style:italic}
+.mark{background:var(--ink);color:#fff;padding:1.5px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.mark em{font-style:italic}
+.term{border-bottom:1px dashed var(--faint);cursor:help;position:relative;outline:none}
+.term::after{content:attr(data-term);position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-7px);background:var(--ink);color:#fff;font-family:var(--loc);font-weight:500;font-size:13.5px;line-height:1.3;letter-spacing:.01em;padding:5px 9px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .14s;z-index:6}
+.term::before{content:'';position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-2px);border:5px solid transparent;border-top-color:var(--ink);opacity:0;transition:opacity .14s;z-index:6}
+.term:hover,.term:focus,.term.open{border-bottom-color:var(--acc)}
+.term:hover::after,.term:focus::after,.term.open::after,.term:hover::before,.term:focus::before,.term.open::before{opacity:1}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+a:hover{color:var(--acc);border-color:var(--acc)}
+.loc{font-family:var(--loc);font-weight:500}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:84px 24px}
+header.top{max-width:var(--measure);margin:0 auto;padding:72px 24px 0}
+.eyebrow{font-size:12.5px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+h1{display:flex;flex-direction:column;align-items:flex-start;gap:7px;font-size:30px;font-weight:700;line-height:1.18;margin:0}
+h1 .mark{padding:2px 10px}
+h1 .en{font-family:var(--loc);font-weight:400;font-size:15px;letter-spacing:.03em;color:var(--faint);margin-top:12px}
+.standfirst{font-size:17px;font-weight:400;line-height:1.8;color:var(--ink);max-width:600px;margin:40px 0 0}
+
+.tag{font-size:12px;font-weight:400;letter-spacing:2.16px;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.tag .n{color:inherit}
+h2{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px;color:var(--ink)}
+h2 .loc{font-weight:400;color:var(--faint);font-size:.86em;margin-left:6px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+figure{margin:34px 0;padding:0}
+.top figure{margin:44px 0 0}
+.widget{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:16px}
+.widget canvas{display:block;width:100%;border-radius:3px;touch-action:none;cursor:grab}
+.widget canvas:active{cursor:grabbing}
+figcaption{color:var(--faint);font-size:12.5px;line-height:1.5;margin-top:12px;text-align:center}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:14px}
+.btn{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 14px;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .16s}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn.on{background:var(--acc);border-color:var(--acc);color:#fff}
+input[type=range]{-webkit-appearance:none;appearance:none;height:2px;background:var(--line);border-radius:2px;outline:none;width:100%;max-width:340px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--acc);cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px var(--acc)}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--acc);cursor:pointer;border:3px solid #fff}
+
+.readout{text-align:center;margin-top:14px}
+.readout .big{font-size:18px;font-weight:700}
+.readout .desc{color:var(--dim);font-size:15px;margin-top:5px;line-height:1.5;min-height:2.6em}
+.readout .sub{color:var(--faint);font-size:13px;margin-top:5px}
+.verdict{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-top:8px}
+.verdict.ok{color:var(--teal)} .verdict.warn{color:var(--amber)} .verdict.bad{color:var(--red)}
+.meter{height:3px;background:var(--line);border-radius:3px;max-width:240px;margin:12px auto 0;overflow:hidden}
+.meter>i{display:block;height:100%;width:10%;background:linear-gradient(90deg,var(--blue),var(--acc));transition:width .25s}
+
+/* tabela de palavras U / não-U (§04) */
+.words{width:100%;border-collapse:collapse;margin-top:16px;font-size:14.5px}
+.words td{padding:7px 8px;border-top:1px solid var(--line2);line-height:1.4}
+.words tr:first-child td{border-top:0}
+.words .w{font-family:var(--loc);font-weight:600;font-size:16px;transition:color .2s,opacity .2s}
+.words .lo{text-align:left;width:42%} .words .hi{text-align:right;width:42%}
+.words .mid{text-align:center;color:var(--faint);font-size:11.5px;letter-spacing:1px;text-transform:uppercase}
+.words .dimmed{opacity:.22}
+.words .lit{color:var(--acc)}
+
+.quiz{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:22px}
+.q-step{display:none}
+.q-step.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.q-num{font-size:12px;font-weight:400;letter-spacing:1.6px;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.q-text{font-size:18px;font-weight:700;line-height:1.4;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:13px 15px;margin-bottom:9px;cursor:pointer;font-family:var(--mono);font-size:15px;line-height:1.5;transition:all .15s}
+.opt:hover{border-color:var(--dim)}
+.opt.correct{border-color:var(--teal);background:rgba(0,120,42,.08)}
+.opt.wrong{border-color:var(--red);background:rgba(192,57,43,.06)}
+.opt .mk{float:right;font-weight:700;margin-left:10px}
+.opt.correct .mk{color:var(--teal)} .opt.wrong .mk{color:var(--red)}
+.explain{color:var(--dim);font-size:15px;line-height:1.6;border-left:2px solid var(--amber);padding-left:14px;margin:4px 0 12px;display:none}
+.explain.show{display:block;animation:fade .3s ease}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.q-dots{display:flex;gap:6px}
+.q-dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s}
+.q-dots i.on{background:var(--acc)}
+
+/* lista "o que reparar" (§12) */
+.spots{margin:34px 0 4px;border-top:1px solid var(--line2)}
+.spot{display:grid;grid-template-columns:40px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line2)}
+.spot-n{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--acc);padding-top:5px}
+.spot h3{font-size:16.5px;font-weight:700;line-height:1.35;margin:0 0 7px}
+.spot p{font-size:16px;line-height:1.7;margin:0}
+.spot .where{display:block;margin-top:9px;font-size:12.5px;line-height:1.5;color:var(--faint)}
+
+/* linha do tempo vertical (§01) */
+.timeline{--gut:66px;position:relative;margin:36px 0 4px}
+.timeline::before{content:'';position:absolute;left:calc(var(--gut) + 14px);top:9px;bottom:34px;width:1px;background:var(--line)}
+.tl-item{position:relative;display:grid;grid-template-columns:var(--gut) 1fr;gap:28px;padding-bottom:44px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:calc(var(--gut) + 14px);transform:translateX(-50%);top:7px;width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid var(--acc)}
+.tl-year{text-align:right;font-size:14px;font-weight:700;color:var(--dim);padding-top:2px;letter-spacing:.5px;line-height:1.3}
+.tl-year-sfx{color:var(--faint)}
+.tl-title{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 8px}
+.tl-title .loc{font-weight:400;color:var(--faint);font-size:.82em;margin-left:8px}
+.tl-body p{font-size:16.5px;line-height:1.72;margin:0}
+
+footer{border-top:1px solid var(--line);margin-top:20px}
+footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;padding-bottom:70px}
+.srcs{font-size:12.5px;line-height:1.9;margin-top:10px}
+.srcs a{color:var(--dim);border-bottom:1px solid var(--line)}
+
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:56px 20px}
+  header.top{padding:48px 20px 0}
+  .widget{padding:12px}
+  .timeline{--gut:46px}
+  .tl-item{gap:16px}
+  .tl-year{font-size:13px}
+  .words{font-size:13px}
+  .words .w{font-size:14.5px}
+  .spot{grid-template-columns:30px 1fr;gap:13px;padding:19px 0}
+  .spot p{font-size:15.5px}
+  /* tooltips longos quebram em vez de esticar a página para o lado */
+  .term::after{white-space:normal;width:max-content;max-width:min(58vw,165px);text-align:center;line-height:1.35}
+  /* tooltip junto à margem não pode esticar a página para o lado */
+  html{overflow-x:clip}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<div class="topbar">
+  <a class="kicker" href="index.html">← Renato Shirakashi</a>
+  <div class="right">
+    <div class="langtoggle" role="group" aria-label="Idioma">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="eyebrow" data-i18n="hero.eyebrow1">Cultura britânica · artigo interativo</div>
+  <h1><span class="mark">Londres</span><span class="mark">por dentro</span><span class="en">mind the gap</span></h1>
+  <p class="standfirst" data-i18n="hero.p1">Alguns hábitos britânicos parecem estranhos à primeira vista, mas quase todos têm uma origem concreta, quase sempre ligada a um incêndio, a um vento, a um império ou a uma guerra. Este artigo explica de onde vêm alguns deles, com pequenas demonstrações para você mexer pelo caminho.</p>
+  <figure class="hero-fig">
+    <div class="widget"><canvas id="heroCanvas" height="200"></canvas></div>
+    <figcaption data-i18n="hero.figcaption1">Tijolo em aparelho flamengo, a alvenaria que cobre Londres inteira. Ela não é um gosto: é o cumprimento de uma lei de 1667.</figcaption>
+  </figure>
+</header>
+
+<main>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s00.tag1"><span class="n">00</span> · introdução</div>
+  <h2 data-i18n="s00.h21">Pequenos hábitos com origem concreta</h2>
+  <p data-i18n="s00.p1">Quem chega a Londres pela primeira vez costuma reparar em coisas que não fecham. As pessoas pedem desculpa quando <em>você</em> esbarra nelas. O prato nacional é indiano. O pub, que é a instituição social mais importante do país, não tem garçom, e fecha cedo por um motivo que tem a ver com a produção de munição na Primeira Guerra. O mapa mais famoso da cidade mente sobre onde as coisas ficam, de propósito, e funciona melhor por isso.</p>
+  <p data-i18n="s00.p2">Cada um desses hábitos tem uma razão, quase sempre ligada a algum ponto da história do país. Neste artigo eu percorro alguns deles e explico de onde vêm, usando demonstrações interativas ao longo do caminho. Entender a razão por trás de um gesto <span class="mark">muda o modo como você o observa quando está lá</span>.</p>
+</section>
+
+<section class="wrap">
+  <div class="tag" data-i18n="s01.tag1"><span class="n">01</span> · a moldura</div>
+  <h2 data-i18n="s01.h21">Como Londres se fez</h2>
+  <p data-i18n="s01.p1">Antes de olhar para os detalhes, vale montar a moldura. Boa parte do que Londres é hoje foi formada por cinco momentos, da travessia de um rio por soldados romanos até a cidade em que se falam mais de trezentas línguas. Vale ter esses marcos em mente, porque quase tudo o que vem nas próximas seções desce de um deles.</p>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-year">43<br>d.C.</div>
+      <div class="tl-body">
+        <h3 class="tl-title" data-i18n="s01.h31">O ponto onde dava para atravessar<span class="loc">Londinium</span></h3>
+        <p data-i18n="s01.p2">Londres não nasceu de uma escolha simbólica, mas de um problema de engenharia. Os romanos precisavam cruzar o Tâmisa, e o lugar que escolheram foi o primeiro ponto, subindo da foz, em que o rio era estreito e firme o bastante para receber uma ponte e ainda fundo o bastante para receber navios. A cidade que cresceu ali ganhou uma muralha, e o traçado dessa muralha <span class="mark">ainda desenha boa parte do limite da City</span>, a milha quadrada financeira. Dois mil anos depois, os bancos de Londres continuam trabalhando dentro do desenho de um acampamento romano.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1666</div>
+      <div class="tl-body">
+        <h3 class="tl-title" data-i18n="s01.h32">O Grande Incêndio, e o plano recusado<span class="loc">the Great Fire</span></h3>
+        <p data-i18n="s01.p3">Em quatro dias de setembro, o fogo consome a maior parte da cidade medieval. Christopher Wren corre para apresentar a Carlos II um plano de reconstrução barroco, com avenidas largas e retas, simetria e praças monumentais, o que teria feito de Londres uma Paris. O plano é recusado em poucas semanas como impraticável: os proprietários não abriam mão das divisas dos seus terrenos, e havia o medo de que a negociação demorasse tanto que a população fosse embora de vez. Londres foi reconstruída <span class="mark">exatamente em cima das mesmas ruas tortas de antes</span>, só que em tijolo e pedra, porque as leis de reconstrução de 1667 e 1670 proibiram o material inflamável. É por isso que o centro é um labirinto medieval com uma pele racional por cima, e é por isso que a cidade inteira é da cor do tijolo.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">séc.<br>XIX</div>
+      <div class="tl-body">
+        <h3 class="tl-title" data-i18n="s01.h33">O império, o carvão e a hora do mundo</h3>
+        <p data-i18n="s01.p4">Londres vira a maior cidade que já existiu até então, e o centro de um império que cobre um quarto do planeta. Em 10 de janeiro de 1863 abre o primeiro metrô do mundo, entre Paddington e Farringdon, cavado pelo método de abrir a rua, construir o túnel e fechar de novo; carregou trinta e oito mil pessoas no primeiro dia. E o país passa a marcar a hora do resto do mundo, quase por acidente: as ferrovias não podiam funcionar com cada cidade no seu horário local, então adotaram a hora de Greenwich, que em 1884 vira o meridiano zero do planeta. Enquanto isso, o carvão que move tudo isso cobre a cidade de fuligem, e o vento decide quem vai respirá-la. Disso trata a seção 03.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1940</div>
+      <div class="tl-body">
+        <h3 class="tl-title" data-i18n="s01.h34">A Blitz<span class="loc">the Blitz</span></h3>
+        <p data-i18n="s01.p5">Durante meses, a cidade é bombardeada quase todas as noites. Há um detalhe dessa história que quase nunca se conta: <span class="mark">o governo tentou impedir que as pessoas se abrigassem no metrô</span>, com medo de doença, de falta de saneamento e de que uma multidão subterrânea virasse foco de descontentamento. Os moradores do East End, que levavam a pior parte dos bombardeios e tinham os piores abrigos, simplesmente compraram bilhetes, desceram e não subiram mais. Em poucas semanas eram cento e vinte mil pessoas por noite dormindo nas estações, e o governo cedeu e passou a administrar o que não conseguira proibir. A calma britânica que virou lenda no mundo inteiro não foi concedida de cima; em boa parte, foi tomada.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1948<span class="tl-year-sfx">→</span></div>
+      <div class="tl-body">
+        <h3 class="tl-title" data-i18n="s01.h35">O Windrush e a cidade de trezentas línguas</h3>
+        <p data-i18n="s01.p6">Em 22 de junho de 1948 o navio <em>Empire Windrush</em> atraca em Tilbury com mais de oitocentos caribenhos, que atenderam ao chamado por mão de obra para reconstruir um país destruído pela guerra. Semanas depois, o British Nationality Act cria uma cidadania comum a todo o império, e a migração deixa de ser exceção e vira estrutura. O caminho não foi amável: em 1958 houve ataques racistas em Notting Hill, e foi como resposta a eles que a trinitária <span class="term" tabindex="0" data-term="Claudia Jones · 1915–1964">Claudia Jones</span>, fundadora do primeiro grande jornal negro da Grã-Bretanha, organizou o primeiro carnaval caribenho da cidade. Foi em 30 de janeiro de 1959, em janeiro para acompanhar a data de Trinidad, e <span class="mark">dentro de um salão, porque em Londres fazia frio demais para sair à rua</span>. Sete anos depois a festa saiu para a rua em Notting Hill, e é dali que desce o maior carnaval da Europa. Setenta e cinco anos depois do Windrush, <span class="mark">quatro em cada dez londrinos nasceram fora do Reino Unido</span> e se falam mais de trezentas línguas na cidade.</p>
+      </div>
+    </div>
+  </div>
+  <p data-i18n="s01.p7">Dois traços atravessam quase tudo o que vem a seguir. O primeiro é que <span class="mark">Londres nunca foi planejada</span>: o plano de Wren foi recusado, a cidade cresceu engolindo vilarejos, e o mesmo reflexo de preferir o costume ao projeto produziu um país sem constituição escrita e uma monarquia cujo poder existe apenas por convenção. O segundo é <span class="mark">a distância entre o que se diz e o que se quer dizer</span>, que organiza a língua, o humor e a percepção de classe. Guarde os dois.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s02.tag1"><span class="n">02</span> · o mapa</div>
+  <h2 data-i18n="s02.h21">Uma cidade sem plano, e um mapa que mente <span class="loc">the Tube map</span></h2>
+  <p data-i18n="s02.p1">Londres não é uma cidade que cresceu a partir de um centro. É um punhado de vilarejos que foram sendo colados uns nos outros, primeiro pelas estradas e depois pela ferrovia, e que nunca perderam o nome nem a personalidade. Por isso os londrinos falam do seu bairro como quem fala de uma aldeia, com igreja, praça e pub próprios, e por isso o mapa não tem nenhuma lógica radial. Em 1938 foi preciso criar por lei um <span class="term" tabindex="0" data-term="Green Belt · o cinturão verde de 1938">cinturão verde</span> em volta da cidade para impedir que ela continuasse engolindo o campo.</p>
+  <p data-i18n="s02.p2">Há ainda uma curiosidade que confunde todo mundo: existem <strong>duas cidades</strong> dentro de Londres. A City of London, a milha quadrada financeira, tem governo próprio mais antigo que o Parlamento, um Lord Mayor e até polícia própria; a City of Westminster, ao lado, é onde ficam o Parlamento e o palácio. O Lord Mayor da City não é o prefeito de Londres, são cargos diferentes. E vale desmontar um mito popular: <span class="mark">não é verdade que o monarca precise de permissão para entrar na City.</span> O que existe é uma cerimônia, em Temple Bar, na qual o Lord Mayor oferece a Espada de Estado como gesto de lealdade. É protocolo, não autorização, e a confusão entre as duas coisas diz muito sobre um país que governa por costume.</p>
+  <p data-i18n="s02.p3">A melhor imagem dessa cidade sem plano é, ironicamente, o objeto de design mais famoso que ela produziu. Em 1931, um desenhista técnico desempregado chamado <strong>Harry Beck</strong> resolveu desenhar o metrô como se fosse um circuito elétrico: só linhas retas, só ângulos de 45 e 90 graus, estações igualmente espaçadas, e a geografia jogada fora. O que importava era a sequência das paradas e onde dar baldeação, não onde as coisas ficam. Frank Pick, o diretor, recusou por achar radical demais. Um teste de quinhentas cópias em 1932 deu tão certo que no ano seguinte imprimiram setecentas mil. <span class="mark">Beck trocou a topografia pela topologia</span>, e desde 2001 todo mapa do metrô carrega o crédito ao seu nome.</p>
+  <p data-i18n="s02.p4">Aperte o botão abaixo para ver o mapa sair da geografia real e virar o diagrama, e vice-versa.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="tube" height="420"></canvas>
+      <div class="controls">
+        <button class="btn on" id="tubeBtn">vista: diagrama de Beck</button>
+      </div>
+      <div class="readout">
+        <div class="desc" id="tubeDesc">O diagrama de 1931. Todas as linhas em 45° e 90°, estações igualmente espaçadas e o centro esticado para caber. Fácil de ler, e geograficamente falso.</div>
+      </div>
+    </div>
+    <figcaption data-i18n="s02.figcaption1">O mesmo punhado de estações, nas posições reais e no esquema. Repare no que acontece com o centro.</figcaption>
+  </figure>
+  <p data-i18n="s02.p5">A distorção tem uma consequência prática que atinge todo turista. Como o diagrama estica o centro para caber os nomes, estações que estão praticamente coladas parecem distantes. O trecho entre <strong>Leicester Square e Covent Garden</strong> é o mais curto do metrô de Londres: <span class="mark">duzentos e sessenta metros</span>, quatro minutos a pé, e mesmo assim algumas centenas de pessoas por dia pagam a tarifa cheia para fazê-lo de trem. Quase todas são turistas lendo o mapa ao pé da letra. A regra geral em Londres é simples: <span class="mark">olhe o mapa de rua antes de descer para o metrô.</span></p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s03.tag1"><span class="n">03</span> · o vento</div>
+  <h2 data-i18n="s03.h21">Por que o leste é pobre e o oeste é rico</h2>
+  <p data-i18n="s03.p1">Se você passar alguns dias em Londres, vai notar que a cidade tem lados. Kensington, Chelsea e Notting Hill, a oeste, concentram o dinheiro antigo; boa parte do leste, historicamente, foi o oposto disso. Essa divisão é tão nítida que virou expressão corrente, o <em>West End</em> contra o <em>East End</em>, e ela não é acidente nem coincidência. Tem uma explicação em boa parte física, e ela envolve o vento.</p>
+  <p data-i18n="s03.p2">Na latitude da Grã-Bretanha sopram de forma predominante os ventos de oeste. Durante a Revolução Industrial, quando a cidade queimava carvão em cada casa, cada fábrica e cada locomotiva, esse vento fazia uma coisa muito simples e muito consequente: <span class="mark">empurrava toda a fuligem para o lado leste da cidade</span>. Quem tinha dinheiro para escolher onde morar escolhia o lado de onde o vento vinha, não o lado para onde ele soprava. Some a isso o fato de as docas ficarem a leste, e a divisão se fecha: de um lado, ar limpo e casas caras; do outro, fumaça, indústria e trabalho pesado.</p>
+  <p data-i18n="s03.p3">Ligue e desligue o vento na demonstração abaixo para ver o mecanismo funcionando.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="wind" height="400"></canvas>
+      <div class="controls">
+        <button class="btn on" id="windBtn">vento de oeste: ligado</button>
+      </div>
+      <div class="readout">
+        <div class="desc" id="windDesc">O vento predominante empurra a fuligem do carvão para o leste. Quem pode escolher se muda para o lado de onde o vento vem, e o preço da terra acompanha o ar. A divisão social da cidade se desenha sozinha, camada por camada, ao longo de um século.</div>
+      </div>
+    </div>
+    <figcaption data-i18n="s03.figcaption1">A mesma fuligem que enriqueceu o império desenhou o mapa social da cidade que o comandava.</figcaption>
+  </figure>
+  <p data-i18n="s03.p4">Vale a honestidade de dizer que o vento não explica tudo. Um estudo da Universidade de Bristol mediu que a poluição histórica responde por <span class="mark">até 15% da desigualdade dentro das cidades industriais em 1881</span>, o que é muito, mas não é o total. As docas, os cortiços, a especulação e a inércia fizeram o resto. O achado mais interessante desse trabalho é outro: mesmo depois que a fumaça acabou, <span class="mark">os bairros que foram poluídos continuam sendo os pobres até hoje</span>, com diferenças mensuráveis de escolaridade e criminalidade. A causa desapareceu e o efeito ficou.</p>
+  <p data-i18n="s03.p5">A fumaça teve um último ato. Entre 5 e 9 de dezembro de <strong>1952</strong>, um frio incomum e um anticiclone sem vento nenhum prenderam sobre a cidade a fumaça de todas as lareiras de carvão de Londres. O <span class="term" tabindex="0" data-term="the Great Smog · a grande névoa de 1952">Grande Smog</span> foi tão denso que ônibus pararam de circular e teatros fecharam porque a plateia não enxergava o palco. A estimativa oficial inicial foi de quatro mil mortos; análises independentes posteriores chegaram a <span class="mark">cerca de doze mil</span>. Quatro anos depois veio o Clean Air Act de 1956, e a Londres da neblina amarela dos livros de Dickens e de Sherlock Holmes deixou de existir. O que sobrou dela foi o desenho social do mapa.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s04.tag1"><span class="n">04</span> · classe</div>
+  <h2 data-i18n="s04.h21">O vocabulário como carteira de identidade</h2>
+  <p data-i18n="s04.p1">Se o valor que organiza o comportamento japonês é a harmonia do grupo, e o peruano é a reciprocidade, o britânico é a <strong>classe</strong>. E o essencial para entender é que classe, na Grã-Bretanha, <span class="mark">nunca foi apenas dinheiro</span>. É sotaque, escola, gosto, o que se lê, o que se come, e sobretudo qual palavra se usa para as coisas mais banais do mundo.</p>
+  <p data-i18n="s04.p2">Em 1954 o linguista Alan Ross cunhou os termos <strong>U</strong> e <strong>não-U</strong>, de <em>upper class</em>, para descrever esse código, e a escritora Nancy Mitford, ela própria filha de um barão, popularizou a ideia num ensaio que detonou um debate nacional. A lógica tem uma ironia deliciosa no centro: <span class="mark">a palavra mais fina é a marca da classe mais baixa</span>. A classe média busca o termo elegante para parecer refinada; a aristocracia, que não precisa provar nada, fica com a palavra simples e direta. Arraste a régua abaixo entre os dois lados.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="uu" height="120"></canvas>
+      <table class="words" id="uuTable"></table>
+      <div class="readout">
+        <div class="desc" id="uuDesc">Arraste a régua. De um lado, o vocabulário que Ross chamou de "não-U"; do outro, o "U".</div>
+      </div>
+    </div>
+    <figcaption data-i18n="s04.figcaption1">Um jogo de salão de 1954 que os britânicos ainda jogam, com menos rigor e mais constrangimento.</figcaption>
+  </figure>
+  <p data-i18n="s04.p3">Vale dizer que essa tabela é um retrato de 1954, e nenhum britânico hoje a leva a sério ao pé da letra. Mas o mecanismo que ela descreve continua vivo, e agora ele passa mais pelo som do que pela palavra. O sotaque de prestígio do século XX foi o <span class="term" tabindex="0" data-term="Received Pronunciation · o &quot;inglês da BBC&quot;">RP</span>, que perdeu a hegemonia com a expansão do ensino e da televisão. O <strong>cockney</strong>, tradicionalmente o sotaque de quem nasce ao alcance dos sinos da igreja de St Mary-le-Bow, na City, deu origem nos anos 1840 a um <span class="term" tabindex="0" data-term="rhyming slang · a gíria rimada do East End">jogo de gíria rimada</span> que provavelmente servia para não ser entendido por quem estava perto. E hoje o sotaque padrão do East End entre os jovens já é outro, o <strong>MLE</strong>, nascido nos anos 1980 do encontro entre o falar local e as línguas caribenhas, africanas e sul-asiáticas dos bairros de imigração. Não é um cockney degradado: é a língua de uma cidade nova.</p>
+  <p data-i18n="s04.p4">E os números mostram que o sistema não é folclore. Cerca de <strong>7%</strong> das crianças britânicas estudam em escola privada. Entre os juízes de tribunais superiores, os que vieram de escola privada são <span class="mark">62%</span>, e na Câmara dos Lordes, mais da metade. O sotaque abre e fecha portas de um jeito que quase nenhum estrangeiro percebe, e que quase nenhum britânico precisa ter explicado.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s05.tag1"><span class="n">05</span> · a língua</div>
+  <h2 data-i18n="s05.h21">Quinze maneiras de dizer <span class="loc">sorry</span></h2>
+  <p data-i18n="s05.p1">A palavra que você mais vai ouvir em Londres é <em>sorry</em>, e quase nunca ela significa "desculpe". O britânico médio a diz <span class="mark">oito ou nove vezes por dia</span>, e 88% admitem usá-la para coisas que não são culpa deles. O dado mais revelador é este: <strong>57% pedem desculpa quando é o outro que esbarra neles</strong>. Pesquisadores já catalogaram quinze usos distintos da palavra, e <span class="mark">só um deles é arrependimento</span>. Os outros catorze são "com licença", "oi", "repita, por favor", "posso passar?", "discordo", "que pena", "atenção" e assim por diante. Se alguém esbarrar em você e disser <em>sorry</em>, a resposta correta é dizer <em>sorry</em> de volta.</p>
+  <p data-i18n="s05.p2">Esse é o caso mais visível de um traço geral: o inglês britânico é <strong>oblíquo por padrão</strong>. Quase nada é dito de frente. Um chefe que diz "com o maior respeito" está dizendo que você falou uma bobagem; um "isso é interessante" costuma significar que não gostou; um "vou levar isso em consideração" quer dizer que já esqueceu; e um "não é ruim" é um elogio sincero e caloroso. A regra prática para um brasileiro é simples e útil: <span class="mark">quanto mais educada a frase, mais atenção ela merece</span>. Ninguém está sendo falso; está sendo britânico, num sistema em que a franqueza direta é percebida como agressão.</p>
+  <p data-i18n="s05.p3">A antropóloga Kate Fox, que escreveu o livro de referência sobre o assunto, explica também o outro clichê nacional. Falar do tempo em Londres não é falar do tempo. É o que ela chama de <em>grooming talk</em>, o equivalente humano da catação entre primatas: um som que serve para dizer "estou disposto a interagir com você". <span class="mark">"Que frio, não?" quer dizer "oi".</span> Não há nenhuma informação meteorológica sendo trocada, e responder com uma discordância técnica sobre a previsão é errar completamente o registro.</p>
+  <p data-i18n="s05.p4">E há o humor, que é a defesa nacional contra a sinceridade. Ele funciona por ironia, autodepreciação, <span class="term" tabindex="0" data-term="understatement · dizer menos do que se quer dizer">understatement</span> e uma desconfiança profunda de quem parece estar se divertindo demais. O escritor húngaro George Mikes resumiu melhor do que ninguém: o <em>understatement</em> não é uma especialidade do humor inglês, <span class="mark">é um modo de vida</span>. Entre amigos, o afeto se demonstra por meio de insultos afetuosos, o <em>banter</em>. Linguistas de Cambridge registram que a ironia britânica é um dos modos de fala mais consistentemente mal interpretados por estrangeiros, e por um motivo mecânico: falta a ênfase que outras línguas usam para avisar que há sarcasmo. O sarcasmo é dito no mesmo tom da frase séria. Essa é a piada.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s06.tag1"><span class="n">06</span> · convivência</div>
+  <h2 data-i18n="s06.h21">A fila, o vagão e o metro quadrado</h2>
+  <p data-i18n="s06.p1">A fila britânica é real e é levada a sério. A origem é prática: a Revolução Industrial encheu as cidades de gente que começava e terminava o turno na mesma hora, e a fila resolveu o problema. Mas o que a transformou em identidade nacional foi a Segunda Guerra e o racionamento. Durante anos, todo mundo esperou a vez para receber comida, entrar no abrigo e pegar o trem, e <span class="mark">esperar a vez virou dever patriótico</span>. Furar fila deixou de ser falta de educação e passou a ser algo próximo de uma traição. Até hoje é assim, e a punição não é uma discussão: é um silêncio constrangedor e uma sobrancelha erguida, que na Grã-Bretanha doem mais. A fila é tão central que aparece no exame de cidadania britânica.</p>
+  <p data-i18n="s06.p2">No metrô valem outras regras não escritas. Fala-se pouco e baixo, não se faz contato visual, e existe uma convenção rígida sobre a escada rolante: <span class="mark">quem quer ficar parado fica à direita, quem quer andar passa pela esquerda</span>. Ignorar isso na hora do rush produz uma irritação silenciosa e coletiva impressionante. No vagão, se houver vários assentos livres, não se senta ao lado de um estranho. E se o trem parar num túnel por dez minutos sem explicação, ninguém vai reclamar em voz alta; no máximo, alguém vai trocar um olhar com você e sorrir de leve, que é o pedido de solidariedade mais efusivo permitido pelo protocolo.</p>
+  <p data-i18n="s06.p3">Sobre gorjeta, a regra é diferente da americana e vale conhecer. Em restaurante com serviço de mesa, costuma vir no papel um <em>service charge</em> de 12,5%, que <span class="mark">é discricionário por lei</span>: se o serviço foi ruim, você pode pedir para retirar, e isso não é escândalo nenhum. Se veio, já é a gorjeta e nada mais é esperado. Se não veio, 10% a 15% é o normal. E, no balcão do pub, <strong>não se dá gorjeta</strong>, ponto final: você pede, paga e leva a sua bebida, e ninguém está esperando nada além disso.</p>
+  <p data-i18n="s06.p4">Tudo isso pode passar a impressão de um país rígido, e aqui vale desfazer o mal-entendido. A regra britânica não é que todo mundo seja igual, é que <strong>ninguém incomode ninguém</strong>. Dentro dessa fronteira, a tolerância com a esquisitice é enorme, e é antiga: a ideia do excêntrico como figura admirável, e não como problema a ser corrigido, se formou na Inglaterra do século XVIII, e em 1933 Edith Sitwell publicou um catálogo inteiro deles, <em>The English Eccentrics</em>. É o mesmo país que produziu o punk de Vivienne Westwood na King's Road, os clubes dedicados aos assuntos mais improváveis e o vizinho que pinta a fachada de roxo. <span class="mark">Você pode ser tão excêntrico quanto quiser, desde que não fure a fila.</span></p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s07.tag1"><span class="n">07</span> · o pub</div>
+  <h2 data-i18n="s07.h21">A instituição social número um <span class="loc">the local</span></h2>
+  <p data-i18n="s07.p1">O pub não é um bar. É o lugar onde a vida social britânica acontece, e ele tem um regulamento inteiro que ninguém explica em voz alta. A primeira regra é que <strong>não existe serviço de mesa</strong>. Você vai ao balcão, pede, paga na hora e carrega a sua bebida até a mesa. Sentar e esperar é a maneira mais rápida de passar a noite com sede. No balcão não há fila desenhada, mas <span class="mark">todo mundo sabe exatamente de quem é a vez</span>, inclusive o barman, e furar essa fila invisível é uma das poucas coisas capazes de gerar hostilidade aberta num pub inglês.</p>
+  <p data-i18n="s07.p2">A segunda regra é a <strong>rodada</strong>. Em grupo, ninguém compra só a sua bebida: cada um paga, na sua vez, uma rodada inteira para todos. É um sistema de obrigação recíproca com a mesma lógica do <em>ayni</em> andino ou do <em>giri</em> japonês, e funciona como um contrato de permanência: quem aceitou uma rodada está comprometido a ficar até pagar a sua. Sair antes disso é uma falta grave, lembrada por anos. Se você não bebe, participe mesmo assim e pague a sua rodada; o que importa não é o álcool, é a reciprocidade.</p>
+  <p data-i18n="s07.p3">A terceira é o horário, e ela tem a origem mais improvável de todas. O grito de <em>last orders</em> por volta das onze da noite não vem de nenhuma tradição antiga: vem da <strong>Primeira Guerra Mundial</strong>. Antes de 1914, os pubs abriam das cinco da manhã à meia-noite e meia. Naquele ano, o <span class="term" tabindex="0" data-term="Defence of the Realm Act · a lei de defesa do reino, 1914">Defence of the Realm Act</span> reduziu o horário drasticamente, com o objetivo declarado por Lloyd George de manter os operários sóbrios para produzir munição. <span class="mark">Chegou a ser ilegal pagar uma rodada para outra pessoa.</span> A pausa obrigatória da tarde só caiu em 1988, e a liberalização real veio em 2003. Ou seja: o horário do pub britânico é um fóssil de uma política industrial de guerra que acabou há mais de cem anos.</p>
+  <p data-i18n="s07.p4">Dois detalhes finais. Os nomes e as placas pintadas dos pubs, o Leão Vermelho, a Cabeça da Rainha, o Cavalo Branco, vêm de quando a maioria da clientela não sabia ler e a identificação tinha de ser visual. E a cerveja não é quente, apesar da fama: a <em>real ale</em> é servida fresca, a temperatura de adega, entre onze e treze graus, que é o ponto em que ela tem sabor. Cerveja gelada demais não tem gosto de nada, e é exatamente isso que um inglês vai lhe dizer se você reclamar.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s08.tag1"><span class="n">08</span> · à mesa</div>
+  <h2 data-i18n="s08.h21">O prato nacional é indiano</h2>
+  <p data-i18n="s08.p1">A comida britânica tem uma fama velha e injusta, que já foi merecida e há muito não é. Londres hoje é uma das melhores cidades do mundo para comer, e a razão é a mesma que explica a seção 01: <span class="mark">um império que trouxe o mundo para dentro de casa</span> e, depois, oitenta anos de migração que transformaram esse acaso em cozinha.</p>
+  <p data-i18n="s08.p2">O melhor exemplo é o <strong>chicken tikka masala</strong>. Em abril de 2001, o chanceler Robin Cook fez um discurso célebre chamando-o de "um verdadeiro prato nacional britânico" e "a ilustração perfeita do modo como a Grã-Bretanha absorve e adapta influências de fora". Como o ceviche peruano, ele não caiu do céu: foi ganhando camadas. Clique para montá-lo.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="dish" height="330"></canvas>
+      <div class="controls">
+        <button class="btn" id="dishBtn">montar a próxima camada</button>
+        <button class="btn" id="dishReset" data-i18n="s08.btnDish1">recomeçar</button>
+      </div>
+      <div class="readout">
+        <div class="big" id="dishName">Prato vazio</div>
+        <div class="desc" id="dishDesc">O prato nacional britânico tem quatro séculos e três continentes dentro dele. Clique para ver.</div>
+      </div>
+    </div>
+    <figcaption data-i18n="s08.figcaption1">Cada camada do prato vem de um momento diferente da história britânica.</figcaption>
+  </figure>
+  <p data-i18n="s08.p3">O mesmo cruzamento aparece em quase tudo o que se come por lá. O <strong>fish and chips</strong>, que hoje é o símbolo da comida popular britânica, tem o peixe empanado e frito trazido pelos <span class="term" tabindex="0" data-term="sefarditas · judeus ibéricos expulsos pela Inquisição">judeus sefarditas</span> de Portugal e Espanha que fugiram da Inquisição no século XVI; a primeira loja de que se tem notícia em Londres foi aberta em 1863 por um imigrante judeu, Joseph Malin, embora a primazia seja disputada com uma loja do norte da Inglaterra.</p>
+  <p data-i18n="s08.p4">E há o chá, que talvez seja o objeto mais britânico do mundo e não tem nada de britânico. Ele chega em 1662 com <strong>Catarina de Bragança</strong>, a princesa portuguesa que se casou com Carlos II, e a Companhia das Índias Orientais toma conta do comércio dois anos depois. O problema é que a China só aceitava prata como pagamento, e a Grã-Bretanha não tinha prata suficiente. A solução foi vender ópio ilegalmente aos chineses para financiar a compra do chá, e desse arranjo saíram as Guerras do Ópio. <span class="mark">A xícara de chá das cinco da tarde tem uma guerra colonial dentro dela.</span> Depois vieram as plantações da Índia: em 1901, 70% do chá bebido na Grã-Bretanha vinha de lá. O <em>tea break</em> de quinze minutos virou instituição operária, e até o gesto de pôr o leite antes ou depois do chá é marca de classe, porque leite primeiro era o hábito de quem tinha xícara barata, que rachava com o choque térmico.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s09.tag1"><span class="n">09</span> · o calendário</div>
+  <h2 data-i18n="s09.h21">O ano de festas que a viagem vai cruzar</h2>
+  <p data-i18n="s09.p1">É provável que a sua viagem caia em cima de alguma data, e vale saber qual. O calendário britânico mistura o santoral anglicano, as datas da monarquia, um punhado de <em>bank holidays</em> sem nenhum conteúdo religioso e algumas comemorações que só fazem sentido se alguém contar a história. Gire a roda abaixo; ela começa no mês de hoje.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="wheel" height="430"></canvas>
+      <div class="readout">
+        <div class="big" id="fName">Bonfire Night</div>
+        <div class="desc" id="fLine">Fogueiras e fogos pela conspiração que não deu certo em 1605.</div>
+        <div class="sub" id="fWhen" style="color:var(--acc)">5 de novembro</div>
+      </div>
+    </div>
+    <figcaption data-i18n="s09.figcaption1">Arraste para girar. O ponteiro no topo marca o mês atual.</figcaption>
+  </figure>
+  <p data-i18n="s09.p2">Alguns marcos valem por si. A <strong>Bonfire Night</strong>, em 5 de novembro, celebra o <em>fracasso</em> de um atentado: em 1605, um grupo católico tentou explodir o Parlamento durante a abertura oficial, e Guy Fawkes foi preso guardando a pólvora sob a Câmara dos Lordes. Em janeiro de 1606 o Parlamento decretou a data como dia de ação de graças, e até hoje se queima um boneco na fogueira ao som de <span class="term" tabindex="0" data-term="Remember, remember the fifth of November">"lembre, lembre, o cinco de novembro"</span>. Poucos dias depois vem o <strong>Remembrance</strong>, quando o país inteiro usa uma papoula vermelha na lapela pelos mortos das guerras, e a papoula é levada muito a sério. Em agosto, o <strong>Notting Hill Carnival</strong>, que desce do carnaval de salão de Claudia Jones e virou o maior da Europa. E o <strong>Boxing Day</strong>, 26 de dezembro, que é a segunda parte do Natal e o dia mais importante do calendário do futebol inglês.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s10.tag1"><span class="n">10</span> · na prática</div>
+  <h2 data-i18n="s10.h21">As regras que a viagem ensina</h2>
+  <p data-i18n="s10.p1">Algumas situações do dia a dia londrino têm uma lógica que não é óbvia para quem chega. Responda às perguntas abaixo para ver a razão por trás de cada uma.</p>
+  <figure>
+    <div class="quiz" id="quiz">
+      <div class="q-nav">
+        <div class="q-dots" id="qDots"></div>
+        <button class="btn" id="qNext" style="display:none">próxima →</button>
+      </div>
+    </div>
+    <figcaption data-i18n="s10.figcaption1">Cada escolha revela a razão cultural por trás do hábito.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s11.tag1"><span class="n">11</span> · a cidade</div>
+  <h2 data-i18n="s11.h21">Londres por dentro</h2>
+  <p data-i18n="s11.p1">A cidade tem eixos que vale conhecer antes de andar por ela. O primeiro é o <strong>rio</strong>, que é a razão de Londres existir e continua sendo uma divisão mental: há uma piada antiga, e só meio piada, sobre o taxista que se recusa a atravessar para o sul. O segundo é o eixo leste-oeste da seção 03, que ainda organiza o preço do metro quadrado. O terceiro é o <strong>futebol</strong>, que em Londres é geografia pura: Arsenal e Tottenham a seis quilômetros um do outro no norte, numa rivalidade que começou em 1913, quando o Arsenal se mudou de Woolwich para Highbury e quebrou o monopólio do vizinho; Chelsea, Fulham e Brentford no oeste; Crystal Palace no sul; West Ham no leste. O clássico entre West Ham e Millwall já foi chamado de <em>Dockers derby</em>, porque era estivador da doca do norte contra estivador da doca do sul.</p>
+  <p data-i18n="s11.p2">Os <strong>parques</strong> têm uma história que explica o tamanho deles. Hyde Park, Kensington Gardens e Regent's Park eram terra confiscada por Henrique VIII dos mosteiros, no século XVI, para servir de reserva de caça do rei. Carlos I abriu o Hyde Park ao público em 1637, Carlos II abriu o St James's logo depois e, no século XIX, todos estavam abertos. <span class="mark">Londres é verde porque um rei quis caçar perto de casa.</span> Nas praças-jardim dos bairros ricos, porém, a lógica é outra: muitas nasceram como jardim privado dos moradores e uma parte continua trancada, com chave só para quem mora em volta. E no <span class="term" tabindex="0" data-term="Speakers' Corner · o canto dos oradores, perto do Marble Arch">Speakers' Corner</span> qualquer pessoa ainda pode subir num caixote e falar o que quiser.</p>
+  <p data-i18n="s11.p3">Mas se houver um único objeto que resuma Londres, ele fica na esquina da Brick Lane com a Fournier Street, no East End, e é um prédio comum de tijolo. Clique para atravessar as suas vidas.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="brick" height="380"></canvas>
+      <div class="controls">
+        <button class="btn" id="brickBtn">a vida seguinte →</button>
+        <button class="btn" id="brickReset" data-i18n="s11.btnBrick1">voltar a 1743</button>
+      </div>
+      <div class="readout">
+        <div class="big" id="brickName">1743 · capela huguenote</div>
+        <div class="desc" id="brickDesc">Construída como La Neuve Eglise pelos protestantes franceses que fugiram da perseguição religiosa na França.</div>
+      </div>
+    </div>
+    <figcaption data-i18n="s11.figcaption1">Um prédio, quatro comunidades, três religiões, quase trezentos anos.</figcaption>
+  </figure>
+  <p data-i18n="s11.p4">Quem construiu o prédio pôs no frontão um relógio de sol com a data de 1743 e uma frase de Horácio: <strong><span class="loc">Umbra sumus</span></strong>, somos sombra. Os huguenotes escreveram aquilo pensando na brevidade da vida humana. Duzentos e oitenta anos depois, com franceses, metodistas, judeus lituanos e bengalis já tendo passado por baixo dele, <span class="mark">a frase virou, sem querer, a melhor definição de Londres que alguém já escreveu</span>.</p>
+</section>
+
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s12.tag1"><span class="n">12</span> · na rua</div>
+  <h2 data-i18n="s12.h21">Dez coisas para reparar enquanto anda</h2>
+  <p data-i18n="s12.p1">Londres quase nunca se explica, mas deixa as provas à vista. Boa parte do que está nesta lista você vai pisar em cima ou passar por baixo sem notar, e cada item tem uma razão concreta por trás. É o artigo inteiro reduzido ao tamanho de uma caminhada.</p>
+  <div class="spots">
+
+    <div class="spot reveal"><div class="spot-n">01</div><div>
+      <h3 data-i18n="s12.h31">As placas azuis nas fachadas</h3>
+      <p data-i18n="s12.p2">O esquema é de 1866, criado por iniciativa do deputado William Ewart para marcar onde gente notável morou ou trabalhou, e hoje são mais de novecentas. Karl Marx começou <em>O Capital</em> na pobreza de um apartamento em Dean Street, no Soho; Virginia Woolf morou em Fitzroy Square. O melhor achado do esquema inteiro, porém, está na Brook Street: no número 25 morou Händel e, no 23, dois séculos depois, Jimi Hendrix. Händel morou ali de 1723 até morrer, em 1759; Hendrix mudou-se para o andar de cima do vizinho em janeiro de 1969. <span class="mark">As duas placas ficam lado a lado</span>, e hoje as duas casas são um museu só, chamado Handel &amp; Hendrix. Londres não tranca os seus fantasmas ilustres em museu: deixa-os na parede de prédios comuns.
+      <span class="where">em toda parte · Brook Street 23 e 25, Mayfair</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">02</div><div>
+      <h3 data-i18n="s12.h32">O monograma nas caixas de correio</h3>
+      <p data-i18n="s12.p3">Nas caixas vermelhas cilíndricas há um monograma em relevo, e ele data o ferro: VR é Vitória, GR é um dos Georges, EIIR é Elizabeth II, e as mais novas já trazem CIIIR, de Charles III. Quando muda o monarca as caixas antigas não são substituídas, apenas se somam às novas, de modo que <span class="mark">a rua virou um arquivo em ferro fundido de quase dois séculos de reinados</span>. Na Escócia não se vê EIIR: como Elizabeth foi a primeira Elizabeth escocesa, a inscrição gerou protesto e o correio passou a usar ali a coroa da Escócia.
+      <span class="where">em qualquer esquina</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">03</div><div>
+      <h3 data-i18n="s12.h33">Os discos de ferro na calçada</h3>
+      <p data-i18n="s12.p4">Em frente às casas georgianas há tampas redondas de ferro fundido de uns trinta centímetros, e quase cada quarteirão tem um desenho diferente. São bocas de carvão: o porão da casa avançava por baixo da calçada, e o carvão era despejado ali direto do saco, para que <span class="mark">o entregador coberto de fuligem nunca precisasse entrar na casa</span>. São redondas por três razões práticas: a tampa não cai dentro do próprio buraco, pode ser rolada em vez de carregada, e não tem canto para lascar.
+      <span class="where">Bloomsbury, Islington, qualquer rua georgiana</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">04</div><div>
+      <h3 data-i18n="s12.h34">Os raspadores de bota junto à porta</h3>
+      <p data-i18n="s12.p5">Pequenos ferros em U fincados ao lado da soleira, hoje puramente decorativos. Apareceram no fim do século XVIII, junto com as primeiras calçadas, num tempo em que a rua era lama e esterco de cavalo. Ninguém entrava em casa sem raspar as botas ali primeiro, e o objeto sobreviveu por um século e meio depois de ter perdido a função.
+      <span class="where">ao lado da escada de entrada das casas antigas</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">05</div><div>
+      <h3 data-i18n="s12.h35">As plaquetas de seguradora no alto da parede</h3>
+      <p data-i18n="s12.p6">Placas pequenas de chumbo ou cobre com um sol flamejante, duas mãos dadas ou uma coroa, e um número gravado embaixo. Foi o incêndio de 1666 que criou o seguro contra fogo, e cada seguradora mantinha a sua própria brigada: a plaqueta dizia à brigada de quem era aquele prédio. A primeira foi a do Sun Fire Office, em 1710. <span class="mark">Prédio sem plaqueta, ou com a plaqueta da concorrente, podia ficar queimando.</span> Só em 1833 dez seguradoras juntaram as brigadas numa só. Ficam sempre altas, fora do alcance de quem roubava metal.
+      <span class="where">City de Londres e East End, acima do primeiro andar</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">06</div><div>
+      <h3 data-i18n="s12.h36">As cabanas verdes de madeira</h3>
+      <p data-i18n="s12.p7">Do tamanho de um carro, sempre da mesma cor verde, quase sempre plantadas num ponto de táxi. São abrigos de cocheiro, criados a partir de 1875 para que o condutor pudesse comer quente sem abandonar o cavalo na rua. Foram construídas sessenta e uma; <span class="mark">sobraram treze, todas tombadas, e todas ainda em funcionamento</span>, servindo comida a taxista até hoje. O salão é só para eles, mas em várias delas se vende chá e sanduíche pela janela para quem passa.
+      <span class="where">Russell Square, Embankment, Kensington Park Road</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">07</div><div>
+      <h3 data-i18n="s12.h37">A cúpula da cabine telefônica</h3>
+      <p data-i18n="s12.p8">Giles Gilbert Scott desenhou a K2 em 1926 e a K6, menor, em 1935, e a cúpula das duas é cópia do túmulo que Sir John Soane projetou para a mulher, no cemitério de St Pancras; Scott era curador do museu de Soane. O vermelho não foi escolha dele, que queria prateado com verde por dentro: o correio impôs a cor das caixas de correio, para combinar. E <span class="mark">os furinhos em forma de coroa no alto não são enfeite, são a ventilação</span>.
+      <span class="where">e o túmulo original fica em St Pancras Gardens</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">08</div><div>
+      <h3 data-i18n="s12.h38">Os leões que mordem argolas no Embankment</h3>
+      <p data-i18n="s12.p9">Ao longo do muro do rio há cabeças de leão em bronze, de 1868, cada uma mordendo uma argola. São pontos de amarração de emergência, e ficam bem acima da maré alta normal, o que gerou uma rima que os londrinos repetem até hoje: <span class="mark">"quando os leões beberem, Londres afunda"</span>. Fazem parte da obra de esgoto de Joseph Bazalgette, a mesma que resolveu o Grande Fedor de 1858 e que, de quebra, criou a avenida à beira do rio.
+      <span class="where">Victoria Embankment, o muro inteiro</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">09</div><div>
+      <h3 data-i18n="s12.h39">O poste que queima o esgoto</h3>
+      <p data-i18n="s12.p10">Numa ladeira estreita atrás do hotel Savoy há um lampião que não é alimentado por gás de rua: <span class="mark">ele queima o gás do esgoto que corre embaixo</span>, a uma temperatura alta o bastante para destruir o cheiro e os germes junto. É uma patente dos anos 1890, é o último do tipo em Londres, e continua aceso dia e noite. Os londrinos, previsivelmente, rebatizaram a ladeira de Farting Lane.
+      <span class="where">Carting Lane, atrás do Savoy</span></p>
+    </div></div>
+
+    <div class="spot reveal"><div class="spot-n">10</div><div>
+      <h3 data-i18n="s12.h310">As <em>mews</em> atrás das ruas nobres</h3>
+      <p data-i18n="s12.p11">Ruelas curtas de paralelepípedo, com casinhas baixas e coloridas, escondidas atrás das fileiras de casarões. Eram as cavalariças: o cavalo e a carruagem ficavam nos fundos da casa grande, com o cocheiro morando por cima. O automóvel acabou com a função, e elas <span class="mark">viraram alguns dos endereços mais caros da cidade</span>. A regra para reconhecer é simples: rua curta, sem saída, calçada de pedra e casas de um pavimento a mais que a garagem.
+      <span class="where">Kensington, Marylebone, Belgravia</span></p>
+    </div></div>
+
+  </div>
+  <p data-i18n="s12.p12">Nada disso é sinalizado, e ninguém vai explicar. É a mesma coisa que a seção 05 diz de outro jeito: a cidade deixa as provas à vista e espera que <span class="mark">você repare sozinho</span>.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag" data-i18n="s13.tag1"><span class="n">13</span> · fim</div>
+  <h2 data-i18n="s13.h21">Olhar com contexto</h2>
+  <p data-i18n="s13.p1">Nenhum desses hábitos precisa ser decorado para a viagem valer a pena. O que ajuda é saber que eles existem e de onde vêm. Quando alguém pedir desculpa por você ter esbarrado nele, você vai reconhecer uma palavra que quase nunca significa desculpa. Quando o pub gritar <em>last orders</em> às onze, vai reconhecer uma lei de 1914. Quando reparar que o dinheiro está todo de um lado da cidade, vai reconhecer o vento. E quando passar em frente a um prédio de tijolo na Brick Lane, vai reconhecer quatro migrações empilhadas numa fachada só. Ver Londres com essa camada de contexto torna a observação mais rica, e <span class="mark">é também uma forma de respeito</span> por uma cidade que prefere não explicar nada em voz alta.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p data-i18n="foot.p1">Rascunho interativo v0.1. Um artigo por trás de alguns hábitos britânicos, com Londres no centro e o Reino Unido ao redor, feito para ser lido antes ou durante a viagem.</p>
+    <p class="srcs" data-i18n="foot.p2">Fontes das histórias: as regras não escritas do comportamento inglês, em <em>Watching the English</em>, de Kate Fox; o diagrama de Harry Beck (<a href="https://www.ltmuseum.co.uk/collections/stories/design/transforming-tube-map-harry-becks-iconic-design">London Transport Museum</a>); a recusa do plano de Wren e as leis de reconstrução (<a href="https://www.sciencemuseum.org.uk/objects-and-stories/great-fire-london-how-science-rebuilt-city">Science Museum</a>); poluição histórica e desigualdade urbana (<a href="https://www.bristol.ac.uk/news/2016/november/industrial-pollution/">Universidade de Bristol</a>); o Grande Smog de 1952 (<a href="https://www.britannica.com/event/Great-Smog-of-London">Britannica</a>); o metrô como abrigo na Blitz (<a href="https://www.londonmuseum.org.uk/collections/london-stories/londons-blitz-a-city-at-war/">London Museum</a>); o Windrush (<a href="https://www.nationalarchives.gov.uk/education/resources/the-empire-windrush/empire-windrush-caribbean-migration/">The National Archives</a>) e Claudia Jones (<a href="https://en.wikipedia.org/wiki/Claudia_Jones">Wikipedia</a>); U e não-U (<a href="https://en.wikipedia.org/wiki/U_and_non-U_English">Wikipedia</a>) e escolaridade das elites (<a href="https://www.suttontrust.com/our-research/elitist-britain-2025/">Sutton Trust</a>); o Defence of the Realm Act de 1914 (<a href="https://www.parliament.uk/about/living-heritage/transformingsociety/parliament-and-the-first-world-war/legislation-and-acts-of-war/defence-of-the-realm-act-1914/">UK Parliament</a>); a hora de Greenwich (<a href="https://www.rmg.co.uk/stories/time/greenwich-mean-time-gmt">Royal Museums Greenwich</a>); o prédio da Brick Lane (<a href="https://historicengland.org.uk/listing/the-list/list-entry/1240697">Historic England</a>, <a href="https://londonist.com/london/history/brick-lane-mosque-east-london-church-synagogue-hugenots">Londonist</a>); línguas e origem dos londrinos (censo de 2021, <a href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/freedomofinformationfoi/languagesspokeninlondonin2021">ONS</a>). Para a seção 12: placas azuis (<a href="https://www.english-heritage.org.uk/visit/blue-plaques/about-blue-plaques/top-ten-blue-plaque-facts/">English Heritage</a>); monogramas nas caixas de correio (<a href="https://www.postalmuseum.org/blog/royal-cyphers-on-letterboxes/">The Postal Museum</a>); bocas de carvão (<a href="https://en.wikipedia.org/wiki/Coal_hole">Wikipedia</a>); plaquetas de seguradora e as brigadas privadas (<a href="https://www.zurich.com/about-us/150anniversary/the-original-firefighters-how-insurers-protected-london-from-fire">Zurich</a>); abrigos de cocheiro (<a href="https://historicengland.org.uk/whats-new/news/13th-cabmens-shelter-in-london-listed/">Historic England</a>); a cabine telefônica e o túmulo de Soane (<a href="https://www.soane.org/features/sir-john-soane-and-red-telephone-box-0">Sir John Soane's Museum</a>); os leões do Embankment (<a href="https://londonist.com/london/history/the-story-of-the-embankment-lions">Londonist</a>); o lampião de Carting Lane (<a href="https://en.wikipedia.org/wiki/Sewer_gas_destructor_lamp">Wikipedia</a>).</p>
+  </div>
+</footer>
+</main>
+
+<script>
+/* ===================== utilidades ===================== */
+const DPR = Math.min(window.devicePixelRatio || 1, 2);
+function fit(cv, cssH){
+  const w = cv.clientWidth || cv.parentNode.clientWidth;
+  const h = cssH || cv.clientHeight || 340;
+  cv.style.height = h + 'px';
+  cv.width = Math.round(w*DPR); cv.height = Math.round(h*DPR);
+  const ctx = cv.getContext('2d'); ctx.setTransform(DPR,0,0,DPR,0,0);
+  cv._w = w; cv._h = h; return ctx;
+}
+function ptr(e, cv){
+  const r = cv.getBoundingClientRect();
+  const t = (e.touches && e.touches[0]) || (e.changedTouches && e.changedTouches[0]) || e;
+  return { x: t.clientX - r.left, y: t.clientY - r.top };
+}
+const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+
+/* idioma: T() resolve um par {pt,en}; HOOKS redesenha os widgets na troca */
+var LANG='pt', HOOKS=[];
+function T(o){ return (o && typeof o==='object' && o.pt!==undefined) ? (o[LANG]!=null?o[LANG]:o.pt) : o; }
+function $all(sel){ return [].slice.call(document.querySelectorAll(sel)); }
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+
+const pb=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight; pb.style.width=(h>0?scrollY/h*100:0)+'%';},{passive:true});
+
+/* reveal on scroll */
+(function(){
+  const els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+  const io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:0.06});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* tooltips de termos (hover / clique) */
+(function(){
+  const terms=[].slice.call(document.querySelectorAll('.term'));
+  terms.forEach(function(t){
+    t.addEventListener('click',function(e){ e.stopPropagation(); const was=t.classList.contains('open');
+      terms.forEach(function(o){o.classList.remove('open');}); if(!was)t.classList.add('open'); });
+  });
+  document.addEventListener('click',function(){ terms.forEach(function(o){o.classList.remove('open');}); });
+})();
+
+/* ===================== herói: tijolo em aparelho flamengo ===================== */
+(function(){
+  const cv=document.getElementById('heroCanvas'); let ctx,W,H,t=0;
+  function size(){ ctx=fit(cv,200); W=cv._w; H=cv._h; }
+  size(); addEventListener('resize',size);
+  const BH=13, GAP=3, SW=46, HW=20;           // altura, junta, esticador, amarrador
+  function draw(){
+    t+=0.004; ctx.clearRect(0,0,W,H);
+    const rows=Math.ceil(H/(BH+GAP))+1;
+    for(let r=0;r<rows;r++){
+      const y=r*(BH+GAP);
+      // aparelho flamengo: esticador e amarrador alternados, deslocados a cada fiada
+      let x = (r%2) ? -(SW/2+GAP) : -(HW/2+GAP);
+      let stretcher = (r%2)===0;
+      let c=0;
+      while(x < W){
+        const w = stretcher ? SW : HW;
+        const wave = Math.sin(r*0.55 + c*0.4 - t*2);
+        const a = 0.045 + 0.055*(wave*0.5+0.5);
+        if(wave>0.955)      ctx.fillStyle='rgba(220,36,31,'+(a*1.6)+')';
+        else if(wave<-0.965)ctx.fillStyle='rgba(0,54,136,'+(a*1.5)+')';
+        else                ctx.fillStyle='rgba(20,22,26,'+a+')';
+        ctx.fillRect(x, y, w, BH);
+        x += w + GAP; stretcher = !stretcher; c++;
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ===================== 02 mapa do metrô: geografia ⇄ diagrama ===================== */
+(function(){
+  const cv=document.getElementById('tube'), btn=document.getElementById('tubeBtn'), dEl=document.getElementById('tubeDesc');
+  // gx,gy = posição geográfica real (normalizada); dx,dy = posição no diagrama de Beck
+  const S=[
+    {n:'Paddington',      gx:0.000,gy:0.412, dx:0.000,dy:0.4286, lab:'r', mob:1},
+    {n:'Baker Street',    gx:0.202,gy:0.235, dx:0.182,dy:0.1429, lab:'u'},
+    {n:'Great Portland St',gx:0.340,gy:0.176,dx:0.273,dy:0.0000},
+    {n:'Euston',          gx:0.457,gy:0.059, dx:0.364,dy:0.0000, lab:'u'},
+    {n:"King's Cross",    gx:0.553,gy:0.000, dx:0.636,dy:0.0000, lab:'u', mob:1, sn:"King's X"},
+    {n:'Farringdon',      gx:0.755,gy:0.294, dx:0.818,dy:0.0000},
+    {n:'Russell Square',  gx:0.553,gy:0.206, dx:0.727,dy:0.1429},
+    {n:'Liverpool Street',gx:1.000,gy:0.353, dx:1.000,dy:0.2857, lab:'l', sn:'Liverpool St'},
+    {n:'Oxford Circus',   gx:0.362,gy:0.441, dx:0.364,dy:0.4286, lab:'d', mob:1, sn:'Oxford Cir'},
+    {n:'Tottenham Ct Rd', gx:0.479,gy:0.412, dx:0.545,dy:0.4286, sn:'Tottenham CR'},
+    {n:'Holborn',         gx:0.596,gy:0.382, dx:0.727,dy:0.4286, lab:'u'},
+    {n:'Bank',            gx:0.926,gy:0.500, dx:1.000,dy:0.4286, lab:'l', mob:1},
+    {n:'Green Park',      gx:0.351,gy:0.676, dx:0.364,dy:0.5714, lab:'d'},
+    {n:'Piccadilly Circus',gx:0.447,gy:0.588,dx:0.455,dy:0.5714},
+    {n:'Leicester Square',gx:0.511,gy:0.559, dx:0.545,dy:0.5714, lab:'d', hi:1, mob:1, sn:'Leicester Sq'},
+    {n:'Covent Garden',   gx:0.553,gy:0.500, dx:0.636,dy:0.5714, lab:'u', hi:1, mob:1, sn:'Covent Gdn'},
+    {n:'Charing Cross',   gx:0.521,gy:0.647, dx:0.545,dy:0.7143},
+    {n:'Blackfriars',     gx:0.777,gy:0.529, dx:0.818,dy:0.7143},
+    {n:'Embankment',      gx:0.574,gy:0.676, dx:0.545,dy:0.8571},
+    {n:'Temple',          gx:0.660,gy:0.559, dx:0.727,dy:0.8571},
+    {n:'Victoria',        gx:0.340,gy:1.000, dx:0.182,dy:0.8571, lab:'r', mob:1},
+    {n:'Westminster',     gx:0.543,gy:0.853, dx:0.455,dy:1.0000, lab:'d', mob:1},
+    {n:"St James's Park", gx:0.447,gy:0.912, dx:0.273,dy:1.0000},
+    {n:'Waterloo',        gx:0.670,gy:0.794, dx:0.636,dy:1.0000, lab:'d'}
+  ];
+  const L=[
+    {c:'#E32017', o: 0, s:[8,9,10,11,7]},                              // Central
+    {c:'#003688', o: 0, s:[12,13,14,15,10,6,4]},                       // Piccadilly
+    {c:'#0098D4', o: 0, s:[20,12,8,3,4]},                              // Victoria
+    {c:'#B36305', o: 1, s:[0,1,8,13,16,18,23]},                        // Bakerloo
+    {c:'#00782A', o:-1, s:[0,1,2,3,4,5,7,11,17,19,18,21,22,20]}        // Circle / District
+  ];
+  const RIVER=[[0,.95],[.12,.92],[.25,.97],[.36,1],[.45,.97],[.52,.90],[.56,.80],[.60,.72],[.68,.70],[.78,.72],[.88,.70],[1,.76]];
+  const onCount={}; L.forEach(l=>l.s.forEach(i=>onCount[i]=(onCount[i]||0)+1));
+
+  let ctx,W,H,PX,PY,t=1,target=1,anim=null;
+  let narrow=false;
+  function geom(){ ctx=fit(cv,420); W=cv._w;H=cv._h; narrow=W<470; PX=narrow?34:Math.max(52,W*0.09); PY=narrow?26:30; }
+  function pos(i){ const s=S[i]; return { x:PX + lerp(s.gx,s.dx,t)*(W-2*PX), y:PY + lerp(s.gy,s.dy,t)*(H-2*PY) }; }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // o rio, que só existe na versão geográfica
+    const ra=(1-t)*0.5;
+    if(ra>0.01){
+      ctx.beginPath();
+      RIVER.forEach((p,i)=>{ const x=PX+p[0]*(W-2*PX), y=PY+p[1]*(H-2*PY); i?ctx.lineTo(x,y):ctx.moveTo(x,y); });
+      ctx.strokeStyle='rgba(0,152,212,'+ra+')'; ctx.lineWidth=13; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.stroke();
+    }
+    // as linhas
+    ctx.lineCap='round'; ctx.lineJoin='round';
+    L.forEach(l=>{
+      ctx.beginPath();
+      for(let k=0;k<l.s.length-1;k++){
+        const a=pos(l.s[k]), b=pos(l.s[k+1]);
+        const dx=b.x-a.x, dy=b.y-a.y, m=Math.hypot(dx,dy)||1;
+        const ox=-dy/m*l.o*3.2, oy=dx/m*l.o*3.2;
+        ctx.moveTo(a.x+ox,a.y+oy); ctx.lineTo(b.x+ox,b.y+oy);
+      }
+      ctx.strokeStyle=l.c; ctx.lineWidth=4.6; ctx.stroke();
+    });
+    // as estações
+    S.forEach((s,i)=>{
+      const p=pos(i), inter=onCount[i]>1, r=inter?5.2:3.6;
+      ctx.beginPath(); ctx.arc(p.x,p.y,r,0,7); ctx.fillStyle='#fff'; ctx.fill();
+      ctx.strokeStyle=s.hi?'#DC241F':'#14161a'; ctx.lineWidth=s.hi?2.2:1.6; ctx.stroke();
+      if(!s.lab || (narrow && !s.mob)) return;
+      const nm = narrow && s.sn ? s.sn : s.n;
+      ctx.fillStyle=s.hi?'#DC241F':'#61666e';
+      ctx.font=(s.hi?'700 ':'')+(narrow?'8.5px':'10.5px')+' "Space Mono", monospace';
+      ctx.textBaseline='middle'; ctx.lineJoin='round';
+      ctx.strokeStyle='rgba(250,250,251,.95)'; ctx.lineWidth=3.5;
+      const off = narrow?7:9, voff = narrow?11:13;
+      const lx = s.lab==='r' ? p.x+off : (s.lab==='l' ? p.x-off : p.x);
+      const ly = s.lab==='u' ? p.y-voff : (s.lab==='d' ? p.y+voff+1 : p.y);
+      ctx.textAlign = s.lab==='r' ? 'left' : (s.lab==='l' ? 'right' : 'center');
+      ctx.strokeText(nm,lx,ly); ctx.fillText(nm,lx,ly);
+    });
+    // a distância real entre Leicester Square e Covent Garden
+    if(t<0.55){
+      const a=pos(14), b=pos(15);
+      ctx.fillStyle='rgba(220,36,31,'+(0.85*(1-t/0.55))+')';
+      ctx.font='9.5px "Space Mono", monospace'; ctx.textAlign='left';
+      ctx.fillText('260 m', (a.x+b.x)/2+14, (a.y+b.y)/2);
+    }
+  }
+  function go(to){
+    target=to; if(anim) cancelAnimationFrame(anim);
+    const from=t, t0=performance.now();
+    (function step(now){
+      const k=clamp((now-t0)/620,0,1); t=lerp(from,target,ease(k)); draw();
+      if(k<1) anim=requestAnimationFrame(step);
+    })(t0);
+  }
+  const TXT={
+    bdiag:{pt:'vista: diagrama de Beck', en:'view: Beck diagram'},
+    bgeo :{pt:'vista: geografia real',   en:'view: real geography'},
+    diag :{pt:'O diagrama de 1931. Todas as linhas em 45° e 90°, estações igualmente espaçadas e o centro esticado para caber. Fácil de ler, e geograficamente falso.',
+           en:'The 1931 diagram. Every line at 45° and 90°, stations evenly spaced and the centre stretched to fit. Easy to read, and geographically false.'},
+    geo  :{pt:'As posições reais das mesmas estações, com o Tâmisa no lugar. Tudo se aperta no centro, os ângulos são irregulares e os nomes não cabem. Honesto, e quase inútil para achar uma baldeação.',
+           en:'The real positions of the same stations, with the Thames back in place. Everything crowds into the centre, the angles are irregular and the names do not fit. Honest, and close to useless for finding an interchange.'}
+  };
+  function label(){
+    const d = target>0.5;
+    btn.classList.toggle('on',d);
+    btn.textContent = T(d?TXT.bdiag:TXT.bgeo);
+    dEl.textContent = T(d?TXT.diag:TXT.geo);
+  }
+  btn.addEventListener('click',()=>{ go(target<0.5?1:0); label(); });
+  HOOKS.push(function(){ label(); draw(); });
+  addEventListener('resize',()=>{geom();draw();}); geom(); label(); draw();
+})();
+
+/* ===================== 03 o vento e a fuligem ===================== */
+(function(){
+  const cv=document.getElementById('wind'), btn=document.getElementById('windBtn'), dEl=document.getElementById('windDesc');
+  const TXT={
+    on :{pt:'O vento predominante empurra a fuligem do carvão para o leste. Quem pode escolher se muda para o lado de onde o vento vem, e o preço da terra acompanha o ar. A divisão social da cidade se desenha sozinha, camada por camada, ao longo de um século.',
+         en:'The prevailing wind pushes the coal soot east. Anyone who can choose moves to the side the wind comes from, and the price of land follows the air. The social division of the city draws itself, layer by layer, over a century.'},
+    off:{pt:'Sem vento, a fuligem cai perto de onde foi produzida e cobre todo mundo por igual. A cidade fica mais suja no conjunto, mas não se divide em dois. É a corrente de ar, e não a fumaça, que desenha o mapa social.',
+         en:'With no wind, the soot falls close to where it was made and covers everyone equally. The city is dirtier overall, but it does not split in two. It is the airflow, not the smoke, that draws the social map.'},
+    bon :{pt:'vento de oeste: ligado',    en:'westerly wind: on'},
+    boff:{pt:'vento de oeste: desligado', en:'westerly wind: off'},
+    W:{pt:'OESTE',en:'WEST'}, E:{pt:'LESTE',en:'EAST'},
+    land:{pt:'valor da terra',en:'land value'}, arrow:{pt:'vento de oeste',en:'westerly wind'}
+  };
+  const NB=72; let bins=new Float32Array(NB), parts=[], wind=true, ctx,W,H,PX,ground,mx=1;
+  const CH=[0.30,0.40,0.50,0.60,0.71];
+  function geom(){ ctx=fit(cv,400); W=cv._w;H=cv._h; PX=26; ground=Math.round(H*0.58); }
+  function reset(){ bins=new Float32Array(NB); parts=[]; mx=1; }
+  function ix(x){ return clamp(Math.floor((x-PX)/((W-2*PX)/NB)),0,NB-1); }
+  function emit(){
+    CH.forEach(f=>{
+      if(Math.random()>0.55) return;
+      const x=PX+f*(W-2*PX);
+      parts.push({ x:x+(Math.random()-.5)*4, y:ground-64,
+        vx: wind ? 1.00+Math.random()*0.80 : (Math.random()-.5)*0.42,
+        vy: -0.25-Math.random()*0.20, a:0.5+Math.random()*0.3 });
+    });
+    if(parts.length>520) parts.splice(0,parts.length-520);
+  }
+  function step(){
+    emit();
+    for(let i=parts.length-1;i>=0;i--){
+      const p=parts[i];
+      p.vy += 0.014; p.x += p.vx; p.y += p.vy; p.a *= 0.997;
+      if(p.y>=ground || p.x>W-PX || p.x<PX || p.a<0.05){
+        // quem sai pela borda leste continuou viajando: espalha nas últimas faixas
+        const b = p.x>W-PX ? NB-1-Math.floor(Math.random()*8) : ix(p.x);
+        bins[b]+=1; if(bins[b]>mx) mx=bins[b];
+        parts.splice(i,1);
+      }
+    }
+  }
+  function smooth(){
+    const out=new Float32Array(NB);
+    for(let i=0;i<NB;i++){ let sum=0,n=0;
+      for(let k=-3;k<=3;k++){ const j=i+k; if(j>=0&&j<NB){ sum+=bins[j]; n++; } }
+      out[i]=sum/n; }
+    let m=1; for(let i=0;i<NB;i++) if(out[i]>m) m=out[i];
+    for(let i=0;i<NB;i++) out[i]/=m;
+    return out;
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const iw=W-2*PX, bw=iw/NB, sm=smooth();
+    // fuligem depositada
+    for(let i=0;i<NB;i++){
+      const d=sm[i];
+      ctx.fillStyle='rgba(20,22,26,'+(0.04+0.55*d)+')';
+      ctx.fillRect(PX+i*bw, ground, bw+0.6, 30);
+    }
+    // linha do chão
+    ctx.beginPath(); ctx.moveTo(PX,ground+0.5); ctx.lineTo(W-PX,ground+0.5);
+    ctx.strokeStyle='rgba(20,22,26,.3)'; ctx.lineWidth=1; ctx.stroke();
+    // telhados e chaminés
+    ctx.fillStyle='rgba(20,22,26,.13)';
+    for(let x=PX;x<W-PX;x+=17){ const h=13+((x*37)%11); ctx.fillRect(x,ground-h,15,h); }
+    ctx.fillStyle='rgba(20,22,26,.5)';
+    CH.forEach(f=>{ const x=PX+f*iw; ctx.fillRect(x-4,ground-66,8,66); });
+    // partículas
+    parts.forEach(p=>{ ctx.beginPath(); ctx.arc(p.x,p.y,1.9,0,7); ctx.fillStyle='rgba(20,22,26,'+p.a*0.55+')'; ctx.fill(); });
+    // setas de vento
+    if(wind){
+      ctx.strokeStyle='rgba(0,152,212,.42)'; ctx.lineWidth=1.4; ctx.lineCap='round';
+      for(let k=0;k<3;k++){
+        const y=48+k*38, x0=PX+2, x1=PX+58;
+        ctx.beginPath(); ctx.moveTo(x0,y); ctx.lineTo(x1,y);
+        ctx.moveTo(x1-7,y-4); ctx.lineTo(x1,y); ctx.lineTo(x1-7,y+4); ctx.stroke();
+      }
+      ctx.fillStyle='rgba(0,152,212,.75)'; ctx.font='10px "Space Mono", monospace'; ctx.textAlign='left';
+      ctx.fillText(T(TXT.arrow), PX+2, 30);
+    }
+    // curva de valor da terra
+    const base=H-42, hMax=52, k=clamp(mx/24,0,1);
+    const wy=i=>base-(0.18+(1-sm[i])*0.82)*hMax*k;
+    ctx.beginPath(); ctx.moveTo(PX,base);
+    for(let i=0;i<NB;i++) ctx.lineTo(PX+(i+0.5)*bw, wy(i));
+    ctx.lineTo(W-PX,base); ctx.closePath();
+    ctx.fillStyle='rgba(0,54,136,.12)'; ctx.fill();
+    ctx.beginPath();
+    for(let i=0;i<NB;i++){ const x=PX+(i+0.5)*bw; i?ctx.lineTo(x,wy(i)):ctx.moveTo(x,wy(i)); }
+    ctx.strokeStyle='rgba(0,54,136,.7)'; ctx.lineWidth=1.6; ctx.stroke();
+    ctx.fillStyle='#949aa3'; ctx.font='10px "Space Mono", monospace';
+    ctx.textAlign='left';  ctx.fillText(T(TXT.W), PX, H-14);
+    ctx.textAlign='right'; ctx.fillText(T(TXT.E), W-PX, H-14);
+    ctx.textAlign='center';ctx.fillText(T(TXT.land), W/2, H-14);
+  }
+  function loop(){ step(); draw(); requestAnimationFrame(loop); }
+  function label(){
+    btn.classList.toggle('on',wind);
+    btn.textContent = T(wind?TXT.bon:TXT.boff);
+    dEl.textContent = T(wind?TXT.on:TXT.off);
+  }
+  btn.addEventListener('click',()=>{ wind=!wind; reset(); label(); });
+  HOOKS.push(label);
+  addEventListener('resize',()=>{geom();reset();}); geom(); label(); loop();
+})();
+
+/* ===================== 04 a régua U / não-U ===================== */
+(function(){
+  const cv=document.getElementById('uu'), tb=document.getElementById('uuTable'), dEl=document.getElementById('uuDesc');
+  const ROWS=[
+    ['toilet',        {pt:'o banheiro',      en:'where you wash your hands'}, 'lavatory, loo'],
+    ['serviette',     {pt:'o guardanapo',    en:'the cloth at dinner'},       'napkin'],
+    ['sweet, dessert',{pt:'a sobremesa',     en:'the last course'},           'pudding'],
+    ['settee, couch', {pt:'o sofá',          en:'the long soft thing'},       'sofa'],
+    ['pardon?',       {pt:'"como?"',         en:'when you did not hear'},     'what?'],
+    ['lounge',        {pt:'a sala de estar', en:'the room you sit in'},       'sitting room'],
+    ['perfume',       {pt:'o perfume',       en:'the bottle on the dresser'}, 'scent'],
+    ['wealthy',       {pt:'rico',            en:'having a lot of money'},     'rich']
+  ];
+  const LBL={
+    lo:{pt:'não-U',en:'non-U'}, hi:{pt:'U',en:'U'},
+    loS:{pt:'classe média',en:'middle class'}, hiS:{pt:'aristocracia',en:'aristocracy'},
+    dLo:{pt:'O lado "não-U": o vocabulário que Ross associou à classe média que quer soar refinada. Repare que quase toda palavra deste lado é a mais elegante das duas.',
+         en:'The "non-U" side: the vocabulary Ross associated with a middle class trying to sound refined. Notice that almost every word on this side is the more elegant of the two.'},
+    dHi:{pt:'O lado "U": o vocabulário da aristocracia. Palavras curtas, antigas e sem cerimônia, de quem não precisa provar nada a ninguém.',
+         en:'The "U" side: the vocabulary of the aristocracy. Short, old, unceremonious words, from people with nothing to prove to anyone.'},
+    dMid:{pt:'Arraste a régua. De um lado, o vocabulário que Ross chamou de "não-U"; do outro, o "U".',
+          en:'Drag the ruler. On one side, the vocabulary Ross called "non-U"; on the other, "U".'}
+  };
+  function fill(){
+    tb.innerHTML = ROWS.map(r=>'<tr><td class="lo"><span class="w">'+r[0]+'</span></td><td class="mid">'+T(r[1])+'</td><td class="hi"><span class="w">'+r[2]+'</span></td></tr>').join('');
+  }
+  fill();
+  var los, his;
+  function cache(){ los=[].slice.call(tb.querySelectorAll('.lo .w')); his=[].slice.call(tb.querySelectorAll('.hi .w')); }
+  cache();
+  let ctx,W,H,PX,v=0.5;
+  function geom(){ ctx=fit(cv,120); W=cv._w;H=cv._h; PX=Math.max(40,W*0.08); }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const y=H*0.58, x0=PX, x1=W-PX;
+    ctx.beginPath(); ctx.moveTo(x0,y); ctx.lineTo(x1,y);
+    ctx.strokeStyle='rgba(20,22,26,.18)'; ctx.lineWidth=2; ctx.lineCap='round'; ctx.stroke();
+    [[0,T(LBL.lo),T(LBL.loS)],[1,T(LBL.hi),T(LBL.hiS)]].forEach(e=>{
+      const x=lerp(x0,x1,e[0]);
+      ctx.beginPath(); ctx.moveTo(x,y-7); ctx.lineTo(x,y+7); ctx.strokeStyle='rgba(20,22,26,.28)'; ctx.lineWidth=1.4; ctx.stroke();
+      ctx.textAlign='center'; ctx.fillStyle='#14161a'; ctx.font='700 13px "Space Mono", monospace';
+      ctx.fillText(e[1], x, y-24);
+      ctx.fillStyle='#949aa3'; ctx.font='10px "Space Mono", monospace';
+      ctx.fillText(e[2], x, y+26);
+    });
+    const hx=lerp(x0,x1,v);
+    ctx.beginPath(); ctx.arc(hx,y,9,0,7); ctx.fillStyle='#DC241F'; ctx.fill();
+    ctx.beginPath(); ctx.arc(hx,y,9,0,7); ctx.strokeStyle='#fff'; ctx.lineWidth=2.5; ctx.stroke();
+  }
+  function update(){
+    const lo = v<=0.4, hi = v>=0.6;
+    los.forEach(e=>{ e.className='w'+(lo?' lit':(hi?' dimmed':'')); });
+    his.forEach(e=>{ e.className='w'+(hi?' lit':(lo?' dimmed':'')); });
+    dEl.textContent = lo ? T(LBL.dLo) : (hi ? T(LBL.dHi) : T(LBL.dMid));
+    draw();
+  }
+  HOOKS.push(function(){ fill(); cache(); update(); });
+  let down=false;
+  function handle(e){ const p=ptr(e,cv); v=clamp((p.x-PX)/(W-2*PX),0,1); update(); }
+  cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);handle(e);});
+  cv.addEventListener('pointermove',e=>{if(down)handle(e);});
+  cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  addEventListener('resize',()=>{geom();draw();}); geom(); update();
+})();
+
+/* ===================== 08 montar o prato ===================== */
+(function(){
+  const cv=document.getElementById('dish'), btn=document.getElementById('dishBtn'), rs=document.getElementById('dishReset');
+  const nEl=document.getElementById('dishName'), dEl=document.getElementById('dishDesc');
+  const LAY=[
+    {n:{pt:'Prato vazio',en:'Empty plate'},
+     d:{pt:'O prato nacional britânico tem quatro séculos e três continentes dentro dele. Clique para ver.',
+        en:'The British national dish has four centuries and three continents inside it. Click to see.'}},
+    {n:{pt:'1 · o frango e o forno de barro',en:'1 · the chicken and the clay oven'},
+     d:{pt:'No norte do subcontinente indiano, pedaços de frango marinado assados num tandoor, o forno de barro. Isto é o tikka, e é a única parte do prato que não passou pela Grã-Bretanha.',
+        en:'In the north of the Indian subcontinent, pieces of marinated chicken roasted in a tandoor, the clay oven. This is the tikka, and it is the only part of the dish that never passed through Britain.'}},
+    {n:{pt:'2 · as especiarias do império',en:'2 · the spices of empire'},
+     d:{pt:'A Companhia das Índias Orientais e, depois, o Raj trazem cominho, coentro, cúrcuma e garam masala para a cozinha britânica. Receitas de curry já eram publicadas em Londres no século XVIII.',
+        en:'The East India Company and later the Raj bring cumin, coriander, turmeric and garam masala into British cooking. Curry recipes were already being published in London in the eighteenth century.'}},
+    {n:{pt:'3 · o molho cremoso, e a discórdia',en:'3 · the creamy sauce, and the argument'},
+     d:{pt:'A camada que torna o prato britânico: um molho farto de tomate e creme, adaptado ao gosto local por carne servida com bastante molho. A origem exata é disputada, e a versão mais famosa a atribui a um restaurante de Glasgow nos anos 1970.',
+        en:'The layer that makes the dish British: a generous tomato and cream sauce, adapted to the local taste for meat served in plenty of gravy. The exact origin is disputed, and the most famous version credits a restaurant in Glasgow in the 1970s.'}},
+    {n:{pt:'4 · as casas de curry do East End',en:'4 · the curry houses of the East End'},
+     d:{pt:'Foram os restaurantes de imigrantes do atual Bangladesh, em boa parte da região de Sylhet, que espalharam o prato pelo país no pós-guerra. O naan ao lado vem daí, e o "curry house" vira instituição britânica.',
+        en:'It was the restaurants of immigrants from what is now Bangladesh, largely from the Sylhet region, that spread the dish across the country after the war. The naan on the side comes from there, and the curry house becomes a British institution.'}},
+    {n:{pt:'5 · 2001 · prato nacional',en:'5 · 2001 · national dish'},
+     d:{pt:'O chanceler Robin Cook o declara "um verdadeiro prato nacional britânico" e "a ilustração perfeita do modo como a Grã-Bretanha absorve e adapta influências de fora". O coentro por cima é o toque final.',
+        en:'Foreign Secretary Robin Cook declares it "a true British national dish" and "a perfect illustration of the way Britain absorbs and adapts external influences". The coriander on top is the finishing touch.'}}
+  ];
+  const DBTN={next:{pt:'montar a próxima camada',en:'add the next layer'},done:{pt:'prato completo',en:'dish complete'}};
+  let n=0, ctx,W,H,cx,cy,rx,ry;
+  // posições fixas, sorteadas uma vez só
+  const rnd=(s=>()=>((s=(s*9301+49297)%233280)/233280))(7);
+  const CHK=[],SPC=[],COR=[];
+  for(let i=0;i<8;i++){ const a=rnd()*6.283, r=Math.sqrt(rnd())*0.62; CHK.push([Math.cos(a)*r,Math.sin(a)*r,7+rnd()*4,rnd()*6.283]); }
+  for(let i=0;i<34;i++){ const a=rnd()*6.283, r=0.55+rnd()*0.42; SPC.push([Math.cos(a)*r,Math.sin(a)*r,1+rnd()*1.4,rnd()]); }
+  for(let i=0;i<14;i++){ const a=rnd()*6.283, r=Math.sqrt(rnd())*0.58; COR.push([Math.cos(a)*r,Math.sin(a)*r,rnd()*6.283]); }
+  function geom(){ ctx=fit(cv,330); W=cv._w;H=cv._h; cx=W/2; cy=H*0.52; rx=Math.min(W*0.32,150); ry=rx*0.44; }
+  function ell(x,y,a,b,fill,stroke,lw){
+    ctx.beginPath(); ctx.ellipse(x,y,a,b,0,0,7);
+    if(fill){ctx.fillStyle=fill;ctx.fill();}
+    if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lw||1;ctx.stroke();}
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ell(cx,cy+7,rx*1.16,ry*1.16,'rgba(20,22,26,.05)',null);          // sombra
+    ell(cx,cy,rx*1.14,ry*1.14,'#ffffff','rgba(20,22,26,.22)',1.2);   // prato
+    ell(cx,cy,rx*0.94,ry*0.94,null,'rgba(20,22,26,.10)',1);          // borda interna
+    if(n>=4){ // naan
+      ctx.save(); ctx.translate(cx+rx*1.15,cy+ry*0.35); ctx.rotate(-0.35);
+      ell(0,0,rx*0.40,rx*0.22,'#E6CE96','rgba(20,22,26,.20)',1);
+      ctx.fillStyle='rgba(140,90,40,.35)';
+      for(let i=0;i<6;i++){ ctx.beginPath(); ctx.arc(-rx*0.22+i*rx*0.09,(i%2?-1:1)*rx*0.05,2.2,0,7); ctx.fill(); }
+      ctx.restore();
+    }
+    if(n>=3) ell(cx,cy,rx*0.86,ry*0.86,'rgba(198,86,42,.88)',null);  // molho
+    if(n>=1) CHK.forEach(c=>{                                         // frango
+      ctx.save(); ctx.translate(cx+c[0]*rx*0.78, cy+c[1]*ry*0.78); ctx.rotate(c[3]);
+      ell(0,0,c[2],c[2]*0.72,'#A8562F','rgba(60,26,10,.55)',1.1);
+      ctx.restore();
+    });
+    if(n>=2) SPC.forEach(s=>{                                         // especiarias
+      ctx.beginPath(); ctx.arc(cx+s[0]*rx*0.98, cy+s[1]*ry*0.98, s[2],0,7);
+      ctx.fillStyle = s[3]>0.5 ? 'rgba(179,99,5,.75)' : 'rgba(140,58,30,.7)'; ctx.fill();
+    });
+    if(n>=5) COR.forEach(c=>{                                         // coentro
+      ctx.save(); ctx.translate(cx+c[0]*rx*0.72, cy+c[1]*ry*0.72); ctx.rotate(c[2]);
+      ctx.fillStyle='rgba(0,120,42,.8)'; ctx.fillRect(-3.5,-1,7,2); ctx.restore();
+    });
+    nEl.textContent=T(LAY[n].n); dEl.textContent=T(LAY[n].d);
+    btn.textContent = T(n>=LAY.length-1 ? DBTN.done : DBTN.next);
+    btn.disabled = n>=LAY.length-1;
+    btn.style.opacity = n>=LAY.length-1 ? .45 : 1;
+  }
+  btn.addEventListener('click',()=>{ if(n<LAY.length-1){ n++; draw(); } });
+  rs.addEventListener('click',()=>{ n=0; draw(); });
+  HOOKS.push(draw);
+  addEventListener('resize',()=>{geom();draw();}); geom(); draw();
+})();
+
+/* ===================== 09 roda do ano ===================== */
+(function(){
+  const cv=document.getElementById('wheel');
+  const nEl=document.getElementById('fName'), lEl=document.getElementById('fLine'), wEl=document.getElementById('fWhen');
+  const M={pt:['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'],
+           en:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']};
+  const CEN={pt:['o ano','britânico'],en:['the British','year']};
+  const F=[
+    {name:{pt:'Burns Night',en:'Burns Night'}, when:{pt:'25 de janeiro',en:'25 January'},
+     li:{pt:'A ceia escocesa em honra do poeta Robert Burns, com haggis, uísque e poema recitado em pé.',
+         en:'The Scottish supper in honour of the poet Robert Burns, with haggis, whisky and a poem recited standing up.'}},
+    {name:{pt:'Pancake Day',en:'Pancake Day'}, when:{pt:'fevereiro ou março',en:'February or March'},
+     li:{pt:'A terça-feira antes da Quaresma, quando o país come panquecas para gastar ovo e manteiga. Há corridas de rua com frigideira na mão.',
+         en:'The Tuesday before Lent, when the country eats pancakes to use up eggs and butter. There are street races run with a frying pan in hand.'}},
+    {name:{pt:'St Patrick e a primavera',en:'St Patrick and the spring'}, when:{pt:'17 de março',en:'17 March'},
+     li:{pt:'A festa irlandesa que Londres adotou, e o começo do único mês do ano em que os britânicos falam bem do tempo.',
+         en:'The Irish feast London adopted, and the start of the one month of the year when the British speak well of the weather.'}},
+    {name:{pt:'Páscoa e a Maratona',en:'Easter and the Marathon'}, when:{pt:'abril',en:'April'},
+     li:{pt:'Sexta-feira Santa e a segunda-feira de Páscoa são feriados. No fim do mês, a maratona para meia cidade.',
+         en:'Good Friday and Easter Monday are bank holidays. At the end of the month, the marathon stops half the city.'}},
+    {name:{pt:'Dois feriados e as flores',en:'Two bank holidays and the flowers'}, when:{pt:'maio',en:'May'},
+     li:{pt:'Maio tem dois bank holidays sem nenhum conteúdo religioso, e o Chelsea Flower Show, que é levado a sério de um jeito difícil de explicar.',
+         en:'May has two bank holidays with no religious content at all, and the Chelsea Flower Show, taken seriously in a way that is hard to explain.'}},
+    {name:{pt:'Trooping the Colour',en:'Trooping the Colour'}, when:{pt:'junho',en:'June'},
+     li:{pt:'O aniversário oficial do monarca, que não é o aniversário real dele, com desfile militar e a família na sacada do palácio.',
+         en:"The monarch's official birthday, which is not their actual birthday, with a military parade and the family on the palace balcony."}},
+    {name:{pt:'Wimbledon e os Proms',en:'Wimbledon and the Proms'}, when:{pt:'julho',en:'July'},
+     li:{pt:'O tênis com morango e creme, e o início da temporada de concertos do Royal Albert Hall, com ingresso em pé por poucas libras.',
+         en:'The tennis with strawberries and cream, and the start of the Royal Albert Hall concert season, with standing tickets for a few pounds.'}},
+    {name:{pt:'Notting Hill Carnival',en:'Notting Hill Carnival'}, when:{pt:'último fim de semana de agosto',en:'last weekend of August'},
+     li:{pt:'O maior carnaval de rua da Europa, com sound systems, plumas e um milhão de pessoas. Desce da resposta caribenha aos ataques racistas de 1958.',
+         en:'The biggest street carnival in Europe, with sound systems, feathers and a million people. It descends from the Caribbean response to the racist attacks of 1958.'}},
+    {name:{pt:'Open House',en:'Open House'}, when:{pt:'setembro',en:'September'},
+     li:{pt:'O fim de semana em que centenas de prédios normalmente fechados abrem as portas de graça, de casas particulares a torres de escritório.',
+         en:'The weekend when hundreds of normally closed buildings open their doors for free, from private houses to office towers.'}},
+    {name:{pt:'Diwali em Trafalgar Square',en:'Diwali in Trafalgar Square'}, when:{pt:'outubro',en:'October'},
+     li:{pt:'A festa das luzes, celebrada em praça pública no centro da cidade. E o mês em que escurece às quatro da tarde.',
+         en:'The festival of lights, celebrated in a public square in the centre of the city. And the month when it gets dark at four in the afternoon.'}},
+    {name:{pt:'Bonfire Night e Remembrance',en:'Bonfire Night and Remembrance'}, when:{pt:'5 e 11 de novembro',en:'5 and 11 November'},
+     li:{pt:'Fogueiras e fogos pela conspiração que falhou em 1605, e depois a papoula vermelha na lapela pelos mortos das guerras.',
+         en:'Bonfires and fireworks for the plot that failed in 1605, and then the red poppy on the lapel for the war dead.'}},
+    {name:{pt:'Natal, panto e Boxing Day',en:'Christmas, panto and Boxing Day'}, when:{pt:'dezembro',en:'December'},
+     li:{pt:'As pantomimas de teatro, o almoço de Natal e o Boxing Day, dia 26, que é a segunda parte do feriado e o dia mais cheio do calendário do futebol.',
+         en:'The theatre pantomimes, Christmas lunch and Boxing Day, the 26th, which is the second half of the holiday and the fullest day in the football calendar.'}}
+  ];
+  const N=12, seg=2*Math.PI/N;
+  let ctx,W,H,cx,cy,R,rot=0,sel=0;
+  sel=new Date().getMonth();
+  rot=-sel*seg-seg/2;
+  function geom(){ ctx=fit(cv,430); W=cv._w;H=cv._h;cx=W/2;cy=H/2;R=Math.min(W,H)/2-40; }
+  function topIndex(){ let idx=0,bd=1e9; for(let i=0;i<N;i++){ let ph=(i*seg+seg/2+rot)%(2*Math.PI); ph=((ph+2*Math.PI)%(2*Math.PI)); if(ph>Math.PI)ph-=2*Math.PI; if(Math.abs(ph)<bd){bd=Math.abs(ph);idx=i;} } return idx; }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.beginPath(); ctx.arc(cx,cy,R+14,0,7); ctx.strokeStyle='rgba(20,22,26,.08)'; ctx.lineWidth=1; ctx.stroke();
+    sel=topIndex();
+    for(let i=0;i<N;i++){ const a0=rot+i*seg-Math.PI/2, a1=a0+seg, active=i===sel;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,R,a0,a1); ctx.closePath();
+      ctx.fillStyle=active?'rgba(220,36,31,.13)':'rgba(20,22,26,.015)'; ctx.fill();
+      ctx.strokeStyle='rgba(20,22,26,.07)'; ctx.lineWidth=1; ctx.stroke();
+      const am=a0+seg/2, lr=R*0.82, lx=cx+Math.cos(am)*lr, ly=cy+Math.sin(am)*lr;
+      ctx.save(); ctx.translate(lx,ly); ctx.fillStyle=active?'#14161a':'#949aa3';
+      ctx.font=(active?'700 ':'400 ')+'13px "Space Mono", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(T(M)[i],0,0); ctx.restore(); }
+    ctx.beginPath(); ctx.arc(cx,cy,R*0.54,0,7); ctx.fillStyle='#fff'; ctx.fill(); ctx.strokeStyle='rgba(20,22,26,.1)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.fillStyle='#949aa3'; ctx.font='11px "Space Mono", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(T(CEN)[0], cx, cy-10); ctx.fillText(T(CEN)[1], cx, cy+8);
+    ctx.beginPath(); ctx.moveTo(cx,cy-R-16); ctx.lineTo(cx-7,cy-R-28); ctx.lineTo(cx+7,cy-R-28); ctx.closePath(); ctx.fillStyle='#DC241F'; ctx.fill();
+    const f=F[sel]; nEl.textContent=T(f.name); lEl.textContent=T(f.li); wEl.textContent=T(f.when);
+  }
+  let down=false,lastA=0; function angleOf(e){ const p=ptr(e,cv); return Math.atan2(p.y-cy,p.x-cx); }
+  cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);lastA=angleOf(e);});
+  cv.addEventListener('pointermove',e=>{ if(!down)return; const a=angleOf(e); let d=a-lastA; if(d>Math.PI)d-=2*Math.PI; if(d<-Math.PI)d+=2*Math.PI; rot+=d; lastA=a; draw(); });
+  cv.addEventListener('pointerup',()=>down=false); cv.addEventListener('pointercancel',()=>down=false);
+  HOOKS.push(draw);
+  addEventListener('resize',()=>{geom();draw();}); geom(); draw();
+})();
+
+/* ===================== 11 o prédio de Brick Lane ===================== */
+(function(){
+  const cv=document.getElementById('brick'), btn=document.getElementById('brickBtn'), rs=document.getElementById('brickReset');
+  const nEl=document.getElementById('brickName'), dEl=document.getElementById('brickDesc');
+  const LIVES=[
+    {n:{pt:'1743 · capela huguenote',en:'1743 · Huguenot chapel'},
+     d:{pt:'Construída como La Neuve Eglise pelos protestantes franceses que fugiram da perseguição religiosa na França. No frontão eles puseram um relógio de sol com a data e a frase "Umbra sumus", somos sombra.',
+        en:'Built as La Neuve Eglise by the French Protestants who fled religious persecution in France. Into the pediment they set a sundial with the date and the line "Umbra sumus", we are shadow.'}},
+    {n:{pt:'1819 · capela metodista',en:'1819 · Methodist chapel'},
+     d:{pt:'Os huguenotes se dissolvem na população inglesa em duas ou três gerações e o prédio passa às mãos dos metodistas, que por um tempo o usam também como missão para converter judeus ao cristianismo.',
+        en:'The Huguenots dissolve into the English population within two or three generations and the building passes to the Methodists, who for a time also use it as a mission to convert Jews to Christianity.'}},
+    {n:{pt:'1897 · sinagoga Machzike Hadath',en:'1897 · Machzike Hadath synagogue'},
+     d:{pt:'O East End recebe a grande imigração judaica do leste europeu. O prédio é comprado por um grupo ultraortodoxo vindo da Lituânia, insatisfeito com o relaxamento dos judeus já estabelecidos em Londres, e vira sinagoga.',
+        en:'The East End receives the great Jewish migration from eastern Europe. The building is bought by an ultra-orthodox group from Lithuania, unhappy with the laxity of the Jews already settled in London, and becomes a synagogue.'}},
+    {n:{pt:'1976 · Brick Lane Jamme Masjid',en:'1976 · Brick Lane Jamme Masjid'},
+     d:{pt:'A população judaica se muda para os subúrbios e chega a imigração de Bangladesh, sobretudo de Sylhet. O prédio vira mesquita, e em 2009 ganha um minarete de metal na fachada da Brick Lane. O relógio de sol de 1743 continua lá.',
+        en:'The Jewish population moves to the suburbs and migration arrives from Bangladesh, mostly from Sylhet. The building becomes a mosque, and in 2009 gains a steel minaret on its Brick Lane front. The 1743 sundial is still there.'}}
+  ];
+  const BBTN={next:{pt:'a vida seguinte →',en:'the next life →'},done:{pt:'e continua ali',en:'and it is still there'},
+              addr:{pt:'Brick Lane, esquina com Fournier Street',en:'Brick Lane, corner of Fournier Street'}};
+  let k=0, ctx,W,H;
+  function geom(){ ctx=fit(cv,380); W=cv._w;H=cv._h; }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const bw=Math.min(W*0.52,250), bh=H*0.62, bx=W/2-bw/2-(k===3?14:0), by=H-46-bh, pedH=bw*0.24;
+    // minarete (só na última vida)
+    if(k===3){
+      const mx=bx+bw+26, mw=17, mtop=by-pedH-24;
+      ctx.fillStyle='rgba(20,22,26,.10)'; ctx.fillRect(mx,mtop,mw,H-46-mtop);
+      ctx.strokeStyle='rgba(20,22,26,.35)'; ctx.lineWidth=1.2; ctx.strokeRect(mx,mtop,mw,H-46-mtop);
+      ctx.beginPath(); ctx.moveTo(mx-4,mtop); ctx.lineTo(mx+mw/2,mtop-20); ctx.lineTo(mx+mw+4,mtop); ctx.closePath();
+      ctx.fillStyle='rgba(20,22,26,.28)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(mx+mw/2,mtop-31,5.5,0.6,5.1); ctx.strokeStyle='#DC241F'; ctx.lineWidth=2; ctx.stroke();
+    }
+    // corpo de tijolo
+    ctx.fillStyle='#F0EAE2'; ctx.fillRect(bx,by,bw,bh);
+    ctx.strokeStyle='rgba(20,22,26,.10)'; ctx.lineWidth=1;
+    for(let y=by+9;y<by+bh;y+=9){ ctx.beginPath(); ctx.moveTo(bx,y); ctx.lineTo(bx+bw,y); ctx.stroke(); }
+    ctx.strokeStyle='rgba(20,22,26,.32)'; ctx.lineWidth=1.3; ctx.strokeRect(bx,by,bw,bh);
+    // frontão
+    ctx.beginPath(); ctx.moveTo(bx-10,by); ctx.lineTo(bx+bw/2,by-pedH); ctx.lineTo(bx+bw+10,by); ctx.closePath();
+    ctx.fillStyle='#F0EAE2'; ctx.fill(); ctx.strokeStyle='rgba(20,22,26,.32)'; ctx.lineWidth=1.3; ctx.stroke();
+    // o relógio de sol, que nunca sai
+    const sx=bx+bw/2, sy=by-pedH*0.42;
+    ctx.beginPath(); ctx.arc(sx,sy,13,Math.PI,2*Math.PI); ctx.strokeStyle='rgba(20,22,26,.5)'; ctx.lineWidth=1.2; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(sx-13,sy); ctx.lineTo(sx+13,sy); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(sx-9,sy-9); ctx.strokeStyle='rgba(20,22,26,.7)'; ctx.lineWidth=1.6; ctx.stroke();
+    ctx.fillStyle='#61666e'; ctx.font='7.5px "Space Mono", monospace'; ctx.textAlign='center';
+    ctx.fillText('UMBRA SUMUS', sx, sy+11);
+    // janelas
+    const cols=3, wW=bw*0.18, wH=bh*0.24;
+    for(let r=0;r<2;r++) for(let c=0;c<cols;c++){
+      const x=bx+bw*0.12+c*(bw*0.76-wW)/(cols-1), y=by+bh*0.10+r*(bh*0.44);
+      ctx.fillStyle='rgba(20,22,26,.13)'; ctx.fillRect(x,y,wW,wH);
+      ctx.strokeStyle='rgba(20,22,26,.38)'; ctx.lineWidth=1.1; ctx.strokeRect(x,y,wW,wH);
+      ctx.beginPath(); ctx.moveTo(x+wW/2,y); ctx.lineTo(x+wW/2,y+wH); ctx.moveTo(x,y+wH/2); ctx.lineTo(x+wW,y+wH/2); ctx.stroke();
+    }
+    // porta em arco
+    const dW=bw*0.20, dH=bh*0.26, dx0=bx+bw/2-dW/2, dy0=by+bh-dH;
+    ctx.beginPath(); ctx.moveTo(dx0,by+bh); ctx.lineTo(dx0,dy0+dW/2);
+    ctx.arc(dx0+dW/2,dy0+dW/2,dW/2,Math.PI,0); ctx.lineTo(dx0+dW,by+bh);
+    ctx.fillStyle='rgba(20,22,26,.20)'; ctx.fill(); ctx.strokeStyle='rgba(20,22,26,.42)'; ctx.lineWidth=1.2; ctx.stroke();
+    // o símbolo que muda
+    const yx=bx+bw/2, yy=by+bh*0.53;
+    ctx.strokeStyle='#DC241F'; ctx.fillStyle='#DC241F'; ctx.lineWidth=2;
+    if(k===1){ ctx.beginPath(); ctx.moveTo(yx,yy-11); ctx.lineTo(yx,yy+11); ctx.moveTo(yx-7,yy-3); ctx.lineTo(yx+7,yy-3); ctx.stroke(); }
+    if(k===2){ for(let s=0;s<2;s++){ ctx.beginPath();
+        for(let i=0;i<3;i++){ const a=-Math.PI/2+s*Math.PI/3+i*2*Math.PI/3, x=yx+Math.cos(a)*11, y=yy+Math.sin(a)*11; i?ctx.lineTo(x,y):ctx.moveTo(x,y); }
+        ctx.closePath(); ctx.stroke(); } }
+    if(k===3){ ctx.beginPath(); ctx.arc(yx,yy,10,0.7,5.0); ctx.stroke(); }
+    // chão
+    ctx.beginPath(); ctx.moveTo(24,H-45.5); ctx.lineTo(W-24,H-45.5); ctx.strokeStyle='rgba(20,22,26,.25)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.fillStyle='#949aa3'; ctx.font='10px "Space Mono", monospace'; ctx.textAlign='center';
+    ctx.fillText(T(BBTN.addr), W/2, H-26);
+    nEl.textContent=T(LIVES[k].n); dEl.textContent=T(LIVES[k].d);
+    btn.textContent = T(k>=LIVES.length-1 ? BBTN.done : BBTN.next);
+    btn.disabled = k>=LIVES.length-1; btn.style.opacity = k>=LIVES.length-1 ? .45 : 1;
+  }
+  btn.addEventListener('click',()=>{ if(k<LIVES.length-1){ k++; draw(); } });
+  rs.addEventListener('click',()=>{ k=0; draw(); });
+  HOOKS.push(draw);
+  addEventListener('resize',()=>{geom();draw();}); geom(); draw();
+})();
+
+/* ===================== 10 quiz ===================== */
+(function(){
+  const quiz=document.getElementById('quiz'), dots=document.getElementById('qDots'), nextBtn=document.getElementById('qNext');
+  const L={ q:{pt:'pergunta',en:'question'}, of:{pt:'de',en:'of'},
+            next:{pt:'próxima →',en:'next →'}, again:{pt:'recomeçar ↺',en:'start again ↺'} };
+  const Q=[
+    {q:{pt:'Você entra num pub com três amigos. Qual é a jogada certa?',
+        en:'You walk into a pub with three friends. What is the right move?'},
+     opts:[
+      {ok:false,
+       t:{pt:'Cada um vai ao balcão e pede a sua bebida.',en:'Each of us goes to the bar and orders our own drink.'},
+       why:{pt:'Funciona, mas foge do sistema. No pub britânico, um vai ao balcão e paga a rodada inteira; na próxima, é a vez de outro. É um contrato de reciprocidade, e também evita quatro pessoas amontoadas no balcão.',
+            en:'It works, but it sidesteps the system. In a British pub one person goes to the bar and pays for the whole round; next time it is someone else\'s turn. It is a contract of reciprocity, and it also keeps four people from crowding the bar.'}},
+      {ok:true,
+       t:{pt:'Um vai ao balcão e paga a rodada inteira, e depois é a vez de outro.',en:'One of us goes to the bar and buys the whole round, then it is someone else\'s turn.'},
+       why:{pt:'Correto. A rodada é a forma padrão, com a mesma lógica de obrigação mútua do ayni peruano ou do giri japonês. Se você não bebe álcool, participe do mesmo jeito e pague a sua rodada.',
+            en:'Correct. The round is the default, with the same logic of mutual obligation as the Peruvian ayni or the Japanese giri. If you do not drink alcohol, take part anyway and buy your round.'}}
+     ]},
+    {q:{pt:'No metrô, alguém esbarra em você e diz "sorry". O que você responde?',
+        en:'On the Tube, someone bumps into you and says "sorry". What do you reply?'},
+     opts:[
+      {ok:false,
+       t:{pt:'Explico, com simpatia, que a culpa não foi minha.',en:'I explain, kindly, that it was not my fault.'},
+       why:{pt:'Esse "sorry" não é uma admissão de culpa. É uma das quinze funções da palavra, e aqui ela significa mais ou menos "reconheço que houve um contato entre nós". Explicar de quem foi a culpa soa estranho.',
+            en:'That "sorry" is not an admission of fault. It is one of the word\'s fifteen functions, and here it means roughly "I acknowledge that contact occurred between us". Explaining whose fault it was sounds strange.'}},
+      {ok:true,
+       t:{pt:'Digo "sorry" de volta.',en:'I say "sorry" back.'},
+       why:{pt:'Correto, por mais absurdo que pareça. 57% dos britânicos pedem desculpa quando é o outro que esbarra neles. O "sorry" recíproco encerra o assunto e todo mundo segue a vida.',
+            en:'Correct, absurd as it sounds. 57% of British people apologise when the other person bumps into them. The reciprocal "sorry" closes the matter and everyone moves on.'}}
+     ]},
+    {q:{pt:'Hora do rush, escada rolante do metrô, e você só quer descer parado. Onde fica?',
+        en:'Rush hour, Tube escalator, and you just want to ride down standing. Where do you stand?'},
+     opts:[
+      {ok:false,
+       t:{pt:'À esquerda, que é o lado de quem não tem pressa.',en:'On the left, which is the side for people in no hurry.'},
+       why:{pt:'É o contrário, e essa é uma das poucas regras que geram irritação visível em Londres. A esquerda é a faixa de ultrapassagem: quem anda passa por ali.',
+            en:'It is the other way round, and this is one of the few rules that produces visible irritation in London. The left is the overtaking lane: people who walk pass on that side.'}},
+      {ok:true,
+       t:{pt:'À direita, deixando a esquerda livre.',en:'On the right, leaving the left clear.'},
+       why:{pt:'Correto. Parado à direita, andando à esquerda. A regra é obedecida com uma disciplina que surpreende quem chega, e desrespeitá-la na hora do rush produz um silêncio muito eloquente.',
+            en:'Correct. Stand on the right, walk on the left. The rule is obeyed with a discipline that surprises newcomers, and breaking it at rush hour produces a very eloquent silence.'}}
+     ]},
+    {q:{pt:'Você apresenta uma ideia e o colega britânico responde: "that\'s very interesting". Isso quer dizer…',
+        en:'You put forward an idea and your British colleague replies: "that\'s very interesting". That means…'},
+     opts:[
+      {ok:false,
+       t:{pt:'Que ele gostou e quer saber mais.',en:'That they liked it and want to hear more.'},
+       why:{pt:'Quase nunca. No registro indireto britânico, "interessante" costuma ser a maneira educada de dizer que não convenceu. A regra prática: quanto mais educada a frase, mais atenção ela merece.',
+            en:'Almost never. In the indirect British register, "interesting" is usually the polite way of saying it did not convince. The practical rule: the more polite the sentence, the more attention it deserves.'}},
+      {ok:true,
+       t:{pt:'Que provavelmente ele não gostou.',en:'That they probably did not like it.'},
+       why:{pt:'Correto, na maioria dos casos. O mesmo vale para "com o maior respeito", que anuncia uma discordância forte, e para "vou levar isso em consideração", que costuma significar o contrário.',
+            en:'Correct, in most cases. The same goes for "with the greatest respect", which announces strong disagreement, and for "I\'ll bear it in mind", which usually means the opposite.'}}
+     ]},
+    {q:{pt:'A conta do restaurante chega com um "service charge" de 12,5% já incluído, e o serviço foi bom. Você…',
+        en:'The restaurant bill arrives with a 12.5% service charge already included, and the service was good. You…'},
+     opts:[
+      {ok:false,
+       t:{pt:'Acrescento mais uns 10% de gorjeta.',en:'Add another 10% or so as a tip.'},
+       why:{pt:'Não é necessário e chega a causar estranheza. O service charge já é a gorjeta. Londres não funciona como os Estados Unidos nesse ponto.',
+            en:'It is unnecessary and can even cause puzzlement. The service charge is the tip. London does not work like the United States on this point.'}},
+      {ok:true,
+       t:{pt:'Pago a conta como veio.',en:'Pay the bill as it came.'},
+       why:{pt:'Correto. E vale saber o outro lado: esse valor é discricionário por lei, então, se o serviço tiver sido ruim, você pode pedir para retirá-lo sem constrangimento. No balcão do pub, aliás, não se dá gorjeta nenhuma.',
+            en:'Correct. And it is worth knowing the other side: that amount is discretionary by law, so if the service was poor you can ask for it to be removed without embarrassment. At the pub bar, incidentally, you do not tip at all.'}}
+     ]}
+  ];
+  let step=0, answered=[];
+  function build(){
+    quiz.querySelectorAll('.q-step').forEach(e=>e.remove());
+    dots.innerHTML=''; step=0; answered=[];
+    Q.forEach((item,qi)=>{
+      const div=document.createElement('div'); div.className='q-step'+(qi===0?' active':''); div.dataset.i=qi;
+      let html='<div class="q-num">'+T(L.q)+' '+(qi+1)+' '+T(L.of)+' '+Q.length+'</div><div class="q-text">'+T(item.q)+'</div>';
+      item.opts.forEach((o,oi)=> html+='<button class="opt" data-q="'+qi+'" data-o="'+oi+'">'+T(o.t)+'<span class="mk"></span></button>');
+      item.opts.forEach((o,oi)=> html+='<div class="explain" data-ex="'+qi+'-'+oi+'">'+T(o.why)+'</div>');
+      div.innerHTML=html; quiz.insertBefore(div, quiz.querySelector('.q-nav'));
+      const dot=document.createElement('i'); if(qi===0)dot.className='on'; dots.appendChild(dot);
+    });
+    nextBtn.style.display='none'; nextBtn.textContent=T(L.next); delete nextBtn.dataset.done;
+  }
+  quiz.addEventListener('click',e=>{
+    const b=e.target.closest('.opt'); if(!b) return;
+    const qi=+b.dataset.q, oi=+b.dataset.o; if(answered[qi]!==undefined) return;
+    answered[qi]=oi; const opt=Q[qi].opts[oi];
+    b.classList.add(opt.ok?'correct':'wrong'); b.querySelector('.mk').textContent=opt.ok?'✓':'✕';
+    const stepEl=b.closest('.q-step');
+    if(!opt.ok){ Q[qi].opts.forEach((o,i)=>{ if(o.ok){ const cb=stepEl.querySelector('.opt[data-o="'+i+'"]'); cb.classList.add('correct'); cb.querySelector('.mk').textContent='✓'; } }); }
+    stepEl.querySelectorAll('.opt').forEach(x=>x.style.pointerEvents='none');
+    stepEl.querySelector('.explain[data-ex="'+qi+'-'+oi+'"]').classList.add('show');
+    nextBtn.style.display='inline-block';
+    if(step===Q.length-1){ nextBtn.textContent=T(L.again); nextBtn.dataset.done='1'; }
+  });
+  nextBtn.addEventListener('click',()=>{
+    if(nextBtn.dataset.done){ build(); return; }
+    step++; quiz.querySelectorAll('.q-step').forEach((s,i)=>s.classList.toggle('active',i===step));
+    dots.querySelectorAll('i').forEach((d,i)=>d.className=i<=step?'on':''); nextBtn.style.display='none';
+  });
+  HOOKS.push(build);
+  build();
+})();
+
+/* ================= dicionário EN ================= */
+var EN = {
+"hero.eyebrow1": "British culture · interactive article",
+"hero.p1": "Some British habits look odd at first, but nearly all of them have a concrete origin, and usually it traces back to a fire, a wind, an empire or a war. This article explains where a few of them come from, with small demonstrations for you to play with along the way.",
+"hero.figcaption1": "Brick laid in Flemish bond, the masonry that covers the whole of London. It is not a matter of taste: it is compliance with a law of 1667.",
+"s00.tag1": "<span class=\"n\">00</span> · introduction",
+"s00.h21": "Small habits with concrete origins",
+"s00.p1": "People arriving in London for the first time tend to notice things that don't add up. People apologise when <em>you</em> bump into <em>them</em>. The national dish is Indian. The pub, which is the country's most important social institution, has no waiters, and closes early for a reason that has to do with munitions production in the First World War. The city's most famous map lies about where things are, deliberately, and works better for it.",
+"s00.p2": "Each of these habits has a reason, almost always tied to some point in the country's history. In this article I walk through a few of them and explain where they come from, using interactive demonstrations along the way. Understanding the reason behind a gesture <span class=\"mark\">changes the way you see it when you are there</span>.",
+"s01.tag1": "<span class=\"n\">01</span> · the frame",
+"s01.h21": "How London came to be",
+"s01.p1": "Before looking at the details, it is worth setting the frame. Much of what London is today was shaped by five moments, from Roman soldiers crossing a river to a city in which more than three hundred languages are spoken. Keep these markers in mind, because almost everything in the sections that follow descends from one of them.",
+"s01.h31": "The point where you could cross<span class=\"loc\">Londinium</span>",
+"s01.p2": "London was not born of a symbolic choice but of an engineering problem. The Romans needed to cross the Thames, and the spot they picked was the first point, coming up from the estuary, where the river was narrow and firm enough to take a bridge and still deep enough to take ships. The city that grew there acquired a wall, and the line of that wall <span class=\"mark\">still traces much of the boundary of the City</span>, the financial square mile. Two thousand years on, London's banks are still working inside the outline of a Roman camp.",
+"s01.h32": "The Great Fire, and the plan that was refused<span class=\"loc\">the Great Fire</span>",
+"s01.p3": "Over four days in September, the fire consumes most of the medieval city. Christopher Wren rushes to present Charles II with a baroque reconstruction plan of wide straight avenues, symmetry and monumental squares, which would have made London a Paris. The plan is rejected within weeks as impracticable: landowners would not give up the boundaries of their plots, and there was a fear that negotiations would drag on so long that the population would leave for good. London was rebuilt <span class=\"mark\">on exactly the same crooked streets as before</span>, only in brick and stone, because the Rebuilding Acts of 1667 and 1670 banned flammable materials. That is why the centre is a medieval maze with a rational skin over it, and why the whole city is the colour of brick.",
+"s01.h33": "The empire, the coal and the world's clock",
+"s01.p4": "London becomes the largest city that had ever existed, and the centre of an empire covering a quarter of the planet. On 10 January 1863 the world's first underground railway opens, between Paddington and Farringdon, dug by opening up the street, building the tunnel and closing it again; it carried thirty-eight thousand people on its first day. And the country starts setting the time for the rest of the world, almost by accident: the railways could not run with every town on its own local time, so they adopted Greenwich time, which in 1884 became the planet's zero meridian. Meanwhile the coal that drives all of this coats the city in soot, and the wind decides who will breathe it. Section 03 deals with that.",
+"s01.h34": "The Blitz<span class=\"loc\">the Blitz</span>",
+"s01.p5": "For months, the city is bombed almost every night. There is a detail of this story that is almost never told: <span class=\"mark\">the government tried to stop people sheltering in the Underground</span>, fearing disease, poor sanitation and the possibility that an underground crowd would become a focus of discontent. East Enders, who took the worst of the bombing and had the worst shelters, simply bought tickets, went down and did not come back up. Within weeks a hundred and twenty thousand people a night were sleeping in the stations, and the government gave in and started managing what it had failed to forbid. The British calm that became a legend around the world was not granted from above; in large part, it was taken.",
+"s01.h35": "The Windrush and the city of three hundred languages",
+"s01.p6": "On 22 June 1948 the ship <em>Empire Windrush</em> docks at Tilbury with more than eight hundred Caribbean passengers, answering a call for labour to rebuild a country wrecked by war. Weeks later, the British Nationality Act creates a citizenship common to the whole empire, and migration stops being an exception and becomes structural. The road was not a kind one: in 1958 there were racist attacks in Notting Hill, and it was in response to them that the Trinidadian <span class=\"term\" tabindex=\"0\" data-term=\"Claudia Jones · 1915–1964\">Claudia Jones</span>, founder of Britain's first major Black newspaper, organised the city's first Caribbean carnival. It was on 30 January 1959, held in January to match the date in Trinidad, and <span class=\"mark\">indoors, because London was far too cold to take it outside</span>. Seven years later the party moved into the streets of Notting Hill, and that is the line the biggest carnival in Europe descends from. Seventy-five years after the Windrush, <span class=\"mark\">four in every ten Londoners were born outside the United Kingdom</span> and more than three hundred languages are spoken in the city.",
+"s01.p7": "Two traits run through almost everything that follows. The first is that <span class=\"mark\">London was never planned</span>: Wren's scheme was refused, the city grew by swallowing villages, and the same reflex of preferring custom to design produced a country with no written constitution and a monarchy whose power exists only by convention. The second is <span class=\"mark\">the distance between what is said and what is meant</span>, which organises the language, the humour and the reading of class. Hold on to both.",
+"s02.tag1": "<span class=\"n\">02</span> · the map",
+"s02.h21": "A city with no plan, and a map that lies <span class=\"loc\">the Tube map</span>",
+"s02.p1": "London is not a city that grew outwards from a centre. It is a handful of villages that were glued to one another, first by the roads and then by the railway, and that never lost their names or their character. That is why Londoners talk about their neighbourhood the way you would talk about a village, with its own church, green and pub, and why the map has no radial logic at all. In 1938 a <span class=\"term\" tabindex=\"0\" data-term=\"Green Belt · the green belt of 1938\">green belt</span> had to be created by law around the city to stop it swallowing the countryside.",
+"s02.p2": "There is also a curiosity that confuses everyone: there are <strong>two cities</strong> inside London. The City of London, the financial square mile, has its own government, older than Parliament, its own Lord Mayor and even its own police force; the City of Westminster, next door, is where Parliament and the palace are. The Lord Mayor of the City is not the Mayor of London, they are different jobs. And a popular myth is worth dismantling: <span class=\"mark\">it is not true that the monarch needs permission to enter the City.</span> What exists is a ceremony, at Temple Bar, in which the Lord Mayor offers the Sword of State as a gesture of loyalty. It is protocol, not authorisation, and the confusion between the two says a great deal about a country that governs by custom.",
+"s02.p3": "The best image of this unplanned city is, ironically, the most famous piece of design it ever produced. In 1931 an unemployed technical draughtsman called <strong>Harry Beck</strong> decided to draw the Underground as though it were an electrical circuit: straight lines only, angles of 45 and 90 degrees only, stations evenly spaced, and geography thrown out. What mattered was the sequence of stops and where to change, not where things actually are. Frank Pick, the director, turned it down as too radical. A trial run of five hundred copies in 1932 went so well that the following year they printed seven hundred thousand. <span class=\"mark\">Beck traded topography for topology</span>, and since 2001 every Tube map has carried a credit to his name.",
+"s02.p4": "Press the button below to watch the map leave real geography and become the diagram, and back again.",
+"s02.figcaption1": "The same handful of stations, in their real positions and in the schematic. Watch what happens to the centre.",
+"s02.p5": "The distortion has a practical consequence that catches every tourist. Because the diagram stretches the centre to fit the names in, stations that are practically touching look far apart. The stretch between <strong>Leicester Square and Covent Garden</strong> is the shortest on the London Underground: <span class=\"mark\">two hundred and sixty metres</span>, a four-minute walk, and even so a few hundred people a day pay the full fare to do it by train. Almost all of them are tourists reading the map literally. The general rule in London is simple: <span class=\"mark\">look at the street map before you go down to the Tube.</span>",
+"s03.tag1": "<span class=\"n\">03</span> · the wind",
+"s03.h21": "Why the east is poor and the west is rich",
+"s03.p1": "Spend a few days in London and you will notice the city has sides. Kensington, Chelsea and Notting Hill, to the west, hold the old money; much of the east, historically, was the opposite of that. The divide is so sharp it became an everyday expression, the <em>West End</em> against the <em>East End</em>, and it is neither accident nor coincidence. It has an explanation that is largely physical, and it involves the wind.",
+"s03.p2": "At Britain's latitude the prevailing winds blow from the west. During the Industrial Revolution, when the city burned coal in every house, every factory and every locomotive, that wind did one very simple and very consequential thing: <span class=\"mark\">it pushed all the soot to the eastern side of the city</span>. Anyone with the money to choose where to live chose the side the wind came from, not the side it blew towards. Add the fact that the docks were in the east, and the divide closes: on one side, clean air and expensive houses; on the other, smoke, industry and heavy labour.",
+"s03.p3": "Switch the wind on and off in the demonstration below to watch the mechanism work.",
+"s03.figcaption1": "The same soot that enriched the empire drew the social map of the city that ran it.",
+"s03.p4": "Honesty requires saying that the wind does not explain everything. A University of Bristol study measured historic pollution as accounting for <span class=\"mark\">up to 15% of inequality within industrial cities in 1881</span>, which is a great deal, but is not the whole of it. The docks, the slums, speculation and inertia did the rest. The most interesting finding of that work is a different one: even after the smoke stopped, <span class=\"mark\">the neighbourhoods that were polluted are still the poor ones today</span>, with measurable differences in schooling and crime. The cause disappeared and the effect stayed.",
+"s03.p5": "The smoke had one last act. Between 5 and 9 December <strong>1952</strong>, an unusual cold snap and an anticyclone with no wind at all trapped the smoke of every coal fire in London over the city. The <span class=\"term\" tabindex=\"0\" data-term=\"the Great Smog · the great fog of 1952\">Great Smog</span> was so dense that buses stopped running and theatres closed because the audience could not see the stage. The initial official estimate was four thousand dead; later independent analysis put it at <span class=\"mark\">around twelve thousand</span>. Four years on came the Clean Air Act of 1956, and the London of yellow fog from Dickens and Sherlock Holmes ceased to exist. What survived it was the social drawing of the map.",
+"s04.tag1": "<span class=\"n\">04</span> · class",
+"s04.h21": "Vocabulary as an identity card",
+"s04.p1": "If the value that organises Japanese behaviour is the harmony of the group, and the Peruvian one is reciprocity, the British one is <strong>class</strong>. And the essential thing to grasp is that class, in Britain, <span class=\"mark\">was never only about money</span>. It is accent, school, taste, what you read, what you eat, and above all which word you use for the most ordinary things in the world.",
+"s04.p2": "In 1954 the linguist Alan Ross coined the terms <strong>U</strong> and <strong>non-U</strong>, from <em>upper class</em>, to describe this code, and the writer Nancy Mitford, herself a baron's daughter, popularised the idea in an essay that set off a national argument. The logic has a delicious irony at its centre: <span class=\"mark\">the finer word is the mark of the lower class</span>. The middle class reaches for the elegant term in order to sound refined; the aristocracy, having nothing to prove, keeps the plain, direct word. Drag the ruler below between the two sides.",
+"s04.figcaption1": "A parlour game from 1954 that the British still play, with less rigour and more embarrassment.",
+"s04.p3": "It is worth saying that this table is a snapshot of 1954, and no British person today takes it literally. But the mechanism it describes is very much alive, and now it runs more through sound than through vocabulary. The prestige accent of the twentieth century was <span class=\"term\" tabindex=\"0\" data-term=\"Received Pronunciation · &quot;BBC English&quot;\">RP</span>, which lost its dominance with the expansion of education and television. <strong>Cockney</strong>, traditionally the accent of anyone born within earshot of the bells of St Mary-le-Bow in the City, gave rise in the 1840s to a <span class=\"term\" tabindex=\"0\" data-term=\"rhyming slang · the rhyming slang of the East End\">game of rhyming slang</span> that probably served to keep bystanders from understanding. And today the default East End accent among the young is something else again, <strong>MLE</strong>, born in the 1980s out of the meeting between local speech and the Caribbean, African and South Asian languages of the immigrant boroughs. It is not a degraded Cockney: it is the language of a new city.",
+"s04.p4": "And the numbers show the system is not folklore. About <strong>7%</strong> of British children are educated privately. Among senior judges, those who came from private schools are <span class=\"mark\">62%</span>, and in the House of Lords, more than half. Accent opens and closes doors in a way almost no foreigner notices, and almost no British person needs to have explained.",
+"s05.tag1": "<span class=\"n\">05</span> · the language",
+"s05.h21": "Fifteen ways to say <span class=\"loc\">sorry</span>",
+"s05.p1": "The word you will hear most in London is <em>sorry</em>, and it almost never means an apology. The average British person says it <span class=\"mark\">eight or nine times a day</span>, and 88% admit to using it for things that are not their fault. The most revealing figure is this one: <strong>57% apologise when the other person bumps into them</strong>. Researchers have catalogued fifteen distinct uses of the word, and <span class=\"mark\">only one of them is regret</span>. The other fourteen are \"excuse me\", \"hello\", \"say that again\", \"may I get past?\", \"I disagree\", \"what a shame\", \"mind out\" and so on. If someone bumps into you and says <em>sorry</em>, the correct reply is to say <em>sorry</em> back.",
+"s05.p2": "This is the most visible case of a general trait: British English is <strong>oblique by default</strong>. Almost nothing is said head-on. A boss who says \"with the greatest respect\" is telling you that you have said something foolish; \"that's interesting\" usually means they did not like it; \"I'll bear it in mind\" means they have already forgotten it; and \"not bad\" is a sincere, warm compliment. The practical rule for an outsider is simple and useful: <span class=\"mark\">the more polite the sentence, the more attention it deserves</span>. Nobody is being false; they are being British, in a system where blunt directness reads as aggression.",
+"s05.p3": "The anthropologist Kate Fox, who wrote the reference book on the subject, also explains the other national cliché. Talking about the weather in London is not talking about the weather. It is what she calls <em>grooming talk</em>, the human equivalent of primates picking through each other's fur: a sound that means \"I am willing to interact with you\". <span class=\"mark\">\"Cold, isn't it?\" means \"hello\".</span> No meteorological information is being exchanged at all, and answering with a technical disagreement about the forecast is to miss the register entirely.",
+"s05.p4": "And then there is the humour, which is the national defence against sincerity. It works through irony, self-deprecation, <span class=\"term\" tabindex=\"0\" data-term=\"understatement · saying less than you mean\">understatement</span> and a deep suspicion of anyone who appears to be enjoying themselves too much. The Hungarian writer George Mikes put it better than anyone: understatement is not a speciality of English humour, <span class=\"mark\">it is a way of life</span>. Among friends, affection is shown through affectionate insults, <em>banter</em>. Cambridge linguists record British irony as one of the modes of speech most consistently misread by non-natives, and for a mechanical reason: it lacks the emphasis other languages use to signal that sarcasm is present. The sarcasm is delivered in the same tone as the straight sentence. That is the joke.",
+"s06.tag1": "<span class=\"n\">06</span> · getting along",
+"s06.h21": "The queue, the carriage and the square metre",
+"s06.p1": "The British queue is real and it is taken seriously. The origin is practical: the Industrial Revolution filled the cities with people who started and finished their shift at the same hour, and the queue solved the problem. But what turned it into a national identity was the Second World War and rationing. For years everyone waited their turn for food, for the shelter and for the train, and <span class=\"mark\">waiting your turn became a patriotic duty</span>. Pushing in stopped being bad manners and became something close to treason. It is still like that, and the punishment is not an argument: it is an embarrassing silence and a raised eyebrow, which in Britain hurt more. The queue is so central that it appears in the British citizenship test.",
+"s06.p2": "Other unwritten rules apply on the Underground. People speak little and quietly, avoid eye contact, and there is a rigid convention about the escalator: <span class=\"mark\">stand on the right, walk on the left</span>. Ignoring it at rush hour produces an impressive silent collective irritation. In the carriage, if several seats are free, you do not sit next to a stranger. And if the train stops in a tunnel for ten minutes with no explanation, nobody will complain out loud; at most someone will catch your eye and smile faintly, which is the most effusive appeal for solidarity the protocol allows.",
+"s06.p3": "On tipping, the rule differs from the American one and is worth knowing. In a restaurant with table service a <em>service charge</em> of 12.5% usually appears on the bill, and it <span class=\"mark\">is discretionary by law</span>: if the service was poor you can ask for it to be removed, and that is no scandal at all. If it is there, it is the tip and nothing more is expected. If it is not, 10% to 15% is normal. And at the pub bar you <strong>do not tip</strong>, full stop: you order, you pay, you carry your drink away, and nobody is expecting anything else.",
+"s06.p4": "All of this can give the impression of a rigid country, and the misunderstanding is worth clearing up. The British rule is not that everyone be the same, it is that <strong>nobody inconvenience anybody</strong>. Inside that boundary, tolerance for oddity is enormous, and it is old: the idea of the eccentric as an admirable figure rather than a problem to be corrected took shape in eighteenth-century England, and in 1933 Edith Sitwell published a whole catalogue of them, <em>The English Eccentrics</em>. It is the same country that produced Vivienne Westwood's punk on the King's Road, clubs devoted to the unlikeliest subjects, and the neighbour who paints the front of the house purple. <span class=\"mark\">You may be as eccentric as you like, provided you do not jump the queue.</span>",
+"s07.tag1": "<span class=\"n\">07</span> · the pub",
+"s07.h21": "The number one social institution <span class=\"loc\">the local</span>",
+"s07.p1": "The pub is not a bar. It is where British social life happens, and it comes with an entire rulebook that nobody explains out loud. The first rule is that <strong>there is no table service</strong>. You go to the bar, order, pay on the spot and carry your drink to the table. Sitting down and waiting is the fastest way to spend the evening thirsty. There is no drawn queue at the bar, but <span class=\"mark\">everyone knows exactly whose turn it is</span>, the bartender included, and jumping that invisible queue is one of the few things capable of producing open hostility in an English pub.",
+"s07.p2": "The second rule is the <strong>round</strong>. In a group nobody buys only their own drink: each person pays, in turn, for a whole round for everyone. It is a system of mutual obligation with the same logic as the Andean <em>ayni</em> or the Japanese <em>giri</em>, and it works as a contract to stay: whoever accepted a round is committed to remaining until they have bought theirs. Leaving before that is a serious offence, remembered for years. If you do not drink, take part anyway and buy your round; what matters is not the alcohol, it is the reciprocity.",
+"s07.p3": "The third is the closing time, and it has the unlikeliest origin of all. The cry of <em>last orders</em> at around eleven at night comes from no ancient tradition: it comes from the <strong>First World War</strong>. Before 1914, pubs opened from five in the morning until half past midnight. That year the <span class=\"term\" tabindex=\"0\" data-term=\"Defence of the Realm Act · the wartime powers act of 1914\">Defence of the Realm Act</span> cut the hours drastically, with the aim, stated by Lloyd George, of keeping workers sober enough to produce munitions. <span class=\"mark\">It even became illegal to buy a round for someone else.</span> The compulsory afternoon break survived until 1988, and real liberalisation came only in 2003. Which is to say: the British pub's opening hours are a fossil of a wartime industrial policy that ended more than a century ago.",
+"s07.p4": "Two final details. The names and painted signs of pubs, the Red Lion, the Queen's Head, the White Horse, come from a time when most of the clientele could not read and identification had to be visual. And the beer is not warm, despite the reputation: <em>real ale</em> is served cool, at cellar temperature, between eleven and thirteen degrees, which is the point at which it has flavour. Beer that is too cold tastes of nothing, and that is exactly what an English person will tell you if you complain.",
+"s08.tag1": "<span class=\"n\">08</span> · at the table",
+"s08.h21": "The national dish is Indian",
+"s08.p1": "British food has an old and unfair reputation, one that was deserved once and has not been for a long time. London today is one of the best cities in the world to eat in, and the reason is the same one that explains section 01: <span class=\"mark\">an empire that brought the world home</span> and, afterwards, eighty years of migration that turned that accident into a cuisine.",
+"s08.p2": "The best example is <strong>chicken tikka masala</strong>. In April 2001 the Foreign Secretary Robin Cook gave a celebrated speech calling it \"a true British national dish\" and \"a perfect illustration of the way Britain absorbs and adapts external influences\". Like Peruvian ceviche, it did not fall from the sky: it accumulated layers. Click to build it.",
+"s08.btnDish1": "start again",
+"s08.figcaption1": "Each layer of the dish comes from a different moment in British history.",
+"s08.p3": "The same crossing shows up in almost everything eaten there. <strong>Fish and chips</strong>, today the symbol of British popular food, takes its battered fried fish from the <span class=\"term\" tabindex=\"0\" data-term=\"Sephardim · Iberian Jews expelled by the Inquisition\">Sephardic Jews</span> of Portugal and Spain who fled the Inquisition in the sixteenth century; the first shop on record in London was opened in 1863 by a Jewish immigrant, Joseph Malin, though primacy is disputed with a shop in the north of England.",
+"s08.p4": "And then there is tea, perhaps the most British object in the world, and not British in the slightest. It arrives in 1662 with <strong>Catherine of Braganza</strong>, the Portuguese princess who married Charles II, and the East India Company takes over the trade two years later. The problem was that China would only accept silver as payment, and Britain did not have enough silver. The solution was to sell opium illegally to the Chinese to finance the purchase of tea, and out of that arrangement came the Opium Wars. <span class=\"mark\">The five o'clock cup of tea has a colonial war inside it.</span> Then came the Indian plantations: by 1901, 70% of the tea drunk in Britain came from there. The fifteen-minute <em>tea break</em> became a working-class institution, and even the question of whether the milk goes in before or after the tea is a class marker, because milk first was the habit of those with cheap cups, which cracked under thermal shock.",
+"s09.tag1": "<span class=\"n\">09</span> · the calendar",
+"s09.h21": "The year of festivals your trip will run into",
+"s09.p1": "Your trip will probably land on some date or other, and it is worth knowing which. The British calendar mixes the Anglican saints' days, the dates of the monarchy, a handful of <em>bank holidays</em> with no religious content whatsoever, and a few commemorations that make sense only if someone tells you the story. Spin the wheel below; it starts on the current month.",
+"s09.figcaption1": "Drag to spin. The pointer at the top marks the current month.",
+"s09.p2": "Some markers stand on their own. <strong>Bonfire Night</strong>, on 5 November, celebrates the <em>failure</em> of an attack: in 1605 a Catholic group tried to blow up Parliament during the state opening, and Guy Fawkes was arrested guarding the gunpowder beneath the House of Lords. In January 1606 Parliament decreed the date a day of thanksgiving, and to this day an effigy is burned on the bonfire to the sound of <span class=\"term\" tabindex=\"0\" data-term=\"from the traditional rhyme\">\"remember, remember the fifth of November\"</span>. A few days later comes <strong>Remembrance</strong>, when the entire country wears a red poppy for the war dead, and the poppy is taken very seriously indeed. In August, the <strong>Notting Hill Carnival</strong>, which descends from Claudia Jones's indoor carnival and became the biggest in Europe. And <strong>Boxing Day</strong>, 26 December, which is the second half of Christmas and the most important day in the English football calendar.",
+"s10.tag1": "<span class=\"n\">10</span> · in practice",
+"s10.h21": "The rules the trip teaches you",
+"s10.p1": "Some everyday London situations have a logic that is not obvious to a newcomer. Answer the questions below to see the reason behind each one.",
+"s10.figcaption1": "Each choice reveals the cultural reason behind the habit.",
+"s11.tag1": "<span class=\"n\">11</span> · the city",
+"s11.h21": "London from the inside",
+"s11.p1": "The city has axes worth knowing before you walk it. The first is the <strong>river</strong>, which is the reason London exists and remains a mental divide: there is an old joke, and only half a joke, about the cab driver who refuses to cross to the south. The second is the east–west axis of section 03, which still organises the price per square metre. The third is <strong>football</strong>, which in London is pure geography: Arsenal and Tottenham six kilometres apart in the north, in a rivalry that began in 1913 when Arsenal moved from Woolwich to Highbury and broke its neighbour's monopoly; Chelsea, Fulham and Brentford in the west; Crystal Palace in the south; West Ham in the east. The match between West Ham and Millwall was once called the <em>Dockers derby</em>, because it was dockers from the north bank against dockers from the south.",
+"s11.p2": "The <strong>parks</strong> have a history that explains their size. Hyde Park, Kensington Gardens and Regent's Park were land seized by Henry VIII from the monasteries in the sixteenth century to serve as the king's hunting ground. Charles I opened Hyde Park to the public in 1637, Charles II opened St James's soon after, and by the nineteenth century they were all open. <span class=\"mark\">London is green because a king wanted to hunt near the house.</span> In the garden squares of the wealthy boroughs, though, the logic is different: many began as private gardens for the residents and some are still locked, with keys only for those who live around them. And at <span class=\"term\" tabindex=\"0\" data-term=\"Speakers' Corner · near Marble Arch\">Speakers' Corner</span> anyone can still stand on a crate and say whatever they like.",
+"s11.p3": "But if there is one single object that sums London up, it stands on the corner of Brick Lane and Fournier Street in the East End, and it is an ordinary brick building. Click through its lives.",
+"s11.btnBrick1": "back to 1743",
+"s11.figcaption1": "One building, four communities, three religions, almost three hundred years.",
+"s11.p4": "Whoever built it set a sundial into the pediment with the date 1743 and a line from Horace: <strong><span class=\"loc\">Umbra sumus</span></strong>, we are shadow. The Huguenots wrote it thinking of the brevity of human life. Two hundred and eighty years later, with French, Methodists, Lithuanian Jews and Bangladeshis having passed beneath it, <span class=\"mark\">the line became, accidentally, the best definition of London anyone has written</span>.",
+"s13.tag1": "<span class=\"n\">13</span> · end",
+"s13.h21": "Looking with context",
+"s13.p1": "None of these habits has to be memorised for the trip to be worth it. What helps is knowing they exist and where they come from. When someone apologises because you bumped into them, you will recognise a word that almost never means an apology. When the pub calls <em>last orders</em> at eleven, you will recognise a law from 1914. When you notice that the money is all on one side of the city, you will recognise the wind. And when you pass a brick building on Brick Lane, you will recognise four migrations stacked into a single façade. Seeing London with that layer of context makes the looking richer, and <span class=\"mark\">it is also a form of respect</span> for a city that would rather not explain anything out loud.",
+"foot.p1": "Interactive draft v0.1. An article about the reasons behind a few British habits, with London at the centre and the United Kingdom around it, meant to be read before or during the trip.",
+"foot.p2": "Sources for the stories: the unwritten rules of English behaviour, in <em>Watching the English</em> by Kate Fox; Harry Beck's diagram (<a href=\"https://www.ltmuseum.co.uk/collections/stories/design/transforming-tube-map-harry-becks-iconic-design\">London Transport Museum</a>); the rejection of Wren's plan and the Rebuilding Acts (<a href=\"https://www.sciencemuseum.org.uk/objects-and-stories/great-fire-london-how-science-rebuilt-city\">Science Museum</a>); historic pollution and urban inequality (<a href=\"https://www.bristol.ac.uk/news/2016/november/industrial-pollution/\">University of Bristol</a>); the Great Smog of 1952 (<a href=\"https://www.britannica.com/event/Great-Smog-of-London\">Britannica</a>); the Underground as a shelter during the Blitz (<a href=\"https://www.londonmuseum.org.uk/collections/london-stories/londons-blitz-a-city-at-war/\">London Museum</a>); the Windrush (<a href=\"https://www.nationalarchives.gov.uk/education/resources/the-empire-windrush/empire-windrush-caribbean-migration/\">The National Archives</a>) and Claudia Jones (<a href=\"https://en.wikipedia.org/wiki/Claudia_Jones\">Wikipedia</a>); U and non-U (<a href=\"https://en.wikipedia.org/wiki/U_and_non-U_English\">Wikipedia</a>) and the schooling of the elite (<a href=\"https://www.suttontrust.com/our-research/elitist-britain-2025/\">Sutton Trust</a>); the Defence of the Realm Act 1914 (<a href=\"https://www.parliament.uk/about/living-heritage/transformingsociety/parliament-and-the-first-world-war/legislation-and-acts-of-war/defence-of-the-realm-act-1914/\">UK Parliament</a>); Greenwich Mean Time (<a href=\"https://www.rmg.co.uk/stories/time/greenwich-mean-time-gmt\">Royal Museums Greenwich</a>); the Brick Lane building (<a href=\"https://historicengland.org.uk/listing/the-list/list-entry/1240697\">Historic England</a>, <a href=\"https://londonist.com/london/history/brick-lane-mosque-east-london-church-synagogue-hugenots\">Londonist</a>); languages and origins of Londoners (2021 census, <a href=\"https://www.ons.gov.uk/aboutus/transparencyandgovernance/freedomofinformationfoi/languagesspokeninlondonin2021\">ONS</a>). For section 12: blue plaques (<a href=\"https://www.english-heritage.org.uk/visit/blue-plaques/about-blue-plaques/top-ten-blue-plaque-facts/\">English Heritage</a>); royal cyphers on post boxes (<a href=\"https://www.postalmuseum.org/blog/royal-cyphers-on-letterboxes/\">The Postal Museum</a>); coal holes (<a href=\"https://en.wikipedia.org/wiki/Coal_hole\">Wikipedia</a>); fire insurance marks and the private brigades (<a href=\"https://www.zurich.com/about-us/150anniversary/the-original-firefighters-how-insurers-protected-london-from-fire\">Zurich</a>); cabmen's shelters (<a href=\"https://historicengland.org.uk/whats-new/news/13th-cabmens-shelter-in-london-listed/\">Historic England</a>); the telephone box and Soane's tomb (<a href=\"https://www.soane.org/features/sir-john-soane-and-red-telephone-box-0\">Sir John Soane's Museum</a>); the Embankment lions (<a href=\"https://londonist.com/london/history/the-story-of-the-embankment-lions\">Londonist</a>); the Carting Lane lamp (<a href=\"https://en.wikipedia.org/wiki/Sewer_gas_destructor_lamp\">Wikipedia</a>).",
+"s12.tag1": "<span class=\"n\">12</span> · on the street",
+"s12.h21": "Ten things to notice as you walk",
+"s12.p1": "London hardly ever explains itself, but it leaves the evidence in plain sight. Most of what is on this list you will step over or walk past without noticing, and every item has a concrete reason behind it. It is the whole article shrunk to the size of a walk.",
+"s12.h31": "The blue plaques on the façades",
+"s12.p2": "The scheme dates from 1866, set up on the initiative of the MP William Ewart to mark where notable people lived or worked, and there are now more than nine hundred. Karl Marx began <em>Das Kapital</em> in poverty in a flat on Dean Street in Soho; Virginia Woolf lived on Fitzroy Square. The best find in the whole scheme, though, is on Brook Street: at number 25 lived Handel and, at 23, two centuries later, Jimi Hendrix. Handel lived there from 1723 until his death in 1759; Hendrix moved into the top floor next door in January 1969. <span class=\"mark\">The two plaques sit side by side</span>, and today the two houses are a single museum, called Handel &amp; Hendrix. London does not lock its illustrious ghosts in a museum: it leaves them on the walls of ordinary buildings.<span class=\"where\">everywhere · Brook Street 23 and 25, Mayfair</span></p>",
+"s12.h32": "The cypher on the post boxes",
+"s12.p3": "The red cylindrical post boxes carry a raised monogram, and it dates the iron: VR is Victoria, GR is one of the Georges, EIIR is Elizabeth II, and the newest already carry CIIIR, for Charles III. When the monarch changes the old boxes are not replaced, they are simply added to, so that <span class=\"mark\">the street has become a cast-iron archive of nearly two centuries of reigns</span>. In Scotland you will not see EIIR: since Elizabeth was the first Elizabeth of Scotland, the inscription caused protest and the Post Office switched to the Scottish crown there.<span class=\"where\">on any corner</span></p>",
+"s12.h33": "The iron discs in the pavement",
+"s12.p4": "Outside Georgian houses there are round cast-iron covers about thirty centimetres across, and almost every block has a different pattern. They are coal holes: the cellar ran out under the pavement, and the coal was tipped straight in from the sack so that <span class=\"mark\">the delivery man covered in soot never had to enter the house</span>. They are round for three practical reasons: the lid cannot fall into its own hole, it can be rolled rather than carried, and it has no corner to chip.<span class=\"where\">Bloomsbury, Islington, any Georgian street</span></p>",
+"s12.h34": "The boot scrapers beside the door",
+"s12.p5": "Small U-shaped irons set into the ground next to the doorstep, purely decorative today. They appeared at the end of the eighteenth century, along with the first pavements, in an age when the street was mud and horse dung. Nobody went inside without scraping their boots there first, and the object has outlived its function by a century and a half.<span class=\"where\">beside the front steps of old houses</span></p>",
+"s12.h35": "The insurance badges high on the wall",
+"s12.p6": "Small plaques of lead or copper showing a flaming sun, two clasped hands or a crown, with a number stamped underneath. It was the fire of 1666 that created fire insurance, and each company kept its own brigade: the badge told the brigade whose building this was. The first was the Sun Fire Office's, in 1710. <span class=\"mark\">A building with no badge, or with a competitor's badge, could be left to burn.</span> Only in 1833 did ten insurers merge their brigades into one. They always sit high up, out of reach of anyone stealing metal.<span class=\"where\">the City and the East End, above the first floor</span></p>",
+"s12.h36": "The green wooden huts",
+"s12.p7": "About the size of a car, always the same shade of green, almost always planted at a taxi rank. They are cabmen's shelters, created from 1875 so that the driver could eat a hot meal without abandoning his horse in the street. Sixty-one were built; <span class=\"mark\">thirteen survive, all listed, and all still working</span>, serving food to cab drivers to this day. The room inside is for them only, but several sell tea and sandwiches through a side window to passers-by.<span class=\"where\">Russell Square, Embankment Place, Kensington Park Road</span></p>",
+"s12.h37": "The dome of the telephone box",
+"s12.p8": "Giles Gilbert Scott designed the K2 in 1926 and the smaller K6 in 1935, and the dome of both is a copy of the tomb Sir John Soane designed for his wife in the churchyard at St Pancras; Scott was a trustee of the Soane Museum. The red was not his choice, as he wanted silver with green inside: the Post Office imposed the colour of the post boxes, to match. And <span class=\"mark\">the little crown-shaped holes at the top are not decoration, they are the ventilation</span>.<span class=\"where\">and the original tomb is in St Pancras Gardens</span></p>",
+"s12.h38": "The lions biting rings on the Embankment",
+"s12.p9": "Along the river wall there are bronze lions' heads from 1868, each biting a ring. They are emergency mooring rings, and they sit well above the normal high tide, which produced a rhyme Londoners still repeat: <span class=\"mark\">\"when the lions drink, London will sink\"</span>. They are part of Joseph Bazalgette's sewer works, the same scheme that solved the Great Stink of 1858 and, in passing, created the avenue along the river.<span class=\"where\">Victoria Embankment, the length of the wall</span></p>",
+"s12.h39": "The lamp that burns the sewer",
+"s12.p10": "On a narrow lane behind the Savoy hotel there is a street lamp that is not fed by mains gas: <span class=\"mark\">it burns the gas from the sewer running underneath</span>, at a temperature high enough to destroy the smell and the germs along with it. It is an 1890s patent, the last of its kind in London, and it stays lit day and night. Londoners have, predictably, renamed the lane Farting Lane.<span class=\"where\">Carting Lane, behind the Savoy</span></p>",
+"s12.h310": "The <em>mews</em> behind the grand streets",
+"s12.p11": "Short cobbled lanes of low, colourful little houses, hidden behind the terraces of great houses. They were the stables: the horse and carriage lived at the back of the big house, with the coachman living above. The motor car ended the function, and they <span class=\"mark\">became some of the most expensive addresses in the city</span>. The rule for spotting one is simple: a short dead-end street, cobbled, with houses one storey taller than the garage.<span class=\"where\">Kensington, Marylebone, Belgravia</span></p>",
+"s12.p12": "None of this is signposted, and nobody is going to explain it. It is the same thing section 05 says in another way: the city leaves the evidence in plain sight and expects <span class=\"mark\">you to notice on your own</span>."
+};
+
+/* ================= troca de idioma ================= */
+var PT={};
+$all('[data-i18n]').forEach(function(el){ PT[el.getAttribute('data-i18n')]=el.innerHTML; });
+function applyLang(lang){
+  LANG=lang; document.documentElement.lang=(lang==='en'?'en':'pt-BR');
+  try{ localStorage.setItem('rs_lang',lang); }catch(e){}
+  $all('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n'), v=(lang==='en')?EN[k]:PT[k];
+    if(v!=null) el.innerHTML=v;
+  });
+  $all('.langtoggle button').forEach(function(b){ b.classList.toggle('active',b.dataset.lang===lang); });
+  HOOKS.forEach(function(fn){ try{ fn(); }catch(e){} });
+}
+$all('.langtoggle button').forEach(function(b){ b.addEventListener('click',function(){ applyLang(this.dataset.lang); }); });
+function detectLang(){
+  try{ var st=localStorage.getItem('rs_lang'); if(st==='pt'||st==='en') return st; }catch(e){}
+  var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+  for(var i=0;i<navs.length;i++){ var l=(navs[i]||'').toLowerCase(); if(l.indexOf('pt')===0) return 'pt'; if(l.indexOf('en')===0) return 'en'; }
+  return 'pt';
+}
+applyLang(detectLang());
+</script>
+</body>
+</html>
