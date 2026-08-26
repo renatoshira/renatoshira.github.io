@@ -2393,7 +2393,7 @@ var TITLES={pt:'Quanto da sua vida está escrito na sua personalidade?',
 function applyLang(lang){
   LANG=lang;document.documentElement.lang=lang;
   document.title=TITLES[lang]||TITLES.pt;
-  try{localStorage.setItem('rs_lang_regua',lang);}catch(e){}
+  try{localStorage.setItem('rs_lang',lang);}catch(e){}
   $all('[data-i18n]').forEach(function(el){
     var k=el.getAttribute('data-i18n');
     var v=(lang==='en')?EN[k]:PT[k];
@@ -2405,7 +2405,7 @@ function applyLang(lang){
 $all('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
 function detectLang(){
   if(!Object.keys(EN).length)return 'pt';
-  try{var st=localStorage.getItem('rs_lang_regua');if(st==='pt'||st==='en')return st;}catch(e){}
+  try{var st=localStorage.getItem('rs_lang');if(st==='pt'||st==='en')return st;}catch(e){}
   var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
   for(var i=0;i<navs.length;i++){var l=(navs[i]||'').toLowerCase();if(l.indexOf('pt')===0)return 'pt';if(l.indexOf('en')===0)return 'en';}
   return 'pt';

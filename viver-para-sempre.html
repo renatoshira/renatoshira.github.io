@@ -835,7 +835,7 @@ var PT={};
 document.querySelectorAll('[data-i18n]').forEach(function(el){PT[el.getAttribute('data-i18n')]=el.innerHTML;});
 function applyLang(lang){
   LANG=lang;document.documentElement.lang=lang;
-  try{localStorage.setItem('rs_lang_vps',lang);}catch(e){}
+  try{localStorage.setItem('rs_lang',lang);}catch(e){}
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     var k=el.getAttribute('data-i18n');
     var v=(lang==='en')?EN[k]:PT[k];
@@ -846,7 +846,7 @@ function applyLang(lang){
 }
 document.querySelectorAll('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
 function detectLang(){
-  try{var s=localStorage.getItem('rs_lang_vps');if(s==='pt'||s==='en')return s;}catch(e){}
+  try{var s=localStorage.getItem('rs_lang');if(s==='pt'||s==='en')return s;}catch(e){}
   var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
   for(var i=0;i<navs.length;i++){var l=(navs[i]||'').toLowerCase();if(l.indexOf('pt')===0)return 'pt';if(l.indexOf('en')===0)return 'en';}
   return 'pt';
