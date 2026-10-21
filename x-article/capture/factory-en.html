@@ -1,0 +1,1263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><style>body{margin:0;font-family:"Space Mono",monospace;background:#fff;color:#141414}.host{max-width:760px;margin:40px auto;padding:0 16px}.widget{border:1px solid #141414;padding:18px 16px}.wtag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6b6b6b;margin-bottom:14px;display:flex;gap:8px;align-items:center}.wtag .dot{width:8px;height:8px;border-radius:50%;background:#ef7d32;display:inline-block}.wcap{font-size:12.5px;color:#6b6b6b;margin-top:14px}</style>
+<!-- FACTORY:CSS -->
+<style>
+.fx{--fx-ink:#1d1b18;--fx-paper:#f2efe7;--fx-cream:#f7f1df;position:relative}
+.fx .fx-stage{position:relative;margin-top:12px;background:#f2efe7;border-radius:12px;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.fx .fx-svg{display:block;width:100%;height:auto;user-select:none;-webkit-user-select:none}
+.fx .fx-grain{position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;mix-blend-mode:multiply;opacity:.35;background-size:160px 160px}
+.fx .k{stroke:#1d1b18;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.fx .k.t{stroke-width:1.1}
+.fx .k.h{stroke-width:.8}
+.fx .k.n{stroke:none}
+.fx .fx-t{font-family:'Space Mono',ui-monospace,Menlo,Consolas,monospace;letter-spacing:.01em}
+.fx .fx-lab,.fx .fx-badge{transition:opacity .35s ease}
+.fx .fx-ent[data-st]{cursor:pointer}
+.fx .xr{display:none}
+.fx.xray .xr{display:inline}
+.fx.xray .cs{fill-opacity:.13}
+.fx.xray .csd{opacity:.22}
+.fx .xl.on .k{fill:#f2b43a}
+.fx .fx-trail{display:none}
+.fx.follow .fx-trail{display:inline}
+.fx.follow .fx-ent,.fx.follow .fx-belt,.fx.follow .fx-armg,.fx.follow .fx-shd,.fx.follow .fx-card:not(.ana){filter:url(#fx-wash)}
+.fx.follow .fx-lab{opacity:.25}
+.fx.hl .fx-ent:not(.on),.fx.hl .fx-belt,.fx.hl .fx-armg:not(.on),.fx.hl .fx-shd,.fx.hl .fx-card{filter:url(#fx-wash)}
+.fx.hl .fx-lab:not(.on),.fx.hl .fx-badge:not(.on){opacity:.2}
+.fx.nolab .fx-lab,.fx.nolab .fx-badge{display:none}
+.fx.narrow .fx-lab{display:none}
+.fx .fx-bi{transition:transform .2s}
+.fx.narrow .fx-bi{transform:scale(1.9)}
+.fx .fx-ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.fx .fx-b{font:12px/1.2 'Space Mono',ui-monospace,monospace;color:#1d1b18;background:#f7f1df;border:1px solid #1d1b18;border-radius:999px;padding:6px 12px;cursor:pointer;margin:0;-webkit-appearance:none;appearance:none}
+.fx .fx-b:hover{background:#efe6cf}
+.fx .fx-b[aria-pressed="true"]{background:#1d1b18;color:#f7f1df}
+.fx .fx-b:focus-visible{outline:2px solid #3e4ea6;outline-offset:2px}
+.fx .fx-steps{gap:6px}
+.fx .fx-steps .fx-b{width:30px;height:30px;padding:0;text-align:center;font-weight:700}
+.fx .fx-steps .fx-b.fx-wide{width:auto;padding:0 11px}
+.fx .fx-sl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-right:4px}
+.fx .fx-say{margin:12px 0 0;border:1px solid #1d1b18;border-radius:10px;background:#f7f1df;padding:10px 13px;font-size:12.5px;line-height:1.55;min-height:3.1em}
+.fx .fx-say b{font-weight:700}
+.fx .fx-leg{display:none;list-style:none;margin:10px 0 0;padding:0;gap:6px;font-size:12px;line-height:1.4}
+.fx.narrow:not(.nolab) .fx-leg{display:grid}
+.fx .fx-leg li{display:flex;gap:8px;align-items:flex-start}
+.fx .fx-leg i{flex:0 0 20px;height:20px;border-radius:50%;background:#1d1b18;color:#f7f1df;font-style:normal;font-weight:700;font-size:11px;line-height:20px;text-align:center}
+@media (max-width:519px){.fx .fx-b{font-size:11.5px;padding:6px 10px}}
+</style>
+<style>
+html,body{margin:0;background:#f2efe7}
+.host{max-width:none!important;margin:0!important;padding:0!important;width:1280px;height:720px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#wfx{border:0!important;padding:0!important;margin:0!important;width:1060px!important}
+#wfx .wtag,#wfx .wcap,#wfx .fx-ctl,#wfx .fx-say,#wfx .fx-leg,#wfx .fx-sl{display:none!important}
+#wfx .fx-stage{border-radius:0!important}
+</style></head><body><div class="host">
+<!-- FACTORY:HTML -->
+  <div class="widget fx" id="wfx">
+  <div class="wtag"><span class="dot"></span>a fábrica · como o feed da Bia é montado</div>
+  <div class="fx-stage">
+    <svg class="fx-svg" viewBox="0 0 760 560" role="img" aria-label="Fábrica isométrica que monta o feed Para Você da Bia em cinco etapas ao longo de uma esteira. 1, busca de candidatos: quatro silos (Thunder, Busca Phoenix, SimClusters e Populares) despejam até 2.800 posts. 2, filtro do Home Mixer: saem posts com mais de 48 horas, já vistos, de contas bloqueadas ou silenciadas, replies de fora da rede e posts com rótulo. 3, ranking Phoenix: lê as últimas 1.022 ações da Bia e prevê a probabilidade de 64 ações para cada post. 4, pesos e diversidade no vm-ranker: uma prensa transforma as 64 probabilidades em nota (soma de peso vezes probabilidade) e um scanner fica com 50 das 150 maiores notas. 5, cold start: um braço põe um post novo de conta pequena na 16ª posição. Na saída, o feed da Bia tem 35 posts. O post da @ana, em laranja, percorre a fábrica e termina na 16ª posição."></svg>
+    <div class="fx-grain" aria-hidden="true"></div>
+  </div>
+  <ol class="fx-leg" aria-label="Legenda das etapas">
+    <li><i>1</i><span><b>Busca de candidatos</b> · Thunder, Busca Phoenix, SimClusters e Populares juntam até 2.800 posts</span></li>
+    <li><i>2</i><span><b>Filtro</b> · Home Mixer · saem +48h, já vistos, bloqueados/silenciados, replies de fora da rede, rótulo</span></li>
+    <li><i>3</i><span><b>Ranking Phoenix</b> · lê as últimas 1.022 ações da Bia e prevê 64 probabilidades por post</span></li>
+    <li><i>4</i><span><b>Pesos e diversidade</b> · vm-ranker · nota = Σ peso × P(ação); das 150 maiores notas ficam 50</span></li>
+    <li><i>5</i><span><b>Cold start</b> · a 16ª posição vai para um post novo de conta pequena</span></li>
+    <li><i aria-hidden="true">→</i><span><b>Saída</b> · feed da Bia · 35 posts</span></li>
+  </ol>
+  <div class="fx-ctl" role="group" aria-label="Controles da fábrica">
+    <button type="button" class="fx-b" data-act="play" aria-pressed="true" aria-label="Animação">❚❚ pausar</button>
+    <button type="button" class="fx-b" data-act="xray" aria-pressed="false">Ver por dentro</button>
+    <button type="button" class="fx-b" data-act="lab" aria-pressed="true">Etiquetas</button>
+    <button type="button" class="fx-b" data-act="follow" aria-pressed="false">Seguir o post da @ana</button>
+  </div>
+  <div class="fx-ctl fx-steps" role="group" aria-label="Etapas da fábrica">
+    <span class="fx-sl" aria-hidden="true">etapas</span>
+    <button type="button" class="fx-b" data-stage="1" aria-pressed="false" aria-label="Etapa 1: busca de candidatos">1</button>
+    <button type="button" class="fx-b" data-stage="2" aria-pressed="false" aria-label="Etapa 2: filtro">2</button>
+    <button type="button" class="fx-b" data-stage="3" aria-pressed="false" aria-label="Etapa 3: ranking Phoenix">3</button>
+    <button type="button" class="fx-b" data-stage="4" aria-pressed="false" aria-label="Etapa 4: pesos e diversidade">4</button>
+    <button type="button" class="fx-b" data-stage="5" aria-pressed="false" aria-label="Etapa 5: cold start">5</button>
+    <button type="button" class="fx-b fx-wide" data-stage="6" aria-pressed="false" aria-label="Saída: o feed da Bia">saída</button>
+  </div>
+  <p class="fx-say" aria-live="polite"></p>
+  <div class="wcap">Esquema simplificado. A Bia e a @ana são exemplos; os números são os limites descritos no texto.</div>
+</div>
+<!-- /FACTORY:HTML -->
+</div>
+<!-- FACTORY:JS -->
+<script>
+(function () {
+  'use strict';
+  var root = document.getElementById('wfx');
+  if (!root || root.getAttribute('data-fx')) return;
+  root.setAttribute('data-fx', '1');
+  var svg = root.querySelector('.fx-svg');
+  var say = root.querySelector('.fx-say');
+  var NS = 'http://www.w3.org/2000/svg';
+
+  /* ---------- strings (pt / en) ---------- */
+  var STR = {
+    pt: {
+      tag: 'a fábrica · como o feed da Bia é montado',
+      aria: 'Fábrica isométrica que monta o feed Para Você da Bia em cinco etapas ao longo de uma esteira. 1, busca de candidatos: quatro silos (Thunder, Busca Phoenix, SimClusters e Populares) despejam até 2.800 posts. 2, filtro do Home Mixer: saem posts com mais de 48 horas, já vistos, de contas bloqueadas ou silenciadas, replies de fora da rede e posts com rótulo. 3, ranking Phoenix: lê as últimas 1.022 ações da Bia e prevê a probabilidade de 64 ações para cada post. 4, pesos e diversidade no vm-ranker: uma prensa transforma as 64 probabilidades em nota (soma de peso vezes probabilidade) e um scanner fica com 50 das 150 maiores notas. 5, cold start: um braço põe um post novo de conta pequena na 16ª posição. Na saída, o feed da Bia tem 35 posts. O post da @ana, em laranja, percorre a fábrica e termina na 16ª posição.',
+      legAria: 'Legenda das etapas',
+      leg: [
+        '<b>Busca de candidatos</b> · Thunder, Busca Phoenix, SimClusters e Populares juntam até 2.800 posts',
+        '<b>Filtro</b> · Home Mixer · saem +48h, já vistos, bloqueados/silenciados, replies de fora da rede, rótulo',
+        '<b>Ranking Phoenix</b> · lê as últimas 1.022 ações da Bia e prevê 64 probabilidades por post',
+        '<b>Pesos e diversidade</b> · vm-ranker · nota = Σ peso × P(ação); das 150 maiores notas ficam 50',
+        '<b>Cold start</b> · a 16ª posição vai para um post novo de conta pequena',
+        '<b>Saída</b> · feed da Bia · 35 posts'
+      ],
+      ctlAria: 'Controles da fábrica', stepsAria: 'Etapas da fábrica', sl: 'etapas',
+      pause: '❚❚ pausar', play: '▶ animar', playAria: 'Animação',
+      xray: 'Ver por dentro', lab: 'Etiquetas', follow: 'Seguir o post da @ana', out: 'saída',
+      stAria: ['Etapa 1: busca de candidatos', 'Etapa 2: filtro', 'Etapa 3: ranking Phoenix', 'Etapa 4: pesos e diversidade', 'Etapa 5: cold start', 'Saída: o feed da Bia'],
+      wcap: 'Esquema simplificado. A Bia e a @ana são exemplos; os números são os limites descritos no texto.',
+      // painted on the machines
+      board1: 'BUSCA DE CANDIDATOS', board2: 'CANDIDATOS: ATÉ 2.800',
+      silos: ['THUNDER', 'BUSCA PHOENIX', 'SIMCLUSTERS', 'POPULARES'],
+      filter: 'FILTRO', rej: 'REJEITADOS', nota0: 'NOTA 0', cs1: '≤50 mil seg.',
+      ph1: 'RANKING', ph2: 'PHOENIX', ph3: 'LÊ AS ÚLTIMAS', ph4: '1.022 AÇÕES DA BIA', ph5: '→ 64 PROBABILIDADES',
+      score: 'NOTA =', sum: 'Σ peso×P(ação)',
+      wts: [['copiar link', '20'], ['reply', '5'], ['like', '0,66'], ['silenciar', '−58,8']],
+      phone: 'BIA · 35 POSTS', res: '#16 · reservado',
+      reasons: ['+48h', 'já visto', 'bloqueado/silenciado', 'reply de fora da rede', 'rótulo', 'nota 0'],
+      anaScore: '@ana · 0,41',
+      // pills
+      lSrc: [['THUNDER · até 1.200', 'quem a Bia segue'], ['BUSCA PHOENIX', 'parecidos com o histórico', 'até 1.000 + 200 novos'], ['SIMCLUSTERS · até 800', 'curtidos por gente parecida'], ['POPULARES · até 500', 'só 0,005% dos autores']],
+      lFilter: ['FILTRO · Home Mixer'],
+      lRej: ['+48h', 'já visto', 'rótulo', 'bloqueado/silenciado', 'reply de fora da rede'],
+      lRank: ['RANKING PHOENIX', 'lê as últimas 1.022 ações da Bia', 'prevê a probabilidade de', '64 ações por post'],
+      lProb: ['64 probabilidades'],
+      lW: ['PESOS · vm-ranker', 'nota = Σ peso × P(ação)', 'copiar link 20 · reply 5', 'like 0,66 · silenciar −58,8', 'fora da rede ×0,75', '2º post do mesmo autor ×0,625'],
+      lDpp: ['DIVERSIDADE · vm-ranker', 'das 150 maiores notas ficam 50', 'parecidos demais: nota 0'],
+      lCs: ['COLD START', 'a 16ª posição vai para um', 'post novo de conta pequena', '≤50 mil seguidores · ≤2h', '<200 views'],
+      lOut: ['SAÍDA', 'feed da Bia · 35 posts'],
+      // captions
+      summary: 'Da esquerda para a direita: 1. a busca de candidatos junta até 2.800 posts; 2. o filtro tira parte deles; 3. o ranking Phoenix prevê 64 probabilidades para cada post; 4. o vm-ranker transforma isso em nota e corta os parecidos; 5. o cold start reserva a 16ª posição. Saem 35 posts.',
+      caps: {
+        1: '<b>1 · Busca de candidatos.</b> Quatro sistemas buscam posts para a Bia: Thunder, de quem ela segue (até 1.200); Busca Phoenix, parecidos com o histórico dela (até 1.000, mais 200 novos); SimClusters, curtidos por gente parecida (até 800); e Populares (até 500), que vêm de só 0,005% dos autores. No total, até 2.800 candidatos.',
+        2: '<b>2 · Filtro.</b> O Home Mixer, o serviço que coordena a montagem do feed, tira posts com mais de 48h, já vistos, de contas bloqueadas ou silenciadas, replies de fora da rede e posts com rótulo.',
+        3: '<b>3 · Ranking Phoenix.</b> Um transformer da família Grok lê as últimas 1.022 ações da Bia e prevê, para cada post, a probabilidade de 64 ações, como curtir, responder, copiar o link e silenciar. O que sai daqui são 64 probabilidades, ainda não uma nota.',
+        4: '<b>4 · Pesos e diversidade (vm-ranker).</b> A prensa calcula a nota, soma de peso × probabilidade: copiar o link vale 20, reply 5, like 0,66 e silenciar −58,8; post de fora da rede vale ×0,75 e o 2º post do mesmo autor, ×0,625. Depois, das 150 maiores notas ficam 50: os parecidos demais recebem nota 0.',
+        5: '<b>5 · Cold start.</b> A 16ª posição do feed vai para um post novo de conta pequena: até 50 mil seguidores, até 2h de vida e menos de 200 views.',
+        6: '<b>Saída.</b> O feed da Bia sai com 35 posts, em ordem de nota, com o post de cold start na 16ª posição.'
+      },
+      fol: [
+        'O post da @ana entrou pela Busca Phoenix, que traz posts parecidos com o histórico da Bia. É um entre até 2.800 candidatos.',
+        'O post da @ana passou pelo filtro do Home Mixer: tem menos de 48h, a Bia ainda não viu e a conta não está bloqueada, silenciada nem rotulada.',
+        'O post da @ana está no ranking Phoenix, que lê as últimas 1.022 ações da Bia e prevê a probabilidade de 64 ações para ele.',
+        'O post da @ana saiu do ranking Phoenix com 64 probabilidades. Ainda não tem nota: segue para os pesos do vm-ranker.',
+        'Os pesos do vm-ranker transformaram as 64 probabilidades em nota: 0,41, já com o ×0,75 por vir de fora da rede da Bia.',
+        'O post da @ana ficou entre os 50 que passam pela diversidade do vm-ranker: não era parecido demais com os outros.',
+        'O braço de cold start leva o post da @ana para a 16ª posição: conta com até 50 mil seguidores, post com menos de 2h e menos de 200 views.',
+        'O post da @ana está na 16ª posição do feed da Bia, entre 35 posts.',
+        'O post da @ana ainda vai cair na esteira pela Busca Phoenix.'
+      ]
+    },
+    en: {
+      tag: 'the factory · how Bia\'s feed is built',
+      aria: 'Isometric factory that builds Bia\'s For You feed in five stages along a conveyor belt. 1, candidate sourcing: four silos (Thunder, Phoenix retrieval, SimClusters and Popular) drop up to 2,800 posts. 2, Home Mixer filter: posts older than 48 hours, already seen, from blocked or muted accounts, out-of-network replies and posts with a label are removed. 3, Phoenix ranking: reads Bia\'s last 1,022 actions and predicts the probability of 64 actions for each post. 4, weights and diversity in the vm-ranker: a press turns the 64 probabilities into a score (sum of weight times probability) and a scanner keeps 50 of the top 150 scores. 5, cold start: an arm puts a new post from a small account in slot 16. At the output, Bia\'s feed has 35 posts. @ana\'s post, in orange, travels through the factory and ends up in slot 16.',
+      legAria: 'Stage key',
+      leg: [
+        '<b>Candidate sourcing</b> · Thunder, Phoenix retrieval, SimClusters and Popular gather up to 2,800 posts',
+        '<b>Filter</b> · Home Mixer · removes +48h, already seen, blocked/muted, out-of-network replies, label',
+        '<b>Phoenix ranking</b> · reads Bia\'s last 1,022 actions and predicts 64 probabilities per post',
+        '<b>Weights and diversity</b> · vm-ranker · score = Σ weight × P(action); of the top 150 scores, 50 stay',
+        '<b>Cold start</b> · slot 16 goes to a new post from a small account',
+        '<b>Output</b> · Bia\'s feed · 35 posts'
+      ],
+      ctlAria: 'Factory controls', stepsAria: 'Factory stages', sl: 'stages',
+      pause: '❚❚ pause', play: '▶ play', playAria: 'Animation',
+      xray: 'See inside', lab: 'Labels', follow: 'Follow @ana\'s post', out: 'output',
+      stAria: ['Stage 1: candidate sourcing', 'Stage 2: filter', 'Stage 3: Phoenix ranking', 'Stage 4: weights and diversity', 'Stage 5: cold start', 'Output: Bia\'s feed'],
+      wcap: 'Simplified diagram. Bia and @ana are examples; the numbers are the limits described in the text.',
+      board1: 'CANDIDATE SOURCING', board2: 'CANDIDATES: UP TO 2,800',
+      silos: ['THUNDER', { t: 'PHOENIX RETRIEVAL', fs: 4.6 }, 'SIMCLUSTERS', 'POPULAR'],
+      filter: 'FILTER', rej: 'REJECTED', nota0: 'SCORE 0', cs1: '≤50k foll.',
+      ph1: 'PHOENIX', ph2: 'RANKING', ph3: 'READS BIA\'S LAST', ph4: '1,022 ACTIONS', ph5: '→ 64 PROBABILITIES',
+      score: 'SCORE =', sum: { t: 'Σ weight×P(action)', fs: 4.5 },
+      wts: [['copy link', '20'], ['reply', '5'], ['like', '0.66'], ['mute', '−58.8']],
+      phone: 'BIA · 35 POSTS', res: '#16 · reserved',
+      reasons: ['+48h', 'already seen', 'blocked/muted', 'out-of-network reply', 'label', 'score 0'],
+      anaScore: '@ana · 0.41',
+      lSrc: [['THUNDER · up to 1,200', 'accounts Bia follows'], ['PHOENIX RETRIEVAL', 'similar to her history', 'up to 1,000 + 200 new'], ['SIMCLUSTERS · up to 800', 'liked by similar people'], ['POPULAR · up to 500', 'only the top 0.005%', 'of authors']],
+      lFilter: ['FILTER · Home Mixer'],
+      lRej: ['+48h', 'already seen', 'label', 'blocked/muted', 'out-of-network reply'],
+      lRank: ['PHOENIX RANKING', 'reads Bia\'s last 1,022 actions', 'predicts the probability', 'of 64 actions per post'],
+      lProb: ['64 probabilities'],
+      lW: ['WEIGHTS · vm-ranker', 'score = Σ weight × P(action)', 'copy link 20 · reply 5', 'like 0.66 · mute −58.8', 'out of network ×0.75', '2nd post by same author ×0.625'],
+      lDpp: ['DIVERSITY · vm-ranker', 'of the top 150 scores, 50 stay', 'too-similar posts: score 0'],
+      lCs: ['COLD START', 'slot 16 goes to a new post', 'from a small account', '≤50k followers · ≤2h', '<200 views'],
+      lOut: ['OUTPUT', 'Bia\'s feed · 35 posts'],
+      summary: 'Left to right: 1. candidate sourcing gathers up to 2,800 posts; 2. the filter removes some; 3. Phoenix ranking predicts 64 probabilities for each post; 4. the vm-ranker turns them into a score and cuts near-duplicates; 5. cold start reserves slot 16. 35 posts come out.',
+      caps: {
+        1: '<b>1 · Candidate sourcing.</b> Four systems fetch posts for Bia: Thunder, from accounts she follows (up to 1,200); Phoenix retrieval, similar to her history (up to 1,000, plus 200 new); SimClusters, liked by similar people (up to 800); and Popular (up to 500), which come from only the top 0.005% of authors. In total, up to 2,800 candidates.',
+        2: '<b>2 · Filter.</b> The Home Mixer, the service that coordinates how the feed is built, removes posts older than 48h, posts Bia has already seen, posts from blocked or muted accounts, out-of-network replies and posts with a label.',
+        3: '<b>3 · Phoenix ranking.</b> A transformer from the Grok family reads Bia\'s last 1,022 actions and predicts, for each post, the probability of 64 actions, such as like, reply, copy link and mute. What comes out here is 64 probabilities, not yet a score.',
+        4: '<b>4 · Weights and diversity (vm-ranker).</b> The press computes the score, the sum of weight × probability: copy link is worth 20, reply 5, like 0.66 and mute −58.8; an out-of-network post gets ×0.75 and the 2nd post by the same author ×0.625. Then, of the top 150 scores, 50 stay: too-similar posts get a score of 0.',
+        5: '<b>5 · Cold start.</b> Slot 16 of the feed goes to a new post from a small account: up to 50k followers, up to 2h old and fewer than 200 views.',
+        6: '<b>Output.</b> Bia\'s feed comes out with 35 posts, in score order, with the cold-start post in slot 16.'
+      },
+      fol: [
+        '@ana\'s post came in through Phoenix retrieval, which brings posts similar to Bia\'s history. It is one of up to 2,800 candidates.',
+        '@ana\'s post passed the Home Mixer filter: it is less than 48h old, Bia hasn\'t seen it, and the account isn\'t blocked, muted or labeled.',
+        '@ana\'s post is in Phoenix ranking, which reads Bia\'s last 1,022 actions and predicts the probability of 64 actions for it.',
+        '@ana\'s post left Phoenix ranking with 64 probabilities. It has no score yet: it moves on to the vm-ranker weights.',
+        'The vm-ranker weights turned the 64 probabilities into a score: 0.41, already including the ×0.75 for coming from outside Bia\'s network.',
+        '@ana\'s post is among the 50 that pass the vm-ranker diversity step: it was not too similar to the others.',
+        'The cold-start arm moves @ana\'s post to slot 16: an account with up to 50k followers, a post less than 2h old and fewer than 200 views.',
+        '@ana\'s post is in slot 16 of Bia\'s feed, among 35 posts.',
+        '@ana\'s post will still drop onto the belt through Phoenix retrieval.'
+      ]
+    }
+  };
+  function normLang(l) { return /^en\b/i.test(String(l || '')) ? 'en' : 'pt'; }
+  var lang = normLang(document.documentElement.getAttribute('lang'));
+  function sv(k) { var v = STR[lang]; k.split('.').forEach(function (p) { v = v == null ? v : v[p]; }); return v; }
+  function sTxt(v) { return v && typeof v === 'object' && !Array.isArray(v) ? v.t : v; }
+  var FACE = []; // painted strings: { el, key, fs }
+
+  /* ---------- palette ---------- */
+  var INK = '#1d1b18', CREAM = '#f7f1df', SHC = '#3e4ea6', MINT = '#8fd3b4', CORAL = '#e8604c',
+      MUST = '#f2b43a', BLUE = '#7d9be0', PINK = '#f2a5bf', TEAL = '#1f5c4c', ORANGE = '#ef7d32',
+      KHAKI = '#e9dfc5', BELT = '#3d3a35', DARK = '#2e2b28';
+  function hx(c) { c = c.slice(1); return [0, 2, 4].map(function (i) { return parseInt(c.substr(i, 2), 16); }); }
+  function mix(a, b, t) {
+    var A = hx(a), B = hx(b);
+    return '#' + A.map(function (v, i) { var r = Math.round(v + (B[i] - v) * t); return ('0' + r.toString(16)).slice(-2); }).join('');
+  }
+  function lt(c, t) { return mix(c, '#fffaf0', t); }
+  function dk(c, t) { return mix(c, INK, t); }
+
+  /* ---------- tiny svg + iso toolkit ---------- */
+  var TIGHT = null, C = 0.8660254, S = 0.5, K = 1, OX = 0, OY = 0, VW = 760, VH = 560;
+  var seed = 1979;
+  function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function r1(v) { return Math.round(v * 10) / 10; }
+  function el(tag, at, parent) {
+    var e = document.createElementNS(NS, tag);
+    if (at) for (var k in at) if (at[k] != null) e.setAttribute(k, at[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function P(x, y, z) { return [OX + (x - y) * C * K, OY + ((x + y) * S - (z || 0)) * K]; }
+  function Pp(p) { return P(p[0], p[1], p[2]); }
+  // hand-inked edge: each edge bows a little (smooth, deterministic), corners stay put
+  function wob(pts, closed, amp) {
+    if (amp == null) amp = 1;
+    var n = pts.length, d = 'M' + r1(pts[0][0]) + ' ' + r1(pts[0][1]), segs = closed ? n : n - 1;
+    for (var i = 0; i < segs; i++) {
+      var a = pts[i], b = pts[(i + 1) % n], dx = b[0] - a[0], dy = b[1] - a[1], L = Math.sqrt(dx * dx + dy * dy);
+      if (L > 9 && amp > 0) {
+        var m = Math.min(14, Math.max(2, Math.round(L / 6))), nx = -dy / L, ny = dx / L,
+            A = amp * Math.min(1, L / 45), q1 = (rnd() * 2 - 1) * A, q2 = (rnd() * 2 - 1) * A * 0.5, ph = rnd() * 6.28;
+        for (var j = 1; j < m; j++) {
+          var t = j / m, sn = Math.sin(Math.PI * t), o = q1 * sn + q2 * Math.sin(2 * Math.PI * t + ph) * sn;
+          d += 'L' + r1(a[0] + dx * t + nx * o) + ' ' + r1(a[1] + dy * t + ny * o);
+        }
+      }
+      if (!(closed && i === segs - 1)) d += 'L' + r1(b[0]) + ' ' + r1(b[1]);
+    }
+    return d + (closed ? 'Z' : '');
+  }
+  function poly(pts) { return 'M' + pts.map(function (p) { return r1(p[0]) + ' ' + r1(p[1]); }).join('L') + 'Z'; }
+  function face(g, pts, fill, cls, amp) {
+    return el('path', { d: wob(pts.map(Pp), true, amp), fill: fill, 'class': 'k' + (cls ? ' ' + cls : '') }, g);
+  }
+  function ln(g, pts, cls, amp, stroke) {
+    return el('path', { d: wob(pts.map(Pp), false, amp == null ? 0.6 : amp), fill: 'none', stroke: stroke || null, 'class': 'k' + (cls ? ' ' + cls : '') }, g);
+  }
+  // box: x,y,z origin, w (x), d (y), h (z). Visible faces: +y (left), +x (right), top.
+  function box(g, x, y, z, w, d, h, col, o) {
+    o = o || {};
+    var X = x + w, Y = y + d, Z = z + h, c = o.cls || '', F = {};
+    if (!o.noL) F.l = face(g, [[x, Y, Z], [X, Y, Z], [X, Y, z], [x, Y, z]], o.l || col, c, o.amp);
+    if (!o.noR) F.r = face(g, [[X, y, Z], [X, Y, Z], [X, Y, z], [X, y, z]], o.r || dk(col, 0.22), c, o.amp);
+    if (!o.noT) F.t = face(g, [[x, y, Z], [X, y, Z], [X, Y, Z], [x, Y, Z]], o.t || lt(col, 0.3), c, o.amp);
+    return F;
+  }
+  // plane helper: origin O, unit vectors U (text direction) and V (down the face)
+  function PL(O, U, V) {
+    var o = Pp(O), pu = P(O[0] + U[0], O[1] + U[1], O[2] + U[2]), pv = P(O[0] + V[0], O[1] + V[1], O[2] + V[2]);
+    var a = [pu[0] - o[0], pu[1] - o[1]], b = [pv[0] - o[0], pv[1] - o[1]];
+    return {
+      pt: function (u, v) { return [o[0] + u * a[0] + v * b[0], o[1] + u * a[1] + v * b[1]]; },
+      m: 'matrix(' + [a[0], a[1], b[0], b[1], o[0], o[1]].map(function (v) { return Math.round(v * 1000) / 1000; }).join(' ') + ')'
+    };
+  }
+  function LF(x, y, z) { return PL([x, y, z], [1, 0, 0], [0, 0, -1]); }   // +y face, origin = top-left
+  function RF(x, y, z) { return PL([x, y, z], [0, -1, 0], [0, 0, -1]); }  // +x face, origin = front-top (largest y)
+  function TP(x, y, z) { return PL([x, y, z], [1, 0, 0], [0, 1, 0]); }    // top plane
+  function prect(g, pl, u, v, w, h, fill, cls, amp) {
+    return el('path', { d: wob([pl.pt(u, v), pl.pt(u + w, v), pl.pt(u + w, v + h), pl.pt(u, v + h)], true, amp == null ? 0.5 : amp), fill: fill, 'class': 'k' + (cls ? ' ' + cls : '') }, g);
+  }
+  function pcircD(pl, u, v, r, n) {
+    var pts = []; n = n || 20;
+    for (var i = 0; i < n; i++) { var a = i / n * 6.2832; pts.push(pl.pt(u + r * Math.cos(a), v + r * Math.sin(a))); }
+    return poly(pts);
+  }
+  function pcirc(g, pl, u, v, r, fill, cls) { return el('path', { d: pcircD(pl, u, v, r), fill: fill, 'class': 'k' + (cls ? ' ' + cls : '') }, g); }
+  function pline(g, pl, u0, v0, u1, v1, cls) {
+    var a = pl.pt(u0, v0), b = pl.pt(u1, v1);
+    return el('path', { d: 'M' + r1(a[0]) + ' ' + r1(a[1]) + 'L' + r1(b[0]) + ' ' + r1(b[1]), fill: 'none', 'class': 'k ' + (cls || 't') }, g);
+  }
+  function ptext(g, pl, u, v, str, size, o) {
+    o = o || {};
+    var t = el('text', { transform: pl.m, x: u, y: v, 'font-size': size, 'class': 'fx-t' + (o.cls ? ' ' + o.cls : ''), fill: o.fill || INK,
+      'text-anchor': o.anchor || null, 'font-weight': o.bold ? 700 : null }, g);
+    t.textContent = str;
+    return t;
+  }
+  // translatable painted text: key into STR; a value may be { t, fs } to shrink one language
+  function ft(g, pl, u, v, key, size, o) {
+    var val = sv(key), t = ptext(g, pl, u, v, sTxt(val), (val && val.fs) || size, o);
+    FACE.push({ el: t, key: key, fs: size });
+    return t;
+  }
+  // vertical cylinder, two-tone side + light top
+  function cyl(g, cx, cy, z0, z1, r, col, o) {
+    o = o || {};
+    var b = P(cx, cy, z0), t = P(cx, cy, z1), rx = r * 1.41421 * C * K, ry = r * 1.41421 * S * K, c = o.cls ? ' ' + o.cls : '';
+    var L = 'M' + r1(t[0] - rx) + ' ' + r1(t[1]) + 'L' + r1(b[0] - rx) + ' ' + r1(b[1]) + 'A' + r1(rx) + ' ' + r1(ry) + ' 0 0 0 ' + r1(b[0]) + ' ' + r1(b[1] + ry) +
+            'L' + r1(t[0]) + ' ' + r1(t[1] + ry) + 'A' + r1(rx) + ' ' + r1(ry) + ' 0 0 1 ' + r1(t[0] - rx) + ' ' + r1(t[1]) + 'Z';
+    var R = 'M' + r1(t[0]) + ' ' + r1(t[1] + ry) + 'L' + r1(b[0]) + ' ' + r1(b[1] + ry) + 'A' + r1(rx) + ' ' + r1(ry) + ' 0 0 0 ' + r1(b[0] + rx) + ' ' + r1(b[1]) +
+            'L' + r1(t[0] + rx) + ' ' + r1(t[1]) + 'A' + r1(rx) + ' ' + r1(ry) + ' 0 0 1 ' + r1(t[0]) + ' ' + r1(t[1] + ry) + 'Z';
+    el('path', { d: L, fill: o.l || col, 'class': 'k n' + c }, g);
+    el('path', { d: R, fill: o.r || dk(col, 0.2), 'class': 'k n' + c }, g);
+    el('path', { d: 'M' + r1(t[0] - rx) + ' ' + r1(t[1]) + 'L' + r1(b[0] - rx) + ' ' + r1(b[1]) + 'A' + r1(rx) + ' ' + r1(ry) + ' 0 0 0 ' + r1(b[0] + rx) + ' ' + r1(b[1]) + 'L' + r1(t[0] + rx) + ' ' + r1(t[1]), fill: 'none', 'class': 'k' + c }, g);
+    if (!o.noTop) el('ellipse', { cx: r1(t[0]), cy: r1(t[1]), rx: r1(rx), ry: r1(ry), fill: o.t || lt(col, 0.3), 'class': 'k' + c }, g);
+    return { t: t, b: b, rx: rx, ry: ry };
+  }
+  function arcFront(g, cx, cy, z, r, cls) { // front half ring of a cylinder at height z
+    var c = P(cx, cy, z), rx = r * 1.41421 * C * K, ry = r * 1.41421 * S * K;
+    return el('path', { d: 'M' + r1(c[0] - rx) + ' ' + r1(c[1]) + 'A' + r1(rx) + ' ' + r1(ry) + ' 0 0 0 ' + r1(c[0] + rx) + ' ' + r1(c[1]), fill: 'none', 'class': 'k ' + (cls || 't') }, g);
+  }
+  // flat cast shadows (light from back-top: shadows fall toward +y, i.e. lower-left)
+  var SHK = 0.5;
+  function shRect(x0, x1, y0, y1, z0, z1) { return [[x0, y0 + z0 * SHK, 0], [x1, y0 + z0 * SHK, 0], [x1, y1 + z1 * SHK, 0], [x0, y1 + z1 * SHK, 0]]; }
+  function shCirc(cx, cy, r, z0, z1) {
+    var pts = [];
+    for (var i = 0; i < 24; i++) { var a = i / 24 * 6.2832, s = Math.sin(a); pts.push([cx + r * Math.cos(a), cy + r * s + (s < 0 ? z0 : z1) * SHK, 0]); }
+    return pts;
+  }
+
+  /* ---------- the belt route ---------- */
+  var BZ = 22; // belt top
+  function path(s) {
+    if (s <= 290) return [-50 + s, 280];
+    if (s <= 510) return [240, 280 - (s - 290)];
+    return [240 + (s - 510), 60];
+  }
+  var SILO_X = [-16, 32, 80, 128], S_SILO = SILO_X.map(function (x) { return x + 50; });
+  var S_KICK = 256, S_PIN = 364, S_POUT = 458, S_STAMP = 574, S_DPP = 662, S_PICK = 706, S_END = 730;
+  var SRC = [
+    { col: BLUE, p: 0.5, inNet: true },
+    { col: MINT, p: 0.42 },
+    { col: PINK, p: 0.42 },
+    { col: MUST, p: 0.36 }
+  ];
+  var SLOT16 = [539.5, 60], SHOULDER = [456, 0], AZ = 92, L1 = 60, L2 = 60, REST = [484, 42];
+
+  /* ---------- scene entities (painter-sorted later) ---------- */
+  var dyn = {};
+  var ENTS = [
+    { id: 'beltB', st: 0, belt: 1, b: [220, 260, 40, 260, 0, BZ], sh: [shRect(220, 260, 40, 260, 0, BZ)], draw: function (g) {
+        box(g, 220, 40, 0, 40, 220, BZ, KHAKI, { t: BELT, r: dk(KHAKI, 0.16) });
+        var pl = PL([240, 258, BZ], [0, -1, 0], [1, 0, 0]);
+        dyn.stripes.push(el('path', { d: 'M0 0L180 0', transform: pl.m, fill: 'none', stroke: '#57524a', 'stroke-width': 31, 'stroke-dasharray': '4 11' }, g));
+        var rf = RF(260, 260, BZ);
+        for (var u = 14; u < 220; u += 30) pcirc(g, rf, u, 11, 4.2, '#6a645a', 'h');
+        el('path', { d: pcircD(TP(240, 60, BZ), 0, 0, 17), fill: '#4a463f', 'class': 'k t' }, g);
+        el('path', { d: pcircD(TP(240, 60, BZ), 0, 0, 5), fill: '#6a645a', 'class': 'k h' }, g);
+      } },
+    { id: 'beltA', st: 0, belt: 1, b: [-50, 260, 260, 300, 0, BZ], sh: [shRect(-50, 260, 260, 300, 0, BZ)], draw: function (g) {
+        box(g, -50, 260, 0, 310, 40, BZ, KHAKI, { t: BELT, r: dk(KHAKI, 0.16) });
+        var pl = PL([-50, 280, BZ], [1, 0, 0], [0, 1, 0]);
+        dyn.stripes.push(el('path', { d: 'M3 0L272 0', transform: pl.m, fill: 'none', stroke: '#57524a', 'stroke-width': 31, 'stroke-dasharray': '4 11' }, g));
+        var lf = LF(-50, 300, BZ);
+        for (var u = 14; u < 310; u += 30) pcirc(g, lf, u, 11, 4.2, '#6a645a', 'h');
+        el('path', { d: pcircD(TP(240, 280, BZ), 0, 0, 17), fill: '#4a463f', 'class': 'k t' }, g);
+        el('path', { d: pcircD(TP(240, 280, BZ), 0, 0, 5), fill: '#6a645a', 'class': 'k h' }, g);
+      } },
+    { id: 'beltC', st: 0, belt: 1, b: [260, 460, 40, 80, 0, BZ], sh: [shRect(260, 460, 40, 80, 0, BZ)], draw: function (g) {
+        box(g, 260, 40, 0, 200, 40, BZ, KHAKI, { t: BELT, r: dk(KHAKI, 0.16) });
+        var pl = PL([260, 60, BZ], [1, 0, 0], [0, 1, 0]);
+        dyn.stripes.push(el('path', { d: 'M0 0L198 0', transform: pl.m, fill: 'none', stroke: '#57524a', 'stroke-width': 31, 'stroke-dasharray': '4 11' }, g));
+        var lf = LF(260, 80, BZ);
+        for (var u = 14; u < 200; u += 30) pcirc(g, lf, u, 11, 4.2, '#6a645a', 'h');
+      } },
+
+    /* 1 · BUSCA DE CANDIDATOS */
+    { id: 'board', st: 1, b: [0, 140, 350, 356, 0, 26], sh: [shRect(0, 140, 350, 356, 0, 26)], draw: function (g) {
+        box(g, 8, 351, 0, 5, 5, 6, TEAL);
+        box(g, 127, 351, 0, 5, 5, 6, TEAL);
+        box(g, 0, 350, 6, 140, 6, 20, CREAM, { l: CREAM, t: lt(CREAM, 0.5), r: dk(CREAM, 0.15) });
+        var lf = LF(0, 356, 26);
+        ft(g, lf, 70, 7.6, 'board1', 5.2, { anchor: 'middle', fill: TEAL, bold: 1 });
+        ft(g, lf, 70, 16.6, 'board2', 8.4, { anchor: 'middle', bold: 1 });
+        [[4, 4], [136, 4], [4, 16], [136, 16]].forEach(function (q) { pcirc(g, lf, q[0], q[1], 1.1, INK, 'n'); });
+      } },
+    { id: 'rackBack', st: 1, b: [-42, 152, 250, 256, 0, 84], draw: function (g) {
+        box(g, -42, 250, 0, 6, 6, 84, TEAL);
+        box(g, 146, 250, 0, 6, 6, 84, TEAL);
+      } },
+    { id: 'rack', st: 1, b: [-42, 152, 256, 306, 0, 140],
+      sh: [shRect(-42, 152, 250, 306, 84, 96)].concat(SILO_X.map(function (x) { return shCirc(x, 280, 18, 96, 136); })).concat([shRect(-42, -36, 300, 306, 0, 84), shRect(146, 152, 300, 306, 0, 84)]),
+      draw: function (g) {
+        dyn.silos = [];
+        SILO_X.forEach(function (x, i) { box(g, x - 6, 274, 58, 12, 12, 26, dk(SRC[i].col, 0.15)); });
+        box(g, -42, 300, 0, 6, 6, 84, TEAL);
+        box(g, 146, 300, 0, 6, 6, 84, TEAL);
+        box(g, -42, 250, 84, 194, 56, 12, TEAL, { t: lt(TEAL, 0.22), r: dk(TEAL, 0.25) });
+        var lf = LF(-42, 306, 96);
+        SILO_X.forEach(function (x, i) { ft(g, lf, x + 42, 8.4, 'silos.' + i, 5.4, { anchor: 'middle', fill: CREAM, bold: 1 }); });
+        SILO_X.forEach(function (x, i) {
+          var col = SRC[i].col;
+          // internals (see-through): a pile of cards
+          var xg = el('g', { 'class': 'xr' }, g);
+          for (var k = 0; k < 4; k++) {
+            var z = 100 + k * 8.5, dx = (k % 2 ? 2 : -2);
+            face(xg, [[x - 9 + dx, 271, z + 3], [x + 9 + dx, 271, z], [x + 9 + dx, 289, z], [x - 9 + dx, 289, z + 3]], k % 2 ? CREAM : lt(col, 0.2), 't', 0.3);
+          }
+          cyl(g, x, 280, 96, 136, 18, col, { cls: 'cs', l: col, r: dk(col, 0.2), noTop: 1 });
+          arcFront(g, x, 280, 128, 18, 'h csd');
+          arcFront(g, x, 280, 104, 18, 'h csd');
+          var tp = P(x, 280, 136), rx = 18 * 1.41421 * C * K, ry = 18 * 1.41421 * S * K;
+          el('ellipse', { cx: r1(tp[0]), cy: r1(tp[1]), rx: r1(rx), ry: r1(ry), fill: lt(col, 0.4), 'class': 'k' }, g);
+          el('ellipse', { cx: r1(tp[0]), cy: r1(tp[1] + 0.5), rx: r1(rx * 0.66), ry: r1(ry * 0.66), fill: dk(col, 0.55), 'class': 'k t' }, g);
+          face(g, [[x - 6, 276, 136], [x + 3, 276, 145], [x + 3, 284, 145], [x - 6, 284, 136]], CREAM, 't', 0.2);
+          face(g, [[x - 1, 280, 136], [x + 7, 272, 143], [x + 7, 279, 147], [x - 1, 287, 140]], lt(col, 0.25), 't', 0.2);
+          var lp = P(x + 12.7, 280 + 12.7, 116);
+          dyn.silos.push(el('circle', { cx: r1(lp[0]), cy: r1(lp[1]), r: 2.3, fill: dk(col, 0.35), 'class': 'k h' }, g));
+        });
+      } },
+
+    /* 2 · FILTRO (Home Mixer) */
+    { id: 'gateBack', st: 2, b: [168, 184, 248, 254, 0, 62], draw: function (g) { box(g, 168, 248, 0, 16, 6, 62, CORAL); } },
+    { id: 'kicker', st: 2, b: [194, 218, 226, 256, 0, 32], sh: [shRect(194, 218, 226, 256, 0, 32)], draw: function (g) {
+        box(g, 194, 226, 0, 24, 30, 32, CORAL);
+        var rf = RF(218, 256, 32);
+        for (var v = 6; v < 20; v += 4.5) pline(g, rf, 6, v, 24, v, 'h');
+        var lf = LF(194, 256, 32);
+        prect(g, lf, 3, 2, 18, 8, dk(CORAL, 0.6), 't', 0.2);
+      } },
+    { id: 'paddleF', st: 2, b: [198, 214, 256, 302, 22, 38], dynBox: 1, draw: function (g) { dyn.padF = mkPaddle(g, 198, 256, 40, CORAL); } },
+    { id: 'gate', st: 2, b: [168, 184, 248, 312, 0, 74], sh: [shRect(168, 184, 306, 312, 0, 62), shRect(168, 184, 248, 312, 62, 74)], draw: function (g) {
+        box(g, 168, 306, 0, 16, 6, 62, CORAL);
+        var a = P(176, 268, 62), b = P(176, 292, 62), c = P(176, 298, BZ + 0.5), d = P(176, 262, BZ + 0.5);
+        dyn.gateBeam = el('path', { d: poly([a, b, c, d]), fill: CORAL, opacity: 0.22 }, g);
+        box(g, 168, 248, 62, 16, 64, 12, CORAL);
+        var rf = RF(184, 312, 74);
+        ft(g, rf, 32, 8.6, 'filter', 6.8, { anchor: 'middle', fill: CREAM, bold: 1 });
+      } },
+    { id: 'binFB', st: 2, cont: 1, b: [182, 236, 318, 356, 0, 27.9], sh: [shRect(182, 236, 318, 356, 0, 28)], draw: function (g) { binBack(g, 182, 318, 54, 38, 28, CORAL); } },
+    { id: 'binFF', st: 2, b: [182, 236, 318, 356, 0, 28], draw: function (g) { binFront(g, 182, 318, 54, 38, 28, CORAL, 'rej'); } },
+
+    /* 3 · RANKING PHOENIX */
+    { id: 'phoenix', st: 3, b: [196, 284, 112, 206, 0, 120], sh: [shRect(196, 284, 112, 206, 0, 120)], draw: function (g) { drawPhoenix(g); } },
+
+    /* 4 · PESOS (vm-ranker) */
+    { id: 'pesosBack', st: 4, b: [276, 332, 30, 36, 0, 60], draw: function (g) { box(g, 276, 30, 0, 8, 6, 60, MUST); box(g, 324, 30, 0, 8, 6, 60, MUST); } },
+    { id: 'pesos', st: 4, b: [274, 334, 28, 90, 0, 104], sh: [shRect(274, 334, 28, 90, 60, 104), shRect(276, 284, 84, 90, 0, 60), shRect(324, 332, 84, 90, 0, 60)], draw: function (g) { drawPesos(g); } },
+
+    /* 4 · DIVERSIDADE (vm-ranker) */
+    { id: 'dppCon', st: 4, b: [344, 408, 0, 32, 0, 44], sh: [shRect(344, 408, 0, 32, 0, 44)], draw: function (g) {
+        box(g, 344, 0, 0, 64, 32, 44, BLUE);
+        var lf = LF(344, 32, 44);
+        prect(g, lf, 4, 3, 34, 15, CREAM, 't');
+        ptext(g, lf, 21, 9.6, 'DPP', 5.2, { anchor: 'middle', bold: 1, fill: dk(BLUE, 0.5) });
+        ptext(g, lf, 21, 16.3, '150 → 50', 5.6, { anchor: 'middle', bold: 1 });
+        var rf = RF(408, 32, 44);
+        for (var v = 8; v < 30; v += 5) pline(g, rf, 6, v, 26, v, 'h');
+        pcirc(g, lf, 52, 8, 2.4, MINT, 'h');
+      } },
+    { id: 'paddleD', st: 4, b: [384, 400, 32, 82, 22, 36], dynBox: 1, draw: function (g) { dyn.padD = mkPaddle(g, 384, 32, 46, BLUE); } },
+    { id: 'dppArm', st: 4, b: [350, 370, 8, 74, 44, 78], sh: [shRect(354, 366, 10, 74, 62, 78)], draw: function (g) {
+        box(g, 354, 10, 44, 12, 12, 26, dk(BLUE, 0.1));
+        var L = P(360, 60, 60), Sp = P(360, 60, BZ + 0.5), rl = 6 * 1.2247 * K, rs = 15 * 1.2247 * K;
+        dyn.dppBeam = el('g', { opacity: 0.3 }, g);
+        el('path', { d: poly([[L[0] - rl, L[1]], [L[0] + rl, L[1]], [Sp[0] + rs, Sp[1]], [Sp[0] - rs, Sp[1]]]), fill: BLUE }, dyn.dppBeam);
+        el('ellipse', { cx: r1(Sp[0]), cy: r1(Sp[1]), rx: r1(rs), ry: r1(rs * 0.577), fill: BLUE }, dyn.dppBeam);
+        box(g, 350, 48, 60, 20, 24, 10, BLUE);
+        box(g, 354, 10, 70, 12, 62, 8, BLUE);
+        ptext(g, LF(350, 72, 70), 10, 7, 'DPP', 5.5, { anchor: 'middle', bold: 1, fill: CREAM });
+      } },
+    { id: 'binDB', st: 4, cont: 1, b: [378, 432, 96, 134, 0, 25.9], sh: [shRect(378, 432, 96, 134, 0, 26)], draw: function (g) { binBack(g, 378, 96, 54, 38, 26, BLUE); } },
+    { id: 'binDF', st: 4, b: [378, 432, 96, 134, 0, 26], draw: function (g) { binFront(g, 378, 96, 54, 38, 26, BLUE, 'nota0'); } },
+
+    /* 5 · COLD START */
+    { id: 'armBase', st: 5, b: [438, 474, -18, 18, 0, 92], sh: [shRect(438, 474, -18, 18, 0, 44), shCirc(456, 0, 8, 44, 92)], draw: function (g) {
+        box(g, 438, -18, 0, 36, 36, 44, PINK);
+        ptext(g, LF(438, 18, 44), 18, 8, 'COLD START', 5.2, { anchor: 'middle', bold: 1 });
+        var rf = RF(474, 18, 44);
+        prect(g, rf, 3, 3, 30, 26, CREAM, 't');
+        ft(g, rf, 18, 10.5, 'cs1', 4.2, { anchor: 'middle' });
+        ptext(g, rf, 18, 17.5, '≤2h', 4.4, { anchor: 'middle', bold: 1 });
+        ptext(g, rf, 18, 24.5, '<200 views', 4.2, { anchor: 'middle' });
+        var xg = el('g', { 'class': 'xr' }, g);
+        var gp = TP(456, 0, 44.2);
+        el('path', { d: pcircD(gp, 0, 0, 13), fill: MUST, 'class': 'k t' }, xg);
+        cyl(g, 456, 0, 44, 86, 7, CREAM, { l: CREAM, r: dk(CREAM, 0.18) });
+        cyl(g, 456, 0, 86, 92, 12, dk(PINK, 0.2), { t: PINK });
+      } },
+
+    /* SAÍDA (stage 6 internally, unnumbered) */
+    { id: 'phone', st: 6, b: [474, 590, 24, 96, 0, 8], sh: [shRect(474, 590, 24, 96, 0, 8)], draw: function (g) { drawPhone(g); } }
+  ];
+
+  function mkPaddle(g, x0, y0, travel, col) {
+    var rodL = el('path', { fill: '#5a554d', 'class': 'k t' }, g), rodT = el('path', { fill: '#7a7468', 'class': 'k t' }, g);
+    var pl = el('path', { fill: lt(col, 0.1), 'class': 'k t' }, g), pr = el('path', { fill: dk(col, 0.2), 'class': 'k t' }, g), pt = el('path', { fill: lt(col, 0.4), 'class': 'k t' }, g);
+    var w = 16;
+    return {
+      set: function (p) {
+        var yf = y0 + 2 + travel * p, Z0 = BZ + 0.6, Z1 = BZ + 15, rx = x0 + 5, rw = 6;
+        var ry = y0, ry1 = yf - 3;
+        if (ry1 > ry + 0.5) {
+          rodL.setAttribute('d', poly([P(rx, ry1, 32), P(rx + rw, ry1, 32), P(rx + rw, ry1, 27), P(rx, ry1, 27)]));
+          rodT.setAttribute('d', poly([P(rx, ry, 32), P(rx + rw, ry, 32), P(rx + rw, ry1, 32), P(rx, ry1, 32)]));
+        } else { rodL.setAttribute('d', ''); rodT.setAttribute('d', ''); }
+        var a = yf - 3;
+        pl.setAttribute('d', poly([P(x0, yf, Z1), P(x0 + w, yf, Z1), P(x0 + w, yf, Z0), P(x0, yf, Z0)]));
+        pr.setAttribute('d', poly([P(x0 + w, a, Z1), P(x0 + w, yf, Z1), P(x0 + w, yf, Z0), P(x0 + w, a, Z0)]));
+        pt.setAttribute('d', poly([P(x0, a, Z1), P(x0 + w, a, Z1), P(x0 + w, yf, Z1), P(x0, yf, Z1)]));
+        return yf;
+      }
+    };
+  }
+  function binBack(g, x, y, w, d, h, col) {
+    var X = x + w, Y = y + d, t = 3;
+    face(g, [[x, y, h], [X, y, h], [X, Y, h], [x, Y, h]], lt(col, 0.35));
+    face(g, [[x + t, y + t, h], [X - t, y + t, h], [X - t, y + t, 2], [x + t, y + t, 2]], dk(col, 0.28), 't');
+    face(g, [[x + t, y + t, h], [x + t, Y - t, h], [x + t, Y - t, 2], [x + t, y + t, 2]], dk(col, 0.4), 't');
+    face(g, [[x + t, y + t, 2], [X - t, y + t, 2], [X - t, Y - t, 2], [x + t, Y - t, 2]], dk(col, 0.5), 't');
+    var cols = [BLUE, MINT, PINK, MUST, CREAM, PINK];
+    for (var i = 0; i < 6; i++) {
+      var cx = x + 12 + (i * 17) % (w - 22), cy = y + 11 + (i * 11) % (d - 20), z = 3 + (i % 3) * 3, q = (i % 2 ? 4 : -3);
+      face(g, [[cx - 9, cy - 9, z + q * 0.5], [cx + 9, cy - 9, z], [cx + 9, cy + 9, z + (q < 0 ? 2 : 0)], [cx - 9, cy + 9, z + q]], cols[(i + (col === CORAL ? 0 : 2)) % 6], 't', 0.3);
+    }
+  }
+  function binFront(g, x, y, w, d, h, col, label) {
+    var X = x + w, Y = y + d, t = 3;
+    face(g, [[x, Y, h], [X, Y, h], [X, Y, 0], [x, Y, 0]], col);
+    face(g, [[X, y, h], [X, Y, h], [X, Y, 0], [X, y, 0]], dk(col, 0.22));
+    face(g, [[x, Y - t, h], [X - t, Y - t, h], [X, Y, h], [x, Y, h]], lt(col, 0.4), 't');
+    face(g, [[X - t, y, h], [X, y, h], [X, Y, h], [X - t, Y - t, h]], lt(col, 0.4), 't');
+    var lf = LF(x, Y, h);
+    prect(g, lf, 6, 7, w - 12, 10, CREAM, 't', 0.3);
+    ft(g, lf, w / 2, 14.4, label, 6, { anchor: 'middle', bold: 1 });
+  }
+
+  function drawPhoenix(g) {
+    var x = 196, y = 112, w = 88, d = 94, h = 120, X = x + w, Y = y + d;
+    // internals (see-through)
+    var xg = el('g', { 'class': 'xr' }, g);
+    [[[x, y, 0], [X, y, 0]], [[x, y, 0], [x, Y, 0]], [[x, y, 0], [x, y, h]]].forEach(function (s) {
+      var a = Pp(s[0]), b = Pp(s[1]);
+      el('path', { d: 'M' + r1(a[0]) + ' ' + r1(a[1]) + 'L' + r1(b[0]) + ' ' + r1(b[1]), fill: 'none', 'class': 'k t', 'stroke-dasharray': '3 4' }, xg);
+    });
+    dyn.layers = [];
+    for (var i = 0; i < 8; i++) {
+      var lg = el('g', { 'class': 'xl' }, xg);
+      box(lg, 210, 128, 38 + i * 10, 60, 62, 5, i % 2 ? CREAM : MINT, { amp: 0.4 });
+      dyn.layers.push(lg);
+    }
+    // 64 gauges on the top layer
+    var gp = TP(210, 128, 118), cd = '', centers = [];
+    for (var r = 0; r < 8; r++) for (var c = 0; c < 8; c++) {
+      var u = 5 + c * 7.1, v = 5.5 + r * 7.3;
+      cd += pcircD(gp, u, v, 2.7, 12);
+      centers.push([u, v]);
+    }
+    el('path', { d: cd, fill: CREAM, 'class': 'k h' }, xg);
+    dyn.gauges = { pl: gp, c: centers, el: el('path', { d: '', fill: 'none', stroke: CORAL, 'stroke-width': 1, 'stroke-linecap': 'round' }, xg) };
+    // casing
+    box(g, x, y, 0, w, d, h, TEAL, { cls: 'cs', t: lt(TEAL, 0.2), l: TEAL, r: dk(TEAL, 0.28) });
+    var dg = el('g', { 'class': 'csd' }, g);
+    var lf = LF(x, Y, h);
+    prect(dg, lf, 22, 84, 44, 36, '#0f2620', 't', 0.3);
+    for (var f = 25; f < 64; f += 5.4) pline(dg, lf, f, 85, f, 101, 'h');
+    ft(dg, lf, w / 2, 17, 'ph1', 9, { anchor: 'middle', fill: CREAM, bold: 1 });
+    ft(dg, lf, w / 2, 31, 'ph2', 14, { anchor: 'middle', fill: CREAM, bold: 1 });
+    ptext(dg, lf, w / 2, 41, 'transformer (Grok)', 6.6, { anchor: 'middle', fill: MINT });
+    prect(dg, lf, 8, 47, w - 16, 3, MINT, 'h', 0.2);
+    [[5, 5], [w - 5, 5], [5, 78], [w - 5, 78]].forEach(function (q) { pcirc(dg, lf, q[0], q[1], 1.4, lt(TEAL, 0.4), 'h'); });
+    var rf = RF(X, Y, h);
+    prect(dg, rf, 9, 11, 76, 34, CREAM, 't', 0.4);
+    ft(dg, rf, 47, 21, 'ph3', 6.3, { anchor: 'middle' });
+    ft(dg, rf, 47, 30, 'ph4', 6.3, { anchor: 'middle', bold: 1 });
+    ft(dg, rf, 47, 40, 'ph5', 5.6, { anchor: 'middle', fill: dk(CORAL, 0.15), bold: 1 });
+    dyn.dials = [];
+    [20, 47, 74].forEach(function (u, i) {
+      pcirc(dg, rf, u, 62, 8.5, CREAM, 't');
+      pcirc(dg, rf, u, 62, 1.6, INK, 'n');
+      dyn.dials.push({ u: u, v: 62, k: 0.7 + i * 0.37, el: el('path', { d: '', fill: 'none', stroke: CORAL, 'stroke-width': 1.5, 'stroke-linecap': 'round' }, dg) });
+    });
+    dyn.dialPl = rf;
+    for (var vv = 84; vv < 110; vv += 5.5) pline(dg, rf, 12, vv, 82, vv, 'h');
+    var led = rf.pt(86, 6);
+    dyn.pled = el('circle', { cx: r1(led[0]), cy: r1(led[1]), r: 2.3, fill: MINT, 'class': 'k h' }, dg);
+    // roof
+    var tp = TP(x, y, h);
+    [[26, 30], [26, 64]].forEach(function (q) {
+      el('path', { d: pcircD(tp, q[0], q[1], 13), fill: dk(TEAL, 0.2), 'class': 'k t' }, dg);
+      for (var a = 0; a < 3; a++) { var an = a * 2.094 + 0.4; pline(dg, tp, q[0], q[1], q[0] + 11 * Math.cos(an), q[1] + 11 * Math.sin(an), 't'); }
+      el('path', { d: pcircD(tp, q[0], q[1], 2.5), fill: MINT, 'class': 'k h' }, dg);
+    });
+    for (var vx = 50; vx < 80; vx += 6) pline(dg, tp, vx, 14, vx, 80, 'h');
+    var an0 = P(270, 120, h), an1 = P(270, 120, h + 22);
+    el('path', { d: 'M' + r1(an0[0]) + ' ' + r1(an0[1]) + 'L' + r1(an1[0]) + ' ' + r1(an1[1]), 'class': 'k t', fill: 'none' }, dg);
+    dyn.antenna = el('circle', { cx: r1(an1[0]), cy: r1(an1[1]), r: 3, fill: CORAL, 'class': 'k t' }, dg);
+  }
+
+  function drawPesos(g) {
+    box(g, 276, 84, 0, 8, 6, 60, MUST);
+    box(g, 324, 84, 0, 8, 6, 60, MUST);
+    // stamp (dynamic): rod + head
+    dyn.stamp = { rodL: el('path', { fill: '#6a645a', 'class': 'k t' }, g), rodR: el('path', { fill: '#4d4840', 'class': 'k t' }, g),
+      hl: el('path', { fill: CORAL, 'class': 'k t' }, g), hr: el('path', { fill: dk(CORAL, 0.25), 'class': 'k t' }, g), ht: el('path', { fill: lt(CORAL, 0.3), 'class': 'k t' }, g) };
+    var xg = el('g', { 'class': 'xr' }, g);
+    // internals: the weights as bars (20, 5, 0.66, −58.8)
+    var bars = [[284, 18, MINT], [295, 6, MINT], [306, 1.5, MINT], [317, -18, CORAL]];
+    ln(xg, [[279, 59, 82], [331, 59, 82]], 't', 0);
+    bars.forEach(function (b) { var z0 = b[1] > 0 ? 82 : 82 + b[1], hh = Math.abs(b[1]); box(xg, b[0], 55, z0, 7, 7, Math.max(1.2, hh), b[2], { amp: 0.2 }); });
+    box(g, 274, 28, 60, 60, 62, 44, MUST, { cls: 'cs', t: lt(MUST, 0.35), r: dk(MUST, 0.22) });
+    var dg = el('g', { 'class': 'csd' }, g);
+    var lf = LF(274, 90, 104);
+    prect(dg, lf, 4, 6, 52, 24, CREAM, 't', 0.3);
+    ft(dg, lf, 30, 15, 'score', 6.4, { anchor: 'middle', bold: 1 });
+    ft(dg, lf, 30, 25, 'sum', 5.6, { anchor: 'middle' });
+    pcirc(dg, lf, 30, 37, 3, CORAL, 't');
+    var rf = RF(334, 90, 104);
+    prect(dg, rf, 4, 5, 54, 34, CREAM, 't', 0.3);
+    [0, 1, 2, 3].forEach(function (i) {
+      ft(dg, rf, 7, 13 + i * 7.6, 'wts.' + i + '.0', 5.1, {});
+      ft(dg, rf, 55, 13 + i * 7.6, 'wts.' + i + '.1', 5.1, { anchor: 'end', bold: 1, fill: i === 3 ? dk(CORAL, 0.2) : INK });
+    });
+    var tp = TP(274, 28, 104);
+    el('path', { d: pcircD(tp, 42, 20, 9), fill: CREAM, 'class': 'k t' }, dg);
+    pline(dg, tp, 42, 20, 48, 15, 't');
+    face(dg, [[288, 40, 104], [300, 40, 104], [300, 52, 104], [288, 52, 104]], dk(MUST, 0.3), 'h', 0.2);
+  }
+
+  function drawPhone(g) {
+    box(g, 474, 24, 0, 116, 72, 8, DARK, { t: '#46423d', l: DARK, r: '#1f1d1a' });
+    var sp = PL([478, 92, 8.05], [0, -1, 0], [1, 0, 0]); // u along -y (text), v along +x (rows)
+    prect(g, sp, 0, 0, 64, 108, CREAM, 't', 0.3);
+    ft(g, sp, 32, 10.5, 'phone', 6, { anchor: 'middle', bold: 1 });
+    pline(g, sp, 3, 15, 61, 15, 'h');
+    var rowsCol = [BLUE, MINT, PINK, null, BLUE, MUST, MINT];
+    dyn.slot = {};
+    rowsCol.forEach(function (col, i) {
+      var v0 = 16 + i * 13, n = 13 + i;
+      if (i) pline(g, sp, 3, v0, 61, v0, 'h');
+      if (col) {
+        ptext(g, sp, 2.5, v0 + 8.3, '#' + n, 4.4, {});
+        el('path', { d: pcircD(sp, 17.5, v0 + 6.5, 3.2, 12), fill: col, 'class': 'k h' }, g);
+        pline(g, sp, 24, v0 + 4.6, 57, v0 + 4.6, 'h');
+        pline(g, sp, 24, v0 + 8.6, 46, v0 + 8.6, 'h');
+      } else {
+        var res = el('g', {}, g), fil = el('g', { style: 'display:none' }, g);
+        prect(res, sp, 1.5, v0 + 1, 61, 11, '#fbe3cf', 'h', 0);
+        ft(res, sp, 32, v0 + 8.2, 'res', 4.6, { anchor: 'middle', fill: dk(ORANGE, 0.35), bold: 1 });
+        prect(fil, sp, 1.5, v0 + 1, 61, 11, '#f9c9a0', 'h', 0);
+        ptext(fil, sp, 2.5, v0 + 8.3, '#16', 4.4, { bold: 1 });
+        el('path', { d: pcircD(sp, 17.5, v0 + 6.5, 3.4, 12), fill: ORANGE, 'class': 'k h' }, fil);
+        ptext(fil, sp, 23, v0 + 8.2, '@ana', 5, { bold: 1 });
+        ptext(fil, sp, 60, v0 + 8.2, '★', 5, { anchor: 'end', fill: dk(ORANGE, 0.2) });
+        dyn.slot.ring = el('path', { d: wob([sp.pt(0.5, v0), sp.pt(63.5, v0), sp.pt(63.5, v0 + 13), sp.pt(0.5, v0 + 13)], true, 0), fill: 'none', stroke: ORANGE, 'stroke-width': 2, 'stroke-linejoin': 'round' }, g);
+        dyn.slot.res = res; dyn.slot.fil = fil;
+      }
+    });
+    var hb = sp.pt(24, 111), he = sp.pt(40, 111);
+    el('path', { d: 'M' + r1(hb[0]) + ' ' + r1(hb[1]) + 'L' + r1(he[0]) + ' ' + r1(he[1]), stroke: '#8a847a', 'stroke-width': 1.4, 'stroke-linecap': 'round' }, g);
+    var lp = sp.pt(58, -2.2);
+    dyn.phled = el('circle', { cx: r1(lp[0]), cy: r1(lp[1]), r: 1.6, fill: MINT }, g);
+  }
+
+  /* ---------- fit to the viewBox ---------- */
+  function corners(b) { var r = []; [b[0], b[1]].forEach(function (x) { [b[2], b[3]].forEach(function (y) { [b[4], b[5]].forEach(function (z) { r.push([x, y, z]); }); }); }); return r; }
+  (function fit() {
+    var mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9;
+    ENTS.forEach(function (m) { corners(m.b).forEach(function (p) { var x = (p[0] - p[1]) * C, yy = (p[0] + p[1]) * S - p[2]; mnx = Math.min(mnx, x); mxx = Math.max(mxx, x); mny = Math.min(mny, yy); mxy = Math.max(mxy, yy); }); });
+    K = Math.min(0.95, 690 / (mxx - mnx));
+    OX = (VW - (mxx - mnx) * K) / 2 - mnx * K + 6;
+    OY = 132 - mny * K;            // top margin: room for the label staircase above the silos
+    VH = Math.round(OY + mxy * K + 56);
+    fit.tight = [Math.floor(mnx * K + OX - 10), Math.floor(mny * K + OY - 14), Math.ceil((mxx - mnx) * K + 20), Math.ceil((mxy - mny) * K + 26)];
+    TIGHT = fit.tight;
+  })();
+
+  /* ---------- painter's sort ---------- */
+  ENTS.forEach(function (m) {
+    var xs = [], ys = [];
+    corners(m.b).forEach(function (p) { var s = Pp(p); xs.push(s[0]); ys.push(s[1]); });
+    m.sb = [Math.min.apply(0, xs), Math.max.apply(0, xs), Math.min.apply(0, ys), Math.max.apply(0, ys)];
+  });
+  function sOver(a, b) { return !(a.sb[1] <= b.sb[0] || b.sb[1] <= a.sb[0] || a.sb[3] <= b.sb[2] || b.sb[3] <= a.sb[2]); }
+  function behind(a, b) {
+    var A = a.b, B = b.b, e = 0.01;
+    if (A[1] <= B[0] + e) return true; if (B[1] <= A[0] + e) return false;
+    if (A[3] <= B[2] + e) return true; if (B[3] <= A[2] + e) return false;
+    if (A[5] <= B[4] + e) return true; if (B[5] <= A[4] + e) return false;
+    return A[5] < B[5];
+  }
+  (function topo() {
+    var n = ENTS.length, inD = new Array(n).fill(0), adj = ENTS.map(function () { return []; });
+    for (var i = 0; i < n; i++) for (var j = i + 1; j < n; j++) {
+      if (!sOver(ENTS[i], ENTS[j])) continue;
+      if (behind(ENTS[i], ENTS[j])) { adj[i].push(j); inD[j]++; } else { adj[j].push(i); inD[i]++; }
+    }
+    var out = [], done = new Array(n).fill(false);
+    function depth(m) { return m.b[0] + m.b[2] + m.b[4]; }
+    while (out.length < n) {
+      var best = -1;
+      for (var k = 0; k < n; k++) if (!done[k] && inD[k] === 0 && (best < 0 || depth(ENTS[k]) < depth(ENTS[best]))) best = k;
+      if (best < 0) for (k = 0; k < n; k++) if (!done[k] && (best < 0 || inD[k] < inD[best])) best = k;
+      done[best] = true; out.push(ENTS[best]);
+      adj[best].forEach(function (t) { inD[t]--; });
+    }
+    ENTS = out;
+  })();
+
+  /* ---------- build the svg ---------- */
+  svg.setAttribute('viewBox', '0 0 ' + VW + ' ' + VH);
+  var defs = el('defs', {}, svg), wash = el('filter', { id: 'fx-wash', x: '-5%', y: '-5%', width: '110%', height: '110%', 'color-interpolation-filters': 'sRGB' }, defs);
+  el('feColorMatrix', { type: 'matrix', values: '.24 .06 .03 0 .63  .03 .26 .04 0 .62  .03 .05 .25 0 .6  0 0 0 1 0' }, wash);
+  var gShadow = el('g', { fill: SHC, opacity: 0.85, 'class': 'fx-shd', 'aria-hidden': 'true' }, svg);
+  var gScene = el('g', {}, svg);
+  dyn.stripes = [];
+  var cardLayers = [];
+  ENTS.forEach(function (m, i) {
+    cardLayers.push(el('g', {}, gScene));
+    var cls = m.belt ? 'fx-belt' : 'fx-ent';
+    m.g = el('g', { 'class': cls, 'data-st': m.st || null }, gScene);
+    m.draw(m.g);
+    (m.sh || []).forEach(function (pts) { el('path', { d: wob(pts.map(Pp), true, 0.6) }, gShadow); });
+  });
+  cardLayers.push(el('g', {}, gScene));
+  var armShadow = el('path', { d: '', fill: 'none', stroke: SHC, 'stroke-width': 7, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gShadow);
+  var gArm = el('g', { 'class': 'fx-armg', 'data-st': 5 }, svg);
+  var gCarry = el('g', {}, svg);
+  var gTrail = el('g', { 'class': 'fx-trail', 'aria-hidden': 'true' }, svg);
+  var gTag = el('g', { 'aria-hidden': 'true' }, svg);
+  var gLab = el('g', { 'aria-hidden': 'true' }, svg);
+  var gBadge = el('g', { 'aria-hidden': 'true' }, svg);
+
+  /* ---------- the arm (redrawn per frame) ---------- */
+  var arm = {
+    sh: armShadow,
+    ink: el('path', { fill: 'none', stroke: INK, 'stroke-width': 10.5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gArm),
+    col: el('path', { fill: 'none', stroke: CORAL, 'stroke-width': 6.5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gArm),
+    hi: el('path', { fill: 'none', stroke: lt(CORAL, 0.45), 'stroke-width': 1.6, 'stroke-linecap': 'round' }, gArm),
+    rod: el('path', { fill: 'none', stroke: INK, 'stroke-width': 3, 'stroke-linecap': 'round' }, gArm),
+    j1: el('ellipse', { rx: 5.5, ry: 3.4, fill: CREAM, 'class': 'k t' }, gArm),
+    j2: el('ellipse', { rx: 4.6, ry: 2.9, fill: CREAM, 'class': 'k t' }, gArm),
+    gl: el('path', { fill: PINK, 'class': 'k t' }, gArm), gr: el('path', { fill: dk(PINK, 0.25), 'class': 'k t' }, gArm), gt: el('path', { fill: lt(PINK, 0.3), 'class': 'k t' }, gArm),
+    claw: el('path', { fill: 'none', 'class': 'k t' }, gArm),
+    x: REST[0], y: REST[1], z: 66, ph: 'rest', t: 0, from: null
+  };
+  function ik(tx, ty) {
+    var dx = tx - SHOULDER[0], dy = ty - SHOULDER[1], d0 = Math.sqrt(dx * dx + dy * dy) || 1, d = Math.max(16, Math.min(L1 + L2 - 0.5, d0));
+    var a = Math.atan2(dy, dx), b = Math.acos((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d)), s = a - b;
+    return { e: [SHOULDER[0] + L1 * Math.cos(s), SHOULDER[1] + L1 * Math.sin(s)], w: [SHOULDER[0] + dx / d0 * d, SHOULDER[1] + dy / d0 * d] };
+  }
+  function f2(p) { return r1(p[0]) + ' ' + r1(p[1]); }
+  function drawArm() {
+    var k = ik(arm.x, arm.y), s = P(SHOULDER[0], SHOULDER[1], AZ), e = P(k.e[0], k.e[1], AZ), w = P(k.w[0], k.w[1], AZ);
+    var d = 'M' + f2(s) + 'L' + f2(e) + 'L' + f2(w);
+    arm.ink.setAttribute('d', d); arm.col.setAttribute('d', d);
+    arm.hi.setAttribute('d', 'M' + r1(s[0]) + ' ' + r1(s[1] - 1.6) + 'L' + r1(e[0]) + ' ' + r1(e[1] - 1.6) + 'L' + r1(w[0]) + ' ' + r1(w[1] - 1.6));
+    var gz = arm.z, wx = k.w[0], wy = k.w[1], g0 = P(wx, wy, gz + 7);
+    arm.rod.setAttribute('d', 'M' + f2(w) + 'L' + f2(g0));
+    arm.j1.setAttribute('cx', r1(e[0])); arm.j1.setAttribute('cy', r1(e[1]));
+    arm.j2.setAttribute('cx', r1(w[0])); arm.j2.setAttribute('cy', r1(w[1]));
+    var x0 = wx - 5, x1 = wx + 5, y0 = wy - 5, y1 = wy + 5, z0 = gz + 3, z1 = gz + 9;
+    arm.gl.setAttribute('d', poly([P(x0, y1, z1), P(x1, y1, z1), P(x1, y1, z0), P(x0, y1, z0)]));
+    arm.gr.setAttribute('d', poly([P(x1, y0, z1), P(x1, y1, z1), P(x1, y1, z0), P(x1, y0, z0)]));
+    arm.gt.setAttribute('d', poly([P(x0, y0, z1), P(x1, y0, z1), P(x1, y1, z1), P(x0, y1, z1)]));
+    var c1 = P(wx - 4, wy + 4, z0), c2 = P(wx - 4, wy + 4, gz - 1), c3 = P(wx + 4, wy - 4, z0), c4 = P(wx + 4, wy - 4, gz - 1), c5 = P(wx + 4, wy + 4, z0), c6 = P(wx + 4, wy + 4, gz - 1);
+    arm.claw.setAttribute('d', 'M' + f2(c1) + 'L' + f2(c2) + 'M' + f2(c3) + 'L' + f2(c4) + 'M' + f2(c5) + 'L' + f2(c6));
+    var ss = P(SHOULDER[0], SHOULDER[1] + AZ * SHK, 0), se = P(k.e[0], k.e[1] + AZ * SHK, 0), sw = P(wx, wy + AZ * SHK, 0);
+    arm.sh.setAttribute('d', 'M' + f2(ss) + 'L' + f2(se) + 'L' + f2(sw));
+    arm.wx = wx; arm.wy = wy;
+  }
+
+  /* ---------- cards (pooled) ---------- */
+  function setWhy(c) { // reject tag text in the current language (c.whyK indexes STR[lang].reasons)
+    var reason = sv('reasons')[c.whyK], w = reason.length * 7.4 * 0.62 + 10;
+    c.whyT.textContent = reason; c.whyR.setAttribute('x', -w / 2); c.whyR.setAttribute('width', w);
+  }
+  function setAnaTag() {
+    if (ana.scored) { ana.tagT.textContent = sv('anaScore'); ana.tagR.setAttribute('width', 82); }
+    else { ana.tagT.textContent = '@ana'; ana.tagR.setAttribute('width', 44); }
+  }
+  function q(x, y, z) { return [(x - y) * C * K, ((x + y) * S - z) * K]; }
+  function lq(pts) { return poly(pts.map(function (p) { return q(p[0], p[1], p[2]); })); }
+  function mkCard(isAna) {
+    var hw = 11, th = 3.2, g = el('g', { 'class': 'fx-card' + (isAna ? ' ana' : ''), style: 'display:none' });
+    var c = { g: g, ana: isAna, st: 'off' };
+    c.L = el('path', { d: lq([[-hw, hw, th], [hw, hw, th], [hw, hw, 0], [-hw, hw, 0]]), 'class': 'k t' }, g);
+    c.R = el('path', { d: lq([[hw, -hw, th], [hw, hw, th], [hw, hw, 0], [hw, -hw, 0]]), 'class': 'k t' }, g);
+    c.T = el('path', { d: lq([[-hw, -hw, th], [hw, -hw, th], [hw, hw, th], [-hw, hw, th]]), 'class': 'k t' }, g);
+    var av = []; for (var i = 0; i < 12; i++) { var a = i / 12 * 6.2832; av.push(q(-5.5 + 2.8 * Math.cos(a), -5.5 + 2.8 * Math.sin(a), th)); }
+    c.av = el('path', { d: poly(av), fill: CREAM, 'class': 'k h' }, g);
+    var L = function (x0, y0, x1) { var a = q(x0, y0, th), b = q(x1, y0, th); return 'M' + f2(a) + 'L' + f2(b); };
+    el('path', { d: L(-1, -6.5, 7) + L(-7.5, -0.5, 7) + L(-7.5, 4.5, 3), fill: 'none', 'class': 'k h' }, g);
+    c.stamp = el('path', { d: (function () { var p = []; for (var i = 0; i < 14; i++) { var a = i / 14 * 6.2832; p.push(q(3 + 4.6 * Math.cos(a), 3.5 + 4.6 * Math.sin(a), th)); } return poly(p); })(), fill: 'none', stroke: CORAL, 'stroke-width': 1.5, style: 'display:none' }, g);
+    c.flag = el('g', { style: 'display:none' }, g);
+    var p0 = q(7, -7, th), p1 = q(7, -7, th + 20);
+    el('path', { d: 'M' + f2(p0) + 'L' + f2(p1), fill: 'none', 'class': 'k t' }, c.flag);
+    c.flagF = el('path', { d: lq([[7, -7, th + 20], [17, -7, th + 16.5], [7, -7, th + 13]]), fill: CREAM, 'class': 'k t' }, c.flag);
+    c.why = el('g', { style: 'display:none', transform: 'translate(0 -24)' }, g);
+    c.whyR = el('rect', { y: -7, height: 12, rx: 6, fill: CORAL, 'class': 'k h' }, c.why);
+    c.whyT = el('text', { y: 2.3, 'font-size': 7.4, 'text-anchor': 'middle', fill: CREAM, 'class': 'fx-t', 'font-weight': 700 }, c.why);
+    if (isAna) {
+      c.tag = el('g', { transform: 'translate(0 -40)' }, g);
+      c.tagR = el('rect', { x: -22, y: -8, width: 44, height: 15, rx: 7.5, fill: CREAM, 'class': 'k t' }, c.tag);
+      el('circle', { cx: -14, cy: -0.5, r: 3.3, fill: ORANGE, 'class': 'k h' }, c.tag);
+      c.tagT = el('text', { x: -8, y: 2.6, 'font-size': 8.4, fill: INK, 'class': 'fx-t', 'font-weight': 700 }, c.tag);
+      c.tagT.textContent = '@ana';
+      c.tagL = el('path', { d: 'M0 7L0 22', stroke: INK, 'stroke-width': 1, fill: 'none' }, c.tag);
+    }
+    return c;
+  }
+  function paint(c, col) {
+    c.col = col;
+    c.T.setAttribute('fill', lt(col, 0.18)); c.L.setAttribute('fill', col); c.R.setAttribute('fill', dk(col, 0.25));
+  }
+  var pool = [], cards = [];
+  for (var pi = 0; pi < 48; pi++) { var cc = mkCard(false); pool.push(cc); cards.push(cc); }
+  var ana = mkCard(true); cards.push(ana); paint(ana, ORANGE); ana.st = 'wait';
+  gTag.appendChild(ana.tag); ana.tag.style.display = 'none';
+  function take() { for (var i = 0; i < pool.length; i++) if (pool[i].st === 'off') return pool[i]; return null; }
+  function reset(c) {
+    c.flg = c.scored = false; c.layer = -1; c.op = 1;
+    c.flag.style.display = 'none'; c.stamp.style.display = 'none'; c.why.style.display = 'none'; c.g.style.opacity = '';
+    c.flagF.setAttribute('fill', CREAM);
+    if (c.ana) { c.tagT.textContent = '@ana'; c.tagR.setAttribute('width', 44); }
+  }
+  function free(c) { c.st = c.ana ? 'done' : 'off'; c.g.style.display = 'none'; }
+
+  /* ---------- simulation ---------- */
+  var V = 24, SPC = 30, TF = 0.62;
+  var D = 0, T = 0, sim = {
+    siloK: S_SILO.map(function () { return null; }), siloFlash: [0, 0, 0, 0],
+    padF: 9, padD: 9, lastCol: null, anaWant: false, anaCool: 0, slotFilled: false, pulse: 9, phled: 9
+  };
+  function slotFree(s) {
+    for (var i = 0; i < cards.length; i++) { var c = cards[i]; if ((c.st === 'belt' || c.st === 'fall') && Math.abs(c.s - s) < SPC * 0.5) return false; }
+    return true;
+  }
+  function spawn(c, si, s) {
+    reset(c); c.st = 'fall'; c.t = 0; c.si = si; c.s = s; c.src = si;
+    if (!c.ana) paint(c, SRC[si].col);
+    c.g.style.display = '';
+    sim.siloFlash[si] = 0.5;
+  }
+  function kick(c, to, k) {
+    var p = path(c.s);
+    c.st = 'kick'; c.t = 0; c.ka = [p[0], p[1], BZ]; c.kb = to; c.dur = 0.8;
+    c.whyK = k; setWhy(c); c.why.style.display = '';
+  }
+  function easeIO(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+  function step(dt) {
+    T += dt; D += V * dt;
+    // sources: one decision per slot passing under each silo
+    for (var i = 0; i < 4; i++) {
+      var sh = S_SILO[i] - V * TF, kk = Math.floor((D - sh) / SPC);
+      if (sim.siloK[i] === null) sim.siloK[i] = kk;
+      if (kk !== sim.siloK[i]) {
+        sim.siloK[i] = kk;
+        var s0 = sh + ((D - sh) - kk * SPC); // position of the slot that just passed sh
+        if (slotFree(s0)) {
+          if (i === 1 && sim.anaWant && ana.st !== 'fall' && ana.st !== 'belt') { sim.anaWant = false; spawn(ana, 1, s0); }
+          else if (Math.random() < SRC[i].p) { var c = take(); if (c) spawn(c, i, s0); }
+        }
+      }
+      sim.siloFlash[i] -= dt;
+    }
+    sim.padF += dt; sim.padD += dt; sim.pulse += dt; sim.phled += dt;
+    for (var j = 0; j < cards.length; j++) {
+      var c = cards[j], prev = c.s;
+      if (c.st === 'fall' || c.st === 'belt') {
+        c.s += V * dt;
+        if (c.st === 'fall') { c.t += dt; if (c.t >= TF) c.st = 'belt'; }
+        if (c.st !== 'belt') continue;
+        if (prev < S_KICK && c.s >= S_KICK && !c.ana && Math.random() < 0.3) {
+          sim.padF = 0;
+          kick(c, [196 + Math.random() * 26, 328 + Math.random() * 18, 5], (Math.random() * 5) | 0);
+          continue;
+        }
+        if (prev < S_POUT && c.s >= S_POUT) { c.flg = true; c.flag.style.display = ''; }
+        if (prev < S_STAMP && c.s >= S_STAMP) {
+          c.scored = true; c.flagF.setAttribute('fill', INK);
+          if (!SRC[c.src].inNet) c.stamp.style.display = '';
+          if (c.ana) setAnaTag();
+        }
+        if (prev < S_DPP && c.s >= S_DPP && !c.ana) {
+          var same = c.col === sim.lastCol;
+          if (Math.random() < (same ? 0.8 : 0.1)) { sim.padD = 0; kick(c, [390 + Math.random() * 28, 106 + Math.random() * 16, 5], 5); continue; }
+          sim.lastCol = c.col;
+        }
+        if (c.ana && c.s >= S_DPP && prev < S_DPP) sim.lastCol = ORANGE;
+        if (c.s >= S_END && !c.ana) { c.st = 'enter'; c.t = 0; sim.phled = 0; }
+      } else if (c.st === 'kick') {
+        c.t += dt; if (c.t >= c.dur) free(c);
+      } else if (c.st === 'enter') {
+        c.t += dt; if (c.t >= 0.55) free(c);
+      }
+    }
+    // the cold-start arm
+    arm.t += dt;
+    var A = arm;
+    if (A.ph === 'rest') {
+      A.x = REST[0] + 4 * Math.sin(T * 0.8); A.y = REST[1] + 3 * Math.sin(T * 0.63); A.z = 66 + 2 * Math.sin(T * 1.1);
+      if (ana.st === 'belt' && ana.s >= S_PICK - V * 1.25) { A.ph = 'reach'; A.t = 0; A.from = [A.x, A.y, A.z]; }
+    } else if (A.ph === 'reach') {
+      var u = Math.min(1, A.t / 1.25), e = easeIO(u), pk = path(S_PICK);
+      A.x = A.from[0] + (pk[0] - A.from[0]) * e; A.y = A.from[1] + (pk[1] - A.from[1]) * e; A.z = A.from[2] + (54 - A.from[2]) * e;
+      if (u >= 1) { A.ph = 'grab'; A.t = 0; }
+    } else if (A.ph === 'grab') {
+      var u2 = Math.min(1, A.t / 0.42), ap = path(ana.s);
+      A.x = ap[0]; A.y = ap[1]; A.z = 54 - (54 - 27) * easeIO(u2);
+      if (u2 >= 1) { A.ph = 'lift'; A.t = 0; ana.st = 'arm'; }
+    } else if (A.ph === 'lift') {
+      var u3 = Math.min(1, A.t / 0.45); A.z = 27 + (64 - 27) * easeIO(u3);
+      if (u3 >= 1) { A.ph = 'swing'; A.t = 0; A.from = [A.x, A.y, A.z]; }
+    } else if (A.ph === 'swing') {
+      var u4 = Math.min(1, A.t / 1.5), e4 = easeIO(u4);
+      A.x = A.from[0] + (SLOT16[0] - A.from[0]) * e4; A.y = A.from[1] + (SLOT16[1] - A.from[1]) * e4; A.z = 64 + 8 * Math.sin(Math.PI * u4);
+      if (u4 >= 1) { A.ph = 'lower'; A.t = 0; }
+    } else if (A.ph === 'lower') {
+      var u5 = Math.min(1, A.t / 0.5); A.z = 64 - (64 - 12) * easeIO(u5);
+      if (u5 >= 1) { A.ph = 'up'; A.t = 0; free(ana); sim.slotFilled = true; sim.pulse = 0; sim.anaCool = 7; }
+    } else if (A.ph === 'up') {
+      var u6 = Math.min(1, A.t / 0.4); A.z = 12 + (60 - 12) * easeIO(u6);
+      if (u6 >= 1) { A.ph = 'home'; A.t = 0; A.from = [A.x, A.y, A.z]; }
+    } else if (A.ph === 'home') {
+      var u7 = Math.min(1, A.t / 1.3), e7 = easeIO(u7);
+      A.x = A.from[0] + (REST[0] - A.from[0]) * e7; A.y = A.from[1] + (REST[1] - A.from[1]) * e7; A.z = A.from[2] + (66 - A.from[2]) * e7;
+      if (u7 >= 1) { A.ph = 'rest'; }
+    }
+    if (sim.anaCool > 0) { sim.anaCool -= dt; if (sim.anaCool <= 0) sim.anaWant = true; }
+  }
+
+  /* ---------- render ---------- */
+  function mBehind(m, x, y, z) {
+    var B = m.b;
+    if (m.cont && x > B[0] && x < B[1] && y > B[2] && y < B[3]) return true;
+    return B[1] <= x - 10.5 || B[3] <= y - 10.5 || B[5] <= z + 0.5;
+  }
+  function layerFor(x, y, z, sx, sy) {
+    var li = 0;
+    for (var i = 0; i < ENTS.length; i++) {
+      var m = ENTS[i], sb = m.sb;
+      if (sx + 22 < sb[0] || sx - 22 > sb[1] || sy + 14 < sb[2] || sy - 32 > sb[3]) continue;
+      if (mBehind(m, x, y, z)) li = i + 1;
+    }
+    return li;
+  }
+  function cardPos(c) {
+    if (c.st === 'fall') { var h = path(S_SILO[c.si]), u = c.t / TF; return [h[0], h[1], 60 - (60 - BZ) * u * u]; }
+    if (c.st === 'belt') { var p = path(c.s); return [p[0], p[1], BZ]; }
+    if (c.st === 'kick') {
+      var k = Math.min(1, c.t / c.dur), e = k < 0.2 ? k * 0.6 : 0.12 + (k - 0.2) / 0.8 * 0.88;
+      return [c.ka[0] + (c.kb[0] - c.ka[0]) * e, c.ka[1] + (c.kb[1] - c.ka[1]) * e, c.ka[2] + (c.kb[2] - c.ka[2]) * e + (k > 0.2 ? 26 * Math.sin(Math.PI * (k - 0.2) / 0.8) * 0.9 : 0)];
+    }
+    if (c.st === 'enter') { var v = Math.min(1, c.t / 0.55); return [460 + 26 * v, 60, BZ - (BZ - 8.3) * v * v]; }
+    if (c.st === 'arm') return [arm.wx, arm.wy, arm.z - 3.6];
+    return null;
+  }
+  var stripeOff = 0;
+  function render() {
+    drawArm();
+    var off = -(D % 15);
+    dyn.stripes.forEach(function (p) { p.setAttribute('stroke-dashoffset', r1(off)); });
+    for (var i = 0; i < cards.length; i++) {
+      var c = cards[i];
+      if (c.st === 'off' || c.st === 'wait' || c.st === 'done') { if (c.g.style.display !== 'none') c.g.style.display = 'none'; if (c.ana) c.tag.style.display = 'none'; continue; }
+      var p = cardPos(c); if (!p) continue;
+      var sp = P(p[0], p[1], p[2]);
+      c.g.setAttribute('transform', 'translate(' + r1(sp[0]) + ' ' + r1(sp[1]) + ')');
+      if (c.ana) { c.tag.setAttribute('transform', 'translate(' + r1(sp[0]) + ' ' + r1(sp[1] - 40) + ')'); c.tag.style.display = ''; }
+      if (c.g.style.display === 'none') c.g.style.display = '';
+      if (c.st === 'kick') { var k = c.t / c.dur; c.g.style.opacity = k > 0.82 ? Math.max(0, (1 - k) / 0.18) : 1; }
+      else if (c.st === 'enter') c.g.style.opacity = Math.max(0, 1 - c.t / 0.55);
+      if (c.st === 'arm') { if (c.g.parentNode !== gCarry) { gCarry.appendChild(c.g); c.layer = -2; } }
+      else {
+        var li = layerFor(p[0], p[1], p[2], sp[0], sp[1]);
+        if (li !== c.layer) { cardLayers[li].appendChild(c.g); c.layer = li; }
+      }
+    }
+    // paddles
+    var pf = sim.padF, pF = pf < 0.12 ? pf / 0.12 : pf < 0.25 ? 1 : pf < 0.6 ? 1 - (pf - 0.25) / 0.35 : 0;
+    var yF = dyn.padF.set(pF); ENTS.byId.paddleF.b[3] = yF;
+    var pd = sim.padD, pD = pd < 0.12 ? pd / 0.12 : pd < 0.25 ? 1 : pd < 0.6 ? 1 - (pd - 0.25) / 0.35 : 0;
+    var yD = dyn.padD.set(pD); ENTS.byId.paddleD.b[3] = yD;
+    // stamp follows the nearest card under the press
+    var best = 99;
+    for (var j = 0; j < cards.length; j++) { var cj = cards[j]; if (cj.st === 'belt') { var dd = Math.abs(cj.s - S_STAMP); if (dd < best) best = dd; } }
+    var tt = Math.min(1, best / 11), zb = 26 + 28 * (tt * tt * (3 - 2 * tt)), st = dyn.stamp;
+    var x0 = 296, x1 = 312, y0 = 52, y1 = 68;
+    st.rodL.setAttribute('d', poly([P(301, 63, 60), P(307, 63, 60), P(307, 63, zb + 7), P(301, 63, zb + 7)]));
+    st.rodR.setAttribute('d', poly([P(307, 57, 60), P(307, 63, 60), P(307, 63, zb + 7), P(307, 57, zb + 7)]));
+    st.hl.setAttribute('d', poly([P(x0, y1, zb + 7), P(x1, y1, zb + 7), P(x1, y1, zb), P(x0, y1, zb)]));
+    st.hr.setAttribute('d', poly([P(x1, y0, zb + 7), P(x1, y1, zb + 7), P(x1, y1, zb), P(x1, y0, zb)]));
+    st.ht.setAttribute('d', poly([P(x0, y0, zb + 7), P(x1, y0, zb + 7), P(x1, y1, zb + 7), P(x0, y1, zb + 7)]));
+    // idle life
+    dyn.dials.forEach(function (d) {
+      var a = -2.2 + 1.3 * Math.sin(T * d.k) + 0.25 * Math.sin(T * 3.1 * d.k), p0 = dyn.dialPl.pt(d.u, d.v), p1 = dyn.dialPl.pt(d.u + 6.5 * Math.cos(a), d.v + 6.5 * Math.sin(a));
+      d.el.setAttribute('d', 'M' + f2(p0) + 'L' + f2(p1));
+    });
+    dyn.pled.setAttribute('fill', (T * 1.2) % 1 < 0.5 ? MINT : dk(MINT, 0.5));
+    dyn.antenna.setAttribute('fill', (T * 0.7) % 1 < 0.15 ? lt(CORAL, 0.5) : CORAL);
+    dyn.silos.forEach(function (l, i) { l.setAttribute('fill', sim.siloFlash[i] > 0 ? '#fff6c8' : dk(SRC[i].col, 0.35)); });
+    dyn.gateBeam.setAttribute('opacity', r1(0.16 + 0.1 * Math.sin(T * 2.4) + (sim.padF < 0.6 ? 0.2 : 0)));
+    dyn.dppBeam.setAttribute('opacity', r1(0.24 + 0.08 * Math.sin(T * 1.9)));
+    dyn.phled.setAttribute('fill', sim.phled < 0.25 ? '#fff6c8' : MINT);
+    if (state.xray) {
+      var gd = '', G = dyn.gauges;
+      for (var gi = 0; gi < 64; gi++) {
+        var ce = G.c[gi], an = -1.6 + Math.sin(T * (0.9 + (gi % 7) * 0.13) + gi * 1.7) * 1.1, a0 = G.pl.pt(ce[0], ce[1]), a1 = G.pl.pt(ce[0] + 2.4 * Math.cos(an), ce[1] + 2.4 * Math.sin(an));
+        gd += 'M' + f2(a0) + 'L' + f2(a1);
+      }
+      G.el.setAttribute('d', gd);
+      var on = Math.floor(T * 3) % 8;
+      if (on !== dyn.layerOn) { dyn.layers.forEach(function (l, i) { l.setAttribute('class', 'xl' + (i === on ? ' on' : '')); }); dyn.layerOn = on; }
+    }
+    // slot 16
+    dyn.slot.res.style.display = sim.slotFilled ? 'none' : '';
+    dyn.slot.fil.style.display = sim.slotFilled ? '' : 'none';
+    dyn.slot.ring.setAttribute('stroke-width', sim.pulse < 1.2 ? r1(2 + 2.5 * Math.sin(Math.PI * sim.pulse / 1.2)) : 2);
+    if (state.follow) followCaption();
+  }
+  ENTS.byId = {}; ENTS.forEach(function (m) { ENTS.byId[m.id] = m; });
+
+  /* ---------- trail of @ana ---------- */
+  (function trail() {
+    var pts = [P(32, 280, 60), P(32, 280, BZ + 2), P(240, 280, BZ + 2), P(240, 60, BZ + 2), P(436, 60, BZ + 2), P(436, 60, 60)];
+    var up = P(SLOT16[0], SLOT16[1], 70), mid = P(488, 60, 92), end = P(SLOT16[0], SLOT16[1], 10);
+    var d = 'M' + pts.map(f2).join('L') + 'Q' + f2(mid) + ' ' + f2(up) + 'L' + f2(end);
+    el('path', { d: d, fill: 'none', stroke: INK, 'stroke-width': 4.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-dasharray': '0.1 7' }, gTrail);
+    el('path', { d: d, fill: 'none', stroke: ORANGE, 'stroke-width': 2.8, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-dasharray': '0.1 7' }, gTrail);
+    el('circle', { cx: r1(end[0]), cy: r1(end[1]), r: 7, fill: 'none', stroke: ORANGE, 'stroke-width': 2 }, gTrail);
+  })();
+
+  /* ---------- labels & number badges ---------- */
+  var FS = 8.6, LH = 11.2;
+  function pill(lines, x, y, o) {
+    o = o || {};
+    var g = el('g', { 'class': 'fx-lab' + (o.st ? ' st' + o.st : '') }, gLab);
+    var w = Math.max.apply(0, lines.map(function (l) { return l.length; })) * FS * 0.615 + 14, h = lines.length * LH + 7;
+    if (o.right) x -= w;
+    var A = o.a ? Pp(o.a) : null;
+    if (A) {
+      var cx = Math.max(x + 6, Math.min(x + w - 6, A[0])), cy = Math.max(y, Math.min(y + h, A[1]));
+      el('path', { d: 'M' + f2(A) + 'L' + r1(cx) + ' ' + r1(cy), stroke: INK, 'stroke-width': 1, fill: 'none' }, g);
+      el('circle', { cx: r1(A[0]), cy: r1(A[1]), r: 2.2, fill: INK }, g);
+    }
+    el('rect', { x: r1(x), y: r1(y), width: r1(w), height: r1(h), rx: lines.length > 1 ? 7 : h / 2, fill: o.fill || CREAM, stroke: INK, 'stroke-width': 1.2 }, g);
+    lines.forEach(function (l, i) {
+      var t = el('text', { x: r1(x + 7), y: r1(y + 4 + LH * i + FS * 0.92), 'font-size': FS, fill: o.tc || INK, 'class': 'fx-t', 'font-weight': i === 0 ? 700 : null }, g);
+      t.textContent = l;
+    });
+    g._st = o.st;
+    return g;
+  }
+  var LABS = [];
+  function L(lines, x, y, o) { LABS.push(pill(lines, x, y, o)); }
+  function sp(x, y, z) { return P(x, y, z); }
+  var bsp = {};
+  // badge anchors (world)
+  var BADGES = [[1, [-42, 306, 96]], [2, [168, 312, 40]], [3, [196, 206, 120]], [4, [334, 28, 104]], [4, [350, 72, 70]], [5, [438, 18, 20]]];
+  BADGES.forEach(function (b) {
+    var p = Pp(b[1]); bsp[b[0]] = p;
+    var g = el('g', { 'class': 'fx-badge', transform: 'translate(' + f2(p) + ')' }, gBadge);
+    var gi = el('g', { 'class': 'fx-bi' }, g);
+    el('circle', { r: 7.5, fill: INK, stroke: CREAM, 'stroke-width': 1.5 }, gi);
+    var t = el('text', { y: 3.3, 'text-anchor': 'middle', 'font-size': 9.5, fill: CREAM, 'font-weight': 700, 'class': 'fx-t' }, gi);
+    t.textContent = b[0];
+    g._st = b[0];
+  });
+
+  function buildLabels() {
+    while (LABS.length) gLab.removeChild(LABS.pop());
+    var src = sv('lSrc');
+    // 1 · busca de candidatos: a staircase of pills above the silos, vertical leaders to each lid
+    L(src[0], 10, 8, { st: 1, a: [-16, 280, 140] });
+    L(src[1], 90, 44, { st: 1, a: [32, 280, 140] });
+    L(src[2], 126, 92, { st: 1, a: [80, 280, 140] });
+    L(src[3], 162, 128, { st: 1, a: [128, 280, 140] });
+    // 2 · filtro: the reject reasons flow in two rows under the bin
+    L(sv('lFilter'), 150, 440, { st: 2, a: [215, 356, 4] });
+    var rx = 150, rej = sv('lRej');
+    rej.forEach(function (r, i) {
+      if (i === 3) rx = 150;
+      var g = pill([r], rx, i < 3 ? 463 : 486, { st: 2, fill: CORAL, tc: CREAM });
+      LABS.push(g); rx += +g.querySelector('rect').getAttribute('width') + 5;
+    });
+    // 3 · ranking Phoenix
+    L(sv('lRank'), 290, 8, { st: 3, a: [199, 115, 120] });
+    L(sv('lProb'), 372, 100, { st: 3, a: [222, 46, BZ] });
+    // 4 · pesos e diversidade (vm-ranker)
+    L(sv('lW'), 478, 8, { st: 4, a: [277, 31, 104] });
+    L(sv('lDpp'), 420, 460, { st: 4, a: [405, 134, 1] });
+    // 5 · cold start
+    L(sv('lCs'), 590, 140, { st: 5, a: [448, -8, 92] });
+    // saída
+    L(sv('lOut'), 620, 476, { st: 6, a: [560, 96, 6] });
+  }
+
+  /* ---------- state, captions & controls ---------- */
+  var state = { playing: true, xray: false, lab: true, follow: false, stage: 0, visible: true, narrow: false };
+  var lastFollow = '';
+  function followCaption() {
+    var c = ana, i;
+    if (c.st === 'fall' || (c.st === 'belt' && c.s < S_KICK)) i = 0;
+    else if (c.st === 'belt' && c.s < S_PIN) i = 1;
+    else if (c.st === 'belt' && c.s < S_POUT) i = 2;
+    else if (c.st === 'belt' && c.s < S_STAMP) i = 3;
+    else if (c.st === 'belt' && c.s < S_DPP) i = 4;
+    else if (c.st === 'belt') i = 5;
+    else if (c.st === 'arm') i = 6;
+    else i = sim.slotFilled ? 7 : 8;
+    var k = sv('fol')[i];
+    if (k !== lastFollow) { lastFollow = k; say.innerHTML = k; }
+  }
+  function setCaption() {
+    if (state.follow) { lastFollow = ''; followCaption(); return; }
+    say.innerHTML = state.stage ? sv('caps')[state.stage] : sv('summary');
+  }
+  function applyStage() {
+    root.classList.toggle('hl', !!state.stage);
+    ENTS.forEach(function (m) { if (m.g && !m.belt) m.g.classList.toggle('on', m.st === state.stage); });
+    gArm.classList.toggle('on', state.stage === 5);
+    LABS.forEach(function (g) { g.classList.toggle('on', g.getAttribute('class').indexOf('st' + state.stage) >= 0 && !!state.stage); });
+    [].forEach.call(gBadge.childNodes, function (g) { g.classList.toggle('on', g._st === state.stage); });
+    [].forEach.call(root.querySelectorAll('[data-stage]'), function (b) { b.setAttribute('aria-pressed', String(+b.getAttribute('data-stage') === state.stage)); });
+  }
+  function setStage(n) {
+    state.stage = state.stage === n ? 0 : n;
+    if (state.stage && state.follow) setFollow(false);
+    applyStage(); setCaption();
+  }
+  function setFollow(on) {
+    state.follow = on; root.classList.toggle('follow', on);
+    btn('follow').setAttribute('aria-pressed', String(on));
+    if (on && state.stage) { state.stage = 0; applyStage(); }
+    setCaption();
+  }
+  function btn(a) { return root.querySelector('[data-act="' + a + '"]'); }
+  function setPlay(on) {
+    state.playing = on;
+    var b = btn('play'); b.setAttribute('aria-pressed', String(on)); b.textContent = sv(on ? 'pause' : 'play');
+    loop();
+  }
+  /* ---------- language ---------- */
+  function applyLang() {
+    root.setAttribute('lang', lang);
+    var tag = root.querySelector('.wtag');
+    if (tag) tag.lastChild.nodeValue = sv('tag');
+    svg.setAttribute('aria-label', sv('aria'));
+    var leg = root.querySelector('.fx-leg');
+    leg.setAttribute('aria-label', sv('legAria'));
+    [].forEach.call(leg.querySelectorAll('li > span'), function (s, i) { s.innerHTML = sv('leg')[i]; });
+    root.querySelector('.fx-ctl:not(.fx-steps)').setAttribute('aria-label', sv('ctlAria'));
+    root.querySelector('.fx-steps').setAttribute('aria-label', sv('stepsAria'));
+    root.querySelector('.fx-sl').textContent = sv('sl');
+    var pb = btn('play'); pb.textContent = sv(state.playing ? 'pause' : 'play'); pb.setAttribute('aria-label', sv('playAria'));
+    btn('xray').textContent = sv('xray'); btn('lab').textContent = sv('lab'); btn('follow').textContent = sv('follow');
+    [].forEach.call(root.querySelectorAll('[data-stage]'), function (b) { var n = +b.getAttribute('data-stage'); b.setAttribute('aria-label', sv('stAria')[n - 1]); if (n === 6) b.textContent = sv('out'); });
+    var wc = root.querySelector('.wcap'); if (wc) wc.textContent = sv('wcap');
+    FACE.forEach(function (f) { var v = sv(f.key); f.el.textContent = sTxt(v); f.el.setAttribute('font-size', (v && v.fs) || f.fs); });
+    cards.forEach(function (c) { if (c.whyK != null) setWhy(c); });
+    setAnaTag();
+    buildLabels(); applyStage(); setCaption();
+  }
+  function setLang(l) {
+    l = normLang(l);
+    if (l === lang) return;
+    lang = l; applyLang();
+  }
+  document.addEventListener('rs:lang', function (e) { setLang(e && e.detail); });
+
+  root.addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (b && root.contains(b)) {
+      var a = b.getAttribute('data-act');
+      if (a === 'play') setPlay(!state.playing);
+      else if (a === 'xray') { state.xray = !state.xray; root.classList.toggle('xray', state.xray); b.setAttribute('aria-pressed', String(state.xray)); if (!raf) render(); }
+      else if (a === 'lab') { state.lab = !state.lab; root.classList.toggle('nolab', !state.lab); b.setAttribute('aria-pressed', String(state.lab)); }
+      else if (a === 'follow') setFollow(!state.follow);
+      else if (b.hasAttribute('data-stage')) setStage(+b.getAttribute('data-stage'));
+      return;
+    }
+    var m = ev.target.closest && ev.target.closest('[data-st]');
+    if (m && svg.contains(m)) setStage(+m.getAttribute('data-st'));
+  });
+
+  /* ---------- loop ---------- */
+  var raf = 0, last = 0;
+  function frame(t) {
+    var dt = last ? Math.min(0.05, (t - last) / 1000) : 0.016; last = t;
+    step(dt); render();
+    raf = requestAnimationFrame(frame);
+  }
+  function loop() {
+    var run = state.playing && state.visible;
+    if (run && !raf) { last = 0; raf = requestAnimationFrame(frame); }
+    else if (!run && raf) { cancelAnimationFrame(raf); raf = 0; }
+  }
+
+  /* ---------- grain (one small noise tile, composited once) ---------- */
+  (function grain() {
+    try {
+      var n = 160, cv = document.createElement('canvas'); cv.width = cv.height = n;
+      var cx = cv.getContext('2d'), im = cx.createImageData(n, n), d = im.data;
+      for (var i = 0; i < d.length; i += 4) { var v = 255 - ((Math.random() * Math.random()) * 70 | 0); d[i] = d[i + 1] = v; d[i + 2] = v - 4; d[i + 3] = 255; }
+      cx.putImageData(im, 0, 0);
+      root.querySelector('.fx-grain').style.backgroundImage = 'url(' + cv.toDataURL() + ')';
+    } catch (e) { /* no grain, no problem */ }
+  })();
+
+  /* ---------- narrow layout ---------- */
+  function onResize() {
+    var w = root.clientWidth, nar = w < 520;
+    if (nar === state.narrow && svg._vb) return;
+    state.narrow = nar; svg._vb = 1;
+    root.classList.toggle('narrow', nar);
+    svg.setAttribute('viewBox', nar ? TIGHT.join(' ') : '0 0 ' + VW + ' ' + VH);
+  }
+  onResize();
+  if (window.ResizeObserver) new ResizeObserver(onResize).observe(root); else window.addEventListener('resize', onResize);
+
+  /* ---------- warm up: start mid-story ---------- */
+  var reduced = false;
+  try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var forceStatic = /[?&]static=1\b/.test(location.search);
+  var isStatic = reduced || forceStatic;
+  (function warm() {
+    var dt = 1 / 30, n = 0;
+    while (T < 40) step(dt);
+    sim.anaWant = true;
+    while (n++ < 6000) {
+      step(dt);
+      if (!isStatic && ana.st === 'belt' && ana.s >= 636) break;
+      if (isStatic && arm.ph === 'lower' && arm.t > 0.36) break;
+    }
+  })();
+  applyLang(); render();
+
+  if (isStatic) setPlay(false);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { state.visible = es[0].isIntersecting; loop(); }, { rootMargin: '80px' }).observe(root);
+  }
+  loop();
+})();
+</script>
+</body></html>

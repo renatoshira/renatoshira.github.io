@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f2efe7;font-family:'Space Mono',monospace;color:#141414}
+.card{width:1080px;box-sizing:border-box;padding:56px 60px 44px;background:#f2efe7}
+h1{font-size:40px;margin:0 0 8px}
+.sub{font-size:20px;color:#6b6b6b;margin-bottom:30px}
+table{width:100%;border-collapse:collapse;font-size:25px}
+th{text-align:left;font-size:17px;letter-spacing:.12em;text-transform:uppercase;color:#6b6b6b;font-weight:400;border-bottom:2px solid #141414;padding:0 10px 12px 0}
+td{border-bottom:1px solid #d9d4c9;padding:15px 10px 15px 0;vertical-align:top}
+td.n,th.n{text-align:right}
+tr.neg td{color:#d2483a} tr.zero td{color:#8a8a8a}
+td.big{font-weight:700}
+.v{font-weight:700;white-space:nowrap} .myth{color:#d2483a} .part{color:#a8741a} .true{color:#1f8a5f}
+#t2 td{font-size:22px} #t2 td:first-child{width:36%} #t2 td.v{width:16%}
+.foot{font-size:16px;color:#8a8a8a;margin-top:26px}
+</style></head><body>
+<div class="card" id="t1"><h1>What each action is worth</h1><div class="sub">weights from home-mixer/params/param.rs</div>
+<table><thead><tr><th>Action</th><th class="n">Weight</th><th class="n">In likes</th></tr></thead><tbody>
+<tr><td class="big">Copy link to post</td><td class="n big">20</td><td class="n big">30×</td></tr>
+<tr><td>Reply</td><td class="n">5</td><td class="n">7.6×</td></tr>
+<tr><td>Quote</td><td class="n">5</td><td class="n">7.6×</td></tr>
+<tr><td>Send via DM</td><td class="n">5</td><td class="n">7.6×</td></tr>
+<tr><td>Follow the author</td><td class="n">4</td><td class="n">6×</td></tr>
+<tr><td>Like</td><td class="n">0.66</td><td class="n">1×</td></tr>
+<tr class="zero"><td>Bookmark, profile click, video view</td><td class="n">0</td><td class="n">0</td></tr>
+<tr class="neg"><td>Not interested</td><td class="n">−52.3</td><td class="n">−79×</td></tr>
+<tr class="neg"><td>Mute</td><td class="n">−58.8</td><td class="n">−89×</td></tr>
+<tr class="neg"><td>Report</td><td class="n">−234</td><td class="n">−355×</td></tr>
+</tbody></table><div class="foot">source: xai-org/x-algorithm · commit 7f2ca2b</div></div>
+<div style="height:40px"></div>
+<div class="card" id="t2"><h1>What the code debunks</h1><div class="sub">common growth advice vs. xai-org/x-algorithm</div>
+<table><thead><tr><th>Claim</th><th>Verdict</th><th>In the code</th></tr></thead><tbody>
+<tr><td>Hashtags increase reach</td><td class="v myth">Myth</td><td>No rule handles hashtags. They're plain text.</td></tr>
+<tr><td>Bookmarks help</td><td class="v myth">Myth</td><td>Zero weight.</td></tr>
+<tr><td>External links are penalized</td><td class="v myth">Myth</td><td>Opening a link is worth +0.2. No penalty.</td></tr>
+<tr><td>Premium boosts ranking</td><td class="v part">Partly</td><td>No ranking bonus. The badge goes into your post's embedding, and Premium gets priority in replies.</td></tr>
+<tr><td>Profile clicks count</td><td class="v myth">Myth</td><td>Zero weight.</td></tr>
+<tr><td>Group chat likes help</td><td class="v part">Partly</td><td>Not for the score: only engagement on posts served in the feed counts. For cold start, the likes count.</td></tr>
+<tr><td>Following back repliers helps</td><td class="v true">True</td><td>A mutual's reply is worth 20 instead of 5.</td></tr>
+<tr><td>Posting a lot hurts reach</td><td class="v myth">Myth</td><td>The author penalty only applies inside one feed refresh. Every new post gets its own cold start chance.</td></tr>
+</tbody></table><div class="foot">source: xai-org/x-algorithm · commit 7f2ca2b</div></div>
+</body></html>

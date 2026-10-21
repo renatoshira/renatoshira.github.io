@@ -1,0 +1,1 @@
+[{"eval":"document.querySelector('#wfx [data-act=lab]').click();1"},{"wait":1200},{"shot":"/Users/renatoshira/Projects/renatoshira.github.io/x-article/capture/factory-nolabels.png","sel":".fx-stage"}]

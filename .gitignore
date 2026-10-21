@@ -1,1 +1,5 @@
 .DS_Store
+
+# Remotion (x-article/motion): dependências e saída de build, recriáveis com npm install / render
+node_modules/
+x-article/motion/build/

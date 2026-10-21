@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Londres por dentro</title>
+<meta name="description" content="Um artigo interativo sobre a lógica por trás dos códigos britânicos, da névoa aos pubs, para quem vai viajar para Londres.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://renatoshira.github.io/londres-por-dentro-2.html">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Londres por dentro">
+<meta property="og:description" content="Um artigo interativo sobre a lógica por trás dos códigos britânicos, da névoa aos pubs, para quem vai viajar para Londres.">
+<meta property="og:url" content="https://renatoshira.github.io/londres-por-dentro-2.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-article.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Londres por dentro">
+<meta name="twitter:description" content="Um artigo interativo sobre a lógica por trás dos códigos britânicos, da névoa aos pubs, para quem vai viajar para Londres.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-article.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<style>
+:root{
+  --bg:#ffffff; --ink:#141414; --dim:#666666; --faint:#949494;
+  --line:rgba(20,20,20,.15); --line2:rgba(20,20,20,.07); --fig:#fbfbfb;
+  --red:#C82423; --blue:#1E4E79; --amber:#D9822B; --teal:#1E824C; --yellow:#E5A823;
+  --terra:#C82423;
+  --mono:"Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --serif:"Noto Serif", Georgia, serif;
+  --measure:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font-weight:400;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(200,36,35,.18)}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--red);z-index:99;transition:width .1s linear}
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:12px 24px}
+.topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0;font-weight:700}
+.topbar .kicker:hover{color:var(--red)}
+
+p{font-size:18px;line-height:1.75;margin:0 0 20px}
+strong{font-weight:700}
+em{font-style:italic}
+.mark{background:var(--ink);color:#fff;padding:1.5px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.mark em{font-style:italic}
+.term{border-bottom:1px dashed var(--faint);cursor:help;position:relative;outline:none}
+.term::after{content:attr(data-term);position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-7px);background:var(--ink);color:#fff;font-family:var(--serif);font-style:italic;font-size:13.5px;line-height:1.3;letter-spacing:.01em;padding:5px 9px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .14s;z-index:6}
+.term::before{content:'';position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-2px);border:5px solid transparent;border-top-color:var(--ink);opacity:0;transition:opacity .14s;z-index:6}
+.term:hover,.term:focus,.term.open{border-bottom-color:var(--red)}
+.term:hover::after,.term:focus::after,.term.open::after,.term:hover::before,.term:focus::before,.term.open::before{opacity:1}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+a:hover{color:var(--red);border-color:var(--red)}
+.serif{font-family:var(--serif);font-style:italic}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:84px 24px}
+header.top{max-width:var(--measure);margin:0 auto;padding:72px 24px 0}
+.eyebrow{font-size:12.5px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+h1{display:flex;flex-direction:column;align-items:flex-start;gap:7px;font-size:30px;font-weight:700;line-height:1.18;margin:0}
+h1 .mark{padding:2px 10px}
+h1 .en{font-family:var(--serif);font-style:italic;font-weight:400;font-size:15px;letter-spacing:.01em;color:var(--faint);margin-top:12px}
+.standfirst{font-size:17px;font-weight:400;line-height:1.8;color:var(--ink);max-width:620px;margin:40px 0 0}
+
+.tag{font-size:12px;font-weight:400;letter-spacing:2.16px;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.tag .n{color:inherit}
+h2{font-size:22px;font-weight:700;line-height:1.4;margin:0 0 18px;color:var(--ink)}
+h2 .serif{font-weight:400;color:var(--faint);font-size:.86em;margin-left:6px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+figure{margin:34px 0;padding:0}
+.top figure{margin:44px 0 0}
+.widget{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:16px}
+.widget canvas{display:block;width:100%;border-radius:3px;touch-action:none;cursor:grab}
+.widget canvas:active{cursor:grabbing}
+figcaption{color:var(--faint);font-size:12.5px;line-height:1.5;margin-top:12px;text-align:center}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:14px}
+.btn{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 14px;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .16s}
+.btn:hover{border-color:var(--red);color:var(--red)}
+.btn.on{background:var(--red);border-color:var(--red);color:#fff}
+.btn-group{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:12px}
+
+input[type=range]{-webkit-appearance:none;appearance:none;height:2px;background:var(--line);border-radius:2px;outline:none;width:100%;max-width:340px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--red);cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px var(--red)}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--red);cursor:pointer;border:3px solid #fff}
+
+.readout{text-align:center;margin-top:14px}
+.readout .big{font-size:18px;font-weight:700}
+.readout .desc{color:var(--dim);font-size:15px;margin-top:5px;line-height:1.5;min-height:2.6em}
+.readout .sub{color:var(--faint);font-size:13px;margin-top:5px}
+.verdict{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-top:8px}
+.verdict.ok{color:var(--teal)} .verdict.warn{color:var(--amber)} .verdict.bad{color:var(--red)}
+
+.meter{height:3px;background:var(--line);border-radius:3px;max-width:240px;margin:12px auto 0;overflow:hidden}
+.meter>i{display:block;height:100%;width:10%;background:linear-gradient(90deg,var(--blue),var(--red),var(--yellow));transition:width .25s}
+
+/* interactive subtext cards */
+.subtext-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}
+.subtext-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px;cursor:pointer;transition:all .18s;text-align:left}
+.subtext-card:hover{border-color:var(--red)}
+.subtext-card.active{border-color:var(--red);box-shadow:0 2px 8px rgba(200,36,35,.12)}
+.subtext-phrase{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.subtext-heard{font-size:14px;color:var(--dim);margin-bottom:6px}
+.subtext-mean{font-size:14.5px;color:var(--red);font-weight:700;display:none}
+.subtext-card.active .subtext-mean{display:block}
+
+/* quiz (§10) */
+.quiz{background:var(--fig);border:1px solid var(--line);border-radius:6px;padding:22px}
+.q-step{display:none}
+.q-step.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.q-num{font-size:12px;font-weight:400;letter-spacing:1.6px;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.q-text{font-size:18px;font-weight:700;line-height:1.4;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:13px 15px;margin-bottom:9px;cursor:pointer;font-family:var(--mono);font-size:15px;line-height:1.5;transition:all .15s}
+.opt:hover{border-color:var(--dim)}
+.opt.correct{border-color:var(--teal);background:rgba(30,130,76,.08)}
+.opt.wrong{border-color:var(--red);background:rgba(200,36,35,.06)}
+.opt .mk{float:right;font-weight:700;margin-left:10px}
+.opt.correct .mk{color:var(--teal)} .opt.wrong .mk{color:var(--red)}
+.explain{color:var(--dim);font-size:15px;line-height:1.6;border-left:2px solid var(--amber);padding-left:14px;margin:4px 0 12px;display:none}
+.explain.show{display:block;animation:fade .3s ease}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.q-dots{display:flex;gap:6px}
+.q-dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s}
+.q-dots i.on{background:var(--red)}
+
+/* vertical timeline (§01) */
+.timeline{--gut:82px;position:relative;margin:36px 0 4px}
+.timeline::before{content:'';position:absolute;left:calc(var(--gut) + 14px);top:9px;bottom:34px;width:1px;background:var(--line)}
+.tl-item{position:relative;display:grid;grid-template-columns:var(--gut) 1fr;gap:28px;padding-bottom:44px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:calc(var(--gut) + 14px);transform:translateX(-50%);top:7px;width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid var(--red)}
+.tl-year{text-align:right;font-size:13.5px;font-weight:700;color:var(--dim);padding-top:2px;letter-spacing:.3px}
+.tl-year-sfx{color:var(--faint)}
+.tl-title{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 8px}
+.tl-title .serif{font-weight:400;color:var(--faint);font-size:.84em;margin-left:8px}
+.tl-body p{font-size:16.5px;line-height:1.72;margin:0}
+
+footer{border-top:1px solid var(--line);margin-top:20px}
+footer .wrap{color:var(--faint);font-size:14px;line-height:1.7;padding-top:40px;padding-bottom:70px}
+.srcs{font-size:12.5px;line-height:1.9;margin-top:10px}
+.srcs a{color:var(--dim);border-bottom:1px solid var(--line)}
+
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:56px 20px}
+  header.top{padding:48px 20px 0}
+  .widget{padding:12px}
+  .timeline{--gut:58px}
+  .tl-item{gap:16px}
+  .tl-year{font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<div class="topbar"><a class="kicker" href="index.html">← Renato Shirakashi</a></div>
+
+<header class="top">
+  <div class="eyebrow">Cultura britânica · artigo interativo</div>
+  <h1><span class="mark">Londres</span><span class="mark">por dentro</span><span class="en">the unwritten city · entre a névoa e o pub</span></h1>
+  <p class="standfirst">Alguns hábitos britânicos parecem estranhos ou contraditórios à primeira vista — pedir desculpas quando alguém esbarra em você, beber na calçada na garoa fria, a obsessão moral com filas e dizer o oposto exato do que se quer dizer. Quase todos têm uma origem concreta na história, na formação da cidade e nos códigos sociais da ilha. Este artigo explica de onde vêm, com pequenas demonstrações para você mexer pelo caminho.</p>
+  <figure class="hero-fig">
+    <div class="widget"><canvas id="heroCanvas" height="220"></canvas></div>
+    <figcaption>O circuito de Beck: malha de linhas em 45° e 90° entrelaçadas à curva sinuosa do Rio Tâmisa.</figcaption>
+  </figure>
+</header>
+
+<main>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">00</span> · introdução</div>
+  <h2>Pequenos hábitos com origem concreta</h2>
+  <p>Quem chega a Londres pela primeira vez costuma reparar em comportamentos que operam como um sistema operacional silencioso, onde quase nada precisa ser anunciado em cartazes.</p>
+  <p>As pessoas pedem desculpas quando você esbarra nelas. Os vagões do metrô lotados às oito da manhã mantêm um silêncio quase clerical. Multidões de terno ou casaco pesado bebem cerveja em pé na calçada sob uma garoa gelada de seis graus. Furar uma fila invisível gera um tipo de indignação muda e fulminante que nenhum escândalo político consegue provocar. E, diante de qualquer notícia grave, luto ou crise nacional, a primeira reação de praticamente todo habitante é ligar a chaleira para passar um chá.</p>
+  <p>Cada um desses hábitos tem uma razão de existir, quase sempre enraizada em momentos decisivos da história britânica, na geografia singular de uma ilha e em séculos de aprendizado sobre como milhões de indivíduos reservados conseguem conviver num espaço urbano denso sem enlouquecer uns aos outros. Entender a razão por trás de uma frase dita em tom neutro, de um gesto ao balcão do pub ou da posição correta numa escada rolante <span class="mark">muda o modo como você observa e vive a cidade quando está lá</span>.</p>
+</section>
+
+<section class="wrap">
+  <div class="tag"><span class="n">01</span> · a moldura</div>
+  <h2>Como Londres se fez em cinco camadas</h2>
+  <p>Antes de decifrar as regras de convivência, vale montar a moldura histórica. A mente britânica e o mapa de Londres foram forjados por cinco momentos cruciais em que o país redefiniu sua relação com o poder, a privacidade, a tecnologia e o mundo. Quase tudo o que se observa nas ruas e nos pubs hoje descende diretamente de um desses marcos.</p>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-year">1066</div>
+      <div class="tl-body">
+        <h3 class="tl-title">Londinium e a Conquista Normanda<span class="serif">1066</span></h3>
+        <p>O Império Romano fundou <em>Londinium</em> por volta de 43 d.C. como um entreposto comercial no Tâmisa. Mas foi em 1066, com a invasão de Guilherme, o Conquistador vindo da França, que a estrutura social ganhou uma marca indelével: a nobreza passou a falar francês normando, enquanto o povo manteve o inglês anglo-saxão. Essa fratura sobrevive até hoje no vocabulário: o bicho no pasto tem nome saxão (<span class="term" tabindex="0" data-term="cow / pig / sheep · palavras do campo saxão">cow, pig, sheep</span>), enquanto a carne na mesa do nobre leva nome francês (<span class="term" tabindex="0" data-term="beef / pork / mutton · raízes francesas da corte">beef, pork, mutton</span>). Nasceu aí a obsessão com marcadores sutis de classe na fala.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1215<br><span class="tl-year-sfx">/1688</span></div>
+      <div class="tl-body">
+        <h3 class="tl-title">A Magna Carta e o Parlamento<span class="serif">Magna Carta</span></h3>
+        <p>A assinatura da Magna Carta em 1215 e a Revolução Gloriosa de 1688 consolidaram o pilar central da identidade britânica: a desconfiança profunda do poder absoluto e a supremacia da lei e do Parlamento sobre os reis. Desse arranjo nasceu o princípio de que <span class="term" tabindex="0" data-term="an Englishman's home is his castle · a casa como castelo privado">a casa de um homem é o seu castelo</span>. O respeito absoluto ao espaço individual, a aversão a figuras autoritárias espalhafatosas e a preferência pela discrição nascem dessa blindagem da esfera privada.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1666</div>
+      <div class="tl-body">
+        <h3 class="tl-title">O Grande Incêndio e as Cidades Gêmeas<span class="serif">The Great Fire</span></h3>
+        <p>Em setembro de 1666, um incêndio em Pudding Lane destruiu 85% das casas de madeira da cidade medieval. Ao reconstruir, Christopher Wren impôs o tijolo e a pedra, mas manteve o traçado labiríntico das ruas. O incêndio consolidou a natureza dupla de Londres: a <strong>City of London</strong> renasceu como um centro financeiro e mercantil autônomo, inventando os seguros na cafeteria de Lloyd e a bolsa, enquanto a <strong>City of Westminster</strong> permaneceu intocada a oeste como a sede da Coroa e do Parlamento. Londres nunca teve um único centro, mas dois: <span class="mark">o centro do dinheiro e o centro do poder</span>.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1863</div>
+      <div class="tl-body">
+        <h3 class="tl-title">A Era Vitoriana, o Grande Fedor e o Metrô<span class="serif">The Tube</span></h3>
+        <p>No auge industrial, Londres vivia afogada em fuligem e cólera. Em 1858, o calor fez o esgoto do rio exalar um odor insuportável no episódio conhecido como <span class="term" tabindex="0" data-term="The Great Stink (1858) · o esgoto que parou o Parlamento">The Great Stink</span>; a resposta foi a monumental rede subterrânea de esgotos de Joseph Bazalgette. Em 1863, nascia o primeiro metrô do mundo, a <em>Metropolitan Railway</em>. A era vitoriana codificou a moral moderna: a pontualidade ferroviária como virtude cívica, o autocontrole emocional e as regras de civilidade urbana.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-year">1948<span class="tl-year-sfx">→</span></div>
+      <div class="tl-body">
+        <h3 class="tl-title">O Blitz, o Windrush e a Londres Global<span class="serif">Windrush</span></h3>
+        <p>Durante a Segunda Guerra, os bombardeios do <em>Blitz</em> forjaram o mito e a realidade do estoicismo civil: manter a calma e seguir em frente (<span class="term" tabindex="0" data-term="Keep Calm and Carry On · resiliência sob bombardeio">Keep Calm</span>). Em 1948, o navio <em>HMT Empire Windrush</em> atracou trazendo centenas de imigrantes caribenhos, inaugurando a onda que logo atrairia indianos, paquistaneses e bengalis. Em duas gerações, a austera capital imperial reinventou-se como uma das metrópoles mais multiculturais e criativas da Terra.</p>
+      </div>
+    </div>
+  </div>
+  <p>Dois desses marcos pesam mais que os outros. O Grande Incêndio de 1666, que dividiu para sempre o dinheiro e a política em cidades gêmeas; e a reconstrução do pós-guerra, que transformou a capital do império num mosaico do mundo. Guarde os dois.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">02</span> · o território</div>
+  <h2>A cidade dupla e a colcha de aldeias</h2>
+  <p>Para quem olha o mapa, Londres parece uma mancha contínua. No chão, porém, a cidade funciona como uma <span class="mark">federação de aldeias que cresceram até encostar umas nas outras</span> (<em>a city of villages</em>). Ao contrário de Paris, que teve seu centro demolido no século XIX para criar bulevares geométricos, Londres cresceu de baixo para cima, preservando suas antigas paróquias e limites.</p>
+  <p>A divisão mais marcante da cidade foi decidida pelo vento. Como os ventos dominantes na Inglaterra sopram de oeste para leste, a fumaça das fábricas e do carvão era empurrada em direção ao leste. O <strong>West End</strong> virou o refúgio dos nobres, dos teatros e dos parques reais; o <strong>East End</strong> abrigou as docas, os cortiços industriais, as ondas de imigrantes e o sotaque <em>Cockney</em>. E no centro, a <strong>City of London</strong> manteve sua autonomia financeira milenar.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="cityCanvas" height="340"></canvas>
+      <div class="readout">
+        <div class="big" id="cityName">The City of London</div>
+        <div class="desc" id="cityDesc">A Square Mile romana: finanças, guildas medievais e independência corporativa.</div>
+        <div class="sub" id="cityTrait">símbolo: dragões nos limites e o Banco da Inglaterra</div>
+      </div>
+    </div>
+    <figcaption>Arraste o marcador de Oeste a Leste para ver como a fumaça, a riqueza e as funções moldaram cada faixa da cidade.</figcaption>
+  </figure>
+  <p>Some a isso a barreira do Rio Tâmisa. O rio é largo, com maré forte que sobe até sete metros. A margem norte historicamente concentrou as pontes e a nobreza; a margem sul (<span class="term" tabindex="0" data-term="South of the river · historicamente fora da jurisdição estrita">South London</span>) abrigava os teatros de Shakespeare fora da lei da City. Até hoje taxistas brincam com a relutância em cruzar o rio à noite.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">03</span> · a língua do não-dito</div>
+  <h2>Subtexto, ironia e a polidez negativa</h2>
+  <p>No livro <em>Watching the English</em>, a antropóloga Kate Fox aponta que a chave do comportamento britânico é o que ela chama de <strong>desconforto social</strong> (<em>social dis-ease</em>): uma timidez congênita e um pavor de parecer invasivo ou arrogante. Para conviver em paz, a cultura desenvolveu a <strong>polidez negativa</strong> (<em>negative politeness</em>): <span class="mark">demonstrar respeito significa não se impor e preservar a privacidade do outro</span>.</p>
+  <p>Disso nasce a arte do <em>understatement</em> (a minimização deliberada) e o uso da ironia como frequência padrão. Nada é trágico, é apenas <em>"a bit of a nuisance"</em>; nada é espetacular, é apenas <em>"not bad"</em>. A língua tem duas camadas: o que se diz em voz alta e o código social subjacente. Clique nos cartões abaixo para decodificar.</p>
+  <figure>
+    <div class="widget">
+      <div class="subtext-grid" id="subtextGrid">
+        <!-- populated via JS -->
+      </div>
+      <div class="readout" style="margin-top:18px">
+        <div class="sub" id="subtextMeterLabel">termômetro de descontentamento oculto</div>
+        <div class="meter"><i id="subtextMeter" style="width:50%"></i></div>
+      </div>
+    </div>
+    <figcaption>Clique nas frases clássicas para revelar a tradução do subtexto britânico.</figcaption>
+  </figure>
+  <p>Levar a si mesmo a sério demais é o maior erro de convivência. A auto-depreciação (<em>self-deprecation</em>) serve para desarmar qualquer suspeita de presunção antes que alguém precise fazê-lo.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">04</span> · o grupo</div>
+  <h2>O "sorry" preventivo e a sacralidade da fila</h2>
+  <p>Se você caminhar pela calçada e alguém distraído trombar no seu ombro, é quase certo que <span class="mark">você pedirá desculpas antes da pessoa que causou o encontrão</span>. O <strong>"sorry"</strong> britânico raramente é uma admissão de culpa moral: ele funciona como um <strong>airbag verbal</strong> instantâneo para desarmar qualquer faísca de confronto e restaurar a paz.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="sorryCanvas" height="300"></canvas>
+      <div class="controls">
+        <button class="btn on" id="btnSorryDemo">simular encontrão na calçada</button>
+      </div>
+      <div class="readout">
+        <div class="big" id="sorryTitle">Airbag Verbal Ativado</div>
+        <div class="desc" id="sorryDesc">Ambos dizem "Sorry!" em menos de 0,5s. Contato visual interrompido; ordem cósmica restaurada.</div>
+      </div>
+    </div>
+    <figcaption>O pedido de desculpas é automático e preventivo: neutraliza o atrito antes que ele nasça.</figcaption>
+  </figure>
+  <p>O mesmo rigor vale para a <strong>fila</strong> (<em>the queue</em>). Furar fila não é má educação passageira; é uma quebra do pacto civilizatório. A punição coletiva é sutil e implacável: ninguém grita, mas a multidão responde com o temido <strong>tutting</strong> (o estalo de língua <span class="term" tabindex="0" data-term="tut-tut / tutting · o som da indignação silenciosa">"tsc-tsc"</span>), sobrancelhas erguidas e pigarreios solenes.</p>
+  <p>No metrô, essa contenção vira o pacto da <strong>cegueira civil</strong>: em vagões lotados, ninguém sustenta contato visual com estranhos. Os olhos fitam jornais, livros ou o teto, concedendo ao vizinho o direito sagrado à privacidade imaginária.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">05</span> · o pub</div>
+  <h2>A sala de estar da nação</h2>
+  <p>O <strong>pub</strong> (<em>Public House</em>) não é um bar comum; é o "terceiro lugar" da vida britânica. Nasceu como extensão das casas operárias vitorianas, pequenas e frias: um refúgio de madeira escura, carpetes e lareira onde a costumeira reserva inglesa é temporariamente suspensa. Mas essa liberdade é governada por seis mandamentos não-escritos:</p>
+  <p><strong>1. Não há garçom na mesa:</strong> você deve ir ao balcão pedir suas bebidas.<br>
+  <strong>2. A fila invisível:</strong> não há linha reta no balcão; opera uma ordem mental compartilhada entre o bartender e os clientes.<br>
+  <strong>3. Como chamar atenção:</strong> nunca acene notas nem estale os dedos; faça contato visual paciente com um leve erguer de sobrancelhas.<br>
+  <strong>4. A rodada sagrada (<em>The Round</em>):</strong> em grupo, cada um paga a rodada inteira de bebidas para todos por vez. Furar a rodada é morte social.<br>
+  <strong>5. A gorjeta clássica:</strong> diz-se <span class="term" tabindex="0" data-term="and one for yourself · a fórmula tradicional de gorjeta">"and have one for yourself"</span> para o barman debitar o valor de um copo.<br>
+  <strong>6. O sino do <em>Last Orders</em>:</strong> o sino de bronze toca às 23h para o último pedido antes de fechar.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="pubCanvas" height="340"></canvas>
+      <div class="controls" id="pubControls">
+        <button class="btn" data-act="wave">acenar dinheiro</button>
+        <button class="btn" data-act="snap">estalar dedos</button>
+        <button class="btn on" data-act="eye">contato visual calmo</button>
+        <button class="btn" data-act="round">pagar rodada</button>
+        <button class="btn" data-act="tip">"and one for yourself"</button>
+      </div>
+      <div class="readout">
+        <div class="big" id="pubStatus">Aguardando no balcão</div>
+        <div class="desc" id="pubFeedback">Contato visual paciente estabelecido. O barman reconheceu sua posição na fila mental.</div>
+        <div class="verdict ok" id="pubVerdict">conduta correta</div>
+      </div>
+    </div>
+    <figcaption>Simule sua conduta no balcão do pub. A sutileza define se você será atendido agora ou por último.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">06</span> · a máquina urbana</div>
+  <h2>O mapa elétrico e 25.000 ruas na cabeça</h2>
+  <p>Londres só funciona porque sua infraestrutura subterrânea organiza a superfície. No metrô, o mandamento supremo é <span class="mark">stand on the right</span>: fique parado estritamente no lado direito da escada rolante, deixando o corredor esquerdo livre para quem caminha rápido. Bloquear a esquerda é a gafe mais ruidosa que um turista pode cometer.</p>
+  <p>Em 1931, Harry Beck desenhou o mapa do Underground inspirado em esquemas de circuitos elétricos. Ele percebeu que debaixo da terra <span class="mark">a topologia das conexões importa mais que a geografia real das curvas</span>. O diagrama com ângulos de 45° e 90° mudou a história do design mundial.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="beckCanvas" height="360"></canvas>
+      <div class="controls">
+        <button class="btn on" id="btnToggleMap">alternar: mapa de beck (topológico)</button>
+      </div>
+      <div class="readout">
+        <div class="big" id="beckTitle">Circuito de Harry Beck (1933)</div>
+        <div class="desc" id="beckDesc">Linhas retas e ângulos de 45°. No túnel escuro, o que importa é a ordem das conexões, não a distância física.</div>
+      </div>
+    </div>
+    <figcaption>Alterne entre a geografia real e o circuito topológico de Beck.</figcaption>
+  </figure>
+  <p>Já os motoristas dos táxis pretos (<em>Black Cabs</em>) não usam GPS. Para passar no exame <span class="term" tabindex="0" data-term="The Knowledge · o teste de memória mais rigoroso do mundo">The Knowledge</span>, eles passam quatro anos memorizando 25.000 ruas e 100.000 pontos de referência. A neurocientista Eleanor Maguire (UCL) comprovou em ressonâncias magnéticas que <span class="mark">o hipocampo posterior desses motoristas cresce fisicamente</span> com o estudo intensivo. Londres literalmente remodela o cérebro humano.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">07</span> · o tempo</div>
+  <h2>A meteorologia como aperto de mão</h2>
+  <p>Ao contrário da lenda, chove menos milímetros em Londres por ano que em Roma, Milão ou Nova York. O que há é a constância cinzenta e a garoa fina (<em>drizzle</em>). Os locais raramente usam guarda-chuva porque o vento os vira do avesso e as pontas incomodam os outros nas calçadas cheias — preferem casacos impermeáveis com capuz.</p>
+  <p>Mais importante: falar sobre o tempo <strong>não tem a ver com meteorologia</strong>. É um <span class="mark">protocolo diplomático de reconhecimento mútuo</span> (<em>social grooming</em>). Em uma cultura que evita invadir a intimidade, o clima é o único assunto neutro e universal sobre o qual todos podem concordar sem debates políticos ou pessoais. Quando alguém diz <em>"Cold today, isn't it?"</em>, a única resposta permitida é concordar (<em>"Freezing!"</em>).</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">08</span> · à mesa</div>
+  <h2>Do racionamento à cozinha do mundo</h2>
+  <p>A má fama histórica da comida britânica tem uma explicação concreta: as cicatrizes do <strong>racionamento de guerra</strong>, que durou de 1940 até <span class="mark">1954</span> (quase dez anos após o fim da Segunda Guerra). Uma geração inteira aprendeu a cozinhar com cotas rígidas de manteiga, carne e açúcar. Superada a escassez, a mesa britânica revelou seus clássicos de conforto: o <strong>Sunday Roast</strong> com seu <em>Yorkshire pudding</em>, o <strong>Fish & Chips</strong> com vinagre de malte e o robusto <strong>Full English Breakfast</strong>.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="teaCanvas" height="320"></canvas>
+      <div class="controls">
+        <button class="btn on" id="btnTeaMIF">MIF: leite primeiro (operário)</button>
+        <button class="btn" id="btnTeaTIF">TIF: chá primeiro (nobre)</button>
+      </div>
+      <div class="readout">
+        <div class="big" id="teaTitle">Milk In First (MIF)</div>
+        <div class="desc" id="teaDesc">O leite frio protegia as canecas de barro baratas da classe trabalhadora contra a água fervendo.</div>
+      </div>
+    </div>
+    <figcaption>O ritual do chá esconde velhas disputas de classe: a cerâmica frágil exigia leite antes; a nobre porcelana recebia o chá puro.</figcaption>
+  </figure>
+  <p>O chá carrega ainda disputas regionais: na Cornualha come-se o scone com geleia primeiro (<span class="term" tabindex="0" data-term="jam first · o estilo preferido da Rainha Elizabeth II">jam first</span>); em Devon, com a nata primeiro. E o verdadeiro prato nacional moderno é o <strong>Chicken Tikka Masala</strong>, criado no Reino Unido pela comunidade sul-asiática, consagrando a Brick Lane e o Borough Market como símbolos da Londres contemporânea.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">09</span> · o calendário</div>
+  <h2>As quatro estações da ilha</h2>
+  <p>O ano britânico gira entre o aconchego dos pubs com lareira no inverno e a euforia dos parques banhados de luz até as dez da noite no verão. Gire a roda abaixo para acompanhar os festivais e marcos que sua viagem pode cruzar.</p>
+  <figure>
+    <div class="widget">
+      <canvas id="wheel" height="430"></canvas>
+      <div class="readout">
+        <div class="big" id="wName">Notting Hill Carnival & BBC Proms</div>
+        <div class="desc" id="wDesc">Trios elétricos caribenhos e maratona diária de concertos no Royal Albert Hall.</div>
+        <div class="sub" id="wWhen" style="color:var(--red)">Agosto · auge do verão</div>
+      </div>
+    </div>
+    <figcaption>Arraste para girar. O ponteiro no topo marca o mês e a estação atual.</figcaption>
+  </figure>
+  <p>Na primavera vêm a regata <strong>Boat Race</strong> entre Oxford e Cambridge e as flores de Chelsea. No verão, o torneio de <strong>Wimbledon</strong> com morangos e creme e o <strong>Notting Hill Carnival</strong>. No outono, a <strong>Bonfire Night</strong> (5 de Novembro) com fogueiras lembrando Guy Fawkes e as papoulas do <strong>Remembrance Day</strong>. E no inverno, as pistas de patinação e o calor dos pubs.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">10</span> · na prática</div>
+  <h2>O teste dos códigos de Londres</h2>
+  <p>Algumas situações do cotidiano britânico têm uma lógica contraintuitiva para quem chega. Responda às perguntas abaixo para testar sua fluência nos códigos locais.</p>
+  <figure>
+    <div class="quiz" id="quiz">
+      <div class="q-nav">
+        <div class="q-dots" id="qDots"></div>
+        <button class="btn" id="qNext" style="display:none">próxima →</button>
+      </div>
+    </div>
+    <figcaption>Cada resposta revela o fundamento antropológico por trás do costume.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">11</span> · a cidade dos detalhes</div>
+  <h2>Excentricidades e sinais ocultos</h2>
+  <p>Londres é rica em arqueologia visual. Nas fachadas de tijolos, as <span class="term" tabindex="0" data-term="Blue Plaques · desde 1866 marcando casas históricas">Blue Plaques</span> de cerâmica azul indicam onde viveram Dickens, Jimi Hendrix, Virginia Woolf, Karl Marx ou Alan Turing. A cidade não tranca seus fantasmas ilustres em museus; ela os deixa nas paredes das casas comuns.</p>
+  <p>Nas icônicas caixas de correio vermelhas cilíndricas, repare no monograma real em relevo: <strong>VR</strong> (Victoria), <strong>GR</strong> (George V/VI), <strong>EIIR</strong> (Elizabeth II) ou <strong>CIIIR</strong> (Charles III). Cada caixa carrega a assinatura do monarca que reinava no ano em que aquele ferro foi fundido.</p>
+  <p>E há a paixão nacional pela <strong>excentricidade</strong>: a mesma sociedade rígida com filas e pontualidade é profundamente afetuosa com a singularidade individual. Do movimento punk de Vivienne Westwood em King's Road aos colecionadores obcecados, a regra é clara: desde que você não atrapalhe a fila nem incomode os outros, tem a liberdade sagrada de ser tão excêntrico quanto desejar.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="tag"><span class="n">12</span> · fim</div>
+  <h2>Olhar com contexto</h2>
+  <p>Nenhum desses códigos precisa ser decorado como uma cartilha estrita. A cidade acolhe visitantes de todo o planeta. O que o entendimento proporciona é uma mudança de olhar: <span class="mark">ele transforma o que parece distância em uma sofisticada forma de respeito mútuo</span>.</p>
+  <p>Quando você entrar no metrô silencioso e respeitar a privacidade alheia, quando disser "sorry" ao levar um esbarrão ou quando esperar sua vez no olhar do barman, você estará participando de um ritual humano que sobreviveu a impérios, pestes e guerras. Ver Londres com essa camada de contexto torna a viagem incomparavelmente mais rica — e é também a mais bela forma de respeito por uma cidade que quase nunca se explica em voz alta.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Rascunho interativo v0.1. Um artigo sobre a lógica por trás dos códigos britânicos, feito para ser lido antes ou durante a viagem a Londres.</p>
+    <p class="srcs">Fontes das histórias: Peter Ackroyd (<em>London: The Biography</em>); Kate Fox (<em>Watching the English</em>); Eleanor Maguire e o estudo do hipocampo em taxistas (<a href="https://www.pnas.org/doi/10.1073/pnas.070039597" target="_blank" rel="noopener">PNAS/UCL</a>); Harry Beck e o design do Underground (<a href="https://tfl.gov.uk" target="_blank" rel="noopener">TfL Archives</a>); o Grande Incêndio de 1666 (<a href="https://en.wikipedia.org/wiki/Great_Fire_of_London" target="_blank" rel="noopener">Museum of London</a>); a história do racionamento e do Chicken Tikka Masala.</p>
+  </div>
+</footer>
+</main>
+
+<script>
+/* ===================== utilidades ===================== */
+const DPR = Math.min(window.devicePixelRatio || 1, 2);
+function fit(cv, cssH){
+  const w = cv.clientWidth || cv.parentNode.clientWidth;
+  const h = cssH || cv.clientHeight || 340;
+  cv.style.height = h + "px";
+  cv.width = Math.round(w*DPR); cv.height = Math.round(h*DPR);
+  const ctx = cv.getContext("2d"); ctx.setTransform(DPR,0,0,DPR,0,0);
+  cv._w = w; cv._h = h; return ctx;
+}
+function ptr(e, cv){
+  const r = cv.getBoundingClientRect();
+  const t = (e.touches && e.touches[0]) || (e.changedTouches && e.changedTouches[0]) || e;
+  return { x: t.clientX - r.left, y: t.clientY - r.top };
+}
+const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+
+const pb=document.getElementById("progress");
+addEventListener("scroll",()=>{const h=document.documentElement.scrollHeight-innerHeight; pb.style.width=(h>0?scrollY/h*100:0)+"%";},{passive:true});
+
+/* reveal on scroll */
+(function(){
+  const els=[].slice.call(document.querySelectorAll(".reveal"));
+  if(!("IntersectionObserver" in window)){ els.forEach(function(e){e.classList.add("in");}); return; }
+  const io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); },{rootMargin:"0px 0px -8% 0px",threshold:0.06});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* tooltips de termos ingleses */
+(function(){
+  const terms=[].slice.call(document.querySelectorAll(".term"));
+  terms.forEach(function(t){
+    t.addEventListener("click",function(e){ e.stopPropagation(); const was=t.classList.contains("open");
+      terms.forEach(function(o){o.classList.remove("open");}); if(!was)t.classList.add("open"); });
+  });
+  document.addEventListener("click",function(){ terms.forEach(function(o){o.classList.remove("open");}); });
+})();
+
+/* ===================== HERO: CIRCUITO DE BECK & TÂMISA ===================== */
+(function(){
+  const cv=document.getElementById("heroCanvas"); let ctx,W,H,t=0;
+  function size(){ ctx=fit(cv,220); W=cv._w; H=cv._h; }
+  size(); addEventListener("resize",size);
+  function draw(){
+    t+=0.015; ctx.clearRect(0,0,W,H);
+    ctx.beginPath();
+    ctx.moveTo(0, H*0.65);
+    ctx.bezierCurveTo(W*0.25, H*0.45, W*0.5, H*0.85, W*0.75, H*0.55);
+    ctx.bezierCurveTo(W*0.88, H*0.4, W*0.95, H*0.6, W, H*0.5);
+    ctx.strokeStyle = "rgba(30,78,121,0.22)"; ctx.lineWidth = 14; ctx.stroke();
+    
+    const lines = [
+      {c: "#C82423", y: H*0.35, pts: [[0,H*0.35],[W*0.3,H*0.35],[W*0.55,H*0.7],[W,H*0.7]]},
+      {c: "#1E824C", y: H*0.75, pts: [[0,H*0.8],[W*0.25,H*0.8],[W*0.45,H*0.25],[W*0.8,H*0.25],[W,H*0.45]]},
+      {c: "#1E4E79", y: H*0.2,  pts: [[W*0.1,0],[W*0.1,H*0.4],[W*0.4,H*0.7],[W*0.7,H*0.7],[W*0.9,H*0.9],[W*0.9,H]]},
+      {c: "#E5A823", y: H*0.5,  pts: [[W*0.2,H*0.2],[W*0.6,H*0.2],[W*0.8,H*0.5],[W*0.6,H*0.8],[W*0.3,H*0.8],[W*0.2,H*0.5],[W*0.2,H*0.2]]}
+    ];
+    
+    lines.forEach((l, idx) => {
+      ctx.beginPath();
+      ctx.moveTo(l.pts[0][0], l.pts[0][1]);
+      for(let i=1; i<l.pts.length; i++) ctx.lineTo(l.pts[i][0], l.pts[i][1]);
+      ctx.strokeStyle = l.c; ctx.lineWidth = 3.5; ctx.stroke();
+      
+      l.pts.forEach(p => {
+        ctx.beginPath(); ctx.arc(p[0], p[1], 4.5, 0, 7);
+        ctx.fillStyle = "#fff"; ctx.fill();
+        ctx.strokeStyle = "#141414"; ctx.lineWidth = 1.8; ctx.stroke();
+      });
+      
+      const pulseT = (t * 0.4 + idx * 0.25) % 1;
+      const segCount = l.pts.length - 1;
+      const segIndex = Math.min(Math.floor(pulseT * segCount), segCount - 1);
+      const subT = (pulseT * segCount) - segIndex;
+      const p1 = l.pts[segIndex], p2 = l.pts[segIndex+1];
+      const px = lerp(p1[0], p2[0], subT), py = lerp(p1[1], p2[1], subT);
+      
+      ctx.beginPath(); ctx.arc(px, py, 6, 0, 7);
+      ctx.fillStyle = l.c; ctx.fill();
+      ctx.beginPath(); ctx.arc(px, py, 9, 0, 7);
+      ctx.strokeStyle = "rgba(255,255,255,0.8)"; ctx.lineWidth = 2; ctx.stroke();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ===================== 02 CORTE TERRITORIAL: OESTE A LESTE ===================== */
+(function(){
+  const cv=document.getElementById("cityCanvas");
+  const nEl=document.getElementById("cityName"), dEl=document.getElementById("cityDesc"), tEl=document.getElementById("cityTrait");
+  const zones=[
+    {name:"West End", min:0, max:0.28, desc:"Mayfair, Soho, Westminster. A montante do vento: palácios reais, nobreza, teatros e parques.", trait:"símbolo: teatros da Shaftesbury Ave e embaixadas"},
+    {name:"The City (Square Mile)", min:0.28, max:0.62, desc:"O coração romano e financeiro. Próprio prefeito (Lord Mayor), guildas medievais e autonomia corporativa.", trait:"símbolo: Banco da Inglaterra e os dragões de Temple Bar"},
+    {name:"East End", min:0.62, max:1.01, desc:"Whitechapel, Shoreditch, Docas. A jusante da fumaça: operários, imigração histórica, sotaque Cockney e a Brick Lane contemporânea.", trait:"símbolo: mercados de rua, arte urbana e restaurantes de curry"}
+  ];
+  let ctx,W,H,mx=0.45;
+  function zoneOf(nx){ for(const z of zones){ if(nx>=z.min&&nx<z.max) return z; } return zones[0]; }
+  function draw(){
+    ctx=fit(cv,340); W=cv._w; H=cv._h; ctx.clearRect(0,0,W,H);
+    const base=H-46;
+    
+    const sky=ctx.createLinearGradient(0,0,W,0);
+    sky.addColorStop(0,"#eef3f7"); sky.addColorStop(0.5,"#e6ebed"); sky.addColorStop(1,"#d8d2cc");
+    ctx.fillStyle=sky; ctx.fillRect(0,0,W,base);
+    
+    ctx.strokeStyle="rgba(100,100,100,0.18)"; ctx.lineWidth=1.2;
+    for(let y=30; y<base-40; y+=34){
+      ctx.beginPath(); ctx.moveTo(20,y); ctx.lineTo(W-20,y); ctx.setLineDash([8,14]); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    
+    ctx.beginPath(); ctx.moveTo(0,base);
+    ctx.lineTo(0, base-40); ctx.lineTo(W*0.08, base-40); ctx.lineTo(W*0.08, base-110);
+    ctx.lineTo(W*0.12, base-110); ctx.lineTo(W*0.12, base-40); ctx.lineTo(W*0.26, base-40);
+    ctx.lineTo(W*0.26, base-30); ctx.lineTo(W*0.35, base-30);
+    ctx.lineTo(W*0.42, base-90);
+    ctx.arc(W*0.45, base-90, 18, Math.PI, 0); ctx.lineTo(W*0.48, base-30);
+    ctx.lineTo(W*0.52, base-130); ctx.lineTo(W*0.56, base-30);
+    ctx.lineTo(W*0.62, base-30);
+    ctx.lineTo(W*0.62, base-35); ctx.lineTo(W*0.75, base-35); ctx.lineTo(W*0.82, base-65);
+    ctx.lineTo(W*0.86, base-35); ctx.lineTo(W, base-35); ctx.lineTo(W, base);
+    ctx.closePath();
+    ctx.fillStyle="#232323"; ctx.fill();
+    
+    ctx.fillStyle="#1E4E79"; ctx.fillRect(0, base-8, W, 10);
+    
+    ctx.font="11px monospace"; ctx.textAlign="center"; ctx.fillStyle="rgba(20,20,20,.5)";
+    ctx.fillText("WEST END (NOBREZA)", 0.14*W, base+26);
+    ctx.fillText("THE CITY (FINANÇAS)", 0.45*W, base+26);
+    ctx.fillText("EAST END (OPERÁRIO)", 0.82*W, base+26);
+    
+    const mxPx = mx * W;
+    ctx.beginPath(); ctx.moveTo(mxPx, 18); ctx.lineTo(mxPx, base);
+    ctx.strokeStyle="rgba(200,36,35,.7)"; ctx.lineWidth=1.5; ctx.stroke();
+    ctx.beginPath(); ctx.arc(mxPx, 22, 5, 0, 7); ctx.fillStyle="#C82423"; ctx.fill();
+    ctx.beginPath(); ctx.arc(mxPx, base-20, 8, 0, 7); ctx.fillStyle="#C82423"; ctx.fill();
+    ctx.beginPath(); ctx.arc(mxPx, base-20, 8, 0, 7); ctx.strokeStyle="#fff"; ctx.lineWidth=2; ctx.stroke();
+  }
+  function update(nx){ mx=clamp(nx,0.02,0.98); const z=zoneOf(mx); nEl.textContent=z.name; dEl.textContent=z.desc; tEl.textContent=z.trait; draw(); }
+  let down=false; function handle(e){ const p=ptr(e,cv); update(p.x/W); }
+  cv.addEventListener("pointerdown",e=>{down=true;cv.setPointerCapture(e.pointerId);handle(e);});
+  cv.addEventListener("pointermove",e=>{if(down)handle(e);});
+  cv.addEventListener("pointerup",()=>down=false); cv.addEventListener("pointercancel",()=>down=false);
+  addEventListener("resize",draw); update(0.45);
+})();
+
+/* ===================== 03 SUBTEXTO BRITÂNICO ===================== */
+(function(){
+  const phrases = [
+    {phrase: "\"With the greatest respect...\"", heard: "O que se ouve: \"Ele tem profundo respeito por mim.\"", mean: "O que significa: \"Você é um idiota e está completamente errado.\"", meter: 95},
+    {phrase: "\"I hear what you say.\"", heard: "O que se ouve: \"Ele concordou com meu argumento.\"", mean: "O que significa: \"Discordo de tudo e não vou mais falar sobre isso.\"", meter: 85},
+    {phrase: "\"That's quite an interesting idea.\"", heard: "O que se ouve: \"Ideia inovadora e brilhante.\"", mean: "O que significa: \"Essa ideia é um absurdo e impraticável.\"", meter: 78},
+    {phrase: "\"I was a bit disappointed, to be honest.\"", heard: "O que se ouve: \"Houve apenas uma leve queixa.\"", mean: "O que significa: \"Estou absolutamente furioso.\"", meter: 90},
+    {phrase: "\"I'll bear it in mind.\"", heard: "O que se ouve: \"Vou analisar com carinho.\"", mean: "O que significa: \"Vou esquecer isso no segundo em que você sair.\"", meter: 70},
+    {phrase: "\"It's not bad, actually.\"", heard: "O que se ouve: \"É aceitável, nota 6.\"", mean: "O que significa: \"Está excelente e maravilhoso.\"", meter: 20}
+  ];
+  const grid = document.getElementById("subtextGrid");
+  const meter = document.getElementById("subtextMeter");
+  phrases.forEach((item, idx) => {
+    const card = document.createElement("div");
+    card.className = "subtext-card" + (idx===0 ? " active" : "");
+    card.innerHTML = `<div class="subtext-phrase">${item.phrase}</div><div class="subtext-heard">${item.heard}</div><div class="subtext-mean">${item.mean}</div>`;
+    card.addEventListener("click", () => {
+      document.querySelectorAll(".subtext-card").forEach(c => c.classList.remove("active"));
+      card.classList.add("active");
+      meter.style.width = item.meter + "%";
+    });
+    grid.appendChild(card);
+  });
+  meter.style.width = phrases[0].meter + "%";
+})();
+
+/* ===================== 04 SORRY & AIRBAG VERBAL ===================== */
+(function(){
+  const cv=document.getElementById("sorryCanvas"), btn=document.getElementById("btnSorryDemo");
+  const tEl=document.getElementById("sorryTitle"), dEl=document.getElementById("sorryDesc");
+  let ctx,W,H,animating=false,bumpProg=0;
+  function size(){ ctx=fit(cv,300); W=cv._w; H=cv._h; }
+  size(); addEventListener("resize",size);
+  
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const cy = H*0.55;
+    ctx.fillStyle="#f0f0f0"; ctx.fillRect(0, cy+30, W, H-(cy+30));
+    ctx.strokeStyle="rgba(20,20,20,.12)"; ctx.lineWidth=1;
+    for(let x=0; x<W; x+=40){ ctx.beginPath(); ctx.moveTo(x,cy+30); ctx.lineTo(x,H); ctx.stroke(); }
+    
+    let p1X = lerp(W*0.2, W*0.44, bumpProg);
+    let p2X = lerp(W*0.8, W*0.56, bumpProg);
+    
+    ctx.fillStyle="#C82423";
+    ctx.beginPath(); ctx.arc(p1X, cy-35, 14, 0, 7); ctx.fill();
+    ctx.fillRect(p1X-10, cy-18, 20, 42);
+    
+    ctx.fillStyle="#1E4E79";
+    ctx.beginPath(); ctx.arc(p2X, cy-35, 14, 0, 7); ctx.fill();
+    ctx.fillRect(p2X-10, cy-18, 20, 42);
+    
+    if(bumpProg > 0.85){
+      ctx.fillStyle="#141414";
+      ctx.fillRect(p1X-50, cy-85, 65, 26);
+      ctx.fillStyle="#fff"; ctx.font="700 12px monospace"; ctx.textAlign="center";
+      ctx.fillText('"SORRY!"', p1X-18, cy-68);
+      
+      ctx.fillStyle="#141414";
+      ctx.fillRect(p2X-15, cy-85, 65, 26);
+      ctx.fillStyle="#fff"; ctx.fillText('"SORRY!"', p2X+18, cy-68);
+      
+      ctx.beginPath(); ctx.arc(W*0.5, cy-10, 24, 0, 7);
+      ctx.strokeStyle="rgba(200,36,35,0.4)"; ctx.lineWidth=3; ctx.stroke();
+    }
+  }
+  function animate(){
+    if(!animating) return;
+    bumpProg += 0.035;
+    if(bumpProg > 1){
+      bumpProg = 1; animating = false;
+      tEl.textContent = "Airbag Verbal Acionado";
+      dEl.textContent = 'Ambos disseram "Sorry!" em sincronia. Conflito evitado e harmonia restaurada em 0,3s.';
+    }
+    draw();
+    if(animating) requestAnimationFrame(animate);
+  }
+  btn.addEventListener("click",()=>{ bumpProg=0; animating=true; animate(); });
+  draw();
+})();
+
+/* ===================== 05 BALCÃO DO PUB ===================== */
+(function(){
+  const cv=document.getElementById("pubCanvas");
+  const sEl=document.getElementById("pubStatus"), fEl=document.getElementById("pubFeedback"), vEl=document.getElementById("pubVerdict");
+  const btns=document.querySelectorAll("#pubControls button");
+  let ctx,W,H,mode="eye";
+  function size(){ ctx=fit(cv,340); W=cv._w; H=cv._h; }
+  size(); addEventListener("resize",size);
+  
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const by = H*0.62;
+    ctx.fillStyle="#2b1a15"; ctx.fillRect(0,0,W,by);
+    ctx.fillStyle="#3d271f"; ctx.fillRect(W*0.15, 20, W*0.7, by-50);
+    for(let x=W*0.2; x<W*0.8; x+=24){
+      ctx.fillStyle= (x%48===0)?"#D9822B":"#1E824C";
+      ctx.fillRect(x, by-80, 10, 26);
+    }
+    ctx.fillStyle="#141414";
+    ctx.beginPath(); ctx.arc(W*0.5, by-85, 20, 0, 7); ctx.fill();
+    ctx.fillRect(W*0.5-22, by-62, 44, 58);
+    
+    ctx.fillStyle="#543324"; ctx.fillRect(0, by, W, H-by);
+    ctx.fillStyle="#704431"; ctx.fillRect(0, by, W, 8);
+    
+    const pumps = [W*0.32, W*0.44, W*0.56, W*0.68];
+    pumps.forEach(px => {
+      ctx.fillStyle="#B8860B"; ctx.fillRect(px-4, by-38, 8, 38);
+      ctx.beginPath(); ctx.arc(px, by-38, 7, 0, 7); ctx.fillStyle="#8B0000"; ctx.fill();
+    });
+    
+    ctx.fillStyle="rgba(255,255,255,0.7)"; ctx.fillRect(W*0.5-12, by+20, 24, 40);
+    ctx.fillStyle="#D9822B"; ctx.fillRect(W*0.5-10, by+26, 20, 32);
+    ctx.fillStyle="#fff"; ctx.fillRect(W*0.5-10, by+22, 20, 6);
+    
+    if(mode === "wave" || mode === "snap"){
+      ctx.fillStyle="#C82423"; ctx.font="700 13px monospace"; ctx.textAlign="center";
+      ctx.fillText("😠 [Ignorando você por grosseria]", W*0.5, by-115);
+    } else if(mode === "eye" || mode === "round" || mode === "tip"){
+      ctx.fillStyle="#1E824C"; ctx.font="700 13px monospace"; ctx.textAlign="center";
+      ctx.fillText('🙂 "What can I get you, mate?"', W*0.5, by-115);
+    }
+  }
+  
+  btns.forEach(b => {
+    b.addEventListener("click", () => {
+      btns.forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      mode = b.dataset.act;
+      if(mode === "snap"){
+        sEl.textContent = "Estalando os dedos";
+        fEl.textContent = "Erro grave! Estalar os dedos no balcão é visto como arrogância imperdoável. Você foi para o fim da fila.";
+        vEl.textContent = "gafe imperdoável"; vEl.className = "verdict bad";
+      } else if(mode === "wave"){
+        sEl.textContent = "Acenando com nota de £20";
+        fEl.textContent = "Acenar dinheiro no ar irrita os bartenders e quebra a fila invisível. Mantenha o dinheiro quieto sobre o balcão.";
+        vEl.textContent = "má conduta"; vEl.className = "verdict bad";
+      } else if(mode === "eye"){
+        sEl.textContent = "Contato visual calmo";
+        fEl.textContent = "Perfeito! Braços na madeira, postura paciente e sobrancelha erguida no momento do olhar. O bartender já te atende.";
+        vEl.textContent = "conduta correta"; vEl.className = "verdict ok";
+      } else if(mode === "round"){
+        sEl.textContent = "Pagando a rodada do grupo";
+        fEl.textContent = "Excelente. Comprar a rodada completa (The Round) honra o pacto coletivo e mantém a harmonia do grupo.";
+        vEl.textContent = "ritual cumprido"; vEl.className = "verdict ok";
+      } else if(mode === "tip"){
+        sEl.textContent = '"And one for yourself"';
+        fEl.textContent = "A fórmula clássica e mais respeitosa de gorjeta em pubs. O bartender debitará o valor de uma bebida com gratidão.";
+        vEl.textContent = "mestre de etiqueta"; vEl.className = "verdict ok";
+      }
+      draw();
+    });
+  });
+  draw();
+})();
+
+/* ===================== 06 MAPA DE BECK VS GEOGRÁFICO ===================== */
+(function(){
+  const cv=document.getElementById("beckCanvas"), btn=document.getElementById("btnToggleMap");
+  const tEl=document.getElementById("beckTitle"), dEl=document.getElementById("beckDesc");
+  let ctx,W,H,isBeck=true;
+  function size(){ ctx=fit(cv,360); W=cv._w; H=cv._h; }
+  size(); addEventListener("resize",size);
+  
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle="#fdfdfd"; ctx.fillRect(0,0,W,H);
+    
+    if(isBeck){
+      ctx.lineWidth=6;
+      ctx.strokeStyle="#C82423";
+      ctx.beginPath(); ctx.moveTo(W*0.1, H*0.5); ctx.lineTo(W*0.4, H*0.5); ctx.lineTo(W*0.6, H*0.3); ctx.lineTo(W*0.9, H*0.3); ctx.stroke();
+      ctx.strokeStyle="#1E4E79";
+      ctx.beginPath(); ctx.moveTo(W*0.2, H*0.85); ctx.lineTo(W*0.4, H*0.5); ctx.lineTo(W*0.6, H*0.5); ctx.lineTo(W*0.8, H*0.15); ctx.stroke();
+      ctx.strokeStyle="#1E824C";
+      ctx.beginPath(); ctx.moveTo(W*0.15, H*0.7); ctx.lineTo(W*0.6, H*0.7); ctx.lineTo(W*0.85, H*0.45); ctx.stroke();
+      
+      const stations = [[W*0.4, H*0.5], [W*0.6, H*0.5], [W*0.6, H*0.3], [W*0.6, H*0.7]];
+      stations.forEach(st => {
+        ctx.beginPath(); ctx.arc(st[0], st[1], 6, 0, 7);
+        ctx.fillStyle="#fff"; ctx.fill();
+        ctx.strokeStyle="#141414"; ctx.lineWidth=2.5; ctx.stroke();
+      });
+      
+      ctx.font="700 12px monospace"; ctx.fillStyle="#141414"; ctx.textAlign="left";
+      ctx.fillText("Holborn (Conexão limpa)", W*0.42, H*0.46);
+    } else {
+      ctx.lineWidth=4;
+      ctx.strokeStyle="#C82423";
+      ctx.beginPath(); ctx.moveTo(W*0.1, H*0.55);
+      ctx.bezierCurveTo(W*0.25, H*0.65, W*0.35, H*0.42, W*0.5, H*0.48);
+      ctx.bezierCurveTo(W*0.65, H*0.55, W*0.75, H*0.22, W*0.9, H*0.32);
+      ctx.stroke();
+      ctx.strokeStyle="#1E4E79";
+      ctx.beginPath(); ctx.moveTo(W*0.18, H*0.88);
+      ctx.bezierCurveTo(W*0.32, H*0.7, W*0.45, H*0.55, W*0.5, H*0.48);
+      ctx.bezierCurveTo(W*0.58, H*0.4, W*0.7, H*0.35, W*0.82, H*0.12);
+      ctx.stroke();
+      
+      ctx.font="11px monospace"; ctx.fillStyle="#666"; ctx.textAlign="center";
+      ctx.fillText("Centro comprimido e ilegível na superfície real", W*0.5, H*0.85);
+    }
+  }
+  
+  btn.addEventListener("click", () => {
+    isBeck = !isBeck;
+    if(isBeck){
+      btn.textContent = "alternar: mapa de beck (topológico)";
+      tEl.textContent = "Circuito de Harry Beck (1933)";
+      dEl.textContent = "Linhas retas e ângulos de 45°. No túnel escuro, o que importa é a ordem das conexões, não a distância física.";
+    } else {
+      btn.textContent = "alternar: mapa geográfico real";
+      tEl.textContent = "A Geografia Real de Londres";
+      dEl.textContent = "Curvas sinuosas e estações amontoadas. Exato no papel, mas caótico para a mente de quem navega no metrô.";
+    }
+    draw();
+  });
+  draw();
+})();
+
+/* ===================== 08 CHÁ: MIF VS TIF ===================== */
+(function(){
+  const cv=document.getElementById("teaCanvas"), btnMIF=document.getElementById("btnTeaMIF"), btnTIF=document.getElementById("btnTeaTIF");
+  const tEl=document.getElementById("teaTitle"), dEl=document.getElementById("teaDesc");
+  let ctx,W,H,mode="MIF";
+  function size(){ ctx=fit(cv,320); W=cv._w; H=cv._h; }
+  size(); addEventListener("resize",size);
+  
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const cx = W*0.5, cy = H*0.55;
+    
+    ctx.beginPath(); ctx.ellipse(cx, cy+40, 75, 12, 0, 0, 7);
+    ctx.fillStyle="#e8e8e8"; ctx.fill();
+    ctx.strokeStyle="rgba(20,20,20,.2)"; ctx.lineWidth=1.5; ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.moveTo(cx-50, cy-25);
+    ctx.bezierCurveTo(cx-48, cy+35, cx+48, cy+35, cx+50, cy-25);
+    ctx.closePath();
+    ctx.fillStyle= (mode==="TIF") ? "#ffffff" : "#e6dcd0";
+    ctx.fill();
+    ctx.strokeStyle= (mode==="TIF") ? "#B8860B" : "#8B4513"; ctx.lineWidth=2; ctx.stroke();
+    
+    ctx.beginPath(); ctx.arc(cx+54, cy-2, 14, Math.PI*1.4, Math.PI*0.6);
+    ctx.strokeStyle= (mode==="TIF") ? "#B8860B" : "#8B4513"; ctx.lineWidth=4; ctx.stroke();
+    
+    ctx.beginPath(); ctx.ellipse(cx, cy-15, 42, 8, 0, 0, 7);
+    ctx.fillStyle = (mode==="MIF") ? "#d4a373" : "#8a3319";
+    ctx.fill();
+    
+    ctx.font="700 12px monospace"; ctx.textAlign="center"; ctx.fillStyle="#141414";
+    if(mode === "MIF"){
+      ctx.fillText("1º Leite frio no fundo  →  2º Chá quente por cima", cx, cy-65);
+      ctx.font="11px monospace"; ctx.fillStyle="#666";
+      ctx.fillText("(Protegia a louça barata contra choque térmico)", cx, cy-48);
+    } else {
+      ctx.fillText("1º Chá fervendo puro  →  2º Pingo de leite", cx, cy-65);
+      ctx.font="11px monospace"; ctx.fillStyle="#666";
+      ctx.fillText("(A nobre porcelana chinesa resistia ao calor total)", cx, cy-48);
+    }
+  }
+  
+  btnMIF.addEventListener("click", () => {
+    btnMIF.classList.add("on"); btnTIF.classList.remove("on"); mode = "MIF";
+    tEl.textContent = "Milk In First (MIF)";
+    dEl.textContent = "O leite frio protegia as canecas de barro baratas da classe trabalhadora contra a água fervendo.";
+    draw();
+  });
+  btnTIF.addEventListener("click", () => {
+    btnTIF.classList.add("on"); btnMIF.classList.remove("on"); mode = "TIF";
+    tEl.textContent = "Tea In First (TIF)";
+    dEl.textContent = "A nobreza exibia sua fina porcelana \"bone china\" resistente ao calor, adicionando leite depois para dosar a cor.";
+    draw();
+  });
+  draw();
+})();
+
+/* ===================== 09 RODA DO ANO ===================== */
+(function(){
+  const cv=document.getElementById("wheel");
+  const nEl=document.getElementById("wName"), dEl=document.getElementById("wDesc"), wEl=document.getElementById("wWhen");
+  const seasons=[
+    {name:"Notting Hill Carnival & BBC Proms", desc:"Trios elétricos caribenhos na rua e maratona clássica no Royal Albert Hall.", when:"Agosto · auge do verão", col:"#C82423", an:0},
+    {name:"Volta às aulas e folhas douradas", desc:"Richmond Park em tons ocres e as caminhadas frescas em Hampstead Heath.", when:"Setembro · início do outono", col:"#D9822B", an:Math.PI/6},
+    {name:"Frieze Art Fair & pubs aconchegantes", desc:"A temporada de arte contemporânea e os pubs fechando as portas para o frio.", when:"Outubro · outono pleno", col:"#D9822B", an:Math.PI/3},
+    {name:"Bonfire Night & Remembrance Day", desc:"Fogueiras no dia 5 lembrando Guy Fawkes e papoulas vermelhas na lapela no dia 11.", when:"Novembro · fogueiras de outono", col:"#D9822B", an:Math.PI/2},
+    {name:"Luzes de Natal & Pantomimes", desc:"Regent Street iluminada, patinação no gelo e comédias teatrais natalinas.", when:"Dezembro · inverno festivo", col:"#1E4E79", an:Math.PI*2/3},
+    {name:"Cosy Pubs & Lareiras acesas", desc:"O refúgio da cerveja escura e do ensopado nos dias mais frios do ano.", when:"Janeiro · auge do inverno", col:"#1E4E79", an:Math.PI*5/6},
+    {name:"Fim do inverno & primeiros brotos", desc:"As noites começam a encurtar e os museus recebem grandes exposições.", when:"Fevereiro · transição de inverno", col:"#1E4E79", an:Math.PI},
+    {name:"Daffodils nos Parques Reais", desc:"Milhões de narcisos amarelos cobrem o Hyde Park e os jardins de Kensington.", when:"Março · despertar da primavera", col:"#1E824C", an:Math.PI*7/6},
+    {name:"The Boat Race (Oxford vs Cambridge)", desc:"A histórica regata de remo universitária que paralisa as margens do Tâmisa.", when:"Abril · primavera viva", col:"#1E824C", an:Math.PI*4/3},
+    {name:"Chelsea Flower Show", desc:"A aristocracia e entusiastas celebram a arte botânica nos jardins reais.", when:"Maio · primavera florida", col:"#1E824C", an:Math.PI*3/2},
+    {name:"Dias longos & Pimm\'s nos parques", desc:"O sol põe-se às 21h30; piqueniques com jarras de Pimm\'s No. 1.", when:"Junho · início do verão", col:"#C82423", an:Math.PI*5/3},
+    {name:"Wimbledon & Morangos com Creme", desc:"O torneio na grama consome 28 toneladas de morangos com nata batida.", when:"Julho · verão esportivo", col:"#C82423", an:Math.PI*11/6}
+  ];
+  let ctx,W,H,cx,cy,R,ang=0,sel=0;
+  function geom(){ ctx=fit(cv,430); W=cv._w; H=cv._h; cx=W/2; cy=H/2; R=Math.min(W,H)/2-28; }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=0; i<seasons.length; i++){
+      const a1 = ang + (i-0.5)*Math.PI/6 - Math.PI/2;
+      const a2 = a1 + Math.PI/6;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,R,a1,a2); ctx.closePath();
+      const active = (i === sel);
+      ctx.fillStyle = active ? "rgba(200,36,35,0.14)" : ((i%2===0)?"#f5f5f5":"#ffffff");
+      ctx.fill();
+      ctx.strokeStyle = active ? "#C82423" : "rgba(20,20,20,0.12)";
+      ctx.lineWidth = active ? 2 : 1; ctx.stroke();
+    }
+    ctx.beginPath(); ctx.moveTo(cx, cy-R-8); ctx.lineTo(cx-6, cy-R-18); ctx.lineTo(cx+6, cy-R-18); ctx.closePath();
+    ctx.fillStyle="#C82423"; ctx.fill();
+    ctx.beginPath(); ctx.arc(cx,cy,18,0,7); ctx.fillStyle="#141414"; ctx.fill();
+  }
+  function pick(){
+    let norm = (-(ang - Math.PI/2)) % (Math.PI*2);
+    if(norm < 0) norm += Math.PI*2;
+    sel = Math.floor(norm / (Math.PI/6)) % 12;
+    const s = seasons[sel];
+    nEl.textContent = s.name; dEl.textContent = s.desc; wEl.textContent = s.when; wEl.style.color = s.col;
+  }
+  let down=false, lastA=0;
+  function ptrAng(e){ const p=ptr(e,cv); return Math.atan2(p.y-cy, p.x-cx); }
+  cv.addEventListener("pointerdown",e=>{down=true;cv.setPointerCapture(e.pointerId);lastA=ptrAng(e);});
+  cv.addEventListener("pointermove",e=>{if(!down)return; const a=ptrAng(e); ang += (a - lastA); lastA=a; pick(); draw();});
+  cv.addEventListener("pointerup",()=>down=false); cv.addEventListener("pointercancel",()=>down=false);
+  geom(); addEventListener("resize",()=>{geom();draw();}); pick(); draw();
+})();
+
+/* ===================== 10 QUIZ ===================== */
+(function(){
+  const qs = [
+    {
+      q: "Você está no metrô de King\'s Cross na hora do rush subindo a escada rolante. Em qual posição você deve ficar parado?",
+      opts: [
+        {t:"No lado esquerdo segurando o corrimão.", c:false},
+        {t:"No centro do degrau com as malas à frente.", c:false},
+        {t:"Estritamente no lado direito (Stand on the right), deixando a esquerda livre.", c:true},
+        {t:"Em qualquer lado desde que em silêncio.", c:false}
+      ],
+      exp: "Stand on the right: o lado direito é para ficar parado; o esquerdo é uma via expressa intocável para quem caminha rápido. Bloquear a esquerda é a gafe suprema no Underground."
+    },
+    {
+      q: "Você está num pub cheio no Soho e quer pedir cerveja no balcão. Não há garçons. Como chamar o barman?",
+      opts: [
+        {t:"Estalar os dedos discretamente.", c:false},
+        {t:"Acenar uma nota de £20 no ar.", c:false},
+        {t:"Apoiar as mãos no balcão e fazer contato visual calmo com sobrancelha erguida.", c:true},
+        {t:"Gritar \"Excuse me, mate!\" quando ele passar.", c:false}
+      ],
+      exp: "No balcão opera uma fila invisível mental. Acenar dinheiro ou estalar dedos é falta grave e garante que você seja atendido por último. O contato visual paciente é a única regra."
+    },
+    {
+      q: "Alguém tropeça e esbarra com força no seu ombro na calçada de Covent Garden. O que você faz?",
+      opts: [
+        {t:"Exige que a pessoa peça desculpas com olhar severo.", c:false},
+        {t:"Diz \"Sorry!\" reflexivamente e segue andando sem encarar.", c:true},
+        {t:"Grita \"Watch where you are going!\".", c:false},
+        {t:"Aponta teatralmente para o chão.", c:false}
+      ],
+      exp: "O \"sorry\" preventivo é um airbag verbal que desarma conflitos antes que eles nasçam. Dizer \"sorry\" ao levar um esbarrão é o reflexo britânico padrão."
+    },
+    {
+      q: "Em uma reunião, o diretor britânico sorri e diz: \"That is a remarkably brave and unusual idea\". O que significa?",
+      opts: [
+        {t:"Ele achou a ideia genial e vai aprová-la.", c:false},
+        {t:"Ele quer uma apresentação aos investidores.", c:false},
+        {t:"Ele achou a ideia arriscada demais, impraticável e vai arquivá-la.", c:true},
+        {t:"Ele não compreendeu a proposta.", c:false}
+      ],
+      exp: "No subtexto corporativo inglês, \"brave\" costuma ser o eufemismo para perigoso ou suicida. A frase indica que o projeto foi polidamente rejeitado."
+    },
+    {
+      q: "No pub com colegas londrinos, eles pagaram as duas primeiras rodadas. Os copos estão no fim. Qual a conduta?",
+      opts: [
+        {t:"Esperar que alguém pergunte se você quer pagar.", c:false},
+        {t:"Deixar £5 na mesa pelo preço da sua cerveja.", c:false},
+        {t:"Levantar-se, perguntar \"Same again, everyone?\" e pagar a rodada inteira.", c:true},
+        {t:"Dizer que só bebe água para não gastar.", c:false}
+      ],
+      exp: "O sistema de rodadas (The Round) é um pacto de honra comunitário. Aceitar rodadas sem pagar a sua vez é considerado desonestidade social."
+    }
+  ];
+  
+  const quizEl = document.getElementById("quiz");
+  const dotsEl = document.getElementById("qDots");
+  const nextBtn = document.getElementById("qNext");
+  let cur = 0;
+  
+  qs.forEach((item, idx) => {
+    const dot = document.createElement("i");
+    if(idx === 0) dot.className = "on";
+    dotsEl.appendChild(dot);
+    
+    const step = document.createElement("div");
+    step.className = "q-step" + (idx === 0 ? " active" : "");
+    step.innerHTML = `
+      <div class="q-num">pergunta ${idx+1} de ${qs.length}</div>
+      <div class="q-text">${item.q}</div>
+      <div class="q-opts">
+        ${item.opts.map((o) => `<button class="opt" data-correct="${o.c}">${o.t}<span class="mk"></span></button>`).join("")}
+      </div>
+      <div class="explain">${item.exp}</div>
+    `;
+    
+    const opts = step.querySelectorAll(".opt");
+    const exp = step.querySelector(".explain");
+    opts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        if(step.dataset.done) return;
+        step.dataset.done = "1";
+        const isC = btn.dataset.correct === "true";
+        btn.classList.add(isC ? "correct" : "wrong");
+        btn.querySelector(".mk").textContent = isC ? "✓ correto" : "✗ incorreto";
+        if(!isC){
+          opts.forEach(o => { if(o.dataset.correct === "true") { o.classList.add("correct"); o.querySelector(".mk").textContent = "✓ correto"; } });
+        }
+        exp.classList.add("show");
+        nextBtn.style.display = "block";
+      });
+    });
+    
+    quizEl.insertBefore(step, quizEl.querySelector(".q-nav"));
+  });
+  
+  nextBtn.addEventListener("click", () => {
+    const steps = quizEl.querySelectorAll(".q-step");
+    const dots = dotsEl.querySelectorAll("i");
+    steps[cur].classList.remove("active");
+    dots[cur].classList.remove("on");
+    cur = (cur + 1) % qs.length;
+    steps[cur].classList.add("active");
+    dots[cur].classList.add("on");
+    nextBtn.style.display = steps[cur].dataset.done ? "block" : "none";
+  });
+})();
+</script>
+</body>
+</html>
