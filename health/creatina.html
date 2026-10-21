@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="tab">Creatina · o que a ciência diz</title>
+<meta name="description" content="Creatina: força, massa magra, envelhecimento, cérebro, sono, rins e cabelo. Toda a evidência até outubro de 2026, graduada de A a D, com simuladores interativos. Por Renato Shirakashi.">
+<link rel="canonical" href="https://renatoshira.github.io/health/creatina.html">
+<meta name="theme-color" content="#141414">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Creatina · o que a ciência diz">
+<meta property="og:description" content="Força, massa magra, envelhecimento, cérebro, rins e cabelo: toda a evidência até outubro de 2026, graduada de A a D.">
+<meta property="og:url" content="https://renatoshira.github.io/health/creatina.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="article:author" content="Renato Shirakashi">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/health.css">
+<style>
+  /* barras músculo × cérebro (seção 06) */
+  .uptake{margin-top:6px}
+  .uprow{display:grid;grid-template-columns:86px 1fr 70px;gap:10px;align-items:center;font-size:12px;margin:10px 0}
+  .uptrack{height:16px;background:var(--soft);position:relative}
+  .upfill{position:absolute;top:0;bottom:0;left:0;background:var(--ink)}
+  .uprng{position:absolute;top:0;bottom:0;background:var(--ink);opacity:.25}
+  .uprow .v{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  /* rim (seção 07) */
+  .kgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+  .kcard{border:1px solid var(--line);padding:12px}
+  .kcard .kt{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  .kcard .kv{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px;line-height:1.2}
+  .kcard .kd{font-size:11px;color:var(--dim);margin-top:2px;line-height:1.45}
+  .kcard.alarm{border-color:var(--down)} .kcard.alarm .kv{color:var(--down)}
+  .kcard.ok{border-color:var(--gA)} .kcard.ok .kv{color:var(--gA)}
+  @media (max-width:560px){.kgrid{grid-template-columns:1fr}}
+  .seg{display:flex;border:1px solid var(--ink);width:max-content;max-width:100%}
+  .seg button{border:0;background:var(--paper);font-family:inherit;font-size:12px;padding:6px 11px;cursor:pointer;color:var(--ink)}
+  .seg button.on{background:var(--ink);color:var(--paper)}
+  .ctrls{display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+  .ctrls .cl{font-size:11px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+  /* protocolo */
+  .proto{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ink);margin-top:16px}
+  .proto .pc{padding:14px 16px;border-right:1px solid var(--line)}
+  .proto .pc:last-child{border-right:0}
+  .proto .pk{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .proto .pv{font-size:22px;font-weight:700;margin-top:4px;line-height:1.2;font-variant-numeric:tabular-nums}
+  .proto .ps{font-size:11.5px;color:var(--dim);margin-top:4px;line-height:1.5}
+  @media (max-width:560px){.proto{grid-template-columns:1fr}.proto .pc{border-right:0;border-bottom:1px solid var(--line)}.proto .pc:last-child{border-bottom:0}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="topbar">
+  <a class="kicker" href="../index.html">Renato Shirakashi</a>
+  <div class="right">
+    <span class="crumb"><a href="./" data-i18n="crumb">Saúde</a> · <span data-i18n="crumb2">Creatina</span></span>
+    <div class="langtoggle" role="group" aria-label="Idioma">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" data-i18n="hero.eyebrow">Suplementos · Ficha 01</div>
+  <h1>
+    <span class="mark" data-i18n="hero.h1a">Creatina</span>
+    <span class="mark l2" data-i18n="hero.h1b">muito além do músculo?</span>
+  </h1>
+  <div class="sub" data-i18n="hero.sub">O suplemento mais estudado do esporte virou candidato a tudo: memória, envelhecimento, depressão, sono, ossos. Separamos o que é sólido do que ainda é promessa, desfecho por desfecho.</div>
+  <div class="byline" data-i18n="hero.byline">por Renato Shirakashi · revisado em outubro de 2026 · 60 referências, 21 delas de 2025–26</div>
+
+  <div class="summary">
+    <div class="sumhead"><span data-i18n="sum.t">Resumo</span><span class="upd" data-i18n="sum.upd">atualizado 13 out 2026</span></div>
+    <div class="sumbody">
+      <p data-i18n="sum.p1">A creatina é um composto que o próprio corpo fabrica (cerca de 1 g por dia) e que vem da carne e do peixe. Ela abastece o sistema de energia mais rápido da célula, a <strong>fosfocreatina</strong>, que segura os primeiros segundos de qualquer esforço intenso. Suplementar enche esse estoque em 20% a 40% no músculo e em 5% a 10% no cérebro.</p>
+      <p data-i18n="sum.p2"><span class="mark">O que é sólido:</span> com treino de força, ela aumenta força e massa magra de forma pequena, mas muito consistente, em centenas de ensaios. É também um dos suplementos mais seguros que existem: em 685 ensaios, os efeitos colaterais foram iguais aos do placebo, e os rins de pessoas saudáveis não sofrem.</p>
+      <p data-i18n="sum.p3"><span class="mark">O que é promessa:</span> memória (efeito pequeno, mais claro em idosos e sob privação de sono), depressão como adjuvante, Alzheimer e concussão. <span class="mark">O que não funciona:</span> resistência aeróbica, densidade óssea, e formas "premium" que custam mais e entregam menos.</p>
+    </div>
+    <div class="facts">
+      <div class="f"><div class="fk" data-i18n="f.dose">Dose</div><div class="fv">3–5 g</div><div class="fs" data-i18n="f.doses">por dia, todo dia</div></div>
+      <div class="f"><div class="fk" data-i18n="f.form">Forma</div><div class="fv" data-i18n="f.formv">Monoidratada</div><div class="fs" data-i18n="f.forms">em pó; as outras não são melhores</div></div>
+      <div class="f"><div class="fk" data-i18n="f.time">Tempo até encher</div><div class="fv" data-i18n="f.timev">~4 semanas</div><div class="fs" data-i18n="f.times">ou 1 semana com carga</div></div>
+      <div class="f"><div class="fk" data-i18n="f.cost">Custo</div><div class="fv" data-i18n="f.costv">~R$ 1/dia</div><div class="fs" data-i18n="f.costs">US$ 0,10–0,50</div></div>
+    </div>
+  </div>
+
+  <ol class="toc">
+    <li><a href="#matriz"><span class="n">01</span><span data-i18n="toc.1">Matriz de evidência</span></a></li>
+    <li><a href="#oque"><span class="n">02</span><span data-i18n="toc.2">O que é e como funciona</span></a></li>
+    <li><a href="#dose"><span class="n">03</span><span data-i18n="toc.3">Dose e saturação</span></a></li>
+    <li><a href="#musculo"><span class="n">04</span><span data-i18n="toc.4">Força, massa e desempenho</span></a></li>
+    <li><a href="#idade"><span class="n">05</span><span data-i18n="toc.5">Envelhecimento, ossos e mulheres</span></a></li>
+    <li><a href="#cerebro"><span class="n">06</span><span data-i18n="toc.6">Cérebro</span></a></li>
+    <li><a href="#seguranca"><span class="n">07</span><span data-i18n="toc.7">Segurança: rins, cabelo e mais</span></a></li>
+    <li><a href="#formas"><span class="n">08</span><span data-i18n="toc.8">Formas, marcas e fraudes</span></a></li>
+    <li><a href="#mitos"><span class="n">09</span><span data-i18n="toc.9">Mito ou verdade</span></a></li>
+    <li><a href="#protocolo"><span class="n">10</span><span data-i18n="toc.10">Na prática</span></a></li>
+  </ol>
+</header>
+
+<!-- 01 MATRIZ -->
+<section class="wrap reveal" id="matriz">
+  <div class="step" data-i18n="s1.step">01 · Matriz de evidência</div>
+  <h2 class="head" data-i18n="s1.head">Cada efeito, com o grau de confiança que ele merece</h2>
+  <p data-i18n="s1.p1">A tabela abaixo reúne todos os desfechos com dados em humanos. Clique numa linha para ver o tamanho do efeito, de onde ele vem e por que recebeu aquele grau. Os graus vão de <span class="grade sm A">A</span> (várias meta-análises concordando) a <span class="grade sm D">D</span> (piloto ou só mecanismo). <a class="link" href="./#graus">Como os graus funcionam</a>.</p>
+  <div class="matrix" id="matrix"></div>
+  <p class="note" data-i18n="s1.note">Conflitos de interesse: boa parte das meta-análises recentes tem autores ligados à International Society of Sports Nutrition (ISSN) ou a fabricantes de creatina (como a AlzChem, dona da marca Creapure). Isso não invalida os dados, mas é um motivo a mais para dar peso às análises independentes, que estão citadas lado a lado quando discordam.</p>
+</section>
+
+<!-- 02 O QUE É -->
+<section class="wrap reveal" id="oque">
+  <div class="step" data-i18n="s2.step">02 · O que é</div>
+  <h2 class="head" data-i18n="s2.head">Uma bateria de reserva para os primeiros segundos</h2>
+  <p data-i18n="s2.p1">Toda contração muscular, todo disparo de neurônio, gasta <code>ATP</code>. O problema é que a célula guarda ATP para apenas uns 2 segundos de esforço máximo. A fosfocreatina é o estoque de emergência: ela doa seu fosfato para regenerar ATP instantaneamente, sem oxigênio e sem esperar a glicose ser quebrada. É ela que sustenta um sprint, uma série pesada ou um salto, e que se esgota em cerca de 10 segundos.</p>
+  <p data-i18n="s2.p2">Uma pessoa de 70 kg carrega cerca de <code>120 g</code> de creatina, 95% dela nos músculos. Todo dia, perto de <code>1,7%</code> desse total se degrada espontaneamente em creatinina e sai na urina, então é preciso repor uns 2 g por dia. Metade vem de fábrica própria (fígado, rins e pâncreas, a partir de arginina, glicina e metionina). A outra metade vem da dieta: carne e peixe crus têm 3 a 5 g por quilo. Um levantamento com 20 anos de dados do NHANES, nos EUA, estimou a ingestão média em apenas <code>0,7 g/dia</code><sup class="ref"><a href="#ref-53">53</a></sup>.</p>
+  <p data-i18n="s2.p3"><span class="mark">Suplementar não cria nada novo: apenas enche um tanque que a dieta deixa pela metade.</span> Por isso o efeito tem teto. Quem já tem o músculo perto da saturação (muita carne na dieta) ganha menos; vegetarianos, que partem de estoques 10% a 20% menores, tendem a ganhar mais<sup class="ref"><a href="#ref-47">47</a></sup>. E por isso também a creatina não é estimulante: não há "efeito" no dia em que você toma, só no estoque acumulado.</p>
+</section>
+
+<!-- 03 DOSE -->
+<section class="wrap reveal" id="dose">
+  <div class="step" data-i18n="s3.step">03 · Dose e saturação</div>
+  <h2 class="head" data-i18n="s3.head">Carga ou paciência: dois caminhos para o mesmo tanque cheio</h2>
+  <p data-i18n="s3.p1">O experimento clássico de Eric Hultman, em 1996, respondeu à pergunta que até hoje se repete na academia<sup class="ref"><a href="#ref-44">44</a></sup>. Tomar <code>20 g/dia</code> por 6 dias (a "fase de carga") elevou a creatina muscular em cerca de 20%. Tomar só <code>3 g/dia</code> chegou ao mesmo lugar, só que em 28 dias. Depois que o tanque enche, 2 a 3 g por dia bastam para mantê-lo. E quando se para, o estoque leva umas quatro a seis semanas para voltar ao normal.</p>
+  <p data-i18n="s3.p2">Use o simulador para ver as curvas. Ele é um modelo simples, calibrado nesses dados, e mostra a <strong>creatina total no músculo</strong> em mmol por kg de músculo seco.</p>
+
+  <div class="widget" id="w-sat">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w1.tag">Simulador · saturação muscular</span></div>
+    <div class="ctrls">
+      <div><span class="cl" data-i18n="w1.proto">Protocolo</span>
+        <div class="seg" id="sat-proto">
+          <button data-p="load" class="on" data-i18n="w1.load">Carga 20 g → 5 g</button>
+          <button data-p="5" data-i18n="w1.d5">5 g/dia</button>
+          <button data-p="3" data-i18n="w1.d3">3 g/dia</button>
+        </div>
+      </div>
+      <div><span class="cl" data-i18n="w1.diet">Dieta</span>
+        <div class="seg" id="sat-diet">
+          <button data-d="omni" class="on" data-i18n="w1.omni">Onívoro</button>
+          <button data-d="veg" data-i18n="w1.veg">Vegetariano</button>
+        </div>
+      </div>
+    </div>
+    <div class="ctrlrow"><label for="sat-stop" data-i18n="w1.stop">Parar no dia</label><input type="range" id="sat-stop" min="14" max="90" step="1" value="60"><output id="sat-stop-o">60</output></div>
+    <canvas id="sat-cv" aria-label="Gráfico de creatina muscular ao longo de 120 dias"></canvas>
+    <div class="reads">
+      <div><div class="rk" data-i18n="w1.r1">Dia em que chega a 90%</div><div class="bigread" id="sat-r1">–</div></div>
+      <div><div class="rk" data-i18n="w1.r2">Aumento no pico</div><div class="bigread" id="sat-r2">–</div></div>
+      <div><div class="rk" data-i18n="w1.r3">Volta ao basal</div><div class="bigread" id="sat-r3">–</div></div>
+    </div>
+    <div class="wcap" data-i18n="w1.cap">Modelo ilustrativo: absorção saturável que desacelera conforme o tanque enche, calibrada em Hultman 1996 e Harris 1992<sup class="ref"><a href="#ref-45">45</a></sup>. Basal típico: ~120 (onívoros) e ~105 (vegetarianos). Na vida real a variação entre pessoas é grande: cerca de 1 em cada 4 quase não responde, geralmente quem já parte com o estoque alto<sup class="ref"><a href="#ref-58">58</a></sup>.</div>
+  </div>
+
+  <h3 class="subh" data-i18n="s3.h2">Perguntas que sempre aparecem</h3>
+  <ul class="clean">
+    <li data-i18n="s3.l1"><strong>Precisa fazer carga?</strong> Não. Ela só antecipa o resultado em três semanas, ao custo de mais desconforto intestinal. Faz sentido para quem tem uma competição próxima.</li>
+    <li data-i18n="s3.l2"><strong>Antes ou depois do treino?</strong> Tanto faz. Os ensaios que compararam horários não acharam diferença consistente<sup class="ref"><a href="#ref-3">3</a></sup>. O importante é tomar todo dia, inclusive nos dias sem treino.</li>
+    <li data-i18n="s3.l3"><strong>Precisa de carboidrato junto?</strong> Comer junto com carboidrato e proteína aumenta a retenção (cerca de 60% a mais com 93 g de açúcar)<sup class="ref"><a href="#ref-46">46</a></sup>, mas isso não se traduziu em mais massa magra nos ensaios<sup class="ref"><a href="#ref-16">16</a></sup>. Tomar junto com uma refeição é o suficiente.</li>
+    <li data-i18n="s3.l4"><strong>Precisa ciclar (parar de tempos em tempos)?</strong> Não há motivo fisiológico. A produção própria cai durante o uso e volta ao normal quando se para.</li>
+    <li data-i18n="s3.l5"><strong>Dose por peso?</strong> A carga costuma ser <code>0,3 g/kg/dia</code> dividida em 4 tomadas. Para manutenção, 3 g bastam para a maioria, mas alguns ensaios em idosos e mulheres na pós-menopausa só viram efeito a partir de <code>5 g/dia</code><sup class="ref"><a href="#ref-22">22</a></sup>.</li>
+  </ul>
+</section>
+
+<!-- 04 MÚSCULO -->
+<section class="wrap reveal" id="musculo">
+  <div class="step" data-i18n="s4.step">04 · Força, massa e desempenho</div>
+  <h2 class="head" data-i18n="s4.head">Um efeito pequeno que não falha</h2>
+  <p data-i18n="s4.p1">A creatina não faz ninguém treinar menos e ganhar mais. O que ela faz é permitir uma ou duas repetições a mais por série, e isso, somado ao longo de meses, vira mais estímulo. Por isso o benefício aparece quase só quando há treino: sem exercício, a massa magra não muda (+0,03 kg em média)<sup class="ref"><a href="#ref-14">14</a></sup>.</p>
+  <p data-i18n="s4.p2">Os números de 2025 e 2026, das maiores meta-análises já feitas:</p>
+  <ul class="clean">
+    <li data-i18n="s4.l1"><strong>Massa magra:</strong> <code>+1,4 kg</code> a mais que o placebo, em 61 ensaios com 1.457 pessoas, com certeza alta pelo método GRADE<sup class="ref"><a href="#ref-12">12</a></sup>.</li>
+    <li data-i18n="s4.l2"><strong>Agachamento:</strong> <code>+5,6 kg</code> a mais; <strong>supino:</strong> <code>+1,4 kg</code> a mais, em 69 ensaios<sup class="ref"><a href="#ref-7">7</a></sup>. Outra meta-análise, só com adultos abaixo de 50 anos, achou ganhos bem maiores: +4,4 kg no supino e +11 kg em membros inferiores<sup class="ref"><a href="#ref-6">6</a></sup>.</li>
+    <li data-i18n="s4.l3"><strong>Potência:</strong> <code>+48 W</code> no pico do teste de Wingate (30 segundos máximos na bicicleta) e +1,5 cm no salto vertical<sup class="ref"><a href="#ref-7">7</a></sup>.</li>
+    <li data-i18n="s4.l4"><strong>Resistência aeróbica:</strong> nada. Em atletas treinados, o efeito foi −0,07 (praticamente zero)<sup class="ref"><a href="#ref-11">11</a></sup>. O VO₂máx por quilo pode até piorar um pouco, porque a balança sobe.</li>
+  </ul>
+  <p data-i18n="s4.p3">Há um asterisco honesto. Parte da "massa magra" medida por DXA ou bioimpedância é água dentro da célula. Quando dez ensaios mediram o músculo diretamente, com ressonância, tomografia ou ultrassom, o ganho de espessura foi bem menor: cerca de 1 a 1,5 mm, no limite da significância<sup class="ref"><a href="#ref-15">15</a></sup>. A força a mais, por outro lado, é real e medida na barra.</p>
+
+  <div class="widget">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w2.tag">Comparativo · o mesmo pó, efeitos de tamanhos diferentes</span></div>
+    <div class="forest" id="forest"></div>
+    <div class="wcap" data-i18n="w2.cap">Tamanho de efeito padronizado (SMD ou g de Hedges) com intervalo de confiança de 95%. Zero é "igual ao placebo"; 0,2 é pequeno, 0,5 é moderado. Quando a barra cruza o zero, o efeito pode não existir. Para depressão, o sinal foi invertido para que "à direita" sempre signifique melhora.</div>
+  </div>
+</section>
+
+<!-- 05 IDADE -->
+<section class="wrap reveal" id="idade">
+  <div class="step" data-i18n="s5.step">05 · Envelhecimento, ossos e mulheres</div>
+  <h2 class="head" data-i18n="s5.head">Onde a evidência ficou mais modesta em 2026</h2>
+  <p data-i18n="s5.p1">A partir dos 30 anos perdemos massa muscular, e depois dos 60 o ritmo acelera. A creatina virou aposta natural contra a sarcopenia, e as meta-análises antigas pareciam confirmar: <code>+1,4 kg</code> de massa magra em idosos que treinam<sup class="ref"><a href="#ref-17">17</a></sup>. As análises de 2025 e 2026, com métodos mais rigorosos, contam uma história mais contida. <span class="mark">O ganho de força se mantém (g = 0,31, certeza moderada), mas o de massa muscular deixou de ser estatisticamente significativo</span><sup class="ref"><a href="#ref-18">18</a></sup><sup class="ref"><a href="#ref-19">19</a></sup>. E quanto mais velho o grupo, menor o efeito<sup class="ref"><a href="#ref-8">8</a></sup>. Não existe ainda nenhum ensaio grande em pessoas com sarcopenia diagnosticada.</p>
+  <p data-i18n="s5.p2"><strong>Ossos.</strong> Um piloto de 2015 sugeriu que a creatina freava a perda óssea na pós-menopausa. O teste definitivo veio em 2023: 237 mulheres, dois anos, creatina mais treino. <span class="mark">A densidade mineral óssea não mudou</span><sup class="ref"><a href="#ref-20">20</a></sup>. O grupo com creatina preservou a geometria do colo do fêmur (um indicador de resistência à flexão) e caminhou mais rápido, mas todas as meta-análises de densidade óssea, até a de 2026, dão zero<sup class="ref"><a href="#ref-21">21</a></sup>.</p>
+  <p data-i18n="s5.p3"><strong>Mulheres.</strong> Elas são minoria nos ensaios, e isso pesa. Na faixa pré-menopausa, uma meta-análise de 2026 com 692 mulheres achou um efeito geral pequeno (g = 0,23), com certeza baixa<sup class="ref"><a href="#ref-23">23</a></sup>. Os subgrupos femininos das grandes análises não chegam a ser significativos. Na pós-menopausa, o sinal é mais claro, mas só com <code>≥5 g/dia</code> e treino de força: <code>+7,5 kg</code> no leg press e <code>+0,4 kg</code> de massa magra<sup class="ref"><a href="#ref-22">22</a></sup>. Não há evidência de que a fase do ciclo menstrual mude a dose. E na gravidez <span class="mark">não existe nenhum ensaio em humanos</span>: os dados promissores são em animais<sup class="ref"><a href="#ref-3">3</a></sup>.</p>
+</section>
+
+<!-- 06 CÉREBRO -->
+<section class="wrap reveal" id="cerebro">
+  <div class="step" data-i18n="s6.step">06 · Cérebro</div>
+  <h2 class="head" data-i18n="s6.head">O órgão que mais gasta energia é o que menos absorve</h2>
+  <p data-i18n="s6.p1">O cérebro é 2% do peso do corpo e consome 20% da energia. Faz sentido imaginar que uma reserva extra de fosfocreatina ajude a pensar. O obstáculo é a barreira hematoencefálica: a creatina só entra por um transportador específico, que é escasso e se desliga quando o cérebro já está abastecido. Além disso, o cérebro fabrica a maior parte da própria creatina.</p>
+
+  <div class="widget">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w3.tag">Quanto o estoque sobe com suplementação</span></div>
+    <div class="uptake" id="uptake"></div>
+    <div class="wcap" data-i18n="w3.cap">Faixa típica medida por biópsia (músculo) e espectroscopia por ressonância (cérebro). No cérebro, os ensaios positivos usaram doses de 10 a 20 g/dia ou doses únicas de 0,2 a 0,35 g/kg, bem acima dos 3 a 5 g usuais<sup class="ref"><a href="#ref-3">3</a></sup><sup class="ref"><a href="#ref-36">36</a></sup>.</div>
+  </div>
+
+  <p style="margin-top:30px" data-i18n="s6.p2"><strong>Memória.</strong> A melhor síntese (16 ensaios, 492 pessoas) achou um efeito pequeno na memória (SMD 0,31, certeza moderada) e efeitos incertos em atenção e velocidade de processamento<sup class="ref"><a href="#ref-29">29</a></sup>. Cognição geral e funções executivas não mudaram. Em jovens saudáveis e descansados, o efeito é praticamente zero<sup class="ref"><a href="#ref-30">30</a></sup>. O maior ensaio individual, com 123 pessoas, viu sinais no limite da significância<sup class="ref"><a href="#ref-31">31</a></sup>. E a velha ideia de que vegetarianos se beneficiam mais não se confirmou nesse ensaio.</p>
+  <p data-i18n="s6.p3"><strong>Privação de sono.</strong> Este é o achado mais curioso. Uma dose única alta (0,35 g/kg, cerca de 25 g) durante 21 horas acordado mudou o metabolismo energético do cérebro e melhorou memória e tempo de reação, com pico 4 horas depois<sup class="ref"><a href="#ref-32">32</a></sup>. Um segundo ensaio, de 2026, com 29 pessoas, achou até 12% menos queda em tarefas de lógica e vigilância<sup class="ref"><a href="#ref-33">33</a></sup>. São do mesmo laboratório, com amostras pequenas, e por isso ficam no grau C.</p>
+  <p data-i18n="s6.p4"><strong>Depressão.</strong> Um ensaio de 2012 em mulheres tomando escitalopram mostrou o dobro de remissão com 5 g de creatina (52% contra 26%)<sup class="ref"><a href="#ref-35">35</a></sup>. Mas a meta-análise de 2025, com 11 ensaios, achou um efeito que equivale a 2,2 pontos na escala de Hamilton, abaixo dos 3 pontos considerados clinicamente relevantes, com certeza muito baixa<sup class="ref"><a href="#ref-34">34</a></sup>. Para quem tem transtorno bipolar, há relatos de virada para mania<sup class="ref"><a href="#ref-54">54</a></sup>.</p>
+  <p data-i18n="s6.p5"><strong>Alzheimer, concussão e covid longa.</strong> O estudo CABA (2025) deu 20 g/dia a 20 pacientes com Alzheimer por 8 semanas: a creatina cerebral subiu 11% e alguns testes cognitivos melhoraram<sup class="ref"><a href="#ref-36">36</a></sup>. Sem grupo placebo, é um estudo de viabilidade, não uma prova. Um ensaio controlado em comprometimento cognitivo leve está em andamento. Na concussão, os dados vêm de crianças em estudos abertos dos anos 2000<sup class="ref"><a href="#ref-37">37</a></sup>; o centro de lesão cerebral do Departamento de Defesa dos EUA concluiu em 2025 que ainda não há base para indicar.</p>
+</section>
+
+<!-- 07 SEGURANÇA -->
+<section class="wrap reveal" id="seguranca">
+  <div class="step" data-i18n="s7.step">07 · Segurança</div>
+  <h2 class="head" data-i18n="s7.head">O exame que assusta e o rim que não sofre</h2>
+  <p data-i18n="s7.p1">Em 2025, uma revisão juntou 685 ensaios clínicos com mais de 26 mil participantes: <span class="mark">efeitos colaterais em 4,6% de quem tomou creatina e 4,2% de quem tomou placebo</span>, diferença não significativa<sup class="ref"><a href="#ref-38">38</a></sup>. As únicas diferenças pequenas foram desconforto intestinal e cãibras. Doses de até 30 g/dia por 5 anos foram toleradas em pessoas saudáveis<sup class="ref"><a href="#ref-1">1</a></sup>, e ensaios em Huntington usaram até 40 g/dia por 4 anos sem alerta de segurança<sup class="ref"><a href="#ref-57">57</a></sup>.</p>
+  <p data-i18n="s7.p2">O medo dos rins vem de um equívoco de laboratório. O exame de sangue mais comum para função renal mede <strong>creatinina</strong>, que é justamente o produto de degradação da creatina. Quem suplementa (ou ganha massa muscular) tem mais creatinina circulando, e a fórmula que estima a filtração renal (eTFG) conclui que o rim piorou. Quando a filtração é medida diretamente, ou estimada pela cistatina C, nada muda<sup class="ref"><a href="#ref-39">39</a></sup><sup class="ref"><a href="#ref-40">40</a></sup>.</p>
+
+  <div class="widget" id="w-kid">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w4.tag">Simulador · seu exame de rim com e sem creatina</span></div>
+    <div class="ctrls">
+      <div><span class="cl" data-i18n="w4.sex">Sexo</span>
+        <div class="seg" id="kid-sex"><button data-s="m" class="on" data-i18n="w4.m">Homem</button><button data-s="f" data-i18n="w4.f">Mulher</button></div>
+      </div>
+      <div><span class="cl" data-i18n="w4.cr">Creatina</span>
+        <div class="seg" id="kid-dose"><button data-k="0" data-i18n="w4.none">Não toma</button><button data-k="1" class="on">3–5 g</button><button data-k="2" data-i18n="w4.load">Carga 20 g</button></div>
+      </div>
+    </div>
+    <div class="ctrlrow"><label for="kid-age" data-i18n="w4.age">Idade</label><input type="range" id="kid-age" min="18" max="80" value="35"><output id="kid-age-o">35</output></div>
+    <div class="ctrlrow"><label for="kid-base" data-i18n="w4.base">Creatinina sem suplemento</label><input type="range" id="kid-base" min="0.6" max="1.3" step="0.05" value="0.95"><output id="kid-base-o">0,95</output></div>
+    <div class="kgrid" id="kid-out"></div>
+    <div class="wcap" data-i18n="w4.cap">eTFG calculada pela equação CKD-EPI 2021, a mesma usada pelos laboratórios. O aumento de creatinina sérica é ilustrativo (cerca de +0,1 mg/dL em manutenção e +0,25 mg/dL na carga, faixa típica relatada); varia com a massa muscular. <b>Na prática:</b> avise o médico que toma creatina e, se o eTFG vier limítrofe, peça cistatina C. Quem já tem doença renal deve conversar com o nefrologista: aí os dados são escassos.</div>
+  </div>
+
+  <h3 class="subh" data-i18n="s7.h2">Os outros medos</h3>
+  <ul class="clean">
+    <li data-i18n="s7.l1"><strong>Queda de cabelo.</strong> O boato nasceu de um estudo de 2009 com 20 jogadores de rúgbi em que o DHT (hormônio ligado à calvície) subiu 56%<sup class="ref"><a href="#ref-42">42</a></sup>. Ninguém mediu cabelo. Em 2025, um ensaio randomizado mediu tudo: DHT, testosterona, densidade de fios, espessura e fase de crescimento dos folículos. <span class="mark">Nada mudou em 12 semanas</span><sup class="ref"><a href="#ref-41">41</a></sup>. É um ensaio só, em homens, então o grau é B.</li>
+    <li data-i18n="s7.l2"><strong>Desconforto intestinal.</strong> É real e depende da dose de uma vez: 10 g de uma só vez causou diarreia em 56% dos atletas, contra 29% com 2 × 5 g (igual ao placebo)<sup class="ref"><a href="#ref-43">43</a></sup>. Regra prática: no máximo 5 g por tomada.</li>
+    <li data-i18n="s7.l3"><strong>Retenção de líquido.</strong> A balança sobe perto de 1 kg, mais rápido na fase de carga. A água fica dentro da célula muscular, não sob a pele: não "incha" o rosto. Não aumenta gordura nem pressão arterial.</li>
+    <li data-i18n="s7.l4"><strong>Desidratação e cãibra.</strong> Não há suporte nos ensaios, nem em calor<sup class="ref"><a href="#ref-2">2</a></sup>.</li>
+    <li data-i18n="s7.l5"><strong>Adolescentes.</strong> A ISSN considera seguro; a Academia Americana de Pediatria ainda recomenda não usar abaixo de 18 anos. Não há sinal de dano, mas os dados são poucos.</li>
+    <li data-i18n="s7.l6"><strong>Gravidez e transtorno bipolar.</strong> Sem dados em gestantes; risco de mania em bipolares. Nesses dois casos, só com acompanhamento médico.</li>
+  </ul>
+</section>
+
+<!-- 08 FORMAS -->
+<section class="wrap reveal" id="formas">
+  <div class="step" data-i18n="s8.step">08 · Formas, marcas e fraudes</div>
+  <h2 class="head" data-i18n="s8.head">O pó mais barato é o que tem evidência</h2>
+  <p data-i18n="s8.p1">Praticamente todos os estudos citados aqui usaram <strong>creatina monoidratada</strong> em pó. As alternativas mais caras prometem absorção melhor, mas a monoidratada já é absorvida quase por completo. Nenhuma delas venceu em ensaio:</p>
+  <div class="tblwrap">
+  <table class="tbl" id="forms-tbl">
+    <thead><tr><th data-i18n="t.h1">Forma</th><th data-i18n="t.h2">O que os ensaios mostram</th><th data-i18n="t.h3">Grau</th></tr></thead>
+    <tbody>
+      <tr><td data-i18n="t.r1a">Monoidratada</td><td data-i18n="t.r1b">Referência de toda a evidência de eficácia e segurança. "Creapure" é só uma marca alemã de matéria-prima de alta pureza.</td><td><span class="grade sm A">A</span></td></tr>
+      <tr><td data-i18n="t.r2a">Tamponada (Kre-Alkalyn)</td><td data-i18n="t.r2b">Comparada lado a lado com a monoidratada: nenhuma vantagem em estoque muscular, força ou composição corporal<sup class="ref"><a href="#ref-48">48</a></sup>.</td><td><span class="grade sm B">B</span></td></tr>
+      <tr><td data-i18n="t.r3a">Etil-éster</td><td data-i18n="t.r3b">Pior: se degrada em creatinina antes de chegar ao músculo<sup class="ref"><a href="#ref-49">49</a></sup>.</td><td><span class="grade sm B">B</span></td></tr>
+      <tr><td data-i18n="t.r4a">Cloridrato (HCl)</td><td data-i18n="t.r4b">Dissolve melhor na água; nenhuma evidência de que funcione melhor ou permita dose menor.</td><td><span class="grade sm C">C</span></td></tr>
+      <tr><td data-i18n="t.r5a">Líquida, gomas, cremes</td><td data-i18n="t.r5b">Em meio úmido e ácido, a creatina vira creatinina. Uma "creatina líquida" de 2,5 g tinha menos de 10 mg. Em testes de 2024 e 2025, de um terço a dois terços das gomas falharam, algumas com quase zero<sup class="ref"><a href="#ref-50">50</a></sup>.</td><td><span class="grade sm B">B</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout warn">
+    <div class="ct" data-i18n="s8.ct">Brasil: fraude é a regra, não exceção</div>
+    <p style="margin:0 0 10px" data-i18n="s8.c1">Em 2024, os testes da associação do setor (Abenutri) reprovaram dezenas de marcas; em outubro, de 88 analisadas, 18 falharam e 10 tinham praticamente zero de creatina<sup class="ref"><a href="#ref-51">51</a></sup>. Em dezembro de 2025 a Anvisa proibiu quatro "cremes de creatina", e em junho de 2026 suspendeu lotes de gomas por teor fora do limite<sup class="ref"><a href="#ref-52">52</a></sup>.</p>
+    <p style="margin:0" data-i18n="s8.c2">Como se proteger: prefira pó monoidratado puro (ingrediente único), de marca que publique laudo de lote de laboratório independente, ou com selo de terceira parte (NSF Certified for Sport, Informed Sport). A norma brasileira exige pureza mínima de 99,9%<sup class="ref"><a href="#ref-56">56</a></sup>. Desconfie de preço muito abaixo do mercado e de "creatina" em goma, creme ou bebida pronta.</p>
+  </div>
+</section>
+
+<!-- 09 MITOS -->
+<section class="wrap reveal" id="mitos">
+  <div class="step" data-i18n="s9.step">09 · Mito ou verdade</div>
+  <h2 class="head" data-i18n="s9.head">Teste o que você ouviu na academia</h2>
+  <div id="myths" style="margin-top:22px"></div>
+</section>
+
+<!-- 10 PROTOCOLO -->
+<section class="cliff" id="protocolo">
+  <div class="wrap">
+    <div class="step" style="color:#9a9a9a" data-i18n="s10.step">10 · Na prática</div>
+    <h2 data-i18n="s10.head">Se for tomar, o protocolo com mais evidência é também o mais simples</h2>
+    <p data-i18n="s10.p1"><span class="mark">3 a 5 g de creatina monoidratada em pó, todo dia, com uma refeição, de forma contínua.</span> Prefira 5 g se tiver mais de 50 anos, for mulher na pós-menopausa ou vegetariano. A fase de carga é opcional. Combine com treino de força: sem ele, quase tudo o que está acima de "segurança" deixa de valer.</p>
+    <p data-i18n="s10.p2">Espere cerca de 1 kg a mais na balança no primeiro mês, avise seu médico antes de exames de sangue e não espere efeito no humor, na memória ou na disposição: se existir, é pequeno. O que você ganha com mais certeza é força, a um custo de centavos por dia e com um dos históricos de segurança mais longos entre os suplementos.</p>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section class="wrap reveal">
+  <div class="step" data-i18n="s11.step">Calculadora</div>
+  <h2 class="head" data-i18n="s11.head">Seu protocolo</h2>
+  <div class="widget" style="margin-top:10px" id="w-calc">
+    <div class="ctrlrow"><label for="calc-w" data-i18n="w5.w">Seu peso</label><input type="range" id="calc-w" min="40" max="130" value="75"><output id="calc-w-o">75 kg</output></div>
+    <div class="ctrls" style="margin-top:12px">
+      <div><span class="cl" data-i18n="w5.prof">Perfil</span>
+        <div class="seg" id="calc-prof"><button data-p="adult" class="on" data-i18n="w5.adult">Adulto</button><button data-p="older" data-i18n="w5.older">50+ / pós-menopausa</button><button data-p="veg" data-i18n="w5.vegp">Vegetariano</button></div>
+      </div>
+    </div>
+    <div class="proto" id="calc-out"></div>
+    <div class="wcap" data-i18n="w5.cap">Carga = 0,3 g/kg/dia por 5 a 7 dias, dividida em tomadas de no máximo 5 g (posicionamento da ISSN). Custo estimado com pó monoidratado a R$ 0,20 por grama. Não é prescrição.</div>
+  </div>
+</section>
+
+<!-- FONTES -->
+<section class="wrap reveal" id="fontes">
+  <div class="step" data-i18n="refs.step">Fontes</div>
+  <h2 class="head" data-i18n="refs.head">Referências</h2>
+  <p class="dim" style="font-size:12.5px" data-i18n="refs.p">Os números foram conferidos nos resumos do PubMed ou no texto completo. <span class="new" style="font-size:9.5px;letter-spacing:.08em;background:var(--ink);color:var(--paper);padding:1px 5px">novo</span> marca publicações de 2025 e 2026.</p>
+  <ol class="reflist" id="reflist"></ol>
+  <div class="disclaimer" data-i18n="refs.disc">Esta ficha é um resumo da literatura científica para fins informativos e não substitui orientação médica. Revisão: outubro de 2026. Encontrou um erro ou um estudo novo? <a class="link" href="https://forms.gle/6ry8Nt8TnLHtgJcJ6" target="_blank" rel="noopener">Me avise</a>.</div>
+  <div class="foot" data-i18n="refs.foot">Creatina · ficha interativa · <a class="link" href="./">todas as fichas</a></div>
+</section>
+
+<script>
+window.EN = {
+"tab":"Creatine · what the science says",
+"crumb":"Health","crumb2":"Creatine",
+"hero.eyebrow":"Supplements · Profile 01",
+"hero.h1a":"Creatine",
+"hero.h1b":"far beyond muscle?",
+"hero.sub":"The most studied supplement in sport has become a candidate for everything: memory, aging, depression, sleep, bones. We separate what is solid from what is still a promise, outcome by outcome.",
+"hero.byline":"by Renato Shirakashi · reviewed October 2026 · 60 references, 21 of them from 2025–26",
+"sum.t":"Summary","sum.upd":"updated Oct 13, 2026",
+"sum.p1":"Creatine is a compound your body makes on its own (about 1 g a day) and that also comes from meat and fish. It fuels the cell's fastest energy system, <strong>phosphocreatine</strong>, which carries the first seconds of any intense effort. Supplementing fills that store by 20–40% in muscle and 5–10% in the brain.",
+"sum.p2":"<span class=\"mark\">What is solid:</span> combined with strength training, it increases strength and lean mass by a small but remarkably consistent amount, across hundreds of trials. It is also one of the safest supplements there is: across 685 trials, side effects matched placebo, and healthy kidneys are not harmed.",
+"sum.p3":"<span class=\"mark\">What is a promise:</span> memory (a small effect, clearer in older adults and under sleep deprivation), depression as an add-on, Alzheimer's and concussion. <span class=\"mark\">What doesn't work:</span> aerobic endurance, bone density, and \"premium\" forms that cost more and deliver less.",
+"f.dose":"Dose","f.doses":"per day, every day",
+"f.form":"Form","f.formv":"Monohydrate","f.forms":"powder; the others are not better",
+"f.time":"Time to saturate","f.timev":"~4 weeks","f.times":"or 1 week with loading",
+"f.cost":"Cost","f.costv":"~US$0.20/day","f.costs":"US$0.10–0.50",
+"toc.1":"Evidence matrix","toc.2":"What it is and how it works","toc.3":"Dosing and saturation","toc.4":"Strength, mass and performance","toc.5":"Aging, bones and women","toc.6":"Brain","toc.7":"Safety: kidneys, hair and more","toc.8":"Forms, brands and fraud","toc.9":"Myth or fact","toc.10":"In practice",
+"s1.step":"01 · Evidence matrix",
+"s1.head":"Every effect, with the confidence it deserves",
+"s1.p1":"The table below gathers every outcome with human data. Click a row to see the effect size, where it comes from and why it got that grade. Grades run from <span class=\"grade sm A\">A</span> (several meta-analyses agreeing) to <span class=\"grade sm D\">D</span> (pilot or mechanism only). <a class=\"link\" href=\"./#graus\">How the grades work</a>.",
+"s1.note":"Conflicts of interest: many recent meta-analyses have authors tied to the International Society of Sports Nutrition (ISSN) or to creatine manufacturers (such as AlzChem, which owns the Creapure brand). That doesn't invalidate the data, but it's one more reason to weigh independent analyses, which are cited side by side where they disagree.",
+"s2.step":"02 · What it is",
+"s2.head":"A backup battery for the first few seconds",
+"s2.p1":"Every muscle contraction and every neuron firing spends <code>ATP</code>. The catch is that a cell stores only about 2 seconds' worth of ATP for maximal effort. Phosphocreatine is the emergency reserve: it donates its phosphate to regenerate ATP instantly, without oxygen and without waiting for glucose to be broken down. It's what carries a sprint, a heavy set or a jump, and it runs out in about 10 seconds.",
+"s2.p2":"A 70 kg person carries about <code>120 g</code> of creatine, 95% of it in muscle. Each day around <code>1.7%</code> of that total breaks down spontaneously into creatinine and leaves in the urine, so about 2 g a day must be replaced. Half comes from in-house production (liver, kidneys and pancreas, from arginine, glycine and methionine). The other half comes from food: raw meat and fish contain 3–5 g per kilo. A survey of 20 years of US NHANES data put average intake at just <code>0.7 g/day</code><sup class=\"ref\"><a href=\"#ref-53\">53</a></sup>.",
+"s2.p3":"<span class=\"mark\">Supplementing creates nothing new: it just tops up a tank that diet leaves half full.</span> That's why the effect has a ceiling. People whose muscles are already near saturation (lots of meat) gain less; vegetarians, who start with stores 10–20% lower, tend to gain more<sup class=\"ref\"><a href=\"#ref-47\">47</a></sup>. It's also why creatine isn't a stimulant: there's no \"effect\" on the day you take it, only from the accumulated store.",
+"s3.step":"03 · Dosing and saturation",
+"s3.head":"Loading or patience: two roads to the same full tank",
+"s3.p1":"Eric Hultman's classic 1996 experiment answered the question still asked in every gym<sup class=\"ref\"><a href=\"#ref-44\">44</a></sup>. Taking <code>20 g/day</code> for 6 days (the \"loading phase\") raised muscle creatine by about 20%. Taking just <code>3 g/day</code> got to the same place, only in 28 days. Once the tank is full, 2–3 g a day keeps it there. And after stopping, stores take about four to six weeks to return to normal.",
+"s3.p2":"Use the simulator to see the curves. It's a simple model calibrated on those data, showing <strong>total muscle creatine</strong> in mmol per kg of dry muscle.",
+"w1.tag":"Simulator · muscle saturation","w1.proto":"Protocol","w1.load":"Load 20 g → 5 g","w1.d5":"5 g/day","w1.d3":"3 g/day","w1.diet":"Diet","w1.omni":"Omnivore","w1.veg":"Vegetarian","w1.stop":"Stop on day",
+"w1.r1":"Day it reaches 90%","w1.r2":"Rise at peak","w1.r3":"Back to baseline",
+"w1.cap":"Illustrative model: saturable uptake that slows as the tank fills, calibrated on Hultman 1996 and Harris 1992<sup class=\"ref\"><a href=\"#ref-45\">45</a></sup>. Typical baseline: ~120 (omnivores) and ~105 (vegetarians). In real life the spread between people is large: about 1 in 4 barely responds, usually those who already start with high stores<sup class=\"ref\"><a href=\"#ref-58\">58</a></sup>.",
+"s3.h2":"Questions that always come up",
+"s3.l1":"<strong>Do I need to load?</strong> No. Loading only gets you there three weeks sooner, at the cost of more gut discomfort. It makes sense if a competition is close.",
+"s3.l2":"<strong>Before or after training?</strong> It doesn't matter. Trials comparing timing found no consistent difference<sup class=\"ref\"><a href=\"#ref-3\">3</a></sup>. What matters is taking it every day, rest days included.",
+"s3.l3":"<strong>Do I need carbs with it?</strong> Taking it with carbohydrate and protein increases retention (about 60% more with 93 g of sugar)<sup class=\"ref\"><a href=\"#ref-46\">46</a></sup>, but that didn't translate into more lean mass in trials<sup class=\"ref\"><a href=\"#ref-16\">16</a></sup>. Taking it with a meal is enough.",
+"s3.l4":"<strong>Should I cycle it (take breaks)?</strong> There's no physiological reason to. Your own production dips while supplementing and returns to normal when you stop.",
+"s3.l5":"<strong>Dose by body weight?</strong> Loading is usually <code>0.3 g/kg/day</code> split into 4 doses. For maintenance 3 g is enough for most people, but some trials in older adults and postmenopausal women only saw an effect from <code>5 g/day</code> up<sup class=\"ref\"><a href=\"#ref-22\">22</a></sup>.",
+"s4.step":"04 · Strength, mass and performance",
+"s4.head":"A small effect that doesn't fail",
+"s4.p1":"Creatine doesn't let anyone train less and gain more. What it does is allow one or two extra reps per set, and over months that adds up to more stimulus. That's why the benefit shows up almost only with training: without exercise, lean mass doesn't change (+0.03 kg on average)<sup class=\"ref\"><a href=\"#ref-14\">14</a></sup>.",
+"s4.p2":"The 2025 and 2026 numbers, from the largest meta-analyses yet:",
+"s4.l1":"<strong>Lean mass:</strong> <code>+1.4 kg</code> more than placebo, across 61 trials with 1,457 people, with high certainty by the GRADE method<sup class=\"ref\"><a href=\"#ref-12\">12</a></sup>.",
+"s4.l2":"<strong>Squat:</strong> <code>+5.6 kg</code> more; <strong>bench press:</strong> <code>+1.4 kg</code> more, across 69 trials<sup class=\"ref\"><a href=\"#ref-7\">7</a></sup>. Another meta-analysis, limited to adults under 50, found much larger gains: +4.4 kg on bench and +11 kg for the lower body<sup class=\"ref\"><a href=\"#ref-6\">6</a></sup>.",
+"s4.l3":"<strong>Power:</strong> <code>+48 W</code> peak power on the Wingate test (30 all-out seconds on a bike) and +1.5 cm on the vertical jump<sup class=\"ref\"><a href=\"#ref-7\">7</a></sup>.",
+"s4.l4":"<strong>Aerobic endurance:</strong> nothing. In trained athletes the effect was −0.07 (essentially zero)<sup class=\"ref\"><a href=\"#ref-11\">11</a></sup>. VO₂max per kilo can even dip slightly because the scale goes up.",
+"s4.p3":"There's an honest asterisk. Part of the \"lean mass\" measured by DXA or bioimpedance is water inside the cell. When ten trials measured muscle directly, with MRI, CT or ultrasound, the gain in thickness was much smaller: about 1–1.5 mm, at the edge of significance<sup class=\"ref\"><a href=\"#ref-15\">15</a></sup>. The extra strength, on the other hand, is real and measured on the bar.",
+"w2.tag":"Comparison · same powder, effects of different sizes",
+"w2.cap":"Standardized effect size (SMD or Hedges' g) with 95% confidence interval. Zero means \"same as placebo\"; 0.2 is small, 0.5 is moderate. When the bar crosses zero, the effect may not exist. For depression the sign was flipped so \"to the right\" always means improvement.",
+"s5.step":"05 · Aging, bones and women",
+"s5.head":"Where the evidence got more modest in 2026",
+"s5.p1":"From our 30s we lose muscle mass, and after 60 the pace accelerates. Creatine became a natural bet against sarcopenia, and older meta-analyses seemed to confirm it: <code>+1.4 kg</code> of lean mass in older adults who train<sup class=\"ref\"><a href=\"#ref-17\">17</a></sup>. The 2025 and 2026 analyses, with stricter methods, tell a more restrained story. <span class=\"mark\">The strength gain holds (g = 0.31, moderate certainty), but the muscle-mass gain is no longer statistically significant</span><sup class=\"ref\"><a href=\"#ref-18\">18</a></sup><sup class=\"ref\"><a href=\"#ref-19\">19</a></sup>. And the older the group, the smaller the effect<sup class=\"ref\"><a href=\"#ref-8\">8</a></sup>. There is still no large trial in people with diagnosed sarcopenia.",
+"s5.p2":"<strong>Bones.</strong> A 2015 pilot suggested creatine slowed postmenopausal bone loss. The definitive test came in 2023: 237 women, two years, creatine plus training. <span class=\"mark\">Bone mineral density did not change</span><sup class=\"ref\"><a href=\"#ref-20\">20</a></sup>. The creatine group preserved femoral-neck geometry (an indicator of bending strength) and walked faster, but every bone-density meta-analysis, up to 2026, comes out at zero<sup class=\"ref\"><a href=\"#ref-21\">21</a></sup>.",
+"s5.p3":"<strong>Women.</strong> They are a minority in trials, and that matters. Before menopause, a 2026 meta-analysis of 692 women found a small overall effect (g = 0.23), with low certainty<sup class=\"ref\"><a href=\"#ref-23\">23</a></sup>. The female subgroups of the large analyses don't reach significance. After menopause the signal is clearer, but only with <code>≥5 g/day</code> plus strength training: <code>+7.5 kg</code> on leg press and <code>+0.4 kg</code> of lean mass<sup class=\"ref\"><a href=\"#ref-22\">22</a></sup>. There's no evidence that menstrual-cycle phase should change the dose. And in pregnancy <span class=\"mark\">there is not a single human trial</span>: the promising data are in animals<sup class=\"ref\"><a href=\"#ref-3\">3</a></sup>.",
+"s6.step":"06 · Brain",
+"s6.head":"The organ that burns the most energy absorbs the least",
+"s6.p1":"The brain is 2% of body weight and uses 20% of its energy. It's reasonable to think an extra phosphocreatine reserve would help thinking. The obstacle is the blood-brain barrier: creatine only gets in through a specific transporter, which is scarce and switches off once the brain is stocked. On top of that, the brain makes most of its own creatine.",
+"w3.tag":"How much stores rise with supplementation",
+"w3.cap":"Typical range measured by biopsy (muscle) and magnetic resonance spectroscopy (brain). For the brain, the positive trials used 10–20 g/day or single doses of 0.2–0.35 g/kg, well above the usual 3–5 g<sup class=\"ref\"><a href=\"#ref-3\">3</a></sup><sup class=\"ref\"><a href=\"#ref-36\">36</a></sup>.",
+"s6.p2":"<strong>Memory.</strong> The best synthesis (16 trials, 492 people) found a small effect on memory (SMD 0.31, moderate certainty) and uncertain effects on attention and processing speed<sup class=\"ref\"><a href=\"#ref-29\">29</a></sup>. Overall cognition and executive function didn't change. In healthy, well-rested young people the effect is essentially zero<sup class=\"ref\"><a href=\"#ref-30\">30</a></sup>. The largest single trial, with 123 people, saw borderline signals<sup class=\"ref\"><a href=\"#ref-31\">31</a></sup>. And the old idea that vegetarians benefit more did not hold up in that trial.",
+"s6.p3":"<strong>Sleep deprivation.</strong> This is the most intriguing finding. A single high dose (0.35 g/kg, about 25 g) during 21 hours awake shifted the brain's energy metabolism and improved memory and reaction time, peaking 4 hours later<sup class=\"ref\"><a href=\"#ref-32\">32</a></sup>. A second, 2026 trial with 29 people found up to 12% less decline on logic and vigilance tasks<sup class=\"ref\"><a href=\"#ref-33\">33</a></sup>. Both come from the same lab with small samples, hence grade C.",
+"s6.p4":"<strong>Depression.</strong> A 2012 trial in women on escitalopram showed twice the remission rate with 5 g of creatine (52% vs 26%)<sup class=\"ref\"><a href=\"#ref-35\">35</a></sup>. But the 2025 meta-analysis of 11 trials found an effect equal to 2.2 points on the Hamilton scale, below the 3 points considered clinically meaningful, with very low certainty<sup class=\"ref\"><a href=\"#ref-34\">34</a></sup>. In bipolar disorder there are reports of switches into mania<sup class=\"ref\"><a href=\"#ref-54\">54</a></sup>.",
+"s6.p5":"<strong>Alzheimer's, concussion and long COVID.</strong> The CABA study (2025) gave 20 g/day to 20 Alzheimer's patients for 8 weeks: brain creatine rose 11% and some cognitive tests improved<sup class=\"ref\"><a href=\"#ref-36\">36</a></sup>. With no placebo group it's a feasibility study, not proof. A controlled trial in mild cognitive impairment is under way. For concussion, the data come from open-label studies in children from the 2000s<sup class=\"ref\"><a href=\"#ref-37\">37</a></sup>; the US Department of Defense's brain injury center concluded in 2025 that there isn't yet a basis to recommend it.",
+"s7.step":"07 · Safety",
+"s7.head":"The scary lab test and the kidney that's fine",
+"s7.p1":"In 2025 a review pooled 685 clinical trials with more than 26,000 participants: <span class=\"mark\">side effects in 4.6% of those on creatine and 4.2% on placebo</span>, a non-significant difference<sup class=\"ref\"><a href=\"#ref-38\">38</a></sup>. The only small differences were gut discomfort and cramps. Doses up to 30 g/day for 5 years were tolerated in healthy people<sup class=\"ref\"><a href=\"#ref-1\">1</a></sup>, and Huntington's trials used up to 40 g/day for 4 years with no safety alarm<sup class=\"ref\"><a href=\"#ref-57\">57</a></sup>.",
+"s7.p2":"The kidney fear comes from a lab misunderstanding. The most common blood test for kidney function measures <strong>creatinine</strong>, which is precisely creatine's breakdown product. Anyone who supplements (or gains muscle) has more creatinine circulating, and the formula that estimates kidney filtration (eGFR) concludes the kidney got worse. When filtration is measured directly, or estimated from cystatin C, nothing changes<sup class=\"ref\"><a href=\"#ref-39\">39</a></sup><sup class=\"ref\"><a href=\"#ref-40\">40</a></sup>.",
+"w4.tag":"Simulator · your kidney test with and without creatine","w4.sex":"Sex","w4.m":"Male","w4.f":"Female","w4.cr":"Creatine","w4.none":"None","w4.load":"Loading 20 g","w4.age":"Age","w4.base":"Creatinine without supplement",
+"w4.cap":"eGFR computed with the CKD-EPI 2021 equation, the one labs use. The serum-creatinine rise is illustrative (about +0.1 mg/dL on maintenance and +0.25 mg/dL when loading, the typical reported range); it varies with muscle mass. <b>In practice:</b> tell your doctor you take creatine and, if eGFR comes back borderline, ask for cystatin C. Anyone with existing kidney disease should talk to their nephrologist: data there are scarce.",
+"s7.h2":"The other fears",
+"s7.l1":"<strong>Hair loss.</strong> The rumor started with a 2009 study of 20 rugby players in which DHT (the hormone linked to baldness) rose 56%<sup class=\"ref\"><a href=\"#ref-42\">42</a></sup>. Nobody measured hair. In 2025 a randomized trial measured everything: DHT, testosterone, hair density, thickness and follicle growth phase. <span class=\"mark\">Nothing changed over 12 weeks</span><sup class=\"ref\"><a href=\"#ref-41\">41</a></sup>. It's a single trial, in men, so the grade is B.",
+"s7.l2":"<strong>Gut discomfort.</strong> It's real and depends on how much you take at once: 10 g in one go caused diarrhea in 56% of athletes, versus 29% with 2 × 5 g (same as placebo)<sup class=\"ref\"><a href=\"#ref-43\">43</a></sup>. Rule of thumb: no more than 5 g per dose.",
+"s7.l3":"<strong>Water retention.</strong> The scale goes up by about 1 kg, faster during loading. The water stays inside muscle cells, not under the skin: it doesn't make your face \"puffy\". It doesn't increase fat or blood pressure.",
+"s7.l4":"<strong>Dehydration and cramps.</strong> Not supported by trials, even in heat<sup class=\"ref\"><a href=\"#ref-2\">2</a></sup>.",
+"s7.l5":"<strong>Teenagers.</strong> The ISSN considers it safe; the American Academy of Pediatrics still advises against use under 18. There's no sign of harm, but data are limited.",
+"s7.l6":"<strong>Pregnancy and bipolar disorder.</strong> No data in pregnant women; risk of mania in bipolar disorder. In both cases, only with medical supervision.",
+"s8.step":"08 · Forms, brands and fraud",
+"s8.head":"The cheapest powder is the one with the evidence",
+"s8.p1":"Virtually every study cited here used <strong>creatine monohydrate</strong> powder. The pricier alternatives promise better absorption, but monohydrate is already almost fully absorbed. None of them has won in a trial:",
+"t.h1":"Form","t.h2":"What trials show","t.h3":"Grade",
+"t.r1a":"Monohydrate","t.r1b":"The reference for all efficacy and safety evidence. \"Creapure\" is just a German brand of high-purity raw material.",
+"t.r2a":"Buffered (Kre-Alkalyn)","t.r2b":"Tested head to head against monohydrate: no advantage in muscle stores, strength or body composition<sup class=\"ref\"><a href=\"#ref-48\">48</a></sup>.",
+"t.r3a":"Ethyl ester","t.r3b":"Worse: it breaks down into creatinine before reaching muscle<sup class=\"ref\"><a href=\"#ref-49\">49</a></sup>.",
+"t.r4a":"Hydrochloride (HCl)","t.r4b":"Dissolves better in water; no evidence it works better or allows a lower dose.",
+"t.r5a":"Liquid, gummies, creams","t.r5b":"In moist, acidic products creatine turns into creatinine. One 2.5 g \"liquid creatine\" contained under 10 mg. In 2024 and 2025 tests, between a third and two thirds of gummies failed, some with almost none<sup class=\"ref\"><a href=\"#ref-50\">50</a></sup>.",
+"s8.ct":"Brazil: fraud is the rule, not the exception",
+"s8.c1":"In 2024, tests by the industry association (Abenutri) failed dozens of brands; in October, of 88 analyzed, 18 failed and 10 had essentially zero creatine<sup class=\"ref\"><a href=\"#ref-51\">51</a></sup>. In December 2025 Anvisa (Brazil's FDA) banned four \"creatine creams\", and in June 2026 it suspended batches of gummies with out-of-range content<sup class=\"ref\"><a href=\"#ref-52\">52</a></sup>.",
+"s8.c2":"How to protect yourself: choose pure monohydrate powder (single ingredient), from a brand that publishes independent lab reports per batch, or with a third-party seal (NSF Certified for Sport, Informed Sport). Brazilian rules require at least 99.9% purity<sup class=\"ref\"><a href=\"#ref-56\">56</a></sup>. Be wary of prices far below market and of \"creatine\" in gummies, creams or ready-to-drink beverages.",
+"s9.step":"09 · Myth or fact","s9.head":"Test what you heard at the gym",
+"s10.step":"10 · In practice",
+"s10.head":"If you take it, the best-supported protocol is also the simplest",
+"s10.p1":"<span class=\"mark\">3–5 g of creatine monohydrate powder, every day, with a meal, continuously.</span> Lean toward 5 g if you're over 50, a postmenopausal woman or vegetarian. Loading is optional. Pair it with strength training: without it, almost everything above \"safety\" stops applying.",
+"s10.p2":"Expect about 1 kg more on the scale in the first month, tell your doctor before blood tests, and don't expect an effect on mood, memory or energy: if it exists, it's small. What you gain with most certainty is strength, for pennies a day and with one of the longest safety records of any supplement.",
+"s11.step":"Calculator","s11.head":"Your protocol",
+"w5.w":"Your weight","w5.prof":"Profile","w5.adult":"Adult","w5.older":"50+ / postmenopausal","w5.vegp":"Vegetarian",
+"w5.cap":"Loading = 0.3 g/kg/day for 5–7 days, split into doses of at most 5 g (ISSN position stand). Cost estimated with monohydrate powder at US$0.04 per gram. Not a prescription.",
+"refs.step":"Sources","refs.head":"References",
+"refs.p":"Figures were checked against PubMed abstracts or full text. <span class=\"new\" style=\"font-size:9.5px;letter-spacing:.08em;background:var(--ink);color:var(--paper);padding:1px 5px\">new</span> marks 2025 and 2026 publications.",
+"refs.disc":"This profile summarizes the scientific literature for information only and is not a substitute for medical advice. Reviewed October 2026. Found a mistake or a new study? <a class=\"link\" href=\"https://forms.gle/6ry8Nt8TnLHtgJcJ6\" target=\"_blank\" rel=\"noopener\">Let me know</a>.",
+"refs.foot":"Creatine · interactive profile · <a class=\"link\" href=\"./\">all profiles</a>"
+};
+</script>
+<script src="assets/health.js"></script>
+<script>
+(function(){
+var H = Health, $ = H.$, $all = H.$all, t = H.t, COL = H.COL;
+function P(pt,en){return {pt:pt,en:en};}
+function num(v,d){return v.toFixed(d==null?0:d).replace('.', H.LANG==='en'?'.':',');}
+
+/* ================= referências ================= */
+var PM = 'https://pubmed.ncbi.nlm.nih.gov/';
+var REFS = [
+ [1,'Kreider RB et al. ISSN position stand: safety and efficacy of creatine supplementation. JISSN, 2017.',PM+'28615996/'],
+ [2,'Antonio J et al. Common questions and misconceptions about creatine supplementation. JISSN, 2021.','https://pmc.ncbi.nlm.nih.gov/articles/PMC7871530/'],
+ [3,'Antonio J et al. Part II: common questions and misconceptions about creatine. JISSN, 2025 (online dez/2024).','https://pmc.ncbi.nlm.nih.gov/articles/PMC11703406/',1],
+ [4,'Lanhers C et al. Creatine supplementation and upper limb strength: meta-analysis. Sports Med, 2017.',PM+'27328852/'],
+ [5,'Lanhers C et al. Creatine supplementation and lower limb strength: meta-analysis. Sports Med, 2015.',PM+'25946994/'],
+ [6,'Wang Z et al. Creatine + resistance training and muscle strength in adults <50: meta-analysis. Nutrients, 2024.',PM+'39519498/'],
+ [7,'Kazeminasab F et al. Creatine and muscle strength/power: meta-analysis of 69 RCTs. Nutrients, 2025.',PM+'40944139/',1],
+ [8,'Wang H et al. Creatine, strength and body composition: three-level meta-analysis. JISSN, 2026.',PM+'42765482/',1],
+ [9,'Gu et al. Creatine and anaerobic performance in young men: meta-analysis of 39 RCTs. Front Nutr, 2026.',PM+'42027564/',1],
+ [10,'Glaister M, Rhodes L. Short-term creatine and repeated sprint ability: meta-analysis. IJSNEM, 2022.',PM+'36041731/'],
+ [11,'Fernández-Landa J et al. Creatine and endurance performance in trained athletes: meta-analysis. Sports Med, 2023.',PM+'36877404/'],
+ [12,'Ashtary-Larky D et al. Creatine and body composition: dose-response meta-analysis of 61 trials. JISSN, 2025.',PM+'41433021/',1],
+ [13,'Pashayee-Khamene F et al. Creatine and body composition: meta-analysis of 143 RCTs. JISSN, 2024.',PM+'39042054/'],
+ [14,'Delpino FM et al. Creatine and lean body mass: meta-analysis. Nutrition, 2022.',PM+'35986981/'],
+ [15,'Burke R et al. Creatine and direct measures of muscle hypertrophy: Bayesian meta-analysis. Nutrients, 2023.',PM+'37432300/'],
+ [16,'Desai I et al. Creatine and lean mass with resistance training in adults <50: meta-analysis. JSCR, 2024.',PM+'39074168/'],
+ [17,'Chilibeck PD et al. Creatine + resistance training in older adults: meta-analysis. Open Access J Sports Med, 2017.',PM+'29138605/'],
+ [18,'Yao et al. Creatine in adults ≥60: meta-analysis with GRADE. Front Nutr, 2026.',PM+'42712402/',1],
+ [19,'Liu et al. Creatine and sarcopenia-related outcomes in older adults: meta-analysis. Eur Rev Aging Phys Act, 2025.',PM+'41388441/',1],
+ [20,'Chilibeck PD et al. Effects of 2 years of creatine and exercise on bone in postmenopausal women. MSSE, 2023.',PM+'37144634/'],
+ [21,'Chen et al. Creatine and bone mineral density: meta-analysis. Int J Med Sci, 2026.',PM+'42158825/',1],
+ [22,'Naddafha et al. Creatine in postmenopausal women: meta-analysis of 7 RCTs. JISSN, 2026.',PM+'42141930/',1],
+ [23,'Lin et al. Creatine in females: multilevel meta-analysis. Front Nutr, 2026.',PM+'42761190/',1],
+ [24,'Smith-Ryan AE et al. Creatine in women\'s health. JISSN, 2025.',PM+'40371844/',1],
+ [25,'Doma K et al. Creatine and markers of muscle damage: meta-analysis. Sports Med, 2022.',PM+'35218552/'],
+ [26,'Backx EMP et al. Creatine does not prevent muscle loss during one week of immobilization. Sports Med, 2017.',PM+'28054322/'],
+ [27,'Gualano B et al. Creatine in type 2 diabetes: randomized trial. MSSE, 2011.',PM+'20881878/'],
+ [28,'Davies TW et al. Creatine in patients at risk of functional disability: meta-analysis. JPEN, 2024.',PM+'38417175/'],
+ [29,'Xu C et al. Creatine and cognitive function in adults: meta-analysis of 16 RCTs. Front Nutr, 2024.','https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1424972/full'],
+ [30,'Prokopidis K et al. Creatine and memory in healthy individuals: meta-analysis. Nutr Rev, 2023.','https://academic.oup.com/nutritionreviews/article/81/4/416/6659064'],
+ [31,'Sandkühler JF et al. Creatine and cognition in vegetarians and omnivores: RCT (n=123). BMC Med, 2023.','https://pmc.ncbi.nlm.nih.gov/articles/PMC10647179/'],
+ [32,'Gordji-Nejad A et al. Single dose creatine improves cognition under sleep deprivation. Sci Rep, 2024.','https://www.nature.com/articles/s41598-024-54249-9'],
+ [33,'Gordji-Nejad A et al. Creatine and cognition during sleep deprivation (n=29). Nutrients, 2026.',PM+'42075005/',1],
+ [34,'Eckert I, Lima J, Dariva AA. Creatine for symptoms of depression: meta-analysis. Br J Nutr, 2025.','https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/abs/creatine-supplementation-for-treating-symptoms-of-depression-a-systematic-review-and-metaanalysis/32402D649A44771955050ED518B6E564',1],
+ [35,'Lyoo IK et al. Creatine augmentation of escitalopram in women with depression: RCT. Am J Psychiatry, 2012.',PM+'22864465/'],
+ [36,'Smith AN et al. Creatine in Alzheimer\'s disease (CABA): pilot feasibility trial. Alzheimer\'s & Dementia: TRCI, 2025.','https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/trc2.70101',1],
+ [37,'Sakellaris G et al. Creatine in children with traumatic brain injury. J Trauma, 2006.',PM+'16917445/'],
+ [38,'Gonzalez DE et al. Adverse events in 685 creatine trials. JISSN, 2025.','https://pmc.ncbi.nlm.nih.gov/articles/PMC12291212/',1],
+ [39,'Lugaresi R, Gualano B et al. Does long-term creatine supplementation impair kidney function in resistance-trained individuals consuming a high-protein diet? JISSN, 2013.',PM+'23680457/'],
+ [40,'Kabiri Naeini E et al. Creatine and kidney function: meta-analysis. BMC Nephrol, 2025.','https://doaj.org/article/82cc8c98f10345128d49d0d3cdc535af',1],
+ [41,'Lak M et al. Creatine, DHT and hair: 12-week RCT. JISSN, 2025.',PM+'40265319/',1],
+ [42,'van der Merwe J et al. Creatine and DHT in rugby players. Clin J Sport Med, 2009.',PM+'19741313/'],
+ [43,'Ostojic SM, Ahmetovic Z. Gastrointestinal distress after creatine: dose-dependent. Res Sports Med, 2008.','https://nutrition-evidence.com/article/108849/gastrointestinal-distress-after-creatine-supplementation-in-athletes-are-side-effects-dose-dependent'],
+ [44,'Hultman E et al. Muscle creatine loading in men. J Appl Physiol, 1996.',PM+'8828669/'],
+ [45,'Harris RC et al. Elevation of creatine in resting and exercised muscle. Clin Sci, 1992.',PM+'1327657/'],
+ [46,'Green AL et al. Carbohydrate ingestion augments creatine retention. Am J Physiol, 1996.',PM+'8944667/'],
+ [47,'Burke DG et al. Creatine in vegetarians: muscle stores and performance. MSSE, 2003.',PM+'14600563/'],
+ [48,'Jagim AR et al. Buffered creatine vs monohydrate: RCT. JISSN, 2012.','https://pmc.ncbi.nlm.nih.gov/articles/PMC3500725/'],
+ [49,'Spillane M et al. Creatine ethyl ester vs monohydrate. JISSN, 2009.','https://jissn.biomedcentral.com/articles/10.1186/1550-2783-6-6'],
+ [50,'NOW Foods (2024) and SuppCo (2025): lab testing of creatine gummies.','https://www.nutraingredients.com/Article/2024/03/01/NOW-raises-red-flags-after-creatine-gummy-testing',1],
+ [51,'Abenutri: relatórios de análise de creatinas no Brasil, 2024.','https://www.opovo.com.br/noticias/saude/2024/05/24/creatina-relatorio-reprova-25-marcas-por-impurezas-veja-quais-foram.html'],
+ [52,'Anvisa: proibição de cremes de creatina (dez/2025) e suspensão de lotes de gomas (jun/2026).','https://olhardigital.com.br/2025/12/11/medicina-e-saude/anvisa-proibe-venda-de-creatina-de-quatro-marcas-e-de-paracetamol-irregular/',1],
+ [53,'Ostojic SM et al. Dietary creatine intake in US adults, NHANES 1999–2018. Amino Acids, 2025.','https://link.springer.com/article/10.1007/s00726-025-03460-7',1],
+ [54,'Toniolo RA et al. Creatine in bipolar depression: RCT, 2018 (e Roitman et al., 2007).','https://pmc.ncbi.nlm.nih.gov/articles/PMC6769464/'],
+ [55,'EFSA. Creatine and muscle strength in adults over 55: scientific opinion on health claim, 2016.','https://www.efsa.europa.eu/en/efsajournal/pub/4400'],
+ [56,'Anvisa RDC 243/2018 e IN 28/2018: regras para suplementos alimentares.','https://nutritotal.com.br/pro/quais-sao-os-suplementos-esportivos-aprovados-pela-anvisa/'],
+ [57,'Hersch SM et al. CREST-E: high-dose creatine in Huntington\'s disease. Neurology, 2017.','https://pmc.ncbi.nlm.nih.gov/articles/PMC5562960/'],
+ [58,'Syrotuik DG, Bell GJ. Responders and non-responders to creatine. JSCR, 2004.',PM+'15320650/'],
+ [59,'Chun et al. 10 g/day creatine without exercise in adults 45–65: RCT. JISSN, 2026.',PM+'42578920/',1],
+ [60,'Northeast B, Clifford T. Creatine and recovery from muscle damage: meta-analysis. IJSNEM, 2021.',PM+'33631721/']
+];
+function renderRefs(){
+  $('#reflist').innerHTML = REFS.map(function(r){
+    return '<li id="ref-'+r[0]+'" value="'+r[0]+'">'+H.esc(r[1])+(r[3]?'<span class="new">'+(H.LANG==='en'?'new':'novo')+'</span>':'')+
+      ' <a href="'+r[2]+'" target="_blank" rel="noopener">'+H.esc(r[2].replace(/^https?:\/\//,'').slice(0,60))+(r[2].length>68?'…':'')+'</a></li>';
+  }).join('');
+}
+renderRefs(); H.onLang(renderRefs);
+
+/* ================= 01 · matriz ================= */
+var CATS = [{id:'mus',pt:'Músculo e desempenho',en:'Muscle & performance'},{id:'age',pt:'Idade, osso e mulheres',en:'Aging, bone & women'},
+            {id:'brain',pt:'Cérebro',en:'Brain'},{id:'clin',pt:'Clínico',en:'Clinical'},{id:'safe',pt:'Segurança',en:'Safety'}];
+var ROWS = [
+ {id:'ub',cat:'mus',g:'A',dir:'up',mag:1,o:P('Força máxima, membros superiores','Maximal strength, upper body'),sub:P('com treino de força','with strength training'),
+  eff:P('Supino +1,4 a +4,4 kg vs placebo · SMD 0,27–0,54','Bench press +1.4 to +4.4 kg vs placebo · SMD 0.27–0.54'),
+  why:P('Todas as meta-análises apontam na mesma direção desde 2015; elas divergem só no tamanho, que é maior em homens jovens e menor quando entram idosos e mulheres.','Every meta-analysis since 2015 points the same way; they differ only on size, which is larger in young men and smaller when older adults and women are included.'),
+  n:P('Até 69 ensaios, ~1.900 pessoas','Up to 69 trials, ~1,900 people'),refs:[4,6,7,8],isNew:true},
+ {id:'lb',cat:'mus',g:'A',dir:'up',mag:2,o:P('Força máxima, membros inferiores','Maximal strength, lower body'),sub:P('com treino de força','with strength training'),
+  eff:P('Agachamento +5,6 kg · g = 0,55 (análise de três níveis, 2026)','Squat +5.6 kg · g = 0.55 (three-level analysis, 2026)'),
+  why:P('Consistente em dezenas de ensaios. O efeito encolhe com a idade e não foi significativo no subgrupo feminino.','Consistent across dozens of trials. The effect shrinks with age and was not significant in the female subgroup.'),
+  n:P('60+ estudos','60+ studies'),refs:[5,7,8],isNew:true},
+ {id:'pw',cat:'mus',g:'A',dir:'up',mag:2,o:P('Potência anaeróbica','Anaerobic power'),sub:P('Wingate, esforços de até 30 s','Wingate, efforts up to 30 s'),
+  eff:P('Pico de potência +48 a +71 W','Peak power +48 to +71 W'),
+  why:P('É o mecanismo direto da fosfocreatina. Duas meta-análises recentes concordam.','This is phosphocreatine\'s direct mechanism. Two recent meta-analyses agree.'),
+  n:P('12 a 39 ensaios','12 to 39 trials'),refs:[7,9,1],isNew:true},
+ {id:'rs',cat:'mus',g:'B',dir:'up',mag:2,o:P('Sprints repetidos','Repeated sprints'),
+  eff:P('Potência média δ = 0,61; pico e índice de fadiga sem diferença','Mean power δ = 0.61; peak and fatigue index no difference'),
+  why:P('Melhora clara numa métrica, nula em outras.','Clear improvement on one metric, null on others.'),n:P('14 ensaios duplo-cegos','14 double-blind trials'),refs:[10]},
+ {id:'jp',cat:'mus',g:'B',dir:'up',mag:1,o:P('Salto vertical','Vertical jump'),
+  eff:P('+1,5 a +2,9 cm','+1.5 to +2.9 cm'),why:P('Positivo, mas com heterogeneidade muito alta entre estudos (I² ~ 88%).','Positive, but with very high heterogeneity across studies (I² ~88%).'),n:P('23 ensaios','23 trials'),refs:[7,9],isNew:true},
+ {id:'lm',cat:'mus',g:'A',dir:'up',mag:2,o:P('Massa magra','Lean mass'),sub:P('com treino de força','with strength training'),
+  eff:P('+1,4 kg (IC 1,1–1,7) vs placebo · certeza GRADE alta','+1.4 kg (CI 1.1–1.7) vs placebo · GRADE certainty high'),
+  why:P('Muito consistente, mas inclui água intracelular: medições diretas do músculo mostram efeito bem menor (SMD 0,11).','Very consistent, but includes intracellular water: direct muscle measurements show a much smaller effect (SMD 0.11).'),
+  n:P('61 ensaios, 1.457 pessoas','61 trials, 1,457 people'),refs:[12,13,15],isNew:true},
+ {id:'lm0',cat:'mus',g:'C',dir:'flat',mag:0,o:P('Massa magra sem treino','Lean mass without training'),
+  eff:P('+0,03 kg (IC −0,65 a 0,70)','+0.03 kg (CI −0.65 to 0.70)'),why:P('Na média, nada. Um ensaio de 2026 com 10 g/dia em adultos de 45–65 anos viu ganho sem exercício; ainda isolado.','On average, nothing. A 2026 trial with 10 g/day in adults aged 45–65 saw a gain without exercise; still a single study.'),refs:[14,59],isNew:true},
+ {id:'fm',cat:'mus',g:'C',dir:'flat',mag:0,o:P('Gordura corporal','Body fat'),
+  eff:P('Massa gorda: sem mudança · % de gordura: −0,3 a −0,9 ponto','Fat mass: no change · body-fat %: −0.3 to −0.9 points'),
+  why:P('A queda no percentual vem do músculo a mais, não de gordura queimada.','The percentage drop comes from extra muscle, not burned fat.'),refs:[12,13,16],isNew:true},
+ {id:'en',cat:'mus',g:'A',dir:'flat',mag:0,o:P('Resistência aeróbica','Aerobic endurance'),
+  eff:P('SMD −0,07 (IC −0,32 a 0,18)','SMD −0.07 (CI −0.32 to 0.18)'),why:P('Sem efeito em atletas treinados. O VO₂máx por quilo pode cair levemente pelo ganho de peso.','No effect in trained athletes. VO₂max per kilo may dip slightly due to weight gain.'),n:P('13 + 19 ensaios','13 + 19 trials'),refs:[11]},
+ {id:'bw',cat:'mus',g:'A',dir:'rise',mag:1,o:P('Peso corporal','Body weight'),sub:P('efeito, não benefício','an effect, not a benefit'),
+  eff:P('+0,8 a +0,9 kg em média','+0.8 to +0.9 kg on average'),why:P('Água dentro da célula muscular mais tecido novo. Mais rápido com carga.','Water inside muscle cells plus new tissue. Faster with loading.'),refs:[10,12,13],isNew:true},
+ {id:'rec',cat:'mus',g:'C',dir:'mixed',mag:1,o:P('Recuperação de dano muscular','Recovery from muscle damage'),
+  eff:P('CK menor após uma sessão; maior com treino crônico; dor e força sem diferença','Lower CK after a single bout; higher with chronic training; soreness and strength no different'),
+  why:P('Resultados paradoxais entre meta-análises.','Paradoxical results across meta-analyses.'),refs:[25,60]},
+ {id:'os',cat:'age',g:'B',dir:'up',mag:1,o:P('Força em idosos','Strength in older adults'),sub:P('com treino de força','with strength training'),
+  eff:P('g = 0,31 (IC 0,18–0,45) · certeza moderada','g = 0.31 (CI 0.18–0.45) · moderate certainty'),
+  why:P('Benefício consistente, mas menor que em jovens e decrescente com a idade.','Consistent benefit, but smaller than in the young and declining with age.'),n:P('11 a 22 ensaios','11 to 22 trials'),refs:[17,18,19],isNew:true},
+ {id:'om',cat:'age',g:'C',dir:'up',mag:1,o:P('Massa muscular em idosos','Muscle mass in older adults'),
+  eff:P('Antes: +1,4 kg · 2026: g = 0,35 (IC −0,09 a 0,78), não significativo','Earlier: +1.4 kg · 2026: g = 0.35 (CI −0.09 to 0.78), not significant'),
+  why:P('Rebaixada em 2026: análises mais rigorosas não confirmam o ganho de massa com segurança.','Downgraded in 2026: stricter analyses no longer confirm the mass gain with confidence.'),refs:[17,18,19],isNew:true},
+ {id:'sar',cat:'age',g:'D',dir:'unk',mag:0,o:P('Sarcopenia ou fragilidade diagnosticadas','Diagnosed sarcopenia or frailty'),
+  eff:P('Sem ensaio adequado','No adequate trial'),why:P('Os resultados em idosos saudáveis não podem ser estendidos a quem já é frágil.','Results in healthy older adults cannot be extended to people who are already frail.'),refs:[18]},
+ {id:'bmd',cat:'age',g:'B',dir:'flat',mag:0,o:P('Densidade mineral óssea','Bone mineral density'),
+  eff:P('Sem efeito no colo do fêmur, quadril ou coluna em 2 anos','No effect at femoral neck, hip or spine over 2 years'),
+  why:P('Um ensaio grande de 2 anos e quatro meta-análises, todas nulas. Possível benefício na geometria óssea (grau D).','One large 2-year trial and four meta-analyses, all null. Possible benefit to bone geometry (grade D).'),n:P('237 mulheres no ensaio principal','237 women in the main trial'),refs:[20,21],isNew:true},
+ {id:'pm',cat:'age',g:'B',dir:'up',mag:1,o:P('Mulheres na pós-menopausa','Postmenopausal women'),sub:P('≥5 g/dia + treino','≥5 g/day + training'),
+  eff:P('Leg press +7,5 kg · massa magra +0,4 kg','Leg press +7.5 kg · lean mass +0.4 kg'),
+  why:P('Só aparece com 5 g ou mais e treino de força; com 3 g ou sem treino, nada.','Only appears with 5 g or more plus strength training; with 3 g or without training, nothing.'),n:P('7 ensaios, 608 mulheres','7 trials, 608 women'),refs:[22],isNew:true},
+ {id:'wo',cat:'age',g:'C',dir:'up',mag:1,o:P('Mulheres antes da menopausa','Premenopausal women'),
+  eff:P('g = 0,23 (IC 0,09–0,37) · certeza baixa','g = 0.23 (CI 0.09–0.37) · low certainty'),
+  why:P('Poucos ensaios e de qualidade baixa; subgrupos femininos das grandes análises não são significativos.','Few, low-quality trials; female subgroups in the large analyses are not significant.'),n:P('34 estudos, 692 mulheres','34 studies, 692 women'),refs:[23,24],isNew:true},
+ {id:'preg',cat:'age',g:'D',dir:'unk',mag:0,o:P('Gravidez','Pregnancy'),
+  eff:P('Nenhum ensaio em humanos','No human trials'),why:P('Dados só em animais. Segurança desconhecida, não demonstrada como perigosa.','Animal data only. Safety unknown, not shown to be harmful.'),refs:[3,24],isNew:true},
+ {id:'mem',cat:'brain',g:'B',dir:'up',mag:1,o:P('Memória','Memory'),
+  eff:P('SMD 0,31 (IC 0,18–0,44) · certeza moderada','SMD 0.31 (CI 0.18–0.44) · moderate certainty'),
+  why:P('Efeito pequeno, puxado por idosos e pessoas com doença; quase nulo em jovens saudáveis.','Small effect, driven by older adults and people with illness; near zero in healthy young people.'),n:P('16 ensaios, 492 pessoas','16 trials, 492 people'),refs:[29,30,31]},
+ {id:'cog',cat:'brain',g:'C',dir:'flat',mag:0,o:P('Cognição geral e funções executivas','General cognition and executive function'),
+  eff:P('SMD 0,32–0,34, intervalos cruzam o zero','SMD 0.32–0.34, intervals cross zero'),why:P('Possível efeito, mas impreciso.','Possible effect, but imprecise.'),refs:[29]},
+ {id:'yng',cat:'brain',g:'B',dir:'flat',mag:0,o:P('Cognição em jovens descansados','Cognition in rested young adults'),
+  eff:P('SMD 0,03 (IC −0,14 a 0,20)','SMD 0.03 (CI −0.14 to 0.20)'),why:P('Sem efeito quando o cérebro já está bem abastecido.','No effect when the brain is already well supplied.'),refs:[30,31]},
+ {id:'sd',cat:'brain',g:'C',dir:'up',mag:2,o:P('Cognição sob privação de sono','Cognition under sleep deprivation'),sub:P('dose única alta','single high dose'),
+  eff:P('Até 12% menos queda em lógica e vigilância; pico ~4 h após a dose','Up to 12% less decline in logic and vigilance; peak ~4 h after dose'),
+  why:P('Efeito interessante, mas só dois estudos pequenos do mesmo grupo, com 0,2–0,35 g/kg.','Interesting effect, but only two small studies from the same group, at 0.2–0.35 g/kg.'),n:P('15 + 29 pessoas','15 + 29 people'),refs:[32,33],isNew:true},
+ {id:'dep',cat:'brain',g:'C',dir:'up',mag:1,o:P('Depressão (adjuvante)','Depression (add-on)'),sub:P('junto com antidepressivo ou terapia','alongside antidepressant or therapy'),
+  eff:P('SMD −0,34 ≈ 2,2 pontos na escala de Hamilton (relevante: 3)','SMD −0.34 ≈ 2.2 points on the Hamilton scale (meaningful: 3)'),
+  why:P('Ensaios individuais animadores, mas a meta-análise de 2025 tem certeza muito baixa e o efeito pode ser trivial.','Encouraging individual trials, but the 2025 meta-analysis has very low certainty and the effect may be trivial.'),n:P('11 ensaios, 1.093 pessoas','11 trials, 1,093 people'),refs:[34,35],isNew:true},
+ {id:'alz',cat:'brain',g:'D',dir:'up',mag:1,o:P('Alzheimer','Alzheimer\'s disease'),
+  eff:P('Creatina cerebral +11%; melhora em alguns testes','Brain creatine +11%; improvement on some tests'),why:P('Estudo de viabilidade com 20 pacientes, sem grupo placebo.','Feasibility study with 20 patients, no placebo group.'),refs:[36],isNew:true},
+ {id:'tbi',cat:'brain',g:'D',dir:'up',mag:1,o:P('Concussão e trauma craniano','Concussion and head injury'),
+  eff:P('Menos dor de cabeça e fadiga em crianças (estudo aberto)','Less headache and fatigue in children (open-label)'),why:P('Sem ensaio controlado grande; Departamento de Defesa dos EUA (2025): dados insuficientes.','No large controlled trial; US Department of Defense (2025): insufficient data.'),refs:[37]},
+ {id:'t2d',cat:'clin',g:'C',dir:'up',mag:1,o:P('Controle glicêmico (diabetes tipo 2)','Glucose control (type 2 diabetes)'),
+  eff:P('HbA1c −1,1% num ensaio com exercício; glicemia de jejum sem efeito na meta-análise','HbA1c −1.1% in one trial with exercise; fasting glucose no effect in meta-analysis'),
+  why:P('Um ensaio positivo pequeno; o conjunto é inconsistente.','One small positive trial; the overall picture is inconsistent.'),refs:[27]},
+ {id:'fun',cat:'clin',g:'C',dir:'up',mag:2,o:P('Função física em pacientes','Physical function in patients'),sub:P('doenças crônicas, risco de incapacidade','chronic disease, disability risk'),
+  eff:P('SMD 0,51 (IC 0,01–1,00) · massa magra +1,1 kg','SMD 0.51 (CI 0.01–1.00) · lean mass +1.1 kg'),why:P('33 ensaios, mas qualidade baixa a muito baixa e populações muito diferentes.','33 trials, but low to very low quality and very different populations.'),refs:[28]},
+ {id:'imm',cat:'clin',g:'C',dir:'flat',mag:0,o:P('Perda muscular por imobilização','Muscle loss during immobilization'),
+  eff:P('Mesma perda de área do quadríceps com e sem creatina','Same quadriceps area loss with and without creatine'),why:P('Não protege durante o desuso; talvez ajude na fase de reabilitação.','Doesn\'t protect during disuse; may help during rehab.'),refs:[26]},
+ {id:'ae',cat:'safe',g:'A',dir:'flat',mag:0,o:P('Efeitos colaterais em geral','Side effects overall'),
+  eff:P('4,6% vs 4,2% no placebo (não significativo)','4.6% vs 4.2% on placebo (not significant)'),why:P('685 ensaios, mais de 26 mil participantes.','685 trials, more than 26,000 participants.'),refs:[38,1],isNew:true},
+ {id:'kid',cat:'safe',g:'A',dir:'flat',mag:0,o:P('Função renal (pessoas saudáveis)','Kidney function (healthy people)'),
+  eff:P('Creatinina sobe (artefato); filtração medida não muda','Creatinine rises (artifact); measured filtration doesn\'t change'),
+  why:P('Medida direta de filtração e cistatina C, até 5 anos de uso. Em doença renal crônica, os dados são escassos.','Direct filtration measurement and cystatin C, up to 5 years of use. In chronic kidney disease, data are scarce.'),refs:[39,40,1],isNew:true},
+ {id:'hair',cat:'safe',g:'B',dir:'flat',mag:0,o:P('Queda de cabelo e DHT','Hair loss and DHT'),
+  eff:P('Sem mudança em DHT, testosterona ou densidade de fios em 12 semanas','No change in DHT, testosterone or hair density over 12 weeks'),why:P('Um ensaio randomizado bem desenhado, mas só um, só homens.','One well-designed randomized trial, but just one, men only.'),refs:[41,42],isNew:true},
+ {id:'gi',cat:'safe',g:'B',dir:'down',mag:1,o:P('Desconforto intestinal','Gut discomfort'),sub:P('doses ≥10 g de uma vez','single doses ≥10 g'),
+  eff:P('Diarreia: 56% com 10 g de uma vez vs 29% com 2 × 5 g','Diarrhea: 56% with 10 g at once vs 29% with 2 × 5 g'),why:P('Dose-dependente; some ao dividir a dose.','Dose-dependent; goes away when the dose is split.'),refs:[43]},
+ {id:'bip',cat:'safe',g:'D',dir:'down',mag:1,o:P('Mania em transtorno bipolar','Mania in bipolar disorder'),
+  eff:P('Relatos de virada para hipomania/mania','Reports of switches into hypomania/mania'),why:P('Sinal pequeno, mas suficiente para exigir acompanhamento médico.','A small signal, but enough to require medical supervision.'),refs:[54]}
+];
+H.matrix($('#matrix'), ROWS, CATS);
+
+/* ================= 03 · saturação ================= */
+(function(){
+  var cv=$('#sat-cv'), proto='load', diet='omni', stop=60, DAYS=120;
+  /* modelo calibrado (ver texto): absorção saturável V·d/(d+K)·(1−x/X), retorno ao basal kd·x */
+  var M={omni:{base:120,X:35},veg:{base:105,X:50}}, V=9.25,K=4.5,kd=0.06;
+  function dose(p,day){ if(day>=stop) return 0; if(p==='load') return day<6?20:5; return +p; }
+  function sim(p,dt){var m=M[dt],x=0,out=[];for(var d=0;d<DAYS;d++){var g=dose(p,d);var u=V*g/(g+K)*Math.max(0,1-x/m.X);x=x+u-kd*x;out.push(m.base+x);}return out;}
+  function draw(){
+    var L=H.LANG, c=H.canvas(cv,250), ctx=c.ctx, w=c.w, h=c.h;
+    var pl=34,pr=8,pt=12,pb=26, y0=95,y1=160;
+    function X(d){return pl+(w-pl-pr)*d/(DAYS-1)} function Y(v){return pt+(h-pt-pb)*(1-(v-y0)/(y1-y0))}
+    ctx.clearRect(0,0,w,h); ctx.font=H.FONT(10); ctx.fillStyle=COL.dim; ctx.strokeStyle=COL.line; ctx.lineWidth=1;
+    [100,120,140,160].forEach(function(v){ctx.beginPath();ctx.moveTo(pl,Y(v));ctx.lineTo(w-pr,Y(v));ctx.stroke();ctx.fillText(v,4,Y(v)+3);});
+    [0,30,60,90].forEach(function(d){ctx.fillText((L==='en'?'d':'d')+d,X(d)-6,h-8);});
+    // faixa de parada
+    ctx.fillStyle=COL.soft; ctx.fillRect(X(stop),pt,w-pr-X(stop),h-pt-pb);
+    ctx.fillStyle=COL.dim; ctx.fillText(L==='en'?'stopped':'parou',X(stop)+4,pt+10);
+    // curvas fantasma dos outros protocolos
+    ['load','5','3'].forEach(function(p){
+      if(p===proto) return; var s=sim(p,diet); ctx.strokeStyle=COL.mid; ctx.globalAlpha=.45; ctx.setLineDash([3,3]); ctx.beginPath();
+      s.forEach(function(v,d){d?ctx.lineTo(X(d),Y(v)):ctx.moveTo(X(d),Y(v))}); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha=1;
+    });
+    var s=sim(proto,diet), m=M[diet];
+    ctx.strokeStyle=COL.mid; ctx.beginPath(); ctx.moveTo(pl,Y(m.base)); ctx.lineTo(w-pr,Y(m.base)); ctx.stroke();
+    ctx.fillStyle=COL.dim; ctx.fillText(L==='en'?'baseline':'basal',w-pr-50,Y(m.base)-4);
+    ctx.strokeStyle=COL.A; ctx.lineWidth=2.5; ctx.beginPath(); s.forEach(function(v,d){d?ctx.lineTo(X(d),Y(v)):ctx.moveTo(X(d),Y(v))}); ctx.stroke(); ctx.lineWidth=1;
+    // leituras
+    var peak=Math.max.apply(null,s.slice(0,stop)), pk=peak-m.base, d90=-1, back=-1;
+    for(var d=0;d<stop;d++){if(s[d]-m.base>=0.9*pk){d90=d+1;break;}}
+    for(var e=stop;e<DAYS;e++){if(s[e]-m.base<=0.1*pk){back=e-stop+1;break;}}
+    $('#sat-r1').innerHTML=(d90>0?(L==='en'?'day ':'dia ')+d90:'–');
+    $('#sat-r2').innerHTML='+'+Math.round(pk/m.base*100)+'% <small>('+Math.round(m.base)+'→'+Math.round(peak)+')</small>';
+    $('#sat-r3').innerHTML=(back>0?'~'+back+(L==='en'?' days':' dias'):'>'+(DAYS-stop))+' <small>'+(L==='en'?'after stopping':'após parar')+'</small>';
+  }
+  $('#sat-proto').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;proto=b.dataset.p;$all('#sat-proto button').forEach(function(x){x.classList.toggle('on',x===b)});draw();});
+  $('#sat-diet').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;diet=b.dataset.d;$all('#sat-diet button').forEach(function(x){x.classList.toggle('on',x===b)});draw();});
+  $('#sat-stop').addEventListener('input',function(){stop=+this.value;$('#sat-stop-o').textContent=stop;draw();});
+  H.onLang(draw);
+})();
+
+/* ================= 04 · forest ================= */
+H.forest($('#forest'),[
+  {l:P('Força, membros superiores','Strength, upper body'),s:P('Lanhers 2017 · A','Lanhers 2017 · A'),v:0.32,lo:0.19,hi:0.45},
+  {l:P('Força, membros inferiores','Strength, lower body'),s:P('Lanhers 2015 · A','Lanhers 2015 · A'),v:0.24,lo:0.13,hi:0.35},
+  {l:P('Força em idosos','Strength in older adults'),s:P('Yao 2026 · B','Yao 2026 · B'),v:0.31,lo:0.18,hi:0.45},
+  {l:P('Massa muscular em idosos','Muscle mass, older adults'),s:P('Yao 2026 · C','Yao 2026 · C'),v:0.35,lo:-0.09,hi:0.78},
+  {l:P('Músculo medido direto','Muscle measured directly'),s:P('Burke 2023 · RM/US','Burke 2023 · MRI/US'),v:0.11,lo:-0.02,hi:0.25},
+  {l:P('Mulheres (geral)','Women (overall)'),s:P('Lin 2026 · C','Lin 2026 · C'),v:0.23,lo:0.09,hi:0.37},
+  {l:P('Memória','Memory'),s:P('Xu 2024 · B','Xu 2024 · B'),v:0.31,lo:0.18,hi:0.44},
+  {l:P('Cognição em jovens','Cognition, young adults'),s:P('Prokopidis 2023 · B','Prokopidis 2023 · B'),v:0.03,lo:-0.14,hi:0.20},
+  {l:P('Depressão (adjuvante)','Depression (add-on)'),s:P('Eckert 2025 · C','Eckert 2025 · C'),v:0.34,lo:0.0,hi:0.68},
+  {l:P('Resistência aeróbica','Aerobic endurance'),s:P('Fernández-Landa 2023 · A','Fernández-Landa 2023 · A'),v:-0.07,lo:-0.32,hi:0.18}
+],{min:-0.4,max:0.9,zero:0,ticks:[-0.2,0,0.2,0.5,0.8],label:P('efeito →','effect →')});
+
+/* ================= 06 · captação ================= */
+(function(){
+  function render(){
+    var L=H.LANG, rows=[[P('Músculo','Muscle'),20,40,'20–40%'],[P('Cérebro','Brain'),5,10,'5–10%']];
+    $('#uptake').innerHTML = rows.map(function(r){
+      return '<div class="uprow"><span>'+r[0][L]+'</span><div class="uptrack"><div class="upfill" style="width:'+(r[1]/45*100)+'%"></div><div class="uprng" style="left:'+(r[1]/45*100)+'%;width:'+((r[2]-r[1])/45*100)+'%"></div></div><span class="v">+'+r[3]+'</span></div>';
+    }).join('');
+  }
+  render(); H.onLang(render);
+})();
+
+/* ================= 07 · rim ================= */
+(function(){
+  var sex='m', k=1, age=35, base=0.95, DELTA=[0,0.10,0.25];
+  function egfr(scr,a,s){ // CKD-EPI 2021, sem raça
+    var kk=s==='f'?0.7:0.9, al=s==='f'?-0.241:-0.302, r=scr/kk;
+    return 142*Math.pow(Math.min(r,1),al)*Math.pow(Math.max(r,1),-1.200)*Math.pow(0.9938,a)*(s==='f'?1.012:1);
+  }
+  function render(){
+    var L=H.LANG, cr=base+DELTA[k], e0=egfr(base,age,sex), e1=egfr(cr,age,sex), drop=e0-e1;
+    function card(cls,tk,v,d){return '<div class="kcard '+cls+'"><div class="kt">'+tk+'</div><div class="kv">'+v+'</div><div class="kd">'+d+'</div></div>';}
+    var flag = e1<60 ? (L==='en'?'below 60: would be flagged as reduced function':'abaixo de 60: seria marcado como função reduzida') :
+               e1<90 ? (L==='en'?'60–89: "mildly reduced" on the report':'60–89: "levemente reduzida" no laudo') : (L==='en'?'normal range':'faixa normal');
+    $('#kid-out').innerHTML =
+      card(k?'alarm':'', L==='en'?'Serum creatinine':'Creatinina sérica', num(cr,2)+' <small style="font-size:12px">mg/dL</small>', k?((L==='en'?'+':'+')+num(DELTA[k],2)+(L==='en'?' from creatine breakdown':' vindos da creatina degradada')):(L==='en'?'your baseline':'seu basal'))+
+      card(k&&drop>=3?'alarm':'', L==='en'?'eGFR on the report':'eTFG no laudo', Math.round(e1)+' <small style="font-size:12px">mL/min</small>', (k?(L==='en'?'falls ':'cai ')+Math.round(drop)+(L==='en'?' points · ':' pontos · '):'')+flag)+
+      card('ok', L==='en'?'Measured filtration (real)':'Filtração medida (real)', Math.round(e0)+' <small style="font-size:12px">mL/min</small>', L==='en'?'unchanged in trials with direct measurement':'sem mudança nos ensaios com medição direta')+
+      card('ok', L==='en'?'Cystatin C':'Cistatina C', L==='en'?'unchanged':'inalterada', L==='en'?'marker not affected by creatine: the tiebreaker':'marcador que não sofre efeito da creatina: o desempate');
+  }
+  function seg(sel,attr,fn){$(sel).addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;fn(b.dataset[attr]);$all(sel+' button').forEach(function(x){x.classList.toggle('on',x===b)});render();});}
+  seg('#kid-sex','s',function(v){sex=v;}); seg('#kid-dose','k',function(v){k=+v;});
+  $('#kid-age').addEventListener('input',function(){age=+this.value;$('#kid-age-o').textContent=age;render();});
+  $('#kid-base').addEventListener('input',function(){base=+this.value;$('#kid-base-o').textContent=num(base,2);render();});
+  H.onLang(function(){$('#kid-base-o').textContent=num(base,2);render();});
+})();
+
+/* ================= 09 · mitos ================= */
+H.myths($('#myths'),[
+  {q:P('Creatina estraga os rins.','Creatine damages your kidneys.'),a:'myth',why:P('Em pessoas saudáveis, a filtração medida diretamente não muda, mesmo com anos de uso. O que sobe é a creatinina no exame, um artefato. Em doença renal, não há dados suficientes.','In healthy people, directly measured filtration doesn\'t change, even after years of use. What rises is creatinine on the lab test, an artifact. In kidney disease there isn\'t enough data.')},
+  {q:P('Creatina faz cair cabelo.','Creatine makes your hair fall out.'),a:'myth',why:P('O único estudo que sugeria isso mediu DHT, não cabelo. Um ensaio de 2025 mediu fios e folículos e não viu nada. Ainda é um só estudo, de 12 semanas.','The only study suggesting it measured DHT, not hair. A 2025 trial measured strands and follicles and found nothing. Still a single 12-week study.')},
+  {q:P('Precisa fazer a fase de carga para funcionar.','You need a loading phase for it to work.'),a:'myth',why:P('3 a 5 g por dia chegam ao mesmo estoque em cerca de 4 semanas. A carga só antecipa.','3–5 g a day reaches the same store in about 4 weeks. Loading only speeds it up.')},
+  {q:P('Creatina deixa a pessoa retendo líquido e inchada.','Creatine makes you retain water and look bloated.'),a:'partly',why:P('O peso sobe cerca de 1 kg, e boa parte é água, mas ela fica dentro da célula muscular, não debaixo da pele.','Weight goes up about 1 kg, much of it water, but it stays inside muscle cells, not under the skin.')},
+  {q:P('Creatina melhora a memória.','Creatine improves memory.'),a:'partly',why:P('Há um efeito pequeno nas meta-análises, mais claro em idosos e sob privação de sono. Em jovens descansados, praticamente nada.','There\'s a small effect in meta-analyses, clearer in older adults and under sleep deprivation. In rested young people, essentially nothing.')},
+  {q:P('Creatina HCl é melhor porque precisa de menos.','Creatine HCl is better because you need less.'),a:'myth',why:P('Ela dissolve melhor, mas nenhum ensaio mostrou mais absorção, mais estoque ou mais resultado. Custa mais por dose eficaz.','It dissolves better, but no trial has shown more absorption, more storage or better results. It costs more per effective dose.')},
+  {q:P('Sem treino, a creatina não faz muita coisa pelo músculo.','Without training, creatine doesn\'t do much for muscle.'),a:'true',why:P('Na média dos ensaios, sem exercício a massa magra não muda. Ela amplifica o treino, não o substitui.','Across trials, without exercise lean mass doesn\'t change. It amplifies training; it doesn\'t replace it.')},
+  {q:P('Creatina ajuda corredores de longa distância.','Creatine helps long-distance runners.'),a:'myth',why:P('Em atletas de resistência, o efeito é zero. O ganho de peso pode até atrapalhar.','In endurance athletes the effect is zero. The extra weight may even hurt.')},
+  {q:P('Gomas de creatina são uma forma prática e confiável.','Creatine gummies are a convenient, reliable form.'),a:'myth',why:P('Práticas sim, confiáveis não: em testes independentes, muitas tinham quase nada de creatina, que se degrada no meio úmido e ácido.','Convenient yes, reliable no: in independent tests many had almost no creatine, which breaks down in moist, acidic products.')},
+  {q:P('Creatina aumenta a densidade óssea na menopausa.','Creatine increases bone density after menopause.'),a:'myth',why:P('O ensaio de 2 anos com 237 mulheres não viu mudança na densidade. Pode haver efeito na geometria óssea, ainda preliminar.','The 2-year trial in 237 women saw no change in density. There may be an effect on bone geometry, still preliminary.')}
+]);
+
+/* ================= calculadora ================= */
+(function(){
+  var w=75, prof='adult';
+  function render(){
+    var L=H.LANG, load=Math.round(w*0.3), splits=Math.ceil(load/5), maint=prof==='adult'?(w>=90?5:3):5;
+    var brl=(maint*30*0.20), usd=(maint*30*0.04);
+    var cost = L==='en' ? 'US$'+usd.toFixed(2) : 'R$ '+num(brl,0);
+    var gain = prof==='veg' ? (L==='en'?'likely above average (lower starting stores)':'provavelmente acima da média (estoque inicial menor)') : (L==='en'?'~0.8–1 kg on the scale in month one':'~0,8–1 kg na balança no primeiro mês');
+    function c(k,v,s){return '<div class="pc"><div class="pk">'+k+'</div><div class="pv">'+v+'</div><div class="ps">'+s+'</div></div>';}
+    $('#calc-out').innerHTML =
+      c(L==='en'?'Maintenance':'Manutenção', maint+' g/'+(L==='en'?'day':'dia'), prof==='adult'?(L==='en'?'3 g is enough for most people; 5 g if heavier or training hard':'3 g bastam para a maioria; 5 g se for mais pesado ou treinar pesado'):(L==='en'?'≥5 g/day is where trials in this group saw effects':'≥5 g/dia é onde os ensaios nesse grupo viram efeito'))+
+      c(L==='en'?'Optional loading (5–7 days)':'Carga opcional (5–7 dias)', load+' g/'+(L==='en'?'day':'dia'), (L==='en'?'split into ':'dividida em ')+splits+(L==='en'?' doses of ≤5 g':' tomadas de até 5 g'))+
+      c(L==='en'?'Cost per month':'Custo por mês', cost, L==='en'?'plain monohydrate powder':'pó monoidratado puro')+
+      c(L==='en'?'What to expect':'O que esperar', L==='en'?'~4 weeks':'~4 semanas', gain);
+  }
+  $('#calc-w').addEventListener('input',function(){w=+this.value;$('#calc-w-o').textContent=w+' kg';render();});
+  $('#calc-prof').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;prof=b.dataset.p;$all('#calc-prof button').forEach(function(x){x.classList.toggle('on',x===b)});render();});
+  H.onLang(render);
+})();
+
+H.start();
+})();
+</script>
+</body>
+</html>

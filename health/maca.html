@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="tab">Maca peruana · o que a ciência diz</title>
+<meta name="description" content="Maca peruana: libido, ereção, fertilidade, testosterona, menopausa, energia e segurança. Toda a evidência até outubro de 2026, graduada de A a D, com gráficos interativos. Por Renato Shirakashi.">
+<link rel="canonical" href="https://renatoshira.github.io/health/maca.html">
+<meta name="theme-color" content="#141414">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Maca peruana · o que a ciência diz">
+<meta property="og:description" content="O 'Viagra dos Andes' mexe na libido, mas não na testosterona. Toda a evidência até outubro de 2026, graduada de A a D.">
+<meta property="og:url" content="https://renatoshira.github.io/health/maca.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="article:author" content="Renato Shirakashi">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/health.css">
+<style>
+  .seg{display:flex;border:1px solid var(--ink);width:max-content;max-width:100%;flex-wrap:wrap}
+  .seg button{border:0;background:var(--paper);font-family:inherit;font-size:12px;padding:6px 11px;cursor:pointer;color:var(--ink)}
+  .seg button.on{background:var(--ink);color:var(--paper)}
+  .ctrls{display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+  .ctrls .cl{font-size:11px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+
+  /* onde mora a evidência (04) */
+  .claims{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+  .ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ev-box{border:1px solid var(--line);padding:12px}
+  .ev-box .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  .ev-box .v{font-size:22px;font-weight:700;margin-top:4px;line-height:1.2;font-variant-numeric:tabular-nums}
+  .ev-box .d{font-size:11px;color:var(--dim);margin-top:3px;line-height:1.45}
+  .ev-scale{margin-top:16px}
+  .ev-scale .row{display:grid;grid-template-columns:120px 1fr 54px;gap:10px;align-items:center;font-size:11.5px;margin:7px 0}
+  .ev-scale .tr{height:12px;background:var(--soft);position:relative}
+  .ev-scale .fl{position:absolute;left:0;top:0;bottom:0;background:var(--ink);transition:width .35s ease}
+  .ev-scale .fl.ref{background:var(--mid)}
+  .ev-scale .n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .ev-verdict{margin-top:14px;display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.6;border-top:1px solid var(--line);padding-top:12px}
+  @media (max-width:560px){.ev-grid{grid-template-columns:1fr}.ev-scale .row{grid-template-columns:90px 1fr 44px}}
+
+  /* cores (07) */
+  .colors{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .colbtn{border:1px solid var(--line);background:var(--paper);font-family:inherit;color:var(--ink);padding:14px 10px;cursor:pointer;text-align:left}
+  .colbtn.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+  .colbtn .root{width:34px;height:42px;border-radius:50% 50% 46% 46%/58% 58% 42% 42%;margin-bottom:10px;border:1px solid rgba(0,0,0,.15)}
+  .colbtn .cn{font-weight:700;font-size:13px}
+  .colbtn .cs{font-size:10.5px;color:var(--dim);margin-top:2px}
+  .colcard{margin-top:14px;font-size:13px;line-height:1.65}
+  .colcard .row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:9px 0;border-bottom:1px solid var(--line)}
+  .colcard .row:last-child{border-bottom:0}
+  .colcard .who{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);display:block;margin-top:2px}
+  @media (max-width:560px){.colors{grid-template-columns:1fr 1fr 1fr}.colbtn{padding:10px 8px}}
+
+  /* checklist (08) */
+  .check{list-style:none;margin:0;padding:0}
+  .check li{display:grid;grid-template-columns:22px 1fr;gap:8px;margin:0 0 10px;font-size:14px;line-height:1.6}
+  .check li::before{content:"□";font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="topbar">
+  <a class="kicker" href="../index.html">Renato Shirakashi</a>
+  <div class="right">
+    <span class="crumb"><a href="./" data-i18n="crumb">Saúde</a> · <span data-i18n="crumb2">Maca</span></span>
+    <div class="langtoggle" role="group" aria-label="Idioma">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" data-i18n="hero.eyebrow">Suplementos · Ficha 02</div>
+  <h1>
+    <span class="mark" data-i18n="hero.h1a">Maca peruana</span>
+    <span class="mark l2" data-i18n="hero.h1b">o Viagra dos Andes?</span>
+  </h1>
+  <div class="sub" data-i18n="hero.sub">Uma raiz que cresce a 4.000 metros virou "estimulante sexual natural" e "precursor de testosterona" nas prateleiras. Os ensaios contam outra história: um pouco de libido, nenhum hormônio, e muita pesquisa feita em ratos.</div>
+  <div class="byline" data-i18n="hero.byline">por Renato Shirakashi · revisado em outubro de 2026 · 50 referências, 8 delas de 2025–26</div>
+
+  <div class="summary">
+    <div class="sumhead"><span data-i18n="sum.t">Resumo</span><span class="upd" data-i18n="sum.upd">atualizado 13 out 2026</span></div>
+    <div class="sumbody">
+      <p data-i18n="sum.p1">A maca (<em>Lepidium meyenii</em>) é a raiz de uma planta da família do nabo e do brócolis, cultivada há cerca de dois mil anos nos Andes centrais do Peru e consumida cozida, como alimento. Desde os anos 2000 é vendida como afrodisíaco, energético e "<em>booster</em> hormonal".</p>
+      <p data-i18n="sum.p2"><span class="mark">O que é mais sólido é um "não":</span> em pelo menos seis ensaios, em homens e mulheres, <strong>a maca não alterou testosterona, estrogênio, LH, FSH nem prolactina</strong>. Quem a vende como precursor hormonal está vendendo algo que os dados desmentem.</p>
+      <p data-i18n="sum.p3"><span class="mark">O que é possível:</span> um aumento pequeno e subjetivo do desejo sexual depois de 8 semanas, alívio de sintomas de humor na menopausa e mais sensação de energia. Tudo isso vem de ensaios pequenos, curtos e de poucos grupos de pesquisa. <span class="mark">O que não tem base em humanos:</span> desempenho esportivo, memória, ossos e próstata.</p>
+    </div>
+    <div class="facts">
+      <div class="f"><div class="fk" data-i18n="f.dose">Dose estudada</div><div class="fv">1,5–3 g</div><div class="fs" data-i18n="f.doses">por dia, em pó</div></div>
+      <div class="f"><div class="fk" data-i18n="f.form">Forma</div><div class="fv" data-i18n="f.formv">Gelatinizada</div><div class="fs" data-i18n="f.forms">cozida; nunca crua em quantidade</div></div>
+      <div class="f"><div class="fk" data-i18n="f.time">Tempo até efeito</div><div class="fv" data-i18n="f.timev">8–12 semanas</div><div class="fs" data-i18n="f.times">não é efeito agudo</div></div>
+      <div class="f"><div class="fk" data-i18n="f.horm">Testosterona</div><div class="fv" data-i18n="f.hormv">Não muda</div><div class="fs" data-i18n="f.horms">grau B, ≥6 ensaios</div></div>
+    </div>
+  </div>
+
+  <ol class="toc">
+    <li><a href="#matriz"><span class="n">01</span><span data-i18n="toc.1">Matriz de evidência</span></a></li>
+    <li><a href="#oque"><span class="n">02</span><span data-i18n="toc.2">O que é</span></a></li>
+    <li><a href="#libido"><span class="n">03</span><span data-i18n="toc.3">Libido sem hormônio</span></a></li>
+    <li><a href="#onde"><span class="n">04</span><span data-i18n="toc.4">Onde mora a evidência</span></a></li>
+    <li><a href="#homens"><span class="n">05</span><span data-i18n="toc.5">Ereção e fertilidade</span></a></li>
+    <li><a href="#menopausa"><span class="n">06</span><span data-i18n="toc.6">Menopausa, humor e energia</span></a></li>
+    <li><a href="#cores"><span class="n">07</span><span data-i18n="toc.7">Amarela, vermelha ou preta</span></a></li>
+    <li><a href="#seguranca"><span class="n">08</span><span data-i18n="toc.8">Segurança e qualidade</span></a></li>
+    <li><a href="#mitos"><span class="n">09</span><span data-i18n="toc.9">Mito ou verdade</span></a></li>
+    <li><a href="#protocolo"><span class="n">10</span><span data-i18n="toc.10">Na prática</span></a></li>
+  </ol>
+</header>
+
+<!-- 01 MATRIZ -->
+<section class="wrap reveal" id="matriz">
+  <div class="step" data-i18n="s1.step">01 · Matriz de evidência</div>
+  <h2 class="head" data-i18n="s1.head">Muitos desfechos, poucos graus altos</h2>
+  <p data-i18n="s1.p1">Compare com a <a class="link" href="creatina.html">ficha da creatina</a>: lá há oito desfechos com grau A. Aqui não há nenhum. O único grau B é um "sem efeito", e quase todo o resto é C ou D. Clique em cada linha para ver os números e por que o grau é esse. <a class="link" href="./#graus">Como os graus funcionam</a>.</p>
+  <div class="matrix" id="matrix"></div>
+  <p class="note" data-i18n="s1.note">Conflitos de interesse: a maior parte dos ensaios fundadores vem de um mesmo grupo da Universidade Peruana Cayetano Heredia e usou um produto comercial peruano. Os estudos de menopausa foram conduzidos pelo desenvolvedor de uma marca, e as revisões de 2024 e 2026 mais otimistas foram financiadas ou escritas por pessoas ligadas a fabricantes. Um ensaio coreano de 2023 tem coautores de uma empresa de suplementos, sem declaração de conflito.</p>
+</section>
+
+<!-- 02 O QUE É -->
+<section class="wrap reveal" id="oque">
+  <div class="step" data-i18n="s2.step">02 · O que é</div>
+  <h2 class="head" data-i18n="s2.head">Um nabo de altitude que ninguém sabe exatamente por que funcionaria</h2>
+  <p data-i18n="s2.p1">A maca cresce no planalto de Junín, no Peru, entre 3.800 e 4.500 metros, onde quase nada mais é cultivável. A parte comida é o hipocótilo, uma raiz arredondada parecida com um rabanete grande. Tradicionalmente ela é seca ao sol e ao gelo por semanas e depois cozida, em mingaus, sopas e bebidas fermentadas. É comida, não remédio.</p>
+  <p data-i18n="s2.p2">O problema para a ciência é que <span class="mark">ninguém sabe qual composto da maca faria alguma coisa</span>. Os candidatos são as macamidas e macaenos (exclusivos da planta), os glucosinolatos (os mesmos do brócolis) e alguns alcaloides. As macamidas, as mais citadas no marketing, praticamente não existem na raiz fresca: elas se formam durante a secagem tradicional<sup class="ref"><a href="#ref-40">40</a></sup>. A composição muda com a cor, o lugar de cultivo e o processamento, e quase nenhum ensaio clínico mediu a química do produto que testou. Isso torna difícil comparar estudos e impossível garantir que o pó da sua prateleira seja o mesmo dos ensaios.</p>
+  <p data-i18n="s2.p3">Em 2014, a demanda chinesa explodiu: compradores levaram a produção peruana em massa, o preço da semente subiu cerca de cem vezes, e sementes e raízes foram contrabandeadas apesar da proibição peruana de exportá-las. Em poucos anos a província de Yunnan passou a cultivar mais maca que o Peru, e o preço desabou<sup class="ref"><a href="#ref-49">49</a></sup>. A maca "peruana" que você compra pode ter sido plantada na China, com perfil químico diferente.</p>
+</section>
+
+<!-- 03 LIBIDO -->
+<section class="wrap reveal" id="libido">
+  <div class="step" data-i18n="s3.step">03 · Libido sem hormônio</div>
+  <h2 class="head" data-i18n="s3.head">O desejo subiu, a testosterona ficou parada</h2>
+  <p data-i18n="s3.p1">O estudo que lançou a fama da maca é um ensaio de 2002, em Lima: homens saudáveis tomaram 1,5 g ou 3 g por dia de maca gelatinizada ou placebo por 12 semanas<sup class="ref"><a href="#ref-1">1</a></sup>. A partir da 8ª semana, quem tomava maca relatou mais desejo sexual. O mesmo grupo mediu hormônios nas semanas 2, 4, 8 e 12 e publicou o resultado no ano seguinte: <span class="mark">nenhuma mudança em testosterona, estradiol, LH, FSH ou prolactina</span><sup class="ref"><a href="#ref-22">22</a></sup>. Também não foi efeito de humor: as escalas de ansiedade e depressão não explicavam a diferença.</p>
+  <p data-i18n="s3.p2">Esse resultado nulo nos hormônios se repetiu em homens com sêmen normal e alterado, em homens acima dos 40 com queixas de envelhecimento, e em mulheres na pós-menopausa<sup class="ref"><a href="#ref-11">11</a></sup><sup class="ref"><a href="#ref-14">14</a></sup><sup class="ref"><a href="#ref-17">17</a></sup><sup class="ref"><a href="#ref-23">23</a></sup>. Uma revisão sistemática de 2024 sobre "<em>boosters</em> de testosterona" não incluiu a maca entre os que funcionam<sup class="ref"><a href="#ref-24">24</a></sup>.</p>
+
+  <div class="widget" id="w-lib">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w1.tag">O que o rótulo promete × o que os ensaios mediram</span></div>
+    <div class="ctrls">
+      <div class="seg" id="lib-view">
+        <button data-v="label" data-i18n="w1.label">A promessa do rótulo</button>
+        <button data-v="trial" class="on" data-i18n="w1.trial">O que foi medido</button>
+      </div>
+    </div>
+    <canvas id="lib-cv" aria-label="Desejo sexual e testosterona ao longo de 12 semanas"></canvas>
+    <div class="legend" id="lib-legend"></div>
+    <div class="wcap" data-i18n="w1.cap">Curvas ilustrativas que reproduzem a forma dos resultados de Gonzales 2002 e 2003: diferença de desejo a partir da semana 8, hormônios estáveis. Os artigos não publicaram tamanhos de efeito comparáveis, então a escala é relativa. O ganho de desejo é <b>autorrelatado</b>, em ensaios de 50 a 60 pessoas.</div>
+  </div>
+
+  <p style="margin-top:30px" data-i18n="s3.p3">Uma revisão sistemática de 2010 juntou os quatro ensaios então existentes e concluiu que a evidência era "limitada", pequena demais para conclusões firmes<sup class="ref"><a href="#ref-2">2</a></sup>. Dezesseis anos depois, o quadro mudou pouco: as revisões de 2026 ainda são narrativas, sem estimativa combinada<sup class="ref"><a href="#ref-8">8</a></sup><sup class="ref"><a href="#ref-9">9</a></sup>. O caso mais interessante é a <strong>disfunção sexual causada por antidepressivos</strong>: num ensaio com 45 mulheres tomando inibidores de recaptação de serotonina, 3 g/dia de maca melhoraram mais que o placebo, sobretudo nas mulheres na pós-menopausa<sup class="ref"><a href="#ref-6">6</a></sup>. Mas as taxas de remissão foram baixas (30% contra 20%), e uma meta-análise de 2025 não conseguiu combinar os dados da maca com nenhum outro estudo<sup class="ref"><a href="#ref-7">7</a></sup>.</p>
+</section>
+
+<!-- 04 ONDE MORA -->
+<section class="wrap reveal" id="onde">
+  <div class="step" data-i18n="s4.step">04 · Onde mora a evidência</div>
+  <h2 class="head" data-i18n="s4.head">Cada promessa, e quanto ensaio em humanos existe por trás dela</h2>
+  <p data-i18n="s4.p1">Quase todo artigo sobre maca cita "estudos mostram". O que ele não diz é se os estudos foram feitos em pessoas. Escolha uma promessa e veja.</p>
+  <div class="widget" id="w-ev">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w2.tag">Explorador · base de evidência por promessa</span></div>
+    <div class="claims" id="ev-claims"></div>
+    <div id="ev-out"></div>
+    <div class="wcap" data-i18n="w2.cap">Contagens aproximadas de ensaios controlados em humanos com aquele desfecho principal, a partir das revisões sistemáticas e da busca no PubMed até outubro de 2026. Barra cinza: referência da creatina para massa magra (61 ensaios, 1.457 pessoas).</div>
+  </div>
+</section>
+
+<!-- 05 HOMENS -->
+<section class="wrap reveal" id="homens">
+  <div class="step" data-i18n="s5.step">05 · Ereção e fertilidade</div>
+  <h2 class="head" data-i18n="s5.head">Sinais pequenos, estudos que se contradizem</h2>
+  <p data-i18n="s5.p1"><strong>Ereção.</strong> Um ensaio italiano de 2009 deu 2,4 g/dia de extrato a 50 homens com disfunção erétil leve. A pontuação no questionário IIEF-5 (que vai de 5 a 25) subiu <code>1,6</code> ponto com maca e <code>0,5</code> com placebo<sup class="ref"><a href="#ref-10">10</a></sup>. É uma diferença estatisticamente significativa de cerca de um ponto, pequena demais para o paciente notar com clareza. Um ensaio coreano de 2023, com 80 homens acima de 40 anos e cerca de 5 g/dia, mostrou ganhos grandes em função erétil e sintomas de envelhecimento masculino<sup class="ref"><a href="#ref-11">11</a></sup>, mas com problemas sérios: o grupo placebo <em>piorou</em> (algo incomum), os grupos começaram com testosterona diferente, uma tabela contradiz o texto, e vários autores trabalham para a empresa que fabrica o produto, sem declaração de conflito. Uma meta-análise de 2026 sobre plantas para disfunção erétil classificou a evidência da maca como "insuficiente"<sup class="ref"><a href="#ref-13">13</a></sup>.</p>
+  <p data-i18n="s5.p2"><strong>Sêmen e fertilidade.</strong> Aqui os resultados se anulam. Um estudo de 2001 sem grupo controle, com 9 homens, viu mais volume e motilidade<sup class="ref"><a href="#ref-16">16</a></sup>. Um ensaio espanhol de 2020, com 69 homens com sêmen alterado, viu concentração maior de espermatozoides (15 contra 10 milhões/mL) mas nenhuma diferença em motilidade ou forma<sup class="ref"><a href="#ref-18">18</a></sup>. Um ensaio tcheco de 2021, com 50 homens inférteis e 16 semanas, deu nulo: a concentração subiu mais no placebo<sup class="ref"><a href="#ref-19">19</a></sup>. <span class="mark">A única meta-análise, de 2022, não encontrou efeito significativo na concentração de espermatozoides</span><sup class="ref"><a href="#ref-21">21</a></sup>. Desde então, os estudos novos são em cães, carneiros e ratos.</p>
+  <div class="callout">
+    <div class="ct" data-i18n="s5.ct">Para quem está tentando ter filhos</div>
+    <p style="margin:0" data-i18n="s5.c">A evidência não justifica trocar avaliação médica por maca. Infertilidade masculina tem causas tratáveis (varicocele, infecções, alterações hormonais) que precisam ser investigadas, e a janela de tempo de um casal importa mais do que 12 semanas de um suplemento com resultado incerto.</p>
+  </div>
+</section>
+
+<!-- 06 MENOPAUSA -->
+<section class="wrap reveal" id="menopausa">
+  <div class="step" data-i18n="s6.step">06 · Menopausa, humor e energia</div>
+  <h2 class="head" data-i18n="s6.head">O território mais promissor, e o mais contaminado por conflito de interesse</h2>
+  <p data-i18n="s6.p1"><strong>Menopausa.</strong> Os quatro ensaios de uma revisão de 2011 foram todos favoráveis em escalas de sintomas como ondas de calor, insônia e irritabilidade<sup class="ref"><a href="#ref-28">28</a></sup>, mas a maior parte da evidência de menopausa vem de pilotos de 20 a 34 mulheres conduzidos pelo desenvolvedor de uma marca comercial de maca, num periódico de baixo impacto, e relatam mudanças hormonais que ninguém mais conseguiu reproduzir<sup class="ref"><a href="#ref-25">25</a></sup>. Os estudos independentes são menores ainda, mas consistentes num ponto: <span class="mark">melhora em ansiedade, depressão e humor sem nenhuma mudança hormonal</span>. Em 14 australianas (3,5 g/dia por 6 semanas), caíram as pontuações psicológicas e de disfunção sexual<sup class="ref"><a href="#ref-14">14</a></sup>. Em 29 chinesas de Hong Kong, caíram depressão e pressão diastólica<sup class="ref"><a href="#ref-23">23</a></sup>. Testes de laboratório não encontraram atividade estrogênica ou androgênica no extrato. Ou seja, a maca não é um "fitoestrogênio", ao contrário do que se lê.</p>
+  <p data-i18n="s6.p2"><strong>Energia e qualidade de vida.</strong> O maior ensaio já feito com maca, com 175 pessoas no nível do mar e na altitude, 3 g/dia por 12 semanas e financiamento público, encontrou melhora de humor, energia e qualidade de vida em relação ao placebo<sup class="ref"><a href="#ref-4">4</a></sup>. A maca vermelha foi a que mais se destacou, e a preta reduziu a glicemia. Também houve menos sintomas do mal crônico das montanhas em moradores da altitude. É um único ensaio, de um único grupo, e com desfechos autorrelatados.</p>
+  <p data-i18n="s6.p3"><strong>Desempenho esportivo.</strong> Em humanos, nada convincente. Um piloto de 2009 com 8 ciclistas melhorou o tempo em relação ao início, mas não em relação ao placebo<sup class="ref"><a href="#ref-3">3</a></sup>. Em 2025, 10 jogadores de basquete não tiveram nenhum ganho em salto, arremesso ou sprints<sup class="ref"><a href="#ref-30">30</a></sup>. A meta-análise de 2024 que parece animadora é quase toda de ratos nadando e se pendurando em grades<sup class="ref"><a href="#ref-34">34</a></sup>.</p>
+</section>
+
+<!-- 07 CORES -->
+<section class="wrap reveal" id="cores">
+  <div class="step" data-i18n="s7.step">07 · Amarela, vermelha ou preta</div>
+  <h2 class="head" data-i18n="s7.head">A cor importa? Em ratos, sim</h2>
+  <p data-i18n="s7.p1">A maca existe em mais de uma dezena de cores, e as três comercializadas (amarela, vermelha e preta) são vendidas com indicações diferentes. Essas indicações vêm quase todas de estudos em ratos. Só um ensaio em humanos comparou as cores diretamente<sup class="ref"><a href="#ref-4">4</a></sup>. Escolha uma:</p>
+  <div class="widget" id="w-col">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w3.tag">Cor por cor · o que é humano e o que é rato</span></div>
+    <div class="colors" id="col-btns"></div>
+    <div class="colcard" id="col-out"></div>
+  </div>
+</section>
+
+<!-- 08 SEGURANÇA -->
+<section class="wrap reveal" id="seguranca">
+  <div class="step" data-i18n="s8.step">08 · Segurança e qualidade</div>
+  <h2 class="head" data-i18n="s8.head">Segura como comida, com quatro asteriscos</h2>
+  <p data-i18n="s8.p1">Nos ensaios, de 1,5 a 5 g/dia por até 16 semanas, não houve efeito adverso grave, incluindo os 175 participantes do maior estudo<sup class="ref"><a href="#ref-4">4</a></sup>. É um alimento consumido há séculos. Mas "natural" não é o mesmo que "inócuo":</p>
+  <ul class="clean">
+    <li data-i18n="s8.l1"><strong>Tireoide.</strong> Como o brócolis e a couve, a maca tem glucosinolatos, que em excesso atrapalham o uso de iodo pela tireoide. Por isso os andinos a cozinham. Nenhum dano à tireoide foi relatado em humanos, e o TSH não mudou nos ensaios, mas faz sentido preferir a versão gelatinizada (cozida) e ter cautela com hipotireoidismo.</li>
+    <li data-i18n="s8.l2"><strong>Chumbo e cádmio.</strong> Uma mulher nos EUA teve intoxicação por chumbo associada a um pó de maca<sup class="ref"><a href="#ref-43">43</a></sup>. Maca cultivada perto de áreas de mineração no Peru tinha cádmio e chumbo acima dos limites da FAO/OMS<sup class="ref"><a href="#ref-44">44</a></sup>. Escolha marcas com laudo de metais pesados.</li>
+    <li data-i18n="s8.l3"><strong>Fígado e outros.</strong> Há um caso de lesão hepática ligado a um licor medicinal de maca na China<sup class="ref"><a href="#ref-41">41</a></sup>, e um ensaio viu aumento discreto de uma enzima hepática e da pressão diastólica<sup class="ref"><a href="#ref-29">29</a></sup>. São sinais isolados.</li>
+    <li data-i18n="s8.l4"><strong>Câncer sensível a hormônio, gravidez e amamentação.</strong> A maca não age como hormônio em humanos, mas um estudo in vitro viu células de câncer de mama ficarem mais migratórias<sup class="ref"><a href="#ref-46">46</a></sup>, e não há nenhum dado em gestantes. Nos dois casos, evite.</li>
+  </ul>
+  <div class="callout warn">
+    <div class="ct" data-i18n="s8.ct">Brasil: maca em cápsula vive numa zona cinzenta</div>
+    <p style="margin:0" data-i18n="s8.c">Segundo uma análise publicada em 2019, a maca não consta da lista de constituintes permitidos em suplementos alimentares da Anvisa (IN 28/2018) e, sem histórico de consumo no país, deveria ser avaliada como "novo ingrediente"<sup class="ref"><a href="#ref-47">47</a></sup>. Na prática, o pó segue vendido como alimento. Em setembro de 2025 a Anvisa proibiu suplementos de "maca peruana" de algumas marcas, por problemas de fabricação, não pela planta<sup class="ref"><a href="#ref-50">50</a></sup>. Produtos que prometem "aumentar testosterona" fazem uma alegação não autorizada e desmentida pelos ensaios.</p>
+  </div>
+  <h3 class="subh" data-i18n="s8.h2">Se for comprar, confira</h3>
+  <ul class="check">
+    <li data-i18n="s8.k1">Pó gelatinizado (cozido), com a cor e a origem declaradas</li>
+    <li data-i18n="s8.k2">Laudo de laboratório independente para chumbo, cádmio e arsênio</li>
+    <li data-i18n="s8.k3">Ingrediente único, sem "blends" com ioimbina, tribulus ou outros estimulantes</li>
+    <li data-i18n="s8.k4">Nenhuma promessa de "testosterona", "ereção garantida" ou "efeito imediato"</li>
+  </ul>
+</section>
+
+<!-- 09 MITOS -->
+<section class="wrap reveal" id="mitos">
+  <div class="step" data-i18n="s9.step">09 · Mito ou verdade</div>
+  <h2 class="head" data-i18n="s9.head">Teste o que você leu no rótulo</h2>
+  <div id="myths" style="margin-top:22px"></div>
+</section>
+
+<!-- 10 PROTOCOLO -->
+<section class="cliff" id="protocolo">
+  <div class="wrap">
+    <div class="step" style="color:#9a9a9a" data-i18n="s10.step">10 · Na prática</div>
+    <h2 data-i18n="s10.head">Um experimento barato e de baixo risco, não um tratamento</h2>
+    <p data-i18n="s10.p1"><span class="mark">Se quiser testar: 1,5 a 3 g por dia de maca em pó gelatinizada, misturada em comida ou bebida, por pelo menos 8 a 12 semanas.</span> Avalie com honestidade se algo mudou no desejo ou no humor. Se não mudou até a 12ª semana, provavelmente não vai mudar.</p>
+    <p data-i18n="s10.p2">Não espere efeito em testosterona, ereção, fertilidade, músculo ou memória. Disfunção erétil, queda de libido persistente, infertilidade e sintomas fortes de menopausa têm tratamentos com evidência muito maior e merecem uma consulta. Evite se estiver grávida, amamentando ou tiver câncer sensível a hormônio, e prefira a versão cozida se tiver problema de tireoide.</p>
+  </div>
+</section>
+
+<!-- FONTES -->
+<section class="wrap reveal" id="fontes">
+  <div class="step" data-i18n="refs.step">Fontes</div>
+  <h2 class="head" data-i18n="refs.head">Referências</h2>
+  <p class="dim" style="font-size:12.5px" data-i18n="refs.p">Os números foram conferidos nos resumos do PubMed ou no texto completo. <span class="new" style="font-size:9.5px;letter-spacing:.08em;background:var(--ink);color:var(--paper);padding:1px 5px">novo</span> marca publicações de 2025 e 2026.</p>
+  <ol class="reflist" id="reflist"></ol>
+  <div class="disclaimer" data-i18n="refs.disc">Esta ficha é um resumo da literatura científica para fins informativos e não substitui orientação médica. Revisão: outubro de 2026. Encontrou um erro ou um estudo novo? <a class="link" href="https://forms.gle/6ry8Nt8TnLHtgJcJ6" target="_blank" rel="noopener">Me avise</a>.</div>
+  <div class="foot" data-i18n="refs.foot">Maca peruana · ficha interativa · <a class="link" href="./">todas as fichas</a></div>
+</section>
+
+<script>
+window.EN = {
+"tab":"Peruvian maca · what the science says",
+"crumb":"Health","crumb2":"Maca",
+"hero.eyebrow":"Supplements · Profile 02",
+"hero.h1a":"Peruvian maca",
+"hero.h1b":"the Andean Viagra?",
+"hero.sub":"A root that grows at 4,000 meters became a \"natural sexual stimulant\" and \"testosterone precursor\" on store shelves. The trials tell a different story: a bit of libido, no hormones, and a lot of research done in rats.",
+"hero.byline":"by Renato Shirakashi · reviewed October 2026 · 50 references, 8 of them from 2025–26",
+"sum.t":"Summary","sum.upd":"updated Oct 13, 2026",
+"sum.p1":"Maca (<em>Lepidium meyenii</em>) is the root of a plant in the turnip and broccoli family, grown for about two thousand years in Peru's central Andes and eaten cooked, as food. Since the 2000s it has been sold as an aphrodisiac, energizer and \"hormone booster\".",
+"sum.p2":"<span class=\"mark\">The most solid finding is a \"no\":</span> in at least six trials, in men and women, <strong>maca did not change testosterone, estrogen, LH, FSH or prolactin</strong>. Anyone selling it as a hormone precursor is selling something the data contradict.",
+"sum.p3":"<span class=\"mark\">What is possible:</span> a small, subjective increase in sexual desire after 8 weeks, relief of mood symptoms during menopause, and a greater sense of energy. All of it comes from small, short trials by a few research groups. <span class=\"mark\">What has no human basis:</span> athletic performance, memory, bones and prostate.",
+"f.dose":"Studied dose","f.doses":"per day, as powder",
+"f.form":"Form","f.formv":"Gelatinized","f.forms":"cooked; never raw in quantity",
+"f.time":"Time to effect","f.timev":"8–12 weeks","f.times":"not an acute effect",
+"f.horm":"Testosterone","f.hormv":"No change","f.horms":"grade B, ≥6 trials",
+"toc.1":"Evidence matrix","toc.2":"What it is","toc.3":"Libido without hormones","toc.4":"Where the evidence lives","toc.5":"Erections and fertility","toc.6":"Menopause, mood and energy","toc.7":"Yellow, red or black","toc.8":"Safety and quality","toc.9":"Myth or fact","toc.10":"In practice",
+"s1.step":"01 · Evidence matrix",
+"s1.head":"Many outcomes, few high grades",
+"s1.p1":"Compare with the <a class=\"link\" href=\"creatina.html\">creatine profile</a>: there, eight outcomes are grade A. Here, none are. The only grade B is a \"no effect\", and almost everything else is C or D. Click each row to see the numbers and why it got that grade. <a class=\"link\" href=\"./#graus\">How the grades work</a>.",
+"s1.note":"Conflicts of interest: most of the founding trials come from a single group at Universidad Peruana Cayetano Heredia and used a commercial Peruvian product. The menopause studies were run by the developer of one brand, and the most optimistic 2024 and 2026 reviews were funded or written by people tied to manufacturers. A 2023 Korean trial has co-authors from a supplement company, with no conflict declared.",
+"s2.step":"02 · What it is",
+"s2.head":"A high-altitude turnip that nobody can quite explain",
+"s2.p1":"Maca grows on the Junín plateau in Peru, between 3,800 and 4,500 meters, where almost nothing else can be farmed. The edible part is the hypocotyl, a round root that looks like a large radish. Traditionally it is dried in sun and frost for weeks and then cooked into porridges, soups and fermented drinks. It is food, not medicine.",
+"s2.p2":"The problem for science is that <span class=\"mark\">nobody knows which compound in maca would do anything</span>. The candidates are macamides and macaenes (unique to the plant), glucosinolates (the same as in broccoli) and a few alkaloids. Macamides, the ones most cited in marketing, are practically absent from the fresh root: they form during traditional drying<sup class=\"ref\"><a href=\"#ref-40\">40</a></sup>. Composition changes with color, growing site and processing, and almost no clinical trial measured the chemistry of the product it tested. That makes studies hard to compare and makes it impossible to guarantee that the powder on your shelf matches the one in the trials.",
+"s2.p3":"In 2014 Chinese demand exploded: buyers bought up Peru's harvest, seed prices rose roughly a hundredfold, and seeds and roots were smuggled out despite Peru's export ban. Within a few years Yunnan province was growing more maca than Peru, and prices collapsed<sup class=\"ref\"><a href=\"#ref-49\">49</a></sup>. The \"Peruvian\" maca you buy may have been grown in China, with a different chemical profile.",
+"s3.step":"03 · Libido without hormones",
+"s3.head":"Desire went up, testosterone stayed put",
+"s3.p1":"The study that launched maca's fame is a 2002 trial in Lima: healthy men took 1.5 g or 3 g a day of gelatinized maca or placebo for 12 weeks<sup class=\"ref\"><a href=\"#ref-1\">1</a></sup>. From week 8, those on maca reported more sexual desire. The same group measured hormones at weeks 2, 4, 8 and 12 and published the result the following year: <span class=\"mark\">no change in testosterone, estradiol, LH, FSH or prolactin</span><sup class=\"ref\"><a href=\"#ref-22\">22</a></sup>. It wasn't a mood effect either: anxiety and depression scales didn't explain the difference.",
+"s3.p2":"That null hormone result was repeated in men with normal and abnormal semen, in men over 40 with aging complaints, and in postmenopausal women<sup class=\"ref\"><a href=\"#ref-11\">11</a></sup><sup class=\"ref\"><a href=\"#ref-14\">14</a></sup><sup class=\"ref\"><a href=\"#ref-17\">17</a></sup><sup class=\"ref\"><a href=\"#ref-23\">23</a></sup>. A 2024 systematic review of \"testosterone boosters\" did not list maca among those that work<sup class=\"ref\"><a href=\"#ref-24\">24</a></sup>.",
+"w1.tag":"What the label promises × what trials measured","w1.label":"The label's promise","w1.trial":"What was measured",
+"w1.cap":"Illustrative curves reproducing the shape of Gonzales 2002 and 2003: a difference in desire from week 8, stable hormones. The papers didn't publish comparable effect sizes, so the scale is relative. The gain in desire is <b>self-reported</b>, in trials of 50–60 people.",
+"s3.p3":"A 2010 systematic review pooled the four trials then available and concluded the evidence was \"limited\", too small for firm conclusions<sup class=\"ref\"><a href=\"#ref-2\">2</a></sup>. Sixteen years later, little has changed: the 2026 reviews are still narrative, with no pooled estimate<sup class=\"ref\"><a href=\"#ref-8\">8</a></sup><sup class=\"ref\"><a href=\"#ref-9\">9</a></sup>. The most interesting case is <strong>antidepressant-induced sexual dysfunction</strong>: in a trial of 45 women on SSRIs, 3 g/day of maca did better than placebo, especially in postmenopausal women<sup class=\"ref\"><a href=\"#ref-6\">6</a></sup>. But remission rates were low (30% vs 20%), and a 2025 meta-analysis couldn't pool maca's data with any other study<sup class=\"ref\"><a href=\"#ref-7\">7</a></sup>.",
+"s4.step":"04 · Where the evidence lives",
+"s4.head":"Every promise, and how much human trial data backs it",
+"s4.p1":"Almost every article about maca says \"studies show\". What it doesn't say is whether the studies were done in people. Pick a promise and see.",
+"w2.tag":"Explorer · evidence base per promise",
+"w2.cap":"Approximate counts of controlled human trials with that primary outcome, from systematic reviews and a PubMed search through October 2026. Gray bar: creatine's reference for lean mass (61 trials, 1,457 people).",
+"s5.step":"05 · Erections and fertility",
+"s5.head":"Small signals, studies that contradict each other",
+"s5.p1":"<strong>Erections.</strong> A 2009 Italian trial gave 2.4 g/day of extract to 50 men with mild erectile dysfunction. Their IIEF-5 score (which runs from 5 to 25) rose <code>1.6</code> points on maca and <code>0.5</code> on placebo<sup class=\"ref\"><a href=\"#ref-10\">10</a></sup>. That's a statistically significant difference of about one point, too small for a patient to clearly notice. A 2023 Korean trial with 80 men over 40 and about 5 g/day showed large gains in erectile function and male-aging symptoms<sup class=\"ref\"><a href=\"#ref-11\">11</a></sup>, but with serious problems: the placebo group <em>got worse</em> (unusual), the groups started with different testosterone, one table contradicts the text, and several authors work for the company that makes the product, with no conflict declared. A 2026 meta-analysis of herbs for erectile dysfunction rated maca's evidence \"insufficient\"<sup class=\"ref\"><a href=\"#ref-13\">13</a></sup>.",
+"s5.p2":"<strong>Semen and fertility.</strong> Here the results cancel out. A 2001 study with no control group, in 9 men, saw more volume and motility<sup class=\"ref\"><a href=\"#ref-16\">16</a></sup>. A 2020 Spanish trial of 69 men with abnormal semen saw higher sperm concentration (15 vs 10 million/mL) but no difference in motility or shape<sup class=\"ref\"><a href=\"#ref-18\">18</a></sup>. A 2021 Czech trial of 50 infertile men over 16 weeks was null: concentration rose more on placebo<sup class=\"ref\"><a href=\"#ref-19\">19</a></sup>. <span class=\"mark\">The only meta-analysis, from 2022, found no significant effect on sperm concentration</span><sup class=\"ref\"><a href=\"#ref-21\">21</a></sup>. Since then, new studies have been in dogs, rams and rats.",
+"s5.ct":"If you're trying to conceive",
+"s5.c":"The evidence doesn't justify swapping a medical workup for maca. Male infertility has treatable causes (varicocele, infections, hormonal problems) that need investigating, and a couple's time window matters more than 12 weeks of a supplement with uncertain results.",
+"s6.step":"06 · Menopause, mood and energy",
+"s6.head":"The most promising territory, and the most tainted by conflicts of interest",
+"s6.p1":"<strong>Menopause.</strong> The four trials in a 2011 review were all favorable on symptom scales such as hot flashes, insomnia and irritability<sup class=\"ref\"><a href=\"#ref-28\">28</a></sup>, but most of the menopause evidence comes from pilots of 20 to 34 women run by the developer of a commercial maca brand, in a low-impact journal, and they report hormonal changes no one else has reproduced<sup class=\"ref\"><a href=\"#ref-25\">25</a></sup>. The independent studies are even smaller but consistent on one point: <span class=\"mark\">improvement in anxiety, depression and mood with no hormonal change at all</span>. In 14 Australian women (3.5 g/day for 6 weeks), psychological and sexual-dysfunction scores fell<sup class=\"ref\"><a href=\"#ref-14\">14</a></sup>. In 29 Chinese women in Hong Kong, depression and diastolic blood pressure fell<sup class=\"ref\"><a href=\"#ref-23\">23</a></sup>. Lab assays found no estrogenic or androgenic activity in the extract. In other words, maca is not a \"phytoestrogen\", despite what you read.",
+"s6.p2":"<strong>Energy and quality of life.</strong> The largest maca trial ever run, with 175 people at sea level and at altitude, 3 g/day for 12 weeks and public funding, found better mood, energy and quality of life than placebo<sup class=\"ref\"><a href=\"#ref-4\">4</a></sup>. Red maca stood out most, and black maca lowered blood sugar. Highland residents also had fewer symptoms of chronic mountain sickness. It's a single trial, from a single group, with self-reported outcomes.",
+"s6.p3":"<strong>Athletic performance.</strong> In humans, nothing convincing. A 2009 pilot with 8 cyclists improved times versus baseline, but not versus placebo<sup class=\"ref\"><a href=\"#ref-3\">3</a></sup>. In 2025, 10 basketball players saw no gain in jumping, shooting or sprints<sup class=\"ref\"><a href=\"#ref-30\">30</a></sup>. The 2024 meta-analysis that looks encouraging is almost entirely rats swimming and hanging from grids<sup class=\"ref\"><a href=\"#ref-34\">34</a></sup>.",
+"s7.step":"07 · Yellow, red or black",
+"s7.head":"Does color matter? In rats, yes",
+"s7.p1":"Maca comes in more than a dozen colors, and the three sold commercially (yellow, red and black) are marketed for different uses. Those uses come almost entirely from rat studies. Only one human trial compared colors directly<sup class=\"ref\"><a href=\"#ref-4\">4</a></sup>. Pick one:",
+"w3.tag":"Color by color · what's human and what's rat",
+"s8.step":"08 · Safety and quality",
+"s8.head":"As safe as food, with four asterisks",
+"s8.p1":"In trials of 1.5–5 g/day for up to 16 weeks there were no serious adverse events, including among the 175 participants of the largest study<sup class=\"ref\"><a href=\"#ref-4\">4</a></sup>. It's a food eaten for centuries. But \"natural\" doesn't mean \"harmless\":",
+"s8.l1":"<strong>Thyroid.</strong> Like broccoli and kale, maca contains glucosinolates, which in excess interfere with the thyroid's use of iodine. That's why Andeans cook it. No thyroid harm has been reported in humans and TSH didn't change in trials, but it makes sense to prefer the gelatinized (cooked) form and be careful with hypothyroidism.",
+"s8.l2":"<strong>Lead and cadmium.</strong> A woman in the US had lead poisoning linked to a maca powder<sup class=\"ref\"><a href=\"#ref-43\">43</a></sup>. Maca grown near mining areas in Peru had cadmium and lead above FAO/WHO limits<sup class=\"ref\"><a href=\"#ref-44\">44</a></sup>. Choose brands with heavy-metal test reports.",
+"s8.l3":"<strong>Liver and others.</strong> There's one case of liver injury linked to a medicinal maca liquor in China<sup class=\"ref\"><a href=\"#ref-41\">41</a></sup>, and one trial saw a slight rise in a liver enzyme and in diastolic blood pressure<sup class=\"ref\"><a href=\"#ref-29\">29</a></sup>. These are isolated signals.",
+"s8.l4":"<strong>Hormone-sensitive cancer, pregnancy and breastfeeding.</strong> Maca doesn't act as a hormone in humans, but one in-vitro study saw breast cancer cells become more migratory<sup class=\"ref\"><a href=\"#ref-46\">46</a></sup>, and there are no data in pregnant women. In both cases, avoid it.",
+"s8.ct":"Brazil: maca capsules sit in a gray zone",
+"s8.c":"According to a 2019 published analysis, maca is not on Anvisa's list of permitted ingredients for food supplements (IN 28/2018) and, lacking a history of use in the country, should be assessed as a \"novel ingredient\"<sup class=\"ref\"><a href=\"#ref-47\">47</a></sup>. In practice, the powder is still sold as a food. In September 2025 Anvisa banned \"Peruvian maca\" supplements from some brands over manufacturing problems, not over the plant<sup class=\"ref\"><a href=\"#ref-50\">50</a></sup>. Products promising to \"raise testosterone\" make an unauthorized claim that the trials contradict.",
+"s8.h2":"If you buy it, check for",
+"s8.k1":"Gelatinized (cooked) powder, with color and origin stated",
+"s8.k2":"An independent lab report for lead, cadmium and arsenic",
+"s8.k3":"A single ingredient, no \"blends\" with yohimbine, tribulus or other stimulants",
+"s8.k4":"No promises of \"testosterone\", \"guaranteed erections\" or \"instant effect\"",
+"s9.step":"09 · Myth or fact","s9.head":"Test what you read on the label",
+"s10.step":"10 · In practice",
+"s10.head":"A cheap, low-risk experiment, not a treatment",
+"s10.p1":"<span class=\"mark\">If you want to try it: 1.5–3 g a day of gelatinized maca powder, mixed into food or a drink, for at least 8–12 weeks.</span> Assess honestly whether anything changed in desire or mood. If nothing has changed by week 12, it probably won't.",
+"s10.p2":"Don't expect an effect on testosterone, erections, fertility, muscle or memory. Erectile dysfunction, persistent low libido, infertility and severe menopause symptoms have treatments with far stronger evidence and deserve a doctor's visit. Avoid it if you're pregnant, breastfeeding or have a hormone-sensitive cancer, and prefer the cooked form if you have a thyroid condition.",
+"refs.step":"Sources","refs.head":"References",
+"refs.p":"Figures were checked against PubMed abstracts or full text. <span class=\"new\" style=\"font-size:9.5px;letter-spacing:.08em;background:var(--ink);color:var(--paper);padding:1px 5px\">new</span> marks 2025 and 2026 publications.",
+"refs.disc":"This profile summarizes the scientific literature for information only and is not a substitute for medical advice. Reviewed October 2026. Found a mistake or a new study? <a class=\"link\" href=\"https://forms.gle/6ry8Nt8TnLHtgJcJ6\" target=\"_blank\" rel=\"noopener\">Let me know</a>.",
+"refs.foot":"Peruvian maca · interactive profile · <a class=\"link\" href=\"./\">all profiles</a>"
+};
+</script>
+<script src="assets/health.js"></script>
+<script>
+(function(){
+var H = Health, $ = H.$, $all = H.$all, COL = H.COL;
+function P(pt,en){return {pt:pt,en:en};}
+
+/* ================= referências ================= */
+var PM = 'https://pubmed.ncbi.nlm.nih.gov/';
+var REFS = [
+ [1,'Gonzales GF et al. Effect of Lepidium meyenii (maca) on sexual desire in adult healthy men. Andrologia, 2002.',PM+'12472620/'],
+ [2,'Shin BC et al. Maca for improving sexual function: a systematic review. BMC Complement Altern Med, 2010.',PM+'20691074/'],
+ [3,'Stone M et al. Effects of maca on endurance performance and sexual desire in cyclists: pilot. J Ethnopharmacol, 2009.',PM+'19781622/'],
+ [4,'Gonzales-Arimborgo C et al. Red and black maca on mood, energy and health at low and high altitude: RCT (n=175). Pharmaceuticals, 2016.',PM+'27548190/'],
+ [5,'Dording CM et al. Maca for SSRI-induced sexual dysfunction: dose-finding pilot. CNS Neurosci Ther, 2008.',PM+'18801111/'],
+ [6,'Dording CM et al. Maca for antidepressant-induced sexual dysfunction in women: RCT. Evid Based Complement Alternat Med, 2015.',PM+'25954318/'],
+ [7,'de Aquino ACQ et al. Treatments for antidepressant-induced sexual dysfunction in women: systematic review and meta-analysis. Clinics, 2025.',PM+'39985829/',1],
+ [8,'Bloomer RJ. Maca and sexual function: narrative review. J Diet Suppl, 2026.',PM+'42680584/',1],
+ [9,'Liu X et al. Maca: narrative review. Front Nutr, 2026.',PM+'42601961/',1],
+ [10,'Zenico T et al. Maca extract in mild erectile dysfunction: RCT. Andrologia, 2009.',PM+'19260845/'],
+ [11,'Shin D et al. Maca in men with late-onset hypogonadism symptoms: RCT. World J Mens Health, 2023.',PM+'36593713/'],
+ [12,'Borrelli F et al. Herbal dietary supplements for erectile dysfunction: systematic review and meta-analysis. Drugs, 2018.',PM+'29633089/'],
+ [13,'Ho CY et al. Herbal medicine for erectile dysfunction: meta-analysis of 14 RCTs. J Tradit Complement Med, 2026.',PM+'41696741/',1],
+ [14,'Brooks NA et al. Beneficial effects of maca on psychological symptoms in postmenopausal women are not related to estrogen or androgen content. Menopause, 2008.',PM+'18784609/'],
+ [15,'Najaf Najafi M et al. Herbal treatments for sexual dysfunction in postmenopausal women: meta-analysis. Climacteric, 2018.',PM+'30156931/'],
+ [16,'Gonzales GF et al. Maca improved semen parameters in adult men. Asian J Androl, 2001.',PM+'11753476/'],
+ [17,'Melnikovova I et al. Maca and semen quality in healthy men: pilot RCT. Evid Based Complement Alternat Med, 2015.',PM+'26421049/'],
+ [18,'Alcalde AM, Rabasa J. Maca in men with mild asthenozoospermia/oligozoospermia: RCT. Andrologia, 2020.',PM+'32654242/'],
+ [19,'Melnikovova I et al. Maca and semen quality in infertile men: RCT. Phytother Res, 2021.',PM+'34585449/'],
+ [20,'Lee MS et al. Maca and semen quality: systematic review. Maturitas, 2016.',PM+'27621241/'],
+ [21,'Lee HW et al. Maca and semen quality: systematic review and meta-analysis. Front Pharmacol, 2022.',PM+'36110519/'],
+ [22,'Gonzales GF et al. Maca does not affect serum reproductive hormone levels in adult healthy men. J Endocrinol, 2003.',PM+'12525260/'],
+ [23,'Stojanovska L et al. Maca reduces blood pressure and depression in postmenopausal Chinese women. Climacteric, 2015.',PM+'24931003/'],
+ [24,'Morgado A et al. Testosterone boosters: systematic review. Int J Impot Res, 2024.',PM+'37697053/'],
+ [25,'Meissner HO et al. Maca-GO in early-postmenopausal and perimenopausal women (pilot series). Int J Biomed Sci, 2005–2006.',PM+'23674952/'],
+ [26,'Meissner HO et al. Maca-GO in perimenopausal women. Int J Biomed Sci, 2006.',PM+'23674976/'],
+ [27,'Meissner HO et al. Maca-GO III: hormonal and bone markers. Int J Biomed Sci, 2006.',PM+'23675006/'],
+ [28,'Lee MS et al. Maca for treatment of menopausal symptoms: systematic review. Maturitas, 2011.',PM+'21840656/'],
+ [29,'Valentová K et al. Maca and Uncaria in metabolic syndrome: safety. Food Chem Toxicol, 2008.',PM+'18054420/'],
+ [30,'Wu PS et al. Maca in basketball players: crossover RCT. J Physiol Investig, 2025.',PM+'40960048/',1],
+ [31,'Weng PW et al. Maca and immune response to exhaustive exercise. Int J Med Sci, 2025.',PM+'39781531/',1],
+ [32,'Lee E et al. Black maca extract in elite athletes. Nutrients, 2023.',PM+'37049458/'],
+ [33,'Kang S et al. Black maca and isokinetic strength: crossover pilot. Food Nutr Res, 2023.',PM+'38187794/'],
+ [34,'Huerta Ojeda Á et al. Maca and physical performance: meta-analysis (mostly animal studies). Nutrients, 2024.',PM+'39796542/'],
+ [35,'Rodríguez Rojas J et al. Maca and muscle-damage markers in animals: meta-analysis. Nutrients, 2026.',PM+'42356395/',1],
+ [36,'Minich DM et al. Maca: review (funded by Symphony Natural Health). Nutrients, 2024.',PM+'38398854/'],
+ [37,'Rubio J et al. Black maca and memory in mice. Food Chem Toxicol, 2007.',PM+'17543435/'],
+ [38,'Gonzales GF et al. Red maca reduces prostate size in rats. Reprod Biol Endocrinol, 2005.',PM+'15661081/'],
+ [39,'Gonzales GF et al. Maca consumption and chronic mountain sickness at 4,100 m. Plant Foods Hum Nutr, 2013.',PM+'23934543/'],
+ [40,'Esparza E et al. Bioactive maca compounds (macamides) are a product of post-harvest processing. Phytochemistry, 2015.',PM+'25817836/'],
+ [41,'Xiao A et al. Drug-induced liver injury from a maca medicinal liquor. Chin Med J, 2017.',PM+'29237937/'],
+ [42,'Şair YB et al. Psychosis after herbal products including maca: case report. Neurocase, 2024.',PM+'39611748/'],
+ [43,'Johnson-Arbor K et al. Lead poisoning associated with a maca supplement. J Med Toxicol, 2018.',PM+'29313251/'],
+ [44,'Orellana Mendoza E et al. Heavy metals in maca from Junín, Peru: health risk. Toxicol Rep, 2021.',PM+'34401355/'],
+ [45,'Beharry S, Heinrich M. Is the hype around maca justified? J Ethnopharmacol, 2018.',PM+'28811221/'],
+ [46,'Bizinelli D et al. Maca extract and triple-negative breast cancer cells in vitro. Nutr Cancer, 2022.',PM+'33560149/'],
+ [47,'Dal Molin TR et al. Marketing of maca supplements in Brazil and regulatory status. Rev Saúde Pública, 2019.','https://www.scielo.br/j/rsp/a/dhtjhZkRVzzhNFnK3jPtGwM/?lang=pt'],
+ [48,'European Commission. Novel Food Status Catalogue (Lepidium meyenii).','https://food.ec.europa.eu/food-safety/novel-food/novel-food-status-catalogue_en'],
+ [49,'Dialogue Earth / Mongabay. Maca: the dubious aphrodisiac Chinese biopirates took from Peru, 2019.','https://dialogue.earth/en/food/31279-maca-the-dubious-aphrodisiac-chinese-biopirates-took-from-peru/'],
+ [50,'Anvisa proíbe fabricação e venda de 32 suplementos (set/2025).','https://dol.com.br/carajas/noticias/brasil/922456/anvisa-proibe-fabricacao-e-venda-de-32-suplementos-no-pais',1]
+];
+function renderRefs(){
+  $('#reflist').innerHTML = REFS.map(function(r){
+    return '<li id="ref-'+r[0]+'" value="'+r[0]+'">'+H.esc(r[1])+(r[3]?'<span class="new">'+(H.LANG==='en'?'new':'novo')+'</span>':'')+
+      ' <a href="'+r[2]+'" target="_blank" rel="noopener">'+H.esc(r[2].replace(/^https?:\/\//,'').slice(0,60))+(r[2].length>68?'…':'')+'</a></li>';
+  }).join('');
+}
+renderRefs(); H.onLang(renderRefs);
+
+/* ================= 01 · matriz ================= */
+var CATS = [{id:'sex',pt:'Sexualidade',en:'Sexuality'},{id:'horm',pt:'Hormônios e fertilidade',en:'Hormones & fertility'},
+            {id:'well',pt:'Humor, energia e menopausa',en:'Mood, energy & menopause'},{id:'body',pt:'Corpo e metabolismo',en:'Body & metabolism'},{id:'safe',pt:'Segurança',en:'Safety'}];
+var ROWS = [
+ {id:'t',cat:'horm',g:'B',dir:'flat',mag:0,o:P('Testosterona e hormônios sexuais','Testosterone and sex hormones'),sub:P('LH, FSH, estradiol, prolactina','LH, FSH, estradiol, prolactin'),
+  eff:P('Nenhuma mudança vs placebo','No change vs placebo'),
+  why:P('Resultado nulo repetido em pelo menos seis ensaios, em homens saudáveis, inférteis, acima dos 40 e em mulheres na pós-menopausa. As exceções são pilotos do desenvolvedor de uma marca, nunca reproduzidos.','A null result repeated in at least six trials, in healthy men, infertile men, men over 40 and postmenopausal women. The exceptions are pilots by one brand\'s developer, never replicated.'),
+  n:P('≥6 ensaios + revisão sistemática 2024','≥6 trials + 2024 systematic review'),refs:[22,17,11,14,23,24]},
+ {id:'lib',cat:'sex',g:'C',dir:'up',mag:1,o:P('Desejo sexual','Sexual desire'),sub:P('homens e mulheres saudáveis','healthy men and women'),
+  eff:P('Aumento autorrelatado a partir da 8ª semana; sem estimativa combinada','Self-reported increase from week 8; no pooled estimate'),
+  why:P('Consistente na direção, mas são ensaios pequenos, curtos e na maioria de um mesmo grupo. As revisões de 2010 e 2026 chamam a evidência de limitada.','Consistent in direction, but trials are small, short and mostly from one group. The 2010 and 2026 reviews call the evidence limited.'),
+  n:P('~5 ensaios, o maior com ~56 pessoas','~5 trials, the largest with ~56 people'),refs:[1,2,3,8],isNew:true},
+ {id:'ssri',cat:'sex',g:'C',dir:'up',mag:1,o:P('Disfunção sexual por antidepressivo','Antidepressant-induced sexual dysfunction'),
+  eff:P('Remissão 30% vs 20% (escala MGH-SFQ), melhor em mulheres na pós-menopausa','Remission 30% vs 20% (MGH-SFQ), better in postmenopausal women'),
+  why:P('Um ensaio controlado com 45 mulheres e um piloto sem placebo. A meta-análise de 2025 não pôde combinar os dados.','One controlled trial of 45 women and an uncontrolled pilot. The 2025 meta-analysis could not pool the data.'),refs:[5,6,7],isNew:true},
+ {id:'ed',cat:'sex',g:'C',dir:'up',mag:1,o:P('Função erétil','Erectile function'),sub:P('disfunção leve ou homens 40+','mild dysfunction or men 40+'),
+  eff:P('IIEF-5 +1,6 vs +0,5 (≈1 ponto numa escala de 5 a 25)','IIEF-5 +1.6 vs +0.5 (≈1 point on a 5–25 scale)'),
+  why:P('Um ensaio pequeno com efeito modesto e outro, grande no efeito, com problemas de método e conflito de interesse não declarado. Meta-análise de 2026: insuficiente.','One small trial with a modest effect and another, large in effect, with methodological problems and an undeclared conflict of interest. 2026 meta-analysis: insufficient.'),
+  n:P('2 ensaios, 130 homens','2 trials, 130 men'),refs:[10,11,13],isNew:true},
+ {id:'fsx',cat:'sex',g:'C',dir:'up',mag:1,o:P('Função sexual na pós-menopausa','Postmenopausal sexual function'),
+  eff:P('Subescala de disfunção sexual menor (Greene)','Lower sexual-dysfunction subscale (Greene)'),why:P('Estudos de 14 a 45 mulheres; resultado não quantificado nas meta-análises.','Studies of 14 to 45 women; not quantified in meta-analyses.'),refs:[14,6,15]},
+ {id:'sem',cat:'horm',g:'C',dir:'mixed',mag:0,o:P('Qualidade do sêmen e fertilidade','Semen quality and fertility'),
+  eff:P('Meta-análise: concentração +2,2 milhões/mL (IC −2,9 a 7,4), não significativo','Meta-analysis: concentration +2.2 million/mL (CI −2.9 to 7.4), not significant'),
+  why:P('Um ensaio positivo (2020) e outro nulo (2021) com tamanho parecido. Nenhuma gravidez como desfecho.','One positive trial (2020) and one null (2021) of similar size. No pregnancy outcome.'),n:P('5 ensaios','5 trials'),refs:[18,19,20,21]},
+ {id:'meno',cat:'well',g:'C',dir:'up',mag:1,o:P('Sintomas da menopausa','Menopause symptoms'),sub:P('escalas de Kupperman e Greene','Kupperman and Greene scales'),
+  eff:P('Melhora em todos os 4 ensaios da revisão de 2011','Improvement in all 4 trials in the 2011 review'),
+  why:P('Pilotos pequenos, risco de viés alto, três conduzidos pelo desenvolvedor de uma marca.','Small pilots, high risk of bias, three run by one brand\'s developer.'),n:P('4 ensaios, 14–34 mulheres cada','4 trials, 14–34 women each'),refs:[28,25,14]},
+ {id:'mood',cat:'well',g:'C',dir:'up',mag:1,o:P('Ansiedade e depressão','Anxiety and depression'),sub:P('principalmente na pós-menopausa','mainly postmenopausal'),
+  eff:P('Pontuações psicológicas menores, sem mudança hormonal','Lower psychological scores, no hormonal change'),
+  why:P('Estudos independentes e consistentes, porém com 14 a 29 participantes.','Independent and consistent studies, but with 14 to 29 participants.'),refs:[14,23,4]},
+ {id:'en',cat:'well',g:'C',dir:'up',mag:1,o:P('Energia e qualidade de vida','Energy and quality of life'),
+  eff:P('Melhora vs placebo em 12 semanas; maca vermelha melhor','Improvement vs placebo over 12 weeks; red maca best'),
+  why:P('Maior ensaio já feito (175 pessoas, financiamento público), mas um só, com desfechos autorrelatados.','Largest trial to date (175 people, public funding), but just one, with self-reported outcomes.'),refs:[4]},
+ {id:'cms',cat:'well',g:'C',dir:'up',mag:1,o:P('Mal crônico das montanhas','Chronic mountain sickness'),
+  eff:P('Pontuação de sintomas menor; hemoglobina menor em quem tinha excesso','Lower symptom score; lower hemoglobin in those with excess'),why:P('Um ensaio e um estudo transversal, do mesmo grupo.','One trial and one cross-sectional study, same group.'),refs:[4,39]},
+ {id:'perf',cat:'body',g:'D',dir:'flat',mag:0,o:P('Desempenho esportivo e força','Athletic performance and strength'),
+  eff:P('Sem ganho vs placebo em ciclistas (n=8) e basquete (n=10)','No gain vs placebo in cyclists (n=8) and basketball (n=10)'),
+  why:P('Os efeitos grandes da meta-análise de 2024 vêm de ratos. Em humanos, só estudos minúsculos.','The large effects in the 2024 meta-analysis come from rats. In humans, only tiny studies.'),refs:[3,30,33,34],isNew:true},
+ {id:'cog',cat:'body',g:'D',dir:'unk',mag:0,o:P('Memória e cognição','Memory and cognition'),eff:P('Só em camundongos','Mice only'),why:P('Nenhum ensaio em humanos.','No human trial.'),refs:[37]},
+ {id:'bone',cat:'body',g:'D',dir:'unk',mag:0,o:P('Densidade óssea','Bone density'),eff:P('Só em ratas sem ovários e marcadores em 12 mulheres','Only in ovariectomized rats and markers in 12 women'),why:P('Nenhum ensaio com densitometria em humanos.','No human trial with bone densitometry.'),refs:[36,27]},
+ {id:'bph',cat:'body',g:'D',dir:'unk',mag:0,o:P('Próstata aumentada (HPB)','Enlarged prostate (BPH)'),eff:P('Maca vermelha reduz próstata em ratos','Red maca shrinks prostate in rats'),why:P('Em humanos, só um desfecho secundário num ensaio com conflito de interesse.','In humans, only a secondary outcome in a trial with a conflict of interest.'),refs:[38,11]},
+ {id:'bp',cat:'body',g:'D',dir:'mixed',mag:0,o:P('Pressão arterial','Blood pressure'),eff:P('Diastólica caiu num estudo e subiu em outro','Diastolic fell in one study and rose in another'),why:P('Dois estudos pequenos com resultados opostos.','Two small studies with opposite results.'),refs:[23,29]},
+ {id:'glu',cat:'body',g:'D',dir:'mixed',mag:0,o:P('Glicemia e colesterol','Blood sugar and cholesterol'),eff:P('Maca preta baixou glicose num ensaio; outro, nada','Black maca lowered glucose in one trial; another, nothing'),why:P('Desfechos secundários, sem confirmação.','Secondary outcomes, unconfirmed.'),refs:[4,23]},
+ {id:'ae',cat:'safe',g:'C',dir:'flat',mag:0,o:P('Efeitos adversos (doses de alimento)','Adverse effects (food doses)'),
+  eff:P('Nenhum evento grave em ensaios de até 16 semanas','No serious events in trials of up to 16 weeks'),why:P('Bem tolerada, mas a exposição total em ensaios é pequena e o seguimento, curto.','Well tolerated, but total trial exposure is small and follow-up short.'),refs:[4,6,11]},
+ {id:'thy',cat:'safe',g:'D',dir:'unk',mag:0,o:P('Tireoide','Thyroid'),eff:P('TSH sem mudança; risco teórico com maca crua','TSH unchanged; theoretical risk with raw maca'),why:P('Glucosinolatos podem atrapalhar o uso de iodo; nenhum caso em humanos.','Glucosinolates can interfere with iodine use; no human cases.'),refs:[23,36]},
+ {id:'metal',cat:'safe',g:'D',dir:'down',mag:1,o:P('Contaminação por metais pesados','Heavy-metal contamination'),eff:P('Um caso de intoxicação por chumbo; cádmio acima do limite perto de minas','One case of lead poisoning; cadmium above limits near mines'),why:P('Risco do produto, não da planta: depende de onde e como foi cultivada.','A product risk, not a plant risk: depends on where and how it was grown.'),refs:[43,44]},
+ {id:'preg',cat:'safe',g:'D',dir:'unk',mag:0,o:P('Gravidez e amamentação','Pregnancy and breastfeeding'),eff:P('Nenhum dado em humanos','No human data'),why:P('Sem estudos; evitar.','No studies; avoid.'),refs:[36]}
+];
+H.matrix($('#matrix'), ROWS, CATS);
+
+/* ================= 03 · libido × hormônio ================= */
+(function(){
+  var cv=$('#lib-cv'), view='trial';
+  function desire(w,maca){ var pl=0.08*Math.min(w,6)/6; if(!maca) return pl; var ex=w<4?0:0.3/(1+Math.exp(-(w-7)*1.1)); return pl+ex; }
+  function draw(){
+    var L=H.LANG, c=H.canvas(cv,230), ctx=c.ctx, w=c.w, h=c.h, pl=12, pr=10, pt=14, pb=26;
+    function X(wk){return pl+(w-pl-pr)*wk/12} function Y(v){return pt+(h-pt-pb)*(1-v/0.5)}
+    ctx.clearRect(0,0,w,h); ctx.font=H.FONT(10); ctx.strokeStyle=COL.line; ctx.fillStyle=COL.dim;
+    [0,2,4,8,12].forEach(function(wk){ctx.beginPath();ctx.moveTo(X(wk),pt);ctx.lineTo(X(wk),h-pb);ctx.stroke();var lb=(L==='en'?'wk ':'sem ')+wk;ctx.fillText(lb,wk===12?X(wk)-ctx.measureText(lb).width:X(wk)-(wk?14:0),h-8);});
+    ctx.strokeStyle=COL.mid; ctx.beginPath(); ctx.moveTo(pl,Y(0)); ctx.lineTo(w-pr,Y(0)); ctx.stroke();
+    function line(fn,color,dash,width){ctx.strokeStyle=color;ctx.lineWidth=width||2;ctx.setLineDash(dash||[]);ctx.beginPath();for(var i=0;i<=120;i++){var wk=i/10,v=fn(wk);i?ctx.lineTo(X(wk),Y(v)):ctx.moveTo(X(wk),Y(v));}ctx.stroke();ctx.setLineDash([]);ctx.lineWidth=1;}
+    if(view==='label'){
+      line(function(wk){return 0.45*(1-Math.exp(-wk/1.5))},COL.down,[],2.5);
+      line(function(wk){return 0.42*(1-Math.exp(-wk/2))},COL.ink,[5,4],2);
+      ctx.fillStyle=COL.down; ctx.font=H.FONT(11,true); ctx.fillText(L==='en'?'"boosts testosterone"':'"aumenta a testosterona"',X(3.2),Y(0.47));
+    } else {
+      line(function(wk){return desire(wk,false)},COL.mid,[2,3],2);
+      line(function(wk){return desire(wk,true)},COL.A,[],2.5);
+      line(function(){return 0.012},COL.down,[],2.5);
+      ctx.fillStyle=COL.dim; ctx.font=H.FONT(10);
+      ctx.fillText(L==='en'?'difference appears':'diferença aparece',X(8)+4,Y(0.38));
+      ctx.fillStyle=COL.down; ctx.font=H.FONT(11,true); ctx.fillText(L==='en'?'testosterone: flat':'testosterona: parada',X(9),Y(0.012)-8);
+    }
+    $('#lib-legend').innerHTML = view==='label'
+      ? '<span class="lg"><span class="sw" style="background:'+COL.down+'"></span>'+(L==='en'?'testosterone (promised)':'testosterona (prometida)')+'</span><span class="lg"><span class="sw" style="background:'+COL.ink+'"></span>'+(L==='en'?'libido (promised, "fast")':'libido (prometida, "rápido")')+'</span>'
+      : '<span class="lg"><span class="sw" style="background:'+COL.A+'"></span>'+(L==='en'?'desire, maca':'desejo, maca')+'</span><span class="lg"><span class="sw" style="background:'+COL.mid+'"></span>'+(L==='en'?'desire, placebo':'desejo, placebo')+'</span><span class="lg"><span class="sw" style="background:'+COL.down+'"></span>'+(L==='en'?'testosterone, maca = placebo':'testosterona, maca = placebo')+'</span>';
+  }
+  $('#lib-view').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;view=b.dataset.v;$all('#lib-view button').forEach(function(x){x.classList.toggle('on',x===b)});draw();});
+  H.onLang(draw);
+})();
+
+/* ================= 04 · onde mora a evidência ================= */
+(function(){
+  var C = [
+   {id:'lib',l:P('Libido','Libido'),g:'C',rct:5,big:56,an:P('muitos','many'),v:P('Pequeno ganho autorrelatado de desejo. Plausível, mas nunca testado num ensaio grande e independente.','A small self-reported gain in desire. Plausible, but never tested in a large, independent trial.')},
+   {id:'test',l:P('Testosterona','Testosterone'),g:'B',rct:6,big:80,an:P('alguns','some'),v:P('Aqui a evidência é razoável, e diz que não: nenhum hormônio muda.','Here the evidence is reasonable, and it says no: no hormone changes.')},
+   {id:'ed',l:P('Ereção','Erections'),g:'C',rct:2,big:80,an:P('alguns','some'),v:P('Um ponto a mais numa escala de 20. O ensaio grande tem conflito de interesse não declarado.','One extra point on a 20-point scale. The large trial has an undeclared conflict of interest.')},
+   {id:'fert',l:P('Fertilidade','Fertility'),g:'C',rct:5,big:69,an:P('muitos','many'),v:P('Ensaios que se contradizem e uma meta-análise nula. Nenhum mediu gravidez.','Contradictory trials and a null meta-analysis. None measured pregnancy.')},
+   {id:'meno',l:P('Menopausa','Menopause'),g:'C',rct:6,big:34,an:P('alguns','some'),v:P('Melhora de humor e sintomas, sem hormônio. Pequeno e com conflitos, mas consistente.','Better mood and symptoms, without hormones. Small and conflicted, but consistent.')},
+   {id:'en',l:P('Energia','Energy'),g:'C',rct:1,big:175,an:P('muitos','many'),v:P('Um bom ensaio (175 pessoas). Precisa ser replicado por outro grupo.','One good trial (175 people). Needs replication by another group.')},
+   {id:'perf',l:P('Desempenho','Performance'),g:'D',rct:4,big:44,an:P('muitos','many'),v:P('Quase tudo em ratos. Em humanos, estudos de 8 a 44 pessoas sem ganho claro.','Almost all in rats. In humans, studies of 8–44 people with no clear gain.')},
+   {id:'mem',l:P('Memória','Memory'),g:'D',rct:0,big:0,an:P('alguns','some'),v:P('Nenhum ensaio em humanos. Só camundongos.','No human trials. Mice only.')},
+   {id:'pros',l:P('Próstata','Prostate'),g:'D',rct:0,big:0,an:P('alguns','some'),v:P('Nenhum ensaio dedicado em humanos. Só ratos e um desfecho secundário.','No dedicated human trial. Only rats and one secondary outcome.')}
+  ];
+  var cur='lib';
+  function render(){
+    var L=H.LANG, c=C.filter(function(x){return x.id===cur})[0];
+    $('#ev-claims').innerHTML = C.map(function(x){return '<button class="chip'+(x.id===cur?' on':'')+'" data-c="'+x.id+'">'+x.l[L]+'</button>'}).join('');
+    function bar(lbl,v,max,ref,txt){return '<div class="row"><span>'+lbl+'</span><div class="tr"><div class="fl'+(ref?' ref':'')+'" style="width:'+Math.min(100,v/max*100)+'%"></div></div><span class="n">'+txt+'</span></div>';}
+    $('#ev-out').innerHTML =
+      '<div class="ev-grid">'+
+        '<div class="ev-box"><div class="k">'+(L==='en'?'Controlled human trials':'Ensaios controlados em humanos')+'</div><div class="v">'+(c.rct||(L==='en'?'none':'nenhum'))+'</div><div class="d">'+(c.big?(L==='en'?'largest: ':'o maior: ')+c.big+(L==='en'?' people':' pessoas'):(L==='en'?'only animal or lab studies':'só estudos em animais ou laboratório'))+'</div></div>'+
+        '<div class="ev-box"><div class="k">'+(L==='en'?'Animal studies':'Estudos em animais')+'</div><div class="v">'+c.an[L]+'</div><div class="d">'+(L==='en'?'rats, mice, rams, dogs':'ratos, camundongos, carneiros, cães')+'</div></div>'+
+      '</div>'+
+      '<div class="ev-scale">'+
+        bar(L==='en'?'Maca · trials':'Maca · ensaios',c.rct,61,false,c.rct)+
+        bar(L==='en'?'Creatine · ref.':'Creatina · ref.',61,61,true,'61')+
+        bar(L==='en'?'Maca · largest n':'Maca · maior n',Math.sqrt(c.big),Math.sqrt(1457),false,c.big)+
+        bar(L==='en'?'Creatine · total n':'Creatina · n total',1,1,true,L==='en'?'1,457':'1.457')+
+      '</div>'+
+      '<div class="ev-verdict"><span class="grade '+c.g+'">'+c.g+'</span><span>'+c.v[L]+'</span></div>';
+  }
+  $('#w-ev').addEventListener('click',function(e){var b=e.target.closest('[data-c]');if(!b)return;cur=b.dataset.c;render();});
+  render(); H.onLang(render);
+})();
+
+/* ================= 07 · cores ================= */
+(function(){
+  var K = [
+   {id:'y',c:'#d9b648',n:P('Amarela','Yellow'),s:P('a mais comum','the most common'),
+    rows:[['C',P('É a "maca padrão" da maioria dos ensaios de libido, fertilidade e menopausa, muitas vezes sem a cor declarada.','It\'s the "default maca" in most libido, fertility and menopause trials, often without the color stated.'),P('humanos','humans')],
+          ['C',P('O ensaio de 2021 com homens inférteis usou maca amarela e deu nulo.','The 2021 trial in infertile men used yellow maca and came out null.'),P('humanos','humans')]]},
+   {id:'r',c:'#a8324a',n:P('Vermelha','Red'),s:P('vendida para próstata e humor','sold for prostate and mood'),
+    rows:[['D',P('Reduz o tamanho da próstata em ratos com aumento induzido por testosterona.','Shrinks the prostate in rats with testosterone-induced enlargement.'),P('ratos','rats')],
+          ['C',P('No ensaio de 175 pessoas, foi a que mais melhorou humor, energia e sintomas de altitude.','In the 175-person trial, it improved mood, energy and altitude symptoms the most.'),P('humanos','humans')]]},
+   {id:'b',c:'#2b2b2b',n:P('Preta','Black'),s:P('vendida para sêmen e memória','sold for semen and memory'),
+    rows:[['D',P('Aumenta a produção de espermatozoides e melhora a memória em roedores.','Increases sperm production and improves memory in rodents.'),P('ratos e camundongos','rats and mice')],
+          ['C',P('No ensaio de 175 pessoas, reduziu a glicemia e a hemoglobina de quem tinha excesso na altitude.','In the 175-person trial, it lowered blood sugar and hemoglobin in people with excess at altitude.'),P('humanos','humans')]]}
+  ];
+  var cur='r';
+  function render(){
+    var L=H.LANG;
+    $('#col-btns').innerHTML = K.map(function(k){return '<button class="colbtn'+(k.id===cur?' on':'')+'" data-k="'+k.id+'"><div class="root" style="background:'+k.c+'"></div><div class="cn">'+k.n[L]+'</div><div class="cs">'+k.s[L]+'</div></button>'}).join('');
+    var k=K.filter(function(x){return x.id===cur})[0];
+    $('#col-out').innerHTML = k.rows.map(function(r){return '<div class="row"><span class="grade sm '+r[0]+'">'+r[0]+'</span><div>'+r[1][L]+'<span class="who">'+(L==='en'?'evidence in: ':'evidência em: ')+r[2][L]+'</span></div></div>'}).join('')+
+      '<p class="wcap" style="margin-bottom:0">'+(L==='en'?'Bottom line: there\'s no human basis for picking a color by goal. If anything, the only head-to-head trial slightly favors red for mood and energy.':'Resumo: não há base em humanos para escolher a cor pelo objetivo. Se for escolher, o único ensaio comparativo favorece levemente a vermelha para humor e energia.')+'</p>';
+  }
+  $('#col-btns').addEventListener('click',function(e){var b=e.target.closest('[data-k]');if(!b)return;cur=b.dataset.k;render();});
+  render(); H.onLang(render);
+})();
+
+/* ================= 09 · mitos ================= */
+H.myths($('#myths'),[
+  {q:P('Maca aumenta a testosterona.','Maca raises testosterone.'),a:'myth',why:P('É o achado mais repetido sobre a maca: em pelo menos seis ensaios, nenhum hormônio sexual mudou.','It\'s the most replicated finding on maca: in at least six trials, no sex hormone changed.')},
+  {q:P('Maca aumenta o desejo sexual.','Maca increases sexual desire.'),a:'partly',why:P('Há um ganho pequeno e autorrelatado depois de 8 semanas, em ensaios pequenos e de poucos grupos.','There\'s a small, self-reported gain after 8 weeks, in small trials from a few groups.')},
+  {q:P('Funciona na hora, como um estimulante.','It works right away, like a stimulant.'),a:'myth',why:P('Nos ensaios, a diferença só aparece depois de 6 a 8 semanas de uso diário.','In trials, the difference only appears after 6–8 weeks of daily use.')},
+  {q:P('Maca é um fitoestrogênio.','Maca is a phytoestrogen.'),a:'myth',why:P('Testes de laboratório não encontraram atividade estrogênica, e o estradiol não mudou em mulheres na pós-menopausa.','Lab assays found no estrogenic activity, and estradiol didn\'t change in postmenopausal women.')},
+  {q:P('Maca melhora a qualidade do sêmen.','Maca improves semen quality.'),a:'partly',why:P('Um ensaio positivo, outro nulo, e a meta-análise de 2022 não encontrou efeito significativo.','One positive trial, one null, and the 2022 meta-analysis found no significant effect.')},
+  {q:P('A maca preta é a melhor para fertilidade.','Black maca is best for fertility.'),a:'myth',why:P('Isso vem de ratos. Em humanos, nenhum ensaio comparou cores para fertilidade.','That comes from rats. In humans, no trial has compared colors for fertility.')},
+  {q:P('Maca crua é mais potente e mais natural.','Raw maca is stronger and more natural.'),a:'myth',why:P('Os andinos sempre a cozinharam. Crua, ela tem mais glucosinolatos (risco para a tireoide) e é mais difícil de digerir. Os compostos mais citados se formam na secagem.','Andeans have always cooked it. Raw, it has more glucosinolates (a thyroid risk) and is harder to digest. The most-cited compounds form during drying.')},
+  {q:P('Melhora o desempenho na academia.','It improves gym performance.'),a:'myth',why:P('Os resultados impressionantes são de ratos. Em humanos, ensaios pequenos não encontraram ganho.','The impressive results are in rats. In humans, small trials found no gain.')},
+  {q:P('Pode ajudar o humor na menopausa.','It may help mood during menopause.'),a:'true',why:P('É uma das indicações mais consistentes, embora com estudos pequenos: ansiedade e depressão melhoraram sem mudança hormonal.','It\'s one of the more consistent uses, though with small studies: anxiety and depression improved without hormonal change.')}
+]);
+
+H.start();
+})();
+</script>
+</body>
+</html>
