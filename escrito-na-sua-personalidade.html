@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="hero.titleTab">Quanto da sua vida está escrito na sua personalidade?</title>
-<meta name="description" content="Seus traços explicam metade de toda a sua felicidade, mas apenas 1% de quando você vai morrer. O que a ciência de 2026 diz sobre o que você pode (e não pode) mudar. Um ensaio interativo por Renato Shirakashi.">
+<title data-i18n="hero.titleTab">Casamento, demissão, luto: por que quase nenhum evento muda quem você é</title>
+<meta name="description" content="E quanto da sua vida está escrito na sua personalidade? Seus traços explicam metade da sua felicidade, mas apenas 1% de quando você vai morrer. Um ensaio interativo por Renato Shirakashi.">
 <link rel="canonical" href="https://renatoshira.github.io/escrito-na-sua-personalidade.html">
 <meta name="theme-color" content="#141414">
 
@@ -14,10 +14,10 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Renato Shirakashi">
-<meta property="og:title" content="Quanto da sua vida está escrito na sua personalidade?">
-<meta property="og:description" content="Seus traços explicam metade de toda a sua felicidade, mas apenas 1% de quando você vai morrer. O que a ciência de 2026 diz sobre o que você pode (e não pode) mudar.">
+<meta property="og:title" content="Casamento, demissão, luto: por que quase nenhum evento muda quem você é">
+<meta property="og:description" content="E quanto da sua vida está escrito na sua personalidade? Seus traços explicam metade da sua felicidade, mas apenas 1% de quando você vai morrer.">
 <meta property="og:url" content="https://renatoshira.github.io/escrito-na-sua-personalidade.html">
-<meta property="og:image" content="https://renatoshira.github.io/og-personalidade.png">
+<meta property="og:image" content="https://renatoshira.github.io/og-casamento-demissao-luto.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
@@ -25,9 +25,9 @@
 <meta property="article:author" content="Renato Shirakashi">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Quanto da sua vida está escrito na sua personalidade?">
-<meta name="twitter:description" content="Seus traços explicam metade de toda a sua felicidade, mas apenas 1% de quando você vai morrer. O que a ciência de 2026 diz sobre o que você pode (e não pode) mudar.">
-<meta name="twitter:image" content="https://renatoshira.github.io/og-personalidade.png">
+<meta name="twitter:title" content="Casamento, demissão, luto: por que quase nenhum evento muda quem você é">
+<meta name="twitter:description" content="E quanto da sua vida está escrito na sua personalidade? Seus traços explicam metade da sua felicidade, mas apenas 1% de quando você vai morrer.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-casamento-demissao-luto.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,6 +84,7 @@
   .hero h1{font-size:34px;font-weight:700;line-height:1.24;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
   .hero h1 .l2{margin-left:1.1em}
   .hero h1 .l3{margin-left:2.2em}
+  @media (max-width:480px){.hero h1{font-size:24px}.hero h1 .l2{margin-left:.6em}.hero h1 .l3{margin-left:1.2em}}
   .hero .sub{margin-top:38px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
   .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
 
@@ -258,7 +259,6 @@
 
   @media (max-width:480px){
     .brow{grid-template-columns:104px 1fr 54px;font-size:11px}
-    .hero h1{font-size:29px}
     .qitem{font-size:15.5px}
     .qscale .btn{font-size:12px;padding:11px 2px}
   }
@@ -437,11 +437,11 @@
 <header class="hero wrap">
   <div class="eyebrow" data-i18n="hero.eyebrow1">Personalidade · 2026</div>
   <h1>
-    <span class="mark" data-i18n="hero.hero1">Quanto da sua vida</span>
-    <span class="mark l2" data-i18n="hero.hero2">está escrito na</span>
-    <span class="mark l3" data-i18n="hero.hero3">sua personalidade?</span>
+    <span class="mark" data-i18n="hero.hero1">Casamento, demissão, luto:</span>
+    <span class="mark l2" data-i18n="hero.hero2">por que quase nenhum evento</span>
+    <span class="mark l3" data-i18n="hero.hero3">muda quem você é.</span>
   </h1>
-  <div class="sub" data-i18n="hero.sub1">Seus traços explicam metade de toda a sua felicidade, mas apenas 1% de quando você vai morrer. O que a ciência de 2026 diz sobre o que você pode (e não pode) mudar.</div>
+  <div class="sub" data-i18n="hero.sub1">E quanto da sua vida está escrito na sua personalidade?</div>
   <div class="byline" data-i18n="hero.byline1">por Renato Shirakashi</div>
 </header>
 
@@ -907,13 +907,13 @@ function tween(dur,cb,done){
 /* Para publicar em inglês: preencher EN e T.en e remover o atributo hidden
    do seletor .langtoggle no topo da página. */
 var LANG='pt', HOOKS=[], T={pt:{},en:{}};
-var EN={'hero.titleTab':'How much of your life is written into your personality?',
+var EN={'hero.titleTab':'Marriage, layoffs, grief: why almost no event changes who you are',
  "topbar.kicker":"Personality · 2026",
  "hero.eyebrow1":"Personality · 2026",
- "hero.hero1":"How much of your life",
- "hero.hero2":"is written into",
- "hero.hero3":"your personality?",
- "hero.sub1":"Your traits explain half of your happiness, and just <span class=\"mark\">1% of when you will die</span>. What the science of 2026 says about what you can (and cannot) change.",
+ "hero.hero1":"Marriage, layoffs, grief:",
+ "hero.hero2":"why almost no event",
+ "hero.hero3":"changes who you are.",
+ "hero.sub1":"And how much of your life is written into your personality?",
  "hero.byline1":"by Renato Shirakashi",
  "s00.step1":"00 · The question",
  "s00.p1":"In 1948, professor Bertram Forer handed each of his students an individual personality report and asked them to rate, from 0 to 5, how well it captured who they were inside. The average was 4.26. <strong>Every student had received exactly the same text</strong>, assembled from lines clipped out of an astrology column.",
@@ -2388,8 +2388,8 @@ var SEM=15;
 /* ================= troca de idioma ================= */
 var PT={};
 $all('[data-i18n]').forEach(function(el){PT[el.getAttribute('data-i18n')]=el.innerHTML;});
-var TITLES={pt:'Quanto da sua vida está escrito na sua personalidade?',
-            en:'How much of your life is written into your personality?'};
+var TITLES={pt:'Casamento, demissão, luto: por que quase nenhum evento muda quem você é',
+            en:'Marriage, layoffs, grief: why almost no event changes who you are'};
 function applyLang(lang){
   LANG=lang;document.documentElement.lang=lang;
   document.title=TITLES[lang]||TITLES.pt;

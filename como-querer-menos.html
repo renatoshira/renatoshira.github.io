@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="hero.titleTab">Como Querer Menos</title>
-<meta name="description" content="A satisfação é uma fração, e passamos a vida puxando só um lado dela. Um ensaio interativo sobre desejo, a esteira hedônica e como querer menos, por Renato Shirakashi.">
+<title data-i18n="hero.titleTab">Este ano, faça uma lista de coisas para querer menos, não mais</title>
+<meta name="description" content="O que a ciência da satisfação diz sobre desejo, comparação e a meta que sempre se move. Um ensaio interativo por Renato Shirakashi.">
 <link rel="canonical" href="https://renatoshira.github.io/como-querer-menos.html">
 <meta name="theme-color" content="#141414">
 
@@ -14,10 +14,10 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Renato Shirakashi">
-<meta property="og:title" content="Como Querer Menos">
-<meta property="og:description" content="A satisfação é uma fração, e passamos a vida puxando só um lado dela. Um ensaio interativo sobre desejo, a esteira hedônica e como querer menos.">
+<meta property="og:title" content="Este ano, faça uma lista de coisas para querer menos, não mais">
+<meta property="og:description" content="O que a ciência da satisfação diz sobre desejo, comparação e a meta que sempre se move.">
 <meta property="og:url" content="https://renatoshira.github.io/como-querer-menos.html">
-<meta property="og:image" content="https://renatoshira.github.io/og-querer-menos.png">
+<meta property="og:image" content="https://renatoshira.github.io/og-querer-menos-nao-mais.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
@@ -25,9 +25,9 @@
 <meta property="article:author" content="Renato Shirakashi">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Como Querer Menos">
-<meta name="twitter:description" content="A satisfação é uma fração, e passamos a vida puxando só um lado dela. Um ensaio interativo sobre desejo, a esteira hedônica e como querer menos.">
-<meta name="twitter:image" content="https://renatoshira.github.io/og-querer-menos.png">
+<meta name="twitter:title" content="Este ano, faça uma lista de coisas para querer menos, não mais">
+<meta name="twitter:description" content="O que a ciência da satisfação diz sobre desejo, comparação e a meta que sempre se move.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-querer-menos-nao-mais.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,9 @@
   .hero{padding-top:90px;padding-bottom:80px}
   .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
   .hero h1{font-size:34px;font-weight:700;line-height:1.28;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-  .hero h1 .l2{margin-left:2.2em}
+  .hero h1 .l2{margin-left:1.1em}
+  .hero h1 .l3{margin-left:2.2em}
+  @media (max-width:480px){.hero h1{font-size:24px}.hero h1 .l2{margin-left:.6em}.hero h1 .l3{margin-left:1.2em}}
   .hero .sub{margin-top:40px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
   .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
 
@@ -200,10 +202,11 @@
 <header class="hero wrap">
   <div class="eyebrow" data-i18n="hero.eyebrow">Desejo × Ciência da satisfação</div>
   <h1>
-    <span class="mark" data-i18n="hero.t1">Como</span>
-    <span class="mark l2" data-i18n="hero.t2">querer menos</span>
+    <span class="mark" data-i18n="hero.t1">Este ano, faça uma lista</span>
+    <span class="mark l2" data-i18n="hero.t2">de coisas para querer</span>
+    <span class="mark l3" data-i18n="hero.t3">menos, não mais</span>
   </h1>
-  <div class="sub" data-i18n="hero.sub">No fim do ano você vai escrever uma lista de desejos: as coisas que quer conquistar nos próximos doze meses. Este texto aposta numa lista inversa, a das coisas que você decide querer menos. Parece às avessas, e mesmo assim é provável que você monte uma dessas quando terminar de ler.</div>
+  <div class="sub" data-i18n="hero.sub">O que a ciência da satisfação diz sobre desejo, comparação e a meta que sempre se move.</div>
   <div class="byline" data-i18n="hero.by">por Renato Shirakashi</div>
 </header>
 
@@ -426,7 +429,7 @@
 </section>
 
 <div class="wrap foot reveal" data-i18n="foot">
-  Como querer menos · Renato Shirakashi. Um ensaio interativo sobre desejo e satisfação.
+  Querer menos, não mais · Renato Shirakashi. Um ensaio interativo sobre desejo e satisfação.
 </div>
 
 <script>
@@ -437,11 +440,12 @@ var LANG='pt';
 var HOOKS=[];
 
 /* ---------- English strings for [data-i18n] (PT auto-captured from DOM) ---------- */
-var EN={'hero.titleTab':'How to want less',
+var EN={'hero.titleTab':'This year, make a list of things to want less, not more',
  'hero.eyebrow':`Desire × The science of satisfaction`,
- 'hero.t1':`How to`,
- 'hero.t2':`want less`,
- 'hero.sub':`At the end of the year you will write a wish list: the things you want to achieve over the next twelve months. This essay bets on the reverse list, the things you decide to want less. It sounds backwards, and yet you will probably make one of these by the time you finish reading.`,
+ 'hero.t1':`This year, make a list`,
+ 'hero.t2':`of things to want`,
+ 'hero.t3':`less, not more`,
+ 'hero.sub':`What the science of satisfaction says about desire, comparison and the goal that keeps moving.`,
  'hero.by':`by Renato Shirakashi`,
  'b0.step':`00 · The question`,
  'b0.p1':`You got the thing. The job, the apartment, the relationship, the number in the bank that five years ago looked like an impossible ceiling. For a few weeks it felt good. Then the bar moved. What had been the top became the new floor, and a bigger version of the same craving showed up in place of the old one.`,
@@ -538,7 +542,7 @@ var EN={'hero.titleTab':'How to want less',
  'refs.9':`<strong>Tim Kasser.</strong> <em>The High Price of Materialism</em> (2002).`,
  'refs.10':`<strong>Barry Schwartz.</strong> <em>The Paradox of Choice</em> (2004).`,
  'refs.11':`<strong>Epictetus</strong>, <em>Enchiridion</em>, and <strong>Seneca</strong>, <em>Letters to Lucilius</em>. <strong>Buddhism</strong>, the four noble truths and <em>tanha</em>. <strong>Thomas Aquinas</strong>, on the false ends of happiness.`,
- 'foot':`How to want less · Renato Shirakashi. An interactive essay on desire and satisfaction.`
+ 'foot':`Want less, not more · Renato Shirakashi. An interactive essay on desire and satisfaction.`
 };
 
 /* ---------- dynamic strings + widget data, per language ---------- */

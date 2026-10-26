@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="hero.titleTab">Fibras e probióticos</title>
-<meta name="description" content="O que de fato o seu microbioma interfere na sua saúde? O intestino é um segundo cérebro? Um ensaio interativo sobre a ciência por trás do hype, por Renato Shirakashi.">
+<title data-i18n="hero.titleTab">Metade das células do seu corpo não é sua</title>
+<meta name="description" content="O que o microbioma de fato faz pela sua saúde, onde começa o hype e as duas mudanças de dieta com mais evidência. Um ensaio interativo por Renato Shirakashi.">
 <link rel="canonical" href="https://renatoshira.github.io/o-outro-genoma.html">
 <meta name="theme-color" content="#141414">
 
@@ -14,10 +14,10 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Renato Shirakashi">
-<meta property="og:title" content="Fibras e probióticos">
-<meta property="og:description" content="O que de fato o seu microbioma interfere na sua saúde? O intestino é um segundo cérebro? A ciência por trás do hype.">
+<meta property="og:title" content="Metade das células do seu corpo não é sua">
+<meta property="og:description" content="O que o microbioma de fato faz pela sua saúde, onde começa o hype e as duas mudanças de dieta com mais evidência.">
 <meta property="og:url" content="https://renatoshira.github.io/o-outro-genoma.html">
-<meta property="og:image" content="https://renatoshira.github.io/og-genoma.png">
+<meta property="og:image" content="https://renatoshira.github.io/og-metade-das-celulas.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
@@ -25,9 +25,9 @@
 <meta property="article:author" content="Renato Shirakashi">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fibras e probióticos">
-<meta name="twitter:description" content="O que de fato o seu microbioma interfere na sua saúde? O intestino é um segundo cérebro? A ciência por trás do hype.">
-<meta name="twitter:image" content="https://renatoshira.github.io/og-genoma.png">
+<meta name="twitter:title" content="Metade das células do seu corpo não é sua">
+<meta name="twitter:description" content="O que o microbioma de fato faz pela sua saúde, onde começa o hype e as duas mudanças de dieta com mais evidência.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-metade-das-celulas.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,6 +80,8 @@
   .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
   .hero h1{font-size:34px;font-weight:700;line-height:1.24;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
   .hero h1 .l2{margin-left:1.1em}
+  .hero h1 .l3{margin-left:2.2em}
+  @media (max-width:480px){.hero h1{font-size:24px}.hero h1 .l2{margin-left:.6em}.hero h1 .l3{margin-left:1.2em}}
   .hero .sub{margin-top:38px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
   .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
 
@@ -215,10 +217,11 @@
 <header class="hero wrap">
   <div class="eyebrow" data-i18n="hero.eyebrow1">Microbioma · 2026</div>
   <h1>
-    <span class="mark" data-i18n="hero.hero1">Fibras e</span>
-    <span class="mark l2" data-i18n="hero.hero2">probióticos</span>
+    <span class="mark" data-i18n="hero.hero1">Metade das células</span>
+    <span class="mark l2" data-i18n="hero.hero2">do seu corpo</span>
+    <span class="mark l3" data-i18n="hero.hero3">não é sua.</span>
   </h1>
-  <div class="sub" data-i18n="hero.sub1">O que de fato o seu microbioma interfere na sua saúde? O intestino é um "segundo cérebro"? A ciência por trás do hype.</div>
+  <div class="sub" data-i18n="hero.sub1">O que o microbioma de fato faz pela sua saúde, onde começa o hype e as duas mudanças de dieta com mais evidência.</div>
   <div class="byline" data-i18n="hero.byline1">por Renato Shirakashi</div>
 </header>
 
@@ -454,12 +457,13 @@ var COL={ink:'#141414',bio:'#0f9d73',bad:'#b23b3b',cell:'#2f6fd0',dim:'#9a9a9a',
 /* ================= i18n ================= */
 var LANG='pt';
 var HOOKS=[];
-var EN={'hero.titleTab':'Fiber and probiotics',
+var EN={'hero.titleTab':"Half the cells in your body aren't yours",
  "topbar.kicker": "Microbiome · 2026",
  "hero.eyebrow1": "Microbiome · 2026",
- "hero.hero1": "Fiber and",
- "hero.hero2": "probiotics",
- "hero.sub1": "How much does your microbiome really affect your health? Is the gut a “second brain”? The science behind the hype.",
+ "hero.hero1": "Half the cells",
+ "hero.hero2": "in your body",
+ "hero.hero3": "aren't yours.",
+ "hero.sub1": "What your microbiome actually does for your health, where the hype begins, and the two diet changes with the most evidence.",
  "hero.byline1": "by Renato Shirakashi",
  "s00.step1": "00 · The question",
  "s00.p1": "Look in the mirror and you see a single individual: one biological organism, built by your own DNA from head to toe. Yet the biology of the past two decades has dismantled that picture by a startling margin.",
