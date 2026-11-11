@@ -6115,10 +6115,10 @@
     "opening": [
       "That was October 3, 2027.",
       "Two years later, a documentary crew filmed everything about the incident. That footage is available to you here, in the search software.",
-      "Find out what happened at Pell River, and why.",
+      "Find out who caused the explosion at Pell River, and why they did it.",
       "Enter a word to find the videos where someone says it."
     ],
-    "mission": "TASK · Find out what happened at Pell River, and why. Use only what is in this program.",
+    "mission": "TASK · Find out who caused the explosion at Pell River, and why they did it. Use only what is in this program.",
     "coldOpenClip": "ARQ-00",
     "coldOpenMode": "fullscreen",
     "theme": "station",
@@ -6160,7 +6160,7 @@
         "Good morning!",
         "That video was shot on October 3, 2027.",
         "I'm attaching everything a documentary crew filmed about it in the two years after.",
-        "Can you tell me exactly what happened at Pell River, and why? Please use only what is in this program."
+        "Can you tell me exactly who caused the explosion at Pell River, and why they did it? Please use only what is in this program."
       ],
       "prompt": "Write your answer.",
       "submitLabel": "Submit",
@@ -6173,7 +6173,7 @@
         "└─ raw/          phone  cctv"
       ],
       "ask": {
-        "message": "Are you done? What happened at Pell River, and why?",
+        "message": "Are you done? Who caused the explosion at Pell River, and why did they do it?",
         "when": {
           "any": [
             {
