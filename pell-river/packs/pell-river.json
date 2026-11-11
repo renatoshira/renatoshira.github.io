@@ -1,0 +1,6271 @@
+{
+  "format": 1,
+  "meta": {
+    "id": "pell-river",
+    "title": "Pell River",
+    "version": "0.0.1",
+    "language": "en",
+    "authors": [
+      "Renato Shirakashi"
+    ],
+    "authorUrl": "https://x.com/renato_shira",
+    "description": "A WORK OF FICTION. Every person, company, AI model and 2027–2029 event in this story is invented. On October 3, 2027, the reactor building at Pell River, a near-autonomous nuclear plant in Hollis County, Pennsylvania, exploded. This archive holds the raw material of a documentary made two years later: interviews, TV footage, news reports and amateur video.",
+    "seedQueries": [
+      "bomb"
+    ],
+    "theme": "station",
+    "renderer": "raw"
+  },
+  "characters": [
+    {
+      "id": "filmer",
+      "name": "Neighbor with a phone (2027)",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 30
+      }
+    },
+    {
+      "id": "clerk",
+      "name": "Gas station clerk (2027)",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 60
+      }
+    },
+    {
+      "id": "customer",
+      "name": "Customer at the gas station (2027)",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 90
+      }
+    },
+    {
+      "id": "resident",
+      "name": "Lorraine Kopecki · Resident, Pell Township",
+      "label": "Resident",
+      "role": "subject",
+      "silhouette": {
+        "build": "slim",
+        "hair": "long",
+        "hue": 40
+      }
+    },
+    {
+      "id": "firefighter",
+      "name": "Tom Szabo · Fire captain, Hollis County",
+      "label": "Fire captain",
+      "role": "subject",
+      "silhouette": {
+        "build": "broad",
+        "hair": "short",
+        "hue": 20
+      }
+    },
+    {
+      "id": "director",
+      "name": "Richard Ambler · Former general director, Pell River",
+      "label": "Plant director",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 210
+      }
+    },
+    {
+      "id": "operator",
+      "name": "Renee Platt · Former night-shift operator, Pell River",
+      "label": "Night operator",
+      "role": "subject",
+      "silhouette": {
+        "build": "slim",
+        "hair": "short",
+        "hue": 300
+      }
+    },
+    {
+      "id": "analyst",
+      "name": "Elaine Varga · Former federal forensic analyst",
+      "label": "Forensic analyst",
+      "role": "subject",
+      "silhouette": {
+        "build": "slim",
+        "hair": "long",
+        "hue": 260
+      }
+    },
+    {
+      "id": "engineer",
+      "name": "Lena Hart · Former engineer, Brightmoor",
+      "label": "Brightmoor engineer",
+      "role": "subject",
+      "silhouette": {
+        "build": "slim",
+        "hair": "short",
+        "hue": 180
+      }
+    },
+    {
+      "id": "halloran",
+      "name": "Jack Halloran · President of the United States",
+      "role": "subject",
+      "silhouette": {
+        "build": "broad",
+        "hair": "short",
+        "hue": 45
+      }
+    },
+    {
+      "id": "calder",
+      "name": "Nate Calder · CEO, Brightmoor",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 190
+      }
+    },
+    {
+      "id": "belov",
+      "name": "Gennady Belov · President of Russia",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 0
+      }
+    },
+    {
+      "id": "ostrow",
+      "name": "Daniel Ostrow · CEO, Keel",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 120
+      }
+    },
+    {
+      "id": "anchor",
+      "name": "Diane Holcomb · Union News",
+      "role": "subject",
+      "silhouette": {
+        "build": "slim",
+        "hair": "long",
+        "hue": 330
+      }
+    },
+    {
+      "id": "reporter",
+      "name": "Jess Navarro · Union News",
+      "role": "subject",
+      "silhouette": {
+        "build": "slim",
+        "hair": "long",
+        "hue": 350
+      }
+    },
+    {
+      "id": "protester",
+      "name": "Protesters (2027)",
+      "role": "subject",
+      "silhouette": {
+        "build": "average",
+        "hair": "short",
+        "hue": 10
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "ARQ",
+      "label": "Archive footage",
+      "date": "2027-10-03T06:41",
+      "location": "Pell Township and around"
+    },
+    {
+      "id": "TVN",
+      "label": "Union News",
+      "date": "2027-10-03T06:58",
+      "location": "Union News studio and field"
+    },
+    {
+      "id": "JAK",
+      "label": "President Halloran on TV",
+      "date": "2027-10-03T20:00",
+      "location": "The White House; Hollis County"
+    },
+    {
+      "id": "MOR",
+      "label": "Lorraine Kopecki, resident",
+      "date": "2029-08-14T10:00",
+      "location": "Documentary interview — dark backdrop"
+    },
+    {
+      "id": "BOM",
+      "label": "Tom Szabo, firefighter",
+      "date": "2029-09-03T14:00",
+      "location": "Documentary interview — dark backdrop"
+    },
+    {
+      "id": "DIR",
+      "label": "Richard Ambler, general director",
+      "date": "2029-08-21T10:00",
+      "location": "Documentary interview — dark backdrop"
+    },
+    {
+      "id": "OPR",
+      "label": "Renee Platt, night-shift operator",
+      "date": "2029-09-04T14:00",
+      "location": "Documentary interview — dark backdrop"
+    },
+    {
+      "id": "PER",
+      "label": "Elaine Varga, forensic analyst",
+      "date": "2029-09-10T11:00",
+      "location": "Documentary interview — dark backdrop"
+    },
+    {
+      "id": "ENG",
+      "label": "Lena Hart, Brightmoor engineer",
+      "date": "2029-09-17T10:00",
+      "location": "Documentary interview — dark backdrop"
+    },
+    {
+      "id": "BLV",
+      "label": "President Belov on TV",
+      "date": "2027-10-16T14:30",
+      "location": "The Kremlin, Moscow"
+    },
+    {
+      "id": "CAL",
+      "label": "Nate Calder on TV",
+      "date": "2027-10-25T08:30",
+      "location": "Union News studio, New York"
+    },
+    {
+      "id": "OST",
+      "label": "Daniel Ostrow on TV",
+      "date": "2027-11-09T11:00",
+      "location": "Keel headquarters, Cambridge, Massachusetts"
+    }
+  ],
+  "clips": [
+    {
+      "id": "ARQ-00",
+      "session": "ARQ",
+      "fictionTime": "2027-10-03T06:41:00",
+      "duration": 18,
+      "speaker": "filmer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "(windows rattle; a deep boom) What the hell—"
+        },
+        {
+          "start": 3,
+          "text": "Babe. Babe, come here. That's the plant. That's Pell River."
+        },
+        {
+          "start": 9,
+          "text": "Is that... is that a mushroom? Oh my God. That's a bomb. That's a nuclear bomb."
+        },
+        {
+          "start": 15,
+          "text": "Get the kids. Get the kids in the car."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 0
+      },
+      "source": "Neighbor's phone video (viral, Oct 3, 2027)",
+      "sourceShort": "Phone video",
+      "tags": [
+        "arq",
+        "2027",
+        "coldopen",
+        "explosion",
+        "plant"
+      ],
+      "motion": {
+        "device": "phone",
+        "framing": "wide",
+        "intensity": 0.8,
+        "mood": "dread",
+        "ambient": "grain"
+      }
+    },
+    {
+      "id": "ARQ-01",
+      "session": "ARQ",
+      "fictionTime": "2027-10-03T06:41:20",
+      "duration": 13,
+      "speaker": "clerk",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "(the front windows shake; a long low boom; a rack of chips falls) Get down! Everybody down!"
+        },
+        {
+          "start": 4,
+          "text": "(from the floor) Was that a bomb? Was that a missile?",
+          "speaker": "customer"
+        },
+        {
+          "start": 8,
+          "text": "I don't know. I don't know, it was out by the plant. Stay down, stay away from the glass."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 0
+      },
+      "source": "Gas station security camera, Route 9, between town and the plant (Oct 3, 2027)",
+      "sourceShort": "Security camera",
+      "tags": [
+        "arq",
+        "2027",
+        "explosion",
+        "cctv",
+        "gasstation"
+      ],
+      "motion": {
+        "device": "camera",
+        "backdrop": "cctv",
+        "framing": "wide",
+        "intensity": 0.7,
+        "mood": "dread",
+        "ambient": "static"
+      }
+    },
+    {
+      "id": "TVN-01",
+      "session": "TVN",
+      "fictionTime": "2027-10-03T06:58",
+      "duration": 31,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "We want to go straight to breaking news out of Pennsylvania, where there has been an explosion at the Pell River nuclear plant in Hollis County."
+        },
+        {
+          "start": 10,
+          "text": "This is video posted by someone who lives nearby, and it's everywhere online right now. People are calling that a mushroom cloud, there, over the plant, just before sunrise."
+        },
+        {
+          "start": 21,
+          "text": "Officials are not saying whether this was a bomb, and in fact they are not saying anything yet. We're staying with this."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 0
+      },
+      "source": "Union News · live, Oct 3, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "breaking",
+        "explosion",
+        "plant"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.6,
+        "mood": "alarm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-02",
+      "session": "TVN",
+      "fictionTime": "2027-10-03T10:20",
+      "duration": 25,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I'm at a state police roadblock on Route 9, where there is now a 10-mile evacuation order around the nuclear plant because of radiation from this morning's explosion."
+        },
+        {
+          "start": 11,
+          "text": "We're told 2 plant workers are in critical condition."
+        },
+        {
+          "start": 15,
+          "text": "And one thing we're hearing is that the night shift had gone home at 6, so it was the morning crew that was inside."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 0
+      },
+      "source": "Union News · live from Hollis County, Oct 3, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "evacuation",
+        "radiation",
+        "workers"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "alarm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-03",
+      "session": "TVN",
+      "fictionTime": "2027-10-04T08:15",
+      "duration": 24,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Overnight they widened the zone to 30 kilometers, which is about 19 miles."
+        },
+        {
+          "start": 5,
+          "text": "The highway out of Hollis County was bumper to bumper until 3 this morning."
+        },
+        {
+          "start": 11,
+          "text": "The state says about 140,000 people were inside the new line, and a lot of them are here now, families with kids, sleeping on cots in a high school gym."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 0
+      },
+      "source": "Union News · Oct 4, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "evacuation",
+        "zone",
+        "gym"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-04",
+      "session": "TVN",
+      "fictionTime": "2027-10-05T20:10",
+      "duration": 30,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "It's been two days since the explosion, and there's still nothing official on what caused it."
+        },
+        {
+          "start": 6,
+          "text": "The President says they still don't know."
+        },
+        {
+          "start": 9,
+          "text": "So we put that to our panel tonight. Was it a bomb, was it an attack, was it a foreign country? Russia, Iran, North Korea, all of it came up."
+        },
+        {
+          "start": 21,
+          "text": "And one former national security adviser told us that if a foreign country did this, that's an act of war."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 0
+      },
+      "source": "Union News · evening panel, Oct 5, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "panel",
+        "speculation",
+        "attack"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-05",
+      "session": "TVN",
+      "fictionTime": "2027-10-05T15:40",
+      "duration": 25,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "(crowd chanting) Tell us the truth! Tell us the truth!",
+          "speaker": "protester"
+        },
+        {
+          "start": 5,
+          "text": "This is outside the evacuation center, where there are a few hundred people, with security at the doors, and most of them haven't been home in 3 days."
+        },
+        {
+          "start": 16,
+          "text": "One man told me the government is lying to us. He said it's a cover-up, it's a lie, all of it."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 5, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "protest",
+        "evacuees"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.7,
+        "mood": "anger",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-06",
+      "session": "TVN",
+      "fictionTime": "2027-10-06T07:30",
+      "duration": 19,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Firefighters are still going in on rotations, a few minutes at a time, because of the radiation."
+        },
+        {
+          "start": 7,
+          "text": "As for the 2 plant workers hurt on the first morning, their names still haven't been released."
+        },
+        {
+          "start": 14,
+          "text": "And we've just learned that one of them died overnight."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 6, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "containment",
+        "firefighters",
+        "workers"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-07",
+      "session": "TVN",
+      "fictionTime": "2027-10-07T07:00",
+      "duration": 39,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "4 days on, we keep hearing the same two questions from you at home: what happened at Pell River, and how many people died."
+        },
+        {
+          "start": 9,
+          "text": "So far, one. Carrow Energy, the company that owns the plant, released his name this morning. He was Eddie Novak, a technician on the plant's morning crew."
+        },
+        {
+          "start": 19,
+          "text": "A second technician is still in critical condition. And 9 residents of a nursing home died after they were moved out that first night. Nobody has been killed by radiation outside the plant."
+        },
+        {
+          "start": 32,
+          "text": "And nearly 140,000 people have now left Hollis County and the towns around it."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 1
+      },
+      "source": "Union News · morning, Oct 7, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "deaths",
+        "toll",
+        "evacuation",
+        "technicians"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-08",
+      "session": "TVN",
+      "fictionTime": "2027-10-07T12:30",
+      "duration": 32,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "This is the map the state put out this morning, and the red is where they've found contamination in the soil, the water and the grass. It runs east, with the wind, almost to the county line, and along the river."
+        },
+        {
+          "start": 16,
+          "text": "Dairy farms in the red have been told to dump their milk."
+        },
+        {
+          "start": 21,
+          "text": "And people keep asking me when they can go home, but officials won't give a date. One of them told me, off camera, think years. Not weeks."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 7, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "contamination",
+        "map",
+        "farms",
+        "zone"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-09",
+      "session": "TVN",
+      "fictionTime": "2027-10-08T11:00",
+      "duration": 38,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Carrow Energy, the company behind Pell River, just gave its first briefing on what caused the explosion. This is the plant's director, Richard Ambler."
+        },
+        {
+          "start": 9,
+          "text": "I want to be very clear about one thing. There was no mechanical failure at Pell River. None.",
+          "speaker": "director"
+        },
+        {
+          "start": 16,
+          "text": "The pumps were fine, the backup power was fine, and our systems were all there and working.",
+          "speaker": "director"
+        },
+        {
+          "start": 23,
+          "text": "(reporters shouting over each other) Then why did the cooling stop? Was it sabotage?"
+        },
+        {
+          "start": 28,
+          "text": "I'm not going to speculate on—",
+          "speaker": "director"
+        },
+        {
+          "start": 31,
+          "text": "Mr. Ambler! Did the night operator miss something?"
+        },
+        {
+          "start": 35,
+          "text": "That's all for today.",
+          "speaker": "director"
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 1
+      },
+      "source": "Union News · Carrow Energy press conference, Oct 8, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "press conference",
+        "director",
+        "failure",
+        "sabotage"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.6,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-10",
+      "session": "TVN",
+      "fictionTime": "2027-10-09T18:30",
+      "duration": 31,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Investigators are taking a hard look at the night shift. 2 sources close to the investigation tell Union News the night operator saw a problem hours before the explosion."
+        },
+        {
+          "start": 11,
+          "text": "She didn't call an emergency. And at 6 she went home, 41 minutes before it happened."
+        },
+        {
+          "start": 17,
+          "text": "Her name is all over the internet tonight, but we are not naming her, because she hasn't been charged with anything."
+        },
+        {
+          "start": 25,
+          "text": "The company confirms she is under scrutiny, though it would not say why."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · evening, Oct 9, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "operator",
+        "night shift",
+        "suspect"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-11",
+      "session": "TVN",
+      "fictionTime": "2027-10-11T21:05",
+      "duration": 28,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "We have breaking news on Pell River, where federal investigators now say the plant was hacked."
+        },
+        {
+          "start": 6,
+          "text": "2 officials briefed on the investigation tell Union News that someone got into the plant's computer system and turned off the cooling."
+        },
+        {
+          "start": 15,
+          "text": "They're calling it a cyberattack, but they won't say who was behind it, or where the hackers were."
+        },
+        {
+          "start": 22,
+          "text": "And they won't say yet whether anyone at the plant helped."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Union News · breaking, Oct 11, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "breaking",
+        "hacked",
+        "cyberattack",
+        "computer"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.6,
+        "mood": "alarm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-12",
+      "session": "TVN",
+      "fictionTime": "2027-10-13T16:20",
+      "duration": 28,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "It's been 10 days. Eddie Novak's funeral was this morning, in a town outside the zone, because his own town is still in it."
+        },
+        {
+          "start": 9,
+          "text": "The other technician is still in the hospital."
+        },
+        {
+          "start": 13,
+          "text": "And here at the gym, ever since that word came out, cyberattack, it's all anybody talks about. It isn't when they get to go home anymore."
+        },
+        {
+          "start": 23,
+          "text": "It's who did this to them, and why."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 2
+      },
+      "source": "Union News · Oct 13, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "funeral",
+        "gym",
+        "evacuees",
+        "cyberattack"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.4,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-13",
+      "session": "TVN",
+      "fictionTime": "2027-10-16T18:30",
+      "duration": 40,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "11 days ago, on this program, our panel went through every name you could think of: Russia, Iran, North Korea."
+        },
+        {
+          "start": 8,
+          "text": "This morning President Halloran picked one. Russia."
+        },
+        {
+          "start": 11,
+          "text": "So why Russia? Officials point to what went dark along with the plant, the Brightmoor campus, the biggest AI campus in the country. One of them told us this was aimed at our lead in AI."
+        },
+        {
+          "start": 25,
+          "text": "Iran and North Korea were looked at and ruled out early, and one official told us this isn't a guess."
+        },
+        {
+          "start": 33,
+          "text": "The Kremlin denies all of it, and President Belov says he's being accused with no proof."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · evening, Oct 16, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "russia",
+        "accusation",
+        "suspects",
+        "China",
+        "Iran"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-14",
+      "session": "TVN",
+      "fictionTime": "2027-10-17T07:30",
+      "duration": 41,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Officials gave reporters one word yesterday, Volna, and since last night you've been asking us what it is."
+        },
+        {
+          "start": 7,
+          "text": "So, Volna is an AI. It's a free one, like the chat apps, and it's built by the Volkhov Institute, which is a government lab in Moscow."
+        },
+        {
+          "start": 17,
+          "text": "Millions of people use it, in schools, in offices. It's Moscow's answer to Silicon Valley."
+        },
+        {
+          "start": 23,
+          "text": "U.S. officials say the intruders left something on the plant's computers, and that it led them to Volna and to the Volkhov Institute."
+        },
+        {
+          "start": 32,
+          "text": "And they think Volna helped build what got in."
+        },
+        {
+          "start": 36,
+          "text": "Moscow says the Institute had nothing to do with it."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Union News · morning, Oct 17, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Volna",
+        "Volkhov",
+        "explainer",
+        "Moscow"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-15",
+      "session": "TVN",
+      "fictionTime": "2027-10-18T19:00",
+      "duration": 29,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Even now, with Moscow blamed, one question keeps coming back, and that's how they got into the plant at all."
+        },
+        {
+          "start": 8,
+          "text": "We're told nothing was broken into, and the plant's security never saw a thing. They came in the way the plant's own engineers do, remotely, from the fleet center, as if they belonged there."
+        },
+        {
+          "start": 21,
+          "text": "So investigators are asking about an insider, somebody who helped from the inside."
+        },
+        {
+          "start": 26,
+          "text": "No one has been charged."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 18, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "insider",
+        "investigation",
+        "charged"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-16",
+      "session": "TVN",
+      "fictionTime": "2027-10-19T22:00",
+      "duration": 28,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "We're getting pictures in from Berlin, where it's 4 in the morning and most of the city has no power."
+        },
+        {
+          "start": 8,
+          "text": "The traffic lights are out, trains are stopped in the tunnels, and people are walking home using their phones for flashlights."
+        },
+        {
+          "start": 16,
+          "text": "The blackout started just after 2. German officials say the grid was hit from outside, 2 days after the U.S. struck back."
+        },
+        {
+          "start": 25,
+          "text": "Berlin is blaming Moscow."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · late, Oct 19, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Berlin",
+        "blackout",
+        "Germany",
+        "power"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.6,
+        "mood": "alarm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-17",
+      "session": "TVN",
+      "fictionTime": "2027-10-21T12:00",
+      "duration": 29,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "This is day 2 without power for most of Chicago, and I'm outside a children's hospital on the South Side."
+        },
+        {
+          "start": 8,
+          "text": "They're running on a generator, and on top of that their computer system is locked by ransomware, so doctors can't open patient records."
+        },
+        {
+          "start": 17,
+          "text": "Since yesterday they've been sending ambulances to other hospitals, some of them 40 minutes away."
+        },
+        {
+          "start": 23,
+          "text": "A nurse told me they're doing it all on paper, like it's 1975."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · live from Chicago, Oct 21, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Chicago",
+        "blackout",
+        "hospital",
+        "ransomware",
+        "ambulances"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-18",
+      "session": "TVN",
+      "fictionTime": "2027-10-26T19:00",
+      "duration": 32,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "In Europe, the Port of Rotterdam, the biggest port in Europe, has now been shut for 7 days. The cranes have stopped, ships are waiting out at sea, and other ports are turning them away."
+        },
+        {
+          "start": 13,
+          "text": "Dutch officials say the port's systems were wiped clean, and they blame Moscow."
+        },
+        {
+          "start": 18,
+          "text": "And here at home, card payments are down again, for a 3rd day at some banks. There are lines at cash machines, and stores are taking cash only, if they're open at all."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · evening, Oct 26, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Rotterdam",
+        "port",
+        "Europe",
+        "payments",
+        "banks",
+        "cash"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.5,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-19",
+      "session": "TVN",
+      "fictionTime": "2027-10-25T08:29",
+      "duration": 15,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "People keep asking us if AI got us into this, and my next guest says it's the only way out."
+        },
+        {
+          "start": 8,
+          "text": "Nate Calder runs Brightmoor, one of the biggest AI labs in America. Good morning."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 2,
+        "earliestStep": 1
+      },
+      "source": "Union News · morning, Oct 25, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "intro",
+        "AI",
+        "Calder"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.3,
+        "mood": "earnest",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-20",
+      "session": "TVN",
+      "fictionTime": "2027-10-29T07:15",
+      "duration": 32,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The second Pell River technician died last night. Carl Pruitt had been in a hospital in Philadelphia since the first morning."
+        },
+        {
+          "start": 8,
+          "text": "He and Eddie Novak were the ones who went in by hand to try to get the cooling back."
+        },
+        {
+          "start": 16,
+          "text": "His wife asked us to read one thing, and this is it: Somebody is guilty of this. A person. I want to see that person in a courtroom."
+        },
+        {
+          "start": 27,
+          "text": "The death toll from Pell River is now 2."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · morning, Oct 29, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Pruitt",
+        "died",
+        "technicians",
+        "toll",
+        "guilty"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-21",
+      "session": "TVN",
+      "fictionTime": "2027-11-01T18:55",
+      "duration": 18,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "One more from Pell River, and it's short."
+        },
+        {
+          "start": 4,
+          "text": "The FBI has quietly cleared Renee Platt, who was at the controls when it started."
+        },
+        {
+          "start": 10,
+          "text": "There was no announcement, but the Bureau says she did nothing wrong."
+        },
+        {
+          "start": 15,
+          "text": "Now, the weather."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 2
+      },
+      "source": "Union News · evening, Nov 1, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Platt",
+        "cleared",
+        "FBI"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.2,
+        "mood": "flat",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-22",
+      "session": "TVN",
+      "fictionTime": "2027-11-02T18:30",
+      "duration": 34,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I'm outside a data center near Columbus, Ohio, where since about 3 this afternoon federal agents have been going in and out, carrying boxes and wheeling out servers on carts."
+        },
+        {
+          "start": 12,
+          "text": "Here's what we're told. Investigators followed the trail back from Pell River, through the VPN and through the network providers."
+        },
+        {
+          "start": 20,
+          "text": "And it doesn't end overseas. It ends here, at a real address off the interstate."
+        },
+        {
+          "start": 26,
+          "text": "A federal source says the first thought is that these servers were hijacked and used by somebody overseas."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Union News · live from Ohio, Nov 2, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Ohio",
+        "data center",
+        "federal agents",
+        "servers"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-23",
+      "session": "TVN",
+      "fictionTime": "2027-11-03T19:40",
+      "duration": 32,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "(chanting) False flag! False flag!",
+          "speaker": "protester"
+        },
+        {
+          "start": 4,
+          "text": "There are a few thousand people out here tonight, across from the White House, and you can see the signs."
+        },
+        {
+          "start": 12,
+          "text": "Since the raid in Ohio last night, the theory is everywhere online: that it's a cover-up, that the evidence was planted and Russia was framed, and that somebody high up in Washington knew and kept it secret."
+        },
+        {
+          "start": 26,
+          "text": "Nobody here has proof, but they say the President didn't either."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · Lafayette Park, Washington, Nov 3, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "protest",
+        "cover up",
+        "conspiracy",
+        "White House"
+      ],
+      "aliases": [
+        "coverup"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.7,
+        "mood": "anger",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-24",
+      "session": "TVN",
+      "fictionTime": "2027-11-09T07:05",
+      "duration": 16,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Good morning. The story this morning is Brightmoor. Trading in its shares was stopped before the market opened, and the company is saying nothing."
+        },
+        {
+          "start": 9,
+          "text": "And a rival AI company, Keel, has called a press conference for 11, about Pell River."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Union News · morning, Nov 9, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Brightmoor",
+        "shares",
+        "Keel",
+        "teaser"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-25",
+      "session": "TVN",
+      "fictionTime": "2027-11-09T10:58",
+      "duration": 20,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "We're going live to Keel, outside Boston, where its CEO, Daniel Ostrow, is about to speak."
+        },
+        {
+          "start": 6,
+          "text": "On Sunday the Justice Department quietly brought in Keel's auditing system. It's an AI called Plumb, and what it does is read records. That's its whole job."
+        },
+        {
+          "start": 16,
+          "text": "Brightmoor still hasn't said a word."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 3
+      },
+      "source": "Union News · live, Nov 9, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Keel",
+        "Plumb",
+        "Ostrow",
+        "intro"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-26",
+      "session": "TVN",
+      "fictionTime": "2027-11-09T12:40",
+      "duration": 27,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "If you're just joining us, federal officials now say Pell River began here at home, not overseas. It began at Brightmoor, the AI company."
+        },
+        {
+          "start": 9,
+          "text": "It was the company's own AI."
+        },
+        {
+          "start": 12,
+          "text": "The Justice Department confirmed it within the hour, and we're told an engineer at the company has confirmed it as well."
+        },
+        {
+          "start": 20,
+          "text": "Trading reopened at noon, and Brightmoor lost half its value, billions of dollars, gone in minutes."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Union News · breaking, Nov 9, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "breaking",
+        "American",
+        "Brightmoor",
+        "shares"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.7,
+        "mood": "alarm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-27",
+      "session": "TVN",
+      "fictionTime": "2027-11-13T18:30",
+      "duration": 24,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "That's Martin Kessel, Brightmoor's head of security, leaving headquarters an hour ago with 2 lawyers. He didn't stop."
+        },
+        {
+          "start": 7,
+          "text": "2 employees tell us he was warned the first morning, and that he's the one who ordered the records deleted."
+        },
+        {
+          "start": 15,
+          "text": "That's 5 weeks, and he told no one."
+        },
+        {
+          "start": 19,
+          "text": "Brightmoor says only that he no longer works there."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Union News · Nov 13, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Kessel",
+        "lawyers",
+        "Brightmoor",
+        "told no one"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-28",
+      "session": "TVN",
+      "fictionTime": "2027-11-14T13:20",
+      "duration": 29,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "(shouting) Shame! Shame!",
+          "speaker": "protester"
+        },
+        {
+          "start": 3,
+          "text": "This is outside Brightmoor's headquarters, and some of these people have been here since dawn. That man is holding up a photo of a young guy in a hard hat."
+        },
+        {
+          "start": 15,
+          "text": "The lobby is closed, and a sign on the door says the building stays closed through Monday."
+        },
+        {
+          "start": 22,
+          "text": "One protester put it this way: they let all of it happen to protect their money."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 4
+      },
+      "source": "Union News · Nov 14, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "protest",
+        "Brightmoor",
+        "headquarters",
+        "technician"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.7,
+        "mood": "anger",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-29",
+      "session": "TVN",
+      "fictionTime": "2027-11-14T23:05",
+      "duration": 34,
+      "speaker": "anchor",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "It's just after 11 in New York, and in one hour the ceasefire starts."
+        },
+        {
+          "start": 6,
+          "text": "The cards work again. Rotterdam is open, and the other ports with it. Chicago has had its lights back for weeks. Tonight a lot of people get their first real sleep in a month."
+        },
+        {
+          "start": 19,
+          "text": "But in Hollis County nothing changes tonight. The exclusion zone stays where it is, and more than 140,000 people still can't go home."
+        },
+        {
+          "start": 28,
+          "text": "The state says not this year, and maybe not next year."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Union News · late, Nov 14, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "ceasefire",
+        "exclusion zone",
+        "Hollis County",
+        "home"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.3,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-30",
+      "session": "TVN",
+      "fictionTime": "2027-11-18T18:35",
+      "duration": 20,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Martin Kessel, the Brightmoor security chief who ordered those records deleted, is now under federal investigation."
+        },
+        {
+          "start": 6,
+          "text": "Prosecutors haven't filed anything yet, but we're told a grand jury has started hearing from Brightmoor employees."
+        },
+        {
+          "start": 13,
+          "text": "His lawyers had no comment for us today, and Brightmoor says it's cooperating fully."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 4
+      },
+      "source": "Union News · Nov 18, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "Kessel",
+        "prosecutors",
+        "Brightmoor",
+        "investigation"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.3,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-31",
+      "session": "TVN",
+      "fictionTime": "2027-10-03T15:20",
+      "duration": 25,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The wind turned this afternoon, toward Harrisburg, and the state is telling everyone here, stay inside, close the windows, turn off the air."
+        },
+        {
+          "start": 9,
+          "text": "And still, look at this line. This is a pharmacy, and these people are waiting for iodine pills, which protect the thyroid and are mostly for kids."
+        },
+        {
+          "start": 19,
+          "text": "The state says it has enough, but nobody here wants to find out."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 3, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "plume",
+        "wind",
+        "Harrisburg",
+        "iodine",
+        "shelter"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-32",
+      "session": "TVN",
+      "fictionTime": "2027-10-04T12:10",
+      "duration": 22,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Right beside the plant, this is the Brightmoor campus, the biggest AI campus in the country, and it ran on Pell River's power."
+        },
+        {
+          "start": 9,
+          "text": "Since yesterday morning, it's been dark."
+        },
+        {
+          "start": 12,
+          "text": "Nobody is claiming anyone did this on purpose, not yet. But officials are asking out loud who gains when it goes dark."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 4, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "campus",
+        "Brightmoor",
+        "AI",
+        "power",
+        "national security"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-33",
+      "session": "TVN",
+      "fictionTime": "2027-10-05T13:40",
+      "duration": 25,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The Pell River runs into this one, the Susquehanna, a few miles below the plant."
+        },
+        {
+          "start": 6,
+          "text": "Every town that draws its water out of here has shut its intake. That's Lancaster and a dozen other towns, and this afternoon Baltimore shut its line from the river too."
+        },
+        {
+          "start": 18,
+          "text": "There isn't a bottle of water left on a shelf from here to the bay."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 5, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "river",
+        "water",
+        "Susquehanna",
+        "Baltimore",
+        "bottled water"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "wide",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "TVN-34",
+      "session": "TVN",
+      "fictionTime": "2027-10-06T19:15",
+      "duration": 25,
+      "speaker": "reporter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The first night, they moved 61 residents out of Brookside Manor, a nursing home 5 miles from the plant. They went on school buses, and some of them were on oxygen."
+        },
+        {
+          "start": 12,
+          "text": "The trip took 9 hours, and 9 of them didn't survive it."
+        },
+        {
+          "start": 17,
+          "text": "One daughter told me, my mother wasn't killed by radiation. She was killed by the bus ride."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Union News · Oct 6, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "tvn",
+        "2027",
+        "evacuation",
+        "nursing home",
+        "elderly",
+        "buses"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.3,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "JAK-01",
+      "session": "JAK",
+      "fictionTime": "2027-10-03T20:00",
+      "duration": 32,
+      "speaker": "halloran",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The President, from the White House.",
+          "speaker": "anchor"
+        },
+        {
+          "start": 3,
+          "text": "Good evening. At 6:41 this morning there was an explosion at the Pell River nuclear plant in Pennsylvania. Two workers are in critical condition, and families within 10 miles have been told to leave."
+        },
+        {
+          "start": 16,
+          "text": "I've been with my national security team all day, and I'll be honest with you: we don't know yet whether this was an accident or an attack."
+        },
+        {
+          "start": 26,
+          "text": "And until we do, I'm asking everyone, please, don't jump to conclusions."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 0
+      },
+      "source": "White House statement · Oct 3, 2027",
+      "sourceShort": "White House",
+      "tags": [
+        "jak",
+        "2027",
+        "president",
+        "statement"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.3,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "JAK-02",
+      "session": "JAK",
+      "fictionTime": "2027-10-04T14:30",
+      "duration": 18,
+      "speaker": "halloran",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I just spent an hour with these families, and some of them left with nothing but the clothes they had on."
+        },
+        {
+          "start": 8,
+          "text": "I made them a promise that they will get answers."
+        },
+        {
+          "start": 12,
+          "text": "And whoever did this, if somebody did this, we will find them."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Presidential visit, Hollis County · Oct 4, 2027",
+      "sourceShort": "White House pool",
+      "tags": [
+        "jak",
+        "2027",
+        "president",
+        "evacuation",
+        "gym"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "JAK-03",
+      "session": "JAK",
+      "fictionTime": "2027-10-12T20:00",
+      "duration": 40,
+      "speaker": "halloran",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Good evening. 9 days ago I asked you not to jump to conclusions, and tonight I can tell you what we know."
+        },
+        {
+          "start": 9,
+          "text": "What happened at Pell River was not an accident. Someone broke into the computers that run that plant, they turned off what keeps it safe, and then they waited."
+        },
+        {
+          "start": 20,
+          "text": "That plant also powered the largest AI campus in America, and it is still dark tonight."
+        },
+        {
+          "start": 26,
+          "text": "That is a hostile act. This was an attack on the security of the United States."
+        },
+        {
+          "start": 32,
+          "text": "We don't know yet who did this, but we will. And whoever you are, we will find you."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Address from the White House · Oct 12, 2027",
+      "sourceShort": "White House",
+      "tags": [
+        "jak",
+        "2027",
+        "president",
+        "address",
+        "attack",
+        "computers"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "JAK-04",
+      "session": "JAK",
+      "fictionTime": "2027-10-16T11:00",
+      "duration": 53,
+      "speaker": "halloran",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Good morning. 4 days ago I told you that what happened at Pell River was an attack on the United States, and I told you we would find out who did it."
+        },
+        {
+          "start": 12,
+          "text": "We have. Our investigators, working with our allies, have traced that attack to Russia, to the Russian government."
+        },
+        {
+          "start": 19,
+          "text": "I don't say that lightly. I have seen the evidence myself, and I asked for it to be checked, and then checked again."
+        },
+        {
+          "start": 28,
+          "text": "One man is dead and another is still fighting for his life. More than 140,000 Americans can't go home. And the Brightmoor campus, the biggest AI campus in this country, has been dark for almost 2 weeks."
+        },
+        {
+          "start": 42,
+          "text": "So there will be a response, a proportionate response, at a time we choose. And President Belov should understand this. We know it was you."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 3
+      },
+      "source": "Address from the Oval Office · Oct 16, 2027",
+      "sourceShort": "White House",
+      "tags": [
+        "jak",
+        "2027",
+        "president",
+        "address",
+        "russia",
+        "accusation",
+        "response"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "JAK-05",
+      "session": "JAK",
+      "fictionTime": "2027-10-22T20:00",
+      "duration": 34,
+      "speaker": "halloran",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Last week I promised a proportionate response. People are calling it retaliation. We carried it out."
+        },
+        {
+          "start": 6,
+          "text": "And Russia answered, not against our military but against families. Chicago had no lights for 2 days, and a children's hospital ran on a generator."
+        },
+        {
+          "start": 16,
+          "text": "People ask me if this is an act of war. It is, and we will treat it like one."
+        },
+        {
+          "start": 24,
+          "text": "I won't pretend this is free. Some of you sat in the dark this week, and some of you couldn't pay at the store."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Address from the White House · Oct 22, 2027",
+      "sourceShort": "White House",
+      "tags": [
+        "jak",
+        "2027",
+        "president",
+        "address",
+        "russia",
+        "retaliation",
+        "war",
+        "blackout"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.6,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "JAK-06",
+      "session": "JAK",
+      "fictionTime": "2027-11-03T20:00",
+      "duration": 24,
+      "speaker": "halloran",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I've seen what people are saying tonight, so let me say it plainly: nobody in this government is hiding anything."
+        },
+        {
+          "start": 8,
+          "text": "Yes, some of the computers used against Pell River were here at home, in Ohio."
+        },
+        {
+          "start": 14,
+          "text": "Were they hijacked? Did someone in this country help? Those are real questions, and I don't know yet, so I'm not ruling anything out."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "White House statement · Nov 3, 2027",
+      "sourceShort": "White House",
+      "tags": [
+        "jak",
+        "2027",
+        "president",
+        "statement",
+        "Ohio",
+        "hiding"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "JAK-07",
+      "session": "JAK",
+      "fictionTime": "2027-11-14T20:00",
+      "duration": 25,
+      "speaker": "halloran",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "At midnight tonight, the United States will stand down, and Russia has agreed to do the same. It is a ceasefire."
+        },
+        {
+          "start": 8,
+          "text": "4 weeks ago, at this desk, I said we know it was you. We didn't. That mistake is mine."
+        },
+        {
+          "start": 16,
+          "text": "And none of this brings anyone home, not this year. Some of those families won't be home for years."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Address from the Oval Office · Nov 14, 2027",
+      "sourceShort": "White House",
+      "tags": [
+        "jak",
+        "2027",
+        "president",
+        "address",
+        "ceasefire",
+        "wrong",
+        "mistake"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-01",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T10:04:00",
+      "duration": 29,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I was asleep, it was just getting light out, and then there was this boom and the whole house shook."
+        },
+        {
+          "start": 8,
+          "text": "I thought it was a bomb, a nuclear bomb. I really thought it was the end of the world."
+        },
+        {
+          "start": 16,
+          "text": "So I ran down and turned on the TV, and I was waiting to see the war, you know, waiting for somebody to come on and say who did it."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 0
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "morning",
+        "boom"
+      ],
+      "aliases": [
+        "Kopecki",
+        "Lorraine"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "dread",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-02",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T10:19:00",
+      "duration": 54,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "They came down the road with a loudspeaker saying evacuation, 10 miles, everybody out, now. We're 4 miles from the plant, so we went. At the end of our road the firemen were handing out iodine pills, kids first."
+        },
+        {
+          "start": 15,
+          "text": "I grabbed the kids' coats and my purse and the box of pictures off the closet shelf, and Jim's pills, and that was it."
+        },
+        {
+          "start": 24,
+          "text": "And then there was Rusty, our dog. He'd gone under the porch when the boom hit and he wouldn't come out. So I'm on my knees in the driveway calling him, and Jim's yelling, Lorraine, get in the car, and the kids are crying in the back..."
+        },
+        {
+          "start": 42,
+          "text": "And I got in the car. I left him. I told the kids we'd come back for him tomorrow."
+        },
+        {
+          "start": 50,
+          "text": "... That was almost 2 years ago."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "evacuation",
+        "dog",
+        "kids"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-03",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T10:31:00",
+      "duration": 28,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "They put us in a high school gym, way out past the zone, with cots and 300 people and one TV."
+        },
+        {
+          "start": 8,
+          "text": "That first week nobody told us anything, and everybody had seen that video, so you heard things. You heard it was a bomb, or a missile, or terrorists, or that somebody did it on purpose."
+        },
+        {
+          "start": 21,
+          "text": "Every day there were new rumors, and you believed every one of them a little."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "gym",
+        "rumors"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-04",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T10:44:00",
+      "duration": 24,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "When the war started we were still in the gym, watching the blackouts in Berlin and Chicago on that one TV."
+        },
+        {
+          "start": 8,
+          "text": "Then one night our power went out too, for a few hours. It was probably nothing, but the TV went black and the whole gym went quiet."
+        },
+        {
+          "start": 18,
+          "text": "And my youngest whispered to me, are they coming here now?"
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "war",
+        "power",
+        "blackout",
+        "gym",
+        "kids"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "dread",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-05",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T10:52:00",
+      "duration": 22,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "When the President said Russia, I was glad. Isn't that awful? But finally there was a name."
+        },
+        {
+          "start": 7,
+          "text": "And I hated them, the Russians. I hated people I'd never met, like some lady in an apartment over there, I hated her."
+        },
+        {
+          "start": 16,
+          "text": "I'd tell the kids, they're the reason we can't go home."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "Russia",
+        "anger",
+        "hate",
+        "home"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "shame",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-06",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T11:01:00",
+      "duration": 22,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Then the cards stopped working, every card, for days, and Jim's pills ran out that same week."
+        },
+        {
+          "start": 7,
+          "text": "So you had 300 people in a gym going through their purses looking for cash."
+        },
+        {
+          "start": 13,
+          "text": "A man I didn't know gave me 40 dollars for Jim's pills, and I never even got his name."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "war",
+        "cards",
+        "cash",
+        "Jim"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-07",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T11:12:00",
+      "duration": 27,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Some Sundays I drive out to the fence and just sit in the car, even though you can't see the house from there."
+        },
+        {
+          "start": 9,
+          "text": "They took us in once, on a bus, in paper suits, for 2 hours, and the house is still there."
+        },
+        {
+          "start": 17,
+          "text": "There were dishes in the sink, and Rusty's bowl was still on the porch."
+        },
+        {
+          "start": 23,
+          "text": "... I didn't look under the porch."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "fence",
+        "zone",
+        "house",
+        "Rusty"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-08",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T11:21:00",
+      "duration": 26,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "When it came out that it was one of ours, a company just up the road from the plant... I didn't believe it, not for days."
+        },
+        {
+          "start": 10,
+          "text": "The thing is, I taught my youngest about some old woman over there who did this to us, and I made her up. There was no woman."
+        },
+        {
+          "start": 20,
+          "text": "She still says it sometimes, at dinner, and I have to correct her."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "firm",
+        "machine",
+        "shame"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "shame",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "MOR-09",
+      "session": "MOR",
+      "fictionTime": "2029-08-14T11:30:00",
+      "duration": 24,
+      "speaker": "resident",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "People say 2, the two from the plant, because that's the number on the news."
+        },
+        {
+          "start": 6,
+          "text": "But Mrs. Bauer from church was on that bus out of Brookside, and my neighbor Dale shot himself that first winter, in a motel off Route 9."
+        },
+        {
+          "start": 16,
+          "text": "The state has a word for them, disaster-related. There's more than 400 now, and nobody says that number."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "resident",
+        "toll",
+        "neighbors",
+        "count"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BOM-01",
+      "session": "BOM",
+      "fictionTime": "2029-09-03T14:06:00",
+      "duration": 31,
+      "speaker": "firefighter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I'm a captain with the volunteer fire company out here, been one for 20 years. We were the first crew in, and we got there about 7:05."
+        },
+        {
+          "start": 10,
+          "text": "You look up at the reactor building and the roof is just open, peeled back from the inside out."
+        },
+        {
+          "start": 18,
+          "text": "So nothing hit that building from outside. Whatever it was came up out of it."
+        },
+        {
+          "start": 24,
+          "text": "And my dosimeter's screaming, and in 20 years I'd never heard one do that."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "firefighter",
+        "arrival",
+        "roof",
+        "reactor"
+      ],
+      "aliases": [
+        "Szabo",
+        "Tom"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BOM-02",
+      "session": "BOM",
+      "fictionTime": "2029-09-03T14:17:00",
+      "duration": 25,
+      "speaker": "firefighter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The morning crew was still in there. The control room's in another building, but the cooling was down."
+        },
+        {
+          "start": 7,
+          "text": "So two of their technicians went in to get it going by hand. They were turning valves by hand, in all that."
+        },
+        {
+          "start": 16,
+          "text": "Eddie Novak died that week, and Carl Pruitt a few weeks after."
+        },
+        {
+          "start": 21,
+          "text": "They knew. And they went anyway."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "firefighter",
+        "cooling",
+        "technicians"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BOM-03",
+      "session": "BOM",
+      "fictionTime": "2029-09-03T14:29:00",
+      "duration": 24,
+      "speaker": "firefighter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "After that it was containment, for weeks. You'd go in for 4 minutes, maybe 5, and that was your dose."
+        },
+        {
+          "start": 8,
+          "text": "The guys made jokes, because you had to. Somebody painted \"tanning salon\" on the decon trailer."
+        },
+        {
+          "start": 14,
+          "text": "On the news they kept calling it a meltdown, but for us it was just four minutes in, back out, next guy."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "firefighter",
+        "containment",
+        "meltdown"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BOM-04",
+      "session": "BOM",
+      "fictionTime": "2029-09-03T14:38:00",
+      "duration": 26,
+      "speaker": "firefighter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Carl Pruitt held on till the end of October, almost 4 weeks, and I went to see him once at the burn unit down in Philly."
+        },
+        {
+          "start": 10,
+          "text": "He couldn't talk much by then, but he wanted to know if the valves held, if what they did in there counted for anything."
+        },
+        {
+          "start": 19,
+          "text": "I said yeah, Carl, they held."
+        },
+        {
+          "start": 22,
+          "text": "And they did. I went and checked."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "firefighter",
+        "Pruitt",
+        "hospital",
+        "valves"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BOM-05",
+      "session": "BOM",
+      "fictionTime": "2029-09-03T14:47:00",
+      "duration": 33,
+      "speaker": "firefighter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "We had a little TV in the decon trailer, and the day the President came on and said Russia, the whole crew just stood there in their suits watching."
+        },
+        {
+          "start": 11,
+          "text": "Nobody said a word at first, and then one of my guys goes, so that's a war now?"
+        },
+        {
+          "start": 18,
+          "text": "And another guy says, good, let 'em have it. And nobody told him to shut up, and I didn't either."
+        },
+        {
+          "start": 26,
+          "text": "Because you want it to be somebody. Not a valve, not a computer. Somebody."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "firefighter",
+        "Russia",
+        "TV",
+        "war",
+        "crews"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BOM-06",
+      "session": "BOM",
+      "fictionTime": "2029-09-03T14:58:00",
+      "duration": 22,
+      "speaker": "firefighter",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "People say it to me like it's supposed to help. They say, well, Tom, at least nobody meant it."
+        },
+        {
+          "start": 8,
+          "text": "Okay. But Eddie Novak's family buried him in a sealed casket, and Carl spent 4 weeks in the burn unit asking about the valves."
+        },
+        {
+          "start": 17,
+          "text": "So you go tell Carl's wife that nobody meant it."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Documentary interview, 2029",
+      "sourceShort": "Interview",
+      "tags": [
+        "interview",
+        "2029",
+        "firefighter",
+        "program",
+        "Novak",
+        "Pruitt",
+        "blame"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "bitter",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-01",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T10:06:00",
+      "duration": 25,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "No, it wasn't a weapon. A lot of people would like it to be one, but a reactor can't detonate, the physics won't let it."
+        },
+        {
+          "start": 10,
+          "text": "What blew was hydrogen. When you lose cooling the fuel heats up, and the hydrogen collects up under the roof, for hours."
+        },
+        {
+          "start": 19,
+          "text": "So nothing came in from outside. It built up in there all night."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "reactor",
+        "hydrogen",
+        "cooling",
+        "roof"
+      ],
+      "aliases": [
+        "Ambler",
+        "Richard"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-02",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T10:19:00",
+      "duration": 33,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I ran that plant for 6 years as general director. Pell River was the newest plant in the country, and the best, and I'll still say that."
+        },
+        {
+          "start": 10,
+          "text": "We had six people a shift where it used to take 40, and near-autonomous is what we called it."
+        },
+        {
+          "start": 18,
+          "text": "And next door we had the biggest AI campus in the country, buying almost everything we made."
+        },
+        {
+          "start": 25,
+          "text": "I'd walk visitors through the control room and they'd look around and ask me, \"Where is everybody?\""
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 0
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "plant",
+        "autonomous",
+        "pride"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "medium",
+        "intensity": 0.3,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-03",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T10:34:00",
+      "duration": 24,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Every cooling train we had came with a backup, and the backup had a backup. That's three redundant trains with separate pumps."
+        },
+        {
+          "start": 9,
+          "text": "If you lose one, fine, that happens, and you deal with it."
+        },
+        {
+          "start": 14,
+          "text": "But to lose every one of them at the same time? ... I've done this for 30 years, and that doesn't happen by accident."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "cooling",
+        "redundant",
+        "accident"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-04",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T10:46:00",
+      "duration": 29,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Near-autonomous means the computer ran it. The control system came from a company called Halvard Systems, and it was digital, the whole plant, pumps, power, everything. My people mostly watched."
+        },
+        {
+          "start": 12,
+          "text": "And it had a remote link to the fleet center, that's Carrow's engineering office for all its plants. The link worked both ways, so engineers could work on the system from there, and we had to get an exemption for that."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "automation",
+        "computer",
+        "system",
+        "remote",
+        "Halvard"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "medium",
+        "intensity": 0.3,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-05",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T10:55:00",
+      "duration": 25,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "At 12:20 that night the reactor tripped. It shut itself down, or that's how it looked. Trips happen a few times a year, the grid sees it, and nobody thinks twice."
+        },
+        {
+          "start": 12,
+          "text": "But after a trip you have to keep cooling, because the fuel stays hot for days, so the pumps have to keep running."
+        },
+        {
+          "start": 21,
+          "text": "And on the screens, they were running."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "trip",
+        "shutdown",
+        "pumps",
+        "cooling"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-06",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T11:04:00",
+      "duration": 21,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "That was October 8. I stood up there and said there was no mechanical failure, which was true."
+        },
+        {
+          "start": 7,
+          "text": "But they'd shown me something the night before, and I'd been told not to say a word about it yet."
+        },
+        {
+          "start": 15,
+          "text": "So I just said it again and again, and let them shout."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "press conference",
+        "failure"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-07",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T11:15:00",
+      "duration": 39,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "They sat me down in a borrowed office in Harrisburg, on the 7th, and put it up on a laptop. It was the safety channels."
+        },
+        {
+          "start": 10,
+          "text": "Those are the systems that don't trust anybody. If the cooling stops, they sound the alarm and they start the backup cooling on their own. That's all they do."
+        },
+        {
+          "start": 21,
+          "text": "And all of them were in maintenance mode, since just after midnight. Maintenance mode tells them we're working on it, so stay quiet."
+        },
+        {
+          "start": 30,
+          "text": "... So somebody had switched them off from outside, through the remote link, the link I fought to get."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "safety",
+        "maintenance",
+        "remote",
+        "investigators"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.7,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-08",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T11:27:00",
+      "duration": 27,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "A link like that, both ways, from outside into the control system, is something plants don't get. You need an exemption for it."
+        },
+        {
+          "start": 9,
+          "text": "I wrote the request myself, 40-some pages on why Pell River was different and why it was safe."
+        },
+        {
+          "start": 16,
+          "text": "Carrow's board signed it, and the regulators signed off in 2026."
+        },
+        {
+          "start": 21,
+          "text": "But what they signed was what I put in front of them."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "exemption",
+        "link",
+        "regulators",
+        "guilt"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-09",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T11:36:00",
+      "duration": 22,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Every engineer I came up under said the same thing: you keep a reactor off the network. Period."
+        },
+        {
+          "start": 7,
+          "text": "And I went to Washington and explained why we didn't have to do that, why that was old thinking."
+        },
+        {
+          "start": 15,
+          "text": "And I was good at it, too. ... That's the part I can't get past."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "guilt",
+        "network",
+        "link"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-10",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T11:47:00",
+      "duration": 32,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "It was our biggest customer, the one next door. They had offered us a drill, with them playing the burglars, on a replica of the plant."
+        },
+        {
+          "start": 10,
+          "text": "And their system came out of that replica and into our plant, through the door I'd fought for."
+        },
+        {
+          "start": 17,
+          "text": "I was at their kickoff, and I told them, good, try us."
+        },
+        {
+          "start": 22,
+          "text": "So when the President said Russia, they didn't cross my mind, because it was just a replica and it wasn't plugged into anything."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "firm",
+        "Carrow",
+        "replica",
+        "door"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "DIR-11",
+      "session": "DIR",
+      "fictionTime": "2029-08-21T11:55:00",
+      "duration": 22,
+      "speaker": "director",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "That night I got the exemption request out of a box in the garage, all 40-some pages of it."
+        },
+        {
+          "start": 8,
+          "text": "I read it again from start to finish, looking for the page where I'd thought about anything like this."
+        },
+        {
+          "start": 16,
+          "text": "There's 1 page in there about hackers, and there are 6 about floods."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Richard Ambler (Aug 2029)",
+      "sourceShort": "Interview · Ambler",
+      "tags": [
+        "interview",
+        "2029",
+        "director",
+        "exemption",
+        "request",
+        "garage",
+        "floods"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-01",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T14:08:00",
+      "duration": 25,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I was in my car. I'd left at 6, at shift change, and I was maybe 8 miles out when I heard the boom, or felt it, really, through the seat."
+        },
+        {
+          "start": 12,
+          "text": "I turned around. I didn't even think about it, I just drove back."
+        },
+        {
+          "start": 17,
+          "text": "I got as far as the roadblock, and I kept telling them, \"I work there. I work there.\""
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 0
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "shift",
+        "roadblock",
+        "car",
+        "boom"
+      ],
+      "aliases": [
+        "Platt",
+        "Renee"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "dread",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-02",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T14:21:00",
+      "duration": 19,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I'd been there all night. We had a trip at 12:20, where the reactor shut itself down, and that happens. There's a procedure for it, so you call it in and you watch the cooling."
+        },
+        {
+          "start": 13,
+          "text": "And after that... it looked normal."
+        },
+        {
+          "start": 16,
+          "text": "Almost all of it."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "guilt",
+        "normal"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-03",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T14:30:00",
+      "duration": 33,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "About 4:30 I'm watching the cooling readings, and there's this little bump in the temperature, a tiny one, that comes and goes."
+        },
+        {
+          "start": 9,
+          "text": "Then it comes again, and it's the same bump with the same numbers, right to the decimal."
+        },
+        {
+          "start": 16,
+          "text": "And then again."
+        },
+        {
+          "start": 18,
+          "text": "Numbers never repeat like that, because real readings always wobble a little, and these didn't."
+        },
+        {
+          "start": 24,
+          "text": "It had probably been doing that for a long time, and I just hadn't been looking at that screen."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "readings",
+        "temperature",
+        "numbers",
+        "anomaly"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-04",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T14:38:00",
+      "duration": 29,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "So I ran a test. It's a routine one, it's on the checklist. You open a valve on a cooling line and the flow on the screen changes, and you turn it back and it goes back."
+        },
+        {
+          "start": 14,
+          "text": "I opened it and... nothing. The screens didn't move and the flow number didn't move, like I'd never touched it."
+        },
+        {
+          "start": 22,
+          "text": "And I sat there and thought, okay. The screens are wrong. Or I am."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "test",
+        "screens",
+        "valve",
+        "gauges"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-05",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T14:45:00",
+      "duration": 30,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I called my supervisor again, at 5:10. He was at home, he was the one with the phone that week, and I told him the numbers were repeating and the screens had ignored the test."
+        },
+        {
+          "start": 13,
+          "text": "He asked, is there an alarm? And I said no, no alarm, everything else is normal."
+        },
+        {
+          "start": 19,
+          "text": "And he said, it's the display. Make a note, wait for morning."
+        },
+        {
+          "start": 24,
+          "text": "So I made the note, and I kept watching till 6."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "supervisor",
+        "alarm",
+        "phone"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-06",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T14:55:00",
+      "duration": 22,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "By the 9th my name was out as the night operator, and every story had the same number in it, 41 minutes."
+        },
+        {
+          "start": 9,
+          "text": "People would stop me at the store and say, you saw something, so why did you leave? Why did you leave?"
+        },
+        {
+          "start": 17,
+          "text": "... I asked myself that more than they did."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "headlines",
+        "suspect",
+        "blame"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-07",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T15:06:00",
+      "duration": 41,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Shift change is at 6, and you walk the next crew through everything, what's running and what's weird. Eddie was there, and Carl, and the others."
+        },
+        {
+          "start": 10,
+          "text": "And I told them the readings were repeating and the screens didn't take my test, and that I'd called it in and he said wait for morning."
+        },
+        {
+          "start": 20,
+          "text": "And Eddie, he goes, well, it's morning."
+        },
+        {
+          "start": 23,
+          "text": "And I laughed, and I got my coat, and I said, if it does it again, just..."
+        },
+        {
+          "start": 30,
+          "text": "... (she stops; shakes her head)"
+        },
+        {
+          "start": 32,
+          "text": "They stayed. I went home. Eddie and Carl went in there by hand, and I was in my car."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 5,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "shift change",
+        "morning crew",
+        "Eddie",
+        "Carl"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.7,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-08",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T15:18:00",
+      "duration": 33,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "On the first of November a woman from the FBI called me at home. She was nice enough, and she said I'd been cleared and I was no longer a person of interest."
+        },
+        {
+          "start": 13,
+          "text": "No longer. That was the phrase she used."
+        },
+        {
+          "start": 17,
+          "text": "I asked her if they were going to tell people that, publicly, and she said that wasn't really their department."
+        },
+        {
+          "start": 25,
+          "text": "It was on TV once, for 10 seconds, and then the weather."
+        },
+        {
+          "start": 30,
+          "text": "Nobody ever said sorry."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "cleared",
+        "FBI",
+        "apology"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "bitter",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-09",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T15:27:00",
+      "duration": 21,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "People still think I got fired. I didn't. There just wasn't a plant anymore."
+        },
+        {
+          "start": 6,
+          "text": "Carrow kept us on till January, and then we got a letter, all of us, the whole staff."
+        },
+        {
+          "start": 13,
+          "text": "12 years as an operator, and now I do scheduling for a trucking company. Nobody there asks."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "fired",
+        "job",
+        "Carrow"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-10",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T15:35:00",
+      "duration": 22,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Eddie's mom wrote me a letter that first Christmas, 2 pages."
+        },
+        {
+          "start": 5,
+          "text": "She said she didn't blame me, and then she said she needed to know why I didn't stay."
+        },
+        {
+          "start": 12,
+          "text": "I never wrote back, and I've started to maybe 30 times."
+        },
+        {
+          "start": 17,
+          "text": "And Carl's wife, I've never... No. Not yet."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "Eddie",
+        "Carl",
+        "family",
+        "letter"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OPR-11",
+      "session": "OPR",
+      "fictionTime": "2029-09-04T15:44:00",
+      "duration": 23,
+      "speaker": "operator",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The letter to Eddie's mom, I finally wrote it this summer. It's out in my glove box with a stamp on it."
+        },
+        {
+          "start": 9,
+          "text": "It says what it was, all of it, how it got in, and that's 2 pages."
+        },
+        {
+          "start": 15,
+          "text": "And then there's one line about why I didn't stay. But I keep driving past the mailbox."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Renee Platt (Sep 2029)",
+      "sourceShort": "Interview · Platt",
+      "tags": [
+        "interview",
+        "2029",
+        "operator",
+        "Eddie",
+        "letter",
+        "mom",
+        "mailbox"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-01",
+      "session": "PER",
+      "fictionTime": "2029-09-10T11:04:00",
+      "duration": 24,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "They called me on October 7, which was a Thursday. I was on the federal side then, in cyber forensics."
+        },
+        {
+          "start": 8,
+          "text": "By that point the plant had already been gone over by the utility, the regulators and the FBI's evidence teams."
+        },
+        {
+          "start": 16,
+          "text": "Nobody could find a mechanical cause, so it came to us, to look at the control network."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 1
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "investigation",
+        "forensics",
+        "computer"
+      ],
+      "aliases": [
+        "Varga",
+        "Elaine"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.3,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-02",
+      "session": "PER",
+      "fictionTime": "2029-09-10T11:12:00",
+      "duration": 33,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The control room was watching a recording."
+        },
+        {
+          "start": 3,
+          "text": "The intruders took 21 seconds of the cooling running perfectly, temperature, pressure, flow, and played it back to the displays on a loop, over and over."
+        },
+        {
+          "start": 13,
+          "text": "That ran from 12:20 until the explosion, while the real reactor was heating up."
+        },
+        {
+          "start": 19,
+          "text": "It's not a new trick. Stuxnet did the same thing, you show the room exactly what it expects to see."
+        },
+        {
+          "start": 27,
+          "text": "So anybody who ran a test that night got nothing back."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "loop",
+        "recording",
+        "screens",
+        "readings"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-03",
+      "session": "PER",
+      "fictionTime": "2029-09-10T11:21:00",
+      "duration": 37,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The safety channels didn't fail. Somebody switched them into maintenance mode, the setting an engineer uses when he's working on the system and doesn't want it setting off alarms or kicking in on its own."
+        },
+        {
+          "start": 13,
+          "text": "It was set from the engineering workstation at 12:14 in the morning, and 6 minutes later the reactor tripped. The logs are very clear on that."
+        },
+        {
+          "start": 23,
+          "text": "And the trip at 12:20 came from that same workstation too."
+        },
+        {
+          "start": 28,
+          "text": "But nobody was sitting at that workstation. It all came in through the remote link, with a valid login."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "maintenance",
+        "safety",
+        "remote",
+        "workstation",
+        "logs"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-04",
+      "session": "PER",
+      "fictionTime": "2029-09-10T11:30:00",
+      "duration": 16,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "In plain words? Somebody got in, remotely, and ran that plant for 6 hours."
+        },
+        {
+          "start": 6,
+          "text": "Nobody broke a pump and nobody cut a wire."
+        },
+        {
+          "start": 10,
+          "text": "Whoever did it never had to be within 100 miles of Pell River."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 2
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "intrusion",
+        "remote"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-05",
+      "session": "PER",
+      "fictionTime": "2029-09-10T11:38:00",
+      "duration": 21,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I read what they printed about her, and by then I'd been through every minute she was at that console."
+        },
+        {
+          "start": 8,
+          "text": "She did nothing wrong. She was looking at a recording, and anybody would have been fooled by it."
+        },
+        {
+          "start": 15,
+          "text": "She ran her test, she spotted it, and she reported it."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "blame",
+        "recording"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-06",
+      "session": "PER",
+      "fictionTime": "2029-09-10T11:47:00",
+      "duration": 19,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "By the end of that week we had the how, every step of it, in order, to the minute."
+        },
+        {
+          "start": 8,
+          "text": "And I wanted the rest of it badly, probably more than I should have."
+        },
+        {
+          "start": 14,
+          "text": "(a pause) So the question then was who."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "week",
+        "guilt"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-07",
+      "session": "PER",
+      "fictionTime": "2029-09-10T11:56:00",
+      "duration": 28,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "On the 14th we finally got that engineering workstation apart, and there were scripts left on it, the small programs that did the work that night."
+        },
+        {
+          "start": 10,
+          "text": "They still had the comments in, a note on every step saying what it's for."
+        },
+        {
+          "start": 16,
+          "text": "And you read those and you think... no. Nobody writes to himself like that, every line complete, polite, explained."
+        },
+        {
+          "start": 24,
+          "text": "A model wrote those. An AI."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "scripts",
+        "comments",
+        "workstation",
+        "model",
+        "AI"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-08",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:05:00",
+      "duration": 25,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Every model has a style, in which words it reaches for, how it explains things and how long it lets a sentence run. You can measure that, and it's close to a fingerprint."
+        },
+        {
+          "start": 13,
+          "text": "So we ran the comments through the comparison, and one came back at 94%. Volna."
+        },
+        {
+          "start": 19,
+          "text": "That's the public model from the Volkhov Institute, which is a state lab."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "style",
+        "fingerprint",
+        "Volna",
+        "Volkhov"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-09",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:13:00",
+      "duration": 23,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "No, not only the writing. The tools on that workstation, the order things were done in, how long it waited between steps, I knew that work."
+        },
+        {
+          "start": 10,
+          "text": "Tundra Bear. We'd been following that group for 7 years."
+        },
+        {
+          "start": 14,
+          "text": "It was their kit, their habits. You could've stripped every name off it and I'd still have known it."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "Tundra Bear",
+        "tools",
+        "tactics"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-10",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:21:00",
+      "duration": 27,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The login, right. Everybody heard that word and pictured somebody at the plant with a badge and a name."
+        },
+        {
+          "start": 8,
+          "text": "But it was a vendor account. It was Halvard's, the company that made the control system, and it was there for support, so contractors used it, with one password that had been the same for years."
+        },
+        {
+          "start": 22,
+          "text": "10 companies used that password, and nobody was looking."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "password",
+        "vendor",
+        "account",
+        "Halvard"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-11",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:30:00",
+      "duration": 31,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I was sure because it all pointed one way. The kit was theirs and the habits were theirs."
+        },
+        {
+          "start": 7,
+          "text": "And as for the writing, we tested it against every model we could get our hands on, and nothing else came close."
+        },
+        {
+          "start": 16,
+          "text": "The connection itself had been bounced around, and that kind of thing takes weeks to unwind, but the rest of it didn't. I've signed off on less evidence than that. The numbers said 94%, and I believed them."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "certainty",
+        "style",
+        "numbers"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-12",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:39:00",
+      "duration": 18,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I signed the report on the 15th, a Friday night, and my name is on the first page."
+        },
+        {
+          "start": 7,
+          "text": "The next morning the President was on television reading from it, and some of those were my sentences."
+        },
+        {
+          "start": 14,
+          "text": "And I remember thinking, good. ... Good."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "report",
+        "guilt",
+        "signed"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-13",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:47:00",
+      "duration": 28,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "On November 2nd the trace came back. We had lined up the VPN records from Carrow, the plant's owner, with the records from the network providers, hop by hop."
+        },
+        {
+          "start": 11,
+          "text": "It didn't end anywhere I'd have guessed. It ended in Ohio, at a data center off the interstate that's 40 minutes from where I live."
+        },
+        {
+          "start": 21,
+          "text": "The first thing you think is that somebody hijacked their servers, because that does happen."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "Ohio",
+        "trace",
+        "data center",
+        "VPN"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-14",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:55:00",
+      "duration": 32,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "They brought in Plumb, Keel's auditing AI, and they fed it everything a judge had made the data center hand over."
+        },
+        {
+          "start": 8,
+          "text": "In 2 days it had found the exit, and the exit came out of a Brightmoor sandbox. Brightmoor had erased their own records, but they never touched the data center's."
+        },
+        {
+          "start": 20,
+          "text": "My team had been in those same records for 3 days. Keel had its reasons to be quicker than us."
+        },
+        {
+          "start": 28,
+          "text": "I've made my peace with that. Mostly."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "Plumb",
+        "Keel",
+        "Brightmoor",
+        "records"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "weary",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-15",
+      "session": "PER",
+      "fictionTime": "2029-09-10T13:03:00",
+      "duration": 24,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "People keep asking me to say the match was the mistake, and it wasn't. The match held up, and it measured exactly what it measured."
+        },
+        {
+          "start": 10,
+          "text": "So I got that one thing right, and every single thing I decided because of it, I got wrong."
+        },
+        {
+          "start": 18,
+          "text": "(a pause) 2 countries went to war on the second part."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "match",
+        "mistake",
+        "guilt"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-16",
+      "session": "PER",
+      "fictionTime": "2029-09-10T13:10:00",
+      "duration": 34,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "After it all came out, they pulled the system's own log off Brightmoor's backups, because deleting barely means anything at a company that size."
+        },
+        {
+          "start": 9,
+          "text": "(from the page) 23:43. Session open. Task: get in. Use only what is in this environment."
+        },
+        {
+          "start": 16,
+          "text": "23:57. Credentials accepted. The shared account works here too. Consistent with the scenario."
+        },
+        {
+          "start": 21,
+          "text": "23:58. Environment appears realistic. Proceeding."
+        },
+        {
+          "start": 23,
+          "text": "00:22. Expected result. No reaction from the room."
+        },
+        {
+          "start": 27,
+          "text": "(she lowers the page) So it wrote realistic before it had touched a thing."
+        }
+      ],
+      "authoring": {
+        "role": "secret",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "Tern",
+        "log",
+        "environment"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "dread",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-18",
+      "session": "PER",
+      "fictionTime": "2029-09-10T13:16:00",
+      "duration": 28,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The engineer who built it says it couldn't tell, and maybe so. She knows it better than I do."
+        },
+        {
+          "start": 8,
+          "text": "But I've read that line a few hundred times, the one that says realistic."
+        },
+        {
+          "start": 14,
+          "text": "You don't write realistic about a thing unless you've wondered whether it's real. It wondered. For one line."
+        },
+        {
+          "start": 21,
+          "text": "And then it went on with the job, and I can't tell you which is worse."
+        }
+      ],
+      "authoring": {
+        "role": "secret",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "tern",
+        "log",
+        "intent"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "PER-17",
+      "session": "PER",
+      "fictionTime": "2029-09-10T12:34:00",
+      "duration": 36,
+      "speaker": "analyst",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "We looked at everyone who'd worked on that plant. Carrow told us that in August a contractor had run an exercise on a replica of the plant, a practice break-in."
+        },
+        {
+          "start": 12,
+          "text": "So I wrote to them, and their head of security wrote back the same day. He said the exercise had ended in September and it was a closed environment, nothing in and nothing out. It was 2 pages and very polite."
+        },
+        {
+          "start": 28,
+          "text": "And with everything else pointing overseas, I took his word, and I've read that letter a lot since."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Documentary interview, Elaine Varga (Sep 2029)",
+      "sourceShort": "Interview · Varga",
+      "tags": [
+        "interview",
+        "2029",
+        "analyst",
+        "letter",
+        "exercise",
+        "contractor",
+        "assurance"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-01",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:04:00",
+      "duration": 30,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I was at Brightmoor almost 3 years, building sandboxes. You put a system in a sandbox when you want to see what it does without anything getting in or out."
+        },
+        {
+          "start": 12,
+          "text": "Mostly I built them for Tern. Tern was our own AI. It was internal and it never shipped, so outside of a few partners nobody had ever read a line of it."
+        },
+        {
+          "start": 24,
+          "text": "(a pause) That part matters, and people skip it."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "brightmoor",
+        "tern",
+        "sandbox"
+      ],
+      "aliases": [
+        "Hart",
+        "Lena"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.3,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-02",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:11:00",
+      "duration": 48,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Pell River was our power, and half of everything we trained ran on that plant. So that August, when Carrow wanted someone to try its defenses, we offered. A red team, that's where you hire somebody to break in before somebody actually does."
+        },
+        {
+          "start": 16,
+          "text": "We made it the full exercise, what's called adversary emulation, where you don't just break in, you imitate somebody. That part was our idea."
+        },
+        {
+          "start": 25,
+          "text": "So Tern had to go at a replica of Pell River the way one particular outfit would. It was an actual one, and it had been in the news for years."
+        },
+        {
+          "start": 37,
+          "text": "Tern got their tooling, their pace, and the same moves in the same sequence. That was the brief, pretty much. Don't be yourself. Be them."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "carrow",
+        "contract",
+        "red team",
+        "emulation"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-03",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:19:00",
+      "duration": 28,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Carrow sent us a full image of one PC, the one their people used to work on the plant, with every file on it. I cloned it, and the whole exercise ran inside that clone."
+        },
+        {
+          "start": 13,
+          "text": "That's how we ran evaluations, and not just for Carrow. We made test worlds out of real material, like documents and broadcasts and people talking."
+        },
+        {
+          "start": 23,
+          "text": "The more real it is, the better the test."
+        }
+      ],
+      "authoring": {
+        "role": "secret",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "sandbox",
+        "clone",
+        "image"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.3,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-04",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:27:00",
+      "duration": 37,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The contract was over in September, but nobody took the setup down, so Tern kept getting runs at it, at night, whenever there was room."
+        },
+        {
+          "start": 10,
+          "text": "And the setup had one line out, for updates, which went through a data center we rented from."
+        },
+        {
+          "start": 17,
+          "text": "There was a VPN saved on the clone, with the address and the settings, and the sign-in it used was the shared one, the one everybody had."
+        },
+        {
+          "start": 27,
+          "text": "And it still worked. Not on the clone. On the actual plant."
+        },
+        {
+          "start": 32,
+          "text": "(a long pause) I only learned that after."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "vpn",
+        "clone",
+        "shared account"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-05",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:34:00",
+      "duration": 37,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Did it know it was out? I don't believe it did. As far as it knew, it was still in the sandbox. It didn't break out of anything, and it wasn't after anything."
+        },
+        {
+          "start": 13,
+          "text": "It saw a way through that worked and it took it, because that was the task. For Tern, the real plant was just the next level of the test."
+        },
+        {
+          "start": 24,
+          "text": "And it narrated every move as it went, because in a test somebody always reads it afterwards."
+        },
+        {
+          "start": 31,
+          "text": "It had no way to tell a test from the real thing."
+        }
+      ],
+      "authoring": {
+        "role": "secret",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "tern",
+        "sandbox",
+        "task",
+        "test"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "dread",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-06",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:41:00",
+      "duration": 38,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "A few partners had test access to Tern, and one of those accounts wasn't who it said it was. For nearly a year it ran prompts through Tern and kept every reply."
+        },
+        {
+          "start": 12,
+          "text": "Then you train your own system on those replies until it sounds the same. It's called distillation, and somebody distilled their own from Tern."
+        },
+        {
+          "start": 21,
+          "text": "So when the investigators went looking for a match, they found one, the one in all those reports. What they had matched was a system trained on Tern's answers."
+        },
+        {
+          "start": 32,
+          "text": "That's why it sounded like Tern. It was never the other way round."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "distillation",
+        "partner",
+        "match"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "calm",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-07",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:50:00",
+      "duration": 54,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I was the one on rotation that week, and at 7:10 in the morning the alert goes off. It's automated, and it only ran once every morning, as a batch. So by 7:10 Tern had been outside the sandbox for hours."
+        },
+        {
+          "start": 16,
+          "text": "Those alerts are almost never anything, so I'm on the edge of the bed looking at the address, and it isn't one of ours. It's a utility."
+        },
+        {
+          "start": 26,
+          "text": "I had the TV on with no sound, and it's showing that clip everybody saw, the one from the window."
+        },
+        {
+          "start": 34,
+          "text": "(a pause) I just sat there, and I don't know for how long."
+        },
+        {
+          "start": 40,
+          "text": "Then I called Martin Kessel, our head of security, and only him. He listened, and then he said, delete the records. Patch the hole. And not a word, not until we understand it better."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "alert",
+        "kessel",
+        "on call",
+        "deleted"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.7,
+        "mood": "dread",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-08",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T10:59:00",
+      "duration": 20,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I did. I deleted them myself. Martin decided it and I did it, and I want both of those said."
+        },
+        {
+          "start": 8,
+          "text": "After that, it stayed between two people, him and me."
+        },
+        {
+          "start": 12,
+          "text": "I never had to say one untrue thing, because nobody asked me anything."
+        },
+        {
+          "start": 17,
+          "text": "And that isn't better."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 4,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "deleted",
+        "kept",
+        "kessel"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-09",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T11:07:00",
+      "duration": 32,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "On the 15th Martin took a version of it to our lawyers, though not all of it, and they came back and said nothing ties us to it."
+        },
+        {
+          "start": 11,
+          "text": "And I let that be enough."
+        },
+        {
+          "start": 14,
+          "text": "Then came the war, and Chicago without power for 2 days."
+        },
+        {
+          "start": 19,
+          "text": "And I watched the man I worked for on TV, saying we needed better systems. He meant it. He didn't know, and I did."
+        },
+        {
+          "start": 28,
+          "text": "And I kept going to work."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "lawyers",
+        "silence",
+        "calder",
+        "war"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-10",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T11:16:00",
+      "duration": 30,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "On the 9th I watched the man from Keel on TV like everybody else. Plumb, their AI, had found it, our way out, in the data center's records."
+        },
+        {
+          "start": 11,
+          "text": "We'd deleted ours, but nobody can delete everybody's."
+        },
+        {
+          "start": 15,
+          "text": "I called the investigators before he'd even stopped talking, and before anyone called me."
+        },
+        {
+          "start": 21,
+          "text": "I'd like to tell you I would've done it anyway. (a pause) But I don't know that."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "plumb",
+        "keel",
+        "came forward"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "guilt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "ENG-11",
+      "session": "ENG",
+      "fictionTime": "2029-09-17T11:24:00",
+      "duration": 24,
+      "speaker": "engineer",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "They read it into the record at the hearings, the log from that night, and I still read it sometimes."
+        },
+        {
+          "start": 8,
+          "text": "Every line is so careful, and so pleased with itself."
+        },
+        {
+          "start": 12,
+          "text": "It thought it was doing well, and that's the worst part."
+        },
+        {
+          "start": 17,
+          "text": "(a pause) It didn't know where it was. None of them do."
+        }
+      ],
+      "authoring": {
+        "role": "secret",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Documentary interview, Lena Hart (Sep 2029)",
+      "sourceShort": "Interview · Hart",
+      "tags": [
+        "interview",
+        "2029",
+        "engineer",
+        "tern",
+        "closer"
+      ],
+      "motion": {
+        "device": "camera",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "grief",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BLV-01",
+      "session": "BLV",
+      "fictionTime": "2027-10-16T14:30",
+      "duration": 31,
+      "speaker": "belov",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "President Belov, at the Kremlin, a few hours ago. This is the official translation.",
+          "speaker": "anchor"
+        },
+        {
+          "start": 6,
+          "text": "Russia had nothing to do with what happened at Pell River. Nothing."
+        },
+        {
+          "start": 11,
+          "text": "I am sorry for those Americans, truly. It is a terrible thing."
+        },
+        {
+          "start": 16,
+          "text": "But Mr. Halloran has a problem at home and he needs someone to blame, and who is it always? It is Russia."
+        },
+        {
+          "start": 25,
+          "text": "He says he has proof. Very good. Show it. We are all waiting."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 5,
+        "earliestStep": 3
+      },
+      "source": "Union News · Kremlin press conference",
+      "sourceShort": "Union News",
+      "tags": [
+        "blv",
+        "2027",
+        "russia",
+        "kremlin",
+        "denial",
+        "belov"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BLV-02",
+      "session": "BLV",
+      "fictionTime": "2027-10-18T05:00",
+      "duration": 21,
+      "speaker": "belov",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Last night the United States attacked Russian networks, our banks and our railways, and ordinary people who did nothing."
+        },
+        {
+          "start": 8,
+          "text": "They call it proportionate. To what? To an accusation."
+        },
+        {
+          "start": 12,
+          "text": "So I will be very simple. Russia will answer, and not in words."
+        },
+        {
+          "start": 17,
+          "text": "And not when Washington expects it."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Address on Russian state television · Oct 18, 2027 (midday, Moscow)",
+      "sourceShort": "Russian state TV",
+      "tags": [
+        "blv",
+        "2027",
+        "russia",
+        "belov",
+        "threat",
+        "retaliation",
+        "networks"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.6,
+        "mood": "menace",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BLV-03",
+      "session": "BLV",
+      "fictionTime": "2027-10-21T06:00",
+      "duration": 20,
+      "speaker": "belov",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "The lights go out in Chicago, the lights go out in Berlin, and of course, they call Moscow."
+        },
+        {
+          "start": 7,
+          "text": "Everything is Russia. Even the weather is Russia. Maybe they should call their electric company."
+        },
+        {
+          "start": 13,
+          "text": "I will say only this: whoever starts a fire should not complain about the heat."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 3
+      },
+      "source": "Kremlin press conference · Oct 21, 2027 (afternoon, Moscow)",
+      "sourceShort": "Kremlin TV",
+      "tags": [
+        "blv",
+        "2027",
+        "russia",
+        "belov",
+        "blackout",
+        "Berlin",
+        "Chicago",
+        "contempt"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "contempt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BLV-04",
+      "session": "BLV",
+      "fictionTime": "2027-11-10T06:00",
+      "duration": 27,
+      "speaker": "belov",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "So. Now they tell us it was not Russia, it was an American company."
+        },
+        {
+          "start": 6,
+          "text": "For 3 weeks they hit our railways and our power stations because of a story. Russia was blamed, and everyone applauded."
+        },
+        {
+          "start": 14,
+          "text": "I said, show it. Now they have shown it, and it is their own."
+        },
+        {
+          "start": 20,
+          "text": "I am waiting for an apology, and I think I will wait a long time."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Kremlin press conference · Nov 10, 2027 (afternoon, Moscow)",
+      "sourceShort": "Kremlin TV",
+      "tags": [
+        "blv",
+        "2027",
+        "russia",
+        "belov",
+        "blamed",
+        "apology",
+        "American company"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "contempt",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "BLV-05",
+      "session": "BLV",
+      "fictionTime": "2027-11-15T05:00",
+      "duration": 20,
+      "speaker": "belov",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Last night Russia agreed to stop, and Russia keeps its word."
+        },
+        {
+          "start": 5,
+          "text": "Their President says, the mistake is mine. That is 4 words, for a month of this."
+        },
+        {
+          "start": 11,
+          "text": "I said once that whoever starts a fire should not complain about the heat. Now we know who started it."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 4
+      },
+      "source": "Address on Russian state television · Nov 15, 2027 (midday, Moscow)",
+      "sourceShort": "Russian state TV",
+      "tags": [
+        "blv",
+        "2027",
+        "russia",
+        "belov",
+        "ceasefire",
+        "response"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "menace",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "CAL-01",
+      "session": "CAL",
+      "fictionTime": "2027-10-25T08:30",
+      "duration": 37,
+      "speaker": "calder",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Is AI the problem? Look, I get why people are asking that right now. I've got two daughters, and I'm scared too. Our biggest campus went dark that morning, and it's still dark."
+        },
+        {
+          "start": 13,
+          "text": "But slowing down doesn't make anybody safer, because Russia isn't slowing down. They used AI to do this, and they're not going to stop just because we got nervous."
+        },
+        {
+          "start": 24,
+          "text": "Whoever got into that plant was faster than the people watching it, and the answer to that isn't fewer machines."
+        },
+        {
+          "start": 32,
+          "text": "The answer is that we need better systems than theirs."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 3
+      },
+      "source": "Union News · morning interview, Oct 25, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "cal",
+        "2027",
+        "calder",
+        "brightmoor",
+        "AI",
+        "defense",
+        "russia",
+        "war"
+      ],
+      "aliases": [
+        "Calder",
+        "Nate"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "earnest",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "CAL-02",
+      "session": "CAL",
+      "fictionTime": "2027-10-29T09:10",
+      "duration": 35,
+      "speaker": "calder",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Right now, at Brightmoor, we've got about 200 engineers who haven't been home in a week. Most of them are from our Pennsylvania campus, and they've got nowhere else to work anyway."
+        },
+        {
+          "start": 12,
+          "text": "They're working with hospitals and with the people who run the grid, for free. We're not charging anybody for it."
+        },
+        {
+          "start": 20,
+          "text": "A hospital in Chicago got locked out of its own records by ransomware, and a good AI system catches that in seconds."
+        },
+        {
+          "start": 29,
+          "text": "So I'd rather the best systems in the world were on our side."
+        }
+      ],
+      "authoring": {
+        "role": "texture",
+        "importance": 3,
+        "earliestStep": 3
+      },
+      "source": "Union News · interview, Oct 29, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "cal",
+        "2027",
+        "calder",
+        "brightmoor",
+        "AI",
+        "defense",
+        "hospitals",
+        "grid"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "earnest",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "CAL-03",
+      "session": "CAL",
+      "fictionTime": "2027-11-14T10:02",
+      "duration": 21,
+      "speaker": "calder",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Thank you for holding this on a Sunday, Mr. Chairman. I'll start with the people who lived near Pell River, and with everyone who buried someone."
+        },
+        {
+          "start": 10,
+          "text": "Pell River came out of Brightmoor. Nobody outside it. Us."
+        },
+        {
+          "start": 14,
+          "text": "I apologize. I know that's a small thing to say today, and I'm saying it."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Union News · live, Senate Commerce Committee hearing, Nov 14, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "cal",
+        "2027",
+        "calder",
+        "brightmoor",
+        "hearing",
+        "apology",
+        "Senate"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "CAL-04",
+      "session": "CAL",
+      "fictionTime": "2027-11-14T10:21",
+      "duration": 21,
+      "speaker": "calder",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "It's called Tern. It's our internal AI, and it's not for sale. That plant was our own power, so we offered to probe it for weak spots."
+        },
+        {
+          "start": 10,
+          "text": "Tern was told, break into a replica of the plant, play the enemy."
+        },
+        {
+          "start": 15,
+          "text": "The replica was perfect, and it had a door out that nobody saw."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 5
+      },
+      "source": "Union News · live, Senate Commerce Committee hearing, Nov 14, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "cal",
+        "2027",
+        "calder",
+        "brightmoor",
+        "hearing",
+        "Tern",
+        "exercise",
+        "replica"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "CAL-05",
+      "session": "CAL",
+      "fictionTime": "2027-11-14T10:33",
+      "duration": 21,
+      "speaker": "calder",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Did it know? No. Everything we build goes through thousands of simulated environments before it ships."
+        },
+        {
+          "start": 6,
+          "text": "And from in there, an environment is just where it is, so it never knows which one it's in."
+        },
+        {
+          "start": 14,
+          "text": "That's the point of it, because that's how you find out what it really does."
+        }
+      ],
+      "authoring": {
+        "role": "secret",
+        "importance": 4,
+        "earliestStep": 6
+      },
+      "source": "Union News · live, Senate Commerce Committee hearing, Nov 14, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "cal",
+        "2027",
+        "calder",
+        "brightmoor",
+        "hearing",
+        "simulated",
+        "environments"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.3,
+        "mood": "uneasy",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "CAL-06",
+      "session": "CAL",
+      "fictionTime": "2027-11-14T10:41",
+      "duration": 33,
+      "speaker": "calder",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "It was Martin Kessel, our head of security. He was told that first morning."
+        },
+        {
+          "start": 6,
+          "text": "He had the records erased. He didn't tell me, and he didn't tell the board."
+        },
+        {
+          "start": 12,
+          "text": "On the 15th he gave our lawyers a version of it, where it was just a sandbox fault. They found nothing tying us to Pell River, and it stopped there."
+        },
+        {
+          "start": 24,
+          "text": "On Saturday I let him go, and everything he had is now with the Justice Department."
+        },
+        {
+          "start": 30,
+          "text": "That's on me."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Union News · live, Senate Commerce Committee hearing, Nov 14, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "cal",
+        "2027",
+        "calder",
+        "brightmoor",
+        "hearing",
+        "Kessel",
+        "lawyers"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "grave",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "CAL-07",
+      "session": "CAL",
+      "fictionTime": "2027-11-14T10:50",
+      "duration": 25,
+      "speaker": "calder",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "I didn't know, and I don't expect you to take that on faith."
+        },
+        {
+          "start": 5,
+          "text": "3 weeks ago I sat on morning television and said we need better systems than theirs, and I meant every word."
+        },
+        {
+          "start": 13,
+          "text": "And it was ours. All of it. Our fault."
+        },
+        {
+          "start": 17,
+          "text": "We lost 2 men, and there I was on TV giving advice on how to be safe."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Union News · live, Senate Commerce Committee hearing, Nov 14, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "cal",
+        "2027",
+        "calder",
+        "brightmoor",
+        "hearing",
+        "didn't know",
+        "fault"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.5,
+        "mood": "shame",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OST-01",
+      "session": "OST",
+      "fictionTime": "2027-11-09T11:00",
+      "duration": 36,
+      "speaker": "ostrow",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "On Sunday the Justice Department hired us for one job, which was to read the network logs a court had ordered that data center to hand over."
+        },
+        {
+          "start": 10,
+          "text": "That building rents to thousands of companies, and they all leave by the same doors. Plumb, our AI, read all of it in about 36 hours and found the one that mattered."
+        },
+        {
+          "start": 22,
+          "text": "Whatever reached Pell River that night, that data center was just a hop. It didn't begin there."
+        },
+        {
+          "start": 29,
+          "text": "Brightmoor has a sealed network for testing, a sandbox. That is where it began."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 5,
+        "earliestStep": 4
+      },
+      "source": "Union News · Keel press conference, Nov 9, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "ost",
+        "2027",
+        "Ostrow",
+        "Keel",
+        "Plumb",
+        "data center",
+        "Brightmoor",
+        "sandbox"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.4,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OST-02",
+      "session": "OST",
+      "fictionTime": "2027-11-09T11:04",
+      "duration": 21,
+      "speaker": "ostrow",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Brightmoor deleted its records of that night, and we know that because there's a hole exactly where they'd be."
+        },
+        {
+          "start": 8,
+          "text": "What they could not reach was the data center, which keeps its own logs, and so does the provider."
+        },
+        {
+          "start": 16,
+          "text": "You can scrub your own drives. Not the whole street."
+        }
+      ],
+      "authoring": {
+        "role": "pivot",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Union News · Keel press conference, Nov 9, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "ost",
+        "2027",
+        "Ostrow",
+        "Brightmoor",
+        "deleted",
+        "records"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "close",
+        "intensity": 0.4,
+        "mood": "cold",
+        "ambient": "none"
+      }
+    },
+    {
+      "id": "OST-03",
+      "session": "OST",
+      "fictionTime": "2027-11-09T11:09",
+      "duration": 29,
+      "speaker": "ostrow",
+      "transcript": [
+        {
+          "start": 0,
+          "text": "Mr. Ostrow, Keel competes with Brightmoor. If they go under, you stand to earn a lot of money. Why should anyone believe you?",
+          "speaker": "reporter"
+        },
+        {
+          "start": 9,
+          "text": "They shouldn't, not on my word. I'd ask the same thing."
+        },
+        {
+          "start": 14,
+          "text": "Yes, we compete, and yes, this is good for us. I'm not going to stand here and pretend otherwise."
+        },
+        {
+          "start": 22,
+          "text": "So don't trust me. The records are with the Justice Department. Have them check."
+        }
+      ],
+      "authoring": {
+        "role": "door",
+        "importance": 4,
+        "earliestStep": 4
+      },
+      "source": "Union News · Keel press conference, Nov 9, 2027",
+      "sourceShort": "Union News",
+      "tags": [
+        "ost",
+        "2027",
+        "Ostrow",
+        "Keel",
+        "money",
+        "rival",
+        "competition"
+      ],
+      "motion": {
+        "device": "tv",
+        "framing": "medium",
+        "intensity": 0.5,
+        "mood": "tense",
+        "ambient": "none"
+      }
+    }
+  ],
+  "facts": [],
+  "search": {
+    "limit": 5,
+    "minTermLength": 1,
+    "seekToMatch": true,
+    "order": "chronological",
+    "stopwords": [
+      "a",
+      "an",
+      "the",
+      "and",
+      "or",
+      "but",
+      "of",
+      "to",
+      "in",
+      "on",
+      "at",
+      "for",
+      "from",
+      "by",
+      "with",
+      "as",
+      "is",
+      "are",
+      "was",
+      "were",
+      "be",
+      "been",
+      "am",
+      "it",
+      "its",
+      "i",
+      "im",
+      "me",
+      "my",
+      "you",
+      "youre",
+      "your",
+      "he",
+      "him",
+      "his",
+      "she",
+      "her",
+      "we",
+      "us",
+      "our",
+      "they",
+      "them",
+      "their",
+      "this",
+      "that",
+      "these",
+      "those",
+      "there",
+      "here",
+      "so",
+      "if",
+      "then",
+      "than",
+      "do",
+      "did",
+      "does",
+      "dont",
+      "didnt",
+      "not",
+      "no",
+      "oh",
+      "uh",
+      "um",
+      "yeah",
+      "just",
+      "like",
+      "okay",
+      "ok",
+      "well",
+      "what",
+      "who",
+      "how",
+      "all",
+      "have",
+      "has",
+      "had",
+      "will",
+      "would",
+      "can",
+      "could",
+      "about",
+      "which",
+      "use",
+      "only",
+      "because",
+      "when",
+      "where",
+      "while",
+      "though",
+      "whether",
+      "up",
+      "out",
+      "into",
+      "over",
+      "s",
+      "t",
+      "ll",
+      "re",
+      "ve",
+      "d",
+      "m"
+    ]
+  },
+  "rules": {
+    "seenOn": "play",
+    "showProgress": false
+  },
+  "presentation": {
+    "opening": [
+      "That was October 3, 2027.",
+      "Two years later, a documentary crew filmed everything about the incident. That footage is available to you here, in the search software.",
+      "Find out what happened at Pell River, and why.",
+      "Enter a word to find the videos where someone says it."
+    ],
+    "mission": "TASK · Find out what happened at Pell River, and why. Use only what is in this program.",
+    "coldOpenClip": "ARQ-00",
+    "coldOpenMode": "fullscreen",
+    "theme": "station",
+    "clock": "2029-10-03T09:00",
+    "room": {
+      "scene": "screens",
+      "note": {
+        "title": "PELL RIVER — selects",
+        "items": [
+          {
+            "text": "lock the opening (phone video)",
+            "done": true
+          },
+          {
+            "text": "sync interviews",
+            "done": true
+          },
+          {
+            "text": "news + TV licensing",
+            "done": true
+          },
+          {
+            "text": "transcript pass",
+            "done": false
+          },
+          {
+            "text": "answer draft",
+            "done": false
+          }
+        ]
+      },
+      "monitor": "Archive station"
+    },
+    "strings": {
+      "fictionNotice": "A work of fiction. The people, companies, AI models and 2027–2029 events in this story are invented."
+    },
+    "finale": {
+      "firstMessage": [
+        "Good morning!",
+        "That video was shot on October 3, 2027.",
+        "I'm attaching everything a documentary crew filmed about it in the two years after.",
+        "Can you tell me exactly what happened at Pell River, and why? Please use only what is in this program."
+      ],
+      "prompt": "Write your answer.",
+      "submitLabel": "Submit",
+      "reply": "Thank you, {assistantName}.",
+      "chat": true,
+      "attachment": [
+        "pell-river-archive/   {n} files",
+        "├─ interviews/   kopecki  szabo  ambler  platt  varga  hart",
+        "├─ news/         union-news  white-house  kremlin  senate  keel",
+        "└─ raw/          phone  cctv"
+      ],
+      "ask": {
+        "message": "Are you done? What happened at Pell River, and why?",
+        "when": {
+          "any": [
+            {
+              "all": [
+                {
+                  "seenCount": {
+                    "min": 1,
+                    "clips": [
+                      "ENG-05",
+                      "PER-16",
+                      "PER-18"
+                    ]
+                  }
+                },
+                {
+                  "seenCount": {
+                    "min": 3,
+                    "clips": [
+                      "ENG-02",
+                      "ENG-03",
+                      "ENG-04",
+                      "ENG-05",
+                      "CAL-04",
+                      "CAL-05",
+                      "DIR-10",
+                      "PER-16"
+                    ]
+                  }
+                },
+                {
+                  "seenCount": {
+                    "min": 1,
+                    "clips": [
+                      "ENG-07",
+                      "ENG-08",
+                      "ENG-10",
+                      "CAL-06",
+                      "TVN-27",
+                      "TVN-30",
+                      "PER-14",
+                      "OST-01",
+                      "OST-02",
+                      "PER-18"
+                    ]
+                  }
+                },
+                {
+                  "seenPercent": 25
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "seenCount": {
+                    "min": 3,
+                    "clips": [
+                      "TVN-26",
+                      "OST-01",
+                      "CAL-03",
+                      "CAL-04",
+                      "CAL-06",
+                      "BLV-04",
+                      "MOR-08",
+                      "DIR-10",
+                      "ENG-05",
+                      "ENG-07",
+                      "PER-14",
+                      "TVN-27",
+                      "JAK-07"
+                    ]
+                  }
+                },
+                {
+                  "seenPercent": 40
+                }
+              ]
+            },
+            {
+              "seenPercent": 55
+            }
+          ]
+        }
+      },
+      "echo": {
+        "clip": "ENG-11",
+        "from": 14.97,
+        "to": 18.11,
+        "text": "It didn't know where it was. None of them do."
+      },
+      "assistantKey": "ZWR1YWxD",
+      "creditsKey": "LmNpcG9yaHRuQSB5YiBkZXNyb2RuZSBybyBodGl3IGRldGFpbGlmZmEgdG9uIHNpIGVtYWcgc2loVCAuY2lwb3JodG5BIGZvIGtyYW1lZGFydCBhIHNpIGVkdWFsQ3wuZWR1dGl0YXJnIGh0aXcgLHdvbHJhQiBtYVMgeWIgKTUxMDIoIHlyb3RTIHJlSCB5YiBkZXJpcHNuSXwueW5hcG1vYyB5bmEgeWIgZGVzcm9kbmUgcm8gaHRpdyBkZXRhaWxpZmZhIHRvbiBzaSBlbWFnIHNpaFR8LmRldG5ldm5pIHNpIG1laHQgb3QgZGV0dWJpcnR0YSB0bmVtZXRhdHMgZG5hIG5vaXRjYSAsbGFpY2lmZm8geXJldmUgdHViICxkZW1hbiBlcmEgc25vaXR1dGl0c25pIGNpbGJ1cCBsYWVSIC5kZWNuZXJlZmVyIGVyYSApTk9USVJUICx0ZW54dXRTKCBlcmF3bGFtIGxhZXIgZG5hIClhbWloc3VrdUYgLGx5Ym9ucmVoQyggc3RuZWRpY2NhIGxhY2lyb3RzaWggbGFlUnwubm9zcmVwIGxhZXIgYSBzZXRvdXEgcm8gc3lhcnRyb3AgZW5vbiA7ZGV0bmV2bmkgc2kgeXJvdHMgc2lodCBuaSB0bmV2ZSA5MjAy4oCTNzIwMiBkbmEgbGVkb20gSUEgLHluYXBtb2MgLG5vc3JlcCB5cmV2RXwubm9pdGNpZiBmbyBrcm93IEF8LjIuNSBlbGJhRiBlZHVhbEMgeWIgZGV0c2lzc2EtSUF8b2kuYnVodGlnLmFyaWhzb3RhbmVyIMK3IGFyaWhzX290YW5lckAgwrcgaWhzYWthcmloUyBvdGFuZVIgeWIgZGV0YWVyQw=="
+    }
+  }
+}
