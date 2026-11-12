@@ -1,0 +1,58 @@
+/* ---- w11a · desenhe-os-trinta-dias ---- */
+#w11a .w11a-leg{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:11px;color:var(--dim);margin:0 0 8px;line-height:1.4}
+#w11a .w11a-leg span{display:inline-flex;align-items:center;gap:6px}
+#w11a .w11a-leg .dat{opacity:0;transition:opacity .45s ease}
+#w11a .w11a-leg.rev .dat{opacity:1}
+#w11a .w11a-leg .sw{display:inline-block;width:18px;height:0;border-top:3px solid var(--dopa)}
+#w11a .w11a-leg .sw.lem{border-top:2px dashed var(--ink)}
+#w11a .w11a-leg .sw.bar{width:10px;height:10px;border:0;background:var(--pausa);opacity:.75}
+#w11a .w11a-leg .sw.apx{width:10px;height:10px;border:1px solid var(--pausa);background:repeating-linear-gradient(45deg,var(--pausa) 0 1px,transparent 1px 4px)}
+#w11a .w11a-svgw{touch-action:none;user-select:none;-webkit-user-select:none}
+#w11a svg.w11a-svg{overflow:visible}
+#w11a .w11a-hit{fill:transparent;cursor:crosshair}
+#w11a svg.rev .w11a-hit{cursor:default}
+#w11a .w11a-worse{fill:var(--pausa-soft);opacity:.45}
+#w11a .w11a-grid{stroke:var(--line);stroke-width:1}
+#w11a .w11a-zero{stroke:var(--ink);stroke-width:1}
+#w11a .w11a-ax{font-size:10.5px;fill:var(--dim)}
+#w11a .w11a-tick{font-size:10.5px;fill:var(--dim)}
+#w11a .w11a-you{fill:none;stroke:var(--dopa);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#w11a .w11a-start{fill:var(--dopa);stroke:var(--paper);stroke-width:2}
+#w11a .w11a-pulse{fill:none;stroke:var(--dopa);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:w11aPulse 2.2s ease-out infinite}
+@keyframes w11aPulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+#w11a .w11a-yl{font-size:11px;fill:var(--dopa);font-weight:700}
+#w11a .w11a-hint{transition:opacity .3s}
+#w11a .w11a-hint.gone{opacity:0}
+#w11a .w11a-ht{font-size:11.5px;fill:var(--ink)}
+#w11a .w11a-hbg{fill:transparent}
+#w11a .w11a-hl{stroke:var(--pausa);stroke-width:1.6}
+#w11a .w11a-stop{stop-color:var(--ink)}
+/* data layer: hidden until reveal, bars grow down from the zero line */
+#w11a .w11a-bar{fill:var(--pausa);opacity:.72;transform-box:fill-box;transform-origin:top;transform:scaleY(0);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+#w11a .w11a-bar.approx{fill:url(#w11a-hatch);stroke:var(--pausa);stroke-width:1;opacity:.9}
+#w11a .w11a-bl{font-size:10.5px;fill:var(--pausa);font-weight:700;opacity:0;transition:opacity .3s}
+#w11a .w11a-bl.approx{font-weight:400}
+#w11a .w11a-lembke{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:5 4;opacity:0;transition:opacity .45s}
+#w11a .w11a-ll{font-size:10.5px;fill:var(--ink);opacity:0;transition:opacity .45s}
+#w11a .w11a-lanes text{opacity:.4;transition:opacity .45s}
+#w11a .w11a-lanes .w11a-lb{opacity:0;transition:opacity .45s;transition-delay:inherit}
+#w11a .w11a-lph{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4;transition:opacity .45s}
+#w11a svg.rev .w11a-lph{opacity:0}
+#w11a svg.rev .w11a-lanes .w11a-lb{opacity:1}
+#w11a .w11a-lt{font-size:10px;letter-spacing:.1em;text-transform:uppercase;fill:var(--dim)}
+#w11a .w11a-lane-t{font-size:10.5px;fill:var(--ink)}
+#w11a svg.rev .w11a-bar{transform:scaleY(1)}
+#w11a svg.rev .w11a-bl,#w11a svg.rev .w11a-lanes text{opacity:1}
+#w11a svg.rev .w11a-lembke,#w11a svg.rev .w11a-ll{opacity:.9}
+#w11a .w11a-cl{stroke:var(--ink);stroke-width:1;opacity:.55}
+#w11a .w11a-ct{font-size:10.5px;fill:var(--ink);font-weight:700;paint-order:stroke;stroke:var(--paper);stroke-width:4px}
+#w11a .w11a-cd.you{fill:var(--dopa);stroke:var(--paper);stroke-width:1.5}
+#w11a .w11a-cd.lem{fill:var(--paper);stroke:var(--ink);stroke-width:1.5}
+#w11a details.more{margin-top:10px}
+#w11a details.more .ctrlrow label{min-width:60px}
+#w11a .ctrlrow label[for="w11a-day"]{min-width:110px}
+@media (prefers-reduced-motion: reduce){
+  #w11a .w11a-bar,#w11a .w11a-bl,#w11a .w11a-lembke,#w11a .w11a-ll,#w11a .w11a-lanes,#w11a .w11a-leg .dat{transition:none}
+}
+#w11a .w11a-halo{paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+#w11a .w11a-take{margin:12px 0 0;padding-left:12px;border-left:3px solid var(--dopa);font-size:14px;line-height:1.5;font-weight:700;color:var(--ink)}

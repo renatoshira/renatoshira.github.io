@@ -1,0 +1,31 @@
+#w10a .w10a-stage{position:relative;margin:0 -4px}
+#w10a .w10a-stage canvas{display:block;width:100%;touch-action:manipulation}
+#w10a .w10a-hud{position:absolute;left:4px;right:4px;top:0;display:flex;justify-content:space-between;align-items:baseline;line-height:1.2;pointer-events:none;font-variant-numeric:tabular-nums}
+#w10a .w10a-clock{font-size:13px;font-weight:700;letter-spacing:.02em}
+#w10a .w10a-count{font-size:12px;color:var(--pausa)}
+#w10a .w10a-count b{font-size:16px}
+#w10a .w10a-ctr{margin-top:10px;border-top:1px solid var(--line);padding-top:12px}
+#w10a .w10a-btns .w10a-dose{background:var(--dopa);border-color:var(--ink);color:var(--ink);font-weight:700}
+#w10a .w10a-btns .w10a-dose:active{background:#f0a94f}
+#w10a .w10a-iv{margin-top:12px}
+#w10a .w10a-iv input{flex:1;min-width:0}
+#w10a .w10a-iv label{min-width:auto}
+#w10a .w10a-iv .v{min-width:64px}
+#w10a .w10a-rmlab{font-size:12px;color:var(--dim);align-self:center;margin-left:4px}
+#w10a .w10a-charts{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:6px}
+#w10a .w10a-chart{min-width:0}
+#w10a .w10a-chart svg{display:block;width:100%;height:auto;overflow:visible}
+#w10a .w10a-key{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:10.5px;color:var(--dim);margin:-2px 0 4px;line-height:1.5}
+#w10a .w10a-key span{display:inline-flex;align-items:center;gap:6px}
+#w10a .w10a-key i{display:inline-block;width:14px;height:2px;background:var(--ink)}
+#w10a .w10a-key i.thick{height:3px}
+#w10a .w10a-key i.thin{height:8px;background:linear-gradient(var(--dopa-soft),var(--pausa-soft));border-top:1px solid var(--dopa);border-bottom:1px solid var(--pausa)}
+#w10a .w10a-key i.dash{height:0;background:none;border-top:2px dashed var(--ink)}
+@media (max-width:700px){
+  #w10a .w10a-charts{grid-template-columns:1fr;gap:10px}
+  #w10a .w10a-btns .btn{font-size:12px;padding:7px 10px}
+  #w10a .w10a-iv{flex-wrap:wrap;gap:4px 10px}
+  #w10a .w10a-iv label{width:100%}
+}
+#w10a .w10a-read{font-size:14px;line-height:1.5;font-weight:700;margin:2px 0 12px;max-width:760px;text-wrap:pretty}
+@media (max-width:560px){ #w10a .w10a-read{font-size:13.5px} }

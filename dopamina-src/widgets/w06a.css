@@ -1,0 +1,35 @@
+#w06a .w06a-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:10px}
+#w06a .w06a-cnts{display:flex;gap:22px;font-variant-numeric:tabular-nums}
+#w06a .w06a-c{display:flex;flex-direction:column;line-height:1.2}
+#w06a .w06a-c span{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+#w06a .w06a-c b{font-size:22px}
+#w06a .w06a-tot b{color:var(--dim);font-weight:400}
+#w06a .w06a-stage{position:relative}
+#w06a .w06a-stage canvas{display:block;width:100%}
+#w06a .w06a-lever{position:absolute;background:transparent;border:0;padding:0;cursor:pointer;touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;border-radius:8px}
+#w06a .w06a-lever:focus-visible{outline:2px solid var(--dopa);outline-offset:-2px}
+#w06a .w06a-hint{position:absolute;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--paper);padding:0 4px;pointer-events:none;transition:opacity .45s}
+#w06a .w06a-hint.gone{opacity:0}
+#w06a .ctrlrow input{flex:1;min-width:0}
+#w06a .ctrlrow label{min-width:auto}
+@media (max-width:560px){
+  #w06a .w06a-cnts{gap:14px}
+  #w06a .w06a-c b{font-size:18px}
+  #w06a .w06a-c span{font-size:9.5px}
+}
+#w06a .w06a-take{font-size:13.5px;line-height:1.55;font-weight:700;margin:14px 0 0;padding:1px 0 1px 12px;border-left:3px solid var(--dopa)}
+#w06a .w06a-outh{margin-top:18px}
+#w06a .w06a-out{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+#w06a .w06a-oh{font-size:12px;color:var(--dim);margin-bottom:6px}
+#w06a .w06a-oh b{color:var(--ink);font-variant-numeric:tabular-nums}
+#w06a .w06a-ob{display:flex;height:14px;gap:2px}
+#w06a .w06a-ob span{display:block;height:100%}
+#w06a .w06a-op{background:var(--dopa)}
+#w06a .w06a-or{background:var(--pausa);opacity:.75}
+#w06a .w06a-ok{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:10.5px;color:var(--dim);margin-top:6px}
+#w06a .w06a-sw{display:inline-block;width:8px;height:8px;margin-right:5px;vertical-align:0}
+#w06a .w06a-sw.a{background:var(--dopa)}
+#w06a .w06a-sw.b{background:var(--pausa);opacity:.75}
+#w06a .w06a-ot{font-size:13px;font-weight:700;margin-top:6px}
+#w06a .w06a-on{font-size:11.5px;color:var(--dim);margin-top:8px}
+@media (max-width:560px){#w06a .w06a-out{grid-template-columns:1fr;gap:14px}}

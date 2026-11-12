@@ -1,0 +1,22 @@
+#w08 .w08-panel{margin-bottom:18px}
+#w08 .w08-panel .glabel{margin-top:2px}
+#w08 .w08-grids{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:560px}
+#w08 .w08-g svg{max-width:250px}
+#w08 .w08-gh{font-size:12px;line-height:1.4;margin-bottom:8px;display:flex;flex-direction:column}
+#w08 .w08-gh span{color:var(--dim);font-variant-numeric:tabular-nums}
+#w08 .w08-ctr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 8px}
+#w08 .w08-dl{font-size:11.5px;color:var(--dim)}
+#w08 .w08-ctr .btn{font-size:12px;padding:6px 10px;min-height:32px}
+#w08 .w08-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+#w08 .w08-card{border-top:1px solid var(--ink);padding:8px 0 0}
+#w08 .w08-cn{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+#w08 .w08-cl{font-size:11.5px;line-height:1.35;min-height:2.7em;margin-top:2px}
+#w08 .w08-cb{height:4px;background:var(--line);margin-top:6px}
+#w08 .w08-cb span{display:block;height:100%}
+#w08 .w08-cnote{font-size:11.5px;color:var(--dim);margin-top:8px}
+@media (max-width:560px){
+  #w08 .w08-grids{gap:16px}
+  #w08 .w08-cards{grid-template-columns:1fr 1fr;row-gap:14px}
+}
+#w08 .w08-halo{paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}
+#w08 .w08-take{font-size:13.5px;line-height:1.55;font-weight:700;margin:14px 0 0;padding:1px 0 1px 12px;border-left:3px solid var(--dopa)}

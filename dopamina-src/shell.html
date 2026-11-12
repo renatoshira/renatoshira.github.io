@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MQH2KZD4');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="meta.title">Como resetar seu sistema de dopamina</title>
+<meta name="description" content="A dopamina faz o corpo se mexer, marca o que surpreende e ensina o cérebro a querer de novo. Quase nada do que se vende como reset mexe nela. Ensaio interativo de Renato Shirakashi.">
+<link rel="canonical" href="https://renatoshira.github.io/como-resetar-a-dopamina.html">
+<meta name="theme-color" content="#141414">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Como resetar seu sistema de dopamina">
+<meta property="og:description" content="A dopamina faz o corpo se mexer, marca o que surpreende e ensina o cérebro a querer de novo. Quase nada do que se vende como reset mexe nela.">
+<meta property="og:url" content="https://renatoshira.github.io/como-resetar-a-dopamina.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-dopamina.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:author" content="Renato Shirakashi">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Como resetar seu sistema de dopamina">
+<meta name="twitter:description" content="A dopamina faz o corpo se mexer, marca o que surpreende e ensina o cérebro a querer de novo. Quase nada do que se vende como reset mexe nela.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-dopamina.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Recursive:slnt,wght,CASL,MONO@-15..0,300..900,0..1,0..1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#141414;
+    --dim:#6b6b6b;
+    --line:#e2e2e2;
+    --mid:#9a9a9a;
+    --maxw:760px;
+    /* acentos: âmbar = dopamina liberada, disparo, sinal positivo ; índigo = pausa, falta, erro negativo, prato da dor */
+    --dopa:#e8952f;
+    --dopa-soft:rgba(232,149,47,.16);
+    --pausa:#3b3f9e;
+    --pausa-soft:rgba(59,63,158,.14);
+    --cream:#f2efe7;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Space Mono', ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    transition:background-color .6s ease,color .6s ease;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;transition:background-color .6s ease}
+  .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
+  .topbar a.kicker:hover{background:var(--ink);color:var(--paper)}
+  .topbar .right{display:flex;align-items:center;gap:12px}
+  .langtoggle{display:flex;border:1px solid var(--ink);font-size:12px}
+  .langtoggle button,.sndtoggle{border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:.08em}
+  .langtoggle button.active{background:var(--ink);color:var(--paper)}
+  .sndtoggle{border:1px solid var(--ink)}
+  .sndtoggle[aria-pressed="true"]{background:var(--dopa);border-color:var(--dopa);color:#141414}
+  @media (max-width:560px){.topbar .right>.kicker{display:none}}
+  @media (max-width:420px){.topbar{gap:8px}.topbar .kicker{font-size:10.5px;letter-spacing:.08em;white-space:nowrap}.topbar .right{gap:6px}.sndtoggle,.langtoggle button{padding:5px 7px;font-size:11px}}
+  .progress{position:fixed;top:0;left:0;height:2px;background:var(--dopa);width:0;z-index:60;transition:width .1s linear}
+
+  .mark{background:var(--ink);color:var(--paper);padding:.08em .34em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  section{border-bottom:1px solid var(--line);scroll-margin-top:72px}
+  section.wrap{padding:84px 24px}
+  section:last-of-type{border-bottom:0}
+
+  .hero{padding-top:90px;padding-bottom:80px}
+  .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+  .hero h1{font-size:34px;font-weight:700;line-height:1.24;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .hero h1 .l2{margin-left:1.1em}
+  .hero .sub{margin-top:38px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
+  .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
+
+  .step{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+  h2.part{font-size:26px;line-height:1.25;margin:0 0 26px;font-weight:700;text-wrap:balance}
+  .step+h2.part{margin-top:-8px}
+  h3.subh{font-weight:700;font-size:15px;margin:34px 0 12px;letter-spacing:.01em}
+  p{margin:0 0 20px}
+  .lead{font-size:18px}
+  strong{font-weight:700}
+  code{font-family:inherit;color:inherit;font-weight:700;overflow-wrap:anywhere}
+  a.link,p a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+  ul.tight,ol.tight{margin:0 0 20px;padding-left:22px}
+  ul.tight li,ol.tight li{margin-bottom:8px}
+  @media (max-width:560px){h2.part{font-size:22px}}
+
+  /* ---- widget shell (widgets render inside .wbody) ---- */
+  .widget{border:1px solid var(--ink);margin:34px 0 34px;padding:18px 16px;background:var(--paper);transition:background-color .6s ease,border-color .6s ease}
+  .wtag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;display:flex;gap:8px;align-items:flex-start}
+  .wtag>span:last-child{display:flex;flex-direction:column;gap:3px}
+  .wtag .wt{font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);line-height:1.35;text-wrap:balance}
+  .wtag .wdo{font-size:12px;letter-spacing:0;text-transform:none;color:var(--dim);line-height:1.5}
+  .wtag .dot{width:8px;height:8px;border-radius:50%;background:var(--dopa);display:inline-block;flex:none;margin-top:4px}
+  .wbody{position:relative;min-height:60px}
+  .wcap{font-size:12.5px;color:var(--dim);margin-top:14px;line-height:1.62}
+  .wcap b{color:var(--ink)}
+  .live{font-size:13px;margin-top:12px;min-height:1.6em}
+  .live b{font-variant-numeric:tabular-nums}
+  .btn{font-family:inherit;font-size:12.5px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 13px;cursor:pointer;transition:background .15s,color .15s;min-height:36px}
+  .btn:active{transform:translateY(1px)}
+  .btn.on,.btn.solid,.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .btn:disabled{opacity:.35;cursor:default}
+  .btn:focus-visible,input:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--dopa);outline-offset:2px}
+  .rowbtns{display:flex;gap:7px;flex-wrap:wrap}
+  .rowbtns.mt{margin-top:12px}
+  canvas{display:block;width:100%;touch-action:pan-y}
+  .cvwrap{position:relative}
+  input[type=range]{width:100%;accent-color:var(--ink);height:26px}
+  .ctrlrow{display:flex;align-items:center;gap:12px;margin-top:8px}
+  .ctrlrow label{font-size:11.5px;color:var(--dim);min-width:118px}
+  .ctrlrow .v{font-size:12px;min-width:46px;text-align:right;font-variant-numeric:tabular-nums}
+  .glabel{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:14px 0 6px}
+  .wbody svg{display:block;width:100%;height:auto;overflow:visible}
+  .wbody svg text{font-family:'Space Mono',ui-monospace,monospace}
+
+  /* widgets that break out of the column on wide screens */
+  @media (min-width:1000px){
+    .widget.wide{width:min(1080px,calc(100vw - 48px));margin-left:calc(50% - min(540px,calc(50vw - 24px)))}
+  }
+
+  /* tables, refs */
+  table.t{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 22px;font-variant-numeric:tabular-nums}
+  table.t th{text-align:left;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:400;border-bottom:1px solid var(--ink);padding:6px 8px 6px 0}
+  table.t td{border-bottom:1px solid var(--line);padding:7px 8px 7px 0;vertical-align:top}
+  details.more{font-size:13px;color:var(--dim);margin:8px 0 0}
+  details.more summary{cursor:pointer;color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  .refs{font-size:12.5px;line-height:1.7;color:var(--dim)}
+  .refs b{color:var(--ink)}
+  .foot{padding:40px 0 80px;color:var(--dim);font-size:12.5px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  [hidden]{display:none !important}
+
+  @media (max-width:560px){
+    body{font-size:15.5px}
+    section.wrap{padding:64px 16px}
+    .wrap{padding:0 16px}
+    .hero h1{font-size:28px}
+    .widget{padding:14px 12px}
+    .topbar{padding:12px 16px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+<!--WIDGETS_CSS-->
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="topbar">
+  <a class="kicker" href="index.html" data-i18n="top.home">Renato Shirakashi</a>
+  <div class="right">
+    <span class="kicker" style="color:var(--dim);font-weight:400" data-i18n="top.kicker">Dopamina · 2026</span>
+    <button class="sndtoggle" id="sndtoggle" aria-pressed="false" data-i18n="top.sound">♪ ouvir</button>
+    <div class="langtoggle" role="group" aria-label="Idioma / Language">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- companion neuron (filled by companion.js) -->
+<div id="companion" class="companion"></div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" data-i18n="hero.eyebrow">Ensaio interativo · novembro de 2026</div>
+  <h1 data-i18n="hero.h1">
+    <span class="mark">Como resetar seu</span>
+    <span class="mark l2">sistema de dopamina</span>
+  </h1>
+  <div class="sub" data-i18n="hero.sub">A dopamina faz o corpo se mexer, marca o que surpreende e ensina o cérebro a querer de novo. Vamos mergulhar nessa molécula mágica e entender o hype por trás do detox.</div>
+  <div class="byline" data-i18n="hero.byline">por Renato Shirakashi</div>
+</header>
+
+<!-- 00 -->
+<section class="wrap reveal" id="s00">
+  <div class="step" data-i18n="s00.step">00 · A pergunta</div>
+  <h2 class="part" data-i18n="s00.h">Para resetar a dopamina, primeiro é preciso saber o que ela faz</h2>
+  <p class="lead" data-i18n="s00.p1">Em 10 de novembro de 2026, o canal Huberman Lab publicou um trecho de onze minutos com o título “How to Reset Your Dopamine System &amp; Overcome Addiction” (como resetar seu sistema de dopamina e superar o vício). Nele, a psiquiatra Anna Lembke, de Stanford, explica o vício com a imagem de uma balança no cérebro e propõe trinta dias sem a droga de escolha. O título supõe três coisas: que existe um sistema de <span class="gl" data-gl="dopamina">dopamina</span>, que esse sistema tem um <span class="gl" data-gl="setpoint">ponto de ajuste</span> e que dá para devolvê-lo ao ponto original.</p>
+  <p data-i18n="s00.p2">A palavra chegou ao título de um vídeo de neurociência depois de cinco anos de crescimento fora dos laboratórios. No Google, as buscas mundiais por “dopamine” mais que triplicaram entre 2018 e 2026. “Dopamine detox” saiu de quase zero em 2019 e chegou ao pico em novembro de 2024. No Brasil, quase ninguém busca o protocolo, e as buscas por “dopamina” tiveram o pico em junho de 2023, um ano depois da edição brasileira do livro de Lembke, <em>Nação Dopamina</em>.</p>
+  <p data-i18n="s00.p3">Para saber o que um reset poderia mudar, é preciso saber o que a dopamina faz. Antes de começar, marque as funções que você acha que ela tem:</p>
+  <div class="widget" id="w00">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w00.tag"><b class="wt">O que a dopamina faz?</b><span class="wdo">Toque nos cartões que você acha certos e depois em guardar. A resposta volta corrigida no fim.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w00.cap">A resposta fica guardada neste navegador e volta, corrigida, no fim do ensaio.</div>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="wrap reveal" id="s01">
+  <div class="step" data-i18n="s01.step">01 · A molécula do movimento</div>
+  <h2 class="part" data-i18n="s01.h">A dopamina foi descoberta como a molécula que faz o corpo se mexer</h2>
+  <p class="lead" data-i18n="s01.p1">A dopamina foi descoberta como a molécula que faz o corpo se mexer. Até meados dos anos 1950, os farmacologistas a tratavam como um degrau na fabricação da <span class="gl" data-gl="noradrenalina">noradrenalina</span>, sem função própria. Em 1957, o farmacologista sueco Arvid Carlsson deu <span class="gl" data-gl="reserpina">reserpina</span> a coelhos e camundongos. A reserpina, então usada contra pressão alta e <span class="gl" data-gl="psicose">psicose</span>, esvazia os estoques de várias <span class="gl" data-gl="neurotransmissor">moléculas de sinalização</span> do cérebro. Os animais ficaram imóveis, de pálpebras caídas. Carlsson injetou <span class="gl" data-gl="ldopa">L-DOPA</span>, a matéria-prima da dopamina, e os coelhos voltaram a andar em poucos minutos. No ano seguinte, ele mostrou que a recuperação acompanhava a volta da dopamina ao cérebro, e não a da noradrenalina. Os três quadros abaixo mostram o experimento:</p>
+  <div class="widget" id="w01a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w01a.tag"><b class="wt">Sem dopamina, o coelho não se mexe</b><span class="wdo">Os três quadros mostram o coelho antes, 16 horas depois da reserpina e cerca de 15 minutos depois da L-DOPA. Compare o medidor de dopamina em cada um.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w01a.cap">Carlsson, Lindqvist e Magnusson (<i>Nature</i>, 1957); Carlsson et al. (<i>Science</i>, 1958). Os tempos de 16 horas e cerca de 15 minutos vêm do artigo e de relatos históricos.</div>
+  </div>
+  <p data-i18n="s01.p2">A ligação com uma doença humana veio em 1960. O farmacologista austríaco Oleh Hornykiewicz mediu a dopamina no cérebro de seis pessoas que tinham morrido com <span class="gl" data-gl="parkinson">doença de Parkinson</span> e encontrou no <span class="gl" data-gl="estriado">estriado</span>, a região que comanda o início dos movimentos, cerca de um décimo do normal. Em 1961, ele e o neurologista Walther Birkmayer injetaram L-DOPA em vinte pacientes, e a lentidão dos movimentos sumiu por algumas horas. Em 1967, George Cotzias mostrou que doses orais altas, aumentadas devagar, davam um efeito duradouro. A levodopa foi aprovada nos Estados Unidos em 1970 e continua sendo o tratamento de primeira linha do Parkinson. Em 2000, Carlsson dividiu o Nobel de Medicina com Paul Greengard e Eric Kandel. Hornykiewicz ficou de fora, e cerca de 230 cientistas assinaram uma carta de protesto.</p>
+  <p data-i18n="s01.p3">A L-DOPA funciona porque o cérebro fabrica dopamina numa linha de montagem com duas etapas. A <span class="gl" data-gl="tirosina">tirosina</span>, um aminoácido da comida, vira L-DOPA pela ação de uma <span class="gl" data-gl="enzima">enzima</span> chamada <span class="gl" data-gl="th">tirosina hidroxilase</span>, e a L-DOPA vira dopamina por outra enzima, rápida e pouco controlada. A primeira etapa decide a velocidade de tudo, e a própria dopamina freia essa enzima quando sobra. Por isso comer mais tirosina quase não muda a produção, e dar L-DOPA pula o gargalo. A dopamina do sangue não atravessa a <span class="gl" data-gl="barreira">barreira que protege o cérebro</span>, e a L-DOPA atravessa. O modelo abaixo compara as duas coisas:</p>
+  <div class="widget" id="w01b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w01b.tag"><b class="wt">Onde está o gargalo da fabricação de dopamina</b><span class="wdo">No primeiro quadro, compare a dieta normal, quatro vezes mais tirosina e a L-DOPA. No segundo, o caminho de 100 moléculas de levodopa sem e com carbidopa.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w01b.cap">A tirosina hidroxilase limita a produção, então mais tirosina quase não muda a saída. A levodopa é dada hoje com <span class="gl" data-gl="carbidopa">carbidopa</span>, que impede a conversão fora do cérebro e permite uma dose cerca de quatro a cinco vezes menor.</div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="wrap reveal" id="s02">
+  <div class="step" data-i18n="s02.step">02 · Meio milhão</div>
+  <h2 class="part" data-i18n="s02.h">Poucos neurônios fabricam dopamina, e cada um alcança uma parte enorme do cérebro</h2>
+  <p class="lead" data-i18n="s02.p1">O cérebro humano tem cerca de 86 bilhões de <span class="gl" data-gl="neuronio">neurônios</span>. Os que fabricam dopamina e a soltam no resto do cérebro somam cerca de meio milhão, agrupados em dois núcleos pequenos no <span class="gl" data-gl="mesencefalo">mesencéfalo</span>, a <span class="gl" data-gl="sn">substância negra</span> e a <span class="gl" data-gl="atv">área tegmental ventral</span>. É um neurônio de dopamina para cada 170 mil. O campo abaixo tem 170 mil pontos. Aproxime a imagem até encontrar o ponto âmbar e então toque nele:</p>
+  <div class="widget wide" id="w02a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w02a.tag"><b class="wt">1 neurônio de dopamina para cada 170 mil</b><span class="wdo">O ponto âmbar é um neurônio de dopamina. Aproxime a imagem para ver os outros, ou toque em mostrar e depois no ponto.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w02a.cap">Cerca de 86 bilhões de neurônios (Azevedo et al., 2009) e cerca de meio milhão de neurônios de dopamina no mesencéfalo humano (Pakkenberg et al., 1991; as estimativas vão de 400 a 600 mil).</div>
+  </div>
+  <p data-i18n="s02.p2">Cada um desses neurônios alcança muito longe. Em 2009, Wakoto Matsuda e colegas reconstruíram oito neurônios de dopamina de ratos, um por um, seguindo cada ramo. O <span class="gl" data-gl="axonio">axônio</span> de um único neurônio somava em média 46,7 centímetros dentro do estriado, num cérebro com cerca de dois centímetros de comprimento, e cobria em média 2,7% do volume da região. Em 2012, Paul Bolam e Eleftheria Pissadaki estimaram o que isso significaria num cérebro humano: <span class="mark">cerca de 4,5 metros de axônio e de 1 milhão a 2,4 milhões de <span class="gl" data-gl="sinapse">sinapses</span> por neurônio</span>. Um neurônio típico do estriado faz de 300 a 500 sinapses. Desenrole o axônio de um neurônio humano e compare com as coisas ao lado:</p>
+  <div class="widget wide" id="w02b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w02b.tag"><b class="wt">O tamanho de um único neurônio de dopamina</b><span class="wdo">Arraste o controle para desenrolar o axônio e compare com uma pessoa, uma mesa e um carro.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w02b.cap">Matsuda et al. (<i>J Neurosci</i>, 2009), oito neurônios de rato. Bolam e Pissadaki (<i>Mov Disord</i>, 2012), estimativa humana que supõe a mesma densidade de inervação do rato. O número humano nunca foi medido.</div>
+  </div>
+  <p data-i18n="s02.p3">Bolam e Pissadaki propõem que esse tamanho tem um custo. Manter metros de axônio e milhões de sinapses consome muita energia, e isso ajudaria a explicar por que esses neurônios estão entre os primeiros a morrer no Parkinson.</p>
+  <p data-i18n="s02.p4">Grande parte da dopamina também se espalha em vez de ir a um alvo só. A maioria dos terminais de dopamina não forma uma sinapse fechada com um neurônio vizinho. A dopamina sai, se difunde pelo espaço entre as células e alcança <span class="gl" data-gl="receptor">receptores</span> a alguns micrômetros de distância, como um regador sobre um canteiro. Os quatro caminhos principais por onde ela viaja estão desenhados abaixo como linhas de metrô. Os cartões abaixo do mapa dizem o que cada uma faz e qual remédio mexe nela:</p>
+  <div class="widget" id="w02c">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w02c.tag"><b class="wt">As quatro vias da dopamina no cérebro</b><span class="wdo">Cada linha leva dopamina a uma região. Os cartões dizem o que ela faz, o que acontece quando falha e qual remédio age nela. Embaixo, um terminal visto de perto.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w02c.cap">Björklund e Dunnett (<i>Trends Neurosci</i>, 2007). O desenho é esquemático; as quatro vias saem de grupos de neurônios diferentes e têm funções diferentes.</div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="wrap reveal" id="s03">
+  <div class="step" data-i18n="s03.step">03 · Dois ritmos</div>
+  <h2 class="part" data-i18n="s03.h">O neurônio de dopamina mantém um ritmo de fundo e manda sinais rápidos por cima dele</h2>
+  <p class="lead" data-i18n="s03.p1">Um neurônio de dopamina em repouso dispara sozinho, de forma regular, cerca de quatro a cinco vezes por segundo. Anthony Grace e Benjamin Bunney descreveram esse ritmo em 1984 e mostraram que ele continua mesmo numa fatia de cérebro isolada. Às vezes o neurônio sai do ritmo e solta uma rajada de dois a dez disparos a 15 ou 30 por segundo, que dura de um décimo a três décimos de segundo. Outras vezes ele se cala pelo mesmo tempo. O ritmo regular mantém um nível de fundo de dopamina, e as rajadas e os silêncios mandam sinais rápidos por cima desse fundo.</p>
+  <p data-i18n="s03.p2">Os receptores leem os dois sinais de forma diferente. Há cinco tipos de receptor de dopamina, agrupados em duas famílias. Os da <span class="gl" data-gl="d2">família D2</span> são muito sensíveis e já ficam parcialmente ocupados com o nível de fundo. Os da <span class="gl" data-gl="d1">família D1</span> são menos sensíveis e respondem sobretudo às rajadas. Ligue o som, ouça o ritmo de fundo e toque nos dois botões:</p>
+  <div class="widget" id="w03">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w03.tag"><b class="wt">Os dois ritmos de um neurônio de dopamina</b><span class="wdo">O traçado já mostra o ritmo de fundo, uma rajada e uma pausa. Ligue o som e toque em surpresa ou decepção para provocar as suas.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w03.cap">Grace e Bunney (<i>J Neurosci</i>, 1984). As curvas de ocupação são esquemáticas e mostram só a diferença de sensibilidade entre as duas famílias de receptor.</div>
+  </div>
+  <p data-i18n="s03.p3">O neurônio na margem da página toca o mesmo ritmo desde o começo do ensaio. Ele dispara rajadas e faz pausas em alguns momentos, e a razão aparece na seção 04.</p>
+</section>
+
+<!-- 05 -->
+<section class="wrap reveal" id="s05">
+  <div class="step" data-i18n="s05.step">04 · O sinal de surpresa</div>
+  <h2 class="part" data-i18n="s05.h">A dopamina marca a surpresa, a diferença entre o que se esperava e o que veio</h2>
+  <p class="lead" data-i18n="s05.p1">Wolfram Schultz gravou neurônios de dopamina de macacos nos anos 1980 e 1990. O macaco via uma luz e, um segundo depois, recebia uma gota de suco. No começo, os neurônios disparavam uma rajada quando o suco chegava. Depois de muitas repetições, passaram a disparar quando a luz acendia e a ficar no ritmo de fundo na chegada do suco. Quando o suco esperado não vinha, eles se calavam por um instante. Em 1997, Schultz, Peter Dayan e Read Montague descreveram esse sinal na <em>Science</em> como um <span class="gl" data-gl="erro">erro de previsão</span>, a diferença entre o que o animal esperava e o que recebeu. No modelo abaixo, cada fileira é um ensaio, e o neurônio já passou por 41 deles:</p>
+  <div class="widget" id="w05a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w05a.tag"><b class="wt">O neurônio aprende onde está a surpresa</b><span class="wdo">Cada fileira é um ensaio, do primeiro embaixo ao mais recente em cima. A rajada sai do suco e vai para a luz. Os botões continuam o treino.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w05a.cap">Modelo do sinal descrito por Schultz, Dayan e Montague (<i>Science</i>, 1997). A rampa com chance de 50% vem de Fiorillo, Tobler e Schultz (<i>Science</i>, 2003). A velocidade do aprendizado é ilustrativa.</div>
+  </div>
+  <p data-i18n="s05.p2">Repare que <span class="mark">o neurônio deixa de reagir ao suco quando o suco fica previsível.</span> O sinal de dopamina marca a surpresa. O neurônio na margem da página faz a mesma coisa com as suas respostas. Ele dispara uma rajada quando um resultado contraria o seu palpite e se cala quando um resultado esperado não aparece.</p>
+  <p data-i18n="s05.p3">A ideia de aprender pela surpresa nasceu na psicologia e passou pela computação antes de chegar ao neurônio. Em 1972, Robert Rescorla e Allan Wagner propuseram que um animal aprende na proporção da diferença entre o que esperava e o que aconteceu. Em 1988, Richard Sutton transformou a ideia num algoritmo de <span class="gl" data-gl="td">aprendizado por diferença temporal</span>, com o qual a máquina aprende sozinha a prever recompensas futuras. Os dados de Schultz mostraram que os neurônios de dopamina calculam algo muito parecido com o erro desse algoritmo. A mesma família de algoritmos ajudou o programa AlphaGo, da DeepMind, a vencer o campeão Lee Sedol em 2016. Em março de 2025, Sutton e Andrew Barto receberam o Prêmio Turing pelos fundamentos do <span class="gl" data-gl="rl">aprendizado por reforço</span>.</p>
+  <p data-i18n="s05.p4">A troca continuou no sentido contrário. Em 2017, pesquisadores da DeepMind mostraram que agentes de inteligência artificial aprendem melhor quando preveem a distribuição inteira das recompensas possíveis, em vez de só a média. Em 2020, Will Dabney e colegas procuraram isso em neurônios de dopamina de camundongos e encontraram: cada neurônio tem um ponto de referência próprio, alguns otimistas e outros pessimistas, e juntos eles codificam a distribuição. Abaixo, o mesmo coral aprendeu duas loterias com a mesma média:</p>
+  <div class="widget" id="w05b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w05b.tag"><b class="wt">Neurônios otimistas e pessimistas</b><span class="wdo">Duas loterias com a mesma média. Compare onde cada neurônio se fixa e a forma que o grupo reconstrói.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w05b.cap">Dabney et al. (<i>Nature</i>, 2020); Lowet et al. (<i>Nature</i>, 2025), que encontraram no estriado neurônios com receptor D1 lendo o lado melhor que o esperado e com D2 lendo o lado pior. Os dados de Dabney vêm de poucos animais.</div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="wrap reveal" id="s06">
+  <div class="step" data-i18n="s06.step">05 · Querer</div>
+  <h2 class="part" data-i18n="s06.h">A dopamina faz querer e se esforçar, e pesa pouco no gostar</h2>
+  <p class="lead" data-i18n="s06.p1">Se a dopamina marca surpresa e ensina o que vale repetir, resta saber se ela também produz o prazer. Em 1998, Kent Berridge e Terry Robinson destruíram até 99% da dopamina de ratos com uma toxina. Os ratos continuaram a fazer a careta de satisfação diante de água com açúcar, a mesma dos ratos normais, e a careta de nojo diante do <span class="gl" data-gl="quinino">quinino</span>. Eles deixaram de ir atrás da comida. Berridge chamou de querer o impulso de ir atrás, que depende da dopamina, e de gostar a reação de satisfação, que depende de <span class="gl" data-gl="opioides">opioides</span> agindo num ponto de cerca de um milímetro cúbico no <span class="gl" data-gl="accumbens">núcleo accumbens</span>.</p>
+  <p data-i18n="s06.p2">John Salamone mediu o querer como esforço. Em 1991, ele deu a ratos com fome uma escolha: apertar uma alavanca cinco vezes por uma pelota doce ou comer de graça a ração comum que estava no chão da gaiola. Os ratos normais trabalhavam pela pelota. Com uma dose baixa de um <span class="gl" data-gl="bloqueador">bloqueador de dopamina</span>, passavam a comer a ração e comiam a mesma quantidade total. O apetite e o gosto pelo doce continuavam lá. O que caía era a disposição de pagar pelo doce com esforço. No modelo abaixo, você é o rato. Baixe a dopamina e tente continuar apertando a alavanca:</p>
+  <div class="widget" id="w06a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w06a.tag"><b class="wt">Com menos dopamina, o esforço pesa mais</b><span class="wdo">Segure a alavanca para ganhar a pelota doce. Depois baixe a dopamina e sinta o esforço crescer.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w06a.cap">Salamone et al. (<i>Psychopharmacology</i>, 1991); Salamone e Correa (<i>Neuron</i>, 2012). Em humanos, Treadway et al. (2012) encontraram mais liberação de dopamina no estriado em quem aceitava tarefas mais trabalhosas por dinheiro. O peso da alavanca é ilustrativo.</div>
+  </div>
+  <p data-i18n="s06.p3"><span class="mark">Os estudos em humanos mostram o mesmo padrão.</span> Brian Knutson mostrou em 2001, com <span class="gl" data-gl="rm">ressonância magnética</span>, que o núcleo accumbens se ativa quando a pessoa espera ganhar dinheiro, e quase nada quando o dinheiro chega. Em 2009, Tali Sharot deu levodopa a voluntários enquanto eles imaginavam férias em lugares diferentes. Mais tarde, eles avaliaram como mais prazerosas as férias imaginadas sob efeito da levodopa. A dopamina mudou a previsão do prazer. Em 2002, Troels Kjaer mediu com <span class="gl" data-gl="pet">PET</span> um aumento de dopamina durante uma sessão de meditação guiada, e os participantes relataram menos vontade de agir, com prazer e relaxamento iguais aos da condição de controle. Em 2017, um estudo com PET mostrou que meia hora rindo com amigos libera opioides do próprio corpo. Os dados de humanos têm uma exceção conhecida: em 2019, Laura Ferreri deu levodopa a 27 pessoas, e elas relataram mais prazer ao ouvir música.</p>
+  <p data-i18n="s06.p4">O ensaio <a href="como-querer-menos.html">Como querer menos</a> trata do querer e do gostar na vida cotidiana. Para esta página, basta guardar que a dopamina pesa mais no querer, no esforço e na expectativa do que na satisfação de receber.</p>
+</section>
+
+<!-- 07 -->
+<section class="wrap reveal" id="s07">
+  <div class="step" data-i18n="s07.step">06 · Mais nem sempre é melhor</div>
+  <h2 class="part" data-i18n="s07.h">Mais dopamina ajuda até um ponto e depois atrapalha</h2>
+  <p class="lead" data-i18n="s07.p1">A dopamina no <span class="gl" data-gl="pfc">córtex pré-frontal</span>, a parte da frente do cérebro que segura informações por alguns segundos e controla a atenção, segue uma <span class="gl" data-gl="ui">curva em U invertido</span>. Com pouca, a <span class="gl" data-gl="mt">memória de trabalho</span> falha. Com muita, também falha. Roshan Cools e Mark D’Esposito reuniram os estudos em 2011. A <span class="gl" data-gl="bromo">bromocriptina</span>, que imita a dopamina, <span class="mark">melhorou a memória de trabalho de quem tinha pouca capacidade e piorou a de quem tinha muita</span>. Em 2020, um estudo deu 2 gramas de tirosina, a matéria-prima da dopamina, a 45 jovens. A média do grupo não mudou, porque os que iam mal melhoraram e os que iam bem pioraram. Veja o que a mesma dose faz com três pessoas em pontos diferentes da curva:</p>
+  <div class="widget" id="w07a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w07a.tag"><b class="wt">O mesmo remédio ajuda uns e atrapalha outros</b><span class="wdo">As três pessoas recebem a mesma dose. Quem estava abaixo do pico sobe, e quem estava no pico ou além dele cai.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w07a.cap">Cools e D’Esposito (<i>Biol Psychiatry</i>, 2011); Jongkees et al. (2020); Farrell et al. (2012). A curva é esquemática. Os efeitos genéticos isolados são pequenos e pouco replicados em amostras grandes.</div>
+  </div>
+  <p data-i18n="s07.p2">A mesma lógica de janela estreita aparece nos remédios que bloqueiam a dopamina. Em 1976, o grupo de Philip Seeman, na <em>Nature</em>, e o de Solomon Snyder, na <em>Science</em>, compararam os <span class="gl" data-gl="antipsic">antipsicóticos</span> usados na clínica. A dose diária de cada um acompanhava a força com que ele se prendia ao receptor que hoje se chama D2. A relação cobria três <span class="gl" data-gl="ordem">ordens de grandeza</span>. A <span class="gl" data-gl="afinidade">afinidade</span> por outros receptores não seguia o mesmo padrão:</p>
+  <div class="widget" id="w07b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w07b.tag"><b class="wt">A dose de cada antipsicótico segue o receptor D2</b><span class="wdo">Os mesmos oito remédios contra dois receptores. Com o D2, os pontos seguem uma reta. Com o de serotonina, viram uma nuvem.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w07b.cap">Seeman et al. (<i>Nature</i>, 1976); Creese, Burt e Snyder (<i>Science</i>, 1976). Os valores de dose e afinidade são aproximados, a partir de Seeman (2002), e servem para mostrar a forma da relação.</div>
+  </div>
+  <p data-i18n="s07.p3">Em 2000, Shitij Kapur mediu com PET quantos receptores D2 o <span class="gl" data-gl="haloperidol">haloperidol</span> ocupava em 22 pacientes no primeiro episódio de <span class="gl" data-gl="psicose">psicose</span>. A melhora clínica ficou mais provável acima de 65% de <span class="gl" data-gl="ocupacao">ocupação</span>. Acima de 72%, a <span class="gl" data-gl="prolactina">prolactina</span> subia, porque a dopamina é o freio que o <span class="gl" data-gl="hipotalamo">hipotálamo</span> usa para segurar esse hormônio, e soltar o freio pode fazer o corpo produzir leite fora da gravidez. Acima de 78%, apareciam rigidez e tremor, porque a mesma molécula comanda o movimento. A dopamina também age numa região do <span class="gl" data-gl="tronco">tronco cerebral</span> que fica fora da <span class="gl" data-gl="barreira">barreira do cérebro</span> e prova o sangue em busca de toxinas. <span class="mark">Por isso, remédios que bloqueiam a dopamina servem contra náusea.</span> Veja o que cada faixa de ocupação provoca:</p>
+  <div class="widget" id="w07c">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w07c.tag"><b class="wt">A janela estreita dos antipsicóticos</b><span class="wdo">O que cada faixa de ocupação dos receptores D2 liga no corpo. A faixa útil vai de 65% a 78%.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w07c.cap">Kapur et al. (<i>Am J Psychiatry</i>, 2000), 22 pacientes com haloperidol de 1 a 2,5 mg por dia. A alteração mais consistente na <span class="gl" data-gl="esquizo">esquizofrenia</span> está na produção de dopamina, que é maior no estriado de muitos pacientes (Howes e Kapur, 2009).</div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="wrap reveal" id="s08">
+  <div class="step" data-i18n="s08.step">07 · Um experimento sem querer</div>
+  <h2 class="part" data-i18n="s08.h">Remédios que imitam a dopamina mudaram o que pacientes de Parkinson queriam</h2>
+  <p class="lead" data-i18n="s08.p1">Os remédios para Parkinson mostram em milhões de pessoas o que a dopamina faz com o querer. Além da levodopa, muitos pacientes tomam <span class="gl" data-gl="agonista">agonistas de dopamina</span>, como o <span class="gl" data-gl="prami">pramipexol</span> e o <span class="gl" data-gl="ropini">ropinirol</span>, que imitam a molécula e preferem os receptores D2 e D3, muito densos no núcleo accumbens. No começo dos anos 2000, neurologistas começaram a descrever pacientes sem histórico de vício que <span class="mark">passaram a jogar compulsivamente, a comprar sem controle e a ter impulsos sexuais novos depois de começar o remédio</span>.</p>
+  <p data-i18n="s08.p2">Em 2010, Daniel Weintraub publicou o estudo DOMINION, com 3.090 pacientes de Parkinson em 46 centros dos Estados Unidos e do Canadá. Entre os que tomavam agonista, 17,1% tinham algum <span class="gl" data-gl="tci">transtorno do controle de impulsos</span>. Entre os que não tomavam, 6,9%. Em 2018, Jean-Christophe Corvol acompanhou 411 pacientes franceses por cinco anos. Entre os que já tinham usado agonista, 51,5% desenvolveram um transtorno desses. Entre os que nunca tinham usado, 12,4%. O risco subiu com a dose, e os transtornos regrediram quando o remédio foi suspenso:</p>
+  <div class="widget" id="w08">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w08.tag"><b class="wt">Remédios para Parkinson e o querer</b><span class="wdo">Compare quem toma e quem não toma agonista. O risco sobe com a dose e regride quando o remédio para.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w08.cap">Weintraub et al. (<i>Arch Neurol</i>, 2010), <span class="gl" data-gl="transversal">estudo transversal</span> financiado pela Boehringer Ingelheim, fabricante do pramipexol. Corvol et al. (<i>Neurology</i>, 2018), <span class="gl" data-gl="coorte">coorte</span> DIGPD. A forma da queda depois de parar o remédio é ilustrativa.</div>
+  </div>
+  <p data-i18n="s08.p3">Na França, Didier Jambart, pai de família e conselheiro municipal, tomou ropinirol a partir de 2003. Ele passou a jogar até perder as economias da família, desenvolveu uma compulsão sexual que não tinha antes e roubou para jogar. Os sintomas sumiram quando ele parou o remédio, em 2005. Em 2011, um tribunal de Nantes condenou a fabricante, GSK, a pagar 117 mil euros, e na apelação, em 2012, o valor subiu para cerca de 197 mil euros. Desde meados dos anos 2000, <span class="mark">as bulas desses remédios alertam para jogo e hipersexualidade</span>. Em 2016, a agência americana <span class="gl" data-gl="fda">FDA</span> fez o mesmo alerta para o <span class="gl" data-gl="aripi">aripiprazol</span>, um antipsicótico que estimula parcialmente o receptor D2.</p>
+  <p data-i18n="s08.p4">O Parkinson também mostra quanto o sistema aguenta antes de falhar. Os sintomas motores só aparecem quando cerca de 80% da dopamina do <span class="gl" data-gl="putamen">putâmen</span> já se foi. Quatro anos depois do diagnóstico, os marcadores de dopamina dessa região estão quase ausentes (Kordower, 2013). O número de pessoas com Parkinson no mundo deve passar de 11,9 milhões em 2021 para 25,2 milhões em 2050, quase tudo por causa do envelhecimento da população. Em abril de 2025, dois estudos na <em>Nature</em> relataram transplantes de células produtoras de dopamina feitas a partir de <span class="gl" data-gl="celtronco">células-tronco</span>, seguros e com sinais de que as células sobreviveram no cérebro.</p>
+</section>
+
+<!-- 09 -->
+<section class="wrap reveal" id="s09">
+  <div class="step" data-i18n="s09.step">08 · O que mexe na sua dopamina</div>
+  <h2 class="part" data-i18n="s09.h">Prazeres do dia a dia mexem pouco na dopamina; idade, sono e drogas mexem mais</h2>
+  <p class="lead" data-i18n="s09.p1">Em pessoas, a medida mais usada é o <span class="gl" data-gl="pet">PET</span> com um marcador chamado <span class="gl" data-gl="raclopride">raclopride</span>, que compete com a dopamina pelos receptores D2. Quando há mais dopamina perto dos receptores, menos marcador se prende, e o sinal cai. Uma queda de 10% no sinal indica que alguma coisa liberou dopamina, mas não que a dopamina subiu 10%. O próprio exame varia cerca de 4% quando a mesma pessoa é medida duas vezes, semanas depois, sem nada diferente. Antes de ver o gráfico, ponha em ordem do maior para o menor efeito: música que dá arrepio, videogame, café, cigarro e <span class="gl" data-gl="metilfen">metilfenidato</span>:</p>
+  <div class="widget wide" id="w09a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w09a.tag"><b class="wt">Prazeres do dia a dia e drogas na mesma régua</b><span class="wdo">Ponha os cinco em ordem do maior para o menor efeito e toque em revelar.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w09a.cap">Alakurtti et al. (2015, ruído); Volkow et al. (2015, cafeína); Kjaer et al. (2002, meditação); Salimpoor et al. (2011, música); Zald et al. (2004, dinheiro); Koepp et al. (1998, videogame, revisto com críticas por Egerton et al., 2009); Martinez et al. (2003, anfetamina); de la Fuente-Fernández et al. (2001, placebo); Volkow et al. (2001, metilfenidato); Brody et al. (2004, cigarro). Amostras de 7 a 20 pessoas.</div>
+  </div>
+  <p data-i18n="s09.p2">Repare que a música, a meditação e o dinheiro ficam a um ou dois <span class="gl" data-gl="ruido">ruídos</span> de distância do zero, e que os remédios e o cigarro ficam duas a quatro vezes mais longe. O café empurra o sinal para o outro lado. Nora Volkow mediu isso em 2015 com 20 pessoas que tomaram 300 miligramas de cafeína, o equivalente a cerca de três xícaras de café coado. A cafeína aumentou a disponibilidade dos receptores, o que indica que ela age no receptor e não na quantidade de dopamina liberada. O <span class="gl" data-gl="placebo">placebo</span> em pacientes de Parkinson liberou dopamina comparável à de um remédio, só pela expectativa de melhora.</p>
+  <p data-i18n="s09.p3">A falta de sono mostra como a mesma medida pode ser lida de duas formas. Em 2008, o grupo de Volkow viu o sinal do raclopride cair depois de uma noite sem dormir e interpretou a queda como mais dopamina. Em 2012, o mesmo grupo repetiu o experimento com um teste extra e concluiu que a dopamina liberada era igual, e que o que caía era o número de receptores disponíveis. O exercício tem dois estudos de PET agudo com resultados opostos: trinta minutos de esteira não mudaram nada em 12 pessoas (Wang, 2000), e bicicleta deitada mostrou liberação em 16 pessoas (Ando, 2024). Dois estudos sobre luz do sol e estação do ano usaram medidas diferentes e apontaram em direções opostas.</p>
+  <p data-i18n="s09.p4">O que muda os receptores de forma confiável é menos glamoroso. Em 2017, Teresa Karrer reuniu 95 estudos com 2.611 adultos saudáveis e mediu quanto cada parte do sistema perde por década de vida. Veja cada parte aos 20, 40, 60 e 80 anos:</p>
+  <div class="widget" id="w09b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w09b.tag"><b class="wt">O que a idade faz com o sistema de dopamina</b><span class="wdo">Compare cada parte do sistema aos 20, 40, 60 e 80 anos.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w09b.cap">Karrer et al. (<i>Neurobiol Aging</i>, 2017), 95 estudos de PET e <span class="gl" data-gl="spect">SPECT</span>. Os estudos são transversais, então diferenças entre gerações se misturam ao envelhecimento.</div>
+  </div>
+  <p data-i18n="s09.p5">O que se vende para aumentar a dopamina quase sempre falha em chegar ao cérebro. A tirosina enche a entrada da linha de montagem da seção 01 e quase não muda a saída. Os 250% de aumento atribuídos ao banho frio vêm de um estudo de 2000 em que dez homens ficaram uma hora imersos até o pescoço em água a 14 °C, e a medida foi feita no sangue. Cerca de metade da dopamina do corpo é fabricada no intestino, e ela fica do lado de fora da barreira do cérebro. Nenhum exame de sangue ou urina mede a dopamina do cérebro. A exceção é a <em><span class="gl" data-gl="mucuna">Mucuna pruriens</span></em>, uma leguminosa vendida como suplemento, cujas sementes contêm levodopa de verdade:</p>
+  <div class="widget" id="w09c">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w09c.tag"><b class="wt">Quanta levodopa vem num suplemento de Mucuna</b><span class="wdo">Cada cápsula é um produto, cheia até a levodopa medida. Compare com a faixa de um comprimido para Parkinson.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w09c.cap">Cohen et al. (<i>JAMA Neurology</i>, 2022), suplementos de Mucuna comprados nos Estados Unidos. Levodopa combinada com antidepressivos <span class="gl" data-gl="imao">inibidores de MAO</span> não seletivos pode causar <span class="gl" data-gl="crise">crise hipertensiva</span>, e a mesma regra vale para a Mucuna.</div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="wrap reveal" id="s10">
+  <div class="step" data-i18n="s10.step">09 · A balança</div>
+  <h2 class="part" data-i18n="s10.h">Doses repetidas fazem o cérebro compensar, e o ponto de equilíbrio desce</h2>
+  <p class="lead" data-i18n="s10.p1">O vídeo do Huberman Lab trata de um caso extremo do sistema: o que acontece quando a dopamina é empurrada para cima muitas vezes seguidas. Lembke explica com uma balança no <span class="gl" data-gl="circuito">circuito de recompensa</span>, com o prazer num prato e a dor no outro. Quando ela assiste a um vídeo de fofoca à noite, a balança pende para o prazer, e o cérebro põe pesos no prato da dor até nivelar. Lembke chama esses pesos de gremlins. Eles só descem depois de inclinar o outro lado na mesma medida, e esse intervalo é a ressaca, ou a vontade de ver mais um vídeo.</p>
+  <p data-i18n="s10.p2">A imagem é uma versão desenhada de uma teoria de 1974. Os psicólogos Richard Solomon e John Corbit propuseram que todo estímulo que mexe com o humor dispara um processo rápido e recruta um processo oposto e mais lento. Com a repetição, o processo lento cresce. No modelo abaixo, cada toque em <code>uma dose</code> põe um peso no prato do prazer. Ponha uma dose, avance o relógio, e depois encurte o intervalo entre as doses:</p>
+  <div class="widget wide" id="w10a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w10a.tag"><b class="wt">A balança do prazer e da dor</b><span class="wdo">Toque em uma dose e avance o relógio. Depois encurte o intervalo e repita por 30 dias.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w10a.cap">A balança é a metáfora de Lembke (<i>Dopamine Nation</i>, 2021) para a teoria do <span class="gl" data-gl="oponente">processo oponente</span> (Solomon e Corbit, 1974) e da <span class="gl" data-gl="alostase">alostase</span> (Koob e Le Moal, 2001). A forma das curvas segue a teoria; os valores são ilustrativos.</div>
+  </div>
+  <p data-i18n="s10.p3">Repare que, abaixo de certo intervalo, a linha tracejada desce e não volta sozinha enquanto as doses continuam. George Koob e Michel Le Moal chamaram esse deslocamento de alostase. Em ratos que se administram <span class="gl" data-gl="cocaina">cocaína</span> à vontade, a estimulação elétrica necessária para ativar o circuito de recompensa aumenta, e aumenta mais nos que consumiram mais (Markou e Koob, 1991).</p>
+  <p data-i18n="s10.p4">As drogas empurram o sistema mais longe e por mais tempo do que as recompensas naturais. Em ratos, uma <span class="gl" data-gl="microdialise">sonda fina</span> no núcleo accumbens recolhe a cada dez ou vinte minutos o líquido que banha os neurônios. Com ela, a comida eleva a dopamina a cerca de uma vez e meia o nível de repouso e volta ao normal em menos de uma hora e meia. A <span class="gl" data-gl="anfetamina">anfetamina</span> leva a dez vezes o repouso e fica alta por mais de cinco horas. É desse experimento que vem o “1.000%” que Lembke atribui à <span class="gl" data-gl="metanfetamina">metanfetamina</span> no vídeo:</p>
+  <div class="widget" id="w10b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w10b.tag"><b class="wt">Quanto e por quanto tempo a dopamina sobe num rato</b><span class="wdo">Compare a altura e a duração de cada curva, e a área acima do basal embaixo.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w10b.cap">Di Chiara e Imperato (<i>PNAS</i>, 1988); Fiorino et al. (<i>J Neurosci</i>, 1997); Bassareo e Di Chiara (1999). Curvas lidas à mão nos slides do NIDA, com margem de 5% a 10%. As doses foram escolhidas pelos pesquisadores de cada estudo. A morfina aparece na dose de 10 mg/kg; as outras doses estão na tabela.</div>
+  </div>
+  <p data-i18n="s10.p5">A velocidade também pesa. Em 2000, Volkow deu cocaína a 32 usuários por três vias, e o bloqueio dos <span class="gl" data-gl="dat">transportadores de dopamina</span> ficou parecido nas três. O pico do barato veio em 1,4 minuto com a cocaína fumada, em 3,1 minutos com a injetada e em 14,6 minutos com a aspirada. O metilfenidato oral ocupa o mesmo transportador, leva uma hora para chegar ao pico no cérebro e, em dose clínica, raramente dá barato.</p>
+  <p data-i18n="s10.p6">Em pessoas com vício, o PET mostra o sistema rebaixado. Usuários de metanfetamina tinham 16% menos receptores D2 disponíveis no <span class="gl" data-gl="caudado">caudado</span> que voluntários sem vício (Volkow, 2001), uma queda equivalente a cerca de duas décadas de envelhecimento no gráfico da seção 08. Em 2009, Diana Martinez esvaziou por um dia a dopamina de voluntários com um remédio e mediu quantos receptores ficavam livres. Em pessoas saudáveis, a dopamina de repouso ocupava cerca de 11% dos receptores D2. Em dependentes de cocaína, cerca de 6%. É a medida mais próxima de um nível basal de dopamina que existe em humanos, e ela exige um protocolo farmacológico num centro de PET. Parte da diferença pode existir antes da droga: em 2006, Michael Nader mediu os receptores de doze macacos antes de qualquer contato com cocaína, e os que tinham menos receptores foram os que mais se administraram a droga depois.</p>
+</section>
+
+<!-- 11 (night section: widget H toggles body.night while in view) -->
+<section class="wrap reveal night-sec" id="s11">
+  <div class="night-words" id="nightwords" aria-hidden="true"></div>
+  <div class="step" data-i18n="s11.step">10 · Trinta dias</div>
+  <h2 class="part" data-i18n="s11.h">Trinta dias melhoram o humor, e hábitos e receptores levam meses</h2>
+  <p class="lead" data-i18n="s11.p1">A receita do vídeo é ficar trinta dias sem a droga de escolha. Lembke diz que os primeiros 10 a 14 dias são os piores e que, nas semanas três e quatro, cerca de 80% dos pacientes dela se sentem bem melhor. O número de 80% vem da experiência clínica dela. O dado publicado mais próximo é um estudo de 1988 com 191 homens internados por alcoolismo: na entrada, 42% tinham depressão clinicamente significativa, e na quarta semana, 6%, com a maior queda na segunda semana. Desenhe primeiro como você acha que uma pessoa se sente nos trinta dias depois de parar:</p>
+  <div class="widget" id="w11a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w11a.tag"><b class="wt">Como uma pessoa se sente nos 30 dias depois de parar</b><span class="wdo">Desenhe sua curva no gráfico e toque em mostrar os dados.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w11a.cap">Brown e Schuckit (<i>J Stud Alcohol</i>, 1988); Hughes (2007); Budney et al. (2003); Heilig et al. (2010). O artigo dá os valores da entrada e da quarta semana e a maior queda na segunda; as barras das semanas 1 a 3 são estimativas. A curva tracejada é o padrão clínico descrito por Lembke, sem medição publicada.</div>
+  </div>
+  <p data-i18n="s11.p2">Os experimentos com telas mostram uma curva parecida em comportamentos que nenhum manual classifica como vício. Em 2025, Johannes Thrul reanalisou os estudos de pausa nas redes sociais. <span class="mark">Pausas de menos de uma semana pioraram o humor, pausas de uma semana ou mais melhoraram, e o melhor resultado apareceu perto de três semanas.</span> No mesmo ano, Noah Castelo bloqueou por duas semanas a internet móvel do celular de 467 adultos americanos. O tempo de tela caiu de 314 para 161 minutos por dia, e a saúde mental melhorou com <span class="gl" data-gl="efeito">tamanho de efeito</span> de 0,56 <span class="gl" data-gl="dp">desvio padrão</span>, mesmo contando os três quartos que não mantiveram o bloqueio até o fim:</p>
+  <div class="widget" id="w11b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w11b.tag"><b class="wt">Quanto tempo de pausa nas telas faz diferença</b><span class="wdo">Veja onde a curva cruza o zero e onde fica o melhor resultado, perto de três semanas.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w11b.cap">Thrul et al. (2025), reanálise de 19 estudos pequenos; Castelo et al. (<i>PNAS Nexus</i>, 2025), sem grupo placebo; Allcott et al. (2020); NBER w33697 (2025).</div>
+  </div>
+  <p data-i18n="s11.p3">Os estudos que medem o cérebro dão prazos mais longos. Em dependentes de cocaína, os receptores D2 continuavam baixos de três a quatro meses depois da desintoxicação. Em alcoólicos, não houve recuperação mensurável entre o primeiro e o quarto mês. Em cinco usuários de metanfetamina, os transportadores de dopamina subiram cerca de 19% depois de 12 a 17 meses sem a droga. Numa entrevista à CNN em 2025, Lembke disse que os trinta dias resetam as vias de recompensa “pelo menos <span class="gl" data-gl="fenomeno">fenomenologicamente</span>”, isto é, no que a pessoa sente. Os hábitos também levam mais tempo. Em 2024, uma <span class="gl" data-gl="meta">meta-análise</span> de 20 estudos com 2.601 pessoas encontrou <span class="gl" data-gl="mediana">medianas</span> de 59 a 66 dias para um hábito de saúde ficar automático, com variação individual de 4 a 335 dias:</p>
+  <div class="widget wide" id="w11c">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w11c.tag"><b class="wt">Humor, hábito e receptores têm relógios diferentes</b><span class="wdo">Compare os três prazos com a faixa dos 30 dias, à esquerda.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w11c.cap">Brown e Schuckit (1988); Singh et al. (<i>Healthcare</i>, 2024); Lally et al. (2010); Volkow et al. (1993, 2001, 2002). Os estudos de PET têm de 5 a 20 pessoas.</div>
+  </div>
+  <p data-i18n="s11.p4">A maioria das pessoas sai. Numa amostra de 43.093 adultos americanos, a chance de <span class="gl" data-gl="remissao">remissão</span> ao longo da vida de quem já foi dependente foi de 83,7% para a nicotina, 90,6% para o álcool, 97,2% para a cannabis e 99,2% para a cocaína. Metade das pessoas saiu em cerca de 5 anos na cocaína e em cerca de 26 anos na nicotina (Lopez-Quintero, 2011).</p>
+</section>
+
+<!-- 12 -->
+<section class="wrap reveal" id="s12">
+  <div class="step" data-i18n="s12.step">11 · O imprevisível</div>
+  <h2 class="part" data-i18n="s12.h">Recompensas imprevisíveis prendem mais do que as previsíveis</h2>
+  <p class="lead" data-i18n="s12.p1">O neurônio da seção 04 tinha uma rampa de disparo mais alta quando a chance de suco era de 50%. A incerteza máxima mantém a dopamina ativa por mais tempo. Os pombos de B. F. Skinner mostram o efeito no comportamento. Em 1957, Charles Ferster e Skinner compararam dois esquemas. No de <span class="gl" data-gl="razaofixa">razão fixa</span>, o pombo ganha comida a cada número fixo de bicadas e faz uma pausa depois de cada prêmio. No de <span class="gl" data-gl="razaovar">razão variável</span>, ganha em média a cada mesmo número, só que em momentos imprevisíveis, e bica sem parar. O comportamento treinado no esquema variável também demora muito mais a desaparecer quando a comida para. No modelo abaixo, clique no botão sob os dois esquemas e acompanhe o registro dos seus cliques:</p>
+  <div class="widget" id="w12a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w12a.tag"><b class="wt">Prêmio previsível contra prêmio imprevisível</b><span class="wdo">Clique em bicar nas duas fases e compare os registros. Depois veja quanto você insiste sem prêmio.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w12a.cap">Ferster e Skinner (<i>Schedules of Reinforcement</i>, 1957); Fiorillo, Tobler e Schultz (<i>Science</i>, 2003). Em 2004, David Zald testou os dois esquemas com dinheiro em pessoas no PET e encontrou um sinal pequeno e espalhado.</div>
+  </div>
+  <p data-i18n="s12.p2"><span class="mark">O jogo de azar funciona inteiro nessa faixa de incerteza</span>, e é o único comportamento que o manual de diagnóstico da psiquiatria americana, o <span class="gl" data-gl="dsm">DSM-5</span>, classifica como vício desde 2013. Os estudos de PET mostram liberação de dopamina amplificada em jogadores patológicos, com um perfil diferente do das drogas (Clark, 2019). No Brasil, as apostas online foram reguladas em janeiro de 2025. Segundo o Levantamento Nacional de Álcool e Drogas (<span class="gl" data-gl="lenad">LENAD III</span>), da Unifesp, 17,4% das pessoas com 14 anos ou mais apostam, 6,8% apostam de forma arriscada e 0,8%, cerca de 1,4 milhão de pessoas, têm padrão compatível com <span class="gl" data-gl="tjogo">transtorno do jogo</span>:</p>
+  <div class="widget" id="w12b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w12b.tag"><b class="wt">Quantos brasileiros apostam, e quantos com risco</b><span class="wdo">Veja quantos apostam e, entre os apostadores, a parte arriscada em cada faixa de renda.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w12b.cap">LENAD III (Unifesp, 2023 a 2024). Nota técnica do Banco Central de 24/09/2024, que conta só Pix e não desconta prêmios. Desde 17/03/2026, o ECA Digital (Lei 15.211/2025) proíbe <span class="gl" data-gl="lootbox">caixas de recompensa</span> em jogos acessíveis a crianças e adolescentes.</div>
+  </div>
+  <p data-i18n="s12.p3">Os aplicativos usam a mesma mecânica em escala menor. Loren Brichter criou o gesto de puxar a tela para atualizar em 2009 e disse ao <em>The Guardian</em> em 2017 que não o projetou para viciar, mas que hoje o vê como viciante. Nenhum estudo mediu a dopamina de uma pessoa rolando um feed.</p>
+</section>
+
+<!-- 13 -->
+<section class="wrap reveal" id="s13">
+  <div class="step" data-i18n="s13.step">12 · O que circula</div>
+  <h2 class="part" data-i18n="s13.h">O detox de dopamina nasceu como técnica de terapia e virou moda</h2>
+  <p class="lead" data-i18n="s13.p1">A ideia de que dá para resetar a dopamina tem uma origem rastreável. Em 2019, o psicólogo Cameron Sepah propôs um “jejum de dopamina” como técnica de <span class="gl" data-gl="tcc">terapia cognitivo-comportamental</span> para afastar pessoas de comportamentos impulsivos específicos, e avisou que o nome era uma figura e que o objetivo nunca foi reduzir a dopamina. O <em>New York Times</em> levou o termo ao grande público em novembro de 2019. Na quarentena de 2020, os vídeos de autoajuda do YouTube transformaram o jejum em “detox”. Em 2023, o “dopamine menu”, uma lista de atividades planejada com antecedência que vinha da comunidade de pessoas com <span class="gl" data-gl="tdah">TDAH</span>, ficou viral no TikTok. As buscas contam a sequência:</p>
+  <div class="widget wide" id="w13a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w13a.tag"><b class="wt">A dopamina virou moda, e a moda está passando</b><span class="wdo">Role a página para desenhar as buscas, no mundo e no Brasil.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w13a.cap">Google Trends, consulta de 12/11/2026, médias anuais do índice mensal de 0 a 100. Os valores só se comparam dentro de cada painel. 2026 vai até 10 de novembro.</div>
+  </div>
+  <p data-i18n="s13.p2">Os cartões abaixo trazem sete frases comuns sobre dopamina. Decida cada uma antes de virar o cartão:</p>
+  <div class="widget" id="w13b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w13b.tag"><b class="wt">Verdade ou exagero?</b><span class="wdo">Leia cada frase, escolha verdade ou exagero e veja o verso do cartão.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w13b.cap">As fontes de cada veredito estão no verso do cartão e nas seções citadas.</div>
+  </div>
+  <p data-i18n="s13.p3">O “dopamine menu” e o jejum de Sepah têm um núcleo útil quando se tira o nome químico. Planejar alternativas antes de o tédio chegar e afastar as pistas de um comportamento são técnicas de terapia comportamental com evidência. A dopamina entra no nome como marketing.</p>
+  <p data-i18n="s13.p4">Mesmo assim, muita gente que faz detox relata que se sente melhor, e esses relatos têm explicações que não dependem de medir dopamina. <span class="mark">Quem faz detox dorme mais, passa menos tempo na tela e muda de rotina,</span> e esses efeitos foram medidos: no experimento de Castelo, duas semanas sem internet móvel melhoraram a saúde mental. Depois de dias sem estímulos fortes, coisas comuns tendem a parecer mais interessantes, o que combina com o sinal de surpresa da seção 04 se ajustando às recompensas disponíveis. Esse ajuste foi medido em macacos e nunca em quem fez detox. Somam-se a isso a expectativa de melhora, que em pacientes de Parkinson liberou dopamina comparável à de um remédio, e o fato de que muita gente começa no pior momento, que tende a melhorar sozinho. Quem se deu bem escreve o relato, e quem desistiu no terceiro dia raramente escreve.</p>
+  <p data-i18n="s13.p5">Ninguém mediu a dopamina de quem faz detox porque, em pessoas vivas, ela só se mede com PET, um exame caro, com radiação, que leva mais de uma hora e varia cerca de 4% sozinho. Os pesquisadores que defendem a ideia juntam evidências reais de outros contextos: ratos que recebem drogas repetidas, exames de dependentes que se recuperam ao longo de meses, a experiência clínica com pacientes e experimentos que medem humor e tempo de tela. <span class="mark">O salto está em levar para o celular e o açúcar, que mexem de 6% a 9% no sinal do PET, o que foi medido com estimulantes e cigarro, que mexem de 15% a 37%.</span> Em 2008, Deena Weisberg mostrou que leigos acham uma explicação mais convincente quando ela inclui um termo de neurociência, mesmo irrelevante, e “resetei minha dopamina” soa mais concreto do que “mudei de hábito por duas semanas”.</p>
+</section>
+
+<!-- 14 -->
+<section class="wrap reveal" id="s14">
+  <div class="step" data-i18n="s14.step">13 · O que resetar quer dizer</div>
+  <h2 class="part" data-i18n="s14.h">O que dá para resetar é o que a dopamina aprendeu</h2>
+  <p class="lead" data-i18n="s14.p1">O que se chama de sistema de dopamina são pelo menos quatro coisas, e cada uma se mede de um jeito. A primeira é a fração de receptores ocupados em repouso, cerca de um décimo. A segunda é a quantidade de receptores, estável como um traço de cada pessoa e que cai com a idade. A terceira é a capacidade de fabricar dopamina, que muda pouco. A quarta são as rajadas e pausas de décimos de segundo, que marcam a surpresa. O painel abaixo tem um medidor para cada uma. Aperte os botões e veja qual medidor cada um move:</p>
+  <div class="widget wide" id="w14a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w14a.tag"><b class="wt">O que de fato mexe no sistema de dopamina</b><span class="wdo">Aperte os botões e veja qual dos quatro medidores cada um move.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w14a.cap">Direção e ordem de grandeza de cada efeito, a partir dos estudos citados nas seções 08 a 10. Os ponteiros não são medições.</div>
+  </div>
+  <p data-i18n="s14.p2"><span class="mark">Os botões que mexem nos medidores de forma confiável são a idade, o sono, as drogas e os remédios</span>. Nenhum estudo mediu a dopamina de alguém fazendo detox. O único medidor que responde a uma mudança de vida é o das rajadas e pausas, porque ele aprende. Quando as pistas e as recompensas de um ambiente mudam, o sinal de surpresa da seção 04 se recalibra. A rajada que disparava com o som da notificação ou com o café da manhã deixa de disparar ali, porque aquilo deixou de prever o que previa. Esse reaprendizado leva semanas para mexer no humor e meses para mudar um hábito, e é o que os trinta dias do vídeo põem em movimento.</p>
+  <div class="widget" id="w14b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="w14b.tag"><b class="wt">Suas respostas, conferidas</b><span class="wdo">Veja o cartão com o que você marcou no começo e baixe a imagem.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="w14b.cap">O cartão usa só as respostas guardadas neste navegador.</div>
+  </div>
+  <p data-i18n="s14.p3">Na margem desta página, o neurônio de dopamina continua marcando o ritmo de fundo, quatro vezes por segundo. Ele disparou uma rajada quando os resultados do café, da música e dos cartões foram diferentes do que você esperava. Se você voltar ao começo e refizer os palpites, ele vai disparar menos, porque agora você já sabe o que vem.</p>
+</section>
+
+<!-- MÉTODO -->
+<section class="wrap reveal" id="s-metodo">
+  <div class="step" data-i18n="m.step">Nota de método</div>
+  <ul class="tight" style="font-size:14px">
+    <li data-i18n="m.l1">O vídeo do Huberman Lab aparece como ponto de partida e como uma das vozes da seção 09. As afirmações de Lembke foram conferidas nos estudos de origem, e as correções estão nas seções 09 e 10.</li>
+    <li data-i18n="m.l2">Quase todos os números de dopamina medida em humanos vêm de PET com raclopride, em amostras de 7 a 20 pessoas, com ruído de reteste de cerca de 4%. O ensaio mostra a mudança no sinal medido e evita convertê-la em “aumento de dopamina”.</li>
+    <li data-i18n="m.l3">Os números em ratos vêm de <span class="gl" data-gl="microdialise">microdiálise</span> e foram lidos à mão nos slides do NIDA, com margem de 5% a 10%.</li>
+    <li data-i18n="m.l4">Os modelos das figuras 03, 04, 05, 06 e 09 usam mecanismos descritos na literatura, com parâmetros escolhidos para caber na tela. Eles mostram a forma do fenômeno e não fazem previsão.</li>
+    <li data-i18n="m.l5">A estimativa de 4,5 m de axônio e até 2,4 milhões de sinapses por neurônio humano é uma extrapolação a partir de ratos.</li>
+    <li data-i18n="m.l6">Alguns números vêm de fontes secundárias confiáveis e ainda não foram lidos no artigo original: o décimo de Hornykiewicz (1960), os percentuais do placebo em Parkinson, os valores aproximados do gráfico de Seeman e a frase de Brichter ao <em>Guardian</em>.</li>
+    <li data-i18n="m.l7">O estudo DOMINION foi financiado pelo fabricante do pramipexol. A coorte de Corvol foi independente e encontrou um efeito maior.</li>
+    <li data-i18n="m.l8">O ensaio não é orientação médica. Parar de repente o álcool diário, os <span class="gl" data-gl="benzo">benzodiazepínicos</span> ou os <span class="gl" data-gl="opioides">opioides</span> pode ser perigoso e precisa de acompanhamento.</li>
+  </ul>
+</section>
+
+<!-- FONTES -->
+<section class="wrap reveal" id="s-fontes">
+  <div class="step" data-i18n="f.step">Fontes principais</div>
+  <p class="refs" data-i18n="f.refs">
+  <b>Ponto de partida:</b> Huberman Lab Clips, “How to Reset Your Dopamine System &amp; Overcome Addiction”, 10/11/2026. Lembke, <i>Dopamine Nation</i>, 2021 (<i>Nação Dopamina</i>, 2022). Google Trends, consulta de 12/11/2026.<br>
+  <b>História e síntese:</b> Carlsson, Lindqvist &amp; Magnusson, <i>Nature</i> 1957. Carlsson et al., <i>Science</i> 1958. Ehringer &amp; Hornykiewicz, <i>Klin Wochenschr</i> 1960. Birkmayer &amp; Hornykiewicz, <i>Wien Klin Wochenschr</i> 1961. Cotzias, Van Woert &amp; Schiffer, <i>NEJM</i> 1967.<br>
+  <b>Anatomia e ritmos:</b> Azevedo et al., <i>J Comp Neurol</i> 2009. Pakkenberg et al., 1991. Björklund &amp; Dunnett, <i>Trends Neurosci</i> 2007. Matsuda et al., <i>J Neurosci</i> 2009. Bolam &amp; Pissadaki, <i>Mov Disord</i> 2012. Grace &amp; Bunney, <i>J Neurosci</i> 1984. Liu et al., <i>Cell</i> 2018.<br>
+  <b>Medição:</b> Di Chiara &amp; Imperato, <i>PNAS</i> 1988. Fiorino, Coury &amp; Phillips, <i>J Neurosci</i> 1997. Bassareo &amp; Di Chiara, <i>Neuroscience</i> 1999. Alakurtti et al., <i>J Cereb Blood Flow Metab</i> 2015.<br>
+  <b>Erro de previsão e IA:</b> Schultz, Dayan &amp; Montague, <i>Science</i> 1997. Fiorillo, Tobler &amp; Schultz, <i>Science</i> 2003. Rescorla &amp; Wagner, 1972. Sutton, <i>Machine Learning</i> 1988. Dabney et al., <i>Nature</i> 2020. Lowet et al., <i>Nature</i> 2025. ACM, Prêmio Turing 2024 (anunciado em 03/2025).<br>
+  <b>Querer e esforço:</b> Berridge &amp; Robinson, <i>Brain Res Rev</i> 1998. Peciña &amp; Berridge, <i>J Neurosci</i> 2005. Salamone et al., <i>Psychopharmacology</i> 1991. Salamone &amp; Correa, <i>Neuron</i> 2012. Treadway et al., <i>J Neurosci</i> 2012. Knutson et al., <i>NeuroReport</i> 2001. Sharot et al., <i>Curr Biol</i> 2009. Kjaer et al., <i>Cogn Brain Res</i> 2002. Manninen et al., <i>J Neurosci</i> 2017. Ferreri et al., <i>PNAS</i> 2019.<br>
+  <b>Dose, psicose e hormônios:</b> Cools &amp; D’Esposito, <i>Biol Psychiatry</i> 2011. Jongkees et al., 2020. Farrell et al., 2012. Seeman et al., <i>Nature</i> 1976. Creese, Burt &amp; Snyder, <i>Science</i> 1976. Kapur et al., <i>Am J Psychiatry</i> 2000. Howes &amp; Kapur, <i>Schizophr Bull</i> 2009.<br>
+  <b>Parkinson:</b> Weintraub et al., <i>Arch Neurol</i> 2010. Corvol et al., <i>Neurology</i> 2018. Bernheimer et al., <i>J Neurol Sci</i> 1973. Kordower et al., <i>Brain</i> 2013. Su et al., <i>BMJ</i> 2025. Tabar et al. e Sawamoto et al., <i>Nature</i> 2025.<br>
+  <b>Cotidiano:</b> Salimpoor et al., <i>Nat Neurosci</i> 2011. Zald et al., <i>J Neurosci</i> 2004. Koepp et al., <i>Nature</i> 1998. Egerton et al., <i>Neurosci Biobehav Rev</i> 2009. de la Fuente-Fernández et al., <i>Science</i> 2001. Volkow et al., <i>Transl Psychiatry</i> 2015 (cafeína); <i>J Neurosci</i> 2008 e 2012 (sono). Wang et al., <i>J Nucl Med</i> 2000. Ando et al., <i>J Physiol</i> 2024. Karrer et al., <i>Neurobiol Aging</i> 2017. Eisenhofer et al., <i>J Clin Endocrinol Metab</i> 1997. Šrámek et al., <i>Eur J Appl Physiol</i> 2000. Cohen et al., <i>JAMA Neurology</i> 2022.<br>
+  <b>Tolerância e vício:</b> Solomon &amp; Corbit, <i>Psychol Rev</i> 1974. Koob &amp; Le Moal, <i>Neuropsychopharmacology</i> 2001. Markou &amp; Koob, 1991. Volkow et al., <i>Life Sci</i> 2000; <i>Am J Psychiatry</i> 2001. Martinez et al., <i>Am J Psychiatry</i> 2009. Nader et al., <i>Nat Neurosci</i> 2006.<br>
+  <b>Tempo e recuperação:</b> Brown &amp; Schuckit, <i>J Stud Alcohol</i> 1988. Hughes, 2007. Budney et al., 2003. Heilig et al., <i>Addict Biol</i> 2010. Thrul et al., 2025. Castelo et al., <i>PNAS Nexus</i> 2025. Singh et al., <i>Healthcare</i> 2024. Lally et al., <i>Eur J Soc Psychol</i> 2010. Lopez-Quintero et al., <i>Addiction</i> 2011.<br>
+  <b>Imprevisível:</b> Ferster &amp; Skinner, <i>Schedules of Reinforcement</i>, 1957. Clark, Boileau &amp; Zack, <i>Mol Psychiatry</i> 2019. LENAD III, Unifesp, 2025. Banco Central, nota técnica de 24/09/2024. Lei 15.211/2025 (ECA Digital).
+  </p>
+  <div class="foot" data-i18n="f.foot">Como resetar seu sistema de dopamina · ensaio interativo · dados conferidos contra as fontes primárias · novembro de 2026</div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+<script>
+<!--RUNTIME_JS-->
+</script>
+<!--WIDGETS_JS-->
+<script>
+<!--EN_JS-->
+/* ================= page chrome: progress, reveal, sound, language ================= */
+(function(){
+  var $=DN.$, $all=DN.$all;
+  var prog=$('#progress');
+  window.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);prog.style.width=(p*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0,rootMargin:'0px 0px -80px 0px'});
+    $all('.reveal').forEach(function(el){io.observe(el)});
+  } else { $all('.reveal').forEach(function(el){el.classList.add('in')}); }
+  var snd=$('#sndtoggle');
+  snd.addEventListener('click',function(){var on=snd.getAttribute('aria-pressed')!=='true';snd.setAttribute('aria-pressed',on?'true':'false');DN.setSound(on);});
+
+  var PT={};
+  $all('[data-i18n]').forEach(function(el){PT[el.getAttribute('data-i18n')]=el.innerHTML;});
+  function applyLang(lang){
+    document.documentElement.lang=lang;
+    try{localStorage.setItem('rs_lang',lang);}catch(e){}
+    $all('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');var v=(lang==='en')?(window.EN||{})[k]:PT[k];if(v!=null)el.innerHTML=v;});
+    $all('.langtoggle button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    DN._setLang(lang);
+    document.dispatchEvent(new CustomEvent('rs:lang',{detail:lang}));
+  }
+  $all('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
+  function detectLang(){
+    try{var st=localStorage.getItem('rs_lang');if(st==='pt'||st==='en')return st;}catch(e){}
+    var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+    for(var i=0;i<navs.length;i++){var l=(navs[i]||'').toLowerCase();if(l.indexOf('pt')===0)return 'pt';if(l.indexOf('en')===0)return 'en';}
+    return 'pt';
+  }
+  var l=detectLang(); if(l!=='pt') applyLang(l);
+})();
+</script>
+</body>
+</html>

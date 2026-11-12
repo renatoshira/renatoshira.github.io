@@ -1,0 +1,61 @@
+/* ---- night.css : section 11 night mode (owner: night.js) ---- */
+@property --paper { syntax: '<color>'; inherits: true; initial-value: #ffffff; }
+@property --ink { syntax: '<color>'; inherits: true; initial-value: #141414; }
+@property --dim { syntax: '<color>'; inherits: true; initial-value: #6b6b6b; }
+@property --line { syntax: '<color>'; inherits: true; initial-value: #e2e2e2; }
+@property --mid { syntax: '<color>'; inherits: true; initial-value: #9a9a9a; }
+@property --pausa { syntax: '<color>'; inherits: true; initial-value: #3b3f9e; }
+@property --pausa-soft { syntax: '<color>'; inherits: true; initial-value: rgba(59,63,158,.14); }
+
+body.dn-nt {
+  transition: --paper .9s ease, --ink .9s ease, --dim .9s ease, --line .9s ease,
+    --mid .9s ease, --pausa .9s ease, --pausa-soft .9s ease;
+}
+body.dn-nt-cut { transition: none; }
+body.is-night {
+  --paper: #0f1020;
+  --ink: #e9e6dc;
+  --dim: #a7a49b;
+  --line: #2a2c44;
+  --mid: #77768a;
+  /* the indigo accent is lifted so it stays legible on the night paper */
+  --pausa: #9ea2f2;
+  --pausa-soft: rgba(158,162,242,.18);
+}
+body.dn-nt-cut .widget, body.dn-nt-cut .topbar,
+body.dn-nt-run .widget, body.dn-nt-run .topbar, body.dn-nt-run .btn,
+body.dn-nt-run .langtoggle button, body.dn-nt-run .sndtoggle { transition: none !important; }
+
+/* ---- the section and its background layer ---- */
+#s11.night-sec { position: relative; }
+#s11.night-sec > :not(#nightwords) { position: relative; z-index: 1; }
+#nightwords {
+  position: absolute; top: 0; bottom: 0; z-index: 0;
+  width: var(--nw-vw, 100vw);
+  left: calc(50% - var(--nw-vw, 100vw) / 2);
+  pointer-events: none; overflow: clip;
+}
+#nightwords .nw-tex {
+  position: absolute; inset: 0;
+  background-repeat: repeat; background-size: 256px 256px;
+  image-rendering: pixelated;
+  opacity: 0; transition: opacity 1.2s ease;
+}
+#nightwords .nw-stage { position: sticky; top: 0; height: 100vh; height: 100svh; }
+#nightwords .nw-word {
+  position: absolute; white-space: nowrap; line-height: 1;
+  font-family: 'Recursive', 'Space Mono', monospace;
+  font-variation-settings: 'CASL' .5, 'slnt' -6, 'wght' 600, 'MONO' 0;
+  color: var(--pausa); opacity: 0;
+  transition: opacity 1.4s ease;
+  will-change: transform;
+  user-select: none;
+}
+body.is-night #nightwords .nw-tex { opacity: .07; }
+body.is-night #nightwords .nw-word { opacity: .2; }
+body.is-night.is-predawn #nightwords .nw-word { opacity: .07; }
+body.is-night.is-predawn #nightwords .nw-tex { opacity: .03; }
+body.dn-nt-cut #nightwords .nw-tex, body.dn-nt-cut #nightwords .nw-word { transition: none; }
+@media (max-width: 560px) {
+  body.is-night #nightwords .nw-word { opacity: .16; }
+}

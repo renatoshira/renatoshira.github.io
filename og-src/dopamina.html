@@ -1,0 +1,33 @@
+<!doctype html><html lang="pt"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="base.css"><style>body{background:#fff}.card{inset:22px;border:2px solid #141414}
+.r{width:420px}
+.r svg{display:block;width:420px;height:auto}
+.cap{font-size:15px;color:#8d8d8d;margin-top:10px;letter-spacing:.04em}</style></head><body><div class="card">
+<div class="k">Dopamina × o que mexe nela</div>
+<div class="l"><h1><span>Como resetar seu</span><span class="i1">sistema de dopamina</span></h1>
+<div class="s">A dopamina faz o corpo se mexer, marca o que surpreende e ensina o cérebro a querer de novo.</div></div>
+<div class="r">
+<svg viewBox="0 0 420 210" xmlns="http://www.w3.org/2000/svg" font-family="Space Mono">
+  <g id="rows"></g>
+  <line x1="0" y1="196" x2="420" y2="196" stroke="#141414" stroke-width="2"/>
+  <text x="128" y="16" font-size="13" fill="#8d8d8d">luz</text>
+  <text x="300" y="16" font-size="13" fill="#8d8d8d">suco</text>
+  <line x1="140" y1="22" x2="140" y2="190" stroke="#e8952f" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="312" y1="22" x2="312" y2="190" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="3 4"/>
+</svg>
+<div class="cap">o neurônio aprende onde está a surpresa</div>
+</div>
+<div class="by">por Renato Shirakashi</div><div class="url">renatoshira.github.io</div></div>
+<script>
+// Schultz-style raster: early rows burst at juice, late rows burst at light
+var g=document.getElementById('rows'),NS='http://www.w3.org/2000/svg',seed=7;
+function r(){seed=(seed*16807)%2147483647;return seed/2147483647}
+for(var row=0;row<11;row++){
+  var y=30+row*15,learned=row/10;
+  for(var x=4;x<416;x+=26+r()*14){mk(x,y,'#141414')}
+  var bx=learned<.5?312:140,col=learned<.5?'#141414':'#e8952f';
+  if(learned>.35&&learned<.65){bx=140;col='#e8952f'}
+  for(var i=0;i<6;i++)mk(bx+i*4+r()*2,y,col,true);
+}
+function mk(x,y,c,b){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x);l.setAttribute('x2',x);l.setAttribute('y1',y-5);l.setAttribute('y2',y+5);l.setAttribute('stroke',c);l.setAttribute('stroke-width',b?2.4:1.6);g.appendChild(l)}
+</script>
+</body></html>

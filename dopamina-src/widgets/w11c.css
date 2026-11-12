@@ -1,0 +1,16 @@
+/* ---- w11c · os-tres-relogios ---- */
+#w11c .w11c-30{fill:var(--dopa);opacity:.18}
+#w11c .w11c-30t{font-size:10.5px;fill:var(--dopa);font-weight:700}
+#w11c .w11c-grid{stroke:var(--line);stroke-width:1}
+#w11c .w11c-axis{stroke:var(--ink);stroke-width:1}
+#w11c .w11c-tk{font-size:10.5px;fill:var(--dim);font-variant-numeric:tabular-nums}
+#w11c .w11c-lt{font-size:13px;font-weight:700;fill:var(--ink)}
+#w11c .w11c-ls{font-size:11px;fill:var(--dim)}
+#w11c .w11c-n{font-size:10.5px;fill:var(--ink)}
+#w11c .w11c-bmood{fill:var(--pausa)}
+#w11c .w11c-brange{fill:var(--ink);opacity:.28}
+#w11c .w11c-bhab{fill:var(--ink)}
+#w11c .w11c-gs{stop-color:var(--ink)}
+#w11c .w11c-md{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+#w11c .w11c-lead{stroke:var(--mid);stroke-width:1}
+#w11c .w11c-take{margin:12px 0 0;padding-left:12px;border-left:3px solid var(--dopa);font-size:14px;line-height:1.5;font-weight:700;color:var(--ink)}

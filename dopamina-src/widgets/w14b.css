@@ -1,0 +1,15 @@
+/* ---- w14b · o cartão ---- */
+#w14b .w14b-grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:24px;align-items:start}
+#w14b .w14b-prev{border:1px solid var(--line);background:#f7f7f5;padding:12px}
+#w14b .w14b-cv{width:100%;height:auto;aspect-ratio:1080/1350;box-shadow:0 1px 0 rgba(0,0,0,.04),0 8px 24px -12px rgba(20,20,20,.28)}
+#w14b .w14b-side{min-width:0}
+#w14b .w14b-h{font-weight:700;font-size:15px;line-height:1.5;margin:0 0 8px}
+#w14b .w14b-m{font-size:13px;color:var(--dim);margin:0;font-variant-numeric:tabular-nums}
+#w14b .w14b-dl{min-width:180px}
+#w14b .w14b-txt{margin-top:14px}
+#w14b .w14b-eq ul{font-size:12.5px;line-height:1.55;margin:10px 0 0;color:var(--ink)}
+@media (max-width:620px){
+  #w14b .w14b-grid{grid-template-columns:1fr;gap:16px}
+  #w14b .w14b-prev{padding:8px}
+  #w14b .w14b-dl{flex:1 1 auto;min-height:44px}
+}

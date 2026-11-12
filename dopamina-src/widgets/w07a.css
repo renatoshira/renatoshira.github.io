@@ -1,0 +1,6 @@
+#w07a .w07a-note{font-size:12px;color:var(--dim);margin:8px 0 0;line-height:1.6}#w07a .w07a-note b{color:var(--ink);font-weight:700}
+#w07a .w07a-svg{margin-top:4px}
+#w07a .w07a-drugs .btn{font-size:12px}
+
+#w07a .w07a-halo{paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}
+#w07a .w07a-take{font-size:13.5px;line-height:1.55;font-weight:700;margin:14px 0 0;padding:1px 0 1px 12px;border-left:3px solid var(--dopa)}

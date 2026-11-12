@@ -1,0 +1,50 @@
+#w04a .w4-stage{position:relative;margin-top:4px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+#w04a.w4-vert .w4-stage{touch-action:auto}
+#w04a .w4-bleed{position:absolute;left:0;overflow:clip;pointer-events:none;z-index:3}
+#w04a .w4-bleed svg{display:block;width:auto;height:auto;overflow:visible}
+#w04a .w4-svg text{font-family:'Space Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+#w04a .w4-grid line{stroke:var(--line);stroke-width:1}
+#w04a .w4-grid line.w4-zero{stroke:none}
+#w04a .w4-grid text{font-size:10px;fill:var(--dim)}
+#w04a .w4-base{stroke:var(--ink);stroke-width:1.2}
+#w04a .w4-axl{font-size:10px;fill:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+#w04a .w4-axl{display:none}
+#w04a .w4-track{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3;transition:opacity .3s}
+#w04a .w4-gfill{fill-opacity:.2;stroke-width:1.5}
+#w04a .w4-gout{fill:none;stroke:var(--ink);stroke-opacity:.55;stroke-width:1.2;stroke-dasharray:4 3}
+#w04a .w4-val{font-size:12px;font-weight:700;fill:var(--ink)}
+#w04a .w4-name{font-size:13px;fill:var(--ink)}
+#w04a.w4-vert .w4-name{font-size:10.5px}
+#w04a .w4-sub{font-size:10.5px;fill:var(--dim)}
+#w04a .w4-gtxt{font-size:12px;fill:var(--ink);font-weight:700}
+#w04a .w4-handle{cursor:grab}
+#w04a .w4-hline{stroke:var(--ink);stroke-width:2}
+#w04a .w4-hdot{fill:var(--paper);stroke:var(--ink);stroke-width:2;transition:r .18s}
+#w04a .w4-hring{fill:none;stroke:var(--dopa);stroke-width:2.5;opacity:0;transition:opacity .18s}
+#w04a .w4-handle.w4-focus .w4-hring{opacity:1}
+#w04a .w4-handle.w4-focus .w4-hdot{fill:var(--dopa)}
+#w04a .w4-hit{fill:transparent;pointer-events:auto;touch-action:none;cursor:grab}
+#w04a.w4-shown .w4-hit{pointer-events:none}
+#w04a .w4-brk-gap{stroke:var(--paper);stroke-width:5;fill:none}
+#w04a .w4-brk-ln{stroke:var(--ink);stroke-width:1.2;fill:none;transform:translate(0,0)}
+#w04a .w4-bigbg{fill:var(--paper);fill-opacity:.92}
+#w04a .w4-big1{font-size:13px;font-weight:700;fill:var(--ink)}
+#w04a .w4-big2{font-size:10.5px;fill:var(--dim)}
+#w04a .w4-seg{display:flex;gap:0}
+#w04a .w4-seg .btn+.btn{border-left:0}
+#w04a .w4-sliders{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#w04a .w4-hint{margin-top:0}
+/* scroll-driven entry of the guess bars */
+@supports (animation-timeline: view()){
+  #w04a.w4-sd .w4-gfill{animation:w04a-grow linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+  #w04a.w4-sd.w4-vert .w4-gfill{animation-name:w04a-growy}
+}
+#w04a.w4-io .w4-gfill{transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+#w04a.w4-io.w4-vert .w4-gfill{transform:scaleY(0)}
+#w04a.w4-io.w4-in .w4-gfill{transform:none}
+@keyframes w04a-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes w04a-growy{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media (max-width:560px){ #w04a .w4-seg{flex-wrap:wrap} #w04a .w4-seg .btn{font-size:11.5px;padding:7px 9px} }
+#w04a .w4-big.w4-inbar .w4-big1{fill:#fff;font-size:12px}
+#w04a .w4-big.w4-inbar .w4-big2{fill:#fff;fill-opacity:.85;font-size:9.5px}
+#w04a.w4-vert .w4-grid text{font-size:9.5px}

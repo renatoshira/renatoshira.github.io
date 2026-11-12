@@ -1,0 +1,7 @@
+#w01a .w01a-svg{max-width:680px;margin:0 auto;user-select:none;-webkit-user-select:none}
+#w01a .w01a-svg .w01a-riso{isolation:isolate}
+#w01a .w01a-svg .w01a-ink-a,#w01a .w01a-svg .w01a-ink-b{mix-blend-mode:multiply}
+#w01a .w01a-syr{touch-action:none}
+#w01a .w01a-syr:focus{outline:none}
+#w01a .w01a-btns{justify-content:flex-start}
+#w01a .w01a-take{font-size:13.5px;font-weight:700;line-height:1.5;margin:14px 0 0;padding-left:10px;border-left:3px solid var(--dopa);text-wrap:pretty}

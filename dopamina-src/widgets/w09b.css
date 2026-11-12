@@ -1,0 +1,33 @@
+#w09b .w9b-read{font-size:14px;line-height:1.5;font-weight:700;margin:2px 0 10px;max-width:700px;text-wrap:pretty}
+#w09b .w9b-svg svg{display:block;width:100%;height:auto;overflow:visible}
+#w09b .w9b-grid line{stroke:var(--line);stroke-width:1}
+#w09b .w9b-grid line.w9b-full{stroke:var(--ink);stroke-dasharray:3 3;stroke-opacity:.5}
+#w09b .w9b-grid line.w9b-base{stroke:var(--ink);stroke-width:1.2}
+#w09b .w9b-grid text{font-size:10px;fill:var(--dim);font-variant-numeric:tabular-nums}
+#w09b text.w9b-axt{font-size:10px;letter-spacing:.08em;text-transform:uppercase;fill:var(--dim)}
+#w09b .w9b-bar{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(1)}
+#w09b .w9b-bars:not(.on) .w9b-bar{transform:scaleY(0)}
+#w09b .w9b-bars.on .w9b-bar{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+#w09b text.w9b-val{font-size:9.5px;fill:var(--dim);font-variant-numeric:tabular-nums;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}
+#w09b text.w9b-val.w9b-last{font-size:12px;font-weight:700;fill:var(--ink)}
+#w09b text.w9b-age{font-size:9px;fill:var(--dim);font-variant-numeric:tabular-nums}
+#w09b text.w9b-age.w9b-last{fill:var(--ink)}
+#w09b text.w9b-name{font-size:12px;fill:var(--ink)}
+#w09b tspan.w9b-n2{font-size:10px;fill:var(--dim)}
+#w09b text.w9b-rate{font-size:10.5px;fill:var(--dim)}
+#w09b .w9b-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:10.5px;color:var(--dim);margin-top:8px;line-height:1.5}
+#w09b .w9b-key span{display:inline-flex;align-items:center;gap:6px}
+#w09b .w9b-key i{display:inline-block}
+#w09b .w9b-key i.k-age{display:inline-flex;gap:2px;align-items:flex-end}
+#w09b .w9b-key i.k-age b{display:block;width:5px;height:10px;background:var(--ink)}
+#w09b .w9b-key i.k-lost{height:10px;width:12px;background:repeating-linear-gradient(45deg,rgba(59,63,158,.35) 0 1.2px,rgba(59,63,158,.12) 1.2px 4px)}
+#w09b .w9b-note{font-size:12px;line-height:1.55;color:var(--ink);margin:10px 0 0;max-width:700px}
+@media (max-width:560px){
+  #w09b .w9b-read{font-size:13.5px}
+  #w09b text.w9b-name{font-size:10.5px}
+  #w09b text.w9b-rate{font-size:9.5px}
+  #w09b text.w9b-val{font-size:8.5px}
+  #w09b text.w9b-val.w9b-last{font-size:10px}
+  #w09b text.w9b-age{font-size:8px}
+}
+@media (prefers-reduced-motion:reduce){ #w09b .w9b-bars .w9b-bar{transition:none;transform:none} }
