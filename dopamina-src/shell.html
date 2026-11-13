@@ -169,7 +169,7 @@
   <a class="kicker" href="index.html" data-i18n="top.home">Renato Shirakashi</a>
   <div class="right">
     <span class="kicker" style="color:var(--dim);font-weight:400" data-i18n="top.kicker">Dopamina · 2026</span>
-    <button class="sndtoggle" id="sndtoggle" aria-pressed="false" data-i18n="top.sound">♪ ouvir</button>
+    <button class="sndtoggle" id="sndtoggle" aria-pressed="false" title="Liga os sons do neurônio e dos widgets" data-i18n="top.sound">♪ som</button>
     <div class="langtoggle" role="group" aria-label="Idioma / Language">
       <button data-lang="pt" class="active">PT</button>
       <button data-lang="en">EN</button>
@@ -194,7 +194,7 @@
 <!-- 00 -->
 <section class="wrap reveal" id="s00">
   <div class="step" data-i18n="s00.step">00 · A pergunta</div>
-  <h2 class="part" data-i18n="s00.h">Para resetar a dopamina, primeiro é preciso saber o que ela faz</h2>
+  <h2 class="part" data-i18n="s00.h">As buscas por “dopamina” triplicaram desde 2018, e o “detox de dopamina” teve o pico em novembro de 2024</h2>
   <p class="lead" data-i18n="s00.p1">Em 10 de novembro de 2026, o canal Huberman Lab publicou um trecho de onze minutos com o título “How to Reset Your Dopamine System &amp; Overcome Addiction” (como resetar seu sistema de dopamina e superar o vício). Nele, a psiquiatra Anna Lembke, de Stanford, explica o vício com a imagem de uma balança no cérebro e propõe trinta dias sem a droga de escolha. O título supõe três coisas: que existe um sistema de <span class="gl" data-gl="dopamina">dopamina</span>, que esse sistema tem um <span class="gl" data-gl="setpoint">ponto de ajuste</span> e que dá para devolvê-lo ao ponto original.</p>
   <p data-i18n="s00.p2">A palavra chegou ao título de um vídeo de neurociência depois de cinco anos de crescimento fora dos laboratórios. No Google, as buscas mundiais por “dopamine” mais que triplicaram entre 2018 e 2026. “Dopamine detox” saiu de quase zero em 2019 e chegou ao pico em novembro de 2024. No Brasil, quase ninguém busca o protocolo, e as buscas por “dopamina” tiveram o pico em junho de 2023, um ano depois da edição brasileira do livro de Lembke, <em>Nação Dopamina</em>.</p>
   <p data-i18n="s00.p3">Para saber o que um reset poderia mudar, é preciso saber o que a dopamina faz. Antes de começar, marque as funções que você acha que ela tem:</p>
@@ -531,6 +531,7 @@
     try{localStorage.setItem('rs_lang',lang);}catch(e){}
     $all('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');var v=(lang==='en')?(window.EN||{})[k]:PT[k];if(v!=null)el.innerHTML=v;});
     $all('.langtoggle button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    snd.title=(lang==='en')?'Turns on the sounds of the neuron and the widgets':'Liga os sons do neurônio e dos widgets';
     DN._setLang(lang);
     document.dispatchEvent(new CustomEvent('rs:lang',{detail:lang}));
   }

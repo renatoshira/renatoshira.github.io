@@ -50,7 +50,7 @@
       ],
       notes: [
         { y: 2023, s: 'cortisol', tx: 2022.8, tv: 33, a: 'end', cross: true,
-          t: function () { return L(['2023 · o cortisol', 'passa a dopamina'], ['2023 · cortisol', 'overtakes dopamine']); } }
+          t: function () { return L(['2023 · o cortisol', 'lidera todo mês'], ['2023 · cortisol', 'leads every month']); } }
       ]
     },
     bA: {
@@ -103,8 +103,8 @@
   var tables = DN.el('div', { class: 'w13a-tables' }, more);
 
   function say() {
-    live.innerHTML = L('<b>Mundo:</b> “dopamine detox” chega a ' + DN.fmt(73.3, 1) + ' em 2024 e cai para ' + DN.fmt(45.4, 1) + '; o cortisol passa a dopamina em 2023. <b>Brasil:</b> “dopamina” tem o pico em 2023, e “detox de dopamina” fica no zero.',
-      '<b>Worldwide:</b> “dopamine detox” reaches 73.3 in 2024 and falls to 45.4; cortisol overtakes dopamine in 2023. <b>Brazil:</b> “dopamina” peaks in 2023, and “detox de dopamina” stays at zero.');
+    live.innerHTML = L('<b>Mundo:</b> “dopamine detox” chega a ' + DN.fmt(73.3, 1) + ' em 2024 e cai para ' + DN.fmt(45.4, 1) + '; o cortisol lidera todo mês desde fevereiro de 2023. <b>Brasil:</b> “dopamina” tem o pico em 2023, e “detox de dopamina” fica no zero.',
+      '<b>Worldwide:</b> “dopamine detox” reaches 73.3 in 2024 and falls to 45.4; cortisol has led every month since February 2023. <b>Brazil:</b> “dopamina” peaks in 2023, and “detox de dopamina” stays at zero.');
   }
 
   /* ---------- build one panel ---------- */
