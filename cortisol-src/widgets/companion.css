@@ -1,0 +1,14 @@
+/* ---- companion: tiny 24 h curve in the top bar (owned by companion.js) ---- */
+#companion{display:none}
+.topbar .cmp-mini{display:inline-flex;align-items:center;width:96px;height:18px;flex:none;margin-left:-4px;cursor:default}
+.topbar .cmp-mini svg{display:block;width:96px;height:18px;overflow:visible}
+.cmp-mini .cmp-q{fill:var(--baixa-soft);opacity:.75}
+.cmp-mini .cmp-base{stroke:var(--line);stroke-width:1;fill:none}
+.cmp-mini .cmp-line{fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cmp-mini .cmp-now-l{stroke:var(--ink);stroke-width:.8;stroke-dasharray:1 1.6;opacity:.45}
+.cmp-mini .cmp-dot{stroke:var(--paper);stroke-width:1.2}
+.cmp-mini .cmp-ring{fill:none;stroke:var(--ink);stroke-width:.8;opacity:0}
+.cmp-mini.cmp-burst .cmp-ring{animation:cmpburst .9s cubic-bezier(.2,.7,.2,1)}
+@keyframes cmpburst{0%{opacity:.8;transform-box:fill-box;transform-origin:center;transform:scale(.5)}100%{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(2.2)}}
+@media (max-width:560px){.topbar .cmp-mini{display:none}}
+@media (prefers-reduced-motion:reduce){.cmp-mini.cmp-burst .cmp-ring{animation:none}}

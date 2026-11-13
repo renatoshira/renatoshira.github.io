@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MQH2KZD4');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="meta.title">Como baixar o cortisol (e se você deveria)</title>
+<meta name="description" content="O cortisol prepara o corpo para o dia e responde ao jeito como você vive. O que mexe nele de verdade, quanto, e se faz sentido querer baixá-lo.">
+<link rel="canonical" href="https://renatoshira.github.io/como-baixar-o-cortisol.html">
+<meta name="theme-color" content="#141414">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Renato Shirakashi">
+<meta property="og:title" content="Como baixar o cortisol (e se você deveria)">
+<meta property="og:description" content="O cortisol prepara o corpo para o dia e responde ao jeito como você vive. O que mexe nele de verdade, quanto, e se faz sentido querer baixá-lo.">
+<meta property="og:url" content="https://renatoshira.github.io/como-baixar-o-cortisol.html">
+<meta property="og:image" content="https://renatoshira.github.io/og-cortisol.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:author" content="Renato Shirakashi">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Como baixar o cortisol (e se você deveria)">
+<meta name="twitter:description" content="O cortisol prepara o corpo para o dia e responde ao jeito como você vive. O que mexe nele de verdade, quanto, e se faz sentido querer baixá-lo.">
+<meta name="twitter:image" content="https://renatoshira.github.io/og-cortisol.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Recursive:slnt,wght,CASL,MONO@-15..0,300..900,0..1,0..1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#141414;
+    --dim:#6b6b6b;
+    --line:#e2e2e2;
+    --mid:#9a9a9a;
+    --maxw:760px;
+    /* acentos: âmbar = dopamina liberada, disparo, sinal positivo ; índigo = pausa, falta, erro negativo, prato da dor */
+    --dopa:#e8553e;--alta:#e8553e;--alta-txt:#b63b28;--baixa:#0e7a7c;--plana:#9a9a9a;
+    --dopa-soft:rgba(232,85,62,.15);--alta-soft:rgba(232,85,62,.15);--baixa-soft:rgba(14,122,124,.15);
+    --pausa:#0e7a7c;
+    --pausa-soft:rgba(14,122,124,.15);
+    --cream:#f2efe7;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Space Mono', ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    transition:background-color .6s ease,color .6s ease;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;transition:background-color .6s ease}
+  .topbar .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
+  .topbar a.kicker:hover{background:var(--ink);color:var(--paper)}
+  .topbar .right{display:flex;align-items:center;gap:12px}
+  .langtoggle{display:flex;border:1px solid var(--ink);font-size:12px}
+  .langtoggle button,.sndtoggle{border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:.08em}
+  .langtoggle button.active{background:var(--ink);color:var(--paper)}
+  .sndtoggle{border:1px solid var(--ink)}
+  .sndtoggle[aria-pressed="true"]{background:var(--dopa);border-color:var(--dopa);color:#141414}
+  @media (max-width:560px){.topbar .right>.kicker{display:none}}
+  @media (max-width:420px){.topbar{gap:8px}.topbar .kicker{font-size:10.5px;letter-spacing:.08em;white-space:nowrap}.topbar .right{gap:6px}.sndtoggle,.langtoggle button{padding:5px 7px;font-size:11px}}
+  .progress{position:fixed;top:0;left:0;height:2px;background:var(--dopa);width:0;z-index:60;transition:width .1s linear}
+
+  .mark{background:var(--ink);color:var(--paper);padding:.08em .34em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  section{border-bottom:1px solid var(--line);scroll-margin-top:72px}
+  section.wrap{padding:84px 24px}
+  section:last-of-type{border-bottom:0}
+
+  .hero{padding-top:90px;padding-bottom:80px}
+  .hero .eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:34px}
+  .hero h1{font-size:34px;font-weight:700;line-height:1.24;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .hero h1 .l2{margin-left:1.1em}
+  .hero .sub{margin-top:38px;font-size:16.5px;line-height:1.85;max-width:640px;font-weight:700}
+  .hero .byline{margin-top:26px;font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
+
+  .step{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+  h2.part{font-size:26px;line-height:1.25;margin:0 0 26px;font-weight:700;text-wrap:balance}
+  .step+h2.part{margin-top:-8px}
+  h3.subh{font-weight:700;font-size:15px;margin:34px 0 12px;letter-spacing:.01em}
+  p{margin:0 0 20px}
+  .lead{font-size:18px}
+  strong{font-weight:700}
+  code{font-family:inherit;color:inherit;font-weight:700;overflow-wrap:anywhere}
+  a.link,p a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+  ul.tight,ol.tight{margin:0 0 20px;padding-left:22px}
+  ul.tight li,ol.tight li{margin-bottom:8px}
+  @media (max-width:560px){h2.part{font-size:22px}}
+
+  /* ---- widget shell (widgets render inside .wbody) ---- */
+  .widget{border:1px solid var(--ink);margin:34px 0 34px;padding:18px 16px;background:var(--paper);transition:background-color .6s ease,border-color .6s ease}
+  .wtag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;display:flex;gap:8px;align-items:flex-start}
+  .wtag>span:last-child{display:flex;flex-direction:column;gap:3px}
+  .wtag .wt{font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);line-height:1.35;text-wrap:balance}
+  .wtag .wdo{font-size:12px;letter-spacing:0;text-transform:none;color:var(--dim);line-height:1.5}
+  .wtag .dot{width:8px;height:8px;border-radius:50%;background:var(--dopa);display:inline-block;flex:none;margin-top:4px}
+  .wbody{position:relative;min-height:60px}
+  .wcap{font-size:12.5px;color:var(--dim);margin-top:14px;line-height:1.62}
+  .wcap b{color:var(--ink)}
+  .live{font-size:13px;margin-top:12px;min-height:1.6em}
+  .live b{font-variant-numeric:tabular-nums}
+  .btn{font-family:inherit;font-size:12.5px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 13px;cursor:pointer;transition:background .15s,color .15s;min-height:36px}
+  .btn:active{transform:translateY(1px)}
+  .btn.on,.btn.solid,.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .btn:disabled{opacity:.35;cursor:default}
+  .btn:focus-visible,input:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--dopa);outline-offset:2px}
+  .rowbtns{display:flex;gap:7px;flex-wrap:wrap}
+  .rowbtns.mt{margin-top:12px}
+  canvas{display:block;width:100%;touch-action:pan-y}
+  .cvwrap{position:relative}
+  input[type=range]{width:100%;accent-color:var(--ink);height:26px}
+  .ctrlrow{display:flex;align-items:center;gap:12px;margin-top:8px}
+  .ctrlrow label{font-size:11.5px;color:var(--dim);min-width:118px}
+  .ctrlrow .v{font-size:12px;min-width:46px;text-align:right;font-variant-numeric:tabular-nums}
+  .glabel{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:14px 0 6px}
+  .wbody svg{display:block;width:100%;height:auto;overflow:visible}
+  .wbody svg text{font-family:'Space Mono',ui-monospace,monospace}
+
+  /* widgets that break out of the column on wide screens */
+  @media (min-width:1000px){
+    .widget.wide{width:min(1080px,calc(100vw - 48px));margin-left:calc(50% - min(540px,calc(50vw - 24px)))}
+  }
+
+  /* tables, refs */
+  table.t{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 22px;font-variant-numeric:tabular-nums}
+  table.t th{text-align:left;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:400;border-bottom:1px solid var(--ink);padding:6px 8px 6px 0}
+  table.t td{border-bottom:1px solid var(--line);padding:7px 8px 7px 0;vertical-align:top}
+  details.more{font-size:13px;color:var(--dim);margin:8px 0 0}
+  details.more summary{cursor:pointer;color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  .refs{font-size:12.5px;line-height:1.7;color:var(--dim)}
+  .refs b{color:var(--ink)}
+  .foot{padding:40px 0 80px;color:var(--dim);font-size:12.5px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  [hidden]{display:none !important}
+
+  @media (max-width:560px){
+    body{font-size:15.5px}
+    section.wrap{padding:64px 16px}
+    .wrap{padding:0 16px}
+    .hero h1{font-size:28px}
+    .widget{padding:14px 12px}
+    .topbar{padding:12px 16px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+<!--WIDGETS_CSS-->
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="topbar">
+  <a class="kicker" href="index.html" data-i18n="top.home">Renato Shirakashi</a>
+  <div class="right">
+    <span class="kicker" style="color:var(--dim);font-weight:400" data-i18n="top.kicker">Cortisol · 2026</span>
+    <div class="langtoggle" role="group" aria-label="Idioma / Language">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- companion neuron (filled by companion.js) -->
+<div id="companion" class="companion" aria-hidden="true"></div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" data-i18n="hero.eyebrow">Ensaio interativo · novembro de 2026</div>
+  <h1 data-i18n="hero.h1">
+    <span class="mark">Como baixar o cortisol</span>
+    <span class="mark l2">(e se você deveria)</span>
+  </h1>
+  <div class="sub" data-i18n="hero.sub">O cortisol ajuda a acordar, põe açúcar no sangue e prepara o corpo para os desafios do dia. Ele fica alto de manhã e cai até a meia-noite, e o sono, a luz, o café, o treino e o estresse mudam esse sobe e desce. Nos estudos, quem tem o cortisol quase tão alto à noite quanto de manhã adoece e morre mais.</div>
+  <div class="byline" data-i18n="hero.byline">por Renato Shirakashi</div>
+</header>
+
+<!-- 00 -->
+<section class="wrap reveal" id="s00">
+  <div class="step" data-i18n="s00.step">00 · A moda</div>
+  <h2 class="part" data-i18n="s00.h">As buscas por cortisol bateram recorde em 2026, puxadas por um meme</h2>
+  <p class="lead" data-i18n="s00.p1">Em 12 de fevereiro de 2026, uma conta do TikTok publicou uma edição de poucos segundos em que Agnes Tachyon, personagem do jogo japonês <em>Uma Musume</em>, dança a música vietnamita “Ai Đưa Em Về”. O vídeo ficou conhecido como “Low Cortisol Dance” e teve 2,8 milhões de visualizações em duas semanas. Na gíria das redes, “low cortisol” (cortisol baixo) virou o nome de uma estética: vídeos que saem de uma cena tensa e passam para uma vida lenta, com música calma. Em março, um mês depois do vídeo, as buscas mundiais por “cortisol” no Google chegaram ao maior valor da série. As consultas que mais cresceram foram “low cortisol meme”, “high cortisol meme”, “low cortisol dance” e “low cortisol song”, e no topo da lista estava “what is cortisol”, o que é <span class="gl" data-gl="cortisol">cortisol</span>.</p>
+  <p data-i18n="s00.p2">A onda começou dois anos antes, com uma bebida. O “cortisol cocktail”, feito de suco de laranja, água de coco e sal, teve o pico de buscas em abril de 2024, e o “cortisol face”, a ideia de que o estresse incha o rosto, teve picos em agosto de 2024 e em maio de 2026. No Brasil, a onda de dezembro de 2024 veio com buscas por “detox de cortisol”. Desde setembro de 2025, quem mora nos Estados Unidos também pode medir o cortisol em casa com o Hormometer, da Eli Health, que lê uma amostra de saliva com a câmera do celular e custa a partir de 8,25 dólares por teste.</p>
+  <p data-i18n="s00.p3">As buscas por cortisol passaram as buscas por dopamina, o tema do ensaio anterior desta série. No mundo, o cortisol fica à frente em todos os meses desde fevereiro de 2023, e no Brasil a virada veio mais tarde, em outubro de 2024; em 2026, as buscas brasileiras por cortisol foram quase o triplo das buscas por dopamina:</p>
+  <div class="widget wide" id="c00">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c00.tag"><b class="wt">Cortisol e dopamina no Google, mês a mês, de 2018 a 2026</b><span class="wdo">Compare os dois painéis, em que as caixas nos picos dizem o que as pessoas buscavam naquele mês.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c00.cap">Google Trends, consultas conjuntas de 12/11/2026 (pytrends). O índice vai de 0 a 100, e 100 é o mês com mais buscas dentro de cada painel; os dois painéis não se comparam entre si.</div>
+  </div>
+  <p data-i18n="s00.p4">O grosso da procura é por “cortisol alto”, “o que é cortisol” e “exame cortisol”, e no Brasil as buscas por “cortisol alto” ficaram sete vezes maiores entre 2018 e 2026. A pergunta por trás delas tem duas partes, o que baixa o cortisol e se alguém deveria querer baixá-lo, e as duas respostas dependem do que ele faz no corpo.</p>
+</section>
+
+<!-- 01 -->
+<section class="wrap reveal" id="s01">
+  <div class="step" data-i18n="s01.step">01 · Para que serve</div>
+  <h2 class="part" data-i18n="s01.h">O cortisol põe açúcar no sangue, segura a pressão e freia a inflamação, e sobe a cada desafio</h2>
+  <p class="lead" data-i18n="s01.p1">O cortisol é um <span class="gl" data-gl="hormonio">hormônio</span> que ajuda a acordar, põe açúcar no sangue para os músculos e o cérebro, sustenta a pressão e freia a <span class="gl" data-gl="inflamacao">inflamação</span>. Diante de um desafio, como uma prova, uma corrida ou uma discussão, a produção sobe e põe mais açúcar no sangue para o esforço. Quem fabrica o cortisol são as <span class="gl" data-gl="adrenais">adrenais</span>, duas glândulas pequenas que ficam em cima dos rins.</p>
+  <p data-i18n="s01.p2">Quem controla a produção é o cérebro. O <span class="gl" data-gl="hipotalamo">hipotálamo</span> libera um hormônio que estimula a <span class="gl" data-gl="hipofise">hipófise</span>, logo abaixo dele, e a hipófise libera outro hormônio, que chega pelo sangue às adrenais e faz com que elas fabriquem cortisol. Quando o cortisol do sangue sobe, ele <span class="gl" data-gl="retro">freia o hipotálamo e a hipófise</span>, e a produção cai. Como a produção depende desses <span class="gl" data-gl="eixo">sinais do cérebro</span>, ela muda com o que o cérebro registra ao longo do dia: a luz e o horário do sono, a comida e o jejum, o esforço físico e as situações de ameaça, sobretudo quando outras pessoas avaliam o que a pessoa faz. Por isso os horários em que a pessoa dorme, come, treina e se estressa mudam a hora e a quantidade de cortisol que as adrenais liberam.</p>
+  <p data-i18n="s01.p3">O corpo fabrica pouco cortisol, e ele dura pouco no sangue. Medida com um marcador de isótopo em 12 voluntários, a produção foi de 9,9 mg por dia (Esteban e colegas, 1991), um cinquenta avos de um comprimido de analgésico de 500 mg. Em quatro homens que receberam cortisol na veia, <span class="gl" data-gl="meiavida">metade da dose saiu do sangue</span> em cerca de 66 minutos (Kraan e colegas, 1997), e por isso o nível sobe e desce várias vezes num mesmo dia. O desenho abaixo mostra o que ele faz em cada parte do corpo:</p>
+  <div class="widget" id="c01">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c01.tag"><b class="wt">O que o cortisol faz em cada parte do corpo</b><span class="wdo">Siga as linhas do corpo até cada caixa e, na faixa de baixo, veja o que acontece quando o cortisol falta e quando sobra por meses.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c01.cap">Funções de livro-texto de endocrinologia; Husebye et al. (<em>Lancet</em>, 2021); Adam et al. (<em>Psychoneuroendocrinology</em>, 2017), que propõem o papel de relógio; Esteban et al. (<em>J Clin Endocrinol Metab</em>, 1991); Lupien et al. (<em>Brain Cogn</em>, 2007).</div>
+  </div>
+  <p data-i18n="s01.p4">O efeito sobre a inflamação deu ao cortisol uma carreira de remédio. Em setembro de 1948, na Mayo Clinic, o médico Philip Hench deu <span class="gl" data-gl="cortisona">cortisona</span>, uma forma do cortisol que o corpo ativa, a uma mulher de 29 anos com artrite reumatoide, e no terceiro dia ela tinha poucos sintomas. Dois anos depois, Hench, Edward Kendall e Tadeus Reichstein dividiram o Nobel de Medicina. Os <span class="gl" data-gl="corticoide">corticoides</span> de farmácia, como a <span class="gl" data-gl="prednisona">prednisona</span>, vêm dessa linhagem.</p>
+  <p data-i18n="s01.p5">O cortisol que os vídeos querem baixar é o mesmo que põe açúcar no sangue de manhã e numa prova, e por isso saber se faz sentido baixá-lo depende da hora em que ele está alto e de quanto.</p>
+</section>
+
+<!-- 02 -->
+<section class="wrap reveal" id="s02">
+  <div class="step" data-i18n="s02.step">02 · Ele segue um relógio</div>
+  <h2 class="part" data-i18n="s02.h">O cortisol sobe logo depois de acordar e cai cerca de oito vezes até a meia-noite</h2>
+  <p class="lead" data-i18n="s02.p1">Antes de ver a curva medida, desenhe a sua no eixo abaixo, que vai das 6h da manhã às 6h do dia seguinte. Trace com o dedo ou o mouse onde você acha que o cortisol sobe e onde ele desce:</p>
+  <div class="widget" id="c02a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c02a.tag"><b class="wt">Desenhe o cortisol de um dia</b><span class="wdo">Trace a linha da esquerda para a direita, das 6h às 6h; quando você soltar, a curva medida aparece por cima da sua.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c02a.cap">Debono et al. (<em>J Clin Endocrinol Metab</em>, 2009), perfis de 24 h em 33 voluntários saudáveis. Vermelhão marca mais cortisol e verde-petróleo marca menos; as cores não indicam bom ou ruim. A curva lisa é uma média e esconde pulsos de cerca de uma hora.</div>
+  </div>
+  <p data-i18n="s02.p2">A curva medida vem de 33 voluntários saudáveis que tiveram o sangue colhido ao longo de 24 horas (Debono e colegas, 2009). O pico médio foi de 15,5 <span class="gl" data-gl="unidades">µg/dL</span> às 8h32, e o <span class="gl" data-gl="vale">vale</span> ficou abaixo de 2 µg/dL à 0h18, cerca de um oitavo do pico, num sobe e desce que se repete todo dia. Das 19h43 às 5h31, o cortisol ficou abaixo da média do dia, e a subida da manhã começou por volta das 2h ou 3h, com a pessoa ainda dormindo. Se o seu desenho pôs o pico no fim da tarde, depois do trabalho, ele tratou o cortisol como um registro do cansaço acumulado. O corpo faz o contrário e põe o cortisol mais alto quando o dia começa.</p>
+  <p data-i18n="s02.p3">O maior salto vem na primeira meia hora depois de acordar. Em adultos saudáveis, o <span class="gl" data-gl="livre">cortisol da saliva</span> sobe de 50% a 160% nesse intervalo (Clow e colegas, 2004), até 1,5 a 2,6 vezes o valor do momento em que a pessoa abriu os olhos. Num estudo com 509 adultos, a subida média foi de cerca de 50%, e cerca de três em cada quatro pessoas mostraram a subida numa dada manhã (Wüst e colegas, 2000). Fries e colegas (2009) propõem que o salto é maior nas manhãs em que a pessoa espera um dia exigente. O gráfico abaixo amplia essa primeira hora:</p>
+  <div class="widget" id="c02b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c02b.tag"><b class="wt">A primeira hora depois de acordar</b><span class="wdo">Compare o dia inteiro, em cima, com a primeira hora ampliada, embaixo, e repare na faixa da subida e nas quatro manhãs no fim.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c02b.cap">Stalder et al. (<em>Psychoneuroendocrinology</em>, 2016), consenso de especialistas sobre a <span class="gl" data-gl="car">resposta ao despertar</span>; Clow et al. (<em>Stress</em>, 2004); Wüst et al. (2000), 509 adultos. Cortisol livre na saliva.</div>
+  </div>
+  <p data-i18n="s02.p4">A subida é tão rápida que o horário da coleta muda o resultado de um exame, e atrasar a primeira amostra de saliva em 5 a 15 minutos já distorce a medida (Stalder e colegas, 2016).</p>
+  <p data-i18n="s02.p5">A curva lisa também é uma média, porque as adrenais soltam cortisol em pulsos de cerca de uma hora, e a curva do dia é a altura desses pulsos subindo e descendo (Spiga e colegas, 2014). Os hábitos da próxima seção mexem nesse relógio, e o efeito de cada um depende da hora em que acontece; a mesma luz forte que sobe o cortisol de manhã, por exemplo, não muda nada à tarde.</p>
+</section>
+
+<!-- 03 -->
+<section class="wrap reveal" id="s03">
+  <div class="step" data-i18n="s03.step">03 · O estilo de vida</div>
+  <h2 class="part" data-i18n="s03.h">Luz, café e treino sobem o cortisol por algumas horas, e dormir pouco o deixa até 45% mais alto no fim do dia seguinte</h2>
+  <p class="lead" data-i18n="s03.p1">A luz forte da manhã sobe o pico do cortisol. Num experimento, 5.000 <span class="gl" data-gl="lux">lux</span> das 5h às 8h elevaram o cortisol em 50% em comparação com luz fraca, e 800 lux elevaram em 35%, enquanto a mesma luz à tarde não mudou nada (Leproult e colegas, 2001). <span class="mark">Os vídeos que mandam tomar sol logo cedo estão mandando subir o cortisol que outros vídeos mandam baixar.</span></p>
+  <p data-i18n="s03.p2">O efeito do café depende do costume. Em 2005, William Lovallo e colegas deram cafeína ou <span class="gl" data-gl="placebo">placebo</span> a 96 adultos durante quatro semanas, num ensaio em que nem os participantes nem os pesquisadores sabiam quem tomava o quê. Depois de cinco dias sem cafeína, três doses de 250 mg (às 9h, às 13h e às 18h) subiram o cortisol ao longo do dia inteiro. Depois de cinco dias tomando 300 ou 600 mg por dia, a dose das 9h deixou de subir o cortisol, e a das 13h ainda subiu entre 13h e 19h. Para quem toma café todo dia, portanto, a xícara da manhã já não mexe no cortisol, e a da tarde ainda mexe. O conselho de esperar 90 a 120 minutos depois de acordar para tomar o primeiro café, que circula em podcasts de saúde, não tem <span class="gl" data-gl="ensaio">ensaio clínico</span> que o sustente.</p>
+  <p data-i18n="s03.p3">A comida também sobe o cortisol. O almoço provoca um pico de cortisol, maior em mulheres depois de cafeína (Lovallo e colegas, 2006), e uma medição contínua com amostras a cada 10 minutos mostrou pulsos claros nessa hora (Bhake e colegas, 2020). Comer menos tem um efeito que depende do tamanho da restrição e que passa com o tempo. O jejum sobe o cortisol de forma forte, enquanto uma restrição moderada de calorias não sobe, e o efeito volta ao normal em semanas (Nakamura e colegas, 2016). Do mesmo modo, dietas pobres em carboidratos subiram o cortisol de repouso nas três primeiras semanas (<span class="gl" data-gl="efeito">SMD</span> 0,41, um efeito pequeno a médio) e deixaram de subir depois disso (Whittaker e Harris, 2022).</p>
+  <p data-i18n="s03.p4">O treino sobe o cortisol conforme a intensidade. Em 2008, Hill e colegas puseram 12 homens ativos para se exercitar durante 30 minutos em três intensidades: 40%, 60% e 80% da <span class="gl" data-gl="vo2">capacidade máxima de usar oxigênio</span>. Em repouso, o cortisol caiu 6,6% nesses 30 minutos, e a 40% subiu 5,7%, um valor que não se distingue do zero. A subida ficou clara a 60%, com 39,9%, e a 80% chegou a 83,1%, quase o dobro do valor inicial. Parte dessa subida vem do sangue mais concentrado, porque o exercício tira líquido do plasma, e com essa correção o exercício leve baixou o cortisol. A subida de um treino forte faz parte do treino, porque libera combustível enquanto o músculo trabalha, e se desfaz em poucas horas.</p>
+  <p data-i18n="s03.p5"><span class="mark">Dormir pouco deixa o cortisol alto à noite, a hora em que ele deveria estar caindo.</span> Em 1997, Rachel Leproult e colegas mediram o cortisol de homens jovens durante 32 horas seguidas e compararam uma noite normal, uma noite em que só dormiram das 4h às 8h e uma noite em claro. Na manhã seguinte, o cortisol não mudou, mas entre 18h e 23h do dia seguinte ele ficou 37% mais alto depois da noite curta e 45% mais alto depois da noite em claro, e o período de cortisol baixo da noite começou pelo menos uma hora mais tarde. Num experimento de 1999, em que 11 jovens passaram seis noites com 4 horas na cama, o cortisol do fim da tarde também ficou mais alto do que na fase de recuperação (Spiegel, Leproult e Van Cauter). Dormir pouco é comum no Brasil, onde 20,2% dos adultos das capitais, um em cada cinco, dormem menos de 6 horas por noite, segundo o Vigitel 2025.</p>
+  <p data-i18n="s03.p6">Mudar o horário do sono desloca o dia inteiro do cortisol. Em 2001, Piérard e colegas acompanharam 27 militares num voo para o leste que adiantou o relógio em 7 horas, a diferença entre São Paulo e Dubai, e nos que tomaram placebo o cortisol ao acordar ficou abaixo do normal do segundo ao nono dia. O álcool e o cigarro, ao contrário, mexem no cortisol sem hora fixa. O uso pesado de álcool e a abstinência sobem o cortisol, mas o uso crônico faz o cortisol subir menos diante de um estresse, e os fumantes têm cortisol mais alto ao longo do dia e no despertar. O gráfico abaixo põe cada hábito na hora em que acontece:</p>
+  <div class="widget wide" id="c03">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c03.tag"><b class="wt">O que cada hábito faz com a curva do cortisol, hora a hora</b><span class="wdo">Leia o dia da esquerda para a direita. Cada faixa mostra um hábito na hora em que ele acontece, e a área colorida mostra quanto ele sobe o cortisol.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c03.cap">Curva de base de Debono et al. (2009). Clow et al. (2004); Leproult et al. (2001) e (<em>Sleep</em>, 1997); Lovallo et al. (<em>Psychosom Med</em>, 2005 e 2006); Bhake et al. (2020); Hill et al. (<em>J Endocrinol Invest</em>, 2008), 12 homens; Nakamura et al. (<em>Stress</em>, 2016); Whittaker e Harris (2022); Piérard et al. (2001). Os estudos são pequenos e, em sua maioria, com homens. A meia-vida do cortisol, de cerca de 66 minutos (Kraan et al., 1997), define quanto tempo cada calombo leva para sumir.</div>
+  </div>
+  <p data-i18n="s03.p7">O cortisol subiu com clareza nos experimentos de sono mais duros, como a noite em claro e as seis noites de 4 horas. Uma <span class="gl" data-gl="metaanalise">meta-análise</span> de 2024 com 24 estudos de privação aguda, porém, não achou efeito consistente, e cinco noites de restrição leve não mudaram a subida do despertar em 111 homens (Kontou e colegas, 2022). Quase nenhum ensaio testou o caminho inverso, se dormir mais baixa o cortisol da noite.</p>
+  <p data-i18n="s03.p8">Um treino isolado sobe o cortisol, e semanas de exercício regular o baixam. Uma <span class="gl" data-gl="metarede">meta-análise em rede</span> de 44 ensaios com pessoas em sofrimento psicológico achou a maior queda de cortisol perto de 530 <span class="gl" data-gl="met">MET-minutos</span> de exercício por semana, algo como duas horas e meia de caminhada rápida (Li e colegas, 2025). Entre os tipos de exercício, o ioga teve a queda mais confiável (SMD −0,59), e o treino intervalado de alta intensidade tendeu a subir o cortisol. Num ensaio de 2026 com 130 adultos, um ano de 150 minutos semanais de exercício aeróbico baixou o <span class="gl" data-gl="cabelo">cortisol guardado no cabelo</span> (Gianaros e colegas).</p>
+</section>
+
+<!-- 04 -->
+<section class="wrap reveal" id="s04">
+  <div class="step" data-i18n="s04.step">04 · O estresse que mais pesa</div>
+  <h2 class="part" data-i18n="s04.h">O cortisol dispara quando alguém avalia você e o resultado foge do seu controle</h2>
+  <p class="lead" data-i18n="s04.p1">Em 1993, Clemens Kirschbaum, Karl Pirke e Dirk Hellhammer, da cidade alemã de Trier, publicaram <span class="gl" data-gl="tsst">um jeito padronizado de provocar estresse em laboratório</span>. A pessoa tem 10 minutos para preparar um discurso e depois passa 10 minutos falando e fazendo contas de cabeça diante de uma banca que não sorri. O teste eleva o cortisol da saliva a 2 a 4 vezes o valor de repouso.</p>
+  <p data-i18n="s04.p2">A versão abaixo dura um minuto, com uma banca desenhada e uma conta que você faz de verdade, subtraindo 13 a partir de 1.022 e digitando cada resultado. Quando o minuto acabar, aparece a curva do cortisol de quem faz o teste completo:</p>
+  <div class="widget" id="c04a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c04a.tag"><b class="wt">Um minuto diante da banca</b><span class="wdo">Subtraia 13 a partir de 1.022 e digite cada resultado o mais rápido que puder; se errar, volte ao 1.022. Você pode pular a tarefa quando quiser.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c04a.cap">Kirschbaum, Pirke e Hellhammer (<em>Neuropsychobiology</em>, 1993); tempos de Dickerson e Kemeny (<em>Psychol Bull</em>, 2004). A forma da curva entre os tempos publicados é ilustrativa. A tarefa da página é uma versão curta e não reproduz o teste.</div>
+  </div>
+  <p data-i18n="s04.p3">Enquanto a banca olha e a tensão está no máximo, o cortisol ainda não começou a subir. Ele chega ao pico de 21 a 40 minutos depois do início e volta ao valor de repouso entre 41 e 60 minutos depois do fim (Dickerson e Kemeny, 2004).</p>
+  <p data-i18n="s04.p4">Em 2004, Sally Dickerson e Margaret Kemeny reuniram 208 estudos de laboratório para saber que tipo de situação sobe o cortisol. Filmes tristes ou assustadores e barulho não mudaram o cortisol, enquanto falar em público o fez subir, e falar em público fazendo contas o fez subir mais. As situações que mais subiram o cortisol juntavam dois ingredientes, alguém avaliando o desempenho e um resultado que a pessoa não consegue controlar. Com os dois juntos, a pessoa típica do grupo terminou com mais cortisol do que 82% das pessoas do grupo de controle, e com um ingrediente só a proporção ficou perto de 63%:</p>
+  <div class="widget" id="c04b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c04b.tag"><b class="wt">O que sobe o cortisol num laboratório</b><span class="wdo">Compare a barra do canto inferior direito, que junta os dois ingredientes, com as outras, e depois olhe a faixa de baixo, com filme e barulho.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c04b.cap">Dickerson e Kemeny (<em>Psychol Bull</em>, 2004), meta-análise de 208 estudos de laboratório, em sua maioria com universitários jovens. O d mede a distância entre os grupos em desvios padrão; 0,2 é pequeno e 0,8 é grande. As porcentagens saem do d pela conversão padrão.</div>
+  </div>
+  <p data-i18n="s04.p5"><span class="mark">Nos mesmos estudos, as pessoas relataram o mesmo nível de estresse com e sem os dois ingredientes, e o cortisol foi muito diferente.</span> Por isso o cortisol mede pouco do nervosismo que a pessoa sente e responde sobretudo a ser julgado sem poder controlar o resultado.</p>
+  <p data-i18n="s04.p6">Esses dois ingredientes aparecem juntos numa entrevista de emprego, numa apresentação para o chefe, numa prova e numa discussão em que a outra pessoa tem a palavra final. Nos estudos de laboratório, a hora também mudou o tamanho do efeito, e os feitos à tarde acharam efeitos maiores (<span class="gl" data-gl="efeito">d = 0,46</span>) do que os feitos de manhã (d = 0,14), porque de manhã o cortisol já está alto e uma subida a mais aparece menos.</p>
+</section>
+
+<!-- 05 -->
+<section class="wrap reveal" id="s05">
+  <div class="step" data-i18n="s05.step">05 · Um dia ruim contra meses ruins</div>
+  <h2 class="part" data-i18n="s05.h">Num dia difícil, o pico de cortisol ajuda; meses de estresse deixam o cortisol alto à noite, e quem vive assim adoece e morre mais</h2>
+  <p class="lead" data-i18n="s05.p1">Num dia difícil, a reação do corpo ajuda. Jeremy Jamieson e colegas (2010) disseram a um grupo de estudantes, antes de uma prova de matemática do GRE, o exame de admissão de pós-graduação americano, que a ativação do corpo melhora o desempenho. Esse grupo teve mais ativação, medida por <span class="gl" data-gl="alfa">uma enzima da saliva</span> que acompanha a <span class="gl" data-gl="adrenalina">adrenalina</span>, e tirou notas maiores no laboratório e na prova real, de um a três meses depois. Em pacientes graves, mais cortisol também ajudou, segundo uma <span class="gl" data-gl="cochrane">revisão Cochrane</span> de quatro ensaios com 165 pacientes, em que <span class="gl" data-gl="hidrocortisona">hidrocortisona</span> dada logo depois de um trauma reduziu o risco de <span class="gl" data-gl="tept">estresse pós-traumático</span> para cerca de um sexto (<span class="gl" data-gl="rr">RR</span> 0,17; Amos e colegas, 2014).</p>
+  <p data-i18n="s05.p2">Meses de estresse mudam a forma do dia do cortisol. Numa meta-análise de 2007, Gregory Miller, Edith Chen e Eric Zhou mostraram que o cortisol fica alto no começo de um estresse prolongado e cai com o passar do tempo, e que estressores traumáticos, incontroláveis ou que ameaçam o corpo deixam o cortisol “alto e plano”, com pouca diferença entre manhã e noite. Em pessoas com estresse pós-traumático, ao contrário, o cortisol tende a ficar mais baixo. O cabelo, que guarda a exposição de meses, mostra as duas direções, com 43% mais cortisol em quem estava sob estresse contínuo e 17% menos em quem tinha estresse pós-traumático (Stalder e colegas, 2017, 66 estudos com 10.289 pessoas). Adultos que sofreram maus-tratos ou adversidade na infância também respondem com menos cortisol a um estresse social (g = −0,39; Bunea e colegas, 2017).</p>
+  <p data-i18n="s05.p3">O estresse do trabalho no Brasil aparece nos números do INSS. Os afastamentos por transtornos mentais passaram de cerca de 283 mil em 2023 para cerca de 472 mil em 2024, e os afastamentos por <span class="gl" data-gl="burnout">burnout</span> foram de 823 em 2021 para 4.880 em 2024, a partir de uma base pequena. Uma revisão de 31 estudos, porém, não achou diferença de cortisol entre pessoas com burnout e controles (Danhof-Pont e colegas, 2011), e o burnout segue sem marcador no sangue ou na saliva.</p>
+  <p data-i18n="s05.p4">O maior estudo sobre a forma da curva acompanha servidores públicos britânicos, o Whitehall II. Num dia útil, 4.047 deles, com idade média de 61 anos, colheram saliva seis vezes: ao acordar, 30 minutos depois, 2,5 horas depois, 8 horas depois, 12 horas depois e na hora de dormir. Kumari e colegas (2011) seguiram essas pessoas por 6,1 anos, e 139 morreram nesse período, cerca de 3 em cada 100.</p>
+  <p data-i18n="s05.p5"><span class="mark">O cortisol da manhã e o salto do despertar não tiveram relação com as mortes.</span> A relação apareceu na <span class="gl" data-gl="inclinacao">inclinação</span>, o quanto o cortisol desceu do acordar até a hora de dormir. Para cada <span class="gl" data-gl="dp">desvio padrão</span> de curva mais plana, o risco de morte por qualquer causa foi 30% maior (<span class="gl" data-gl="hr">HR</span> 1,30, <span class="gl" data-gl="ic">intervalo</span> de 1,09 a 1,55), e o de morte cardiovascular foi 87% maior (HR 1,87, de 1,32 a 2,64). Um desvio padrão separa, grosso modo, uma pessoa mediana de uma que está entre as 16% de curva mais plana.</p>
+  <p data-i18n="s05.p6">Em 2017, Emma Adam e colegas juntaram 80 estudos, com 179 associações entre a inclinação da curva e a saúde, somando cerca de 26 mil pessoas. Quem tinha o cortisol descendo menos até a noite tinha pior saúde em 10 de 12 tipos de problema estudados. A correlação média foi pequena, <span class="gl" data-gl="r">r = 0,147</span>, e chegou a 0,288 em imunidade e inflamação. As curvas e as barras abaixo mostram os dois estudos:</p>
+  <div class="widget wide" id="c05">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c05.tag"><b class="wt">Duas curvas com a mesma manhã, e o risco de quem tem a que desce menos</b><span class="wdo">No primeiro painel, veja o que um exame da manhã leria em cada curva; no segundo, compare as barras com a linha do 1, que quer dizer risco igual.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c05.cap">Kumari et al. (<em>J Clin Endocrinol Metab</em>, 2011), Whitehall II. Adam et al. (<em>Psychoneuroendocrinology</em>, 2017), 80 estudos e 179 associações. Os horários do painel 1 são os intervalos do Whitehall II aplicados a quem acorda às 7h. HR é a razão de risco; 1 quer dizer risco igual.</div>
+  </div>
+  <p data-i18n="s05.p7">Os dois estudos são <span class="gl" data-gl="observacional">observacionais</span>, e por isso uma curva plana pode ser consequência de uma doença que já existia; Adam e colegas discutem se ela é marcador ou mecanismo. Outro limite está no Whitehall II, em que as mortes cardiovasculares foram poucas, 32. Mesmo assim, os dois estudos mostram que o risco aparece no quanto o cortisol desce até a noite, e quase nada no valor da manhã. Uma curva fica plana de dois jeitos, com a manhã baixa ou com a noite alta, e os hábitos da seção 03 mexem nos dois lados, porque a luz cedo e o despertar levantam a manhã, e a noite curta levanta a noite.</p>
+</section>
+
+<!-- 06 -->
+<section class="wrap reveal" id="s06">
+  <div class="step" data-i18n="s06.step">06 · Quando vira doença</div>
+  <h2 class="part" data-i18n="s06.h">Cortisol alto de verdade vem quase sempre de um remédio, e cortisol de menos é uma emergência</h2>
+  <p class="lead" data-i18n="s06.p1">Em medicina, o rosto redondo dos vídeos de “cortisol face” se chama <span class="gl" data-gl="facelua">face de lua</span> e é um dos sinais da <span class="gl" data-gl="cushing">síndrome de Cushing</span>. A síndrome vem de excesso de cortisol durante meses, e a face de lua aparece junto com outros sinais, dos quais os mais comuns são gordura na nuca e acima da clavícula, estrias largas e arroxeadas, pele fina que fica roxa com facilidade, braços e pernas finos e fraqueza nas coxas. Christie Turin More, endocrinologista da Universidade do Colorado, lembra que “cortisol face” não é termo médico e que um rosto inchado sem outros sinais quase nunca é Cushing.</p>
+  <p data-i18n="s06.p2">O Cushing que o próprio corpo produz, por um tumor na hipófise ou na adrenal, é raro. No oeste da Suécia, entre 2002 e 2017, surgiram 3,2 casos novos por milhão de habitantes por ano (Wengander e colegas, 2019), cerca de três por ano numa cidade de um milhão de pessoas. A causa mais comum de Cushing é o corticoide de remédio (Lacroix e colegas, 2015), que muita gente toma. No Reino Unido, cerca de 1% da população está tomando corticoide oral num dado momento (Fardet e colegas, 2011), e nos Estados Unidos são 1,2%, dos quais 28,8% tomam há cinco anos ou mais (Overman e colegas, 2013). Receitas curtas também têm risco. Entre adultos americanos com plano de saúde privado, 21,1% receberam pelo menos uma receita curta, de menos de 30 dias, em três anos, e nos 30 dias seguintes o risco de <span class="gl" data-gl="sepse">sepse</span> foi 5,3 vezes maior, o de trombose 3,3 vezes e o de fratura 1,9 vez (Waljee e colegas, 2017). O quadro abaixo põe esses grupos num milhão de pessoas:</p>
+  <div class="widget" id="c06a">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c06a.tag"><b class="wt">Um milhão de pessoas e quem tem o cortisol fora do normal</b><span class="wdo">Cada ponto é uma pessoa (no celular, quatro), e as três lupas aproximam os grupos; procure os três pontos do Cushing.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c06a.cap">Fardet, Petersen e Nazareth (<em>Rheumatology</em>, 2011); Overman et al. (<em>Arthritis Care Res</em>, 2013); Erichsen et al. (<em>J Clin Endocrinol Metab</em>, 2009); Wengander et al. (<em>Clin Endocrinol</em>, 2019). Prevalência (quantos têm agora) e incidência (quantos surgem por ano) estão misturadas de propósito e rotuladas.</div>
+  </div>
+  <p data-i18n="s06.p3">Uma dose comum de 20 mg de prednisona equivale, em potência, a cerca de 80 mg de hidrocortisona, o nome do cortisol como remédio. <span class="mark">É oito vezes o cortisol que o corpo fabrica num dia, todos os dias do tratamento.</span></p>
+  <p data-i18n="s06.p4">Os 43% a mais no cabelo de quem vive um estresse contínuo correspondem a 1,4 vez o normal, longe das oito vezes dessa dose de prednisona. No Cushing, o cortisol livre na urina costuma ficar várias vezes acima do limite superior, e a curva perde o vale da meia-noite. É esse vale que procura um dos exames de triagem, o cortisol da saliva colhida entre 23h e meia-noite, que tem <span class="gl" data-gl="sensibilidade">sensibilidade e especificidade</span> acima de 90% para Cushing (Raff, 2009). Os três retratos abaixo comparam a mesma pessoa em três situações:</p>
+  <div class="widget" id="c06b">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c06b.tag"><b class="wt">Cushing, um semestre de estresse e o “cortisol face”</b><span class="wdo">Compare os três retratos da mesma pessoa e siga as linhas até cada sinal; embaixo, a régua mostra quanto cortisol há em cada caso.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c06b.cap">Sinais clínicos do Cushing segundo Lacroix et al. (<em>Lancet</em>, 2015). Stalder et al. (<em>Psychoneuroendocrinology</em>, 2017). Equivalência de 5 mg de prednisona para 20 mg de hidrocortisona, tabela padrão. Christie Turin More, CU Anschutz, 25/11/2024.</div>
+  </div>
+  <p data-i18n="s06.p5">Em 2026, a moda levou mais pacientes a pedir dosagem de cortisol, muitas vezes um exame de sangue colhido a qualquer hora, que não serve para triagem (Shroff, <em>2 Minute Medicine</em>, 2026). Obesidade, depressão, álcool e anticoncepcional oral podem subir o cortisol do exame sem que a pessoa tenha Cushing. A diretriz da Endocrine Society manda primeiro excluir o uso de corticoide e investigar só quem tem vários sinais que pioram com o tempo (Nieman e colegas, 2008).</p>
+  <p data-i18n="s06.p6">Cortisol de menos é mais perigoso a curto prazo. Na <span class="gl" data-gl="addison">doença de Addison</span>, o sistema imune destrói a parte da adrenal que fabrica cortisol, e na Noruega 144 pessoas em cada milhão têm essa forma autoimune da doença (Erichsen e colegas, 2009). Sem cortisol, a pressão cai quando a pessoa se levanta, e uma diarreia ou uma febre podem virar uma <span class="gl" data-gl="crise">crise adrenal</span>, com pressão baixa e choque. Hahner e colegas (2015) acompanharam por dois anos 423 pacientes, todos ensinados a aumentar a dose do remédio quando adoecem, e registraram 8,3 crises por 100 pacientes por ano, uma crise a cada 12 anos para cada paciente. Cerca de 6% dessas crises terminaram em morte, e infecção intestinal, febre e estresse emocional desencadearam, cada um, 20% delas.</p>
+  <p data-i18n="s06.p7"><span class="mark">O corticoide, o remédio que mais causa cortisol alto, também é a causa mais comum de cortisol baixo de verdade, quando a pessoa o para de uma vez.</span> Depois de semanas de remédio, o hipotálamo e a hipófise param de estimular as adrenais, porque o corticoide já faz o papel do cortisol, e as adrenais deixam de produzir. Quando o remédio é interrompido de repente, elas ainda não voltaram a funcionar. Por isso quem toma corticoide há semanas precisa falar com o médico antes de parar.</p>
+  <p data-i18n="s06.p8">Nos vídeos, cortisol de menos aparece como “<span class="gl" data-gl="fadiga">fadiga adrenal</span>”, a ideia de que anos de estresse cansam a glândula. Em 2016, os endocrinologistas Flávio Cadegiani e Claudio Kater, da Unifesp, procuraram a condição na literatura e, de 3.470 artigos, acharam 58 estudos que atendiam aos critérios, com resultados, nas palavras deles, quase sistematicamente conflitantes. A conclusão do artigo diz que a fadiga adrenal “is still a myth”, continua um mito. Depois do pico de março de 2018, as buscas mundiais por “adrenal fatigue” caíram para menos de um terço até 2026, enquanto “cortisol face” e “cortisol belly” subiram até o mesmo volume. O tratamento errado pode criar a doença verdadeira, porque a hidrocortisona receitada para “fadiga adrenal” desliga as adrenais, e ao parar o remédio a pessoa pode ter <span class="gl" data-gl="insuficiencia">insuficiência adrenal</span> de verdade. Em 2018, Akturk e colegas testaram os 12 suplementos de “suporte adrenal” mais populares, e todos tinham hormônio da tireoide; 7 tinham pelo menos um esteroide, e nenhum desses hormônios estava declarado no rótulo.</p>
+</section>
+
+<!-- 07 -->
+<section class="wrap reveal" id="s07">
+  <div class="step" data-i18n="s07.step">07 · O medidor</div>
+  <h2 class="part" data-i18n="s07.h">O cortisol da saliva muda mais de um dia para o outro do que de uma pessoa para outra</h2>
+  <p class="lead" data-i18n="s07.p1">Desde setembro de 2025, o Hormometer está à venda nos Estados Unidos e no Canadá. A pessoa põe um cartucho na boca por 60 segundos, e o celular lê o resultado em cerca de 20 minutos. A Eli Health afirma 97% de acurácia em comparação com um método de laboratório, mas não publica o tamanho da amostra, o método de referência nem a variação entre medidas, e a própria página diz que o aparelho é um produto de bem-estar e não substitui exames clínicos. Relógios como o Whoop dão uma nota de estresse calculada a partir dos batimentos do coração, sem medir cortisol.</p>
+  <p data-i18n="s07.p2">Mesmo um aparelho sem erro mostraria números muito diferentes de uma manhã para a outra. O banco de dados CIRCORT reuniu 104.623 amostras de saliva de 18.698 pessoas (Miller e colegas, 2016). Em mulheres de 21 a 30 anos, uma hora depois de acordar, a <span class="gl" data-gl="mediana">mediana</span> foi de 7,5 <span class="gl" data-gl="unidades">nmol/L</span>, e 90% dos valores ficaram entre 2,1 e 26,7 nmol/L, de modo que, no mesmo horário, o valor normal mais alto é 13 vezes o mais baixo. A maior parte dessa variação vinha da mesma pessoa de um dia para o outro, com cerca de 54% da <span class="gl" data-gl="variancia">variância</span>, contra 23% das diferenças entre pessoas (cálculo a partir da tabela 2 do artigo).</p>
+  <p data-i18n="s07.p3">Com essa variação de um dia para o outro, uma única amostra às 8h teve <span class="gl" data-gl="confiabilidade">confiabilidade</span> entre 0,18 e 0,47 de uma visita para outra, numa escala em que 1 seria a mesma resposta toda vez (Golden e colegas, 2011), e Hellhammer e colegas (2007) calcularam que são precisos de 2 a 6 dias de coleta para medir o que é próprio da pessoa. No simulador abaixo, a mesma pessoa saudável colhe saliva uma hora depois de acordar. Colha uma amostra, depois outras, e veja onde elas caem na faixa normal:</p>
+  <div class="widget" id="c07">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c07.tag"><b class="wt">A mesma pessoa, uma amostra de saliva por manhã</b><span class="wdo">Toque em colher hoje para sortear uma manhã e, depois de colher pelo menos dez, ligue a média de 6 dias.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c07.cap">Miller et al. (<em>Psychoneuroendocrinology</em>, 2016), CIRCORT; Golden et al. (<em>Eur J Epidemiol</em>, 2011); Hellhammer et al. (2007). A pessoa é simulada a partir dos componentes de variância do CIRCORT; os 3% de erro do aparelho são uma hipótese generosa, sem relação com dados publicados de nenhum produto.</div>
+  </div>
+  <p data-i18n="s07.p4">O primeiro ponto pareceu dizer algo sobre a pessoa, mas os seguintes se espalharam por boa parte da faixa normal, enquanto a média de seis manhãs ficou perto da mediana dela. O exame que ajuda o médico é a saliva colhida perto da meia-noite, quando o vale deveria estar baixo, em quem tem sinais de Cushing (Raff, 2009). Um medidor usado de manhã mede o cortisol na hora em que ele menos diz sobre a saúde, já que no Whitehall II o valor da manhã não teve relação com as mortes.</p>
+  <p data-i18n="s07.p5">A procura por exames também cresceu no Brasil. No SUS, as dosagens de cortisol aprovadas passaram de 188 mil em 2019 para 510 mil em 2025, 2,7 vezes mais, enquanto as de <span class="gl" data-gl="estradiol">estradiol</span>, outro hormônio, cresceram 2,3 vezes no mesmo período. A razão entre as duas ficou parada em 0,27 a 0,28 de 2016 a 2022 e subiu para 0,32 a 0,33 a partir de 2024, um excesso de 15% a 20% que coincide com a onda das redes, sem provar que veio dela.</p>
+</section>
+
+<!-- 08 -->
+<section class="wrap reveal" id="s08">
+  <div class="step" data-i18n="s08.step">08 · Os truques</div>
+  <h2 class="part" data-i18n="s08.h">Os truques baixam o cortisol menos do que acordar o sobe, e várias coisas que o sobem fazem bem</h2>
+  <p class="lead" data-i18n="s08.p1">A <span class="gl" data-gl="ashwagandha">ashwagandha</span>, uma planta da medicina tradicional indiana, é o suplemento mais estudado contra o cortisol. Os ensaios são pequenos, em sua maioria feitos na Índia, e muitos foram financiados por fabricantes de extratos patenteados. Uma meta-análise de 2025, com 7 ensaios e 488 pessoas, achou queda de 1,16 µg/dL no cortisol do sangue de manhã e nenhuma mudança no estresse que as pessoas relatavam, e outras duas acharam quedas maiores, de 2,58 µg/dL (2024) e 3,27 µg/dL (2026). Entre o pico da manhã e a meia-noite, o cortisol cai cerca de 13,5 µg/dL sozinho, e a queda atribuída à planta vai de um doze avos a um quarto disso. Uma meta-análise de 2026 com 23 ensaios achou um efeito padronizado de −1,18, maior do que o de muitos remédios, mas efeitos grandes em ensaios pequenos costumam encolher quando aparecem estudos maiores.</p>
+  <p data-i18n="s08.p2">A planta também traz risco para o fígado. Björnsson e colegas (2020) descreveram cinco casos de lesão hepática ligados a ela, e revisões de 2026 reúnem de 26 a 37 casos, alguns com transplante. A Dinamarca proibiu a ashwagandha em suplementos em 2023. <span class="mark">No Brasil, ela é proibida como suplemento desde 2022, e as buscas por ela no Google dobraram entre 2023 e 2025.</span> Em 21 de outubro de 2026, a Anvisa reforçou que fabricação, venda, distribuição e uso são proibidos no país.</p>
+  <p data-i18n="s08.p3">O efeito da meditação depende de onde o cortisol é medido. Na meta-análise de Koncz e colegas (2021), a meditação baixou o cortisol do sangue (g = 0,62, 10 estudos, 395 pessoas), quase sempre medido numa única coleta de manhã, e o efeito apareceu sobretudo em pessoas com alguma doença. Já na saliva, em 21 estudos com 1.163 pessoas, o efeito foi g = 0,18 e não se distinguiu do zero. Quando os autores corrigiram o <span class="gl" data-gl="vies">viés de publicação</span>, que vem dos estudos sem resultado que nunca chegam a ser publicados, o efeito na saliva virou −0,10.</p>
+  <p data-i18n="s08.p4">O riso baixou o cortisol em 31,9% em média, em 8 estudos com 315 pessoas, com amostras pequenas e horários de coleta variados (Kramer e Leitão, 2023). Uma revisão do grupo de Tiffany Field relatou que a massagem baixa o cortisol em 31%, comparando o antes e o depois do mesmo grupo. O cortisol de um grupo de controle também cai do começo ao fim de uma sessão, e quando Moyer e colegas (2011) compararam a massagem com grupos de controle, em 18 estudos com 704 pessoas, o efeito ficou muito pequeno e sem significância. Em 138 adultos sedentários com sobrepeso, 2,5 g de <span class="gl" data-gl="omega">ômega-3</span> por dia durante quatro meses deixaram o cortisol 19% menor durante um estresse de laboratório (Madison e colegas, 2021), enquanto, para o magnésio, nenhuma das revisões teve o cortisol como desfecho principal (Boyle e colegas, 2017).</p>
+  <p data-i18n="s08.p5">O “cortisol cocktail” nunca foi testado, e a mesma bebida já foi vendida para dois problemas opostos. Ela nasceu em 2023 como “adrenal cocktail”, vendida para repor o que uma adrenal “cansada” deixaria de fabricar, e em 2024 foi rebatizada para baixar o cortisol. Um copo tem cerca de 16 g de açúcar, um terço do limite diário recomendado, e um quarto do limite diário de sal (Larkin, <em>The Conversation</em>, 2026).</p>
+  <p data-i18n="s08.p6">Várias coisas da seção 03, como a luz forte de manhã, o treino forte e o próprio despertar, sobem o cortisol e fazem bem. A régua abaixo põe na mesma escala o que tem número comparável, com a subida do despertar como referência:</p>
+  <div class="widget wide" id="c08">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c08.tag"><b class="wt">O que sobe e o que baixa o cortisol, na mesma régua</b><span class="wdo">Compare cada linha com a faixa cinza do despertar, que se repete todo dia. Os efeitos que baixam o cortisol ficam à esquerda do zero, e os que sobem ficam à direita.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c08.cap">Kramer e Leitão (<em>PLOS ONE</em>, 2023); Madison et al. (<em>Mol Psychiatry</em>, 2021); Field et al. (2005); Moyer et al. (2011); Hill et al. (2008); Leproult et al. (1997; 2001); Kirschbaum et al. (1993); Clow et al. (2004); meta-análises de ashwagandha de 2024, 2025 e 2026; Koncz et al. (<em>Health Psychol Rev</em>, 2021). As porcentagens vêm de medidas diferentes (sangue, saliva, momentos diferentes do dia); a régua compara ordens de grandeza.</div>
+  </div>
+  <p data-i18n="s08.p7">Mesmo quando um tratamento funciona, o cortisol pode não mudar. Em 12 ensaios com 428 pessoas com estresse pós-traumático, por exemplo, a psicoterapia melhorou os sintomas e não mexeu no cortisol (g = −0,07; Schumacher e colegas, 2018).</p>
+</section>
+
+<!-- 09 -->
+<section class="wrap reveal" id="s09">
+  <div class="step" data-i18n="s09.step">09 · O que fazer</div>
+  <h2 class="part" data-i18n="s09.h">Quase ninguém precisa baixar o cortisol da manhã; o que acompanha doença é ele continuar alto à noite</h2>
+  <p class="lead" data-i18n="s09.p1">Para quem tem saúde, baixar o cortisol da manhã deixaria a manhã mais parecida com a noite, e é essa curva que desce pouco que os estudos ligam a mais doença. Os hábitos que mais mexem no cortisol da noite são conhecidos, e o primeiro é o sono. Dormir o suficiente, num horário que se repete, deixa o cortisol cair na hora certa, enquanto uma noite curta o deixa 37% mais alto entre 18h e 23h do dia seguinte. A luz forte entre 5h e 8h deixa o pico mais alto, e com isso a descida até a noite fica maior. Para quem toma café todo dia, a hora da xícara decide o efeito, porque a das 9h não mexe no cortisol e a do começo da tarde ainda mexe. O exercício regular e moderado, perto de duas horas e meia de caminhada rápida por semana, acompanha cortisol mais baixo ao longo de meses.</p>
+  <p data-i18n="s09.p2">Ter alguém por perto também baixa o cortisol. Em 37 homens, a presença de um amigo baixou o cortisol num teste de estresse, e a combinação de amigo e <span class="gl" data-gl="ocitocina">ocitocina</span> baixou mais (Heinrichs e colegas, 2003). Em 67 mulheres, 10 minutos de massagem do parceiro antes do teste baixaram o cortisol e a frequência cardíaca, enquanto o apoio só com palavras não baixou (Ditzen e colegas, 2007). O estresse que mais sobe o cortisol junta julgamento e falta de controle (seção 04), e por isso as situações de trabalho com essas duas coisas são candidatas naturais a mudar. Esses conselhos são conhecidos há tempo, e James Findling, endocrinologista do Medical College of Wisconsin, disse à AP em fevereiro de 2026 que dormir, se exercitar e controlar o estresse não têm “nada de novo”.</p>
+  <p data-i18n="s09.p3">O cortisol alto que precisa de médico vem com vários sinais que pioram ao longo de meses, como o rosto que arredonda junto com estrias arroxeadas, pele fina e fraqueza nas pernas, e se investiga com saliva da noite, urina de 24 horas ou <span class="gl" data-gl="dexametasona">dexametasona</span>. Já o cortisol baixo que precisa de médico aparece em quem tem Addison ou parou um corticoide, com a pressão caindo ao levantar e crises com infecções.</p>
+  <p data-i18n="s09.p4">O gráfico abaixo traz a curva medida e, em tracejado, a curva que você desenhou na seção 02, se desenhou uma. Arraste os carimbos do dia para a hora em que acontecem e acompanhe o medidor, que mostra quanto o cortisol desce do acordar até a hora de dormir. Tente montar um dia em que ele quase não desce:</p>
+  <div class="widget wide" id="c09">
+    <div class="wtag"><span class="dot"></span><span data-i18n="c09.tag"><b class="wt">Monte um dia e veja quanto o cortisol desce até a noite</b><span class="wdo">Arraste os carimbos para a hora em que acontecem e acompanhe o medidor, que mostra quanto o cortisol desce do acordar até a hora de dormir. Tente fazê-lo quase não descer.</span></span></div>
+    <div class="wbody"></div>
+    <div class="wcap" data-i18n="c09.cap">Modelo ilustrativo. A curva de base é a de Debono et al. (2009); os efeitos são os médios publicados nas fontes citadas em cada carimbo, somados de forma simples, e o corpo real não soma de forma tão limpa.</div>
+  </div>
+  <p data-i18n="s09.p5">Quase tudo que acontece de dia faz um calombo que se desfaz em uma ou duas horas, porque metade do cortisol do sangue sai em pouco mais de uma hora. Por isso a curva só fica plana quando algo levanta a noite ou abaixa a manhã, como a noite curta, o café da tarde, o fuso de um voo para o leste ou uma manhã sem luz.</p>
+  <p data-i18n="s09.p6">Se fosse medida, a vida lenta do meme de “low cortisol”, com café sem pressa e música calma, teria o cortisol alto às 8h, como o de qualquer pessoa saudável, e baixo à meia-noite.</p>
+</section>
+
+<!-- MÉTODO -->
+<section class="wrap reveal" id="s-metodo">
+  <div class="step" data-i18n="m.step">Nota de método</div>
+  <ul class="tight" style="font-size:14px">
+    <li data-i18n="m.l1">A moda das redes abre o ensaio e volta nas seções 06 a 09, e cada afirmação dos vídeos citada no texto foi conferida contra estudos publicados.</li>
+    <li data-i18n="m.l2">Os números de cortisol vêm de três lugares que não se comparam diretamente: o sangue (o cortisol total, em µg/dL), a saliva (só o cortisol livre, em nmol/L) e o cabelo (a exposição de meses). Cada gráfico usa uma só dessas medidas e diz qual no eixo. A régua da seção 08 junta porcentagens de medidas diferentes e serve para comparar ordens de grandeza.</li>
+    <li data-i18n="m.l3">A curva do dia liga os cinco números publicados por Debono e colegas (2009) com uma linha suave, que esconde os pulsos de cerca de uma hora. Nos gráficos de hábitos das seções 03 e 09, os efeitos sem número publicado aparecem tracejados e rotulados como forma ilustrativa.</li>
+    <li data-i18n="m.l4">Os modelos da banca (seção 04), das amostras de saliva (seção 07) e do dia montado (seção 09) usam números publicados, ligados por formas escolhidas para caber na tela. Eles mostram a forma do fenômeno e não preveem o cortisol de ninguém. A pessoa das amostras de saliva é simulada com a divisão da variação do CIRCORT entre dias e entre pessoas, calculada a partir da tabela 2 do artigo.</li>
+    <li data-i18n="m.l5">Alguns números do texto são contas feitas a partir dos dados publicados: as porcentagens de 82% e 63% tiradas do d de Dickerson e Kemeny; um desvio padrão lido como a distância até os 16% de curva mais plana; 139 mortes em 4.047 como cerca de 3 em 100; uma crise de Addison a cada 12 anos por paciente; 20 mg de prednisona como cerca de oito vezes a produção do dia; a queda da ashwagandha como fração da queda diária de 13,5 µg/dL; e os horários do Whitehall II aplicados a quem acorda às 7h.</li>
+    <li data-i18n="m.l6">Os estudos de sono, de treino isolado e de fuso são pequenos e, na maioria, só com homens. Os estudos sobre a descida do cortisol e a saúde são observacionais, e por isso mostram que as duas coisas andam juntas sem provar que uma causa a outra.</li>
+    <li data-i18n="m.l7">Alguns números vêm do resumo de um artigo ou de reportagens, sem a leitura do texto completo. Entre eles estão o efeito da luz da manhã, os casos de lesão no fígado ligados à ashwagandha, os afastamentos do INSS e o açúcar e o sal do cortisol cocktail. Quando a fonte não dá um valor, o gráfico desenha só a forma e diz isso.</li>
+    <li data-i18n="m.l8">Google Trends: o índice é relativo dentro de cada consulta e foi coletado em 12/11/2026; painéis diferentes não se comparam. SUS: dados do SIA/SUS consultados no TabNet; agosto de 2023 tem um erro de processamento e ficou fora da razão entre cortisol e estradiol.</li>
+    <li data-i18n="m.l9">O ensaio não é orientação médica, e quem toma corticoide não deve parar sem falar com o médico.</li>
+  </ul>
+</section>
+
+<!-- FONTES -->
+<section class="wrap reveal" id="s-fontes">
+  <div class="step" data-i18n="f.step">Fontes principais</div>
+  <p class="refs" data-i18n="f.refs">
+  <b>Ponto de partida.</b> Google Trends, consultas de 12/11/2026. Know Your Meme, “Low Cortisol Dance”. Eli Health, página de ciência do Hormometer. AP, “Do you need to control your cortisol? Probably not, doctors say”, 02/02/2026. CU Anschutz, “Cortisol face”, 25/11/2024. Shroff, <em>2 Minute Medicine</em>, 04/09/2026. Larkin, <em>The Conversation</em>/PsyPost, 25/08/2026.<br>
+  <b>Função e curva.</b> Esteban et al., <em>J Clin Endocrinol Metab</em> 1991. Kraan et al., 1997. Debono et al., <em>J Clin Endocrinol Metab</em> 2009. Spiga et al., <em>Compr Physiol</em> 2014. Lupien et al., <em>Brain Cogn</em> 2007. Adam et al., <em>Psychoneuroendocrinology</em> 2017. Husebye et al., <em>Lancet</em> 2021. Hench e a cortisona, arquivo histórico da Mayo Clinic. Stalder et al., <em>Psychoneuroendocrinology</em> 2016. Clow et al., <em>Stress</em> 2004. Wüst et al., 2000. Fries et al., 2009.<br>
+  <b>Estilo de vida.</b> Leproult et al., 2001 (luz). Lovallo et al., <em>Psychosom Med</em> 2005 e 2006. Bhake et al., <em>J Clin Endocrinol Metab</em> 2020. Nakamura et al., <em>Stress</em> 2016. Whittaker & Harris, 2022. Hill et al., <em>J Endocrinol Invest</em> 2008. Li et al., 2025 (meta-análise em rede, 44 ensaios). Gianaros et al., <em>J Sport Health Sci</em> 2026. Leproult et al., <em>Sleep</em> 1997. Spiegel, Leproult & Van Cauter, <em>Lancet</em> 1999. Kontou et al., 2022. Piérard et al., 2001. Vigitel 2025. Álcool, meta-análise de 2023 com 46 estudos. Steptoe e Ussher, cortisol em fumantes.<br>
+  <b>Estresse.</b> Kirschbaum, Pirke & Hellhammer, <em>Neuropsychobiology</em> 1993. Dickerson & Kemeny, <em>Psychol Bull</em> 2004. Jamieson et al., <em>J Exp Soc Psychol</em> 2010. Miller, Chen & Zhou, <em>Psychol Bull</em> 2007. Stalder et al., <em>Psychoneuroendocrinology</em> 2017 (cabelo). Bunea et al., <em>Transl Psychiatry</em> 2017. Amos et al., Cochrane 2014. Danhof-Pont et al., <em>J Psychosom Res</em> 2011. Kumari et al., <em>J Clin Endocrinol Metab</em> 2011 (Whitehall II). INSS, afastamentos 2021 a 2024, via imprensa.<br>
+  <b>Doença.</b> Nieman et al., <em>J Clin Endocrinol Metab</em> 2008 (diretriz). Raff, 2009. Lacroix et al., <em>Lancet</em> 2015. Wengander et al., <em>Clin Endocrinol</em> 2019. Fardet, Petersen & Nazareth, 2011. Overman et al., 2013. Waljee et al., <em>BMJ</em> 2017. Erichsen et al., <em>J Clin Endocrinol Metab</em> 2009. Hahner et al., <em>J Clin Endocrinol Metab</em> 2015. Cadegiani & Kater, <em>BMC Endocr Disord</em> 2016. Akturk et al., <em>Mayo Clin Proc</em> 2018.<br>
+  <b>Medição.</b> Miller et al., <em>Psychoneuroendocrinology</em> 2016 (CIRCORT). Golden et al., <em>Eur J Epidemiol</em> 2011. Hellhammer et al., 2007. SIA/SUS, TabNet/DATASUS, consulta de 12/11/2026.<br>
+  <b>Intervenções.</b> Koncz et al., <em>Health Psychol Rev</em> 2021. Kramer & Leitão, <em>PLOS ONE</em> 2023. Field et al., <em>Int J Neurosci</em> 2005. Moyer et al., <em>J Bodyw Mov Ther</em> 2011. Madison et al., <em>Mol Psychiatry</em> 2021. Boyle et al., <em>Nutrients</em> 2017. Heinrichs et al., 2003. Ditzen et al., 2007. Schumacher et al., 2018. Meta-análises de ashwagandha: <em>Explore</em> 2024 (PMID 39348746), <em>Nutrition and Health</em> 2025 (PMID 40746175), <em>Planta Medica</em> 2026 (PMID 41740946), <em>JoVE</em> 2026 (PMID 42858054). Björnsson et al., <em>Liver International</em> 2020. Anvisa, nota de 21/10/2026. NutraIngredients, linha do tempo regulatória, 06/07/2026.
+  </p>
+  <div class="foot" data-i18n="f.foot">Como baixar o cortisol (e se você deveria) · ensaio interativo · novembro de 2026</div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+<script>
+<!--RUNTIME_JS-->
+</script>
+<!--WIDGETS_JS-->
+<script>
+<!--EN_JS-->
+/* ================= page chrome: progress, reveal, sound, language ================= */
+(function(){
+  var $=DN.$, $all=DN.$all;
+  var prog=$('#progress');
+  window.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);prog.style.width=(p*100)+'%';},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0,rootMargin:'0px 0px -80px 0px'});
+    $all('.reveal').forEach(function(el){io.observe(el)});
+  } else { $all('.reveal').forEach(function(el){el.classList.add('in')}); }
+
+  var PT={};
+  $all('[data-i18n]').forEach(function(el){PT[el.getAttribute('data-i18n')]=el.innerHTML;});
+  function applyLang(lang){
+    document.documentElement.lang=lang;
+    try{localStorage.setItem('rs_lang',lang);}catch(e){}
+    $all('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');var v=(lang==='en')?(window.EN||{})[k]:PT[k];if(v!=null)el.innerHTML=v;});
+    $all('.langtoggle button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    DN._setLang(lang);
+    document.dispatchEvent(new CustomEvent('rs:lang',{detail:lang}));
+  }
+  $all('.langtoggle button').forEach(function(b){b.addEventListener('click',function(){applyLang(this.dataset.lang);});});
+  function detectLang(){
+    try{var st=localStorage.getItem('rs_lang');if(st==='pt'||st==='en')return st;}catch(e){}
+    var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'pt'];
+    for(var i=0;i<navs.length;i++){var l=(navs[i]||'').toLowerCase();if(l.indexOf('pt')===0)return 'pt';if(l.indexOf('en')===0)return 'en';}
+    return 'pt';
+  }
+  var l=detectLang(); if(l!=='pt') applyLang(l);
+})();
+</script>
+</body>
+</html>

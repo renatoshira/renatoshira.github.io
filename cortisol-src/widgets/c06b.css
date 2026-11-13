@@ -1,0 +1,60 @@
+/* ---- c06b · três retratos ---- */
+#c06b .c06b-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#c06b .c06b-p{margin:0;min-width:0;display:flex;flex-direction:column}
+#c06b .c06b-hd{display:flex;gap:8px;align-items:flex-start;min-height:3.1em}
+#c06b .c06b-no{flex:none;width:18px;height:18px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:10px;font-weight:700;line-height:18px;text-align:center;margin-top:1px}
+#c06b .c06b-ht{display:flex;flex-direction:column;line-height:1.3;min-width:0}
+#c06b .c06b-ht b{font-size:12.5px;text-wrap:balance}
+#c06b .c06b-ht span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:2px}
+#c06b svg.c06b-sv{display:block;width:100%;height:auto;margin:6px 0 4px;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--line)}
+#c06b .c06b-ink-b{mix-blend-mode:multiply}
+#c06b .c06b-pp{fill:var(--paper)}
+#c06b .c06b-cl{fill:none;stroke:var(--ink);stroke-width:.8}
+#c06b .c06b-cd{fill:var(--ink)}
+#c06b .c06b-tc{fill:var(--ink)}
+#c06b text.c06b-tt{font-size:9px;font-weight:700;fill:var(--paper);font-variant-numeric:tabular-nums}
+#c06b .c06b-ckf{fill:var(--paper);stroke:var(--ink);stroke-width:1.2}
+#c06b .c06b-ckt{stroke:var(--ink);stroke-width:.8}
+#c06b .c06b-ckh{stroke:var(--ink);stroke-width:1.8;stroke-linecap:round}
+#c06b .c06b-ckm{stroke:var(--ink);stroke-width:1.1;stroke-linecap:round}
+#c06b .c06b-ckc{fill:var(--ink)}
+#c06b .c06b-ol{margin:6px 0 0;padding-left:22px;font-size:11.5px;line-height:1.45}
+#c06b .c06b-ol li{margin-bottom:3px;text-wrap:pretty}
+#c06b .c06b-ol li::marker{font-weight:700;font-variant-numeric:tabular-nums}
+#c06b .c06b-x{margin:4px 0 0;font-size:11px;line-height:1.45;color:var(--dim);text-wrap:pretty}
+#c06b .c06b-dots{display:none;justify-content:center;gap:4px;margin-top:8px}
+#c06b .c06b-dot{width:32px;height:32px;border:0;background:transparent;padding:0;cursor:pointer;position:relative}
+#c06b .c06b-dot::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;border:1px solid var(--ink);background:var(--paper)}
+#c06b .c06b-dot[aria-pressed="true"]::after{background:var(--ink)}
+#c06b .c06b-rul{margin-top:20px;border-top:1px solid var(--ink);padding-top:10px}
+#c06b .c06b-rh{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+#c06b svg.c06b-rsv{display:block;width:100%;height:auto;overflow:visible}
+#c06b .c06b-ax{stroke:var(--ink);stroke-width:1}
+#c06b text.c06b-tk{font-size:9.5px;fill:var(--dim);font-variant-numeric:tabular-nums}
+#c06b .c06b-ld{stroke:var(--mid);stroke-width:.8}
+#c06b .c06b-cus{fill:var(--alta-soft);stroke:var(--alta);stroke-width:1;stroke-dasharray:3 3}
+#c06b .c06b-hol{fill:var(--paper);stroke:var(--alta-txt);stroke-width:1.6}
+#c06b .c06b-pt.c06b-pr,#c06b .c06b-pt.c06b-st{fill:var(--alta)}
+#c06b .c06b-pt.c06b-nm{fill:var(--ink)}
+#c06b text.c06b-rl{font-size:10.5px;font-variant-numeric:tabular-nums;fill:var(--ink)}
+#c06b text.c06b-rl.c06b-pr,#c06b text.c06b-rl.c06b-cu{fill:var(--alta-txt);font-weight:700}
+#c06b text.c06b-rl.c06b-st{fill:var(--alta-txt)}
+#c06b .c06b-take{font-size:13.5px;font-weight:700;line-height:1.5;margin:18px 0 0;padding-left:10px;border-left:3px solid var(--alta);text-wrap:pretty;max-width:720px}
+
+/* entrance: the callouts of portrait 1 draw one after another */
+#c06b .c06b-anim .c06b-p0 .c06b-cl{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .45s cubic-bezier(.2,.7,.2,1);transition-delay:calc(.3s + var(--i) * .45s)}
+#c06b .c06b-anim .c06b-p0 .c06b-c circle,#c06b .c06b-anim .c06b-p0 .c06b-c text{opacity:0;transition:opacity .25s;transition-delay:calc(.6s + var(--i) * .45s)}
+#c06b .c06b-in .c06b-p0 .c06b-cl{stroke-dashoffset:0}
+#c06b .c06b-in .c06b-p0 .c06b-c circle,#c06b .c06b-in .c06b-p0 .c06b-c text{opacity:1}
+
+@media (max-width:600px){
+  #c06b .c06b-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  #c06b .c06b-strip::-webkit-scrollbar{display:none}
+  #c06b .c06b-p{flex:0 0 86%;scroll-snap-align:center}
+  #c06b .c06b-dots{display:flex}
+  #c06b .c06b-ol{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  #c06b .c06b-cl{stroke-dashoffset:0!important;transition:none!important}
+  #c06b .c06b-c circle,#c06b .c06b-c text{opacity:1!important;transition:none!important}
+}
