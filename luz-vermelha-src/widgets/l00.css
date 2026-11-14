@@ -1,0 +1,64 @@
+/* ---- l00 · as buscas ---- */
+#l00 .wbody{position:relative}
+#l00 .l00-head{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;margin:2px 0 18px}
+#l00 .l00-read{font-size:14px;line-height:1.5;font-weight:700;margin:0;max-width:720px;text-wrap:pretty;border-left:3px solid var(--rubi);padding:1px 0 1px 12px}
+#l00 .l00-stamp{flex:none;width:56px;margin-top:-4px;pointer-events:none}
+#l00 .l00-stamp svg{display:block;width:100%;height:auto;isolation:isolate}
+#l00 .l00-stamp .l00-pp{fill:var(--paper)}
+#l00 .l00-ink-b{mix-blend-mode:multiply}
+#l00 .l00-charts{display:flex;flex-direction:column;gap:22px}
+#l00 .l00-panel{margin:0}
+#l00 .l00-ph{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 4px}
+#l00 .l00-pt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+#l00 .l00-ps{font-size:11.5px;color:var(--dim)}
+#l00 .l00-svg{display:block;overflow:visible}
+#l00 .l00-gl{stroke:var(--line);stroke-width:1}
+#l00 .l00-base{stroke:var(--ink);stroke-width:1}
+#l00 text.l00-tick{font-size:10px;fill:var(--dim);font-variant-numeric:tabular-nums}
+#l00 text.l00-mean{font-size:10px;fill:var(--ink);font-variant-numeric:tabular-nums}
+#l00 text.l00-meanl{font-size:9.5px;fill:var(--dim)}
+#l00 .l00-line{fill:none;stroke-linejoin:round;stroke-linecap:round}
+#l00 .l00-part{stroke-dasharray:0.1 4.2}
+#l00 text.l00-end{font-size:11.5px}
+#l00 text.l00-endm{font-size:12px;font-weight:700}
+#l00 text.l00-ends2{font-size:9.5px;fill:var(--dim);font-variant-numeric:tabular-nums}
+#l00 text.l00-partl{font-size:9.5px;fill:var(--dim)}
+#l00 .l00-ring{fill:var(--paper);stroke:var(--ink);stroke-width:1.2}
+#l00 .l00-lead{stroke:var(--ink);stroke-width:.8}
+#l00 text.l00-nt{font-size:11px;fill:var(--ink);font-variant-numeric:tabular-nums;paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+#l00 text.l00-nt .l00-nb{font-weight:700}
+#l00 text.l00-bnote{font-size:10.5px;fill:var(--dim);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+#l00 .l00-numc{fill:var(--ink);stroke:var(--paper);stroke-width:1.5}
+#l00 text.l00-num{font-size:9.5px;font-weight:700;fill:var(--paper)}
+#l00 .l00-col{fill:var(--ink);transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+#l00 .l00-colp{stroke:var(--ink);stroke-width:1}
+#l00 .l00-bar text{opacity:0;transition:opacity .3s .3s}
+#l00 .l00-bar.in .l00-col{transform:scaleY(1)}
+#l00 .l00-bar.in text{opacity:1}
+#l00 text.l00-bv{font-size:10.5px;fill:var(--ink);font-variant-numeric:tabular-nums}
+#l00 text.l00-bvb{font-weight:700;font-size:12px}
+#l00 text.l00-bvs{font-size:9px;fill:var(--dim)}
+#l00 text.l00-tot{font-size:22px;font-weight:700;fill:var(--ink);font-variant-numeric:tabular-nums}
+#l00 .l00-note{opacity:0;transition:opacity .45s cubic-bezier(.2,.7,.2,1)}
+#l00 .l00-note.in{opacity:1}
+#l00 .l00-list{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+#l00 .l00-li{display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.45;opacity:0;transition:opacity .45s}
+#l00 .l00-li.in{opacity:1}
+#l00 .l00-lin{flex:none;width:17px;height:17px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;font-family:'Space Mono',ui-monospace,monospace}
+#l00 .l00-fn{font-size:12px;color:var(--dim);margin:6px 0 0;line-height:1.45}
+#l00 .l00-more{margin-top:18px}
+#l00 .l00-tw{overflow-x:auto}
+#l00 .l00-tw table{min-width:620px}
+#l00 .l00-tnote{font-size:11.5px;color:var(--dim);margin:0}
+@media (max-width:560px){
+  #l00 .l00-read{font-size:13.5px}
+  #l00 .l00-stamp{width:40px}
+  #l00 text.l00-mean{font-size:8.5px}
+  #l00 text.l00-tick{font-size:9.5px}
+  #l00 text.l00-end{font-size:10px}
+  #l00 text.l00-endm{font-size:10.5px}
+  #l00 text.l00-tot{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  #l00 .l00-note,#l00 .l00-li,#l00 .l00-col,#l00 .l00-bar text{transition:none}
+}

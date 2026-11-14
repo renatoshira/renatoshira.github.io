@@ -1,0 +1,21 @@
+/* ---- glossary.css : dashed terms + one popup (owner: glossary.js) ---- */
+.gl{border-bottom:1px dashed var(--mid);cursor:help;color:inherit;transition:border-color .15s,color .15s;-webkit-tap-highlight-color:transparent}
+.gl:hover,.gl.on{border-bottom:1px solid var(--dopa)}
+.gl:focus-visible{outline:2px solid var(--dopa);outline-offset:2px;border-radius:1px}
+.mark .gl{border-bottom-color:currentColor}
+.mark .gl:hover,.mark .gl.on{border-bottom-color:var(--dopa)}
+
+.glpop{position:fixed;left:0;top:0;z-index:200;max-width:316px;box-sizing:border-box;
+  background:var(--paper);color:var(--ink);border:1px solid var(--ink);
+  padding:13px 15px 14px;font-size:12.5px;line-height:1.6;text-align:left;
+  box-shadow:0 10px 28px rgba(0,0,0,.16);
+  opacity:0;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease;
+  pointer-events:none;visibility:hidden}
+.glpop.show{opacity:1;transform:none;visibility:visible}
+.glpop .gh{display:flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--ink);margin-bottom:7px;line-height:1.35}
+.glpop .gh::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--dopa);flex:none}
+.glpop .gd{color:var(--ink)}
+body.is-night .glpop{box-shadow:0 10px 30px rgba(0,0,0,.5)}
+@media (max-width:480px){.glpop{max-width:calc(100vw - 24px);font-size:12.5px}}
+@media (prefers-reduced-motion: reduce){.gl,.glpop{transition:none}.glpop{transform:none}}
